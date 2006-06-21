@@ -127,7 +127,8 @@ namespace ca.uhn.hl7v2.parser
 		public static System.String[] packageList(System.String version)
 		{
 			//load package lists if necessary ... 
-			System.String[] versions = new System.String[]{"2.1", "2.2", "2.3", "2.3.1", "2.4", "2.5", "2.3.UCH"};
+			//System.String[] versions = new System.String[]{"2.1", "2.2", "2.3", "2.3.1", "2.4", "2.5", "2.3.UCH"};
+			System.String[] versions = Constants.VERSIONS;
 			if (packages == null)
 			{
 				//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
