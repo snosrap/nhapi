@@ -8,9 +8,9 @@ namespace ca.uhn.hl7v2.model.v231.datatype
 	/// <p>The HL7 ED (encapsulated data) data type.  Consists of the following components: </p><ol>
 	/// <li>source application (HD)</li>
 	/// <li>type of data (ID)</li>
-	/// <li>data (ID)</li>
+	/// <li>data subtype (ID)</li>
 	/// <li>encoding (ID)</li>
-	/// <li>data2 (ST)</li>
+	/// <li>data (ST)</li>
 	/// </ol>
 	///</summary>
 	[Serializable]
@@ -106,10 +106,10 @@ namespace ca.uhn.hl7v2.model.v231.datatype
 
 		}
 		///<summary>
-		/// Returns data (component #2).  This is a convenience method that saves you from 
+		/// Returns data subtype(component #2).  This is a convenience method that saves you from 
 		/// casting and handling an exception.
 		///</summary>
-		public ID Data 
+		public ID DataSubtype
 		{
 			get
 			{
@@ -150,10 +150,10 @@ namespace ca.uhn.hl7v2.model.v231.datatype
 
 		}
 		///<summary>
-		/// Returns data2 (component #4).  This is a convenience method that saves you from 
+		/// Returns data (component #4).  This is a convenience method that saves you from 
 		/// casting and handling an exception.
 		///</summary>
-		public ST Data2 
+		public ST Data 
 		{
 			get
 			{
