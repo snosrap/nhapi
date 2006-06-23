@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ORF_R04 xmlns="urn:hl7-org:v2xml">
+  <MSH>
+    <MSH.1>|</MSH.1>
+    <MSH.2>^~\&amp;</MSH.2>
+    <MSH.3>
+      <HD.1>Query Result Locator</HD.1>
+    </MSH.3>
+    <MSH.4>
+      <HD.1>Query Facility Name</HD.1>
+    </MSH.4>
+    <MSH.5>
+      <HD.1>Query Application Name</HD.1>
+    </MSH.5>
+    <MSH.6>
+      <HD.1>ST ELSEWHERE HOSPITAL</HD.1>
+    </MSH.6>
+    <MSH.7>
+      <TS.1>20051024074506</TS.1>
+    </MSH.7>
+    <MSH.9>
+      <MSG.1>ORF</MSG.1>
+      <MSG.2>R04</MSG.2>
+    </MSH.9>
+    <MSH.10>432</MSH.10>
+    <MSH.11>
+      <PT.1>P</PT.1>
+    </MSH.11>
+    <MSH.12>
+      <VID.1>2.3.1</VID.1>
+    </MSH.12>
+  </MSH>
+  <MSA>
+    <MSA.1>AA</MSA.1>
+    <MSA.2>123456789</MSA.2>
+  </MSA>
+  <QRD>
+    <QRD.1>
+      <TS.1>20060228160421</TS.1>
+    </QRD.1>
+    <QRD.2>R</QRD.2>
+    <QRD.3>I</QRD.3>
+    <QRD.7>
+      <CQ.1>10</CQ.1>
+      <CQ.2>
+        <CE.1>RD</CE.1>
+        <CE.2>Records</CE.2>
+        <CE.3>0126</CE.3>
+      </CQ.2>
+    </QRD.7>
+    <QRD.8>
+      <XCN.1>38923</XCN.1>
+      <XCN.9>
+        <HD.2>TCH</HD.2>
+      </XCN.9>
+    </QRD.8>
+  </QRD>
+  <QRF>
+    <QRF.2>
+      <TS.1>20050101000000</TS.1>
+    </QRF.2>
+  </QRF>
+  <ORF_R04.QUERY_RESPONSE>
+    <ORF_R04.PATIENT>
+      <PID>
+        <PID.3>
+          <CX.1>38923</CX.1>
+          <CX.4>
+            <HD.1>ST ELSEWHERE HOSPITAL Medical Record Numbers</HD.1>
+            <HD.2>MEDIC              AL RECORD NUMBER</HD.2>
+            <HD.3>
+              ST ELSEWHERE HOSPITAL</HD.3></CX.4>
+          <CX.5>MR</CX.5>
+          <CX.6>
+            <HD.1>ST ELSEWHERE HOSPITAL</HD.1>
+          </CX.6>
+        </PID.3>
+        <PID.5>
+          <XPN.1>
+            <FN.1>Bombadill</FN.1>
+          </XPN.1>
+          <XPN.2>Tom</XPN.2>
+        </PID.5>
+        <PID.7>
+          <TS.1>19450605</TS.1>
+        </PID.7>
+        <PID.8>M</PID.8>
+        <PID.11>
+          <XAD.1>1</XAD.1>
+          <XAD.3>Littleton</XAD.3>
+          <XAD.4>CO</XAD.4>
+          <XAD.5>80122</XAD.5>
+        </PID.11>
+        <PID.13>
+          <XTN.6>303</XTN.6>
+          <XTN.7>4376329</XTN.7>
+          <XTN.8>22</XTN.8>
+        </PID.13>
+      </PID>
+      <NTE />
+    </ORF_R04.PATIENT>
+    <ORF_R04.ORDER>
+      <ORC />
+      <OBR>
+        <OBR.1>1</OBR.1>
+        <OBR.2>
+          <EI.1>0015566</EI.1>
+        </OBR.2>
+        <OBR.3>
+          <EI.1>DH2211223</EI.1>
+        </OBR.3>
+        <OBR.4>
+          <CE.1>83036</CE.1>
+          <CE.2>HEMOGLOBIN A1C</CE.2>
+          <CE.4>83036</CE.4>
+          <CE.5>HEMOGLOBIN A1C</CE.5>
+        </OBR.4>
+        <OBR.7>
+          <TS.1>20040526094000</TS.1>
+        </OBR.7>
+        <OBR.14>
+          <TS.1>20040526094000</TS.1>
+        </OBR.14>
+        <OBR.16>
+          <XCN.1>J12345</XCN.1>
+          <XCN.2>
+            <FN.1>JENS</FN.1>
+          </XCN.2>
+          <XCN.3>JENNY</XCN.3>
+          <XCN.6>DR</XCN.6>
+          <XCN.7>MD</XCN.7>
+          <XCN.14>
+            <HD.1>112233</HD.1>
+            <HD.2>TCH</HD.2>
+          </XCN.14>
+        </OBR.16>
+        <OBR.21>TP QUEST DIAGNOSTICS-TAMPA 4225 E. FOWLER AVE TAMPA          FL 33617</OBR.21>
+        <OBR.22>
+          <TS.1>20030622070400</TS.1>
+        </OBR.22>
+        <OBR.25>
+          F
+        </OBR.25>
+      </OBR>
+      <NTE />
+      <ORF_R04.OBSERVATION>
+        <OBX>
+          <OBX.1>1</OBX.1>
+          <OBX.2>NM</OBX.2>
+          <OBX.3>
+            <CE.1>50026400</CE.1>
+            <CE.2>HEMOGLOBIN A1C</CE.2>
+            <CE.4>50026400</CE.4>
+            <CE.5>HEMOGLOBIN A1C</CE.5>
+          </OBX.3>
+          <OBX.5>12</OBX.5>
+          <OBX.6>
+            <CE.2>% TOTAL HGB</CE.2>
+          </OBX.6>
+          <OBX.7>4.0 - 6.0</OBX.7>
+          <OBX.8>H</OBX.8>
+          <OBX.11>F</OBX.11>
+          <OBX.14>
+            <TS.1>20040510094000</TS.1>
+          </OBX.14>
+          <OBX.15>
+            <CE.1>TP</CE.1>
+            <CE.3>L</CE.3>
+          </OBX.15>
+        </OBX>
+      </ORF_R04.OBSERVATION>
+    </ORF_R04.ORDER>
+  </ORF_R04.QUERY_RESPONSE>
+</ORF_R04>
