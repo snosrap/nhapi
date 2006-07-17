@@ -53,8 +53,8 @@ namespace ca.uhn.hl7v2.validation.impl
 			Rule number = new RegexPrimitiveRule("(\\+|\\-)?\\d*\\.?\\d*", "");
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "NM", number));
 			
-			Rule telephoneNumber = new RegexPrimitiveRule("(\\d{1,2} )?(\\(\\d{3}\\))?\\d{3}-\\d{4}(X\\d{1,5})?(B\\d{1,5})?(C.*)?", "Version 2.4 Section 2.9.45");
-			PrimitiveRuleBindings.Add(new RuleBinding("*", "TN", telephoneNumber));
+//			Rule telephoneNumber = new RegexPrimitiveRule("(\\d{1,2} )?(\\(\\d{3}\\))?\\d{3}-\\d{4}(X\\d{1,5})?(B\\d{1,5})?(C.*)?", "Version 2.4 Section 2.9.45");
+//			PrimitiveRuleBindings.Add(new RuleBinding("*", "TN", telephoneNumber));
 			
 			System.String datePattern = "(\\d{4}([01]\\d(\\d{2})?)?)?"; //YYYY[MM[DD]]
 			Rule date = new RegexPrimitiveRule(datePattern, "Version 2.5 Section 2.16.24");
