@@ -46,8 +46,12 @@ namespace ca.uhn.hl7v2.model
 		/// </returns>
 		Message Message
 		{
+			get;	
+		}
+
+		System.String Description
+		{
 			get;
-			
 		}
 	}
 }

@@ -132,7 +132,7 @@ namespace ca.uhn.hl7v2.parser
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'ca.uhn.hl7v2.parser.PipeParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly HapiLog log;
 		
-		private const System.String segDelim = "\r"; //see section 2.8 of spec
+		public const System.String segDelim = "\r"; //see section 2.8 of spec
 		
 		/// <summary>Creates a new PipeParser </summary>
 		public PipeParser()

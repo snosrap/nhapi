@@ -147,6 +147,11 @@ namespace ca.uhn.hl7v2.model.primitive
 		public DT(Message theMessage):base(theMessage)
 		{
 		}
+
+
+		public DT(Message theMessage, string description):base(theMessage, description)
+		{
+		}
 		
 		/// <seealso cref="CommonDT.setYearMonthPrecision(int, int)">
 		/// </seealso>

@@ -23,5 +23,9 @@ namespace ca.uhn.hl7v2.model.v24.datatype
 		public TM(Message theMessage):base(theMessage)
 		{
 		}
+
+		public TM(Message theMessage, string description):base(theMessage, description)
+		{
+		}
 	}
 }

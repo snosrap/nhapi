@@ -222,6 +222,12 @@ namespace ca.uhn.hl7v2.model.primitive
 		public TSComponentOne(Message theMessage):base(theMessage)
 		{
 		}
+
+		/// <param name="theMessage">message to which this Type belongs
+		/// </param>
+		public TSComponentOne(Message theMessage, string description):base(theMessage, description)
+		{
+		}
 		
 		/// <seealso cref="CommonTS.setDatePrecision(int, int, int)">
 		/// </seealso>

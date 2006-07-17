@@ -72,6 +72,7 @@ namespace ca.uhn.hl7v2.model
 		private System.Collections.ArrayList length;
 		private System.Collections.ArrayList args;
 		private System.Collections.ArrayList maxReps;
+		private System.Collections.ArrayList fieldDescriptions;
 		private Group parent;
 		//private Message message;
 		//private String name;
@@ -94,6 +95,7 @@ namespace ca.uhn.hl7v2.model
 			this.length = new System.Collections.ArrayList();
 			this.args = new System.Collections.ArrayList();
 			this.maxReps = new System.Collections.ArrayList();
+			this.fieldDescriptions = new System.Collections.ArrayList();
 		}
 		
 		/// <summary> Returns an array of Field objects at the specified location in the segment.  In the case of
@@ -110,6 +112,18 @@ namespace ca.uhn.hl7v2.model
 			}
 			
 			return (Type[]) fields[number - 1]; //note: fields are numbered from 1 from the user's perspective
+		}
+
+		/// <summary> Return the field description.  Fields are numbered from 1.
+		/// </summary>
+		public virtual string getFieldDescription(int number)
+		{
+			ensureEnoughFields(number);
+			if(number<1 || number >fields.Count)
+			{
+				throw new HL7Exception("Can't retrieve field " + number + " from segment " + this.GetType().FullName + " - there are only " + fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
+			}
+			return (string)fieldDescriptions[number-1];
 		}
 		
 		/// <summary> Returns a specific repetition of field at the specified index.  If there exist 
@@ -340,6 +354,46 @@ namespace ca.uhn.hl7v2.model
 			this.length.Add((System.Int32) length);
 			this.args.Add(constructorArgs);
 			this.maxReps.Add((System.Int32) maxReps);
+			this.fieldDescriptions.Add(null);
+		}
+
+		/// <summary> Adds a field to the segment.  The field is initially empty (zero repetitions).   
+		/// The field number is sequential depending on previous add() calls.  Implementing 
+		/// classes should use the add() method in their constructor in order to define fields 
+		/// in their segment.  
+		/// </summary>
+		/// <param name="c">the class of the data for this field - this should inherit from Type
+		/// </param>
+		/// <param name="required">whether a value for this field is required in order for the segment 
+		/// to be valid
+		/// </param>
+		/// <param name="maxReps">the maximum number of repetitions - 0 implies that there is no limit
+		/// </param>
+		/// <param name="length">the maximum length of each repetition of the field (in characters) 
+		/// </param>
+		/// <param name="constructorArgs">an array of objects that will be used as constructor arguments 
+		/// if new instances of this class are created (use null for zero-arg constructor)
+		/// </param>
+		/// <throws>  HL7Exception if the given class does not inherit from Type or if it can  </throws>
+		/// <summary>    not be instantiated.
+		/// </summary>
+		protected internal virtual void  add(System.Type c, bool required, int maxReps, int length, System.Object[] constructorArgs, string fieldDescription)
+		{
+			if (!typeof(Type).IsAssignableFrom(c))
+			{
+				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
+				throw new HL7Exception("Class " + c.FullName + " does not inherit from " + "ca.on.uhn.datatype.Type", HL7Exception.APPLICATION_INTERNAL_ERROR);
+			}
+			
+			Type[] arr = new Type[0];
+			this.types.Add(c);
+			this.fields.Add(arr);
+			this.required.Add(required);
+			this.length.Add((System.Int32) length);
+			this.args.Add(constructorArgs);
+			this.maxReps.Add((System.Int32) maxReps);
+			this.fieldDescriptions.Add(fieldDescription);
+
 		}
 		
 		/// <summary> Called from getField(...) methods.  If a field has been requested that 

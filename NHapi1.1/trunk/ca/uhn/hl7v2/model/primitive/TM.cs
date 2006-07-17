@@ -187,6 +187,12 @@ namespace ca.uhn.hl7v2.model.primitive
 		public TM(Message theMessage):base(theMessage)
 		{
 		}
+
+		/// <param name="theMessage">message to which this Type belongs
+		/// </param>
+		public TM(Message theMessage, string description):base(theMessage, description)
+		{
+		}
 		
 		/// <seealso cref="CommonTM.setHourMinutePrecision(int, int)">
 		/// </seealso>

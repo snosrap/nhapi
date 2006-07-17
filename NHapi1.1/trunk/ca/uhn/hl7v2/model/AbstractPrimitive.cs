@@ -87,6 +87,12 @@ namespace ca.uhn.hl7v2.model
 		public AbstractPrimitive(Message message):base(message)
 		{
 		}
+
+		/// <param name="message">message to which this type belongs
+		/// </param>
+		public AbstractPrimitive(Message message, string description):base(message, description)
+		{
+		}
 		
 		private System.String myValue;
 		

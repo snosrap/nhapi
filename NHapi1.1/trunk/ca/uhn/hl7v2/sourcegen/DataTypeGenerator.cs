@@ -168,6 +168,11 @@ namespace ca.uhn.hl7v2.sourcegen
 				descriptions.Add(de);
 				tables.Add((System.Int32) ta);
 			}
+			if(dataType.ToUpper().Equals("TS") && version!="2.5")
+			{
+				dataTypes[0] = "TSComponentOne";
+			}
+																
 			rs.Close();
 			//UPGRADE_ISSUE: Method 'java.sql.Statement.close' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javasqlStatementclose'"
 			stmt.Dispose();
@@ -236,6 +241,7 @@ namespace ca.uhn.hl7v2.sourcegen
 			
 			source.Append("using System;\r\n");
 			source.Append("using ca.uhn.hl7v2.model;\r\n");
+			source.Append("using ca.uhn.hl7v2.model.primitive;\r\n");
 			source.Append("namespace ");
 			source.Append(SourceGenerator.getVersionPackageName(version));
 			source.Append("datatype\r\n");
@@ -264,6 +270,11 @@ namespace ca.uhn.hl7v2.sourcegen
 			source.Append("\tpublic ");
 			source.Append(datatype);
 			source.Append("(Message message) : base(message){\r\n");
+			source.Append("\t}\r\n\r\n");
+
+			source.Append("\tpublic ");
+			source.Append(datatype);
+			source.Append("(Message message, string description) : base(message,description){\r\n");
 			source.Append("\t}\r\n\r\n");
 			//source.append("\t/**\r\n");
 			//source.append("\t * Constructs a ");
@@ -317,6 +328,7 @@ namespace ca.uhn.hl7v2.sourcegen
 			source.Append("using System;");
 			source.Append("using ca.uhn.hl7v2.model;\r\n");
 			source.Append("using ca.uhn.log;\r\n\r\n");
+			source.Append("using ca.uhn.hl7v2.model.primitive;\r\n\r\n");
 			source.Append("namespace ");
 			source.Append(SourceGenerator.getVersionPackageName(version));
 			source.Append("datatype\r\n");
@@ -360,7 +372,16 @@ namespace ca.uhn.hl7v2.sourcegen
 			source.Append("\t///</summary>\r\n");
 			source.Append("\tpublic ");
 			source.Append(dataType);
-			source.Append("(Message message) : base(message){\r\n");
+			source.Append("(Message message) : this(message, null){}\r\n\r\n");
+			source.Append("\t///<summary>\r\n");
+			source.Append("\t/// Creates a ");
+			source.Append(dataType);
+			source.Append(".\r\n");
+			source.Append("\t/// <param name=\"message\">The Message to which this Type belongs</param>\r\n");
+			source.Append("\t///</summary>\r\n");
+			source.Append("\tpublic ");
+			source.Append(dataType);
+			source.Append("(Message message, string description) : base(message, description){\r\n");
 			source.Append("\t\tdata = new Type[");
 			source.Append(dataTypes.Length);
 			source.Append("];\r\n");
@@ -374,12 +395,20 @@ namespace ca.uhn.hl7v2.sourcegen
 				{
 					source.Append("(message, ");
 					source.Append(tables[i]);
-					source.Append(")");
+					
 				}
 				else
 				{
-					source.Append("(message)");
+					source.Append("(message");
 				}
+				if(descriptions[i]!=null && descriptions[i].Trim().Length>0)
+				{
+					string desc = descriptions[i];
+					desc = desc.Replace("\"", "'");
+					desc = desc.Substring(0,1).ToUpper() + desc.Substring(1);
+					source.Append(",\"" + desc + "\"");
+				}
+				source.Append(")");
 				source.Append(";\r\n");
 			}
 			source.Append("\t}\r\n\r\n");

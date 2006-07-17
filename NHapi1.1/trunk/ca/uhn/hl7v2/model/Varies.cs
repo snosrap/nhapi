@@ -94,7 +94,6 @@ namespace ca.uhn.hl7v2.model
 			{
 				return this.data.ExtraComponents;
 			}
-			
 		}
 		/// <returns> the message to which this Type belongs
 		/// </returns>
@@ -106,11 +105,20 @@ namespace ca.uhn.hl7v2.model
 			}
 			
 		}
+
+		public virtual string Description
+		{
+			get
+			{
+				return description;
+			}
+		}
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'ca.uhn.hl7v2.model.Varies'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly HapiLog log;
 		
+		private string description;
 		private Type data;
 		private Message message;
 		
@@ -123,6 +131,18 @@ namespace ca.uhn.hl7v2.model
 		{
 			data = new GenericPrimitive(message);
 			this.message = message;
+		}
+
+		/// <summary> Creates new Varies. 
+		/// 
+		/// </summary>
+		/// <param name="message">message to which this type belongs
+		/// </param>
+		public Varies(Message message, string description)
+		{
+			data = new GenericPrimitive(message);
+			this.message = message;
+			this.description = description;
 		}
 		
 		/// <summary> Sets the data type of field 5 in the given OBX segment to the value of OBX-2.  The argument 

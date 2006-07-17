@@ -99,6 +99,8 @@ namespace ca.uhn.hl7v2.sourcegen
 			}
 			
 		}
+
+		
 		
 		private System.String name;
 		private System.String groupName;

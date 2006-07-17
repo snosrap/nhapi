@@ -37,6 +37,15 @@ namespace ca.uhn.hl7v2.sourcegen
 		public System.String opt;
 		public System.String type;
 		
+
+		virtual public string GetDescriptionWithoutSpecialCharacters()
+		{
+			string desc = this.desc;
+			desc = desc.Replace('\n',' ');
+			desc = desc.Replace('\"','\'');
+			return desc;
+		}
+		
 		/// <summary>Creates new SegmentElement </summary>
 		public SegmentElement()
 		{

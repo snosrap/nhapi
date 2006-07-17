@@ -316,6 +316,13 @@ namespace ca.uhn.hl7v2.sourcegen
 						{
 							source.Append("new System.Object[]{message}");
 						}
+						if(se.desc!=null && se.desc.Trim().Length>0)
+						{
+							source.Append(", ");
+							
+
+							source.Append("\"" + se.GetDescriptionWithoutSpecialCharacters() + "\"");
+						}
 						source.Append(");\r\n");
 					}
 					source.Append("    } catch (HL7Exception he) {\r\n");

@@ -98,5 +98,10 @@ namespace ca.uhn.hl7v2.model.primitive
 		{
 			myTable = theTable;
 		}
+
+		public ID(Message message, System.Int32 theTable, string description):base(message, description)
+		{
+			myTable = theTable;
+		}
 	}
 }

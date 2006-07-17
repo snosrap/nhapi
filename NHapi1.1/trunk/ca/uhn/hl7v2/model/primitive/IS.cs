@@ -87,6 +87,15 @@ namespace ca.uhn.hl7v2.model.primitive
 		{
 			myTable = theTable;
 		}
+
+		/// <param name="theMessage">message to which this Type belongs
+		/// </param>
+		/// <param name="theTable">HL7 table from which values are to be drawn 
+		/// </param>
+		public IS(Message theMessage, int theTable, string description):base(theMessage, description)
+		{
+			myTable = theTable;
+		}
 		
 		/// <param name="theMessage">message to which this Type belongs
 		/// </param>

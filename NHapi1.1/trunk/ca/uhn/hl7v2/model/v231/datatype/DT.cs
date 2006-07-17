@@ -61,5 +61,9 @@ namespace ca.uhn.hl7v2.model.v231.datatype
 		public DT(Message theMessage):base(theMessage)
 		{
 		}
+
+		public DT(Message theMessage, string description):base(theMessage, description)
+		{
+		}
 	}
 }

@@ -71,6 +71,13 @@ namespace ca.uhn.hl7v2.model
 		/// <throws>  HL7Exception if field index is out of range. </throws>
 		int getMaxCardinality(int number);
 		
+		/// <summary>
+		/// Returns the field description for the field.
+		/// </summary>
+		/// <param name="number">The field number 1 to length of fields</param>
+		/// <returns>Field Description if set, null otherwise</returns>
+		string getFieldDescription(int number);
+
 		/// <summary> Returns the number of fields defined by this segment (repeating 
 		/// fields are not counted multiple times).  
 		/// </summary>

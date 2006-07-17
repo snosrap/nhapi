@@ -65,6 +65,13 @@ namespace ca.uhn.hl7v2.model
 			}
 			
 		}
+
+		public virtual string Description
+		{
+			get{ return description;}
+		}
+
+		private string description;
 		
 		private ExtraComponents extra;
 		private Message message;
@@ -76,6 +83,16 @@ namespace ca.uhn.hl7v2.model
 		{
 			extra = new ExtraComponents(message);
 			this.message = message;
+		}
+
+		/// <summary> Creates a new instance of AbstractType</summary>
+		/// <param name="message">message to which this type belongs 
+		/// </param>
+		public AbstractType(Message message, string description)
+		{
+			extra = new ExtraComponents(message);
+			this.message = message;
+			this.description = description;
 		}
 	}
 }

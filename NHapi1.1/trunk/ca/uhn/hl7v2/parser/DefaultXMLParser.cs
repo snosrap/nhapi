@@ -6,6 +6,7 @@ using Segment = ca.uhn.hl7v2.model.Segment;
 using Structure = ca.uhn.hl7v2.model.Structure;
 using HapiLog = ca.uhn.log.HapiLog;
 using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+
 namespace ca.uhn.hl7v2.parser
 {
 	
