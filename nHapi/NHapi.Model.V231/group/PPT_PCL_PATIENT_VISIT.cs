@@ -1,0 +1,65 @@
+using NHapi.Base.parser;
+using NHapi.Base;
+using ca.uhn.log;
+using System;
+using NHapi.Base.model.v231.segment;
+
+using NHapi.Base.model;
+/**
+ * <p>Represents the PPT_PCL_PATIENT_VISIT Group.  A Group is an ordered collection of message 
+ * segments that can repeat together or be optionally in/excluded together.
+ * This Group contains the following elements: </p>
+ * 0: PV1 (PV1 - patient visit segment-) <b></b><br>
+ * 1: PV2 (PV2 - patient visit - additional information segment) <b>optional </b><br>
+ */
+namespace NHapi.Base.model.v231.group
+{
+[Serializable]
+public class PPT_PCL_PATIENT_VISIT : AbstractGroup {
+
+	/** 
+	 * Creates a new PPT_PCL_PATIENT_VISIT Group.
+	 */
+	public PPT_PCL_PATIENT_VISIT(Group parent, ModelClassFactory factory) : base(parent, factory){
+	   try {
+	      this.add(factory.getSegmentClass("PV1", "2.3.1"), true, false);
+	      this.add(factory.getSegmentClass("PV2", "2.3.1"), false, false);
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating PPT_PCL_PATIENT_VISIT - this is probably a bug in the source code generator.", e);
+	   }
+	}
+
+	/**
+	 * Returns PV1 (PV1 - patient visit segment-) - creates it if necessary
+	 */
+	public PV1 PV1 { 
+get{
+	   PV1 ret = null;
+	   try {
+	      ret = (PV1)this.get_Renamed("PV1");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	/**
+	 * Returns PV2 (PV2 - patient visit - additional information segment) - creates it if necessary
+	 */
+	public PV2 PV2 { 
+get{
+	   PV2 ret = null;
+	   try {
+	      ret = (PV2)this.get_Renamed("PV2");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+}
+}

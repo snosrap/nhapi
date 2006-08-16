@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Base", "nHapi.Base\NHapi.Base.csproj", "{5A080123-0597-46C3-AE78-2007EFB0DD68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Model.V23", "NHapi.Model.V23\NHapi.Model.V23.csproj", "{796D663F-E12D-45C2-92E6-8FD050558A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.NUnit", "NHapi.NUnit\NHapi.NUnit.csproj", "{7C7C99F0-672B-4DB1-A125-5ED7A3ADF95E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Model.V231", "NHapi.Model.V231\NHapi.Model.V231.csproj", "{B8909698-59BA-453F-A4BC-2F4F2612F853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Model.V24", "NHapi.Model.V24\NHapi.Model.V24.csproj", "{C5DE87CB-F026-4EB3-9CE8-5017BF3FB5CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelGenerator", "..\ModelGenerator\ModelGenerator.csproj", "{317590C0-2615-415A-96C0-175EBF523E95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A080123-0597-46C3-AE78-2007EFB0DD68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A080123-0597-46C3-AE78-2007EFB0DD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A080123-0597-46C3-AE78-2007EFB0DD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A080123-0597-46C3-AE78-2007EFB0DD68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796D663F-E12D-45C2-92E6-8FD050558A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796D663F-E12D-45C2-92E6-8FD050558A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796D663F-E12D-45C2-92E6-8FD050558A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796D663F-E12D-45C2-92E6-8FD050558A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C7C99F0-672B-4DB1-A125-5ED7A3ADF95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C7C99F0-672B-4DB1-A125-5ED7A3ADF95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C7C99F0-672B-4DB1-A125-5ED7A3ADF95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C7C99F0-672B-4DB1-A125-5ED7A3ADF95E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8909698-59BA-453F-A4BC-2F4F2612F853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8909698-59BA-453F-A4BC-2F4F2612F853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8909698-59BA-453F-A4BC-2F4F2612F853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8909698-59BA-453F-A4BC-2F4F2612F853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5DE87CB-F026-4EB3-9CE8-5017BF3FB5CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5DE87CB-F026-4EB3-9CE8-5017BF3FB5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5DE87CB-F026-4EB3-9CE8-5017BF3FB5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DE87CB-F026-4EB3-9CE8-5017BF3FB5CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317590C0-2615-415A-96C0-175EBF523E95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317590C0-2615-415A-96C0-175EBF523E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317590C0-2615-415A-96C0-175EBF523E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317590C0-2615-415A-96C0-175EBF523E95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
