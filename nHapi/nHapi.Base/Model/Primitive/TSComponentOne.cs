@@ -256,5 +256,123 @@ namespace NHapi.Base.Model.Primitive
         {
             Detail.setDateSecondPrecision(yr, mnth, dy, hr, min, sec);
         }
+
+        /// <summary>
+        /// Used for setting the format of a long date (Year, Month, Day, Hour, Minute)
+        /// </summary>
+        protected virtual string LongDateTimeFormat
+        {
+            get
+            {
+                return "yyyyMMddHHmm";
+            }
+        }
+
+        /// <summary>
+        /// Used for setting the format of a long date (Year, Month, Day, Hour, Minute, Second)
+        /// </summary>
+        protected virtual string LongDateTimeFormatWithSecond
+        {
+            get
+            {
+                return "yyyyMMddHHmmss";
+            }
+        }
+
+        /// <summary>
+        /// Used for setting the format of a long date (Year, Month, Day, Hour, Minute, Second, Fraction of second)
+        /// </summary>
+        protected virtual string LongDateTimeFormatWithFactionOfSecond
+        {
+            get
+            {
+                return "yyyyMMddHHmmss.FFFF";
+            }
+        }
+
+        /// <summary>
+        /// Used for setting the format of a short date (Year, Month, Day)
+        /// </summary>
+        protected virtual string ShortDateTimeFormat
+        {
+            get
+            {
+                return "yyyyMMdd";
+            }
+        }
+
+        /// <summary>
+        /// Get the value as a date.  Throws hl7Exception if error.
+        /// </summary>
+        /// <returns>Data/Time</returns>
+        public virtual DateTime GetAsDate()
+        {
+            try
+            {
+                string[] dateFormats = new string[] { LongDateTimeFormat, ShortDateTimeFormat, LongDateTimeFormatWithSecond };
+                DateTime val = DateTime.MinValue;
+                System.Globalization.CultureInfo culture = System.Threading.Thread.CurrentThread.CurrentCulture;
+                if (Value != null && Value.Length > 0)
+                    val = DateTime.ParseExact(Value, dateFormats, culture, System.Globalization.DateTimeStyles.NoCurrentDateDefault);
+                return val;
+            }
+            catch (Exception)
+            {
+                throw new HL7Exception("Could not get field as dateTime");
+            }
+        }
+
+        /// <summary>
+        /// Set the value as a short date
+        /// </summary>
+        /// <param name="value"></param>
+        public virtual void SetShortDate(DateTime value)
+        {
+            Set(value, ShortDateTimeFormat);
+        }
+
+        /// <summary>
+        /// Set the value as a long date
+        /// </summary>
+        /// <param name="value"></param>
+        public virtual void SetLongDate(DateTime value)
+        {
+            Set(value, LongDateTimeFormat);
+        }
+
+        /// <summary>
+        /// Set the value as a lond date with second
+        /// </summary>
+        /// <param name="value"></param>
+        public virtual void SetLongDateWithSecond(DateTime value)
+        {
+            Set(value, LongDateTimeFormatWithSecond);
+        }
+
+        /// <summary>
+        /// Set the value as a lond date with fraction of second
+        /// </summary>
+        /// <param name="value"></param>
+        public virtual void SetLongDateWithFractionOfSecond(DateTime value)
+        {
+            Set(value, LongDateTimeFormatWithFactionOfSecond);
+        }
+
+        /// <summary>
+        /// Sets the value (to the format specified) using a date.
+        /// </summary>
+        /// <param name="value">Valid date/time</param>
+        /// <param name="format">The format to set the value (yyyyMMdd, etc)</param>
+        public virtual void Set(DateTime value, string format)
+        {
+            try
+            {
+                Value = value.ToString(format);
+            }
+            catch (FormatException)
+            {
+                throw new HL7Exception("Could not format the date " + value + " to a long date.  Format must be " + LongDateTimeFormat);
+            }
+        }
     }
 }
