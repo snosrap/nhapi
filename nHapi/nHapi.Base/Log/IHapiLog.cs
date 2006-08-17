@@ -6,7 +6,7 @@
 using System;
 //UPGRADE_TODO: The type 'org.apache.commons.logging.Log' could not be found. If it was not included in the conversion, there may be compiler issues. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1262'"
 //using Log = org.apache.commons.logging.Log;
-namespace ca.uhn.log
+namespace NHapi.Base.Log
 {
 	
 	/// <summary> A logging interface that enhances the <code> Log </code>
@@ -58,7 +58,7 @@ namespace ca.uhn.log
 	/// <version>  $Revision: 1.4 $ updated on $Date: 2003/09/11 21:51:21 $ by $Author: bryan_tripp $
 	/// </version>
     /// TODO: HapiLog inherited from base Log interface using Log = org.apache.commons.logging.Log;
-	public interface HapiLog:Log
+	public interface IHapiLog:ILog
 	{
 		
 		/// <summary> </summary>

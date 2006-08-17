@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ca.uhn.log
+namespace NHapi.Base.Log
 {
     /// <summary>
     /// 
     /// </summary>
     /// <remarks>Added for conversion will need to replace.</remarks>
-    public interface Log
+    public interface ILog
     {
         bool DebugEnabled { get;}
         bool ErrorEnabled { get;}
@@ -33,7 +33,7 @@ namespace ca.uhn.log
 
     }
 
-    public sealed class DummyLogger : Log
+    public sealed class DummyLogger : ILog
     {
         #region Log Members
 
