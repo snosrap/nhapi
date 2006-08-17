@@ -27,7 +27,7 @@ namespace NHapi.Base.sourcegen
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public interface StructureDef
+	public interface IStructureDef
 	{
 		/// <summary> Returns the name of the structure.</summary>
 		System.String Name
