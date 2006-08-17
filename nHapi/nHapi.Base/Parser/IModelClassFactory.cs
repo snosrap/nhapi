@@ -15,7 +15,7 @@ namespace NHapi.Base.parser
 	/// </author>
 	/// <version>  $Revision: 1.1 $ updated on $Date: 2005/04/25 21:03:50 $ by $Author: bryan_tripp $
 	/// </version>
-	public interface ModelClassFactory
+	public interface IModelClassFactory
 	{
 		
 		/// <param name="theName">name of message 
