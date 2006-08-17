@@ -4,8 +4,9 @@
 /// Software distributed under the License is distributed on an "AS IS" basis, 
 /// WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the 
 /// specific language governing rights and limitations under the License. 
-/// The Original Code is "Message.java".  Description: 
-/// "Represents a complete HL7 message including all structures, segments, and fields" 
+/// The Original Code is "Primitive.java".  Description: 
+/// "Represents the category of HL7 data types that contain a single value (in other
+/// words have no subcomponents)" 
 /// The Initial Developer of the Original Code is University Health Network. Copyright (C) 
 /// 2001.  All Rights Reserved. 
 /// Contributor(s): ______________________________________. 
@@ -19,30 +20,24 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using ValidationContext = NHapi.Base.validation.ValidationContext;
 namespace NHapi.Base.model
 {
 	
 	
-	/// <summary> Represents a complete HL7 message including all structures, segments, and fields.  </summary>
+	/// <summary> Represents the category of HL7 data types that contain a single value (in other
+	/// words have no subcomponents).  Examples include ST and ID.
+	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public interface Message:Group
+	public interface IPrimitive:IType
 	{
-		/// <summary> Returns the version number of the HL7 version in which this 
-		/// message structure is defined (e.g. "2.4")
-		/// </summary>
-		System.String Version
-		{
-			get;
-			
-		}
 		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
-		/// <returns> the set of validation rules that applies to this message
-		/// </returns>
-		/// <param name="theContext">the set of validation rules that are to apply to this message
-		/// </param>
-		ValidationContext ValidationContext
+		/// <summary> Returns a String representation of the value of this field.</summary>
+		/// <summary> Sets the value of this field if the given value is legal in the context of the
+		/// implementing class.
+		/// </summary>
+		/// <throws>  DataTypeException if the given value is not valid in this context. </throws>
+		System.String Value
 		{
 			get;
 			

@@ -4,8 +4,8 @@
 /// Software distributed under the License is distributed on an "AS IS" basis, 
 /// WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the 
 /// specific language governing rights and limitations under the License. 
-/// The Original Code is "Structure.java".  Description: 
-/// "Part of an HL7 message: either a segment or group" 
+/// The Original Code is "Composite.java".  Description: 
+/// "Represents the category of HL7 data types that contain more than one component (e.g" 
 /// The Initial Developer of the Original Code is University Health Network. Copyright (C) 
 /// 2001.  All Rights Reserved. 
 /// Contributor(s): ______________________________________. 
@@ -22,34 +22,23 @@ using System;
 namespace NHapi.Base.model
 {
 	
-	/// <summary> Part of an HL7 message: either a segment or group.  There are certain methods (e.g. Group.get())
-	/// that will always return either a segment or a group.  This interface allows methods like this
-	/// to declare a return type of Structure instead of Object.  
+	/// <summary> <p>Represents the category of HL7 data types that contain more than one component (e.g. CE).
+	/// Implementing classes (i.e. composite data types) should initialize their components
+	/// either when they are initialized or when they are first accessed.  Only leaf values
+	/// (values of primitives) should ever be returned as null.</p>
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public interface Structure
+	public interface IComposite:IType
 	{
-		/// <summary> Returns the Message object to which this structure belongs.  This should normally be set at
-		/// construction time.  A Structure can only belong to a single Message.  This is primarily 
-		/// to avoid a situation where intended changes in one message cause unintended changes 
-		/// in another that shares one of the same Structure objects.  
-		/// </summary>
-		Message Message
-		{
-			get;
-			
-		}
-		/// <summary> Returns the parent group within which this structure exists (may be root 
-		/// message group).  
-		/// </summary>
-		Group Parent
+		/// <summary> Returns an array containing the components of this field.</summary>
+		IType[] Components
 		{
 			get;
 			
 		}
 		
-		/// <summary> Returns the structure's name. </summary>
-		System.String getName();
+		/// <summary> Returns the single component of this composite at the specified position (starting at 0).</summary>
+		IType getComponent(int number);
 	}
 }

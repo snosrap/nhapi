@@ -35,7 +35,7 @@ namespace NHapi.Base.model
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public interface Group:Structure
+	public interface IGroup:IStructure
 	{
 		/// <summary> Returns an ordered array of the names of the Structures in this 
 		/// Group.  These names can be used to iterate through the group using 
@@ -54,13 +54,13 @@ namespace NHapi.Base.model
 		/// yet using the get(...) methods. 
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		Structure[] getAll(System.String name);
+		IStructure[] getAll(System.String name);
 		
 		/// <summary> Returns the named structure.  If this Structure is repeating then the first 
 		/// repetition is returned.  Creates the Structure if necessary.  
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		Structure get_Renamed(System.String name);
+		IStructure get_Renamed(System.String name);
 		
 		/// <summary> Returns a particular repetition of the named Structure. If the given repetition
 		/// number is one greater than the existing number of repetitions then a new  
@@ -71,7 +71,7 @@ namespace NHapi.Base.model
 		/// or if the given repetition number is more than one greater than the 
 		/// existing number of repetitions.  
 		/// </summary>
-		Structure get_Renamed(System.String name, int rep);
+		IStructure get_Renamed(System.String name, int rep);
 		
 		/// <summary> Returns true if the named structure is required. </summary>
 		bool isRequired(System.String name);

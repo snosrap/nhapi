@@ -29,14 +29,14 @@ namespace NHapi.Base.model
 	/// <summary> Represents an HL7 message segment, which is a unit of data that contains multiple fields.</summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public interface Segment:Structure
+	public interface ISegment:IStructure
 	{
 		
 		/// <summary> Returns the array of Fields at the specified index.  The array will be of length 1 for
 		/// non-repeating fields, and >1 for repeating fields.  Fields are numbered from 1.
 		/// </summary>
 		/// <throws>  HL7Exception if field index is out of range. </throws>
-		Type[] getField(int number);
+		IType[] getField(int number);
 		
 		/// <summary> Returns a specific repetition of field at the specified index.  If there exist 
 		/// fewer repetitions than are required, the number of repetitions can be increased 
@@ -54,7 +54,7 @@ namespace NHapi.Base.model
 		/// NOTE: to facilitate local extensions, no exception is thrown if 
 		/// rep > max cardinality 
 		/// </summary>
-		Type getField(int number, int rep);
+		IType  getField(int number, int rep);
 		
 		/// <summary> Returns true if the field at the given index is required, false otherwise.</summary>
 		/// <throws>  HL7Exception if field index is out of range. </throws>

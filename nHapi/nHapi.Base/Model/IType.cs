@@ -4,9 +4,8 @@
 /// Software distributed under the License is distributed on an "AS IS" basis, 
 /// WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the 
 /// specific language governing rights and limitations under the License. 
-/// The Original Code is "Primitive.java".  Description: 
-/// "Represents the category of HL7 data types that contain a single value (in other
-/// words have no subcomponents)" 
+/// The Original Code is "Type.java".  Description: 
+/// "An HL7 datatype" 
 /// The Initial Developer of the Original Code is University Health Network. Copyright (C) 
 /// 2001.  All Rights Reserved. 
 /// Contributor(s): ______________________________________. 
@@ -23,25 +22,31 @@ using System;
 namespace NHapi.Base.model
 {
 	
-	
-	/// <summary> Represents the category of HL7 data types that contain a single value (in other
-	/// words have no subcomponents).  Examples include ST and ID.
-	/// </summary>
+	/// <summary> An HL7 datatype.  Datatypes normally implement either Composite or Primitive.    </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public interface Primitive:Type
+	public interface IType
 	{
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
-		/// <summary> Returns a String representation of the value of this field.</summary>
-		/// <summary> Sets the value of this field if the given value is legal in the context of the
-		/// implementing class.
-		/// </summary>
-		/// <throws>  DataTypeException if the given value is not valid in this context. </throws>
-		System.String Value
+		/// <summary>Returns the name of the type (used in XML encoding and profile checking) </summary>
+		System.String Name
 		{
 			get;
 			
-			set;
+		}
+		/// <summary> Returns an object containing any extra (non-standard) components that 
+		/// have been added to this type at run-time.  This object can also be used
+		/// to add components.  
+		/// </summary>
+		ExtraComponents ExtraComponents
+		{
+			get;
+			
+		}
+		/// <returns> the message to which this Type belongs
+		/// </returns>
+		IMessage Message
+		{
+			get;
 			
 		}
 	}
