@@ -60,7 +60,7 @@ public class ARD_A19_QUERY_RESPONSE : AbstractGroup {
 get{
 	   EVN ret = null;
 	   try {
-	      ret = (EVN)this.get_Renamed("EVN");
+	      ret = (EVN)this.getStructure("EVN");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -76,7 +76,7 @@ get{
 get{
 	   PID ret = null;
 	   try {
-	      ret = (PID)this.get_Renamed("PID");
+	      ret = (PID)this.getStructure("PID");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -91,7 +91,7 @@ get{
 	public NK1 getNK1() {
 	   NK1 ret = null;
 	   try {
-	      ret = (NK1)this.get_Renamed("NK1");
+	      ret = (NK1)this.getStructure("NK1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -106,7 +106,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public NK1 getNK1(int rep) { 
-	   return (NK1)this.get_Renamed("NK1", rep);
+	   return (NK1)this.getStructure("NK1", rep);
 	}
 
 	/** 
@@ -133,7 +133,7 @@ get{
 get{
 	   PV1 ret = null;
 	   try {
-	      ret = (PV1)this.get_Renamed("PV1");
+	      ret = (PV1)this.getStructure("PV1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -149,7 +149,7 @@ get{
 get{
 	   PV2 ret = null;
 	   try {
-	      ret = (PV2)this.get_Renamed("PV2");
+	      ret = (PV2)this.getStructure("PV2");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -164,7 +164,7 @@ get{
 	public OBX getOBX() {
 	   OBX ret = null;
 	   try {
-	      ret = (OBX)this.get_Renamed("OBX");
+	      ret = (OBX)this.getStructure("OBX");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -179,7 +179,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public OBX getOBX(int rep) { 
-	   return (OBX)this.get_Renamed("OBX", rep);
+	   return (OBX)this.getStructure("OBX", rep);
 	}
 
 	/** 
@@ -205,7 +205,7 @@ get{
 	public AL1 getAL1() {
 	   AL1 ret = null;
 	   try {
-	      ret = (AL1)this.get_Renamed("AL1");
+	      ret = (AL1)this.getStructure("AL1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -220,7 +220,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public AL1 getAL1(int rep) { 
-	   return (AL1)this.get_Renamed("AL1", rep);
+	   return (AL1)this.getStructure("AL1", rep);
 	}
 
 	/** 
@@ -246,7 +246,7 @@ get{
 	public DG1 getDG1() {
 	   DG1 ret = null;
 	   try {
-	      ret = (DG1)this.get_Renamed("DG1");
+	      ret = (DG1)this.getStructure("DG1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -261,7 +261,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public DG1 getDG1(int rep) { 
-	   return (DG1)this.get_Renamed("DG1", rep);
+	   return (DG1)this.getStructure("DG1", rep);
 	}
 
 	/** 
@@ -287,7 +287,7 @@ get{
 	public PR1 getPR1() {
 	   PR1 ret = null;
 	   try {
-	      ret = (PR1)this.get_Renamed("PR1");
+	      ret = (PR1)this.getStructure("PR1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -302,7 +302,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public PR1 getPR1(int rep) { 
-	   return (PR1)this.get_Renamed("PR1", rep);
+	   return (PR1)this.getStructure("PR1", rep);
 	}
 
 	/** 
@@ -328,7 +328,7 @@ get{
 	public GT1 getGT1() {
 	   GT1 ret = null;
 	   try {
-	      ret = (GT1)this.get_Renamed("GT1");
+	      ret = (GT1)this.getStructure("GT1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -343,7 +343,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public GT1 getGT1(int rep) { 
-	   return (GT1)this.get_Renamed("GT1", rep);
+	   return (GT1)this.getStructure("GT1", rep);
 	}
 
 	/** 
@@ -369,7 +369,7 @@ get{
 	public ARD_A19_INSURANCE getINSURANCE() {
 	   ARD_A19_INSURANCE ret = null;
 	   try {
-	      ret = (ARD_A19_INSURANCE)this.get_Renamed("INSURANCE");
+	      ret = (ARD_A19_INSURANCE)this.getStructure("INSURANCE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -384,7 +384,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public ARD_A19_INSURANCE getINSURANCE(int rep) { 
-	   return (ARD_A19_INSURANCE)this.get_Renamed("INSURANCE", rep);
+	   return (ARD_A19_INSURANCE)this.getStructure("INSURANCE", rep);
 	}
 
 	/** 
@@ -411,7 +411,7 @@ get{
 get{
 	   ACC ret = null;
 	   try {
-	      ret = (ACC)this.get_Renamed("ACC");
+	      ret = (ACC)this.getStructure("ACC");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -427,7 +427,7 @@ get{
 get{
 	   UB1 ret = null;
 	   try {
-	      ret = (UB1)this.get_Renamed("UB1");
+	      ret = (UB1)this.getStructure("UB1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -443,7 +443,7 @@ get{
 get{
 	   UB2 ret = null;
 	   try {
-	      ret = (UB2)this.get_Renamed("UB2");
+	      ret = (UB2)this.getStructure("UB2");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

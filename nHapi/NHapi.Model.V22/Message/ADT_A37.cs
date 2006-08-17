@@ -56,7 +56,7 @@ public class ADT_A37 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -72,7 +72,7 @@ get{
 get{
 	   EVN ret = null;
 	   try {
-	      ret = (EVN)this.get_Renamed("EVN");
+	      ret = (EVN)this.getStructure("EVN");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -88,7 +88,7 @@ get{
 get{
 	   PID ret = null;
 	   try {
-	      ret = (PID)this.get_Renamed("PID");
+	      ret = (PID)this.getStructure("PID");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -104,7 +104,7 @@ get{
 get{
 	   PV1 ret = null;
 	   try {
-	      ret = (PV1)this.get_Renamed("PV1");
+	      ret = (PV1)this.getStructure("PV1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -120,7 +120,7 @@ get{
 get{
 	   PID ret = null;
 	   try {
-	      ret = (PID)this.get_Renamed("PID2");
+	      ret = (PID)this.getStructure("PID2");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -136,7 +136,7 @@ get{
 get{
 	   PV1 ret = null;
 	   try {
-	      ret = (PV1)this.get_Renamed("PV12");
+	      ret = (PV1)this.getStructure("PV12");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

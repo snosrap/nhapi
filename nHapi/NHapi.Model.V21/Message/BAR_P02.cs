@@ -50,7 +50,7 @@ public class BAR_P02 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -66,7 +66,7 @@ get{
 get{
 	   EVN ret = null;
 	   try {
-	      ret = (EVN)this.get_Renamed("EVN");
+	      ret = (EVN)this.getStructure("EVN");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -81,7 +81,7 @@ get{
 	public BAR_P02_PATIENT getPATIENT() {
 	   BAR_P02_PATIENT ret = null;
 	   try {
-	      ret = (BAR_P02_PATIENT)this.get_Renamed("PATIENT");
+	      ret = (BAR_P02_PATIENT)this.getStructure("PATIENT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -96,7 +96,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public BAR_P02_PATIENT getPATIENT(int rep) { 
-	   return (BAR_P02_PATIENT)this.get_Renamed("PATIENT", rep);
+	   return (BAR_P02_PATIENT)this.getStructure("PATIENT", rep);
 	}
 
 	/** 

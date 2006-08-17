@@ -38,7 +38,7 @@ public class ORR_O02_ORDER_DETAIL : AbstractGroup {
 get{
 	   OBR ret = null;
 	   try {
-	      ret = (OBR)this.get_Renamed("OBR");
+	      ret = (OBR)this.getStructure("OBR");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -54,7 +54,7 @@ get{
 get{
 	   ORO ret = null;
 	   try {
-	      ret = (ORO)this.get_Renamed("ORO");
+	      ret = (ORO)this.getStructure("ORO");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -70,7 +70,7 @@ get{
 get{
 	   RX1 ret = null;
 	   try {
-	      ret = (RX1)this.get_Renamed("RX1");
+	      ret = (RX1)this.getStructure("RX1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

@@ -36,7 +36,7 @@ public class ORU_R01_OBSERVATION : AbstractGroup {
 get{
 	   OBX ret = null;
 	   try {
-	      ret = (OBX)this.get_Renamed("OBX");
+	      ret = (OBX)this.getStructure("OBX");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -51,7 +51,7 @@ get{
 	public NTE getNTE() {
 	   NTE ret = null;
 	   try {
-	      ret = (NTE)this.get_Renamed("NTE");
+	      ret = (NTE)this.getStructure("NTE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -66,7 +66,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public NTE getNTE(int rep) { 
-	   return (NTE)this.get_Renamed("NTE", rep);
+	   return (NTE)this.getStructure("NTE", rep);
 	}
 
 	/** 

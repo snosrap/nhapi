@@ -36,7 +36,7 @@ public class MFR_M01_MF : AbstractGroup {
 get{
 	   MFE ret = null;
 	   try {
-	      ret = (MFE)this.get_Renamed("MFE");
+	      ret = (MFE)this.getStructure("MFE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -52,7 +52,7 @@ get{
 get{
 	   Zxx ret = null;
 	   try {
-	      ret = (Zxx)this.get_Renamed("Zxx");
+	      ret = (Zxx)this.getStructure("Zxx");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

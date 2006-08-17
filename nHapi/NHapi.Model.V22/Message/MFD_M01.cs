@@ -50,7 +50,7 @@ public class MFD_M01 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -66,7 +66,7 @@ get{
 get{
 	   MFI ret = null;
 	   try {
-	      ret = (MFI)this.get_Renamed("MFI");
+	      ret = (MFI)this.getStructure("MFI");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -81,7 +81,7 @@ get{
 	public MFA getMFA() {
 	   MFA ret = null;
 	   try {
-	      ret = (MFA)this.get_Renamed("MFA");
+	      ret = (MFA)this.getStructure("MFA");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -96,7 +96,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public MFA getMFA(int rep) { 
-	   return (MFA)this.get_Renamed("MFA", rep);
+	   return (MFA)this.getStructure("MFA", rep);
 	}
 
 	/** 

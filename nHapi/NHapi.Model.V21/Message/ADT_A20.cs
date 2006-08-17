@@ -50,7 +50,7 @@ public class ADT_A20 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -66,7 +66,7 @@ get{
 get{
 	   EVN ret = null;
 	   try {
-	      ret = (EVN)this.get_Renamed("EVN");
+	      ret = (EVN)this.getStructure("EVN");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -82,7 +82,7 @@ get{
 get{
 	   NPU ret = null;
 	   try {
-	      ret = (NPU)this.get_Renamed("NPU");
+	      ret = (NPU)this.getStructure("NPU");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

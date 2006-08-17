@@ -38,7 +38,7 @@ public class ADT_A07_INSURANCE : AbstractGroup {
 get{
 	   IN1 ret = null;
 	   try {
-	      ret = (IN1)this.get_Renamed("IN1");
+	      ret = (IN1)this.getStructure("IN1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -54,7 +54,7 @@ get{
 get{
 	   IN2 ret = null;
 	   try {
-	      ret = (IN2)this.get_Renamed("IN2");
+	      ret = (IN2)this.getStructure("IN2");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -70,7 +70,7 @@ get{
 get{
 	   IN3 ret = null;
 	   try {
-	      ret = (IN3)this.get_Renamed("IN3");
+	      ret = (IN3)this.getStructure("IN3");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

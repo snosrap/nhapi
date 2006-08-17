@@ -40,7 +40,7 @@ public class ORF_R04_ORDER : AbstractGroup {
 get{
 	   ORC ret = null;
 	   try {
-	      ret = (ORC)this.get_Renamed("ORC");
+	      ret = (ORC)this.getStructure("ORC");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -56,7 +56,7 @@ get{
 get{
 	   OBR ret = null;
 	   try {
-	      ret = (OBR)this.get_Renamed("OBR");
+	      ret = (OBR)this.getStructure("OBR");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -71,7 +71,7 @@ get{
 	public NTE getNTE() {
 	   NTE ret = null;
 	   try {
-	      ret = (NTE)this.get_Renamed("NTE");
+	      ret = (NTE)this.getStructure("NTE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -86,7 +86,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public NTE getNTE(int rep) { 
-	   return (NTE)this.get_Renamed("NTE", rep);
+	   return (NTE)this.getStructure("NTE", rep);
 	}
 
 	/** 
@@ -112,7 +112,7 @@ get{
 	public ORF_R04_OBSERVATION getOBSERVATION() {
 	   ORF_R04_OBSERVATION ret = null;
 	   try {
-	      ret = (ORF_R04_OBSERVATION)this.get_Renamed("OBSERVATION");
+	      ret = (ORF_R04_OBSERVATION)this.getStructure("OBSERVATION");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -127,7 +127,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public ORF_R04_OBSERVATION getOBSERVATION(int rep) { 
-	   return (ORF_R04_OBSERVATION)this.get_Renamed("OBSERVATION", rep);
+	   return (ORF_R04_OBSERVATION)this.getStructure("OBSERVATION", rep);
 	}
 
 	/** 

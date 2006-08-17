@@ -44,7 +44,7 @@ public class ORR_O02_ORDER_DETAIL : AbstractGroup {
 get{
 	   OBR ret = null;
 	   try {
-	      ret = (OBR)this.get_Renamed("OBR");
+	      ret = (OBR)this.getStructure("OBR");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -60,7 +60,7 @@ get{
 get{
 	   RQD ret = null;
 	   try {
-	      ret = (RQD)this.get_Renamed("RQD");
+	      ret = (RQD)this.getStructure("RQD");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -76,7 +76,7 @@ get{
 get{
 	   RQ1 ret = null;
 	   try {
-	      ret = (RQ1)this.get_Renamed("RQ1");
+	      ret = (RQ1)this.getStructure("RQ1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -92,7 +92,7 @@ get{
 get{
 	   RXO ret = null;
 	   try {
-	      ret = (RXO)this.get_Renamed("RXO");
+	      ret = (RXO)this.getStructure("RXO");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -108,7 +108,7 @@ get{
 get{
 	   ODS ret = null;
 	   try {
-	      ret = (ODS)this.get_Renamed("ODS");
+	      ret = (ODS)this.getStructure("ODS");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -124,7 +124,7 @@ get{
 get{
 	   ODT ret = null;
 	   try {
-	      ret = (ODT)this.get_Renamed("ODT");
+	      ret = (ODT)this.getStructure("ODT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

@@ -54,7 +54,7 @@ public class ARD_A19 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -70,7 +70,7 @@ get{
 get{
 	   MSA ret = null;
 	   try {
-	      ret = (MSA)this.get_Renamed("MSA");
+	      ret = (MSA)this.getStructure("MSA");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -86,7 +86,7 @@ get{
 get{
 	   QRD ret = null;
 	   try {
-	      ret = (QRD)this.get_Renamed("QRD");
+	      ret = (QRD)this.getStructure("QRD");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -101,7 +101,7 @@ get{
 	public ARD_A19_QUERY_RESPONSE getQUERY_RESPONSE() {
 	   ARD_A19_QUERY_RESPONSE ret = null;
 	   try {
-	      ret = (ARD_A19_QUERY_RESPONSE)this.get_Renamed("QUERY_RESPONSE");
+	      ret = (ARD_A19_QUERY_RESPONSE)this.getStructure("QUERY_RESPONSE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -116,7 +116,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public ARD_A19_QUERY_RESPONSE getQUERY_RESPONSE(int rep) { 
-	   return (ARD_A19_QUERY_RESPONSE)this.get_Renamed("QUERY_RESPONSE", rep);
+	   return (ARD_A19_QUERY_RESPONSE)this.getStructure("QUERY_RESPONSE", rep);
 	}
 
 	/** 
@@ -143,7 +143,7 @@ get{
 get{
 	   DSC ret = null;
 	   try {
-	      ret = (DSC)this.get_Renamed("DSC");
+	      ret = (DSC)this.getStructure("DSC");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

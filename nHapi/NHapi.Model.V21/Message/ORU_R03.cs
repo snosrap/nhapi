@@ -50,7 +50,7 @@ public class ORU_R03 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -65,7 +65,7 @@ get{
 	public ORU_R03_PATIENT_RESULT getPATIENT_RESULT() {
 	   ORU_R03_PATIENT_RESULT ret = null;
 	   try {
-	      ret = (ORU_R03_PATIENT_RESULT)this.get_Renamed("PATIENT_RESULT");
+	      ret = (ORU_R03_PATIENT_RESULT)this.getStructure("PATIENT_RESULT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -80,7 +80,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public ORU_R03_PATIENT_RESULT getPATIENT_RESULT(int rep) { 
-	   return (ORU_R03_PATIENT_RESULT)this.get_Renamed("PATIENT_RESULT", rep);
+	   return (ORU_R03_PATIENT_RESULT)this.getStructure("PATIENT_RESULT", rep);
 	}
 
 	/** 
@@ -107,7 +107,7 @@ get{
 get{
 	   DSC ret = null;
 	   try {
-	      ret = (DSC)this.get_Renamed("DSC");
+	      ret = (DSC)this.getStructure("DSC");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

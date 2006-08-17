@@ -52,7 +52,7 @@ public class ORR_O02 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -68,7 +68,7 @@ get{
 get{
 	   MSA ret = null;
 	   try {
-	      ret = (MSA)this.get_Renamed("MSA");
+	      ret = (MSA)this.getStructure("MSA");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -83,7 +83,7 @@ get{
 	public NTE getNTE() {
 	   NTE ret = null;
 	   try {
-	      ret = (NTE)this.get_Renamed("NTE");
+	      ret = (NTE)this.getStructure("NTE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -98,7 +98,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public NTE getNTE(int rep) { 
-	   return (NTE)this.get_Renamed("NTE", rep);
+	   return (NTE)this.getStructure("NTE", rep);
 	}
 
 	/** 
@@ -125,7 +125,7 @@ get{
 get{
 	   ORR_O02_PATIENT ret = null;
 	   try {
-	      ret = (ORR_O02_PATIENT)this.get_Renamed("PATIENT");
+	      ret = (ORR_O02_PATIENT)this.getStructure("PATIENT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

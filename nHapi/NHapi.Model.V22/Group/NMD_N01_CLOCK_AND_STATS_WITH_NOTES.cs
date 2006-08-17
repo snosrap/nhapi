@@ -38,7 +38,7 @@ public class NMD_N01_CLOCK_AND_STATS_WITH_NOTES : AbstractGroup {
 get{
 	   NMD_N01_CLOCK ret = null;
 	   try {
-	      ret = (NMD_N01_CLOCK)this.get_Renamed("CLOCK");
+	      ret = (NMD_N01_CLOCK)this.getStructure("CLOCK");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -54,7 +54,7 @@ get{
 get{
 	   NMD_N01_APP_STATS ret = null;
 	   try {
-	      ret = (NMD_N01_APP_STATS)this.get_Renamed("APP_STATS");
+	      ret = (NMD_N01_APP_STATS)this.getStructure("APP_STATS");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -70,7 +70,7 @@ get{
 get{
 	   NMD_N01_APP_STATUS ret = null;
 	   try {
-	      ret = (NMD_N01_APP_STATUS)this.get_Renamed("APP_STATUS");
+	      ret = (NMD_N01_APP_STATUS)this.getStructure("APP_STATUS");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

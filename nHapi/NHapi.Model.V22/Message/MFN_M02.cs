@@ -50,7 +50,7 @@ public class MFN_M02 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -66,7 +66,7 @@ get{
 get{
 	   MFI ret = null;
 	   try {
-	      ret = (MFI)this.get_Renamed("MFI");
+	      ret = (MFI)this.getStructure("MFI");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -81,7 +81,7 @@ get{
 	public MFN_M02_MF_STAFF getMF_STAFF() {
 	   MFN_M02_MF_STAFF ret = null;
 	   try {
-	      ret = (MFN_M02_MF_STAFF)this.get_Renamed("MF_STAFF");
+	      ret = (MFN_M02_MF_STAFF)this.getStructure("MF_STAFF");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -96,7 +96,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public MFN_M02_MF_STAFF getMF_STAFF(int rep) { 
-	   return (MFN_M02_MF_STAFF)this.get_Renamed("MF_STAFF", rep);
+	   return (MFN_M02_MF_STAFF)this.getStructure("MF_STAFF", rep);
 	}
 
 	/** 

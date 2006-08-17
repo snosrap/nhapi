@@ -50,7 +50,7 @@ public class QRY_A19 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -66,7 +66,7 @@ get{
 get{
 	   QRD ret = null;
 	   try {
-	      ret = (QRD)this.get_Renamed("QRD");
+	      ret = (QRD)this.getStructure("QRD");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -82,7 +82,7 @@ get{
 get{
 	   QRF ret = null;
 	   try {
-	      ret = (QRF)this.get_Renamed("QRF");
+	      ret = (QRF)this.getStructure("QRF");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

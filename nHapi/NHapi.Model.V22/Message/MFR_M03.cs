@@ -60,7 +60,7 @@ public class MFR_M03 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -76,7 +76,7 @@ get{
 get{
 	   MSA ret = null;
 	   try {
-	      ret = (MSA)this.get_Renamed("MSA");
+	      ret = (MSA)this.getStructure("MSA");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -92,7 +92,7 @@ get{
 get{
 	   ERR ret = null;
 	   try {
-	      ret = (ERR)this.get_Renamed("ERR");
+	      ret = (ERR)this.getStructure("ERR");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -108,7 +108,7 @@ get{
 get{
 	   QRD ret = null;
 	   try {
-	      ret = (QRD)this.get_Renamed("QRD");
+	      ret = (QRD)this.getStructure("QRD");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -124,7 +124,7 @@ get{
 get{
 	   QRF ret = null;
 	   try {
-	      ret = (QRF)this.get_Renamed("QRF");
+	      ret = (QRF)this.getStructure("QRF");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -140,7 +140,7 @@ get{
 get{
 	   MFI ret = null;
 	   try {
-	      ret = (MFI)this.get_Renamed("MFI");
+	      ret = (MFI)this.getStructure("MFI");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -155,7 +155,7 @@ get{
 	public MFR_M03_MF_TEST getMF_TEST() {
 	   MFR_M03_MF_TEST ret = null;
 	   try {
-	      ret = (MFR_M03_MF_TEST)this.get_Renamed("MF_TEST");
+	      ret = (MFR_M03_MF_TEST)this.getStructure("MF_TEST");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -170,7 +170,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public MFR_M03_MF_TEST getMF_TEST(int rep) { 
-	   return (MFR_M03_MF_TEST)this.get_Renamed("MF_TEST", rep);
+	   return (MFR_M03_MF_TEST)this.getStructure("MF_TEST", rep);
 	}
 
 	/** 
@@ -197,7 +197,7 @@ get{
 get{
 	   DSC ret = null;
 	   try {
-	      ret = (DSC)this.get_Renamed("DSC");
+	      ret = (DSC)this.getStructure("DSC");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

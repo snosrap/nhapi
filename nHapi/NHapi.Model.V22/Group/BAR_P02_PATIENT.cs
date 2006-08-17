@@ -36,7 +36,7 @@ public class BAR_P02_PATIENT : AbstractGroup {
 get{
 	   PID ret = null;
 	   try {
-	      ret = (PID)this.get_Renamed("PID");
+	      ret = (PID)this.getStructure("PID");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -52,7 +52,7 @@ get{
 get{
 	   PV1 ret = null;
 	   try {
-	      ret = (PV1)this.get_Renamed("PV1");
+	      ret = (PV1)this.getStructure("PV1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

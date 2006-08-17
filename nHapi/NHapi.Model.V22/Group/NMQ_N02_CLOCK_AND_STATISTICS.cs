@@ -38,7 +38,7 @@ public class NMQ_N02_CLOCK_AND_STATISTICS : AbstractGroup {
 get{
 	   NCK ret = null;
 	   try {
-	      ret = (NCK)this.get_Renamed("NCK");
+	      ret = (NCK)this.getStructure("NCK");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -54,7 +54,7 @@ get{
 get{
 	   NST ret = null;
 	   try {
-	      ret = (NST)this.get_Renamed("NST");
+	      ret = (NST)this.getStructure("NST");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -70,7 +70,7 @@ get{
 get{
 	   NSC ret = null;
 	   try {
-	      ret = (NSC)this.get_Renamed("NSC");
+	      ret = (NSC)this.getStructure("NSC");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

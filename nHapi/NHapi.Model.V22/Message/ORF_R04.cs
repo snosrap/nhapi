@@ -54,7 +54,7 @@ public class ORF_R04 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -70,7 +70,7 @@ get{
 get{
 	   MSA ret = null;
 	   try {
-	      ret = (MSA)this.get_Renamed("MSA");
+	      ret = (MSA)this.getStructure("MSA");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -85,7 +85,7 @@ get{
 	public ORF_R04_QUERY_RESPONSE getQUERY_RESPONSE() {
 	   ORF_R04_QUERY_RESPONSE ret = null;
 	   try {
-	      ret = (ORF_R04_QUERY_RESPONSE)this.get_Renamed("QUERY_RESPONSE");
+	      ret = (ORF_R04_QUERY_RESPONSE)this.getStructure("QUERY_RESPONSE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -100,7 +100,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public ORF_R04_QUERY_RESPONSE getQUERY_RESPONSE(int rep) { 
-	   return (ORF_R04_QUERY_RESPONSE)this.get_Renamed("QUERY_RESPONSE", rep);
+	   return (ORF_R04_QUERY_RESPONSE)this.getStructure("QUERY_RESPONSE", rep);
 	}
 
 	/** 
@@ -126,7 +126,7 @@ get{
 	public ORF_R04_ORDER getORDER() {
 	   ORF_R04_ORDER ret = null;
 	   try {
-	      ret = (ORF_R04_ORDER)this.get_Renamed("ORDER");
+	      ret = (ORF_R04_ORDER)this.getStructure("ORDER");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -141,7 +141,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public ORF_R04_ORDER getORDER(int rep) { 
-	   return (ORF_R04_ORDER)this.get_Renamed("ORDER", rep);
+	   return (ORF_R04_ORDER)this.getStructure("ORDER", rep);
 	}
 
 	/** 
@@ -168,7 +168,7 @@ get{
 get{
 	   DSC ret = null;
 	   try {
-	      ret = (DSC)this.get_Renamed("DSC");
+	      ret = (DSC)this.getStructure("DSC");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

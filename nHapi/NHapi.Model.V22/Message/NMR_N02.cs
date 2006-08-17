@@ -54,7 +54,7 @@ public class NMR_N02 : AbstractMessage  {
 get{
 	   MSH ret = null;
 	   try {
-	      ret = (MSH)this.get_Renamed("MSH");
+	      ret = (MSH)this.getStructure("MSH");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -70,7 +70,7 @@ get{
 get{
 	   MSA ret = null;
 	   try {
-	      ret = (MSA)this.get_Renamed("MSA");
+	      ret = (MSA)this.getStructure("MSA");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -86,7 +86,7 @@ get{
 get{
 	   ERR ret = null;
 	   try {
-	      ret = (ERR)this.get_Renamed("ERR");
+	      ret = (ERR)this.getStructure("ERR");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -102,7 +102,7 @@ get{
 get{
 	   QRD ret = null;
 	   try {
-	      ret = (QRD)this.get_Renamed("QRD");
+	      ret = (QRD)this.getStructure("QRD");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -117,7 +117,7 @@ get{
 	public NMR_N02_CLOCK_AND_STATS_WITH_NOTES_ALT getCLOCK_AND_STATS_WITH_NOTES_ALT() {
 	   NMR_N02_CLOCK_AND_STATS_WITH_NOTES_ALT ret = null;
 	   try {
-	      ret = (NMR_N02_CLOCK_AND_STATS_WITH_NOTES_ALT)this.get_Renamed("CLOCK_AND_STATS_WITH_NOTES_ALT");
+	      ret = (NMR_N02_CLOCK_AND_STATS_WITH_NOTES_ALT)this.getStructure("CLOCK_AND_STATS_WITH_NOTES_ALT");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -132,7 +132,7 @@ get{
 	 *     greater than the number of existing repetitions.
 	 */
 	public NMR_N02_CLOCK_AND_STATS_WITH_NOTES_ALT getCLOCK_AND_STATS_WITH_NOTES_ALT(int rep) { 
-	   return (NMR_N02_CLOCK_AND_STATS_WITH_NOTES_ALT)this.get_Renamed("CLOCK_AND_STATS_WITH_NOTES_ALT", rep);
+	   return (NMR_N02_CLOCK_AND_STATS_WITH_NOTES_ALT)this.getStructure("CLOCK_AND_STATS_WITH_NOTES_ALT", rep);
 	}
 
 	/** 
