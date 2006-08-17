@@ -30,7 +30,7 @@ namespace NHapi.Base.sourcegen
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public class SegmentDef : StructureDef
+	public class SegmentDef : IStructureDef
 	{
 		/// <returns> name of segment 
 		/// </returns>

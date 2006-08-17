@@ -19,11 +19,10 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-//UPGRADE_TODO: The type 'java.util.regex.Matcher' could not be found. If it was not included in the conversion, there may be compiler issues. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1262'"
-using Matcher = System.Text.RegularExpressions.Regex;
-//UPGRADE_TODO: The type 'java.util.regex.Pattern' could not be found. If it was not included in the conversion, there may be compiler issues. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1262'"
-using Pattern = System.Text.RegularExpressions.Regex;
-using PrimitiveTypeRule = NHapi.Base.validation.PrimitiveTypeRule;
+using System.Text.RegularExpressions;
+using NHapi.Base.validation;
+using NHapi.Base.validation.impl;
+
 namespace NHapi.Base.validation.impl
 {
 	
@@ -35,7 +34,7 @@ namespace NHapi.Base.validation.impl
 	/// </author>
 	/// <version>  $Revision: 1.3 $ updated on $Date: 2005/06/14 20:15:12 $ by $Author: bryan_tripp $
 	/// </version>
-	public class RegexPrimitiveRule : PrimitiveTypeRule
+	public class RegexPrimitiveRule : IPrimitiveTypeRule
 	{
 		/// <seealso cref="NHapi.Base.validation.Rule.getDescription()">
 		/// </seealso>
@@ -60,7 +59,7 @@ namespace NHapi.Base.validation.impl
 		}
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'myPattern '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		private Pattern myPattern;
+		private System.Text.RegularExpressions.Regex myPattern;
 		//UPGRADE_NOTE: Final was removed from the declaration of 'mySectionReference '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		private System.String mySectionReference;
 		
@@ -71,7 +70,7 @@ namespace NHapi.Base.validation.impl
 		/// </param>
 		public RegexPrimitiveRule(System.String theRegex, System.String theSectionReference)
 		{
-			myPattern = new Pattern(theRegex);
+			myPattern = new Regex(theRegex);
 			mySectionReference = theSectionReference;
 		}
 		

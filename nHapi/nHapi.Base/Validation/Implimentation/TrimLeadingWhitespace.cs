@@ -19,7 +19,7 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using PrimitiveTypeRule = NHapi.Base.validation.PrimitiveTypeRule;
+using NHapi.Base.validation;
 namespace NHapi.Base.validation.impl
 {
 	
@@ -30,7 +30,7 @@ namespace NHapi.Base.validation.impl
 	/// </author>
 	/// <version>  $Revision: 1.2 $ updated on $Date: 2005/06/14 20:16:01 $ by $Author: bryan_tripp $
 	/// </version>
-	public class TrimLeadingWhitespace : PrimitiveTypeRule
+	public class TrimLeadingWhitespace : IPrimitiveTypeRule
 	{
 		/// <seealso cref="NHapi.Base.validation.Rule.getDescription()">
 		/// </seealso>

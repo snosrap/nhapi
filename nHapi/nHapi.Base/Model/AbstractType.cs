@@ -27,55 +27,79 @@
 using System;
 namespace NHapi.Base.model
 {
-	
-	/// <summary> An abstract Type that provides a default implementation of getName(). 
-	/// 
-	/// </summary>
-	/// <author>  Bryan Tripp
-	/// </author>
-	public class AbstractType : Type
-	{
-		/// <summary>Returns the name of the type (used in XML encoding and profile checking)  </summary>
-		virtual public System.String Name
-		{
-			get
-			{
-				System.String longClassName = this.GetType().FullName;
-				return longClassName.Substring(longClassName.LastIndexOf('.') + 1);
-			}
-			
-		}
-		/// <seealso cref="Type.getExtraComponents">
-		/// </seealso>
-		virtual public ExtraComponents ExtraComponents
-		{
-			get
-			{
-				return this.extra;
-			}
-			
-		}
-		/// <returns> the message to which this Type belongs
-		/// </returns>
-		virtual public Message Message
-		{
-			get
-			{
-				return message;
-			}
-			
-		}
-		
-		private ExtraComponents extra;
-		private Message message;
-		
-		/// <summary> Creates a new instance of AbstractType</summary>
-		/// <param name="message">message to which this type belongs 
-		/// </param>
-		public AbstractType(Message message)
-		{
-			extra = new ExtraComponents(message);
-			this.message = message;
-		}
-	}
+
+    /// <summary> An abstract Type that provides a default implementation of getName(). 
+    /// 
+    /// </summary>
+    /// <author>  Bryan Tripp
+    /// </author>
+    public class AbstractType : IType
+    {
+        private ExtraComponents extra;
+        private IMessage message;
+        private string description;
+
+
+        /// <summary>
+        /// Returns the name of the type (used in XML encoding and profile checking)  
+        /// </summary>
+        virtual public System.String Name
+        {
+            get
+            {
+                System.String longClassName = this.GetType().FullName;
+                return longClassName.Substring(longClassName.LastIndexOf('.') + 1);
+            }
+
+        }
+        /// <seealso cref="Type.getExtraComponents">
+        /// </seealso>
+        virtual public ExtraComponents ExtraComponents
+        {
+            get
+            {
+                return this.extra;
+            }
+
+        }
+        /// <returns> the message to which this Type belongs
+        /// </returns>
+        virtual public IMessage Message
+        {
+            get
+            {
+                return message;
+            }
+
+        }
+
+        /// <summary>
+        /// Return the description of the type
+        /// </summary>
+        virtual public string Description
+        {
+            get
+            {
+                return description;
+            }
+        }
+
+
+        /// <summary> Creates a new instance of AbstractType</summary>
+        /// <param name="message">message to which this type belongs 
+        /// </param>
+        public AbstractType(IMessage message) : this(message,null)
+        {
+        }
+
+        /// <summary> Creates a new instance of AbstractType</summary>
+        /// <param name="message">message to which this type belongs 
+        /// </param>
+        public AbstractType(IMessage message, string description)
+        {
+            extra = new ExtraComponents(message);
+            this.description = description;
+            this.message = message;
+        }
+    }
 }

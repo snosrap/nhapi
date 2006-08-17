@@ -24,10 +24,10 @@ namespace NHapi.Base.model
 	{
 		
 		private System.Collections.ArrayList comps;
-		private Message message;
+		private IMessage message;
 		
 		/// <summary>Creates a new instance of ExtraComponents </summary>
-		public ExtraComponents(Message message)
+		public ExtraComponents(IMessage message)
 		{
 			this.comps = new System.Collections.ArrayList();
 			this.message = message;

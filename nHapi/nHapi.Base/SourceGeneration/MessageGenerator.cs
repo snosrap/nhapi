@@ -24,12 +24,11 @@
 /// 
 /// </summary>
 using System;
-using HL7Exception = NHapi.Base.HL7Exception;
-using NormativeDatabase = NHapi.Base.NormativeDatabase;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+using NHapi.Base;
+using NHapi.Base.Log;
 using System.Data.OleDb;
 using System.Data;
+
 namespace NHapi.Base.sourcegen
 {
 	
@@ -52,7 +51,7 @@ namespace NHapi.Base.sourcegen
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.sourcegen.MessageGenerator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+		private static readonly IHapiLog log;
 		
 		/// <summary>Creates new MessageGenerator </summary>
 		public MessageGenerator()
@@ -121,7 +120,7 @@ namespace NHapi.Base.sourcegen
 				//System.out.println("Making: " + message + " with " + segments.length + " segments (not writing message code - just groups)");
 				
 				GroupDef group = GroupGenerator.getGroupDef(segments, null, baseDirectory, version, message);
-				StructureDef[] contents = group.Structures;
+				IStructureDef[] contents = group.Structures;
 				
 				//make base directory
 				if (!(baseDirectory.EndsWith("\\") || baseDirectory.EndsWith("/")))
@@ -227,7 +226,7 @@ namespace NHapi.Base.sourcegen
 		/// <summary> Returns header material for the source code of a Message class (including
 		/// package, imports, JavaDoc, and class declaration).
 		/// </summary>
-		public static System.String makePreamble(StructureDef[] contents, System.String message, System.String chapter, System.String version)
+		public static System.String makePreamble(IStructureDef[] contents, System.String message, System.String chapter, System.String version)
 		{
 			System.Text.StringBuilder preamble = new System.Text.StringBuilder();
 			preamble.Append("using System;\r\n");
@@ -272,7 +271,7 @@ namespace NHapi.Base.sourcegen
 		}
 		
 		/// <summary> Returns source code for the contructor for this Message class.</summary>
-		public static System.String makeConstructor(StructureDef[] structs, System.String messageName, System.String version)
+		public static System.String makeConstructor(IStructureDef[] structs, System.String messageName, System.String version)
 		{
 			//UPGRADE_ISSUE: Method 'java.lang.System.getProperty' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangSystem'"
             bool useFactory = NHapi.Base.Properties.Settings.Default.useFactory;
@@ -304,7 +303,7 @@ namespace NHapi.Base.sourcegen
 			int numStructs = structs.Length;
 			for (int i = 0; i < numStructs; i++)
 			{
-				StructureDef def = structs[i];
+				IStructureDef def = structs[i];
 				if (useFactory)
 				{
 					source.Append("\t      this.add(factory.get");

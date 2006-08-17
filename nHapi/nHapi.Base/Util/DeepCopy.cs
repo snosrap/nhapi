@@ -1,7 +1,7 @@
 using System;
-using DataTypeException = NHapi.Base.model.DataTypeException;
-using HL7Exception = NHapi.Base.HL7Exception;
 using NHapi.Base.model;
+using NHapi.Base;
+
 namespace NHapi.Base.util
 {
 	
@@ -22,7 +22,7 @@ namespace NHapi.Base.util
 		/// numbers of components, the first components are copied, up to the length 
 		/// of the smaller one.  
 		/// </summary>
-		public static void  copy(model.Type from, model.Type to)
+		public static void  copy(IType from, IType to)
 		{
 			for (int i = 1; i <= Terser.numComponents(from); i++)
 			{
@@ -92,12 +92,12 @@ namespace NHapi.Base.util
 		/// </param>
 		/// <param name="to">the segment into which data are copied
 		/// </param>
-		public static void  copy(Segment from, Segment to)
+		public static void  copy(ISegment from, ISegment to)
 		{
 			int n = from.numFields();
 			for (int i = 1; i <= n; i++)
 			{
-				model.Type[] reps = from.getField(i);
+				IType[] reps = from.getField(i);
 				for (int j = 0; j < reps.Length; j++)
 				{
 					copy(reps[j], to.getField(i, j));

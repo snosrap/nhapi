@@ -47,7 +47,7 @@ namespace NHapi.Base.util
 	public class MessageNavigator
 	{
 		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'AnonymousClassPredicate' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
-		private class AnonymousClassPredicate : FilterIterator.Predicate
+		private class AnonymousClassPredicate : FilterIterator.IPredicate
 		{
 			public AnonymousClassPredicate(MessageNavigator enclosingInstance)
 			{
@@ -68,7 +68,7 @@ namespace NHapi.Base.util
 			}
 			public virtual bool evaluate(System.Object obj)
 			{
-				if (typeof(Segment).IsAssignableFrom(obj.GetType()))
+				if (typeof(ISegment).IsAssignableFrom(obj.GetType()))
 				{
 					return true;
 				}
@@ -78,7 +78,7 @@ namespace NHapi.Base.util
 				}
 			}
 		}
-		virtual public Group Root
+		virtual public IGroup Root
 		{
 			get
 			{
@@ -89,7 +89,7 @@ namespace NHapi.Base.util
 		/// <summary> Returns the group within which the pointer is currently located. 
 		/// If at the root, the root is returned.  
 		/// </summary>
-		virtual public Group CurrentGroup
+		virtual public IGroup CurrentGroup
 		{
 			get
 			{
@@ -100,7 +100,7 @@ namespace NHapi.Base.util
 		/// <summary> Returns the array of structures at the current location.  
 		/// Throws an exception if pointer is at root.  
 		/// </summary>
-		virtual public Structure[] CurrentChildReps
+		virtual public IStructure[] CurrentChildReps
 		{
 			get
 			{
@@ -113,10 +113,10 @@ namespace NHapi.Base.util
 			
 		}
 		
-		private Group root;
+		private IGroup root;
 		private System.Collections.ArrayList ancestors;
 		private int currentChild; // -1 means current structure is current group (special case used for root)
-		private Group currentGroup;
+		private IGroup currentGroup;
 		private System.String[] childNames;
 		
 		/// <summary> Creates a new instance of MessageNavigator</summary>
@@ -124,7 +124,7 @@ namespace NHapi.Base.util
 		/// within a message.  Navigation will only occur within the subtree
 		/// of which the given group is the root.
 		/// </param>
-		public MessageNavigator(Group root)
+		public MessageNavigator(IGroup root)
 		{
 			this.root = root;
 			reset();
@@ -141,12 +141,12 @@ namespace NHapi.Base.util
 		{
 			if (childNumber != - 1)
 			{
-				Structure s = currentGroup.get_Renamed(childNames[childNumber], rep);
-				if (!(s is Group))
+				IStructure s = currentGroup.get_Renamed(childNames[childNumber], rep);
+				if (!(s is IGroup))
 				{
 					throw new HL7Exception("Can't drill into segment", HL7Exception.APPLICATION_INTERNAL_ERROR);
 				}
-				Group group = (Group) s;
+				IGroup group = (IGroup) s;
 				
 				//stack the current group and location
 				GroupContext gc = new GroupContext(this, this.currentGroup, this.currentChild);
@@ -240,9 +240,9 @@ namespace NHapi.Base.util
 		/// <summary> Returns the given rep of the structure at the current location.  
 		/// If at root, always returns the root (the rep is ignored).  
 		/// </summary>
-		public virtual Structure getCurrentStructure(int rep)
+		public virtual IStructure getCurrentStructure(int rep)
 		{
-			Structure ret = null;
+			IStructure ret = null;
 			if (this.currentChild != - 1)
 			{
 				System.String childName = this.childNames[this.currentChild];
@@ -268,7 +268,7 @@ namespace NHapi.Base.util
 		/// </param>
 		public virtual void  iterate(bool segmentsOnly, bool loop)
 		{
-			Structure start = null;
+			IStructure start = null;
 			
 			if (this.currentChild == - 1)
 			{
@@ -284,7 +284,7 @@ namespace NHapi.Base.util
 			System.Collections.IEnumerator it = new MessageIterator(start, "doesn't exist", false);
 			if (segmentsOnly)
 			{
-				FilterIterator.Predicate predicate = new AnonymousClassPredicate(this);
+				FilterIterator.IPredicate predicate = new AnonymousClassPredicate(this);
 				it = new FilterIterator(it, predicate);
 			}
 			
@@ -292,7 +292,7 @@ namespace NHapi.Base.util
 			if (it.MoveNext())
 			{
 				//UPGRADE_TODO: Method 'java.util.Iterator.next' was converted to 'System.Collections.IEnumerator.Current' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratornext'"
-				Structure next = (Structure) it.Current;
+				IStructure next = (IStructure) it.Current;
 				drillHere(next);
 			}
 			else if (loop)
@@ -306,9 +306,9 @@ namespace NHapi.Base.util
 		}
 		
 		/// <summary> Navigates to a specific location in the message</summary>
-		private void  drillHere(Structure destination)
+		private void  drillHere(IStructure destination)
 		{
-			Structure pathElem = destination;
+			IStructure pathElem = destination;
 			System.Collections.ArrayList pathStack = new System.Collections.ArrayList();
 			System.Collections.ArrayList indexStack = new System.Collections.ArrayList();
 			do 
@@ -318,7 +318,7 @@ namespace NHapi.Base.util
 				pathElem = pathElem.Parent;
 				pathStack.Add(pathElem);
 			}
-			while (!root.Equals(pathElem) && !typeof(Message).IsAssignableFrom(pathElem.GetType()));
+			while (!root.Equals(pathElem) && !typeof(IMessage).IsAssignableFrom(pathElem.GetType()));
 			
 			if (!root.Equals(pathElem))
 			{
@@ -328,7 +328,7 @@ namespace NHapi.Base.util
 			this.reset();
 			while (!(pathStack.Count == 0))
 			{
-				Group parent = (Group) SupportClass.StackSupport.Pop(pathStack);
+				IGroup parent = (IGroup) SupportClass.StackSupport.Pop(pathStack);
 				MessageIterator.Index index = (MessageIterator.Index) SupportClass.StackSupport.Pop(indexStack);
 				int child = search(parent.Names, index.name);
 				if (!(pathStack.Count == 0))
@@ -363,7 +363,7 @@ namespace NHapi.Base.util
 				this.currentChild = 0;
 			
 			System.Type c = this.currentGroup.getClass(this.childNames[this.currentChild]);
-			if (typeof(Group).IsAssignableFrom(c))
+			if (typeof(IGroup).IsAssignableFrom(c))
 			{
 				drillDown(this.currentChild, 0);
 				findLeaf();
@@ -390,10 +390,10 @@ namespace NHapi.Base.util
 				}
 				
 			}
-			public Group group;
+			public IGroup group;
 			public int child;
 			
-			public GroupContext(MessageNavigator enclosingInstance, Group g, int c)
+			public GroupContext(MessageNavigator enclosingInstance, IGroup g, int c)
 			{
 				InitBlock(enclosingInstance);
 				group = g;

@@ -30,7 +30,7 @@ namespace NHapi.Base.sourcegen
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public class GroupDef : StructureDef
+	public class GroupDef : IStructureDef
 	{
 		/// <summary> Returns the Java class name of this Group.  This is derived from the 
 		/// message structure and the group elements.  This should only be called 
@@ -75,14 +75,14 @@ namespace NHapi.Base.sourcegen
 			
 		}
 		/// <summary> Returns the structures in this group. </summary>
-		virtual public StructureDef[] Structures
+		virtual public IStructureDef[] Structures
 		{
 			get
 			{
-				StructureDef[] ret = new StructureDef[elements.Count];
+				IStructureDef[] ret = new IStructureDef[elements.Count];
 				for (int i = 0; i < ret.Length; i++)
 				{
-					ret[i] = (StructureDef) elements[i];
+					ret[i] = (IStructureDef) elements[i];
 				}
 				return ret;
 			}
@@ -128,7 +128,7 @@ namespace NHapi.Base.sourcegen
 				System.Collections.ArrayList deepChildList = new System.Collections.ArrayList();
 				for (int i = 0; i < elements.Count; i++)
 				{
-					StructureDef childStruct = (StructureDef) elements[i];
+					IStructureDef childStruct = (IStructureDef) elements[i];
 					System.String[] childStructChildren = childStruct.ChildSegments;
 					for (int j = 0; j < childStructChildren.Length; j++)
 					{
@@ -169,7 +169,7 @@ namespace NHapi.Base.sourcegen
 		}
 		
 		/// <summary> Adds an element (segment or group) to this group.  </summary>
-		public virtual void  addStructure(StructureDef s)
+		public virtual void  addStructure(IStructureDef s)
 		{
 			elements.Add(s);
 		}

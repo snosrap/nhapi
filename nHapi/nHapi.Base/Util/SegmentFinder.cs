@@ -25,8 +25,9 @@
 /// </summary>
 using System;
 using NHapi.Base.model;
-using HL7Exception = NHapi.Base.HL7Exception;
-using Pattern = System.Text.RegularExpressions;
+using NHapi.Base;
+using System.Text.RegularExpressions;
+
 namespace NHapi.Base.util
 {
 	
@@ -39,7 +40,7 @@ namespace NHapi.Base.util
 		/// <summary> Creates a new instance of SegmentFinder.</summary>
 		/// <param name="root">the scope of searches -- may be a whole message or only a branch
 		/// </param>
-		public SegmentFinder(Group root):base(root)
+		public SegmentFinder(IGroup root):base(root)
 		{
 		}
 		
@@ -53,33 +54,33 @@ namespace NHapi.Base.util
 		/// </param>
 		/// <param name="rep">the repetition of the segment to return
 		/// </param>
-		public virtual Segment findSegment(System.String namePattern, int rep)
+		public virtual ISegment findSegment(System.String namePattern, int rep)
 		{
-			Structure s = null;
+			IStructure s = null;
 			do 
 			{
 				s = findStructure(namePattern, rep);
 			}
-			while (!typeof(Segment).IsAssignableFrom(s.GetType()));
-			return (Segment) s;
+			while (!typeof(ISegment).IsAssignableFrom(s.GetType()));
+			return (ISegment) s;
 		}
 		
 		/// <summary> As findSegment(), but will only return a group.</summary>
-		public virtual Group findGroup(System.String namePattern, int rep)
+		public virtual IGroup findGroup(System.String namePattern, int rep)
 		{
-			Structure s = null;
+			IStructure s = null;
 			do 
 			{
 				s = findStructure(namePattern, rep);
 			}
-			while (!typeof(Group).IsAssignableFrom(s.GetType()));
-			return (Group) s;
+			while (!typeof(IGroup).IsAssignableFrom(s.GetType()));
+			return (IGroup) s;
 		}
 		
 		/// <summary> Returns the first matching structure AFTER the current position</summary>
-		private Structure findStructure(System.String namePattern, int rep)
+		private IStructure findStructure(System.String namePattern, int rep)
 		{
-			Structure s = null;
+			IStructure s = null;
 			
 			while (s == null)
 			{
@@ -105,30 +106,30 @@ namespace NHapi.Base.util
 		/// </param>
 		/// <param name="rep">the repetition of the segment to return
 		/// </param>
-		public virtual Segment getSegment(System.String namePattern, int rep)
+		public virtual ISegment getSegment(System.String namePattern, int rep)
 		{
-			Structure s = getStructure(namePattern, rep);
-			if (!typeof(Segment).IsAssignableFrom(s.GetType()))
+			IStructure s = getStructure(namePattern, rep);
+			if (!typeof(ISegment).IsAssignableFrom(s.GetType()))
 			{
 				throw new HL7Exception(s.getName() + " is not a segment", HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
-			return (Segment) s;
+			return (ISegment) s;
 		}
 		
 		/// <summary> As getSegment() but will only return a group.</summary>
-		public virtual Group getGroup(System.String namePattern, int rep)
+		public virtual IGroup getGroup(System.String namePattern, int rep)
 		{
-			Structure s = getStructure(namePattern, rep);
-			if (!typeof(Group).IsAssignableFrom(s.GetType()))
+			IStructure s = getStructure(namePattern, rep);
+			if (!typeof(IGroup).IsAssignableFrom(s.GetType()))
 			{
 				throw new HL7Exception(s.getName() + " is not a group", HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
-			return (Group) s;
+			return (IGroup) s;
 		}
 		
-		private Structure getStructure(System.String namePattern, int rep)
+		private IStructure getStructure(System.String namePattern, int rep)
 		{
-			Structure s = null;
+			IStructure s = null;
 			
 			if (getCurrentStructure(0).Equals(this.Root))
 				drillDown(0);
@@ -174,14 +175,14 @@ namespace NHapi.Base.util
 			{
 				return true;
 			}
-			
-			if (!Pattern.Regex.IsMatch(pattern, "[\\w\\*\\?]*"))
+           
+            if (!Regex.IsMatch(pattern, "[\\w\\*\\?]*"))
 				throw new System.ArgumentException("The pattern " + pattern + " is not valid.  Only [\\w\\*\\?]* allowed.");
 
-            pattern = Pattern.Regex.Replace(pattern, "\\*", ".*");
-            pattern = Pattern.Regex.Replace(pattern, "\\?", ".");
+            pattern = Regex.Replace(pattern, "\\*", ".*");
+            pattern = Regex.Replace(pattern, "\\?", ".");
 
-            return Pattern.Regex.IsMatch(candidate, pattern);
+            return Regex.IsMatch(candidate, pattern);
 		}
 	}
 }

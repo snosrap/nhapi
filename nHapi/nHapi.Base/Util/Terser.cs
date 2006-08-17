@@ -26,7 +26,7 @@
 using System;
 using NHapi.Base.model;
 using HL7Exception = NHapi.Base.HL7Exception;
-using ca.uhn.log;
+using NHapi.Base.Log;
 namespace NHapi.Base.util
 {
 	
@@ -84,10 +84,10 @@ namespace NHapi.Base.util
 		
 		private SegmentFinder finder;
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.util.Terser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static HapiLog log;
+		private static IHapiLog log;
 		
 		/// <summary>Creates a new instance of Terser </summary>
-		public Terser(Message message)
+		public Terser(IMessage message)
 		{
 			finder = new SegmentFinder(message);
 		}
@@ -103,23 +103,23 @@ namespace NHapi.Base.util
 		/// </param>
 		/// <param name="subcomponent">the subcomponent number (use 1 for primitive component)
 		/// </param>
-		public static System.String Get(Segment segment, int field, int rep, int component, int subcomponent)
+		public static System.String Get(ISegment segment, int field, int rep, int component, int subcomponent)
 		{
-			Primitive prim = getPrimitive(segment, field, rep, component, subcomponent);
+			IPrimitive prim = getPrimitive(segment, field, rep, component, subcomponent);
 			return prim.Value;
 		}
 		
 		/// <summary> Sets the string value of the Primitive at the given location.</summary>
-		public static void  Set(Segment segment, int field, int rep, int component, int subcomponent, System.String value_Renamed)
+		public static void  Set(ISegment segment, int field, int rep, int component, int subcomponent, System.String value_Renamed)
 		{
-			Primitive prim = getPrimitive(segment, field, rep, component, subcomponent);
+			IPrimitive prim = getPrimitive(segment, field, rep, component, subcomponent);
 			prim.Value = value_Renamed;
 		}
 		
 		/// <summary> Returns the Primitive object at the given location.</summary>
-		private static Primitive getPrimitive(Segment segment, int field, int rep, int component, int subcomponent)
+		private static IPrimitive getPrimitive(ISegment segment, int field, int rep, int component, int subcomponent)
 		{
-			model.Type type = segment.getField(field, rep);
+			IType type = segment.getField(field, rep);
 			return getPrimitive(type, component, subcomponent);
 		}
 		
@@ -128,37 +128,37 @@ namespace NHapi.Base.util
 		/// will be added blindly if, for example, you provide a primitive subcomponent instead 
 		/// and specify component or subcomponent > 1
 		/// </summary>
-		public static Primitive getPrimitive(model.Type type, int component, int subcomponent)
+		public static IPrimitive getPrimitive(IType type, int component, int subcomponent)
 		{
-			model.Type comp = getComponent(type, component);
-			model.Type sub = getComponent(comp, subcomponent);
+			IType comp = getComponent(type, component);
+			IType sub = getComponent(comp, subcomponent);
 			return getPrimitive(sub);
 		}
 		
 		/// <summary> Attempts to extract a Primitive from the given type. If it's a composite, 
 		/// drills down through first components until a primitive is reached. 
 		/// </summary>
-        private static Primitive getPrimitive(model.Type type)
+        private static IPrimitive getPrimitive(IType type)
 		{
-			Primitive p = null;
+			IPrimitive p = null;
 			if (typeof(Varies).IsAssignableFrom(type.GetType()))
 			{
 				p = getPrimitive(((Varies) type).Data);
 			}
-			else if (typeof(Composite).IsAssignableFrom(type.GetType()))
+			else if (typeof(IComposite).IsAssignableFrom(type.GetType()))
 			{
 				try
 				{
-					p = getPrimitive(((Composite) type).getComponent(0));
+					p = getPrimitive(((IComposite) type).getComponent(0));
 				}
 				catch (HL7Exception)
 				{
 					throw new System.ApplicationException("Internal error: HL7Exception thrown on Composite.getComponent(0).");
 				}
 			}
-			else if (type is Primitive)
+			else if (type is IPrimitive)
 			{
-				p = (Primitive) type;
+				p = (IPrimitive) type;
 			}
 			return p;
 		}
@@ -170,9 +170,9 @@ namespace NHapi.Base.util
 		/// ExtraComponents on GenericPrimitives).  
 		/// Components are numbered from 1.  
 		/// </summary>
-		private static NHapi.Base.model.Type getComponent(model.Type type, int comp)
+		private static IType getComponent(IType type, int comp)
 		{
-			model.Type ret = null;
+			IType ret = null;
 			if (typeof(Varies).IsAssignableFrom(type.GetType()))
 			{
 				Varies v = (Varies) type;
@@ -194,17 +194,17 @@ namespace NHapi.Base.util
 			}
 			else
 			{
-				if (typeof(Primitive).IsAssignableFrom(type.GetType()) && comp == 1)
+				if (typeof(IPrimitive).IsAssignableFrom(type.GetType()) && comp == 1)
 				{
 					ret = type;
 				}
-				else if (typeof(GenericComposite).IsAssignableFrom(type.GetType()) || (typeof(Composite).IsAssignableFrom(type.GetType()) && comp <= numStandardComponents(type)))
+				else if (typeof(GenericComposite).IsAssignableFrom(type.GetType()) || (typeof(IComposite).IsAssignableFrom(type.GetType()) && comp <= numStandardComponents(type)))
 				{
 					//note that GenericComposite can return components > number of standard components
 					
 					try
 					{
-						ret = ((Composite) type).getComponent(comp - 1);
+						ret = ((IComposite) type).getComponent(comp - 1);
 					}
 					catch (System.Exception e)
 					{
@@ -230,16 +230,16 @@ namespace NHapi.Base.util
 		public virtual System.String Get(System.String spec)
 		{
 			SupportClass.Tokenizer tok = new SupportClass.Tokenizer(spec, "-", false);
-			Segment segment = getSegment(tok.NextToken());
+			ISegment segment = getSegment(tok.NextToken());
 			
 			int[] ind = getIndices(spec);
 			return Get(segment, ind[0], ind[1], ind[2], ind[3]);
 		}
 		
 		/// <summary> Returns the segment specified in the given segment_path_spec. </summary>
-		public virtual Segment getSegment(System.String segSpec)
+		public virtual ISegment getSegment(System.String segSpec)
 		{
-			Segment seg = null;
+			ISegment seg = null;
 			
 			if (segSpec.Substring(0, (1) - (0)).Equals("/"))
 			{
@@ -263,7 +263,7 @@ namespace NHapi.Base.util
 				
 				if (ps.isGroup)
 				{
-					Group g = null;
+					IGroup g = null;
 					if (ps.find)
 					{
 						g = finder.findGroup(ps.pattern, ps.rep);
@@ -377,7 +377,7 @@ namespace NHapi.Base.util
 		public virtual void  Set(System.String spec, System.String value_Renamed)
 		{
 			SupportClass.Tokenizer tok = new SupportClass.Tokenizer(spec, "-", false);
-			Segment segment = getSegment(tok.NextToken());
+			ISegment segment = getSegment(tok.NextToken());
 			
 			int[] ind = getIndices(spec);
 			if (log.DebugEnabled)
@@ -402,10 +402,10 @@ namespace NHapi.Base.util
 		/// </summary>
 		/// <param name="component">numbered from 1 
 		/// </param>
-		public static int numSubComponents(model.Type type, int component)
+		public static int numSubComponents(IType type, int component)
 		{
 			int n = - 1;
-			if (component == 1 && typeof(Primitive).IsAssignableFrom(type.GetType()))
+			if (component == 1 && typeof(IPrimitive).IsAssignableFrom(type.GetType()))
 			{
 				//note that getComponent(primitive, 1) below returns the primitive 
 				//itself -- if we do numComponents on it, we'll end up with the 
@@ -414,7 +414,7 @@ namespace NHapi.Base.util
 			}
 			else
 			{
-				model.Type comp = getComponent(type, component);
+				IType comp = getComponent(type, component);
 				n = numComponents(comp);
 			}
 			return n;
@@ -437,7 +437,7 @@ namespace NHapi.Base.util
 		/// number of standard components (e.g. 6 for CE) plus any extra components that
 		/// have been added at runtime.  
 		/// </summary>
-        public static int numComponents(model.Type type)
+        public static int numComponents(IType type)
 		{
 			if (typeof(Varies).IsAssignableFrom(type.GetType()))
 			{
@@ -449,16 +449,16 @@ namespace NHapi.Base.util
 			}
 		}
 
-        private static int numStandardComponents(model.Type t)
+        private static int numStandardComponents(IType t)
 		{
 			int n = 0;
 			if (typeof(Varies).IsAssignableFrom(t.GetType()))
 			{
 				n = numStandardComponents(((Varies) t).Data);
 			}
-			else if (typeof(Composite).IsAssignableFrom(t.GetType()))
+			else if (typeof(IComposite).IsAssignableFrom(t.GetType()))
 			{
-				n = ((Composite) t).Components.Length;
+				n = ((IComposite) t).Components.Length;
 			}
 			else
 			{

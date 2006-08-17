@@ -20,10 +20,11 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using HL7Exception = NHapi.Base.HL7Exception;
-using ModelClassFactory = NHapi.Base.parser.ModelClassFactory;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+using NHapi.Base.util;
+using NHapi.Base;
+using NHapi.Base.parser;
+using NHapi.Base.Log;
+
 namespace NHapi.Base.model
 {
 	
@@ -40,7 +41,7 @@ namespace NHapi.Base.model
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@users.sourceforge.net) 
 	/// </author>
-	public class Varies : Type
+	public class  Varies : IType
 	{
 		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns the data contained by this instance of Varies.  Returns a GenericPrimitive unless 
@@ -52,7 +53,7 @@ namespace NHapi.Base.model
 		/// setData(new DT()), then subsequent calls to getData() will return the same DT, with the value 
 		/// set to "19901012".   
 		/// </summary>
-		virtual public Type Data
+		virtual public IType Data
 		{
 			get
 			{
@@ -63,9 +64,9 @@ namespace NHapi.Base.model
 			{
 				if (this.data != null)
 				{
-					if (!(this.data is Primitive) || ((Primitive) this.data).Value != null)
+					if (!(this.data is IPrimitive) || ((IPrimitive) this.data).Value != null)
 					{
-						NHapi.Base.util.DeepCopy.copy(this.data, value);
+						DeepCopy.copy(this.data, value);
 					}
 				}
 				this.data = value;
@@ -98,7 +99,7 @@ namespace NHapi.Base.model
 		}
 		/// <returns> the message to which this Type belongs
 		/// </returns>
-		virtual public Message Message
+		virtual public IMessage Message
 		{
 			get
 			{
@@ -109,17 +110,17 @@ namespace NHapi.Base.model
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.model.Varies'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+		private static readonly IHapiLog log;
 		
-		private Type data;
-		private Message message;
+		private IType data;
+		private IMessage message;
 		
 		/// <summary> Creates new Varies. 
 		/// 
 		/// </summary>
 		/// <param name="message">message to which this type belongs
 		/// </param>
-		public Varies(Message message)
+		public Varies(IMessage message)
 		{
 			data = new GenericPrimitive(message);
 			this.message = message;
@@ -128,19 +129,19 @@ namespace NHapi.Base.model
 		/// <summary> Sets the data type of field 5 in the given OBX segment to the value of OBX-2.  The argument 
 		/// is a Segment as opposed to a particular OBX because it is meant to work with any version.  
 		/// </summary>
-		public static void  fixOBX5(Segment segment, ModelClassFactory factory)
+		public static void  fixOBX5(ISegment segment, IModelClassFactory factory)
 		{
 			try
 			{
 				//get unqualified class name
-				Primitive obx2 = (Primitive) segment.getField(2, 0);
+				IPrimitive obx2 = (IPrimitive) segment.getField(2, 0);
 				Varies v = (Varies) segment.getField(5, 0);
 				
 				if (obx2.Value == null)
 				{
 					if (v.Data != null)
 					{
-						if (!(v.Data is Primitive) || ((Primitive) v.Data).Value != null)
+						if (!(v.Data is IPrimitive) || ((IPrimitive) v.Data).Value != null)
 						{
 							throw new HL7Exception("OBX-5 is valued, but OBX-2 is not.  A datatype for OBX-5 must be specified using OBX-2.", HL7Exception.REQUIRED_FIELD_MISSING);
 						}
@@ -153,7 +154,7 @@ namespace NHapi.Base.model
 					//                Class c = NHapi.Base.parser.Parser.findClass(obx2.getValue(), 
 					//                                                segment.getMessage().getVersion(), 
 					//                                                "datatype");
-					v.Data = (Type) c.GetConstructor(new System.Type[]{typeof(Message)}).Invoke(new System.Object[]{v.Message});
+					v.Data = (IType) c.GetConstructor(new System.Type[]{typeof(IMessage)}).Invoke(new System.Object[]{v.Message});
 				}
 			}
 			catch (HL7Exception e)

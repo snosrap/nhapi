@@ -19,7 +19,7 @@ QRD|20060228155525|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||";
 
 			NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
 
-			NHapi.Base.model.Message m = parser.parse(message);
+			NHapi.Base.model.IMessage m = parser.parse(message);
 
 			NHapi.Base.model.v24.message.QRY_R02 qryR02 = m as NHapi.Base.model.v24.message.QRY_R02;
 

@@ -8,7 +8,7 @@ namespace NHapi.Base.model
 	/// </summary>
 	/// <author>  Bryan Tripp
 	/// </author>
-	public class GenericPrimitive:AbstractPrimitive, Primitive
+	public class GenericPrimitive:AbstractPrimitive, IPrimitive
 	{
 		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns a String representation of the value of this field.</summary>
@@ -52,7 +52,7 @@ namespace NHapi.Base.model
 		internal System.String value_Renamed = null;
 		
 		/// <summary> Creates a new instance of GenericPrimitive </summary>
-		public GenericPrimitive(Message message):base(message)
+		public GenericPrimitive(IMessage message):base(message)
 		{
 		}
 	}

@@ -25,8 +25,7 @@
 /// 
 /// </summary>
 using System;
-using AbstractPrimitive = NHapi.Base.model.AbstractPrimitive;
-using Message = NHapi.Base.model.Message;
+using NHapi.Base.model;
 namespace NHapi.Base.model.primitive
 {
 	
@@ -73,17 +72,24 @@ namespace NHapi.Base.model.primitive
 		
 		private int myTable = 0;
 		
-		/// <param name="theMessage">message to which this Type belongs
-		/// </param>
-		public IS(Message theMessage):base(theMessage)
-		{
-		}
+		 /// <param name="theMessage">message to which this Type belongs
+        /// </param>
+        public IS(IMessage theMessage)
+            : base(theMessage)
+        {
+        }
+
+
+        public IS(IMessage theMessage, string description)
+            : base(theMessage, description)
+        {
+        }
 		
 		/// <param name="theMessage">message to which this Type belongs
 		/// </param>
 		/// <param name="theTable">HL7 table from which values are to be drawn 
 		/// </param>
-		public IS(Message theMessage, int theTable):base(theMessage)
+		public IS(IMessage theMessage, int theTable):base(theMessage)
 		{
 			myTable = theTable;
 		}
@@ -94,7 +100,7 @@ namespace NHapi.Base.model.primitive
 		/// </param>
 		//UPGRADE_ISSUE: Parameter of type 'java.lang.Integer' was migrated to type 'Int32' which is identical to 'int'. You will get a compilation error with method overloads. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1205'"
 		//UPGRADE_NOTE: ref keyword was added to struct-type parameters. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1303'"
-		public IS(Message theMessage, ref System.Int32 theTable):base(theMessage)
+		public IS(IMessage theMessage, ref System.Int32 theTable):base(theMessage)
 		{
 			myTable = theTable;
 		}

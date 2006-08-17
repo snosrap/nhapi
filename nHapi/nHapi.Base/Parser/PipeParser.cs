@@ -24,19 +24,11 @@
 /// 
 /// </summary>
 using System;
-using HL7Exception = NHapi.Base.HL7Exception;
-using Group = NHapi.Base.model.Group;
-using Message = NHapi.Base.model.Message;
-using Primitive = NHapi.Base.model.Primitive;
-using Segment = NHapi.Base.model.Segment;
-using Structure = NHapi.Base.model.Structure;
-using Type = NHapi.Base.model.Type;
-using Varies = NHapi.Base.model.Varies;
-using Terser = NHapi.Base.util.Terser;
-using MessageIterator = NHapi.Base.util.MessageIterator;
-using FilterIterator = NHapi.Base.util.FilterIterator;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+using NHapi.Base;
+using NHapi.Base.model;
+using NHapi.Base.util;
+using NHapi.Base.Log;
+
 namespace NHapi.Base.parser
 {
 	
@@ -49,7 +41,7 @@ namespace NHapi.Base.parser
 	public class PipeParser:Parser
 	{
 		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'AnonymousClassPredicate' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
-		private class AnonymousClassPredicate : FilterIterator.Predicate
+		private class AnonymousClassPredicate : FilterIterator.IPredicate
 		{
 			public AnonymousClassPredicate(PipeParser enclosingInstance)
 			{
@@ -70,7 +62,7 @@ namespace NHapi.Base.parser
 			}
 			public virtual bool evaluate(System.Object obj)
 			{
-				if (typeof(Segment).IsAssignableFrom(obj.GetType()))
+				if (typeof(ISegment).IsAssignableFrom(obj.GetType()))
 				{
 					return true;
 				}
@@ -81,7 +73,7 @@ namespace NHapi.Base.parser
 			}
 		}
 		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'AnonymousClassPredicate1' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
-		private class AnonymousClassPredicate1 : FilterIterator.Predicate
+		private class AnonymousClassPredicate1 : FilterIterator.IPredicate
 		{
 			public AnonymousClassPredicate1(System.String name, PipeParser enclosingInstance)
 			{
@@ -105,7 +97,7 @@ namespace NHapi.Base.parser
 			}
 			public virtual bool evaluate(System.Object obj)
 			{
-				Structure s = (Structure) obj;
+				IStructure s = (IStructure) obj;
 				NHapi.Base.parser.PipeParser.log.debug("PipeParser iterating message in direction " + name + " at " + s.getName());
 				if (System.Text.RegularExpressions.Regex.IsMatch(s.getName(), name + "\\d*"))
 				{
@@ -130,7 +122,7 @@ namespace NHapi.Base.parser
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.parser.PipeParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+		private static readonly IHapiLog log;
 		
 		private const System.String segDelim = "\r"; //see section 2.8 of spec
 		
@@ -287,16 +279,16 @@ namespace NHapi.Base.parser
 		/// <throws>  EncodingNotSupportedException if the message encoded </throws>
 		/// <summary>      is not supported by this parser.
 		/// </summary>
-		protected internal override Message doParse(System.String message, System.String version)
+		protected internal override IMessage doParse(System.String message, System.String version)
 		{
 			
 			//try to instantiate a message object of the right class
 			MessageStructure structure = getStructure(message);
-			Message m = instantiateMessage(structure.messageStructure, version, structure.explicitlyDefined);
+			IMessage m = instantiateMessage(structure.messageStructure, version, structure.explicitlyDefined);
 			
 			//MessagePointer ptr = new MessagePointer(this, m, getEncodingChars(message));
 			MessageIterator messageIter = new MessageIterator(m, "MSH", true);
-			FilterIterator.Predicate segmentsOnly = new AnonymousClassPredicate(this);
+			FilterIterator.IPredicate segmentsOnly = new AnonymousClassPredicate(this);
 			FilterIterator segmentIter = new FilterIterator(messageIter, segmentsOnly);
 			
 			System.String[] segments = split(message, segDelim);
@@ -315,13 +307,13 @@ namespace NHapi.Base.parser
 					log.debug("Parsing segment " + name);
 					
 					messageIter.Direction = name;
-					FilterIterator.Predicate byDirection = new AnonymousClassPredicate1(name, this);
+					FilterIterator.IPredicate byDirection = new AnonymousClassPredicate1(name, this);
 					FilterIterator dirIter = new FilterIterator(segmentIter, byDirection);
 					//UPGRADE_TODO: Method 'java.util.Iterator.hasNext' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratorhasNext'"
 					if (dirIter.MoveNext())
 					{
 						//UPGRADE_TODO: Method 'java.util.Iterator.next' was converted to 'System.Collections.IEnumerator.Current' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratornext'"
-						parse((Segment) dirIter.Current, segments[i], getEncodingChars(message));
+						parse((ISegment) dirIter.Current, segments[i], getEncodingChars(message));
 					}
 				}
 			}
@@ -335,7 +327,7 @@ namespace NHapi.Base.parser
 		/// <throws>  HL7Exception if the given string does not contain the </throws>
 		/// <summary>      given segment or if the string is not encoded properly
 		/// </summary>
-		public virtual void  parse(Segment destination, System.String segment, EncodingCharacters encodingChars)
+		public virtual void  parse(ISegment destination, System.String segment, EncodingCharacters encodingChars)
 		{
 			int fieldOffset = 0;
 			if (isDelimDefSegment(destination.getName()))
@@ -374,7 +366,7 @@ namespace NHapi.Base.parser
 						log.debug(statusMessage.ToString());
 						//parse(destination.getField(i + fieldOffset, j), reps[j], encodingChars, false);
 						
-						Type field = destination.getField(i + fieldOffset, j);
+						IType field = destination.getField(i + fieldOffset, j);
 						if (isMSH2)
 						{
 							Terser.getPrimitive(field, 1, 1).Value = reps[j];
@@ -424,7 +416,7 @@ namespace NHapi.Base.parser
 		/// </param>
 		/// <param name="encodingCharacters">the encoding characters used in the message
 		/// </param>
-		private static void  parse(Type destinationField, System.String data, EncodingCharacters encodingCharacters)
+		private static void  parse(IType destinationField, System.String data, EncodingCharacters encodingCharacters)
 		{
 			System.String[] components = split(data, System.Convert.ToString(encodingCharacters.ComponentSeparator));
 			for (int i = 0; i < components.Length; i++)
@@ -500,7 +492,7 @@ namespace NHapi.Base.parser
 		/// <summary> Encodes the given Type, using the given encoding characters. 
 		/// It is assumed that the Type represents a complete field rather than a component.
 		/// </summary>
-		public static System.String encode(Type source, EncodingCharacters encodingChars)
+		public static System.String encode(IType source, EncodingCharacters encodingChars)
 		{
 			System.Text.StringBuilder field = new System.Text.StringBuilder();
 			for (int i = 1; i <= Terser.numComponents(source); i++)
@@ -508,7 +500,7 @@ namespace NHapi.Base.parser
 				System.Text.StringBuilder comp = new System.Text.StringBuilder();
 				for (int j = 1; j <= Terser.numSubComponents(source, i); j++)
 				{
-					Primitive p = Terser.getPrimitive(source, i, j);
+					IPrimitive p = Terser.getPrimitive(source, i, j);
 					comp.Append(encodePrimitive(p, encodingChars));
 					comp.Append(encodingChars.SubcomponentSeparator);
 				}
@@ -519,9 +511,9 @@ namespace NHapi.Base.parser
 			//return encode(source, encodingChars, false);
 		}
 		
-		private static System.String encodePrimitive(Primitive p, EncodingCharacters encodingChars)
+		private static System.String encodePrimitive(IPrimitive p, EncodingCharacters encodingChars)
 		{
-			System.String val = ((Primitive) p).Value;
+			System.String val = ((IPrimitive) p).Value;
 			if (val == null)
 			{
 				val = "";
@@ -565,7 +557,7 @@ namespace NHapi.Base.parser
 		/// <throws>  EncodingNotSupportedException if the requested encoding is not </throws>
 		/// <summary>      supported by this parser.
 		/// </summary>
-		protected internal override System.String doEncode(Message source, System.String encoding)
+		protected internal override System.String doEncode(IMessage source, System.String encoding)
 		{
 			if (!this.supportsEncoding(encoding))
 				throw new EncodingNotSupportedException("This parser does not support the " + encoding + " encoding");
@@ -579,10 +571,10 @@ namespace NHapi.Base.parser
 		/// <throws>  HL7Exception if the data fields in the message do not permit encoding </throws>
 		/// <summary>      (e.g. required fields are null)
 		/// </summary>
-		protected internal override System.String doEncode(Message source)
+		protected internal override System.String doEncode(IMessage source)
 		{
 			//get encoding characters ...
-			Segment msh = (Segment) source.get_Renamed("MSH");
+			ISegment msh = (ISegment) source.get_Renamed("MSH");
 			System.String fieldSepString = Terser.Get(msh, 1, 0, 1, 1);
 			
 			if (fieldSepString == null)
@@ -602,29 +594,29 @@ namespace NHapi.Base.parser
 			EncodingCharacters en = new EncodingCharacters(fieldSep, encCharString);
 			
 			//pass down to group encoding method which will operate recursively on children ...
-			return encode((Group) source, en);
+			return encode((IGroup) source, en);
 		}
 		
 		/// <summary> Returns given group serialized as a pipe-encoded string - this method is called
 		/// by encode(Message source, String encoding).
 		/// </summary>
-		public static System.String encode(Group source, EncodingCharacters encodingChars)
+		public static System.String encode(IGroup source, EncodingCharacters encodingChars)
 		{
 			System.Text.StringBuilder result = new System.Text.StringBuilder();
 			
 			System.String[] names = source.Names;
 			for (int i = 0; i < names.Length; i++)
 			{
-				Structure[] reps = source.getAll(names[i]);
+				IStructure[] reps = source.getAll(names[i]);
 				for (int rep = 0; rep < reps.Length; rep++)
 				{
-					if (reps[rep] is Group)
+					if (reps[rep] is IGroup)
 					{
-						result.Append(encode((Group) reps[rep], encodingChars));
+						result.Append(encode((IGroup) reps[rep], encodingChars));
 					}
 					else
 					{
-						System.String segString = encode((Segment) reps[rep], encodingChars);
+						System.String segString = encode((ISegment) reps[rep], encodingChars);
 						if (segString.Length >= 4)
 						{
 							result.Append(segString);
@@ -636,7 +628,7 @@ namespace NHapi.Base.parser
 			return result.ToString();
 		}
 		
-		public static System.String encode(Segment source, EncodingCharacters encodingChars)
+		public static System.String encode(ISegment source, EncodingCharacters encodingChars)
 		{
 			System.Text.StringBuilder result = new System.Text.StringBuilder();
 			result.Append(source.getName());
@@ -653,7 +645,7 @@ namespace NHapi.Base.parser
 			{
 				try
 				{
-					Type[] reps = source.getField(i);
+					IType[] reps = source.getField(i);
 					for (int j = 0; j < reps.Length; j++)
 					{
 						System.String fieldText = encode(reps[j], encodingChars);
@@ -713,7 +705,7 @@ namespace NHapi.Base.parser
 		/// avoiding the condition that caused the original error.  The other
 		/// fields in the returned MSH segment are empty.</p>
 		/// </summary>
-		public override Segment getCriticalResponseData(System.String message)
+		public override ISegment getCriticalResponseData(System.String message)
 		{
 			//try to get MSH segment
 			int locStartMSH = message.IndexOf("MSH");
@@ -731,7 +723,7 @@ namespace NHapi.Base.parser
 			//get field array
 			System.String[] fields = split(mshString, System.Convert.ToString(fieldSep));
 			
-			Segment msh = null;
+			ISegment msh = null;
 			try
 			{
 				//parse required fields

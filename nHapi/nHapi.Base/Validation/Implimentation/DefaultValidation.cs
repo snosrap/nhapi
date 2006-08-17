@@ -19,7 +19,7 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using Rule = NHapi.Base.validation.Rule;
+using NHapi.Base.validation;
 namespace NHapi.Base.validation.impl
 {
 	
@@ -36,36 +36,36 @@ namespace NHapi.Base.validation.impl
 	{
 		public DefaultValidation()
 		{
-			Rule trim = new TrimLeadingWhitespace();
+			IRule trim = new TrimLeadingWhitespace();
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "FT", trim));
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "ST", trim));
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "TX", trim));
 			
-			Rule size200 = new SizeRule(200);
-			Rule size32000 = new SizeRule(32000);
+			IRule size200 = new SizeRule(200);
+			IRule size32000 = new SizeRule(32000);
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "FT", size32000));
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "ID", size200));
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "IS", size200));
 			
-			Rule nonNegativeInteger = new RegexPrimitiveRule("\\d*", "");
+			IRule nonNegativeInteger = new RegexPrimitiveRule("\\d*", "");
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "SI", nonNegativeInteger));
 			
-			Rule number = new RegexPrimitiveRule("(\\+|\\-)?\\d*\\.?\\d*", "");
+			IRule number = new RegexPrimitiveRule("(\\+|\\-)?\\d*\\.?\\d*", "");
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "NM", number));
 			
-			Rule telephoneNumber = new RegexPrimitiveRule("(\\d{1,2} )?(\\(\\d{3}\\))?\\d{3}-\\d{4}(X\\d{1,5})?(B\\d{1,5})?(C.*)?", "Version 2.4 Section 2.9.45");
+			IRule telephoneNumber = new RegexPrimitiveRule("(\\d{1,2} )?(\\(\\d{3}\\))?\\d{3}-\\d{4}(X\\d{1,5})?(B\\d{1,5})?(C.*)?", "Version 2.4 Section 2.9.45");
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "TN", telephoneNumber));
 			
 			System.String datePattern = "(\\d{4}([01]\\d(\\d{2})?)?)?"; //YYYY[MM[DD]]
-			Rule date = new RegexPrimitiveRule(datePattern, "Version 2.5 Section 2.16.24");
+			IRule date = new RegexPrimitiveRule(datePattern, "Version 2.5 Section 2.16.24");
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "DT", date));
 			
 			System.String timePattern = "([012]\\d([0-5]\\d([0-5]\\d(\\.\\d(\\d(\\d(\\d)?)?)?)?)?)?)?([\\+\\-]\\d{4})?";
-			Rule time = new RegexPrimitiveRule(timePattern, "Version 2.5 Section 2.16.79");
+			IRule time = new RegexPrimitiveRule(timePattern, "Version 2.5 Section 2.16.79");
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "TM", time));
 			
 			System.String datetimePattern = "(\\d{4}([01]\\d(\\d{2}([012]\\d([0-5]\\d([0-5]\\d(\\.\\d(\\d(\\d(\\d)?)?)?)?)?)?)?)?)?)?([\\+\\-]\\d{4})?";
-			Rule datetime = new RegexPrimitiveRule(datetimePattern, "Version 2.5 Section 2.16.25");
+			IRule datetime = new RegexPrimitiveRule(datetimePattern, "Version 2.5 Section 2.16.25");
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "TSComponentOne", datetime));
 			PrimitiveRuleBindings.Add(new RuleBinding("*", "DTM", datetime));
 		}

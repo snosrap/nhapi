@@ -19,21 +19,22 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using ModelClassFactory = NHapi.Base.parser.ModelClassFactory;
-using ValidationContext = NHapi.Base.validation.ValidationContext;
-using Pattern = System.Text.RegularExpressions;
+using NHapi.Base.parser;
+using NHapi.Base.validation;
+using System.Text.RegularExpressions;
+
 namespace NHapi.Base.model
 {
 	
 	/// <summary> A default implementation of Message. </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public abstract class AbstractMessage:AbstractGroup, Message
+	public abstract class AbstractMessage:AbstractGroup, IMessage
 	{
 		/// <summary> Returns this Message object - this is an implementation of the 
 		/// abstract method in AbstractGroup.  
 		/// </summary>
-		override public Message Message
+		override public IMessage Message
 		{
 			get
 			{
@@ -56,8 +57,8 @@ namespace NHapi.Base.model
 				System.String version = null;
 
                 // TODO: Revisit.
-				Pattern.Regex p = new Pattern.Regex("\\.(v2[0-9][0-9]?)\\.");
-				Pattern.Match m = p.Match(this.GetType().FullName);
+				Regex p = new Regex("\\.(v2[0-9][0-9]?)\\.");
+				Match m = p.Match(this.GetType().FullName);
 				if (m.Success)
 				{
                     System.String verFolder = m.Groups[1].Value;
@@ -88,7 +89,7 @@ namespace NHapi.Base.model
 		/// </returns>
 		/// <param name="theContext">the set of validation rules that are to apply to this message
 		/// </param>
-		virtual public ValidationContext ValidationContext
+		virtual public IValidationContext ValidationContext
 		{
 			get
 			{
@@ -102,11 +103,11 @@ namespace NHapi.Base.model
 			
 		}
 		
-		private ValidationContext myContext;
+		private IValidationContext myContext;
 		
 		/// <param name="theFactory">factory for model classes (e.g. group, segment) for this message 
 		/// </param>
-		public AbstractMessage(ModelClassFactory theFactory):base(theFactory)
+		public AbstractMessage(IModelClassFactory theFactory):base(theFactory)
 		{
 		}
 	}

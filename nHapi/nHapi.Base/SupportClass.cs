@@ -36,7 +36,7 @@ namespace NHapi.Base
     /// <summary>
     /// This interface will manage errors during the parsing of a XML document.
     /// </summary>
-    public interface XmlSaxErrorHandler
+    public interface IXmlSaxErrorHandler
     {
         /// <summary>
         /// This method manage an error exception ocurred during the parsing process.
@@ -160,7 +160,7 @@ namespace NHapi.Base
     /// <summary>
     /// Basic interface for resolving entities.
     /// </summary>
-    public interface XmlSaxEntityResolver
+    public interface IXmlSaxEntityResolver
     {
         /// <summary>
         /// Allow the application to resolve external entities.
@@ -175,7 +175,7 @@ namespace NHapi.Base
     /// <summary>
     /// This interface will manage the Content events of a XML document.
     /// </summary>
-    public interface XmlSaxContentHandler
+    public interface IXmlSaxContentHandler
     {
         /// <summary>
         /// This method manage the notification when Characters elements were found.
@@ -222,7 +222,7 @@ namespace NHapi.Base
         /// <summary>
         /// This method is not supported, it is included for compatibility.
         /// </summary>
-        void setDocumentLocator(XmlSaxLocator locator);
+        void setDocumentLocator(IXmlSaxLocator locator);
 
         /// <summary>
         /// This method manage the event when a skipped entity was found.
@@ -256,7 +256,7 @@ namespace NHapi.Base
     /// <summary>
     /// This interface is created to emulate the SAX Locator interface behavior.
     /// </summary>
-    public interface XmlSaxLocator
+    public interface IXmlSaxLocator
     {
         /// <summary>
         /// This method return the column number where the current document event ends.
@@ -287,7 +287,7 @@ namespace NHapi.Base
     /// <summary>
     /// This class is created for emulates the SAX LocatorImpl behaviors.
     /// </summary>
-    public class XmlSaxLocatorImpl : XmlSaxLocator
+    public class XmlSaxLocatorImpl : IXmlSaxLocator
     {
         /// <summary>
         /// This method returns a new instance of 'XmlSaxLocatorImpl'.
@@ -303,7 +303,7 @@ namespace NHapi.Base
         /// </summary>
         /// <param name="locator">The current state of a locator.</param>
         /// <returns>A new 'XmlSaxLocatorImpl' instance.</returns>
-        public XmlSaxLocatorImpl(XmlSaxLocator locator)
+        public XmlSaxLocatorImpl(IXmlSaxLocator locator)
         {
             setPublicId(locator.getPublicId());
             setSystemId(locator.getSystemId());
@@ -398,7 +398,7 @@ namespace NHapi.Base
     /// <summary>
     /// This interface will manage the Content events of a XML document.
     /// </summary>
-    public interface XmlSaxLexicalHandler
+    public interface IXmlSaxLexicalHandler
     {
         /// <summary>
         /// This method manage the notification when Characters elements were found.
@@ -856,7 +856,7 @@ namespace NHapi.Base
     /// <summary>
     /// This class provides the base implementation for the management of XML documents parsing.
     /// </summary>
-    public class XmlSaxDefaultHandler : XmlSaxContentHandler, XmlSaxErrorHandler, XmlSaxEntityResolver
+    public class XmlSaxDefaultHandler : IXmlSaxContentHandler, IXmlSaxErrorHandler, IXmlSaxEntityResolver
     {
         /// <summary>
         /// This method manage the notification when Characters element were found.
@@ -949,7 +949,7 @@ namespace NHapi.Base
         /// <summary>
         /// This method is not supported, is include for compatibility
         /// </summary>		 
-        public virtual void setDocumentLocator(XmlSaxLocator locator)
+        public virtual void setDocumentLocator(IXmlSaxLocator locator)
         {
         }
 
@@ -1007,7 +1007,7 @@ namespace NHapi.Base
     /// <summary>
     /// This class provides the base implementation for the management of XML documents parsing.
     /// </summary>
-    public class XmlSaxParserAdapter : XmlSAXDocumentManager, XmlSaxContentHandler
+    public class XmlSaxParserAdapter : XmlSAXDocumentManager, IXmlSaxContentHandler
     {
 
         /// <summary>
@@ -1056,7 +1056,7 @@ namespace NHapi.Base
         /// Receive an object for locating the origin of events into the XML document
         /// </summary>
         /// <param name="locator">A 'XmlSaxLocator' object that can return the location of any events into the XML document</param>
-        public virtual void setDocumentLocator(XmlSaxLocator locator) { }
+        public virtual void setDocumentLocator(IXmlSaxLocator locator) { }
 
         /// <summary>
         /// This method manage the event when a skipped entity was found.
@@ -1098,11 +1098,11 @@ namespace NHapi.Base
         protected bool namespaceAllowed;
         protected System.Xml.XmlReader reader;
         //protected XmlValidatingReader reader;
-        protected XmlSaxContentHandler callBackHandler;
-        protected XmlSaxErrorHandler errorHandler;
+        protected IXmlSaxContentHandler callBackHandler;
+        protected IXmlSaxErrorHandler errorHandler;
         protected XmlSaxLocatorImpl locator;
-        protected XmlSaxLexicalHandler lexical;
-        protected XmlSaxEntityResolver entityResolver;
+        protected IXmlSaxLexicalHandler lexical;
+        protected IXmlSaxEntityResolver entityResolver;
         protected System.String parserFileName;
 
         /// <summary>
@@ -1139,10 +1139,10 @@ namespace NHapi.Base
             XmlSAXDocumentManager temp = new XmlSAXDocumentManager();
             temp.NamespaceAllowed = instance.NamespaceAllowed;
             temp.isValidating = instance.isValidating;
-            XmlSaxContentHandler contentHandler = instance.getContentHandler();
+            IXmlSaxContentHandler contentHandler = instance.getContentHandler();
             if (contentHandler != null)
                 temp.setContentHandler(contentHandler);
-            XmlSaxErrorHandler errorHandler = instance.getErrorHandler();
+            IXmlSaxErrorHandler errorHandler = instance.getErrorHandler();
             if (errorHandler != null)
                 temp.setErrorHandler(errorHandler);
             temp.setFeature("http://xml.org/sax/features/namespaces", instance.getFeature("http://xml.org/sax/features/namespaces"));
@@ -1308,7 +1308,7 @@ namespace NHapi.Base
                     {
                         try
                         {
-                            lexical = (XmlSaxLexicalHandler)value;
+                            lexical = (IXmlSaxLexicalHandler)value;
                             break;
                         }
                         catch (System.Exception e)
@@ -1403,7 +1403,7 @@ namespace NHapi.Base
                                             namespaceStack.Push(prefixName);
                                             prefixes.Add(namespaceURI, namespaceStack);
                                             if (this.callBackHandler != null)
-                                                ((XmlSaxContentHandler)this.callBackHandler).startPrefixMapping(prefixName, namespaceTemp);
+                                                ((IXmlSaxContentHandler)this.callBackHandler).startPrefixMapping(prefixName, namespaceTemp);
                                         }
                                         else
                                         {
@@ -1411,7 +1411,7 @@ namespace NHapi.Base
                                             {
                                                 ((System.Collections.Stack)prefixes[namespaceURI]).Push(prefixName);
                                                 if (this.callBackHandler != null)
-                                                    ((XmlSaxContentHandler)this.callBackHandler).startPrefixMapping(prefixName, reader.Value);
+                                                    ((IXmlSaxContentHandler)this.callBackHandler).startPrefixMapping(prefixName, reader.Value);
                                             }
                                         }
                                     }
@@ -1449,7 +1449,7 @@ namespace NHapi.Base
                                 {
                                     System.String tempString = (System.String)namespaceStack.Pop();
                                     if (this.callBackHandler != null)
-                                        ((XmlSaxContentHandler)this.callBackHandler).endPrefixMapping(tempString);
+                                        ((IXmlSaxContentHandler)this.callBackHandler).endPrefixMapping(tempString);
                                 }
                                 prefixes.Remove(reader.NamespaceURI);
                             }
@@ -1514,7 +1514,7 @@ namespace NHapi.Base
         /// </summary>
         /// <param name="filepath">The file to be used.</param>
         /// <param name="handler">The handler that manages the parser events.</param>
-        public virtual void parse(System.IO.FileInfo filepath, XmlSaxContentHandler handler)
+        public virtual void parse(System.IO.FileInfo filepath, IXmlSaxContentHandler handler)
         {
             try
             {
@@ -1585,7 +1585,7 @@ namespace NHapi.Base
         /// </summary>
         /// <param name="filepath">The path of the file to be used.</param>
         /// <param name="handler">The handler that manage the parser events.</param>
-        public virtual void parse(System.String filepath, XmlSaxContentHandler handler)
+        public virtual void parse(System.String filepath, IXmlSaxContentHandler handler)
         {
             try
             {
@@ -1617,7 +1617,7 @@ namespace NHapi.Base
         /// </summary>
         /// <param name="stream">The stream with the XML.</param>
         /// <param name="handler">The handler that manage the parser events.</param>
-        public virtual void parse(System.IO.Stream stream, XmlSaxContentHandler handler)
+        public virtual void parse(System.IO.Stream stream, IXmlSaxContentHandler handler)
         {
             try
             {
@@ -1651,7 +1651,7 @@ namespace NHapi.Base
         /// <param name="stream">The stream with the XML.</param>
         /// <param name="handler">The handler that manage the parser events.</param>
         /// <param name="URI">The namespace URI for resolve external etities.</param>
-        public virtual void parse(System.IO.Stream stream, XmlSaxContentHandler handler, System.String URI)
+        public virtual void parse(System.IO.Stream stream, IXmlSaxContentHandler handler, System.String URI)
         {
             try
             {
@@ -1684,7 +1684,7 @@ namespace NHapi.Base
         /// </summary>
         /// <param name="source">The 'XmlSourceSupport' that contains the XML.</param>
         /// <param name="handler">The handler that manages the parser events.</param>
-        public virtual void parse(XmlSourceSupport source, XmlSaxContentHandler handler)
+        public virtual void parse(XmlSourceSupport source, IXmlSaxContentHandler handler)
         {
             if (source.Characters != null)
                 parse(source.Characters.BaseStream, handler);
@@ -1825,7 +1825,7 @@ namespace NHapi.Base
         /// Assigns the object that will handle all the content events.
         /// </summary>
         /// <param name="handler">The object that handles the content events.</param>
-        public virtual void setContentHandler(XmlSaxContentHandler handler)
+        public virtual void setContentHandler(IXmlSaxContentHandler handler)
         {
             if (handler != null)
                 this.callBackHandler = handler;
@@ -1837,7 +1837,7 @@ namespace NHapi.Base
         /// Assigns the object that will handle all the error events. 
         /// </summary>
         /// <param name="handler">The object that handles the errors events.</param>
-        public virtual void setErrorHandler(XmlSaxErrorHandler handler)
+        public virtual void setErrorHandler(IXmlSaxErrorHandler handler)
         {
             if (handler != null)
                 this.errorHandler = handler;
@@ -1849,7 +1849,7 @@ namespace NHapi.Base
         /// Obtains the object that will handle all the content events.
         /// </summary>
         /// <returns>The object that handles the content events.</returns>
-        public virtual XmlSaxContentHandler getContentHandler()
+        public virtual IXmlSaxContentHandler getContentHandler()
         {
             return this.callBackHandler;
         }
@@ -1858,7 +1858,7 @@ namespace NHapi.Base
         /// Assigns the object that will handle all the error events. 
         /// </summary>
         /// <returns>The object that handles the error events.</returns>
-        public virtual XmlSaxErrorHandler getErrorHandler()
+        public virtual IXmlSaxErrorHandler getErrorHandler()
         {
             return this.errorHandler;
         }
@@ -1867,7 +1867,7 @@ namespace NHapi.Base
         /// Returns the current entity resolver.
         /// </summary>
         /// <returns>The current entity resolver, or null if none has been registered.</returns>
-        public virtual XmlSaxEntityResolver getEntityResolver()
+        public virtual IXmlSaxEntityResolver getEntityResolver()
         {
             return this.entityResolver;
         }
@@ -1876,7 +1876,7 @@ namespace NHapi.Base
         /// Allows an application to register an entity resolver.
         /// </summary>
         /// <param name="resolver">The entity resolver.</param>
-        public virtual void setEntityResolver(XmlSaxEntityResolver resolver)
+        public virtual void setEntityResolver(IXmlSaxEntityResolver resolver)
         {
             this.entityResolver = resolver;
         }
@@ -2996,7 +2996,7 @@ namespace NHapi.Base
         /// <summary>
         /// Represents a collection ob objects that contains no duplicate elements.
         /// </summary>	
-        public interface SetSupport : System.Collections.ICollection, System.Collections.IList
+        public interface ISetSupport : System.Collections.ICollection, System.Collections.IList
         {
             /// <summary>
             /// Adds a new element to the Collection if it is not already present.
@@ -3019,7 +3019,7 @@ namespace NHapi.Base
         /// SupportClass for the HashSet class.
         /// </summary>
         [Serializable]
-        public class HashSetSupport : System.Collections.ArrayList, SetSupport
+        public class HashSetSupport : System.Collections.ArrayList, ISetSupport
         {
             public HashSetSupport()
                 : base()
@@ -3714,14 +3714,6 @@ namespace NHapi.Base
             }
 
             /// <summary>
-            /// Resumes a thread that has been suspended
-            /// </summary>
-            public void Resume()
-            {
-                threadField.Resume();
-            }
-
-            /// <summary>
             /// Raises a ThreadAbortException in the thread on which it is invoked, 
             /// to begin the process of terminating the thread. Calling this method 
             /// usually terminates the thread
@@ -3744,14 +3736,6 @@ namespace NHapi.Base
                 {
                     threadField.Abort(stateInfo);
                 }
-            }
-
-            /// <summary>
-            /// Suspends the thread, if the thread is already suspended it has no effect
-            /// </summary>
-            public void Suspend()
-            {
-                threadField.Suspend();
             }
 
             /// <summary>

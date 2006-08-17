@@ -18,7 +18,7 @@ namespace NHapi.Base.model
 		private System.String name;
 		
 		/// <summary>Creates a new instance of GenericSegment </summary>
-		public GenericSegment(Group parent, System.String name):base(parent, null)
+		public GenericSegment(IGroup parent, System.String name):base(parent, null)
 		{
 			this.name = name;
 		}

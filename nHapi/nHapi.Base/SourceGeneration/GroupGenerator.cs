@@ -21,9 +21,9 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using HL7Exception = NHapi.Base.HL7Exception;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+using NHapi.Base;
+using NHapi.Base.Log;
+
 namespace NHapi.Base.sourcegen
 {
 	
@@ -41,7 +41,7 @@ namespace NHapi.Base.sourcegen
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.sourcegen.GroupGenerator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+		private static readonly IHapiLog log;
 		
 		/// <summary>Creates new GroupGenerator </summary>
 		public GroupGenerator()
@@ -68,7 +68,7 @@ namespace NHapi.Base.sourcegen
 		/// <throws>  HL7Exception if the repetition and optionality markers are not  </throws>
 		/// <summary>      properly nested.  
 		/// </summary>
-		public static GroupDef writeGroup(StructureDef[] structures, System.String groupName, System.String baseDirectory, System.String version, System.String message)
+		public static GroupDef writeGroup(IStructureDef[] structures, System.String groupName, System.String baseDirectory, System.String version, System.String message)
 		{
 			
 			//make base directory
@@ -87,7 +87,7 @@ namespace NHapi.Base.sourcegen
 			out_Renamed.Write(makePreamble(group, version));
 			out_Renamed.Write(makeConstructor(group, version));
 			
-			StructureDef[] shallow = group.Structures;
+			IStructureDef[] shallow = group.Structures;
 			for (int i = 0; i < shallow.Length; i++)
 			{
 				out_Renamed.Write(makeAccessor(group, i));
@@ -108,7 +108,7 @@ namespace NHapi.Base.sourcegen
 		/// <p>This method calls writeGroup(...) where necessary in order to create source code for 
 		/// any nested groups before returning corresponding GroupDefs.</p>
 		/// </summary>
-		public static GroupDef getGroupDef(StructureDef[] structures, System.String groupName, System.String baseDirectory, System.String version, System.String message)
+		public static GroupDef getGroupDef(IStructureDef[] structures, System.String groupName, System.String baseDirectory, System.String version, System.String message)
 		{
 			GroupDef ret = null;
 			bool required = true;
@@ -116,7 +116,7 @@ namespace NHapi.Base.sourcegen
 			bool rep_opt = false;
 			
 			int len = structures.Length;
-			StructureDef[] shortList = new StructureDef[len]; //place to put final list of groups/seg's w/o opt & rep markers
+			IStructureDef[] shortList = new IStructureDef[len]; //place to put final list of groups/seg's w/o opt & rep markers
 			int currShortListPos = 0;
 			int currLongListPos = 0;
 			
@@ -155,7 +155,7 @@ namespace NHapi.Base.sourcegen
 						//this is the opening of a new group ... 
 						System.String name = ((SegmentDef) structures[currLongListPos]).GroupName;
 						int endOfNewGroup = findGroupEnd(structures, currLongListPos);
-						StructureDef[] newGroupStructures = new StructureDef[endOfNewGroup - currLongListPos + 1];
+						IStructureDef[] newGroupStructures = new IStructureDef[endOfNewGroup - currLongListPos + 1];
 						Array.Copy(structures, currLongListPos, newGroupStructures, 0, newGroupStructures.Length);
 						shortList[currShortListPos] = writeGroup(newGroupStructures, name, baseDirectory, version, message);
 						currLongListPos = endOfNewGroup + 1;
@@ -177,7 +177,7 @@ namespace NHapi.Base.sourcegen
 			}
 			
 			ret = new GroupDef(message, groupName, required, repeating, "a Group object");
-			StructureDef[] finalList = new StructureDef[currShortListPos]; //note: incremented after last assignment
+			IStructureDef[] finalList = new IStructureDef[currShortListPos]; //note: incremented after last assignment
 			Array.Copy(shortList, 0, finalList, 0, currShortListPos);
 			for (int i = 0; i < finalList.Length; i++)
 			{
@@ -272,11 +272,11 @@ namespace NHapi.Base.sourcegen
 			source.Append(group.Name);
 			source.Append("(Group parent, ModelClassFactory factory) : base(parent, factory){\r\n");
 			source.Append("\t   try {\r\n");
-			StructureDef[] structs = group.Structures;
+			IStructureDef[] structs = group.Structures;
 			int numStructs = structs.Length;
 			for (int i = 0; i < numStructs; i++)
 			{
-				StructureDef def = structs[i];
+				IStructureDef def = structs[i];
 				
 				if (def.Name.Equals("?"))
 				{
@@ -319,12 +319,12 @@ namespace NHapi.Base.sourcegen
 		/// <summary> Returns source code for a JavaDoc snippet listing the contents of a Group 
 		/// or Message.  
 		/// </summary>
-		public static System.String makeElementsDoc(StructureDef[] structures)
+		public static System.String makeElementsDoc(IStructureDef[] structures)
 		{
 			System.Text.StringBuilder elements = new System.Text.StringBuilder();
 			for (int i = 0; i < structures.Length; i++)
 			{
-				StructureDef def = structures[i];
+				IStructureDef def = structures[i];
 				elements.Append(" * ");
 				elements.Append(i);
 				elements.Append(": ");
@@ -347,7 +347,7 @@ namespace NHapi.Base.sourcegen
 		{
 			System.Text.StringBuilder source = new System.Text.StringBuilder();
 			
-			StructureDef def = group.Structures[structure];
+			IStructureDef def = group.Structures[structure];
 			
 			System.String name = def.Name;
 			System.String indexName = group.getIndexName(name);
@@ -464,7 +464,7 @@ namespace NHapi.Base.sourcegen
 		/// <throws>  HL7Exception if the end of the group is not found or if other pairs  </throws>
 		/// <summary>      are not properly nested inside this one.  
 		/// </summary>
-		public static int findGroupEnd(StructureDef[] structures, int groupStart)
+		public static int findGroupEnd(IStructureDef[] structures, int groupStart)
 		{
 			
 			//  {} is rep; [] is optionality

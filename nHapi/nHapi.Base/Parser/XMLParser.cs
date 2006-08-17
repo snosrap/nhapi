@@ -24,25 +24,11 @@
 /// this file under either the MPL or the GPL.
 /// </summary>
 using System;
-//UPGRADE_TODO: The type 'org.apache.xml.serialize.XMLSerializer' could not be found. If it was not included in the conversion, there may be compiler issues. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1262'"
-//using XMLSerializer = org.apache.xml.serialize.XMLSerializer;
+using NHapi.Base;
+using NHapi.Base.model;
+using NHapi.Base.util;
+using NHapi.Base.Log;
 
-
-using HL7Exception = NHapi.Base.HL7Exception;
-using Composite = NHapi.Base.model.Composite;
-using DataTypeException = NHapi.Base.model.DataTypeException;
-using GenericComposite = NHapi.Base.model.GenericComposite;
-using GenericMessage = NHapi.Base.model.GenericMessage;
-using GenericPrimitive = NHapi.Base.model.GenericPrimitive;
-using Message = NHapi.Base.model.Message;
-using Primitive = NHapi.Base.model.Primitive;
-using Segment = NHapi.Base.model.Segment;
-using Structure = NHapi.Base.model.Structure;
-using Type = NHapi.Base.model.Type;
-using Varies = NHapi.Base.model.Varies;
-using Terser = NHapi.Base.util.Terser;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
 namespace NHapi.Base.parser
 {
 	
@@ -60,11 +46,11 @@ namespace NHapi.Base.parser
 	{
 		private class AnonymousClassXMLParser:XMLParser
 		{
-			public override Message parseDocument(System.Xml.XmlDocument XMLMessage, System.String version)
+			public override IMessage parseDocument(System.Xml.XmlDocument XMLMessage, System.String version)
 			{
 				return null;
 			}
-			public override System.Xml.XmlDocument encodeDocument(Message source)
+			public override System.Xml.XmlDocument encodeDocument(IMessage source)
 			{
 				return null;
 			}
@@ -122,7 +108,7 @@ namespace NHapi.Base.parser
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.parser.XMLParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+		private static readonly IHapiLog log;
 		
         //UPGRADE_NOTE: rlb: DOMParser replaced by XmlDocument....
 		//private DOMParser parser;
@@ -208,16 +194,16 @@ namespace NHapi.Base.parser
 		/// <throws>  EncodingNotSupportedException if the message encoded </throws>
 		/// <summary>      is not supported by this parser.
 		/// </summary>
-		public abstract Message parseDocument(System.Xml.XmlDocument XMLMessage, System.String version);
+		public abstract IMessage parseDocument(System.Xml.XmlDocument XMLMessage, System.String version);
 		
 		/// <summary> <p>Parses a message string and returns the corresponding Message
 		/// object.  This method checks that the given message string is XML encoded, creates an
 		/// XML Document object (using Xerces) from the given String, and calls the abstract
 		/// method <code>parse(Document XMLMessage)</code></p>
 		/// </summary>
-		protected internal override Message doParse(System.String message, System.String version)
+		protected internal override IMessage doParse(System.String message, System.String version)
 		{
-			Message m = null;
+			IMessage m = null;
 			
 			//parse message string into a DOM document 
 			try
@@ -256,7 +242,7 @@ namespace NHapi.Base.parser
 		/// <throws>  EncodingNotSupportedException if the requested encoding is not </throws>
 		/// <summary>      supported by this parser.
 		/// </summary>
-		protected internal override System.String doEncode(Message source, System.String encoding)
+		protected internal override System.String doEncode(IMessage source, System.String encoding)
 		{
 			if (!encoding.Equals("XML"))
 				throw new EncodingNotSupportedException("XMLParser supports only XML encoding");
@@ -271,7 +257,7 @@ namespace NHapi.Base.parser
 		/// <throws>  HL7Exception if the data fields in the message do not permit encoding </throws>
 		/// <summary>      (e.g. required fields are null)
 		/// </summary>
-		protected internal override System.String doEncode(Message source)
+		protected internal override System.String doEncode(IMessage source)
 		{
 			if (source is GenericMessage)
 			{
@@ -307,13 +293,13 @@ namespace NHapi.Base.parser
 		/// <code>encode(Segment segmentObject, Element segmentElement)</code> using the Element for
 		/// that segment and the corresponding Segment object from the given Message.</p>
 		/// </summary>
-		public abstract System.Xml.XmlDocument encodeDocument(Message source);
+		public abstract System.Xml.XmlDocument encodeDocument(IMessage source);
 		
 		/// <summary> Populates the given Segment object with data from the given XML Element.</summary>
 		/// <throws>  HL7Exception if the XML Element does not have the correct name and structure </throws>
 		/// <summary>      for the given Segment, or if there is an error while setting individual field values.
 		/// </summary>
-		public virtual void  parse(Segment segmentObject, System.Xml.XmlElement segmentElement)
+		public virtual void  parse(ISegment segmentObject, System.Xml.XmlElement segmentElement)
 		{
 			//UPGRADE_TODO: Class 'java.util.HashSet' was converted to 'SupportClass.HashSetSupport' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashSet'"
 			SupportClass.HashSetSupport done = new SupportClass.HashSetSupport();
@@ -355,7 +341,7 @@ namespace NHapi.Base.parser
 			}
 		}
 		
-		private void  parseReps(Segment segmentObject, System.Xml.XmlElement segmentElement, System.String fieldName, int fieldNum)
+		private void  parseReps(ISegment segmentObject, System.Xml.XmlElement segmentElement, System.String fieldName, int fieldNum)
 		{
 			
 			System.Xml.XmlNodeList reps = segmentElement.GetElementsByTagName(fieldName);
@@ -369,14 +355,14 @@ namespace NHapi.Base.parser
 		/// Elements corresponding to the Segment's fields, their components, etc.  Returns 
 		/// true if there is at least one data value in the segment.   
 		/// </summary>
-		public virtual bool encode(Segment segmentObject, System.Xml.XmlElement segmentElement)
+		public virtual bool encode(ISegment segmentObject, System.Xml.XmlElement segmentElement)
 		{
 			bool hasValue = false;
 			int n = segmentObject.numFields();
 			for (int i = 1; i <= n; i++)
 			{
 				System.String name = makeElementName(segmentObject, i);
-				Type[] reps = segmentObject.getField(i);
+				IType[] reps = segmentObject.getField(i);
 				for (int j = 0; j < reps.Length; j++)
 				{
 					System.Xml.XmlElement newNode = segmentElement.OwnerDocument.CreateElement(name);
@@ -400,19 +386,19 @@ namespace NHapi.Base.parser
 		}
 		
 		/// <summary> Populates the given Type object with data from the given XML Element.</summary>
-		public virtual void  parse(Type datatypeObject, System.Xml.XmlElement datatypeElement)
+		public virtual void  parse(IType datatypeObject, System.Xml.XmlElement datatypeElement)
 		{
 			if (datatypeObject is Varies)
 			{
 				parseVaries((Varies) datatypeObject, datatypeElement);
 			}
-			else if (datatypeObject is Primitive)
+			else if (datatypeObject is IPrimitive)
 			{
-				parsePrimitive((Primitive) datatypeObject, datatypeElement);
+				parsePrimitive((IPrimitive) datatypeObject, datatypeElement);
 			}
-			else if (datatypeObject is Composite)
+			else if (datatypeObject is IComposite)
 			{
-				parseComposite((Composite) datatypeObject, datatypeElement);
+				parseComposite((IComposite) datatypeObject, datatypeElement);
 			}
 		}
 		
@@ -456,7 +442,7 @@ namespace NHapi.Base.parser
 		}
 		
 		/// <summary>Parses a primitive type by filling it with text child, if any </summary>
-		private void  parsePrimitive(Primitive datatypeObject, System.Xml.XmlElement datatypeElement)
+		private void  parsePrimitive(IPrimitive datatypeObject, System.Xml.XmlElement datatypeElement)
 		{
 			//UPGRADE_TODO: Method 'org.w3c.dom.Node.getChildNodes' was converted to 'System.Xml.XmlNode.ChildNodes' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 			System.Xml.XmlNodeList children = datatypeElement.ChildNodes;
@@ -540,7 +526,7 @@ namespace NHapi.Base.parser
 		/// Elements among the children of the given Element, and calling parse(Type, Element) for
 		/// each.
 		/// </summary>
-		private void  parseComposite(Composite datatypeObject, System.Xml.XmlElement datatypeElement)
+		private void  parseComposite(IComposite datatypeObject, System.Xml.XmlElement datatypeElement)
 		{
 			if (datatypeObject is GenericComposite)
 			{
@@ -559,7 +545,7 @@ namespace NHapi.Base.parser
 			}
 			else
 			{
-				Type[] children = datatypeObject.Components;
+				IType[] children = datatypeObject.Components;
 				for (int i = 0; i < children.Length; i++)
 				{
 					System.Xml.XmlNodeList matchingElements = datatypeElement.GetElementsByTagName(makeElementName(datatypeObject, i + 1));
@@ -584,13 +570,13 @@ namespace NHapi.Base.parser
 		}*/
 		
 		/// <summary>Returns the expected XML element name for the given child of the given Segment </summary>
-		private System.String makeElementName(Segment s, int child)
+		private System.String makeElementName(ISegment s, int child)
 		{
 			return s.getName() + "." + child;
 		}
 		
 		/// <summary>Returns the expected XML element name for the given child of the given Composite </summary>
-		private System.String makeElementName(Composite composite, int child)
+		private System.String makeElementName(IComposite composite, int child)
 		{
 			return composite.Name + "." + child;
 		}
@@ -601,20 +587,20 @@ namespace NHapi.Base.parser
 		/// return null, and for Composites, if at least one underlying Primitive doesn't 
 		/// return null).
 		/// </summary>
-		private bool encode(Type datatypeObject, System.Xml.XmlElement datatypeElement)
+		private bool encode(IType datatypeObject, System.Xml.XmlElement datatypeElement)
 		{
 			bool hasData = false;
 			if (datatypeObject is Varies)
 			{
 				hasData = encodeVaries((Varies) datatypeObject, datatypeElement);
 			}
-			else if (datatypeObject is Primitive)
+			else if (datatypeObject is IPrimitive)
 			{
-				hasData = encodePrimitive((Primitive) datatypeObject, datatypeElement);
+				hasData = encodePrimitive((IPrimitive) datatypeObject, datatypeElement);
 			}
-			else if (datatypeObject is Composite)
+			else if (datatypeObject is IComposite)
 			{
-				hasData = encodeComposite((Composite) datatypeObject, datatypeElement);
+				hasData = encodeComposite((IComposite) datatypeObject, datatypeElement);
 			}
 			return hasData;
 		}
@@ -635,7 +621,7 @@ namespace NHapi.Base.parser
 		/// <summary> Encodes a Primitive in XML by adding it's value as a child of the given Element.  
 		/// Returns true if the given Primitive contains a value.  
 		/// </summary>
-		private bool encodePrimitive(Primitive datatypeObject, System.Xml.XmlElement datatypeElement)
+		private bool encodePrimitive(IPrimitive datatypeObject, System.Xml.XmlElement datatypeElement)
 		{
 			bool hasValue = false;
 			if (datatypeObject.Value != null && !datatypeObject.Value.Equals(""))
@@ -662,9 +648,9 @@ namespace NHapi.Base.parser
 		/// calling encode(Type, Element) using these children.  Returns true if at least 
 		/// one component contains a value.  
 		/// </summary>
-		private bool encodeComposite(Composite datatypeObject, System.Xml.XmlElement datatypeElement)
+		private bool encodeComposite(IComposite datatypeObject, System.Xml.XmlElement datatypeElement)
 		{
-			Type[] components = datatypeObject.Components;
+			IType[] components = datatypeObject.Components;
 			bool hasValue = false;
 			for (int i = 0; i < components.Length; i++)
 			{
@@ -701,10 +687,10 @@ namespace NHapi.Base.parser
 		/// message.  This method parses only that required information, hopefully
 		/// avoiding the condition that caused the original error.</p>
 		/// </summary>
-		public override Segment getCriticalResponseData(System.String message)
+		public override ISegment getCriticalResponseData(System.String message)
 		{
 			System.String version = getVersion(message);
-			Segment criticalData = Parser.makeControlMSH(version, Factory);
+			ISegment criticalData = Parser.makeControlMSH(version, Factory);
 			
 			Terser.Set(criticalData, 1, 0, 1, 1, parseLeaf(message, "MSH.1", 0));
 			Terser.Set(criticalData, 2, 0, 1, 1, parseLeaf(message, "MSH.2", 0));
@@ -818,7 +804,7 @@ namespace NHapi.Base.parser
 				System.Console.Out.WriteLine("Reading message file ... " + r.Read((System.Char[]) cbuf, 0, cbuf.Length) + " of " + fileLength + " chars");
 				r.Close();
 				System.String messString = System.Convert.ToString(cbuf);
-				Message mess = parser.parse(messString);
+				IMessage mess = parser.parse(messString);
 				System.Console.Out.WriteLine("Got message of type " + mess.GetType().FullName);
 				
 				NHapi.Base.parser.XMLParser xp = new AnonymousClassXMLParser();
@@ -827,10 +813,10 @@ namespace NHapi.Base.parser
 				System.String[] structNames = mess.Names;
 				for (int i = 0; i < structNames.Length; i++)
 				{
-					Structure[] reps = mess.getAll(structNames[i]);
+					IStructure[] reps = mess.getAll(structNames[i]);
 					for (int j = 0; j < reps.Length; j++)
 					{
-						if (typeof(Segment).IsAssignableFrom(reps[j].GetType()))
+						if (typeof(ISegment).IsAssignableFrom(reps[j].GetType()))
 						{
 							//ignore groups
 							//UPGRADE_TODO: Class 'javax.xml.parsers.DocumentBuilder' was converted to 'System.Xml.XmlDocument' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaxxmlparsersDocumentBuilder'"
@@ -842,13 +828,13 @@ namespace NHapi.Base.parser
 							System.Xml.XmlDocument doc = new System.Xml.XmlDocument(); //new doc for each segment
 							System.Xml.XmlElement root = doc.CreateElement(reps[j].GetType().FullName);
 							doc.AppendChild(root);
-							xp.encode((Segment) reps[j], root);
+							xp.encode((ISegment) reps[j], root);
 							System.IO.StringWriter out_Renamed = new System.IO.StringWriter();                            
                             System.Console.Out.WriteLine("Segment " + reps[j].GetType().FullName + ": \r\n" + doc.OuterXml);
 							
-							System.Type[] segmentConstructTypes = new System.Type[]{typeof(Message)};
+							System.Type[] segmentConstructTypes = new System.Type[]{typeof(IMessage)};
 							System.Object[] segmentConstructArgs = new System.Object[]{null};
-							Segment s = (Segment) reps[j].GetType().GetConstructor(segmentConstructTypes).Invoke(segmentConstructArgs);
+							ISegment s = (ISegment) reps[j].GetType().GetConstructor(segmentConstructTypes).Invoke(segmentConstructArgs);
 							xp.parse(s, root);
 							//UPGRADE_TODO: Class 'javax.xml.parsers.DocumentBuilder' was converted to 'System.Xml.XmlDocument' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaxxmlparsersDocumentBuilder'"
 							System.Xml.XmlDocument doc2 = new System.Xml.XmlDocument();

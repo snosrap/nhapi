@@ -2,11 +2,11 @@
 * Created on 21-Apr-2005
 */
 using System;
-using HL7Exception = NHapi.Base.HL7Exception;
-using GenericMessage = NHapi.Base.model.GenericMessage;
-using SourceGenerator = NHapi.Base.sourcegen.SourceGenerator;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+using NHapi.Base;
+using NHapi.Base.model;
+using NHapi.Base.sourcegen;
+using NHapi.Base.Log;
+
 namespace NHapi.Base.parser
 {
 	
@@ -17,12 +17,12 @@ namespace NHapi.Base.parser
 	/// </author>
 	/// <version>  $Revision: 1.2 $ updated on $Date: 2005/05/24 18:15:39 $ by $Author: bryan_tripp $
 	/// </version>
-	public class DefaultModelClassFactory : ModelClassFactory
+	public class DefaultModelClassFactory : IModelClassFactory
 	{
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.parser.DefaultModelClassFactory'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+		private static readonly IHapiLog log;
 		
 		private const System.String CUSTOM_PACKAGES_RESOURCE_NAME_TEMPLATE = "custom_packages/{0}";
 		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"

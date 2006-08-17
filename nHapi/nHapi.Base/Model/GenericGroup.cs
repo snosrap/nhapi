@@ -1,5 +1,6 @@
 using System;
-using ModelClassFactory = NHapi.Base.parser.ModelClassFactory;
+using NHapi.Base.parser;
+
 namespace NHapi.Base.model
 {
 	
@@ -16,7 +17,7 @@ namespace NHapi.Base.model
 		private System.String name;
 		
 		/// <summary>Creates a new instance of GenericGroup </summary>
-		public GenericGroup(Group parent, System.String name, ModelClassFactory factory):base(parent, factory)
+		public GenericGroup(IGroup parent, System.String name, IModelClassFactory factory):base(parent, factory)
 		{
 			this.name = name;
 		}

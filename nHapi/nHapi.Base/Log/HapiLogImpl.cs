@@ -4,7 +4,7 @@
 * Created on May 7, 2003 at 2:23:45 PM
 */
 using System;
-namespace ca.uhn.log
+namespace NHapi.Base.Log
 {
 	
 	/// <summary> Provides a base implementation of the <code>HapiLog</code> interface.
@@ -17,7 +17,7 @@ namespace ca.uhn.log
 	/// </author>
 	/// <version>  $Revision: 1.2 $ updated on $Date: 2003/05/26 20:17:06 $ by $Author: aguevara $
 	/// </version>
-	public class HapiLogImpl : HapiLog
+	public class HapiLogImpl : IHapiLog
 	{
 		/// <returns>
 		/// </returns>
@@ -81,9 +81,9 @@ namespace ca.uhn.log
 		}
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'delegate '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		private Log innerLog;
+		private ILog innerLog;
 		
-		internal HapiLogImpl(Log log)
+		internal HapiLogImpl(ILog log)
 		{
 			this.innerLog = log;
 		}

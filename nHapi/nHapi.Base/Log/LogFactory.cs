@@ -2,19 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ca.uhn.log
+namespace NHapi.Base.Log
 {
     /// <summary>
     /// Placeholder for LogFactory to get project to compile.
     /// </summary>
     class LogFactory
     {
-        public static Log getLog(System.Type classType)
+        public static ILog getLog(System.Type classType)
         {
             return new EntLibLogger();
         }
 
-        public static Log getLog(System.String name)
+        public static ILog getLog(System.String name)
         {
             return new EntLibLogger();
         }

@@ -58,12 +58,12 @@ namespace NHapi.Base.util
 			
 		}
 		
-		private FilterIterator.Predicate predicate;
+		private FilterIterator.IPredicate predicate;
 		private System.Collections.IEnumerator iter;
 		private System.Object nextObject;
 		private bool nextObjectSet = false;
 		
-		public FilterIterator(System.Collections.IEnumerator iter, FilterIterator.Predicate predicate)
+		public FilterIterator(System.Collections.IEnumerator iter, FilterIterator.IPredicate predicate)
 		{
 			this.iter = iter;
 			this.predicate = predicate;
@@ -108,7 +108,7 @@ namespace NHapi.Base.util
 			throw new System.NotSupportedException();
 		}
 		
-		public interface Predicate
+		public interface IPredicate
 		{
 			bool evaluate(System.Object obj);
 		}

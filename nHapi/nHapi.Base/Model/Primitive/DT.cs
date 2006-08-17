@@ -23,9 +23,8 @@
 /// this file under either the MPL or the GPL.
 /// </summary>
 using System;
-using AbstractPrimitive = NHapi.Base.model.AbstractPrimitive;
-using DataTypeException = NHapi.Base.model.DataTypeException;
-using Message = NHapi.Base.model.Message;
+using NHapi.Base.model;
+
 namespace NHapi.Base.model.primitive
 {
 	
@@ -141,12 +140,19 @@ namespace NHapi.Base.model.primitive
 		}
 		
 		private CommonDT myDetail;
-		
-		/// <param name="theMessage">message to which this Type belongs
-		/// </param>
-		public DT(Message theMessage):base(theMessage)
-		{
-		}
+
+        /// <param name="theMessage">message to which this Type belongs
+        /// </param>
+        public DT(IMessage theMessage)
+            : base(theMessage)
+        {
+        }
+
+
+        public DT(IMessage theMessage, string description)
+            : base(theMessage, description)
+        {
+        }
 		
 		/// <seealso cref="CommonDT.setYearMonthPrecision(int, int)">
 		/// </seealso>

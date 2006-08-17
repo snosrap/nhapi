@@ -4,7 +4,7 @@
 * Created on May 7, 2003 at 2:19:17 PM
 */
 using System;
-namespace ca.uhn.log
+namespace NHapi.Base.Log
 {
 	
 	/// <summary> <p>Factory for creating {@link HapiLog} instances. It is factory
@@ -35,11 +35,11 @@ namespace ca.uhn.log
 		/// <exception cref="LogConfigurationException">if a suitable <code>Log</code>
 		/// instance cannot be returned
 		/// </exception>
-		public static HapiLog getHapiLog(System.Type clazz)
+		public static IHapiLog getHapiLog(System.Type clazz)
 		{
-			HapiLog retVal = null;
+			IHapiLog retVal = null;
 			
-			Log log = LogFactory.getLog(clazz);
+			ILog log = LogFactory.getLog(clazz);
             retVal = new HapiLogImpl(log);
 			
 			return retVal;
@@ -57,11 +57,11 @@ namespace ca.uhn.log
 		/// <exception cref="LogConfigurationException">if a suitable <code>Log</code>
 		/// instance cannot be returned
 		/// </exception>
-		public static HapiLog getHapiLog(System.String name)
+		public static IHapiLog getHapiLog(System.String name)
 		{
-			HapiLog retVal = null;
+			IHapiLog retVal = null;
 			
-			Log log = LogFactory.getLog(name);
+			ILog log = LogFactory.getLog(name);
 			retVal = new HapiLogImpl(log);
 			
 			return retVal;

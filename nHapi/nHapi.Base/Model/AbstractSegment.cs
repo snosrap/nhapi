@@ -21,10 +21,10 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using HL7Exception = NHapi.Base.HL7Exception;
-using ModelClassFactory = NHapi.Base.parser.ModelClassFactory;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+using NHapi.Base;
+using NHapi.Base.parser;
+using NHapi.Base.Log;
+
 namespace NHapi.Base.model
 {
 	
@@ -37,34 +37,9 @@ namespace NHapi.Base.model
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public abstract class AbstractSegment : Segment
-	{
-		/// <summary> Returns the Message to which this segment belongs.  </summary>
-		virtual public Message Message
-		{
-			get
-			{
-				Structure s = this;
-				while (!typeof(Message).IsAssignableFrom(s.GetType()))
-				{
-					s = s.Parent;
-				}
-				return (Message) s;
-			}
-			
-		}
-		virtual public Group Parent
-		{
-			get
-			{
-				return this.parent;
-			}
-			
-		}
-		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.model.AbstractSegment'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+	public abstract class AbstractSegment : ISegment
+	{		
+		private static readonly IHapiLog log;
 		
 		private System.Collections.ArrayList fields;
 		private System.Collections.ArrayList types;
@@ -72,11 +47,10 @@ namespace NHapi.Base.model
 		private System.Collections.ArrayList length;
 		private System.Collections.ArrayList args;
 		private System.Collections.ArrayList maxReps;
-		private Group parent;
-		//private Message message;
-		//private String name;
-		
-		/// <summary> Calls the abstract init() method to create the fields in this segment.
+		private IGroup parent;
+
+        #region Constructor
+        /// <summary> Calls the abstract init() method to create the fields in this segment.
 		/// 
 		/// </summary>
 		/// <param name="parent">parent group
@@ -85,7 +59,7 @@ namespace NHapi.Base.model
 		/// include it as an arg here to emphasize that fact ... AbstractSegment doesn't actually 
 		/// use it though
 		/// </param>
-		public AbstractSegment(Group parent, ModelClassFactory factory)
+		public AbstractSegment(IGroup parent, IModelClassFactory factory)
 		{
 			this.parent = parent;
             this.fields = new System.Collections.ArrayList();
@@ -95,11 +69,41 @@ namespace NHapi.Base.model
 			this.args = new System.Collections.ArrayList();
 			this.maxReps = new System.Collections.ArrayList();
 		}
-		
-		/// <summary> Returns an array of Field objects at the specified location in the segment.  In the case of
+
+        /// <summary> Sets the segment name.  This would normally be called by a Parser. </summary>
+        static AbstractSegment()
+        {
+            log = HapiLogFactory.getHapiLog(typeof(AbstractSegment));
+        }
+        #endregion
+
+        /// <summary> Returns the Message to which this segment belongs.  </summary>
+        virtual public IMessage Message
+        {
+            get
+            {
+                IStructure s = this;
+                while (!typeof(IMessage).IsAssignableFrom(s.GetType()))
+                {
+                    s = s.Parent;
+                }
+                return (IMessage)s;
+            }
+
+        }
+        virtual public IGroup Parent
+        {
+            get
+            {
+                return this.parent;
+            }
+
+        }
+
+        /// <summary> Returns an array of Field objects at the specified location in the segment.  In the case of
 		/// non-repeating fields the array will be of length one.  Fields are numbered from 1.
 		/// </summary>
-		public virtual Type[] getField(int number)
+		public virtual IType[] getField(int number)
 		{
 			
 			ensureEnoughFields(number);
@@ -109,7 +113,7 @@ namespace NHapi.Base.model
 				throw new HL7Exception("Can't retrieve field " + number + " from segment " + this.GetType().FullName + " - there are only " + fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
 			
-			return (Type[]) fields[number - 1]; //note: fields are numbered from 1 from the user's perspective
+			return (IType[]) fields[number - 1]; //note: fields are numbered from 1 from the user's perspective
 		}
 		
 		/// <summary> Returns a specific repetition of field at the specified index.  If there exist 
@@ -127,9 +131,9 @@ namespace NHapi.Base.model
 		/// <summary>    repetition is greater than the maximum allowed, or if the specified 
 		/// repetition is more than 1 greater than the existing # of repetitions.  
 		/// </summary>
-		public virtual Type getField(int number, int rep)
+		public virtual IType getField(int number, int rep)
 		{
-			Type[] arr = this.getField(number);
+			IType[] arr = this.getField(number);
 			
 			//check if out of range ... 
 			if (rep > arr.Length)
@@ -149,7 +153,7 @@ namespace NHapi.Base.model
 			//add a rep if necessary ... 
 			if (rep == arr.Length)
 			{
-				Type[] newArr = new Type[arr.Length + 1];
+				IType[] newArr = new IType[arr.Length + 1];
 				Array.Copy(arr, 0, newArr, 0, arr.Length);
 				newArr[rep] = createNewType(number);
 				arr = newArr;
@@ -163,28 +167,28 @@ namespace NHapi.Base.model
 		}
 		
 		/// <summary> Creates a new instance of the Type at the given field number in this segment.  </summary>
-		private Type createNewType(int field)
+		private IType createNewType(int field)
 		{
 			int number = field - 1;
 			System.Type c = (System.Type) this.types[number];
 			
-			Type newType = null;
+			IType newType = null;
 			try
 			{
 				System.Object[] args = getArgs(number);
 				System.Type[] argClasses = new System.Type[args.Length];
 				for (int i = 0; i < args.Length; i++)
 				{
-					if (args[i] is Message)
+					if (args[i] is IMessage)
 					{
-						argClasses[i] = typeof(Message);
+						argClasses[i] = typeof(IMessage);
 					}
 					else
 					{
 						argClasses[i] = args[i].GetType();
 					}
 				}
-				newType = (Type) c.GetConstructor(argClasses).Invoke(args);
+				newType = (IType) c.GetConstructor(argClasses).Invoke(args);
 			}
 			catch (System.UnauthorizedAccessException iae)
 			{
@@ -364,56 +368,7 @@ namespace NHapi.Base.model
 				log.error("Can't create additional generic fields to handle request for field " + fieldRequested, e);
 			}
 		}
-		
-		[STAThread]
-		public static void  Main(System.String[] args)
-		{
-			/*
-			try {
-			Message mess = new TestMessage();
-			MSH msh = new MSH(mess);
-			
-			//get empty array 
-			Type[] ts = msh.getField(1);
-			System.out.println("Got Type array of length " + ts.length);
-			
-			//get first field
-			Type t = msh.getField(1, 0);
-			System.out.println("Got a Type of class " + t.getClass().getName());
-			
-			//get array now
-			Type[] ts2 = msh.getField(1);
-			System.out.println("Got Type array of length " + ts2.length);
-			
-			//set a value
-			ST str = (ST)t;
-			str.setValue("hello");
-			
-			//get first field
-			Type t2 = msh.getField(1, 0);
-			System.out.println("Got a Type of class " + t.getClass().getName());
-			System.out.println("It's value is " + ((ST)t2).getValue());
-			
-			msh.getFieldSeparator().setValue("thing");
-			System.out.println("Field Sep: " + msh.getFieldSeparator().getValue());
-			
-			msh.getConformanceStatementID(0).setValue("ID 1");
-			msh.getConformanceStatementID(1).setValue("ID 2");
-			System.out.println("Conf ID #2: " + msh.getConformanceStatementID(1).getValue());
-			
-			ID[] cid = msh.getConformanceStatementID();
-			System.out.println("CID: " + cid);
-			for (int i = 0; i < cid.length; i++) {
-			System.out.println("Conf ID element: " + i + ": " + cid[i].getValue());
-			}
-			msh.getConformanceStatementID(3).setValue("this should fail");
-			
-			
-			} catch (HL7Exception e) {
-			e.printStackTrace();
-			}*/
-		}
-		
+				
 		/// <summary> Returns the number of fields defined by this segment (repeating 
 		/// fields are not counted multiple times).  
 		/// </summary>
@@ -431,13 +386,6 @@ namespace NHapi.Base.model
 			return fullName.Substring(fullName.LastIndexOf('.') + 1, (fullName.Length) - (fullName.LastIndexOf('.') + 1));
 		}
 		
-		/// <summary> Sets the segment name.  This would normally be called by a Parser. </summary>
-		/*public void setName(String name) {
-		this.name = name;
-		}*/
-		static AbstractSegment()
-		{
-			log = HapiLogFactory.getHapiLog(typeof(AbstractSegment));
-		}
+		
 	}
 }

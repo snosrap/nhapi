@@ -19,7 +19,8 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using Rule = NHapi.Base.validation.Rule;
+using NHapi.Base.validation;
+
 namespace NHapi.Base.validation.impl
 {
 	
@@ -76,7 +77,7 @@ namespace NHapi.Base.validation.impl
 		}
 		/// <returns> a <code>Rule</code> that applies to the associated version and scope
 		/// </returns>
-		virtual public Rule Rule
+		virtual public IRule Rule
 		{
 			get
 			{
@@ -88,7 +89,7 @@ namespace NHapi.Base.validation.impl
 		private bool myActiveFlag;
 		private System.String myVersion;
 		private System.String myScope;
-		private Rule myRule;
+		private IRule myRule;
 		
 		/// <summary> Active by default.  
 		/// 
@@ -99,7 +100,7 @@ namespace NHapi.Base.validation.impl
 		/// </param>
 		/// <param name="theRule">see {@link #getRule()}
 		/// </param>
-		public RuleBinding(System.String theVersion, System.String theScope, Rule theRule)
+		public RuleBinding(System.String theVersion, System.String theScope, IRule theRule)
 		{
 			myActiveFlag = true;
 			myVersion = theVersion;

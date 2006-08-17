@@ -19,10 +19,9 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using HL7Exception = NHapi.Base.HL7Exception;
-using ModelClassFactory = NHapi.Base.parser.ModelClassFactory;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+using NHapi.Base;
+using NHapi.Base.parser;
+using NHapi.Base.Log;
 using System.Collections.Generic;
 
 namespace NHapi.Base.model
@@ -37,7 +36,7 @@ namespace NHapi.Base.model
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public abstract class AbstractGroup : Group
+	public abstract class AbstractGroup : IGroup
 	{
 		/// <summary> Returns an ordered array of the names of the Structures in this 
 		/// Group.  These names can be used to iterate through the group using 
@@ -57,23 +56,23 @@ namespace NHapi.Base.model
 			
 		}
 		/// <summary> Returns the Message to which this segment belongs.</summary>
-		virtual public Message Message
+		virtual public IMessage Message
 		{
 			get
 			{
-				Structure s = this;
-				while (!typeof(Message).IsAssignableFrom(s.GetType()))
+				IStructure s = this;
+				while (!typeof(IMessage).IsAssignableFrom(s.GetType()))
 				{
 					s = s.Parent;
 				}
-				return (Message) s;
+				return (IMessage) s;
 			}
 			
 		}
 		/// <summary>Returns the parent group within which this structure exists (may be root
 		/// message group).
 		/// </summary>
-		virtual public Group Parent
+		virtual public IGroup Parent
 		{
 			get
 			{
@@ -84,7 +83,7 @@ namespace NHapi.Base.model
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.model.AbstractGroup'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+		private static readonly IHapiLog log;
 		
 		private List<string> names;
 		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
@@ -96,9 +95,9 @@ namespace NHapi.Base.model
 		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private System.Collections.Hashtable classes;
 		//protected Message message;
-		private Group parent;
+		private IGroup parent;
 		//UPGRADE_NOTE: Final was removed from the declaration of 'myFactory '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		private ModelClassFactory myFactory;
+		private IModelClassFactory myFactory;
 		
 		/// <summary> This constructor should be used by implementing classes that do not 
 		/// also implement Message.
@@ -108,7 +107,7 @@ namespace NHapi.Base.model
 		/// </param>
 		/// <param name="factory">the factory for classes of segments, groups, and datatypes under this group
 		/// </param>
-		protected internal AbstractGroup(Group parent, ModelClassFactory factory)
+		protected internal AbstractGroup(IGroup parent, IModelClassFactory factory)
 		{
 			this.parent = parent;
 			this.myFactory = factory;
@@ -120,7 +119,7 @@ namespace NHapi.Base.model
 		/// </summary>
 		/// <param name="factory">the factory for classes of segments, groups, and datatypes under this group
 		/// </param>
-		protected internal AbstractGroup(ModelClassFactory factory)
+		protected internal AbstractGroup(IModelClassFactory factory)
 		{
 			this.myFactory = factory;
 			init();
@@ -143,7 +142,7 @@ namespace NHapi.Base.model
 		/// repetition is returned.  Creates the Structure if necessary.  
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		public virtual Structure get_Renamed(System.String name)
+		public virtual IStructure get_Renamed(System.String name)
 		{
 			return get_Renamed(name, 0);
 		}
@@ -157,7 +156,7 @@ namespace NHapi.Base.model
 		/// or if the given repetition number is more than one greater than the 
 		/// existing number of repetitions.  
 		/// </summary>
-		public virtual Structure get_Renamed(System.String name, int rep)
+		public virtual IStructure get_Renamed(System.String name, int rep)
 		{
 			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = structures[name];
@@ -166,11 +165,11 @@ namespace NHapi.Base.model
 			
 			System.Collections.ArrayList list = (System.Collections.ArrayList) o;
 			
-			Structure ret;
+			IStructure ret;
 			if (rep < list.Count)
 			{
 				// return existng Structure if it exists 
-				ret = (Structure) list[rep];
+				ret = (IStructure) list[rep];
 			}
 			else if (rep == list.Count)
 			{
@@ -254,9 +253,9 @@ namespace NHapi.Base.model
 		/// </param>
 		/// <param name="name">an optional name of the structure (used by Generic structures; may be null)
 		/// </param>
-		private Structure tryToInstantiateStructure(System.Type c, System.String name)
+		private IStructure tryToInstantiateStructure(System.Type c, System.String name)
 		{
-			Structure s = null;
+			IStructure s = null;
 			try
 			{
 				System.Object o = null;
@@ -273,7 +272,7 @@ namespace NHapi.Base.model
 					//first try to instantiate using contructor w/ Message arg ...
 					try
 					{
-						System.Type[] argClasses = new System.Type[]{typeof(Group), typeof(ModelClassFactory)};
+						System.Type[] argClasses = new System.Type[]{typeof(IGroup), typeof(IModelClassFactory)};
 						System.Object[] argObjects = new System.Object[]{this, myFactory};
 						System.Reflection.ConstructorInfo con = c.GetConstructor(argClasses);
 						o = con.Invoke(argObjects);
@@ -283,12 +282,12 @@ namespace NHapi.Base.model
 						//UPGRADE_TODO: Method 'java.lang.Class.newInstance' was converted to 'System.Activator.CreateInstance' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangClassnewInstance'"
 						o = System.Activator.CreateInstance(c);
 					}
-					if (!(o is Structure))
+					if (!(o is IStructure))
 					{
 						//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 						throw new HL7Exception("Class " + c.FullName + " does not implement " + "ca.on.uhn.hl7.message.Structure", HL7Exception.APPLICATION_INTERNAL_ERROR);
 					}
-					s = (Structure) o;
+					s = (IStructure) o;
 				}
 			}
 			catch (System.Exception e)
@@ -346,17 +345,17 @@ namespace NHapi.Base.model
 		/// yet using the get(...) methods. 
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		public virtual Structure[] getAll(System.String name)
+		public virtual IStructure[] getAll(System.String name)
 		{
 			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = structures[name];
 			if (o == null)
 				throw new HL7Exception("The structure " + name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
 			System.Collections.ArrayList list = (System.Collections.ArrayList) o;
-			Structure[] all = new Structure[list.Count];
+			IStructure[] all = new IStructure[list.Count];
 			for (int i = 0; i < list.Count; i++)
 			{
-				all[i] = (Structure) list[i];
+				all[i] = (IStructure) list[i];
 			}
 			return all;
 		}
@@ -385,7 +384,7 @@ namespace NHapi.Base.model
 			System.String name = fullName.Substring(dotLoc + 1, (fullName.Length) - (dotLoc + 1));
 			
 			//remove message name prefix from group names for compatibility with getters ...
-			if (typeof(Group).IsAssignableFrom(c) && !typeof(Message).IsAssignableFrom(c))
+			if (typeof(IGroup).IsAssignableFrom(c) && !typeof(IMessage).IsAssignableFrom(c))
 			{
 				System.String messageName = Message.getName();
 				if (name.StartsWith(messageName) && name.Length > messageName.Length)

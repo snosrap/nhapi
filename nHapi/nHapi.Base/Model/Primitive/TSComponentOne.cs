@@ -23,9 +23,8 @@
 /// this file under either the MPL or the GPL.
 /// </summary>
 using System;
-using AbstractPrimitive = NHapi.Base.model.AbstractPrimitive;
-using DataTypeException = NHapi.Base.model.DataTypeException;
-using Message = NHapi.Base.model.Message;
+using NHapi.Base.model;
+
 namespace NHapi.Base.model.primitive
 {
 	
@@ -217,10 +216,16 @@ namespace NHapi.Base.model.primitive
 
         private CommonTS myDetail;
 
-        /// <param name="theMessage">message to which this Type belongs
+         /// <param name="theMessage">message to which this Type belongs
         /// </param>
-        public TSComponentOne(Message theMessage)
+        public TSComponentOne(IMessage theMessage)
             : base(theMessage)
+        {
+        }
+
+
+        public TSComponentOne(IMessage theMessage, string description)
+            : base(theMessage, description)
         {
         }
 

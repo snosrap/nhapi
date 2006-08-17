@@ -1,6 +1,6 @@
 using System;
 using NHapi.Base.model;
-using ca.uhn.log;
+using NHapi.Base.Log;
 using HL7Exception = NHapi.Base.HL7Exception;
 namespace NHapi.Base.util
 {
@@ -83,14 +83,14 @@ namespace NHapi.Base.util
 			
 		}
 		
-		private Structure currentStructure;
+		private IStructure currentStructure;
 		private System.String direction;
 		private Position next_Renamed_Field;
 		private bool handleUnexpectedSegments;
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.util.MessageIterator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+		private static readonly IHapiLog log;
 		
 		/* may add configurability later ... 
 		private boolean findUpToFirstRequired;
@@ -102,7 +102,7 @@ namespace NHapi.Base.util
 		*/
 		
 		/// <summary>Creates a new instance of MessageIterator </summary>
-		public MessageIterator(Structure start, System.String direction, bool handleUnexpectedSegments)
+		public MessageIterator(IStructure start, System.String direction, bool handleUnexpectedSegments)
 		{
 			this.currentStructure = start;
 			this.direction = direction;
@@ -143,13 +143,13 @@ namespace NHapi.Base.util
 			bool has = true;
 			if (next_Renamed_Field == null)
 			{
-				if (typeof(Group).IsAssignableFrom(currentStructure.GetType()))
+				if (typeof(IGroup).IsAssignableFrom(currentStructure.GetType()))
 				{
-					groupNext((Group) currentStructure);
+					groupNext((IGroup) currentStructure);
 				}
 				else
 				{
-					Group parent = currentStructure.Parent;
+					IGroup parent = currentStructure.Parent;
 					Index i = getIndex(parent, currentStructure);
 					Position currentPosition = new Position(parent, i);
 					
@@ -178,9 +178,9 @@ namespace NHapi.Base.util
 		/// <summary> Sets next to the first child of the given group (iteration 
 		/// always proceeds from group to first child). 
 		/// </summary>
-		private void  groupNext(Group current)
+		private void  groupNext(IGroup current)
 		{
-			next_Renamed_Field = new Position(current, ((Group) current).Names[0], 0);
+			next_Renamed_Field = new Position(current, ((IGroup) current).Names[0], 0);
 		}
 		
 		/// <summary> Sets next to the next repetition of the current structure.  </summary>
@@ -217,13 +217,13 @@ namespace NHapi.Base.util
 			//the following conditional logic is a little convoluted -- its meant as an optimization 
 			// i.e. trying to avoid calling matchExistsAfterCurrentPosition
 			
-			if (!makeNewSegmentIfNeeded && typeof(Message).IsAssignableFrom(currPos.parent.GetType()))
+			if (!makeNewSegmentIfNeeded && typeof(IMessage).IsAssignableFrom(currPos.parent.GetType()))
 			{
 				nextExists = false;
 			}
 			else if (!makeNewSegmentIfNeeded || matchExistsAfterPosition(currPos, direction, false, true))
 			{
-				Group grandparent = currPos.parent.Parent;
+				IGroup grandparent = currPos.parent.Parent;
 				Index parentIndex = getIndex(grandparent, currPos.parent);
 				Position parentPos = new Position(grandparent, parentIndex);
 				
@@ -275,7 +275,7 @@ namespace NHapi.Base.util
 			//check next rep of self (if any)
 			if (pos.parent.isRepeating(pos.index.name))
 			{
-				Structure s = pos.parent.get_Renamed(pos.index.name, pos.index.rep);
+				IStructure s = pos.parent.get_Renamed(pos.index.name, pos.index.rep);
 				matchExists = contains(s, name, firstDescendentsOnly, upToFirstRequired);
 			}
 			
@@ -298,9 +298,9 @@ namespace NHapi.Base.util
 			}
 			
 			//recurse to parent (if parent is not message root)
-			if (!matchExists && !typeof(Message).IsAssignableFrom(pos.parent.GetType()))
+			if (!matchExists && !typeof(IMessage).IsAssignableFrom(pos.parent.GetType()))
 			{
-				Group grandparent = pos.parent.Parent;
+				IGroup grandparent = pos.parent.Parent;
 				Position parentPos = new Position(grandparent, getIndex(grandparent, pos.parent));
 				matchExists = matchExistsAfterPosition(parentPos, name, firstDescendentsOnly, upToFirstRequired);
 			}
@@ -311,7 +311,7 @@ namespace NHapi.Base.util
 		/// <summary> Sets the next position to a new segment of the given name, within the 
 		/// given group. 
 		/// </summary>
-		private void  newSegment(Group parent, System.String name)
+		private void  newSegment(IGroup parent, System.String name)
 		{
 			log.info("MessageIterator creating new segment: " + name);
 			parent.addNonstandardSegment(name);
@@ -335,17 +335,17 @@ namespace NHapi.Base.util
 		/// up to the first required one.  This may be needed because in practice 
 		/// some first children of groups are not required.  
 		/// </param>
-		public static bool contains(Structure s, System.String name, bool firstDescendentsOnly, bool upToFirstRequired)
+		public static bool contains(IStructure s, System.String name, bool firstDescendentsOnly, bool upToFirstRequired)
 		{
 			bool contains = false;
-			if (typeof(Segment).IsAssignableFrom(s.GetType()))
+			if (typeof(ISegment).IsAssignableFrom(s.GetType()))
 			{
 				if (s.getName().Equals(name))
 					contains = true;
 			}
 			else
 			{
-				Group g = (Group) s;
+				IGroup g = (IGroup) s;
 				System.String[] names = g.Names;
 				for (int i = 0; i < names.Length && !contains; i++)
 				{
@@ -406,7 +406,7 @@ namespace NHapi.Base.util
 		/// <summary> Returns the index of the given structure as a child of the 
 		/// given parent.  Returns null if the child isn't found. 
 		/// </summary>
-		public static Index getIndex(Group parent, Structure child)
+		public static Index getIndex(IGroup parent, IStructure child)
 		{
 			Index index = null;
 			System.String[] names = parent.Names;
@@ -416,14 +416,14 @@ namespace NHapi.Base.util
 				{
 					try
 					{
-						Structure[] reps = parent.getAll(names[i]);
+						IStructure[] reps = parent.getAll(names[i]);
 						for (int j = 0; j < reps.Length; j++)
 						{
 							if (child == reps[j])
 							{
 								index = new Index(names[i], j);
 								//UPGRADE_NOTE: Labeled break statement was changed to a goto statement. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1012'"
-								goto findChild_brk;
+                                break;
 							}
 						}
 					}
@@ -434,11 +434,7 @@ namespace NHapi.Base.util
 						throw new System.ApplicationException("Internal HL7Exception finding structure index: " + e.Message);
 					}
 				}
-			}
-			//UPGRADE_NOTE: Label 'findChild_brk' was added. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1011'"
-
-findChild_brk: ;
-			
+			}			
 			return index;
 		}
 		
@@ -487,14 +483,14 @@ findChild_brk: ;
 		/// <summary> A structure position within a message. </summary>
 		public class Position
 		{
-			public Group parent;
+			public IGroup parent;
 			public Index index;
-			public Position(Group parent, System.String name, int rep)
+			public Position(IGroup parent, System.String name, int rep)
 			{
 				this.parent = parent;
 				this.index = new Index(name, rep);
 			}
-			public Position(Group parent, Index i)
+			public Position(IGroup parent, Index i)
 			{
 				this.parent = parent;
 				this.index = i;

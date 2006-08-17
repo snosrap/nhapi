@@ -48,7 +48,7 @@ namespace NHapi.Base.parser
 			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			System.Collections.Hashtable esc = getEscapeSequences(encChars);
 			//UPGRADE_TODO: Method 'java.util.HashMap.keySet' was converted to 'SupportClass.HashSetSupport' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapkeySet'"
-			SupportClass.SetSupport keys = new SupportClass.HashSetSupport(esc.Keys);
+			SupportClass.ISetSupport keys = new SupportClass.HashSetSupport(esc.Keys);
 			System.String escChar = System.Convert.ToString(encChars.EscapeCharacter);
 			int position = 0;
 			while (position < textLength)
@@ -84,7 +84,7 @@ namespace NHapi.Base.parser
 			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			System.Collections.Hashtable esc = getEscapeSequences(encChars);
 			//UPGRADE_TODO: Method 'java.util.HashMap.keySet' was converted to 'SupportClass.HashSetSupport' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapkeySet'"
-			SupportClass.SetSupport keys = new SupportClass.HashSetSupport(esc.Keys);
+			SupportClass.ISetSupport keys = new SupportClass.HashSetSupport(esc.Keys);
 			System.String escChar = System.Convert.ToString(encChars.EscapeCharacter);
 			int position = 0;
 			while (position < textLength)

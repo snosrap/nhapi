@@ -19,11 +19,9 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using Primitive = NHapi.Base.model.Primitive;
-using PrimitiveTypeRule = NHapi.Base.validation.PrimitiveTypeRule;
-using EncodingRule = NHapi.Base.validation.EncodingRule;
-using MessageRule = NHapi.Base.validation.MessageRule;
-using ValidationContext = NHapi.Base.validation.ValidationContext;
+using NHapi.Base.model;
+using NHapi.Base.validation;
+
 namespace NHapi.Base.validation.impl
 {
 	
@@ -34,7 +32,7 @@ namespace NHapi.Base.validation.impl
 	/// </author>
 	/// <version>  $Revision: 1.5 $ updated on $Date: 2005/06/27 22:42:18 $ by $Author: bryan_tripp $
 	/// </version>
-	public class ValidationContextImpl : ValidationContext
+	public class ValidationContextImpl : IValidationContext
 	{
 		/// <returns> a List of <code>RuleBinding</code>s for <code>PrimitiveTypeRule</code>s.    
 		/// </returns>
@@ -84,21 +82,19 @@ namespace NHapi.Base.validation.impl
 		private System.Collections.IList myPrimitiveRuleBindings;
 		private System.Collections.IList myMessageRuleBindings;
 		private System.Collections.IList myEncodingRuleBindings;
-		private bool myCheckPrimitivesFlag;
 		
 		public ValidationContextImpl()
 		{
 			myPrimitiveRuleBindings = new System.Collections.ArrayList(30);
 			myMessageRuleBindings = new System.Collections.ArrayList(20);
 			myEncodingRuleBindings = new System.Collections.ArrayList(10);
-			myCheckPrimitivesFlag = true;
 		}
 		
 		/// <seealso cref="NHapi.Base.validation.ValidationContext.getDataTypeRules(java.lang.String, java.lang.String)">
 		/// </seealso>
 		/// <param name="theType">ignored 
 		/// </param>
-		public virtual PrimitiveTypeRule[] getPrimitiveRules(System.String theVersion, System.String theTypeName, Primitive theType)
+		public virtual IPrimitiveTypeRule[] getPrimitiveRules(System.String theVersion, System.String theTypeName, IPrimitive theType)
 		{
 			System.Collections.IList active = new System.Collections.ArrayList(myPrimitiveRuleBindings.Count);
 			for (int i = 0; i < myPrimitiveRuleBindings.Count; i++)
@@ -115,13 +111,13 @@ namespace NHapi.Base.validation.impl
 					active.Add(binding.Rule);
 				}
 			}
-			return (PrimitiveTypeRule[]) SupportClass.ICollectionSupport.ToArray(active, new PrimitiveTypeRule[0]);
+			return (IPrimitiveTypeRule[]) SupportClass.ICollectionSupport.ToArray(active, new IPrimitiveTypeRule[0]);
 		}
 		
 		/// <seealso cref="NHapi.Base.validation.ValidationContext">
 		/// #getMessageRules(java.lang.String, java.lang.String, java.lang.String)
 		/// </seealso>
-		public virtual MessageRule[] getMessageRules(System.String theVersion, System.String theMessageType, System.String theTriggerEvent)
+		public virtual IMessageRule[] getMessageRules(System.String theVersion, System.String theMessageType, System.String theTriggerEvent)
 		{
 			
 			System.Collections.IList active = new System.Collections.ArrayList(myMessageRuleBindings.Count);
@@ -139,12 +135,12 @@ namespace NHapi.Base.validation.impl
 					active.Add(binding.Rule);
 				}
 			}
-			return (MessageRule[]) SupportClass.ICollectionSupport.ToArray(active, new MessageRule[0]);
+			return (IMessageRule[]) SupportClass.ICollectionSupport.ToArray(active, new IMessageRule[0]);
 		}
 		
 		/// <seealso cref="NHapi.Base.validation.ValidationContext.getEncodingRules(java.lang.String, java.lang.String)">
 		/// </seealso>
-		public virtual EncodingRule[] getEncodingRules(System.String theVersion, System.String theEncoding)
+		public virtual IEncodingRule[] getEncodingRules(System.String theVersion, System.String theEncoding)
 		{
 			System.Collections.IList active = new System.Collections.ArrayList(myEncodingRuleBindings.Count);
 			for (int i = 0; i < myEncodingRuleBindings.Count; i++)
@@ -161,7 +157,7 @@ namespace NHapi.Base.validation.impl
 					active.Add(binding.Rule);
 				}
 			}
-			return (EncodingRule[]) SupportClass.ICollectionSupport.ToArray(active, new EncodingRule[0]);
+			return (IEncodingRule[]) SupportClass.ICollectionSupport.ToArray(active, new IEncodingRule[0]);
 		}
 	}
 }

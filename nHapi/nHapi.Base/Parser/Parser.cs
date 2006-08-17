@@ -20,16 +20,12 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using HL7Exception = NHapi.Base.HL7Exception;
-using GenericMessage = NHapi.Base.model.GenericMessage;
-using Group = NHapi.Base.model.Group;
-using Message = NHapi.Base.model.Message;
-using Segment = NHapi.Base.model.Segment;
-using MessageValidator = NHapi.Base.validation.MessageValidator;
-using ValidationContext = NHapi.Base.validation.ValidationContext;
-using DefaultValidation = NHapi.Base.validation.impl.DefaultValidation;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+using NHapi.Base;
+using NHapi.Base.model;
+using NHapi.Base.validation;
+using NHapi.Base.validation.impl;
+using NHapi.Base.Log;
+
 namespace NHapi.Base.parser
 {
 	
@@ -42,7 +38,7 @@ namespace NHapi.Base.parser
 	{
 		/// <returns> the factory used by this Parser for model class lookup
 		/// </returns>
-		virtual public ModelClassFactory Factory
+		virtual public IModelClassFactory Factory
 		{
 			get
 			{
@@ -56,7 +52,7 @@ namespace NHapi.Base.parser
 		/// <param name="theContext">the set of validation rules to be applied to messages parsed or 
 		/// encoded by this parser (defaults to ValidationContextFactory.DefaultValidation)
 		/// </param>
-		virtual public ValidationContext ValidationContext
+		virtual public IValidationContext ValidationContext
 		{
 			get
 			{
@@ -93,15 +89,15 @@ namespace NHapi.Base.parser
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.parser.Parser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog log;
+		private static readonly IHapiLog log;
 		
 		private static System.Collections.IDictionary messageStructures = null;
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'versions'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		private static readonly System.String[] versions = new System.String[]{"2.0", "2.0D", "2.1", "2.2", "2.3", "2.3.1", "2.4", "2.5"};
 		
-		private ModelClassFactory myFactory;
-		private ValidationContext myContext;
+		private IModelClassFactory myFactory;
+		private IValidationContext myContext;
 		private MessageValidator myValidator;
 		
 		/// <summary> Uses DefaultModelClassFactory for model class lookup. </summary>
@@ -113,7 +109,7 @@ namespace NHapi.Base.parser
 		
 		/// <param name="theFactory">custom factory to use for model class lookup 
 		/// </param>
-		public Parser(ModelClassFactory theFactory)
+		public Parser(IModelClassFactory theFactory)
 		{
 			myFactory = theFactory;
 			ValidationContext = new DefaultValidation();
@@ -146,7 +142,7 @@ namespace NHapi.Base.parser
 		/// <throws>  EncodingNotSupportedException if the message encoded  </throws>
 		/// <summary>      is not supported by this parser.   
 		/// </summary>
-		public virtual Message parse(System.String message)
+		public virtual IMessage parse(System.String message)
 		{
 			System.String encoding = getEncoding(message);
 			if (!supportsEncoding(encoding))
@@ -161,7 +157,7 @@ namespace NHapi.Base.parser
 			}
 			
 			myValidator.validate(message, encoding.Equals("XML"), version);
-			Message result = doParse(message, version);
+			IMessage result = doParse(message, version);
 			myValidator.validate(result);
 			
 			return result;
@@ -180,7 +176,7 @@ namespace NHapi.Base.parser
 		/// <throws>  EncodingNotSupportedException if the message encoded  </throws>
 		/// <summary>      is not supported by this parser.   
 		/// </summary>
-		protected internal abstract Message doParse(System.String message, System.String version);
+		protected internal abstract IMessage doParse(System.String message, System.String version);
 		
 		/// <summary> Formats a Message object into an HL7 message string using the given 
 		/// encoding. 
@@ -199,7 +195,7 @@ namespace NHapi.Base.parser
 		/// <throws>  EncodingNotSupportedException if the requested encoding is not  </throws>
 		/// <summary>      supported by this parser.  
 		/// </summary>
-		public virtual System.String encode(Message source, System.String encoding)
+		public virtual System.String encode(IMessage source, System.String encoding)
 		{
 			myValidator.validate(source);
 			System.String result = doEncode(source, encoding);
@@ -224,7 +220,7 @@ namespace NHapi.Base.parser
 		/// <throws>  EncodingNotSupportedException if the requested encoding is not  </throws>
 		/// <summary>      supported by this parser.  
 		/// </summary>
-		protected internal abstract System.String doEncode(Message source, System.String encoding);
+		protected internal abstract System.String doEncode(IMessage source, System.String encoding);
 		
 		/// <summary> Formats a Message object into an HL7 message string using this parser's  
 		/// default encoding. 
@@ -240,7 +236,7 @@ namespace NHapi.Base.parser
 		/// <throws>  HL7Exception if the data fields in the message do not permit encoding  </throws>
 		/// <summary>      (e.g. required fields are null)
 		/// </summary>
-		public virtual System.String encode(Message source)
+		public virtual System.String encode(IMessage source)
 		{
 			System.String encoding = DefaultEncoding;
 			
@@ -264,7 +260,7 @@ namespace NHapi.Base.parser
 		/// <throws>  EncodingNotSupportedException if the requested encoding is not  </throws>
 		/// <summary>      supported by this parser.  
 		/// </summary>
-		protected internal abstract System.String doEncode(Message source);
+		protected internal abstract System.String doEncode(IMessage source);
 		
 		/// <summary> <p>Returns a minimal amount of data from a message string, including only the 
 		/// data needed to send a response to the remote system.  This includes the 
@@ -281,7 +277,7 @@ namespace NHapi.Base.parser
 		/// </summary>
 		/// <returns> an MSH segment 
 		/// </returns>
-		public abstract Segment getCriticalResponseData(System.String message);
+		public abstract ISegment getCriticalResponseData(System.String message);
 		
 		/// <summary> For response messages, returns the value of MSA-2 (the message ID of the message 
 		/// sent by the sending system).  This value may be needed prior to main message parsing, 
@@ -307,19 +303,19 @@ namespace NHapi.Base.parser
 		/// throws HL7Exception if there is a problem, e.g. invalid version, code not available 
 		/// for given version. 
 		/// </summary>
-		public static Segment makeControlMSH(System.String version, ModelClassFactory factory)
+		public static ISegment makeControlMSH(System.String version, IModelClassFactory factory)
 		{
-			Segment msh = null;
+			ISegment msh = null;
 			
 			try
 			{
-				Message dummy = (Message) GenericMessage.getGenericMessageClass(version).GetConstructor(new System.Type[]{typeof(ModelClassFactory)}).Invoke(new System.Object[]{factory});
+				IMessage dummy = (IMessage) GenericMessage.getGenericMessageClass(version).GetConstructor(new System.Type[]{typeof(IModelClassFactory)}).Invoke(new System.Object[]{factory});
 				
-				System.Type[] constructorParamTypes = new System.Type[]{typeof(Group), typeof(ModelClassFactory)};
+				System.Type[] constructorParamTypes = new System.Type[]{typeof(IGroup), typeof(IModelClassFactory)};
 				System.Object[] constructorParamArgs = new System.Object[]{dummy, factory};
 				System.Type c = factory.getSegmentClass("MSH", version);
 				System.Reflection.ConstructorInfo constructor = c.GetConstructor(constructorParamTypes);
-				msh = (Segment) constructor.Invoke(constructorParamArgs);
+				msh = (ISegment) constructor.Invoke(constructorParamArgs);
 			}
 			catch (System.Exception e)
 			{
@@ -435,9 +431,9 @@ namespace NHapi.Base.parser
 		/// <throws>  HL7Exception if the version is not recognized or no appropriate class can be found or the Message  </throws>
 		/// <summary>      class throws an exception on instantiation (e.g. if args are not as expected) 
 		/// </summary>
-		protected internal virtual Message instantiateMessage(System.String theName, System.String theVersion, bool isExplicit)
+		protected internal virtual IMessage instantiateMessage(System.String theName, System.String theVersion, bool isExplicit)
 		{
-			Message result = null;
+			IMessage result = null;
 			
 			try
 			{
@@ -449,8 +445,8 @@ namespace NHapi.Base.parser
 				}
 				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				log.info("Instantiating msg of class " + messageClass.FullName);
-				System.Reflection.ConstructorInfo constructor = messageClass.GetConstructor(new System.Type[]{typeof(ModelClassFactory)});
-				result = (Message) constructor.Invoke(new System.Object[]{myFactory});
+				System.Reflection.ConstructorInfo constructor = messageClass.GetConstructor(new System.Type[]{typeof(IModelClassFactory)});
+				result = (IMessage) constructor.Invoke(new System.Object[]{myFactory});
 			}
 			catch (System.Exception e)
 			{

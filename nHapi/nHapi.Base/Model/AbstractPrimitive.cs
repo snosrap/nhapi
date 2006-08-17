@@ -24,8 +24,8 @@
 /// 
 /// </summary>
 using System;
-using PrimitiveTypeRule = NHapi.Base.validation.PrimitiveTypeRule;
-using ValidationContext = NHapi.Base.validation.ValidationContext;
+using NHapi.Base.validation;
+
 namespace NHapi.Base.model
 {
 	
@@ -34,7 +34,7 @@ namespace NHapi.Base.model
 	/// </summary>
 	/// <author>  Bryan Tripp
 	/// </author>
-	public abstract class AbstractPrimitive:AbstractType, Primitive
+	public abstract class AbstractPrimitive:AbstractType, IPrimitive
 	{
 		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <seealso cref="NHapi.Base.model.Primitive.getValue()">
@@ -55,16 +55,16 @@ namespace NHapi.Base.model
 			
 			set
 			{
-				Message message = Message;
+				IMessage message = Message;
 				
 				if (message != null)
 				{
-					ValidationContext context = message.ValidationContext;
+					IValidationContext context = message.ValidationContext;
 					System.String version = message.Version;
 					
 					if (context != null)
 					{
-						PrimitiveTypeRule[] rules = context.getPrimitiveRules(version, Name, this);
+						IPrimitiveTypeRule[] rules = context.getPrimitiveRules(version, Name, this);
 						
 						for (int i = 0; i < rules.Length; i++)
 						{
@@ -84,9 +84,16 @@ namespace NHapi.Base.model
 		
 		/// <param name="message">message to which this type belongs
 		/// </param>
-		public AbstractPrimitive(Message message):base(message)
+		public AbstractPrimitive(IMessage message):this(message,null)
 		{
 		}
+
+        /// <param name="message">message to which this type belongs
+        /// </param>
+        public AbstractPrimitive(IMessage message, string description)
+            : base(message, description)
+        {
+        }
 		
 		private System.String myValue;
 		

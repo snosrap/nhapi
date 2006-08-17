@@ -1,8 +1,8 @@
 using System;
-using ModelClassFactory = NHapi.Base.parser.ModelClassFactory;
-using Parser = NHapi.Base.parser.Parser;
-using HL7Exception = NHapi.Base.HL7Exception;
-using ca.uhn.log;
+using NHapi.Base.parser;
+using NHapi.Base;
+using NHapi.Base.Log;
+
 namespace NHapi.Base.model
 {
 	
@@ -19,7 +19,7 @@ namespace NHapi.Base.model
 		/// </summary>
 		/// <param name="factory">class factory for contained structures 
 		/// </param>
-		public GenericMessage(ModelClassFactory factory):base(factory)
+		public GenericMessage(IModelClassFactory factory):base(factory)
 		{
 			try
 			{
@@ -80,7 +80,7 @@ namespace NHapi.Base.model
 				}
 				
 			}
-			public V21(ModelClassFactory factory):base(factory)
+			public V21(IModelClassFactory factory):base(factory)
 			{
 			}
 		}
@@ -95,7 +95,7 @@ namespace NHapi.Base.model
 				}
 				
 			}
-			public V22(ModelClassFactory factory):base(factory)
+			public V22(IModelClassFactory factory):base(factory)
 			{
 			}
 		}
@@ -110,7 +110,7 @@ namespace NHapi.Base.model
 				}
 				
 			}
-			public V23(ModelClassFactory factory):base(factory)
+			public V23(IModelClassFactory factory):base(factory)
 			{
 			}
 		}
@@ -125,7 +125,7 @@ namespace NHapi.Base.model
 				}
 				
 			}
-			public V231(ModelClassFactory factory):base(factory)
+			public V231(IModelClassFactory factory):base(factory)
 			{
 			}
 		}
@@ -140,7 +140,7 @@ namespace NHapi.Base.model
 				}
 				
 			}
-			public V24(ModelClassFactory factory):base(factory)
+			public V24(IModelClassFactory factory):base(factory)
 			{
 			}
 		}
@@ -155,7 +155,7 @@ namespace NHapi.Base.model
 				}
 				
 			}
-			public V25(ModelClassFactory factory):base(factory)
+			public V25(IModelClassFactory factory):base(factory)
 			{
 			}
 		}

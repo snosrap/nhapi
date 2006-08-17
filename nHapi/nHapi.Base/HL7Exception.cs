@@ -20,9 +20,10 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using ca.uhn.log;
-using Terser = NHapi.Base.util.Terser;
-using Segment = NHapi.Base.model.Segment;
+using NHapi.Base.Log;
+using NHapi.Base.util;
+using NHapi.Base.model;
+
 namespace NHapi.Base
 {
 	
@@ -128,7 +129,7 @@ namespace NHapi.Base
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'ourLog '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'ourLog' was moved to static method 'NHapi.Base.HL7Exception'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog ourLog;
+		private static readonly IHapiLog ourLog;
 		
 		public const int ACK_AA = 1;
 		public const int ACK_AE = 2;
@@ -213,7 +214,7 @@ namespace NHapi.Base
 		}
 		
 		/// <summary> Populates the given error segment with information from this Exception.</summary>
-		public virtual void  populate(Segment errorSegment)
+		public virtual void  populate(ISegment errorSegment)
 		{
 			//make sure it's an ERR
 			if (!errorSegment.getName().Equals("ERR"))

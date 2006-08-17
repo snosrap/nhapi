@@ -9,17 +9,17 @@ namespace NHapi.Base.model
 	/// </summary>
 	/// <author>  Bryan Tripp
 	/// </author>
-	public class GenericComposite:AbstractType, Composite
+	public class GenericComposite:AbstractType, IComposite
 	{
 		/// <summary> Returns an array containing the components of this field.</summary>
-		virtual public Type[] Components
+		virtual public IType[] Components
 		{
 			get
 			{
-				Type[] ret = new Type[components.Count];
+				IType[] ret = new IType[components.Count];
 				for (int i = 0; i < ret.Length; i++)
 				{
-					ret[i] = (Type) components[i];
+					ret[i] = (IType) components[i];
 				}
 				return ret;
 			}
@@ -36,10 +36,10 @@ namespace NHapi.Base.model
 		}
 		
 		private System.Collections.ArrayList components;
-		private Message message;
+		private IMessage message;
 		
 		/// <summary>Creates a new instance of GenericComposite </summary>
-		public GenericComposite(Message message):base(message)
+		public GenericComposite(IMessage message):base(message)
 		{
 			this.message = message;
 			components = new System.Collections.ArrayList(20);
@@ -48,13 +48,13 @@ namespace NHapi.Base.model
 		/// <summary> Returns the single component of this composite at the specified position (starting at 0) - 
 		/// Creates it (and any nonexistent components before it) if necessary.  
 		/// </summary>
-		public virtual Type getComponent(int number)
+		public virtual IType getComponent(int number)
 		{
 			for (int i = components.Count; i <= number; i++)
 			{
 				components.Add(new Varies(message));
 			}
-			return (Type) components[number];
+			return (IType) components[number];
 		}
 	}
 }

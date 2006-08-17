@@ -21,11 +21,11 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using HL7Exception = NHapi.Base.HL7Exception;
-using Message = NHapi.Base.model.Message;
-using Terser = NHapi.Base.util.Terser;
-using HapiLog = ca.uhn.log.HapiLog;
-using HapiLogFactory = ca.uhn.log.HapiLogFactory;
+using NHapi.Base;
+using NHapi.Base.model;
+using NHapi.Base.util;
+using NHapi.Base.Log;
+
 namespace NHapi.Base.validation
 {
 	
@@ -39,16 +39,16 @@ namespace NHapi.Base.validation
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'ourLog '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		//UPGRADE_NOTE: The initialization of  'ourLog' was moved to static method 'NHapi.Base.validation.MessageValidator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
-		private static readonly HapiLog ourLog;
+		private static readonly IHapiLog ourLog;
 		
-		private ValidationContext myContext;
+		private IValidationContext myContext;
 		private bool failOnError;
 		
 		/// <param name="theContext">context that determines which validation rules apply 
 		/// </param>
 		/// <param name="theFailOnErrorFlag">
 		/// </param>
-		public MessageValidator(ValidationContext theContext, bool theFailOnErrorFlag)
+		public MessageValidator(IValidationContext theContext, bool theFailOnErrorFlag)
 		{
 			myContext = theContext;
 			failOnError = theFailOnErrorFlag;
@@ -59,10 +59,10 @@ namespace NHapi.Base.validation
 		/// <returns> true if the message is OK
 		/// </returns>
 		/// <throws>  HL7Exception if there is at least one error and this validator is set to fail on errors </throws>
-		public virtual bool validate(Message message)
+		public virtual bool validate(IMessage message)
 		{
 			Terser t = new Terser(message);
-			MessageRule[] rules = myContext.getMessageRules(message.Version, t.Get("MSH-9-1"), t.Get("MSH-9-2"));
+			IMessageRule[] rules = myContext.getMessageRules(message.Version, t.Get("MSH-9-1"), t.Get("MSH-9-2"));
 			
 			ValidationException toThrow = null;
 			bool result = true;
@@ -99,7 +99,7 @@ namespace NHapi.Base.validation
 		/// <throws>  HL7Exception if there is at least one error and this validator is set to fail on errors </throws>
 		public virtual bool validate(System.String message, bool isXML, System.String version)
 		{
-			EncodingRule[] rules = myContext.getEncodingRules(version, isXML?"XML":"ER7");
+			IEncodingRule[] rules = myContext.getEncodingRules(version, isXML?"XML":"ER7");
 			ValidationException toThrow = null;
 			bool result = true;
 			for (int i = 0; i < rules.Length; i++)
