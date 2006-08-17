@@ -38,8 +38,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PipeParsingFixture23.cs" />
-    <Compile Include="PipeParsingFixture231.cs" />
     <Compile Include="PipeParsingFixture24.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
@@ -48,6 +46,26 @@
     <ProjectReference Include="..\nHapi.Base\NHapi.Base.csproj">
       <Project>{5A080123-0597-46C3-AE78-2007EFB0DD68}</Project>
       <Name>NHapi.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NHapi.Model.V21\NHapi.Model.V21.csproj">
+      <Project>{4B3417BA-0090-4FA0-B04B-BB19563FC11C}</Project>
+      <Name>NHapi.Model.V21</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NHapi.Model.V22\NHapi.Model.V22.csproj">
+      <Project>{2AAFDC25-B3DF-4493-94A5-144D60122FEC}</Project>
+      <Name>NHapi.Model.V22</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NHapi.Model.V231\NHapi.Model.V231.csproj">
+      <Project>{B8909698-59BA-453F-A4BC-2F4F2612F853}</Project>
+      <Name>NHapi.Model.V231</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NHapi.Model.V23\NHapi.Model.V23.csproj">
+      <Project>{796D663F-E12D-45C2-92E6-8FD050558A86}</Project>
+      <Name>NHapi.Model.V23</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NHapi.Model.V24\NHapi.Model.V24.csproj">
+      <Project>{C5DE87CB-F026-4EB3-9CE8-5017BF3FB5CC}</Project>
+      <Name>NHapi.Model.V24</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

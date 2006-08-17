@@ -14,14 +14,14 @@ namespace NHAPI.NUnit
 		[Test]
 		public void ParseQRYR02()
 		{
-			string message = @"MSH|^~\&|CohieCentral|COHIE|Clinical Data Provider|TCH|20060228155525||QRY^R02^QRY_R02|1|P|2.3.1|
+			string Message = @"MSH|^~\&|CohieCentral|COHIE|Clinical Data Provider|TCH|20060228155525||QRY^R02^QRY_R02|1|P|2.3.1|
 QRD|20060228155525|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||";
 
-			NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+			NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-			NHapi.Base.model.Message m = parser.parse(message);
+			NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-			NHapi.Base.model.v231.message.QRY_R02 qryR02 = m as NHapi.Base.model.v231.message.QRY_R02;
+			NHapi.Model.V231.Message.QRY_R02 qryR02 = m as NHapi.Model.V231.Message.QRY_R02;
 
 			Assert.IsNotNull(qryR02);
 			Assert.AreEqual("38923", qryR02.QRD.getWhoSubjectFilter(0).IDNumber.Value);
@@ -30,18 +30,18 @@ QRD|20060228155525|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||";
         [Test]
         public void ParseORMo01PIDSegment()
         {
-            string message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200606191615||ORM^O01|ORDR|P|2.3.1|LAB
+            string Message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200606191615||ORM^O01|ORDR|P|2.3.1|LAB
 PID|0001||3020956||TRAINONLYPOE^ONE||19770903|F||W||||||||40230443
 PV1|0001|I|MICU^W276^01||||045716^ABAZA, MONA M|||MED|||||||045716|F|000000030188
 ORC|NW|01444^00001|||||||||||L
 OBR||01444^00001||CAI^CALCIUM IONIZED|||200606191614||||L|||||045716^STEELE, ANDREW W|||||||||||00001&UNITS^ONCE&ONCE^000^200606191614^200606191614^ROUTINE
 ";
 
-            NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+            NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-            NHapi.Base.model.Message m = parser.parse(message);
+            NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-            NHapi.Base.model.v231.message.ORM_O01 ormo01 = m as NHapi.Base.model.v231.message.ORM_O01;
+            NHapi.Model.V231.Message.ORM_O01 ormo01 = m as NHapi.Model.V231.Message.ORM_O01;
 
             Assert.IsNotNull(ormo01);
             Assert.AreEqual("TRAINONLYPOE", (ormo01.PATIENT.PID.getPatientName()[0]).FamilyLastName.FamilyName.Value);
@@ -55,20 +55,20 @@ OBR||01444^00001||CAI^CALCIUM IONIZED|||200606191614||||L|||||045716^STEELE, AND
         [Test]
         public void ParseORMo01ToXml()
         {
-            string message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200606191615||ORM^O01|ORDR|P|2.3.1|LAB
+            string Message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200606191615||ORM^O01|ORDR|P|2.3.1|LAB
 PID|0001||3020956||TRAINONLYPOE^ONE||19770903|F||W||||||||40230443
 PV1|0001|I|MICU^W276^01||||045716^ABAZA, MONA M|||MED|||||||045716|F|000000030188
 ORC|NW|01444^00001|||||||||||L
 OBR||01444^00001||CAI^CALCIUM IONIZED|||200606191614||||L|||||045716^STEELE, ANDREW W|||||||||||00001&UNITS^ONCE&ONCE^000^200606191614^200606191614^ROUTINE
 ";
 
-            NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+            NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-            NHapi.Base.model.Message m = parser.parse(message);
+            NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-            NHapi.Base.model.v231.message.ORM_O01 ormo01 = m as NHapi.Base.model.v231.message.ORM_O01;
+            NHapi.Model.V231.Message.ORM_O01 ormo01 = m as NHapi.Model.V231.Message.ORM_O01;
 
-            NHapi.Base.parser.XMLParser xmlParser = new NHapi.Base.parser.DefaultXMLParser();
+            NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
 
             string recoveredMessage = xmlParser.encode(ormo01);
 
@@ -82,20 +82,20 @@ OBR||01444^00001||CAI^CALCIUM IONIZED|||200606191614||||L|||||045716^STEELE, AND
         [Test]
         public void ParseORRo02ToXml()
         {
-            string message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200607100719||ORR^O02|ORDR|T|2.3.1|LAB
+            string Message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200607100719||ORR^O02|ORDR|T|2.3.1|LAB
 PID|0001||3017864||HILBERT^MARY||19440823|F||W||||||||40244246
 PV1|0001|O|LW||||888883^DOCTOR, UNASSIGNED||||||||||888883|O|000000031540
 ORC|NA|00003^00001|F1492|||||||||888883
 OBR||00003^00001|F1492|RESPC^CULTURE RESPIRATORY ROUTINE|||||||L|||||||||F1492|||||||^ONCE&ONCE^^200607070600^200607070600^ROUTINE
 ";
 
-            NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+            NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-            NHapi.Base.model.Message m = parser.parse(message);
+            NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-            NHapi.Base.model.v231.message.ORR_O02 msg = m as NHapi.Base.model.v231.message.ORR_O02;
+            NHapi.Model.V231.Message.ORR_O02 msg = m as NHapi.Model.V231.Message.ORR_O02;
 
-            NHapi.Base.parser.XMLParser xmlParser = new NHapi.Base.parser.DefaultXMLParser();
+            NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
 
             string recoveredMessage = xmlParser.encode(msg);
 
@@ -110,7 +110,7 @@ OBR||00003^00001|F1492|RESPC^CULTURE RESPIRATORY ROUTINE|||||||L|||||||||F1492||
         [Test]
         public void ParseORUr01LongToXml()
         {
-            string message = @"MSH|^~\$|LAB|DHC|LCR|DH|200511291403||ORU^R01|52780002432|P|2.3.1
+            string Message = @"MSH|^~\$|LAB|DHC|LCR|DH|200511291403||ORU^R01|52780002432|P|2.3.1
 PID|0001|3013839|40206609||BARNES^TEST||19551005|F|||||||||||258452152
 OBR||00009^001|W442|CBC^CBC|||200509210520||||||||CBC^CBC|117564^STEEL||||||||DAH
 OBX|1|NM|WBC||20.0|k/uL|4.5-10.0|H|||Z
@@ -135,13 +135,13 @@ OBX|10|NM|MPV||10.0|fL|6.2-10.0||||Z
 OBX|10|TX|MPV|1|(Ref Range: 6 fL)|fL|6.2-10.0||||Z
 ";
 
-            NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+            NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-            NHapi.Base.model.Message m = parser.parse(message);
+            NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-            NHapi.Base.model.v231.message.ORU_R01 msg = m as NHapi.Base.model.v231.message.ORU_R01;
+            NHapi.Model.V231.Message.ORU_R01 msg = m as NHapi.Model.V231.Message.ORU_R01;
 
-            NHapi.Base.parser.XMLParser xmlParser = new NHapi.Base.parser.DefaultXMLParser();
+            NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
 
             string recoveredMessage = xmlParser.encode(msg);
 
@@ -155,7 +155,7 @@ OBX|10|TX|MPV|1|(Ref Range: 6 fL)|fL|6.2-10.0||||Z
         [Test]
 		public void ParseORFR04()
 		{
-			string message = @"MSH|^~\&|Query Result Locator|Query Facility Name|Query Application Name|ST ELSEWHERE HOSPITAL|20051024074506||ORF^R04|432|P|2.3.1|
+			string Message = @"MSH|^~\&|Query Result Locator|Query Facility Name|Query Application Name|ST ELSEWHERE HOSPITAL|20051024074506||ORF^R04|432|P|2.3.1|
 MSA|AA|123456789|
 QRD|20060228160421|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||
 QRF||20050101000000||
@@ -163,11 +163,11 @@ PID|||38923^^^ST ELSEWHERE HOSPITAL Medical Record Numbers&              MEDIC  
 OBR|1|0015566|DH2211223|83036^HEMOGLOBIN A1C^^83036^HEMOGLOBIN A1C|||20040526094000|||||||20040526094000||J12345^JENS^JENNY^^^DR^MD^^^^^^^112233&TCH|||||          TP QUEST DIAGNOSTICS-TAMPA 4225 E. FOWLER AVE TAMPA          FL 33617|20030622070400|||F|
 OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 - 6.0|H|||F|||20040510094000|TP^^L|";
 
-			NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+			NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-			NHapi.Base.model.Message m = parser.parse(message);
+			NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-			NHapi.Base.model.v231.message.ORF_R04 orfR04 = m as NHapi.Base.model.v231.message.ORF_R04;
+			NHapi.Model.V231.Message.ORF_R04 orfR04 = m as NHapi.Model.V231.Message.ORF_R04;
 			Assert.IsNotNull(orfR04);
 			Assert.AreEqual("12", orfR04.getQUERY_RESPONSE().getORDER().getOBSERVATION().OBX.getObservationValue()[0].Data.ToString());
 
@@ -176,7 +176,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 		[Test]
 		public void ParseORFR04ToXML()
 		{
-			string message = @"MSH|^~\&|Query Result Locator|Query Facility Name|Query Application Name|ST ELSEWHERE HOSPITAL|20051024074506||ORF^R04|432|P|2.3.1|
+			string Message = @"MSH|^~\&|Query Result Locator|Query Facility Name|Query Application Name|ST ELSEWHERE HOSPITAL|20051024074506||ORF^R04|432|P|2.3.1|
 MSA|AA|123456789|
 QRD|20060228160421|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||
 QRF||20050101000000||
@@ -184,15 +184,15 @@ PID|||38923^^^ST ELSEWHERE HOSPITAL Medical Record Numbers&              MEDIC  
 OBR|1|0015566|DH2211223|83036^HEMOGLOBIN A1C^^83036^HEMOGLOBIN A1C|||20040526094000|||||||20040526094000||J12345^JENS^JENNY^^^DR^MD^^^^^^^112233&TCH|||||          TP QUEST DIAGNOSTICS-TAMPA 4225 E. FOWLER AVE TAMPA          FL 33617|20030622070400|||F|
 OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 - 6.0|H|||F|||20040510094000|TP^^L|";
 
-			NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+			NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-			NHapi.Base.model.Message m = parser.parse(message);
+			NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-			NHapi.Base.model.v231.message.ORF_R04 orfR04 = m as NHapi.Base.model.v231.message.ORF_R04;
+			NHapi.Model.V231.Message.ORF_R04 orfR04 = m as NHapi.Model.V231.Message.ORF_R04;
 
 			Assert.IsNotNull(orfR04);
 
-			NHapi.Base.parser.XMLParser xmlParser = new NHapi.Base.parser.DefaultXMLParser();
+			NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
 
 			string recoveredMessage = xmlParser.encode(orfR04);
 
@@ -201,12 +201,12 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 		}
 
         /// <summary>
-        /// translate a more complex ORM message
+        /// translate a more complex ORM Message
         /// </summary>
         [Test]
         public void ParseORMwithOBXToXML()
         {
-            string message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200606191615||ORM^O01|ORDR|P|2.3.1|LAB
+            string Message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200606191615||ORM^O01|ORDR|P|2.3.1|LAB
 PID|0001||3020956||TRAINONLYPOE^ONE||19770903|F||W||||||||40230443
 PV1|0001|I|MICU^W276^01||||045716^ABAZA, MONA M|||MED|||||||045716|F|000000030188
 ORC|NW|01444^00001|||||||||||L
@@ -215,15 +215,15 @@ OBX||NM|||999||||||
 OBX||NM|||999||||||
 OBX||NM|||999||||||";
 
-            NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+            NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-            NHapi.Base.model.Message m = parser.parse(message);
+            NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-            NHapi.Base.model.v231.message.ORM_O01 msgObj = m as NHapi.Base.model.v231.message.ORM_O01;
+            NHapi.Model.V231.Message.ORM_O01 msgObj = m as NHapi.Model.V231.Message.ORM_O01;
 
             Assert.IsNotNull(msgObj);
 
-            NHapi.Base.parser.XMLParser xmlParser = new NHapi.Base.parser.DefaultXMLParser();
+            NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
 
             string recoveredMessage = xmlParser.encode(msgObj);
 
@@ -232,12 +232,12 @@ OBX||NM|||999||||||";
         }
 
         /// <summary>
-        /// translate a more complex ORM message
+        /// translate a more complex ORM Message
         /// </summary>
         [Test]
         public void ParseORMwithCompleteOBXToXML()
         {
-            string message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200606191615||ORM^O01|ORDR|P|2.3.1|LAB
+            string Message = @"MSH|^~\&|INVISION|DHC|SUNQUEST LAB||200606191615||ORM^O01|ORDR|P|2.3.1|LAB
 PID|0001||3020956||TRAINONLYPOE^ONE||19770903|F||W||||||||40230443
 PV1|0001|I|MICU^W276^01||||045716^ABAZA, MONA M|||MED|||||||045716|F|000000030188
 ORC|NW|01444^00001|||||||||||L
@@ -246,19 +246,19 @@ OBX|1|TX|SDES||Blood, peripheral||||||Z
 OBX|2|TX|SREQ||LEFT ANTECUBITAL||||||Z
 OBX|3|TX|CULT||Beta hemolytic Streptococcus Group A||||||Z
 OBX|4|TX|CULT||Critical result(s) called to and verification ";
-            message += "\"read-back\"";
-            message += @" received from: Nu~||||||Z
+            Message += "\"read-back\"";
+            Message += @" received from: Nu~||||||Z
 ";
 
-            NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+            NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-            NHapi.Base.model.Message m = parser.parse(message);
+            NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-            NHapi.Base.model.v231.message.ORM_O01 msgObj = m as NHapi.Base.model.v231.message.ORM_O01;
+            NHapi.Model.V231.Message.ORM_O01 msgObj = m as NHapi.Model.V231.Message.ORM_O01;
 
             Assert.IsNotNull(msgObj);
 
-            NHapi.Base.parser.XMLParser xmlParser = new NHapi.Base.parser.DefaultXMLParser();
+            NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
 
             string recoveredMessage = xmlParser.encode(msgObj);
 
@@ -269,16 +269,16 @@ OBX|4|TX|CULT||Critical result(s) called to and verification ";
         [Test]
 		public void ParseXMLToHL7()
 		{
-			string message = GetQRYR02XML();
+			string Message = GetQRYR02XML();
 
-			NHapi.Base.parser.XMLParser xmlParser = new NHapi.Base.parser.DefaultXMLParser();
-			NHapi.Base.model.Message m = xmlParser.parse(message);
+			NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
+			NHapi.Base.Model.IMessage m = xmlParser.parse(Message);
 
-			NHapi.Base.model.v231.message.QRY_R02 qryR02 = m as NHapi.Base.model.v231.message.QRY_R02;
+			NHapi.Model.V231.Message.QRY_R02 qryR02 = m as NHapi.Model.V231.Message.QRY_R02;
 
 			Assert.IsNotNull(qryR02);
 
-			NHapi.Base.parser.PipeParser pipeParser = new NHapi.Base.parser.PipeParser();
+			NHapi.Base.Parser.PipeParser pipeParser = new NHapi.Base.Parser.PipeParser();
 
 			string pipeOutput = pipeParser.encode(qryR02);
 
@@ -290,7 +290,7 @@ OBX|4|TX|CULT||Critical result(s) called to and verification ";
 		[Test]
 		public void ParseORFR04ToXmlNoOCR()
 		{
-			string message = @"MSH|^~\&|Query Result Locator|Query Facility Name|Query Application Name|ST ELSEWHERE HOSPITAL|20051024074506||ORF^R04|432|P|2.3.1|
+			string Message = @"MSH|^~\&|Query Result Locator|Query Facility Name|Query Application Name|ST ELSEWHERE HOSPITAL|20051024074506||ORF^R04|432|P|2.3.1|
 MSA|AA|123456789|
 QRD|20060228160421|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||
 QRF||20050101000000||
@@ -298,26 +298,26 @@ PID|||38923^^^ST ELSEWHERE HOSPITAL Medical Record Numbers&              MEDIC  
 OBR|1|0015566|DH2211223|83036^HEMOGLOBIN A1C^^83036^HEMOGLOBIN A1C|||20040526094000|||||||20040526094000||J12345^JENS^JENNY^^^DR^MD^^^^^^^112233&TCH|||||          TP QUEST DIAGNOSTICS-TAMPA 4225 E. FOWLER AVE TAMPA          FL 33617|20030622070400|||F|
 OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 - 6.0|H|||F|||20040510094000|TP^^L|";
 
-			NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+			NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-			NHapi.Base.model.Message m = parser.parse(message);
+			NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-			NHapi.Base.model.v231.message.ORF_R04 orfR04 = m as NHapi.Base.model.v231.message.ORF_R04;
+			NHapi.Model.V231.Message.ORF_R04 orfR04 = m as NHapi.Model.V231.Message.ORF_R04;
 
 			Assert.IsNotNull(orfR04);
 
-			NHapi.Base.parser.XMLParser xmlParser = new NHapi.Base.parser.DefaultXMLParser();
+			NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
 
 			string recoveredMessage = xmlParser.encode(orfR04);
 
 			Assert.IsNotNull(recoveredMessage);
-			Assert.IsFalse(recoveredMessage.IndexOf("ORC")>-1, "Returned message added ORC segment.");
+			Assert.IsFalse(recoveredMessage.IndexOf("ORC")>-1, "Returned Message added ORC segment.");
 		}
 
 		[Test]
 		public void ParseORFR04ToXmlNoNTE()
 		{
-			string message = @"MSH|^~\&|Query Result Locator|Query Facility Name|Query Application Name|ST ELSEWHERE HOSPITAL|20051024074506||ORF^R04|432|P|2.3.1|
+			string Message = @"MSH|^~\&|Query Result Locator|Query Facility Name|Query Application Name|ST ELSEWHERE HOSPITAL|20051024074506||ORF^R04|432|P|2.3.1|
 MSA|AA|123456789|
 QRD|20060228160421|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||
 QRF||20050101000000||
@@ -325,20 +325,20 @@ PID|||38923^^^ST ELSEWHERE HOSPITAL Medical Record Numbers&              MEDIC  
 OBR|1|0015566|DH2211223|83036^HEMOGLOBIN A1C^^83036^HEMOGLOBIN A1C|||20040526094000|||||||20040526094000||J12345^JENS^JENNY^^^DR^MD^^^^^^^112233&TCH|||||          TP QUEST DIAGNOSTICS-TAMPA 4225 E. FOWLER AVE TAMPA          FL 33617|20030622070400|||F|
 OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 - 6.0|H|||F|||20040510094000|TP^^L|";
 
-			NHapi.Base.parser.PipeParser parser = new NHapi.Base.parser.PipeParser();
+			NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
 
-			NHapi.Base.model.Message m = parser.parse(message);
+			NHapi.Base.Model.IMessage m = Parser.parse(Message);
 
-			NHapi.Base.model.v231.message.ORF_R04 orfR04 = m as NHapi.Base.model.v231.message.ORF_R04;
+			NHapi.Model.V231.Message.ORF_R04 orfR04 = m as NHapi.Model.V231.Message.ORF_R04;
 
 			Assert.IsNotNull(orfR04);
 
-			NHapi.Base.parser.XMLParser xmlParser = new NHapi.Base.parser.DefaultXMLParser();
+			NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
 
 			string recoveredMessage = xmlParser.encode(orfR04);
 
 			Assert.IsNotNull(recoveredMessage);
-			Assert.IsFalse(recoveredMessage.IndexOf("NTE")>-1, "Returned message added ORC segment.");
+			Assert.IsFalse(recoveredMessage.IndexOf("NTE")>-1, "Returned Message added ORC segment.");
 		}
 
 		private static string GetQRYR02XML() 

@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Text;
-using NHapi.Base.model;
-using NHapi.Base.parser;
+using NHapi.Base.Model;
+using NHapi.Base.Parser;
 using NHapi.Base;
 using NUnit.Framework;
 
