@@ -26,7 +26,7 @@
 using System;
 using NHapi.Base.Model;
 using NHapi.Base.Log;
-namespace NHapi.Base.Model.primitive
+namespace NHapi.Base.Model.Primitive
 {
 	
 	/// <summary> 

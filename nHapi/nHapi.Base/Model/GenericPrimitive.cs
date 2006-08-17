@@ -30,7 +30,7 @@ namespace NHapi.Base.Model
 			
 		}
 		/// <summary>Returns the name of the type (used in XML encoding and profile checking)  </summary>
-		override public System.String Name
+        override public System.String TypeName
 		{
 			get
 			{

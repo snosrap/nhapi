@@ -75,14 +75,14 @@ namespace NHapi.Base.Model
 		}
 		/// <seealso cref="Type.getName">
 		/// </seealso>
-		virtual public System.String Name
+        virtual public System.String TypeName
 		{
 			get
 			{
 				System.String name = "*";
 				if (this.data != null)
 				{
-					name = this.data.Name;
+                    name = this.data.TypeName;
 				}
 				return name;
 			}

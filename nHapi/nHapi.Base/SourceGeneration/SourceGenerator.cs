@@ -29,7 +29,8 @@ using System.Reflection;
 using HL7Exception = NHapi.Base.HL7Exception;
 using NHapi.Base.Parser;
 using System.IO;
-namespace NHapi.Base.Sourcegen
+
+namespace NHapi.Base.SourceGeneration
 {
 	
 	/// <summary> <p>Manages automatic generation of HL7 API source code for all data types,
@@ -51,19 +52,12 @@ namespace NHapi.Base.Sourcegen
 		/// </param>
 		public static void  makeAll(System.String baseDirectory, System.String version)
 		{
-			//load driver and set DB URL
-			/*if (System.getProperty("ca.on.uhn.hl7.database.url") == null) {
-			System.setProperty("ca.on.uhn.hl7.database.url", "jdbc:odbc:hl7");
-			}*/
-			
 			try
 			{
-				//UPGRADE_TODO: The differences in the format  of parameters for method 'java.lang.Class.forName'  may cause compilation errors.  "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1092'"
-				System.Type.GetType("sun.jdbc.odbc.JdbcOdbcDriver");
-				DataTypeGenerator.makeAll(baseDirectory, version);
-				SegmentGenerator.makeAll(baseDirectory, version);
-				MessageGenerator.makeAll(baseDirectory, version);
-				// group and message not implemented
+                DataTypeGenerator.makeAll(baseDirectory, version);
+                SegmentGenerator.makeAll(baseDirectory, version);
+                MessageGenerator.makeAll(baseDirectory, version);
+                BaseDataTypeGenerator.BuildBaseDataTypes(baseDirectory, version);
 			}
 			catch (System.Exception e)
 			{
@@ -339,7 +333,7 @@ namespace NHapi.Base.Sourcegen
 				throw new HL7Exception("The HL7 version " + ver + " is not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
 			}
             //System.Text.StringBuilder path = new System.Text.StringBuilder("ca/uhn/hl7v2/model/v");
-            System.Text.StringBuilder path = new System.Text.StringBuilder("NHapi/Model/V");
+            System.Text.StringBuilder path = new System.Text.StringBuilder("NHapi.Model.V");
             char[] versionChars = new char[ver.Length];
 			SupportClass.GetCharsFromString(ver, 0, ver.Length, versionChars, 0);
 			for (int i = 0; i < versionChars.Length; i++)

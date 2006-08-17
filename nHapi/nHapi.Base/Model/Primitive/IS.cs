@@ -26,7 +26,7 @@
 /// </summary>
 using System;
 using NHapi.Base.Model;
-namespace NHapi.Base.Model.primitive
+namespace NHapi.Base.Model.Primitive
 {
 	
 	/// <summary> This class contains functionality used by the IS class
@@ -100,7 +100,7 @@ namespace NHapi.Base.Model.primitive
 		/// </param>
 		//UPGRADE_ISSUE: Parameter of type 'java.lang.Integer' was migrated to type 'Int32' which is identical to 'int'. You will get a compilation error with method overloads. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1205'"
 		//UPGRADE_NOTE: ref keyword was added to struct-type parameters. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1303'"
-		public IS(IMessage theMessage, ref System.Int32 theTable):base(theMessage)
+		public IS(IMessage theMessage, int theTable, string description):base(theMessage, description)
 		{
 			myTable = theTable;
 		}

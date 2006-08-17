@@ -64,7 +64,7 @@ namespace NHapi.Base.Model
 					
 					if (context != null)
 					{
-						IPrimitiveTypeRule[] rules = context.getPrimitiveRules(version, Name, this);
+                        IPrimitiveTypeRule[] rules = context.getPrimitiveRules(version, TypeName, this);
 						
 						for (int i = 0; i < rules.Length; i++)
 						{

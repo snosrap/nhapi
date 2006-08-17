@@ -26,7 +26,7 @@ namespace NHapi.Base.Model
 			
 		}
 		/// <summary>Returns the name of the type (used in XML encoding and profile checking)  </summary>
-		override public System.String Name
+		override public System.String TypeName
 		{
 			get
 			{
@@ -48,13 +48,16 @@ namespace NHapi.Base.Model
 		/// <summary> Returns the single component of this composite at the specified position (starting at 0) - 
 		/// Creates it (and any nonexistent components before it) if necessary.  
 		/// </summary>
-		public virtual IType getComponent(int number)
+		public virtual IType this[int index]
 		{
-			for (int i = components.Count; i <= number; i++)
-			{
-				components.Add(new Varies(message));
-			}
-			return (IType) components[number];
+            get
+            {
+                for (int i = components.Count; i <= index; i++)
+                {
+                    components.Add(new Varies(message));
+                }
+                return (IType)components[index];
+            }
 		}
 	}
 }

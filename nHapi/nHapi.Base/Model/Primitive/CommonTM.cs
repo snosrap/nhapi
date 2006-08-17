@@ -27,7 +27,7 @@ using System;
 using NHapi.Base;
 using NHapi.Base.Model;
 using NHapi.Base.Log;
-namespace NHapi.Base.Model.primitive
+namespace NHapi.Base.Model.Primitive
 {
 	
 	/// <summary> This class contains functionality used by the TM class

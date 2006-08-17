@@ -24,7 +24,7 @@ using System.IO;
 using NHapi.Base.Model;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.Sourcegen
+namespace NHapi.Base.SourceGeneration
 {
 
 
@@ -37,12 +37,9 @@ namespace NHapi.Base.Sourcegen
     /// </author>
     public class DataTypeGenerator : System.Object
     {
-
-        //UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-        //UPGRADE_NOTE: The initialization of  'log' was moved to static method 'ca.uhn.hl7v2.sourcegen.DataTypeGenerator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
         private static readonly IHapiLog log;
 
-        /// <summary> <p>Creates skeletal source code (without correct data structure but no business
+        /// <summary> Creates skeletal source code (without correct data structure but no business
         /// logic) for all data types found in the normative database.  For versions > 2.2, Primitive data types
         /// are not generated, because they are coded manually (as of HAPI 0.3).  
         /// </summary>
@@ -57,12 +54,9 @@ namespace NHapi.Base.Sourcegen
             SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Datatype");
             //get list of data types
             System.Collections.ArrayList types = new System.Collections.ArrayList();
-            //UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
             System.Data.OleDb.OleDbConnection conn = NormativeDatabase.Instance.Connection;
-            //UPGRADE_TODO: Method 'java.sql.Connection.createStatement' was converted to 'SupportClass.TransactionManager.manager.CreateStatement' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlConnectioncreateStatement'"
             System.Data.OleDb.OleDbCommand stmt = SupportClass.TransactionManager.manager.CreateStatement(conn);
             //get normal data types ... 
-            //UPGRADE_TODO: Interface 'java.sql.ResultSet' was converted to 'System.Data.OleDb.OleDbDataReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlResultSet'"
             System.Data.OleDb.OleDbCommand temp_OleDbCommand;
             temp_OleDbCommand = stmt;
             temp_OleDbCommand.CommandText = "select data_type_code from HL7DataTypes, HL7Versions where HL7Versions.version_id = HL7DataTypes.version_id and HL7Versions.hl7_version = '" + version + "'";
@@ -238,8 +232,9 @@ namespace NHapi.Base.Sourcegen
             //System.out.println("Making primitive: " + datatype);
             System.Text.StringBuilder source = new System.Text.StringBuilder();
 
-            source.Append("using System;\r\n");
-            source.Append("using NHapi.Base.Model;\r\n");
+            source.Append("using System;\n");
+            source.Append("using NHapi.Base.Model;\n");
+            source.Append("using NHapi.Base;\n");
             source.Append("using NHapi.Base.Model.Primitive;\r\n");
             source.Append("namespace ");
             source.Append(SourceGenerator.getVersionPackageName(version));
@@ -275,30 +270,6 @@ namespace NHapi.Base.Sourcegen
             source.Append(datatype);
             source.Append("(IMessage message, string description) : base(message,description){\r\n");
             source.Append("\t}\r\n\r\n");
-            //source.append("\t/**\r\n");
-            //source.append("\t * Constructs a ");
-            //source.append(datatype);
-            //source.append(" with the given value.\r\n");
-            //source.append("\t */\r\n");
-            //source.append("\tpublic ");
-            //source.append(datatype);
-            //source.append("(String value) {\r\n");
-            //source.append("\t\tthis.value = value;\r\n");
-            //source.append("\t}\r\n\r\n");
-            //        source.append("\t/**\r\n");
-            //        source.append("\t * Sets the value (a private field), which implementing classes should validate.\r\n");
-            //        source.append("\t */\r\n");
-            //        source.append("\tpublic void setValue(String value) throws DataTypeException { \r\n");
-            //        source.append("\t\tthis.value = value;\r\n\t}\r\n\r\n");
-            //        source.append("\t/**\r\n");
-            //        source.append("\t * Returns the value.\r\n");
-            //        source.append("\t */\r\n");
-            //        source.append("\tpublic String getValue() {\r\n");
-            //        source.append("\t\treturn this.value;\r\n");
-            //        source.append("\t}\r\n");
-            /*if (correspondingControlInterface != null) {
-            source.append(Control.getImplementation(correspondingControlInterface, version));
-            }*/
             source.Append("\t///<summary>\r\n");
             source.Append("\t///  @return \"");
             source.Append(version);
@@ -324,9 +295,10 @@ namespace NHapi.Base.Sourcegen
         private static System.String makeComposite(System.String dataType, System.String description, System.String[] dataTypes, System.String[] descriptions, int[] tables, System.String version)
         {
             System.Text.StringBuilder source = new System.Text.StringBuilder();
-            source.Append("using System;\r\n");
-            source.Append("using NHapi.Base.Model;\r\n");
-            source.Append("using NHapi.Base.Log;\r\n\r\n");
+            source.Append("using System;\n");
+            source.Append("using NHapi.Base.Model;\n");
+            source.Append("using NHapi.Base.Log;\n");
+            source.Append("using NHapi.Base;\n");
             source.Append("using NHapi.Base.Model.Primitive;\r\n\r\n");
             source.Append("namespace ");
             source.Append(SourceGenerator.getVersionPackageName(version));
@@ -351,16 +323,7 @@ namespace NHapi.Base.Sourcegen
             source.Append("[Serializable]\r\n");
             source.Append("public class ");
             source.Append(dataType);
-            source.Append(" : AbstractType, ");
-
-            //implement interface from Model.control package if required
-            //Class correspondingControlInterface = Control.getInterfaceImplementedBy(dataType);
-            //if (correspondingControlInterface == null) {
-            source.Append("Composite");
-            //} else { 
-            //            source.append(correspondingControlInterface.getName());
-            //}
-
+            source.Append(" : AbstractType, IComposite");
             source.Append("{\r\n");
             source.Append("\tprivate IType[] data;\r\n\r\n");
             source.Append("\t///<summary>\r\n");
@@ -381,7 +344,7 @@ namespace NHapi.Base.Sourcegen
             source.Append("\tpublic ");
             source.Append(dataType);
             source.Append("(IMessage message, string description) : base(message, description){\r\n");
-            source.Append("\t\tdata = new Type[");
+            source.Append("\t\tdata = new IType[");
             source.Append(dataTypes.Length);
             source.Append("];\r\n");
             for (int i = 0; i < dataTypes.Length; i++)
@@ -414,7 +377,7 @@ namespace NHapi.Base.Sourcegen
             source.Append("\t///<summary>\r\n");
             source.Append("\t/// Returns an array containing the data elements.\r\n");
             source.Append("\t///</summary>\r\n");
-            source.Append("\tpublic Type[] Components\r\n");
+            source.Append("\tpublic IType[] Components\r\n");
             source.Append("\t{ \r\n");
             source.Append("\t\tget{\r\n");
             source.Append("\t\t\treturn this.data; \r\n");
@@ -426,18 +389,19 @@ namespace NHapi.Base.Sourcegen
             source.Append("\t///<param name=\"number\">The ordinal item to get</param>\r\n");
             source.Append("\t///<returns>The data component (as a type) at the requested number (ordinal)</returns>\r\n");
             source.Append("\t///<summary>\r\n");
-            source.Append("\tpublic Type getComponent(int number) { \r\n\r\n");
+            source.Append("\tpublic IType this[int index] { \r\n\r\n");
+            source.Append("get{\r\n");
             source.Append("\t\ttry { \r\n");
-            source.Append("\t\t\treturn this.data[number]; \r\n");
+            source.Append("\t\t\treturn this.data[index]; \r\n");
             source.Append("\t\t} catch (System.ArgumentOutOfRangeException) { \r\n");
-            source.Append("\t\t\tthrow new DataTypeException(\"Element \" + number + \" doesn't exist in ");
+            source.Append("\t\t\tthrow new DataTypeException(\"Element \" + index + \" doesn't exist in ");
             source.Append(dataTypes.Length);
             source.Append(" element ");
             source.Append(dataType);
             source.Append(" composite\"); \r\n");
             source.Append("\t\t} \r\n");
             source.Append("\t} \r\n");
-
+            source.Append("\t} \r\n");
             //make type-specific accessors ... 
             for (int i = 0; i < dataTypes.Length; i++)
             {
@@ -462,9 +426,9 @@ namespace NHapi.Base.Sourcegen
                 source.Append("\t   try {\r\n");
                 source.Append("\t      ret = (");
                 source.Append(dtName);
-                source.Append(")getComponent(");
+                source.Append(")this[");
                 source.Append(i);
-                source.Append(");\r\n");
+                source.Append("];\r\n");
                 source.Append("\t   } catch (DataTypeException e) {\r\n");
                 source.Append("\t      HapiLogFactory.getHapiLog(this.GetType()).error(\"Unexpected problem accessing known data type component - this is a bug.\", e);\r\n");
                 source.Append("\t      throw new System.Exception(\"An unexpected error ocurred\",e);\r\n");

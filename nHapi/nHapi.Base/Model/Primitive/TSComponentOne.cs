@@ -25,7 +25,7 @@
 using System;
 using NHapi.Base.Model;
 
-namespace NHapi.Base.Model.primitive
+namespace NHapi.Base.Model.Primitive
 {
 	
 	/// <summary> Represents an HL7 timestamp, which is related to the HL7 TS type.  In version 2.5, 
@@ -42,7 +42,7 @@ namespace NHapi.Base.Model.primitive
 	/// </author>
 	/// <version>  $Revision: 1.4 $ updated on $Date: 2005/06/14 20:09:39 $ by $Author: bryan_tripp $
 	/// </version>
-    public abstract class TSComponentOne : AbstractPrimitive
+    public class TSComponentOne : AbstractPrimitive
     {
         private CommonTS Detail
         {

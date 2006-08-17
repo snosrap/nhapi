@@ -47,6 +47,7 @@ namespace NHapi.Base.Model
 		private System.Collections.ArrayList length;
 		private System.Collections.ArrayList args;
 		private System.Collections.ArrayList maxReps;
+        private System.Collections.ArrayList descriptions;
 		private IGroup parent;
 
         #region Constructor
@@ -68,6 +69,7 @@ namespace NHapi.Base.Model
 			this.length = new System.Collections.ArrayList();
 			this.args = new System.Collections.ArrayList();
 			this.maxReps = new System.Collections.ArrayList();
+            this.descriptions = new System.Collections.ArrayList();
 		}
 
         /// <summary> Sets the segment name.  This would normally be called by a Parser. </summary>
@@ -331,20 +333,26 @@ namespace NHapi.Base.Model
 		/// </summary>
 		protected internal virtual void  add(System.Type c, bool required, int maxReps, int length, System.Object[] constructorArgs)
 		{
-			if (!typeof(Type).IsAssignableFrom(c))
-			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
-				throw new HL7Exception("Class " + c.FullName + " does not inherit from " + "ca.on.uhn.datatype.Type", HL7Exception.APPLICATION_INTERNAL_ERROR);
-			}
-			
-			Type[] arr = new Type[0];
-			this.types.Add(c);
-			this.fields.Add(arr);
-			this.required.Add(required);
-			this.length.Add((System.Int32) length);
-			this.args.Add(constructorArgs);
-			this.maxReps.Add((System.Int32) maxReps);
+            add(c, required, maxReps, length, constructorArgs, null);
 		}
+
+        protected internal virtual void add(System.Type c, bool required, int maxReps, int length, System.Object[] constructorArgs, string description)
+        {
+            if (!typeof(IType).IsAssignableFrom(c))
+            {
+                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
+                throw new HL7Exception("Class " + c.FullName + " does not inherit from " + "ca.on.uhn.datatype.Type", HL7Exception.APPLICATION_INTERNAL_ERROR);
+            }
+
+            IType[] arr = new IType[0];
+            this.types.Add(c);
+            this.fields.Add(arr);
+            this.required.Add(required);
+            this.length.Add((System.Int32)length);
+            this.args.Add(constructorArgs);
+            this.maxReps.Add((System.Int32)maxReps);
+            this.descriptions.Add(description);
+        }
 		
 		/// <summary> Called from getField(...) methods.  If a field has been requested that 
 		/// doesn't exist (eg getField(15) when only 10 fields in segment) adds Varies

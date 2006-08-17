@@ -27,7 +27,7 @@ using System;
 using NHapi.Base;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.Sourcegen
+namespace NHapi.Base.SourceGeneration
 {
 	
 	
@@ -208,7 +208,7 @@ namespace NHapi.Base.Sourcegen
                 source.Append("using ");
                 source.Append(SourceGenerator.getVersionPackageName(version));
                 source.Append("Datatype;\r\n");
-                source.Append("using ca.uhn.log;\r\n\r\n");
+                source.Append("using NHapi.Base.Log;\r\n\r\n");
 
                 source.Append("namespace ");
                 source.Append(SourceGenerator.getVersionPackageName(version));
@@ -260,10 +260,10 @@ namespace NHapi.Base.Sourcegen
                 source.Append("   */\r\n");
 
                 //write constructor
-                source.Append("  public ");
+                source.Append("\tpublic ");
                 source.Append(name);
-                source.Append("(Group parent, ModelClassFactory factory) : base(parent,factory) {\r\n");
-                source.Append("    Message message = Message;\r\n");
+                source.Append("(IGroup parent, IModelClassFactory factory) : base(parent,factory) {\r\n");
+                source.Append("\tIMessage message = Message;\r\n");
                 if (elements.Count > 0)
                 {
                     source.Append("    try {\r\n");
@@ -322,7 +322,7 @@ namespace NHapi.Base.Sourcegen
                         source.Append(");\r\n");
                     }
                     source.Append("    } catch (HL7Exception he) {\r\n");
-                    source.Append("        HapiLogFactory.getHapiLog(GetType()).error(\"Can't instantiate \" + this.getStructureName(), he);\r\n");
+                    source.Append("        HapiLogFactory.getHapiLog(GetType()).error(\"Can't instantiate \" + GetType().Name, he);\r\n");
                     source.Append("    }\r\n");
                 }
                 source.Append("  }\r\n\r\n");
@@ -364,7 +364,7 @@ namespace NHapi.Base.Sourcegen
                         source.Append(type);
                         source.Append(" ret = null;\r\n");
                         source.Append("\t\t\ttry\n\t\t\t{\r\n");
-                        source.Append("\t\t\tType t = this.getField(");
+                        source.Append("\t\t\tIType t = this.getField(");
                         source.Append(se.field);
                         source.Append(", ");
                         if (se.repetitions == 1)
@@ -416,7 +416,7 @@ namespace NHapi.Base.Sourcegen
                             source.Append(type);
                             source.Append("[] ret = null;\r\n");
                             source.Append("    try {\r\n");
-                            source.Append("        Type[] t = this.getField(");
+                            source.Append("        IType[] t = this.getField(");
                             source.Append(se.field);
                             source.Append(");  \r\n");
                             source.Append("        ret = new ");

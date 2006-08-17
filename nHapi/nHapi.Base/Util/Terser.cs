@@ -149,7 +149,7 @@ namespace NHapi.Base.util
 			{
 				try
 				{
-					p = getPrimitive(((IComposite) type).getComponent(0));
+					p = getPrimitive(((IComposite) type)[0]);
 				}
 				catch (HL7Exception)
 				{
@@ -204,7 +204,7 @@ namespace NHapi.Base.util
 					
 					try
 					{
-						ret = ((IComposite) type).getComponent(comp - 1);
+						ret = ((IComposite) type)[comp - 1];
 					}
 					catch (System.Exception e)
 					{

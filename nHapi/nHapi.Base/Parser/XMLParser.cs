@@ -538,7 +538,7 @@ namespace NHapi.Base.Parser
 				{
 					if (System.Convert.ToInt16(children.Item(i).NodeType) == (short) System.Xml.XmlNodeType.Element)
 					{
-						parse(datatypeObject.getComponent(compNum), (System.Xml.XmlElement) children.Item(i));
+						parse(datatypeObject[compNum], (System.Xml.XmlElement) children.Item(i));
 						compNum++;
 					}
 				}
@@ -578,7 +578,7 @@ namespace NHapi.Base.Parser
 		/// <summary>Returns the expected XML element name for the given child of the given Composite </summary>
 		private System.String makeElementName(IComposite composite, int child)
 		{
-			return composite.Name + "." + child;
+            return composite.TypeName + "." + child;
 		}
 		
 		/// <summary> Populates the given Element with data from the given Type, by inserting

@@ -37,8 +37,10 @@ namespace NHapi.Base.Model
 			get;
 			
 		}
-		
-		/// <summary> Returns the single component of this composite at the specified position (starting at 0).</summary>
-		IType getComponent(int number);
+
+        IType this[int index]
+        {
+            get;
+        }
 	}
 }

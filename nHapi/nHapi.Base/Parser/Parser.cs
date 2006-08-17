@@ -389,7 +389,7 @@ namespace NHapi.Base.Parser
 				System.Collections.IDictionary map = new System.Collections.Hashtable();
 				for (int i = 0; i < versions.Length; i++)
 				{
-                    System.String resource = "NHapi.Base.Parser.eventmap." + versions[i] + ".properties";
+                    System.String resource = "NHapi.Base.Parser.EventMap." + versions[i] + ".properties";
                     System.IO.Stream inResource = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resource);
                     System.Collections.Specialized.NameValueCollection structures = new System.Collections.Specialized.NameValueCollection() ;
                     if (inResource != null)

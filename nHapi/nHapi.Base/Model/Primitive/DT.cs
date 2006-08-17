@@ -25,7 +25,7 @@
 using System;
 using NHapi.Base.Model;
 
-namespace NHapi.Base.Model.primitive
+namespace NHapi.Base.Model.Primitive
 {
 	
 	/// <summary> Represents an HL7 DT (date) datatype.   

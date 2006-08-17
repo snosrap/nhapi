@@ -4,7 +4,7 @@
 using System;
 using NHapi.Base;
 using NHapi.Base.Model;
-using NHapi.Base.Sourcegen;
+using NHapi.Base.SourceGeneration;
 using NHapi.Base.Log;
 
 namespace NHapi.Base.Parser
@@ -217,7 +217,7 @@ namespace NHapi.Base.Parser
 			System.String types = "message|group|segment|datatype";
 			if (types.IndexOf(type) < 0)
 				throw new HL7Exception("Can't find " + name + " for version " + version + " -- type must be " + types + " but is " + type);
-			System.String subpackage = type;
+			System.String subpackage = type.Substring(0,1).ToUpper() + type.Substring(1);
 			
 			//try to load class from each package
 			System.Type compClass = null;

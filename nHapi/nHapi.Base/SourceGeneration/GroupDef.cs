@@ -21,7 +21,7 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-namespace NHapi.Base.Sourcegen
+namespace NHapi.Base.SourceGeneration
 {
 	
 	/// <summary> Contains the information needed to create source code for a Group (a 

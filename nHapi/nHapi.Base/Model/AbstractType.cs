@@ -43,7 +43,7 @@ namespace NHapi.Base.Model
         /// <summary>
         /// Returns the name of the type (used in XML encoding and profile checking)  
         /// </summary>
-        virtual public System.String Name
+        virtual public System.String TypeName
         {
             get
             {

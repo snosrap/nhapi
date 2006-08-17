@@ -103,7 +103,7 @@ namespace NHapi.Base
 		private NormativeDatabase()
 		{
 			//UPGRADE_ISSUE: Method 'java.lang.System.getProperty' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangSystem'"
-			_connectionString = Properties.Settings.Default.ConnectionString;
+			_connectionString = Properties.Settings.ConnectionString;
 			_conn = new System.Data.OleDb.OleDbConnection(_connectionString);
 			_conn.Open();
 		}
