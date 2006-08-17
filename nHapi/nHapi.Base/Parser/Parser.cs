@@ -21,12 +21,12 @@
 /// </summary>
 using System;
 using NHapi.Base;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using NHapi.Base.validation;
 using NHapi.Base.validation.impl;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.parser
+namespace NHapi.Base.Parser
 {
 	
 	/// <summary> Parses HL7 message Strings into HL7 Message objects and 
@@ -34,7 +34,7 @@ namespace NHapi.Base.parser
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public abstract class Parser
+	public abstract class ParserBase
 	{
 		/// <returns> the factory used by this Parser for model class lookup
 		/// </returns>
@@ -75,7 +75,7 @@ namespace NHapi.Base.parser
 		{
 			get
 			{
-				lock (typeof(NHapi.Base.parser.Parser))
+				lock (typeof(NHapi.Base.Parser.ParserBase))
 				{
 					if (messageStructures == null)
 					{
@@ -88,7 +88,7 @@ namespace NHapi.Base.parser
 		}
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.parser.Parser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
+		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Parser.ParserBase'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private static System.Collections.IDictionary messageStructures = null;
@@ -101,7 +101,7 @@ namespace NHapi.Base.parser
 		private MessageValidator myValidator;
 		
 		/// <summary> Uses DefaultModelClassFactory for model class lookup. </summary>
-		public Parser()
+		public ParserBase()
 		{
 			myFactory = new DefaultModelClassFactory();
 			ValidationContext = new DefaultValidation();
@@ -109,7 +109,7 @@ namespace NHapi.Base.parser
 		
 		/// <param name="theFactory">custom factory to use for model class lookup 
 		/// </param>
-		public Parser(IModelClassFactory theFactory)
+		public ParserBase(IModelClassFactory theFactory)
 		{
 			myFactory = theFactory;
 			ValidationContext = new DefaultValidation();
@@ -383,13 +383,13 @@ namespace NHapi.Base.parser
 		//UPGRADE_NOTE: Synchronized keyword was removed from method 'loadMessageStructures'. Lock expression was added. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1027'"
 		private static System.Collections.IDictionary loadMessageStructures()
 		{
-			lock (typeof(NHapi.Base.parser.Parser))
+			lock (typeof(NHapi.Base.Parser.ParserBase))
 			{
 				//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 				System.Collections.IDictionary map = new System.Collections.Hashtable();
 				for (int i = 0; i < versions.Length; i++)
 				{
-                    System.String resource = "NHapi.Base.parser.eventmap." + versions[i] + ".properties";
+                    System.String resource = "NHapi.Base.Parser.eventmap." + versions[i] + ".properties";
                     System.IO.Stream inResource = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resource);
                     System.Collections.Specialized.NameValueCollection structures = new System.Collections.Specialized.NameValueCollection() ;
                     if (inResource != null)
@@ -457,9 +457,9 @@ namespace NHapi.Base.parser
 			
 			return result;
 		}
-		static Parser()
+		static ParserBase()
 		{
-			log = HapiLogFactory.getHapiLog(typeof(Parser));
+			log = HapiLogFactory.getHapiLog(typeof(ParserBase));
 		}
 	}
 }

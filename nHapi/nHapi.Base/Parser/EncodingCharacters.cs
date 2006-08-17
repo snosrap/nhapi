@@ -51,7 +51,7 @@
 /// 
 /// </summary>
 using System;
-namespace NHapi.Base.parser
+namespace NHapi.Base.Parser
 {
 	
 	

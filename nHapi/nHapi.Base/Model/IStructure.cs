@@ -19,7 +19,7 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> Part of an HL7 message: either a segment or group.  There are certain methods (e.g. Group.get())

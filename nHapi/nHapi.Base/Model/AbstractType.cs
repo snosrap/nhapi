@@ -25,7 +25,7 @@
 /// 
 /// </summary>
 using System;
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 
     /// <summary> An abstract Type that provides a default implementation of getName(). 

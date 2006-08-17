@@ -1,5 +1,5 @@
 using System;
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> A set of "extra" components (sub-components) that are not a standard part 

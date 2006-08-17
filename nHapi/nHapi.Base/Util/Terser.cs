@@ -24,7 +24,7 @@
 /// 
 /// </summary>
 using System;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using HL7Exception = NHapi.Base.HL7Exception;
 using NHapi.Base.Log;
 namespace NHapi.Base.util
@@ -149,7 +149,7 @@ namespace NHapi.Base.util
 			{
 				try
 				{
-					p = getPrimitive(((IComposite) type)[0]);
+					p = getPrimitive(((IComposite) type).getComponent(0));
 				}
 				catch (HL7Exception)
 				{
@@ -204,7 +204,7 @@ namespace NHapi.Base.util
 					
 					try
 					{
-						ret = ((IComposite) type)[comp - 1];
+						ret = ((IComposite) type).getComponent(comp - 1);
 					}
 					catch (System.Exception e)
 					{

@@ -24,7 +24,7 @@
 /// 
 /// </summary>
 using System;
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> This class is used to provide utility functions for other datatype classes and methods.</summary>

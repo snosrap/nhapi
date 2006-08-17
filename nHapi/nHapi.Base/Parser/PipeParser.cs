@@ -25,11 +25,11 @@
 /// </summary>
 using System;
 using NHapi.Base;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using NHapi.Base.util;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.parser
+namespace NHapi.Base.Parser
 {
 	
 	/// <summary> An implementation of Parser that supports traditionally encoded (ie delimited with characters
@@ -38,7 +38,7 @@ namespace NHapi.Base.parser
 	/// </summary>
 	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
 	/// </author>
-	public class PipeParser:Parser
+    public class PipeParser : ParserBase
 	{
 		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'AnonymousClassPredicate' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
 		private class AnonymousClassPredicate : FilterIterator.IPredicate
@@ -98,7 +98,7 @@ namespace NHapi.Base.parser
 			public virtual bool evaluate(System.Object obj)
 			{
 				IStructure s = (IStructure) obj;
-				NHapi.Base.parser.PipeParser.log.debug("PipeParser iterating message in direction " + name + " at " + s.getName());
+				NHapi.Base.Parser.PipeParser.log.debug("PipeParser iterating message in direction " + name + " at " + s.getName());
 				if (System.Text.RegularExpressions.Regex.IsMatch(s.getName(), name + "\\d*"))
 				{
 					return true;
@@ -121,7 +121,7 @@ namespace NHapi.Base.parser
 		}
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.parser.PipeParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
+		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Parser.PipeParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private const System.String segDelim = "\r"; //see section 2.8 of spec
@@ -743,7 +743,7 @@ namespace NHapi.Base.parser
 					/* use the default */
 				}
 				
-				msh = Parser.makeControlMSH(version, Factory);
+				msh = ParserBase.makeControlMSH(version, Factory);
 				Terser.Set(msh, 1, 0, 1, 1, System.Convert.ToString(fieldSep));
 				Terser.Set(msh, 2, 0, 1, 1, encChars);
 				Terser.Set(msh, 10, 0, 1, 1, messControlID);

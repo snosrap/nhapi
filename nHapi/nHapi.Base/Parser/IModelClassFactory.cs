@@ -3,7 +3,7 @@
 */
 using System;
 using HL7Exception = NHapi.Base.HL7Exception;
-namespace NHapi.Base.parser
+namespace NHapi.Base.Parser
 {
 	
 	/// <summary> Looks up classes for message model components (e.g. concrete implementations of 

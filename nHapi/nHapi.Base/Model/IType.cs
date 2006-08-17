@@ -19,7 +19,7 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> An HL7 datatype.  Datatypes normally implement either Composite or Primitive.    </summary>

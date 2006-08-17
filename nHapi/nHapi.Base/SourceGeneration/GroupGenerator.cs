@@ -24,7 +24,7 @@ using System;
 using NHapi.Base;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.sourcegen
+namespace NHapi.Base.Sourcegen
 {
 	
 	/// <summary> Creates source code for Group classes - these are aggregations of 
@@ -40,7 +40,7 @@ namespace NHapi.Base.sourcegen
 	{
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.sourcegen.GroupGenerator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
+		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Sourcegen.GroupGenerator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		/// <summary>Creates new GroupGenerator </summary>
@@ -76,7 +76,7 @@ namespace NHapi.Base.sourcegen
 			{
 				baseDirectory = baseDirectory + "/";
 			}
-			System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "group");
+			System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Group");
 			
 			GroupDef group = getGroupDef(structures, groupName, baseDirectory, version, message);
 			//UPGRADE_WARNING: At least one expression was used more than once in the target code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1181'"
@@ -227,14 +227,14 @@ namespace NHapi.Base.sourcegen
 		public static System.String makePreamble(GroupDef group, System.String version)
 		{
 			System.Text.StringBuilder preamble = new System.Text.StringBuilder();
-			preamble.Append("using NHapi.Base.parser;\r\n");
 			preamble.Append("using NHapi.Base;\r\n");
-			preamble.Append("using ca.uhn.log;\r\n");
+            preamble.Append("using NHapi.Base.Parser;\r\n");
+            preamble.Append("using NHapi.Base.Model;\r\n");
+            preamble.Append("using ca.uhn.log;\r\n");
 			preamble.Append("using System;\r\n");
 			preamble.Append("using ");
 			preamble.Append(SourceGenerator.getVersionPackageName(version));
-			preamble.Append("segment;\r\n\r\n");
-			preamble.Append("using NHapi.Base.model;\r\n");
+			preamble.Append("Segment;\r\n\r\n");
 			preamble.Append("/**\r\n");
 			preamble.Append(" * <p>Represents the ");
 			preamble.Append(group.Name);
@@ -245,7 +245,7 @@ namespace NHapi.Base.sourcegen
 			preamble.Append(" */\r\n");
 			preamble.Append("namespace ");
 			preamble.Append(SourceGenerator.getVersionPackageName(version));
-			preamble.Append("group\n");
+			preamble.Append("Group\n");
 			preamble.Append("{\r\n");
 			preamble.Append("[Serializable]\r\n");
 			preamble.Append("public class ");

@@ -1547,6 +1547,12 @@ namespace NHapi.Base
             return CreateXmlReader(new System.Xml.XmlTextReader(filePath.OpenRead()));
         }
 
+        private XmlReader CreateXmlReader(string fileName)
+        {
+            parserFileName = fileName;
+            return CreateXmlReader(new System.Xml.XmlTextReader(fileName));
+        }
+
         private XmlReader CreateXmlReader(System.IO.Stream stream)
         {
             parserFileName = null;
@@ -1557,12 +1563,6 @@ namespace NHapi.Base
         {
             parserFileName = null;
             return CreateXmlReader(new System.Xml.XmlTextReader(URI,stream));
-        }
-
-        private XmlReader CreateXmlReader(string fileName)
-        {
-            parserFileName = fileName;
-            return CreateXmlReader(new System.Xml.XmlTextReader(fileName));
         }
 
 

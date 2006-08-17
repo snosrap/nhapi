@@ -1,9 +1,9 @@
 using System;
-using NHapi.Base.parser;
+using NHapi.Base.Parser;
 using NHapi.Base;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> A generic HL7 message, meant for parsing message with unrecognized structures
@@ -39,7 +39,7 @@ namespace NHapi.Base.model
 		/// </summary>
 		public static System.Type getGenericMessageClass(System.String version)
 		{
-			if (!Parser.validVersion(version))
+			if (!ParserBase.validVersion(version))
 				throw new System.ArgumentException("The version " + version + " is not recognized");
 			
 			System.Type c = null;

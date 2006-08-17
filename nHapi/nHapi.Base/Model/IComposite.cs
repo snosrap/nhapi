@@ -19,9 +19,7 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using System.Collections.Generic;
-
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> <p>Represents the category of HL7 data types that contain more than one component (e.g. CE).
@@ -39,11 +37,8 @@ namespace NHapi.Base.model
 			get;
 			
 		}
-
-        /// <summary> Returns the single component of this composite at the specified position (starting at 0).</summary>
-        IType this[int index]
-        {
-            get;
-        }
+		
+		/// <summary> Returns the single component of this composite at the specified position (starting at 0).</summary>
+		IType getComponent(int number);
 	}
 }

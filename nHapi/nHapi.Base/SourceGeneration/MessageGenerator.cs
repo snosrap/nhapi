@@ -29,7 +29,7 @@ using NHapi.Base.Log;
 using System.Data.OleDb;
 using System.Data;
 
-namespace NHapi.Base.sourcegen
+namespace NHapi.Base.Sourcegen
 {
 	
 	/// <summary> Creates source code for HL7 Message objects, using the normative DB.  HL7 Group
@@ -47,10 +47,10 @@ namespace NHapi.Base.sourcegen
 		/// for segment class lookup.  This makes segment creation more flexible, but may slow down parsing 
 		/// substantially.  
 		/// </summary>
-		public static System.String MODEL_CLASS_FACTORY_KEY = "NHapi.Base.sourcegen.modelclassfactory";
+		public static System.String MODEL_CLASS_FACTORY_KEY = "NHapi.Base.Sourcegen.modelclassfactory";
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.sourcegen.MessageGenerator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
+		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Sourcegen.MessageGenerator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		/// <summary>Creates new MessageGenerator </summary>
@@ -128,7 +128,7 @@ namespace NHapi.Base.sourcegen
 					baseDirectory = baseDirectory + "/";
 				}
 				
-				System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "message");
+				System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Message");
 				System.Console.Out.WriteLine("Writing " + message + " to " + targetDir.FullName);
 				//UPGRADE_WARNING: At least one expression was used more than once in the target code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1181'"
 				//UPGRADE_TODO: Constructor 'java.io.FileWriter.FileWriter' was converted to 'System.IO.StreamWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileWriterFileWriter_javalangString_boolean'"
@@ -143,7 +143,7 @@ namespace NHapi.Base.sourcegen
 					out_Renamed.Write(GroupGenerator.makeAccessor(group, i));
 				}
 				
-				//add implementation of model.control interface, if any
+				//add implementation of Model.control interface, if any
 				//out.write(Control.getImplementation(Control.getInterfaceImplementedBy(message), version));            
 					out_Renamed.Write("}\r\n");	//End class
 					out_Renamed.Write("}\r\n");	//End namespace
@@ -231,15 +231,15 @@ namespace NHapi.Base.sourcegen
 			System.Text.StringBuilder preamble = new System.Text.StringBuilder();
 			preamble.Append("using System;\r\n");
 			preamble.Append("using ca.uhn.log;\r\n");
+            preamble.Append("using NHapi.Base;\r\n");
+            preamble.Append("using NHapi.Base.Parser;\r\n");
+            preamble.Append("using NHapi.Base.Model;\r\n\r\n");
+            preamble.Append("using ");
+			preamble.Append(SourceGenerator.getVersionPackageName(version));
+			preamble.Append("Group;\r\n");
 			preamble.Append("using ");
 			preamble.Append(SourceGenerator.getVersionPackageName(version));
-			preamble.Append("group;\r\n");
-			preamble.Append("using ");
-			preamble.Append(SourceGenerator.getVersionPackageName(version));
-			preamble.Append("segment;\r\n");
-			preamble.Append("using NHapi.Base;\r\n");
-			preamble.Append("using NHapi.Base.parser;\r\n");
-			preamble.Append("using NHapi.Base.model;\r\n\r\n");
+			preamble.Append("Segment;\r\n");
 			preamble.Append("/**\r\n");
 			preamble.Append(" * <p>Represents a ");
 			preamble.Append(message);
@@ -251,14 +251,14 @@ namespace NHapi.Base.sourcegen
 			preamble.Append(" */\r\n");
 			preamble.Append("namespace ");
 			preamble.Append(SourceGenerator.getVersionPackageName(version));
-			preamble.Append("message\r\n\r\n");
+			preamble.Append("Message\r\n\r\n");
 			preamble.Append("{\r\n");
 			preamble.Append("[Serializable]\r\n");
 			preamble.Append("public class ");
 			preamble.Append(message);
 			preamble.Append(" : AbstractMessage ");
 			
-			//implement interface from model.control package if required
+			//implement interface from Model.control package if required
 			/*Class correspondingControlInterface = Control.getInterfaceImplementedBy(message);
 			if (correspondingControlInterface != null) {
 			preamble.append("implements ");

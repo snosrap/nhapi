@@ -25,8 +25,8 @@
 /// 
 /// </summary>
 using System;
-using NHapi.Base.model;
-namespace NHapi.Base.model.primitive
+using NHapi.Base.Model;
+namespace NHapi.Base.Model.primitive
 {
 	
 	/// <summary> This class contains functionality used by the IS class

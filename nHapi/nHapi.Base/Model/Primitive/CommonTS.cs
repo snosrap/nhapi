@@ -24,9 +24,9 @@
 /// 
 /// </summary>
 using System;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using NHapi.Base.Log;
-namespace NHapi.Base.model.primitive
+namespace NHapi.Base.Model.primitive
 {
 	
 	/// <summary> 
@@ -463,7 +463,7 @@ namespace NHapi.Base.model.primitive
 		}
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.model.primitive.CommonTS'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
+		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Model.primitive.CommonTS'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private CommonDT dt;

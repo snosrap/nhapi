@@ -1,7 +1,7 @@
 using System;
-using NHapi.Base.parser;
+using NHapi.Base.Parser;
 
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> An undefined segment group.  This is for storing undefined groups

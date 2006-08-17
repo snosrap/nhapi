@@ -19,7 +19,7 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using NHapi.Base.validation;
 
 namespace NHapi.Base.validation.impl

@@ -19,7 +19,7 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-namespace NHapi.Base.sourcegen
+namespace NHapi.Base.Sourcegen
 {
 	
 	/// <summary> Information about a structure within a message (eg group, segment) 

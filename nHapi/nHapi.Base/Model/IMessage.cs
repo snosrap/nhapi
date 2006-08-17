@@ -21,7 +21,7 @@
 using System;
 using NHapi.Base.validation;
 
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	

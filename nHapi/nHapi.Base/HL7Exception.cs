@@ -22,7 +22,7 @@
 using System;
 using NHapi.Base.Log;
 using NHapi.Base.util;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 
 namespace NHapi.Base
 {

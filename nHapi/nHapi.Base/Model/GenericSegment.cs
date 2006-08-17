@@ -1,5 +1,5 @@
 using System;
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> An unspecified segment that has an undefined number of fields, each 

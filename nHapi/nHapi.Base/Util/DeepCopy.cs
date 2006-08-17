@@ -1,5 +1,5 @@
 using System;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using NHapi.Base;
 
 namespace NHapi.Base.util

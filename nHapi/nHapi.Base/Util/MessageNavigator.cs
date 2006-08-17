@@ -24,7 +24,7 @@
 /// 
 /// </summary>
 using System;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using HL7Exception = NHapi.Base.HL7Exception;
 namespace NHapi.Base.util
 {

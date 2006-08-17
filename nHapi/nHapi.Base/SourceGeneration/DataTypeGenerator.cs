@@ -21,10 +21,10 @@
 /// </summary>
 using System;
 using System.IO;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.sourcegen
+namespace NHapi.Base.Sourcegen
 {
 
 
@@ -53,8 +53,8 @@ namespace NHapi.Base.sourcegen
             {
                 baseDirectory = baseDirectory + "/";
             }
-            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "datatype");
-            SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "datatype");
+            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Datatype");
+            SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Datatype");
             //get list of data types
             System.Collections.ArrayList types = new System.Collections.ArrayList();
             //UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
@@ -243,7 +243,7 @@ namespace NHapi.Base.sourcegen
             source.Append("using NHapi.Base.Model.Primitive;\r\n");
             source.Append("namespace ");
             source.Append(SourceGenerator.getVersionPackageName(version));
-            source.Append("datatype\r\n");
+            source.Append("Datatype\r\n");
             source.Append("{\r\n");
             source.Append("///<summary>\r\n");
             source.Append("///<p>Represents the HL7 ");
@@ -330,7 +330,7 @@ namespace NHapi.Base.sourcegen
             source.Append("using NHapi.Base.Model.Primitive;\r\n\r\n");
             source.Append("namespace ");
             source.Append(SourceGenerator.getVersionPackageName(version));
-            source.Append("datatype\r\n");
+            source.Append("Datatype\r\n");
             source.Append("{\r\n\r\n");
             source.Append("///<summary>\r\n");
             source.Append("/// <p>The HL7 ");
@@ -353,7 +353,7 @@ namespace NHapi.Base.sourcegen
             source.Append(dataType);
             source.Append(" : AbstractType, ");
 
-            //implement interface from model.control package if required
+            //implement interface from Model.control package if required
             //Class correspondingControlInterface = Control.getInterfaceImplementedBy(dataType);
             //if (correspondingControlInterface == null) {
             source.Append("Composite");

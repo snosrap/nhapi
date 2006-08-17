@@ -25,9 +25,9 @@
 /// 
 /// </summary>
 using System;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 
-namespace NHapi.Base.model.primitive
+namespace NHapi.Base.Model.primitive
 {
 	
 	/// <summary> This class contains functionality used by the ID class

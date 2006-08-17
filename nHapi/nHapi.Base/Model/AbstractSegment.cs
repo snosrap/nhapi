@@ -22,10 +22,10 @@
 /// </summary>
 using System;
 using NHapi.Base;
-using NHapi.Base.parser;
+using NHapi.Base.Parser;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> <p>Provides common functionality needed by implementers of the Segment interface.</p>

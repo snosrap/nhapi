@@ -26,7 +26,7 @@
 using System;
 using NHapi.Base.validation;
 
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> Base class for Primitives.  Performs validation in setValue().
@@ -37,14 +37,14 @@ namespace NHapi.Base.model
 	public abstract class AbstractPrimitive:AbstractType, IPrimitive
 	{
 		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
-		/// <seealso cref="NHapi.Base.model.Primitive.getValue()">
+		/// <seealso cref="NHapi.Base.Model.Primitive.getValue()">
 		/// </seealso>
 		/// <summary> Sets the value of this Primitive, first performing validation as specified 
 		/// by <code>getMessage().getValidationContext()</code>.  No validation is performed 
 		/// if getMessage() returns null. 
 		/// 
 		/// </summary>
-		/// <seealso cref="NHapi.Base.model.Primitive.setValue(String)">
+		/// <seealso cref="NHapi.Base.Model.Primitive.setValue(String)">
 		/// </seealso>
 		virtual public System.String Value
 		{

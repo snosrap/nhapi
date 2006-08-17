@@ -19,11 +19,11 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-using NHapi.Base.parser;
+using NHapi.Base.Parser;
 using NHapi.Base.validation;
 using System.Text.RegularExpressions;
 
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> A default implementation of Message. </summary>

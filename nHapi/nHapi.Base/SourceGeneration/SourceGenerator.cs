@@ -27,9 +27,9 @@
 using System;
 using System.Reflection;
 using HL7Exception = NHapi.Base.HL7Exception;
-using Parser = NHapi.Base.parser.Parser;
+using NHapi.Base.Parser;
 using System.IO;
-namespace NHapi.Base.sourcegen
+namespace NHapi.Base.Sourcegen
 {
 	
 	/// <summary> <p>Manages automatic generation of HL7 API source code for all data types,
@@ -334,12 +334,12 @@ namespace NHapi.Base.sourcegen
 		/// </summary>
 		public static System.String getVersionPackagePath(System.String ver)
 		{
-			if (Parser.validVersion(ver) == false)
+			if (ParserBase.validVersion(ver) == false)
 			{
 				throw new HL7Exception("The HL7 version " + ver + " is not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
 			}
             //System.Text.StringBuilder path = new System.Text.StringBuilder("ca/uhn/hl7v2/model/v");
-            System.Text.StringBuilder path = new System.Text.StringBuilder("NHapi/Base/model/v");
+            System.Text.StringBuilder path = new System.Text.StringBuilder("NHapi/Model/V");
             char[] versionChars = new char[ver.Length];
 			SupportClass.GetCharsFromString(ver, 0, ver.Length, versionChars, 0);
 			for (int i = 0; i < versionChars.Length; i++)
@@ -352,7 +352,7 @@ namespace NHapi.Base.sourcegen
 		}
 		
 		/// <summary> Returns the package name for model elements of the given version - e.g.
-		/// "NHapi.Base.model.v24.".  This method
+		/// "NHapi.Base.Model.v24.".  This method
 		/// is identical to <code>getVersionPackagePath(...)</code> except that path
 		/// separators are replaced with dots.
 		/// </summary>

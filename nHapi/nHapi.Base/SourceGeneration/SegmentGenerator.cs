@@ -27,7 +27,7 @@ using System;
 using NHapi.Base;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.sourcegen
+namespace NHapi.Base.Sourcegen
 {
 	
 	
@@ -53,7 +53,7 @@ namespace NHapi.Base.sourcegen
             {
                 baseDirectory = baseDirectory + "/";
             }
-            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "segment");
+            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Segment");
 
             //get list of data types
             //UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
@@ -202,17 +202,17 @@ namespace NHapi.Base.sourcegen
 
                 //write imports, class documentation, etc ...
                 source.Append("using System;\r\n");
-                source.Append("using ca.uhn.hl7v2.model;\r\n");
+                source.Append("using NHapi.Base;\r\n");
+                source.Append("using NHapi.Base.Parser;\r\n");
+                source.Append("using NHapi.Base.Model;\r\n");
                 source.Append("using ");
                 source.Append(SourceGenerator.getVersionPackageName(version));
-                source.Append("datatype;\r\n\r\n");
-                source.Append("using ca.uhn.log;\r\n");
-                source.Append("using ca.uhn.hl7v2.parser;\r\n");
-                source.Append("using ca.uhn.hl7v2;\r\n\r\n");
+                source.Append("Datatype;\r\n");
+                source.Append("using ca.uhn.log;\r\n\r\n");
 
                 source.Append("namespace ");
                 source.Append(SourceGenerator.getVersionPackageName(version));
-                source.Append("segment{\r\n\r\n");
+                source.Append("Segment{\r\n\r\n");
                 source.Append("/**\r\n");
                 source.Append(" * <p>Represents an HL7 ");
                 source.Append(name);
@@ -242,7 +242,7 @@ namespace NHapi.Base.sourcegen
                 source.Append(name);
                 source.Append(" : AbstractSegment ");
 
-                //implement interface from model.control package if required
+                //implement interface from Model.control package if required
                 /*Class correspondingControlInterface = Control.getInterfaceImplementedBy(name);
                 if (correspondingControlInterface != null) {
                 source.append("implements ");

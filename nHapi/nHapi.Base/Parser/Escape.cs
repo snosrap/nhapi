@@ -20,7 +20,7 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
-namespace NHapi.Base.parser
+namespace NHapi.Base.Parser
 {
 	
 	/// <summary> Handles "escaping" and "unescaping" of text according to the HL7 escape sequence rules

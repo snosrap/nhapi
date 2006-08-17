@@ -3,11 +3,11 @@
 */
 using System;
 using NHapi.Base;
-using NHapi.Base.model;
-using NHapi.Base.sourcegen;
+using NHapi.Base.Model;
+using NHapi.Base.Sourcegen;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.parser
+namespace NHapi.Base.Parser
 {
 	
 	/// <summary> Default implementation of ModelClassFactory.  See packageList() for configuration instructions. 
@@ -21,7 +21,7 @@ namespace NHapi.Base.parser
 	{
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.parser.DefaultModelClassFactory'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
+		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Parser.DefaultModelClassFactory'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private const System.String CUSTOM_PACKAGES_RESOURCE_NAME_TEMPLATE = "custom_packages/{0}";
@@ -61,7 +61,7 @@ namespace NHapi.Base.parser
 			System.Type mc = null;
 			if (!isExplicit)
 			{
-				theName = Parser.getMessageStructureForEvent(theName, theVersion);
+				theName = ParserBase.getMessageStructureForEvent(theName, theVersion);
 			}
 			mc = findClass(theName, theVersion, "message");
 			if (mc == null)
@@ -69,21 +69,21 @@ namespace NHapi.Base.parser
 			return mc;
 		}
 		
-		/// <seealso cref="NHapi.Base.parser.ModelClassFactory.getGroupClass(java.lang.String, java.lang.String)">
+		/// <seealso cref="NHapi.Base.Parser.ModelClassFactory.getGroupClass(java.lang.String, java.lang.String)">
 		/// </seealso>
 		public virtual System.Type getGroupClass(System.String theName, System.String theVersion)
 		{
 			return findClass(theName, theVersion, "group");
 		}
 		
-		/// <seealso cref="NHapi.Base.parser.ModelClassFactory.getSegmentClass(java.lang.String, java.lang.String)">
+		/// <seealso cref="NHapi.Base.Parser.ModelClassFactory.getSegmentClass(java.lang.String, java.lang.String)">
 		/// </seealso>
 		public virtual System.Type getSegmentClass(System.String theName, System.String theVersion)
 		{
 			return findClass(theName, theVersion, "segment");
 		}
 		
-		/// <seealso cref="NHapi.Base.parser.ModelClassFactory.getTypeClass(java.lang.String, java.lang.String)">
+		/// <seealso cref="NHapi.Base.Parser.ModelClassFactory.getTypeClass(java.lang.String, java.lang.String)">
 		/// </seealso>
 		public virtual System.Type getTypeClass(System.String theName, System.String theVersion)
 		{
@@ -96,7 +96,7 @@ namespace NHapi.Base.parser
 		/// can be found. </p> 
 		/// <p>At a minimum, this method returns the standard package for the 
 		/// given version.  For example, for version 2.4, the package list contains <code>
-		/// NHapi.Base.model.v24</code>.  In addition, user-defined packages may be specified
+		/// NHapi.Base.Model.v24</code>.  In addition, user-defined packages may be specified
 		/// for custom messages.</p>
 		/// <p>If you define custom message classes, and want Parsers to be able to 
 		/// find them, you must register them as follows (otherwise you will get an exception when 
@@ -205,7 +205,7 @@ namespace NHapi.Base.parser
 		/// </param>
 		private static System.Type findClass(System.String name, System.String version, System.String type)
 		{
-			if (Parser.validVersion(version) == false)
+			if (ParserBase.validVersion(version) == false)
 			{
 				throw new HL7Exception("The HL7 version " + version + " is not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
 			}

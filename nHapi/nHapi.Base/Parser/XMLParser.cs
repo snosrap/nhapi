@@ -25,11 +25,11 @@
 /// </summary>
 using System;
 using NHapi.Base;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using NHapi.Base.util;
 using NHapi.Base.Log;
 
-namespace NHapi.Base.parser
+namespace NHapi.Base.Parser
 {
 	
 	/// <summary> Parses and encodes HL7 messages in XML form, according to HL7's normative XML encoding
@@ -42,7 +42,7 @@ namespace NHapi.Base.parser
 	/// </summary>
 	/// <author>  Bryan Tripp, Shawn Bellina
 	/// </author>
-	public abstract class XMLParser:Parser
+    public abstract class XMLParser : ParserBase
 	{
 		private class AnonymousClassXMLParser:XMLParser
 		{
@@ -107,7 +107,7 @@ namespace NHapi.Base.parser
 		}
 		
 		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.parser.XMLParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
+		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Parser.XMLParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
         //UPGRADE_NOTE: rlb: DOMParser replaced by XmlDocument....
@@ -538,7 +538,7 @@ namespace NHapi.Base.parser
 				{
 					if (System.Convert.ToInt16(children.Item(i).NodeType) == (short) System.Xml.XmlNodeType.Element)
 					{
-						parse(datatypeObject[compNum], (System.Xml.XmlElement) children.Item(i));
+						parse(datatypeObject.getComponent(compNum), (System.Xml.XmlElement) children.Item(i));
 						compNum++;
 					}
 				}
@@ -690,7 +690,7 @@ namespace NHapi.Base.parser
 		public override ISegment getCriticalResponseData(System.String message)
 		{
 			System.String version = getVersion(message);
-			ISegment criticalData = Parser.makeControlMSH(version, Factory);
+			ISegment criticalData = ParserBase.makeControlMSH(version, Factory);
 			
 			Terser.Set(criticalData, 1, 0, 1, 1, parseLeaf(message, "MSH.1", 0));
 			Terser.Set(criticalData, 2, 0, 1, 1, parseLeaf(message, "MSH.2", 0));
@@ -807,7 +807,7 @@ namespace NHapi.Base.parser
 				IMessage mess = parser.parse(messString);
 				System.Console.Out.WriteLine("Got message of type " + mess.GetType().FullName);
 				
-				NHapi.Base.parser.XMLParser xp = new AnonymousClassXMLParser();
+				NHapi.Base.Parser.XMLParser xp = new AnonymousClassXMLParser();
 				
 				//loop through segment children of message, encode, print to console
 				System.String[] structNames = mess.Names;

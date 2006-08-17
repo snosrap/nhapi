@@ -1,5 +1,5 @@
 using System;
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> An unspecified Primitive datatype that imposes no constraints on its string 
@@ -38,7 +38,7 @@ namespace NHapi.Base.model
 			}
 			
 		}
-		/// <seealso cref="NHapi.Base.model.Primitive.getVersion()">
+		/// <seealso cref="NHapi.Base.Model.Primitive.getVersion()">
 		/// </seealso>
 		virtual public System.String Version
 		{

@@ -25,7 +25,7 @@
 /// </author>
 using System;
 using HL7Exception = NHapi.Base.HL7Exception;
-namespace NHapi.Base.model
+namespace NHapi.Base.Model
 {
 	
 	/// <summary> An abstraction representing >1 message parts which may repeated together.

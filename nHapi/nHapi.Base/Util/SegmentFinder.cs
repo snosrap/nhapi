@@ -24,7 +24,7 @@
 /// 
 /// </summary>
 using System;
-using NHapi.Base.model;
+using NHapi.Base.Model;
 using NHapi.Base;
 using System.Text.RegularExpressions;
 
