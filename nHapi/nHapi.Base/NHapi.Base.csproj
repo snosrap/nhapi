@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="DBTableRepository.cs" />
     <Compile Include="Model\AbstractGroup.cs" />
+    <Compile Include="Model\AbstractGroupItem.cs" />
     <Compile Include="Model\AbstractMessage.cs" />
     <Compile Include="Model\AbstractPrimitive.cs" />
     <Compile Include="Model\AbstractSegment.cs" />

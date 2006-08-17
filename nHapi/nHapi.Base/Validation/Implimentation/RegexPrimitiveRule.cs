@@ -36,8 +36,6 @@ namespace NHapi.Base.validation.impl
 	/// </version>
 	public class RegexPrimitiveRule : IPrimitiveTypeRule
 	{
-		/// <seealso cref="NHapi.Base.validation.Rule.getDescription()">
-		/// </seealso>
 		virtual public System.String Description
 		{
 			get
@@ -46,8 +44,6 @@ namespace NHapi.Base.validation.impl
 			}
 			
 		}
-		/// <seealso cref="NHapi.Base.validation.Rule.getSectionReference()">
-		/// </seealso>
 		virtual public System.String SectionReference
 		{
 			get

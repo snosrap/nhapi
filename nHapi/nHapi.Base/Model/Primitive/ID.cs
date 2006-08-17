@@ -54,8 +54,6 @@ namespace NHapi.Base.Model.Primitive
 	{
 		/// <returns> number of HL7 table from which values should be drawn (defaults to 0) 
 		/// </returns>
-		/// <param name="theTable">HL7 table from which values are to be drawn 
-		/// </param>
 		virtual public int Table
 		{
 			get

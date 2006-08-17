@@ -60,7 +60,7 @@ namespace NHapi.Base.Model
 		/// repetition is returned.  Creates the Structure if necessary.  
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		IStructure get_Renamed(System.String name);
+		IStructure getStructure(System.String name);
 		
 		/// <summary> Returns a particular repetition of the named Structure. If the given repetition
 		/// number is one greater than the existing number of repetitions then a new  
@@ -71,7 +71,7 @@ namespace NHapi.Base.Model
 		/// or if the given repetition number is more than one greater than the 
 		/// existing number of repetitions.  
 		/// </summary>
-		IStructure get_Renamed(System.String name, int rep);
+        IStructure getStructure(System.String name, int rep);
 		
 		/// <summary> Returns true if the named structure is required. </summary>
 		bool isRequired(System.String name);

@@ -140,7 +140,7 @@ namespace NHapi.Base.util
 		{
 			if (childNumber != - 1)
 			{
-				IStructure s = currentGroup.get_Renamed(childNames[childNumber], rep);
+                IStructure s = currentGroup.getStructure(childNames[childNumber], rep);
 				if (!(s is IGroup))
 				{
 					throw new HL7Exception("Can't drill into segment", HL7Exception.APPLICATION_INTERNAL_ERROR);
@@ -245,7 +245,7 @@ namespace NHapi.Base.util
 			if (this.currentChild != - 1)
 			{
 				System.String childName = this.childNames[this.currentChild];
-				ret = this.currentGroup.get_Renamed(childName, rep);
+                ret = this.currentGroup.getStructure(childName, rep);
 			}
 			else
 			{
@@ -275,7 +275,7 @@ namespace NHapi.Base.util
 			}
 			else
 			{
-				start = (this.currentGroup.get_Renamed(this.childNames[this.currentChild]));
+                start = (this.currentGroup.getStructure(this.childNames[this.currentChild]));
 			}
 			
 			//using a non-existent direction and not allowing segment creation means that only

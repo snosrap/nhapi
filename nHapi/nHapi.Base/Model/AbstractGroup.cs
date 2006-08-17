@@ -38,18 +38,40 @@ namespace NHapi.Base.Model
 	/// </author>
 	public abstract class AbstractGroup : IGroup
 	{
-		/// <summary> Returns an ordered array of the names of the Structures in this 
-		/// Group.  These names can be used to iterate through the group using 
-		/// repeated calls to <code>get(name)</code>. 
-		/// </summary>
+        private List<AbstractGroupItem> _items;
+        private IGroup parent;
+        private IModelClassFactory myFactory;
+        private static readonly IHapiLog log;
+
+        static AbstractGroup()
+        {
+            log = HapiLogFactory.getHapiLog(typeof(AbstractGroup));
+        }
+
+        
+        protected AbstractGroupItem GetGroupItem(string name)
+        {
+            AbstractGroupItem ret=null;
+            foreach (AbstractGroupItem item in _items)
+            {
+                if (item.Name.Equals(name))
+                {
+                    ret = item;
+                    break;
+                }
+            }
+            return ret;
+        }
+
 		virtual public System.String[] Names
 		{
 			get
 			{
-				System.String[] retVal = new System.String[this.names.Count];
-				for (int i = 0; i < this.names.Count; i++)
+				System.String[] retVal = new System.String[_items.Count];
+                for (int i = 0; i < _items.Count; i++)
 				{
-					retVal[i] = ((System.String) this.names[i]);
+                    AbstractGroupItem item = _items[i];
+                    retVal[i] = item.Name;
 				}
 				return retVal;
 			}
@@ -81,15 +103,6 @@ namespace NHapi.Base.Model
 			
 		}
 		
-		private static readonly IHapiLog log;
-		private List<string> names;
-		private System.Collections.Hashtable structures;
-		private System.Collections.Hashtable required;
-		private System.Collections.Hashtable repeating;
-		private System.Collections.Hashtable classes;
-		private IGroup parent;
-		private IModelClassFactory myFactory;
-		
 		/// <summary> This constructor should be used by implementing classes that do not 
 		/// also implement Message.
 		/// 
@@ -118,20 +131,16 @@ namespace NHapi.Base.Model
 		
 		private void  init()
 		{
-			names = new List<string>();
-			structures = new System.Collections.Hashtable();
-			required = new System.Collections.Hashtable();
-			repeating = new System.Collections.Hashtable();
-			classes = new System.Collections.Hashtable();
+            _items = new List<AbstractGroupItem>();
 		}
 		
 		/// <summary> Returns the named structure.  If this Structure is repeating then the first 
 		/// repetition is returned.  Creates the Structure if necessary.  
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		public virtual IStructure get_Renamed(System.String name)
+		public virtual IStructure getStructure(System.String name)
 		{
-			return get_Renamed(name, 0);
+            return getStructure(name, 0);
 		}
 		
 		/// <summary> Returns a particular repetition of the named Structure. If the given repetition
@@ -143,35 +152,34 @@ namespace NHapi.Base.Model
 		/// or if the given repetition number is more than one greater than the 
 		/// existing number of repetitions.  
 		/// </summary>
-		public virtual IStructure get_Renamed(System.String name, int rep)
+        public virtual IStructure getStructure(System.String name, int rep)
 		{
-			System.Object o = structures[name];
-			if (o == null)
+            AbstractGroupItem item = GetGroupItem(name);
+
+            if(item==null)
 				throw new HL7Exception(name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
 			
-			System.Collections.ArrayList list = (System.Collections.ArrayList) o;
-			
 			IStructure ret;
-			if (rep < list.Count)
+			if (rep < item.Structures.Count)
 			{
 				// return existng Structure if it exists 
-				ret = (IStructure) list[rep];
+                ret = item.Structures[rep];
 			}
-			else if (rep == list.Count)
+            else if (rep == item.Structures.Count)
 			{
 				//verify that Structure is repeating ... 
-				System.Boolean repeats = (System.Boolean) this.repeating[name];
-				if (!repeats && list.Count > 0)
+                bool repeats = item.IsRepeating;
+				if (!repeats && item.Structures.Count > 0)
 					throw new HL7Exception("Can't create repetition #" + rep + " of Structure " + name + " - this Structure is non-repeating", HL7Exception.APPLICATION_INTERNAL_ERROR);
 				
 				//create a new Structure, add it to the list, and return it
-				System.Type c = (System.Type) classes[name]; //get class 
-				ret = tryToInstantiateStructure(c, name);
-				list.Add(ret);
+                System.Type classType = item.ClassType;
+				ret = tryToInstantiateStructure(classType, name);
+                item.Structures.Add(ret);
 			}
 			else
 			{
-				throw new HL7Exception("Can't return repetition #" + rep + " of " + name + " - there are only " + list.Count + " repetitions.", HL7Exception.APPLICATION_INTERNAL_ERROR);
+				throw new HL7Exception("Can't return repetition #" + rep + " of " + name + " - there are only " + _items.Count + " repetitions.", HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
 			return ret;
 		}
@@ -216,15 +224,40 @@ namespace NHapi.Base.Model
 		{
 			System.String name = getName(c);
 			
-			return insert(c, required, repeating, this.names.Count, name);
+			return insert(c, required, repeating, _items.Count, name);
 		}
+
+        /// <summary> Inserts the given structure into this group, at the
+        /// indicated index number.  This method is used to support handling 
+        /// of unexpected segments (e.g. Z-segments).  In contrast, specification 
+        /// of the group's normal children should be done at construction time, using the 
+        /// add(...) method. 
+        /// </summary>
+        private System.String insert(System.Type classType, bool required, bool repeating, int index, System.String name)
+        {
+            //see if there is already something by this name and make a new name if necessary ... 
+            if (nameExists(name))
+            {
+                int version = 2;
+                System.String newName = name;
+                while (nameExists(newName))
+                {
+                    newName = name + version++;
+                }
+                name = newName;
+            }
+
+            AbstractGroupItem item = new AbstractGroupItem(name, required, repeating, classType);
+            _items.Insert(index, item);
+            return name;
+        }
 		
 		/// <summary> Returns true if the class name is already being used. </summary>
 		private bool nameExists(System.String name)
 		{
 			bool exists = false;
-			System.Object o = this.classes[name];
-			if (o != null)
+            AbstractGroupItem item = GetGroupItem(name);
+			if (item != null)
 				exists = true;
 			return exists;
 		}
@@ -288,31 +321,28 @@ namespace NHapi.Base.Model
 		/// <summary> Returns true if the named structure is required. </summary>
 		public virtual bool isRequired(System.String name)
 		{
-			System.Object o = required[name];
-			if (o == null)
+            AbstractGroupItem item = GetGroupItem(name);
+			if (item == null)
 				throw new HL7Exception("The structure " + name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
-			System.Boolean req = (System.Boolean) o;
-			return req;
+			return item.IsRequired;
 		}
 		
 		/// <summary> Returns true if the named structure is required. </summary>
 		public virtual bool isRepeating(System.String name)
 		{
-			System.Object o = repeating[name];
-			if (o == null)
+            AbstractGroupItem item = GetGroupItem(name);
+            if (item == null)
 				throw new HL7Exception("The structure " + name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
-			System.Boolean rep = (System.Boolean) o;
-			return rep;
+            return item.IsRepeating;
 		}
 		
 		/// <summary> Returns the number of existing repetitions of the named structure.</summary>
 		public virtual int currentReps(System.String name)
 		{
-			System.Object o = structures[name];
-			if (o == null)
+            AbstractGroupItem item = GetGroupItem(name);
+            if (item == null)
 				throw new HL7Exception("The structure " + name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
-			System.Collections.ArrayList list = (System.Collections.ArrayList) o;
-			return list.Count;
+            return item.Structures.Count;
 		}
 		
 		/// <summary> Returns an array of Structure objects by name.  For example, if the Group contains
@@ -324,14 +354,13 @@ namespace NHapi.Base.Model
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
 		public virtual IStructure[] getAll(System.String name)
 		{
-			System.Object o = structures[name];
-			if (o == null)
+            AbstractGroupItem item = GetGroupItem(name);
+            if (item == null)
 				throw new HL7Exception("The structure " + name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
-			System.Collections.ArrayList list = (System.Collections.ArrayList) o;
-			IStructure[] all = new IStructure[list.Count];
-			for (int i = 0; i < list.Count; i++)
+			IStructure[] all = new IStructure[item.Structures.Count];
+            for (int i = 0; i < item.Structures.Count; i++)
 			{
-				all[i] = (IStructure) list[i];
+                all[i] = item.Structures[i];
 			}
 			return all;
 		}
@@ -339,7 +368,8 @@ namespace NHapi.Base.Model
 		/// <summary> Returns the Class of the Structure at the given name index.  </summary>
 		public virtual System.Type getClass(System.String name)
 		{
-			return (System.Type) classes[name];
+            AbstractGroupItem item = GetGroupItem(name);
+            return item.ClassType;
 		}
 		
 		/// <summary> Returns the class name (excluding package). </summary>
@@ -370,37 +400,7 @@ namespace NHapi.Base.Model
 			return name;
 		}
 		
-		/// <summary> Inserts the given structure into this group, at the
-		/// indicated index number.  This method is used to support handling 
-		/// of unexpected segments (e.g. Z-segments).  In contrast, specification 
-		/// of the group's normal children should be done at construction time, using the 
-		/// add(...) method. 
-		/// </summary>
-		private System.String insert(System.Type c, bool required, bool repeating, int index, System.String name)
-		{
-			//see if there is already something by this name and make a new name if necessary ... 
-			if (nameExists(name))
-			{
-				int version = 2;
-				System.String newName = name;
-				while (nameExists(newName))
-				{
-					newName = name + version++;
-				}
-				name = newName;
-			}
-			
-			this.names.Insert(index, name);
-			this.required[name] = required;
-			this.repeating[name] = repeating;
-			this.classes[name] = c;
-			this.structures[name] = new System.Collections.ArrayList();
-			
-			return name;
-		}
-		static AbstractGroup()
-		{
-			log = HapiLogFactory.getHapiLog(typeof(AbstractGroup));
-		}
+		
+		
 	}
 }

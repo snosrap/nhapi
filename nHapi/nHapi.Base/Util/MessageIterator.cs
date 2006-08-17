@@ -55,7 +55,7 @@ namespace NHapi.Base.util
 				}
 				try
 				{
-					this.currentStructure = next_Renamed_Field.parent.get_Renamed(next_Renamed_Field.index.name, next_Renamed_Field.index.rep);
+                    this.currentStructure = next_Renamed_Field.parent.getStructure(next_Renamed_Field.index.name, next_Renamed_Field.index.rep);
 				}
 				catch (HL7Exception e)
 				{
@@ -224,7 +224,7 @@ namespace NHapi.Base.util
 				try
 				{
 					bool parentRepeats = parentPos.parent.isRepeating(parentPos.index.name);
-					if (parentRepeats && contains(parentPos.parent.get_Renamed(parentPos.index.name, 0), direction, false, true))
+                    if (parentRepeats && contains(parentPos.parent.getStructure(parentPos.index.name, 0), direction, false, true))
 					{
 						nextRep(parentPos);
 					}
@@ -268,7 +268,7 @@ namespace NHapi.Base.util
 			//check next rep of self (if any)
 			if (pos.parent.isRepeating(pos.index.name))
 			{
-				IStructure s = pos.parent.get_Renamed(pos.index.name, pos.index.rep);
+                IStructure s = pos.parent.getStructure(pos.index.name, pos.index.rep);
 				matchExists = contains(s, name, firstDescendentsOnly, upToFirstRequired);
 			}
 			
@@ -281,7 +281,7 @@ namespace NHapi.Base.util
 				{
 					if (after)
 					{
-						matchExists = contains(pos.parent.get_Renamed(siblings[i]), name, firstDescendentsOnly, upToFirstRequired);
+                        matchExists = contains(pos.parent.getStructure(siblings[i]), name, firstDescendentsOnly, upToFirstRequired);
 						if (upToFirstRequired && pos.parent.isRequired(siblings[i]))
 							break;
 					}
@@ -344,7 +344,7 @@ namespace NHapi.Base.util
 				{
 					try
 					{
-						contains = MessageIterator.contains(g.get_Renamed(names[i], 0), name, firstDescendentsOnly, upToFirstRequired);
+                        contains = MessageIterator.contains(g.getStructure(names[i], 0), name, firstDescendentsOnly, upToFirstRequired);
 						if (firstDescendentsOnly)
 							break;
 						if (upToFirstRequired && g.isRequired(names[i]))

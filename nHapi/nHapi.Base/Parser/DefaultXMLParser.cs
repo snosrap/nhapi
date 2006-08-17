@@ -168,14 +168,14 @@ namespace NHapi.Base.Parser
 			{
 				for (int i = 0; i < reps.Count; i++)
 				{
-					parseRep((System.Xml.XmlElement) reps[i], groupObject.get_Renamed(childIndexName, i));
+                    parseRep((System.Xml.XmlElement)reps[i], groupObject.getStructure(childIndexName, i));
 				}
 			}
 			else
 			{
 				if (reps.Count > 0)
 				{
-					parseRep((System.Xml.XmlElement) reps[0], groupObject.get_Renamed(childIndexName, 0));
+                    parseRep((System.Xml.XmlElement)reps[0], groupObject.getStructure(childIndexName, 0));
 				}
 				
 				if (reps.Count > 1)
@@ -183,7 +183,7 @@ namespace NHapi.Base.Parser
 					System.String newIndexName = groupObject.addNonstandardSegment(childName);
 					for (int i = 1; i < reps.Count; i++)
 					{
-						parseRep((System.Xml.XmlElement) reps[i], groupObject.get_Renamed(newIndexName, i - 1));
+						parseRep((System.Xml.XmlElement) reps[i], groupObject.getStructure(newIndexName, i - 1));
 					}
 				}
 			}

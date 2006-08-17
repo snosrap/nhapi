@@ -564,7 +564,7 @@ namespace NHapi.Base.Parser
 		protected internal override System.String doEncode(IMessage source)
 		{
 			//get encoding characters ...
-			ISegment msh = (ISegment) source.get_Renamed("MSH");
+            ISegment msh = (ISegment)source.getStructure("MSH");
 			System.String fieldSepString = Terser.Get(msh, 1, 0, 1, 1);
 			
 			if (fieldSepString == null)
