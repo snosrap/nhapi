@@ -538,7 +538,7 @@ namespace NHapi.Base.parser
 				{
 					if (System.Convert.ToInt16(children.Item(i).NodeType) == (short) System.Xml.XmlNodeType.Element)
 					{
-						parse(datatypeObject.getComponent(compNum), (System.Xml.XmlElement) children.Item(i));
+						parse(datatypeObject[compNum], (System.Xml.XmlElement) children.Item(i));
 						compNum++;
 					}
 				}
