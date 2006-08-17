@@ -83,7 +83,6 @@ namespace NHapi.Base.Model.Primitive
 	/// </author>
 	public class CommonTS
 	{
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns the HL7 TS string value.</summary>
 		/// <summary> This method takes in a string HL7 Time Stamp value and performs validations.
 		/// The stored value will be in the following
@@ -143,7 +142,7 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return value_Renamed;
 			}
-			//end method
+			
 			
 			set
 			{
@@ -338,7 +337,7 @@ namespace NHapi.Base.Model.Primitive
 					throw new DataTypeException("An unexpected exception ocurred", e);
 				} //end catch
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the year as an integer.</summary>
@@ -353,7 +352,7 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return year;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the month as an integer.</summary>
@@ -368,7 +367,7 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return month;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the day as an integer.</summary>
@@ -383,7 +382,7 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return day;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the hour as an integer.</summary>
@@ -398,7 +397,7 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return hour;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the minute as an integer.</summary>
@@ -413,7 +412,7 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return minute;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the second as an integer.</summary>
@@ -428,7 +427,7 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return seconds;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the fractional second value as a float.</summary>
@@ -443,7 +442,7 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return fractionOfSec;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the GMT offset value as an integer.</summary>
@@ -458,12 +457,10 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return offSet;
 			}
-			//end method
+			
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Model.primitive.CommonTS'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private CommonDT dt;
@@ -515,7 +512,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				throw new DataTypeException("An unexpected exception ocurred", e);
 			} //end catch
-		} //end method
+		} 
 		
 		/// <summary> This method takes in integer values for the year, month, day, hour
 		/// and minute and performs validations, it then sets the value in the object
@@ -545,7 +542,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				throw new DataTypeException("An unexpected exception ocurred", e);
 			} //end catch
-		} //end method
+		} 
 		
 		/// <summary> This method takes in integer values for the year, month, day, hour, minute, seconds,
 		/// and fractional seconds (going to the tenthousandths precision).
@@ -581,7 +578,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				throw new DataTypeException("An unexpected exception ocurred", e);
 			} //end catch
-		} //end method
+		} 
 		
 		/// <summary> Returns a string value representing the input Gregorian Calendar object in
 		/// an Hl7 TimeStamp Format.
@@ -593,28 +590,16 @@ namespace NHapi.Base.Model.Primitive
 			{
 				//set the input cal object so that it can report errors
 				//on it's value
-				//UPGRADE_ISSUE: Method 'java.util.Calendar.setLenient' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarsetLenient_boolean'"
-				// // UPGRADE_ISSUE: Commented out:cal.setLenient(false);
-                // UPGRADE_ISSUE: Above all was commented out, do we need?
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calYear = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.YEAR);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calMonth = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.MONTH) + 1;
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calDay = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.DAY_OF_MONTH);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calHour = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.HOUR_OF_DAY);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calMin = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.MINUTE);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calSec = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.SECOND);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calMilli = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.MILLISECOND);
 				//the inputs seconds and milli seconds should be combined into a float type
 				float fractSec = calMilli / 1000F;
 				float calSecFloat = calSec + fractSec;
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
-				//UPGRADE_ISSUE: Field 'java.util.Calendar.ZONE_OFFSET' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarZONE_OFFSET_f'"
 				int calOffset = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.ZONE_OFFSET);
 				//Note the input's Offset value is in milliseconds, we must convert it to
 				//a 4 digit integer in the HL7 Offset format.
@@ -651,7 +636,7 @@ namespace NHapi.Base.Model.Primitive
 				throw new DataTypeException("An unexpected exception ocurred", e);
 			} //end catch
 			return val;
-		} //end method
+		} 
 		static CommonTS()
 		{
 			log = HapiLogFactory.getHapiLog(typeof(CommonTS));

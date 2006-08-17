@@ -56,10 +56,7 @@ namespace NHapi.Base.SourceGeneration
             System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Segment");
 
             //get list of data types
-            //UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
             System.Data.OleDb.OleDbConnection conn = NormativeDatabase.Instance.Connection;
-
-            //UPGRADE_TODO: Method 'java.sql.Connection.createStatement' was converted to 'SupportClass.TransactionManager.manager.CreateStatement' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlConnectioncreateStatement'"
             System.String sql = "SELECT seg_code, [section] from HL7Segments, HL7Versions where HL7Segments.version_id = HL7Versions.version_id AND hl7_version = '" + version + "'";
             System.Data.OleDb.OleDbCommand temp_OleDbCommand = new System.Data.OleDb.OleDbCommand();
             temp_OleDbCommand.Connection = conn;
@@ -74,13 +71,11 @@ namespace NHapi.Base.SourceGeneration
                 if (System.Char.IsLetter(segName[0]))
                     segments.Add(altSegName(segName));
             }
-            //UPGRADE_ISSUE: Method 'java.sql.Statement.close' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javasqlStatementclose'"
             temp_OleDbCommand.Dispose();
             NormativeDatabase.Instance.returnConnection(conn);
 
             if (segments.Count == 0)
             {
-                //UPGRADE_ISSUE: Method 'java.lang.System.getProperty' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangSystem'"
                 log.warn("No version " + version + " segments found in database " + conn.Database);
             }
 
@@ -90,18 +85,14 @@ namespace NHapi.Base.SourceGeneration
                 {
                     System.String seg = (System.String)segments[i];
                     System.String source = makeSegment(seg, version);
-                    //UPGRADE_WARNING: At least one expression was used more than once in the target code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1181'"
-                    //UPGRADE_TODO: Constructor 'java.io.FileWriter.FileWriter' was converted to 'System.IO.StreamWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileWriterFileWriter_javalangString_boolean'"
-                    //UPGRADE_TODO: Class 'java.io.FileWriter' was converted to 'System.IO.StreamWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileWriter'"
                     using (System.IO.StreamWriter w = new System.IO.StreamWriter(targetDir.ToString() + "/" + seg + ".cs"))
                     {
                         w.Write(source);
-                        w.Write("}");//Ending namespace
+                        w.Write("}");
                     }
                 }
                 catch (System.Exception e)
                 {
-                    //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
                     System.Console.Error.WriteLine("Error creating source code for all segments: " + e.Message);
                     SupportClass.WriteStackTrace(e, Console.Error);
                 }
@@ -129,7 +120,6 @@ namespace NHapi.Base.SourceGeneration
             System.Text.StringBuilder source = new System.Text.StringBuilder();
             try
             {
-                //UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
                 System.Collections.ArrayList elements = new System.Collections.ArrayList();
                 SegmentElement se;
                 System.String segDesc = null;
@@ -151,10 +141,7 @@ namespace NHapi.Base.SourceGeneration
                     sql.Append("' and HL7Versions.hl7_version = '");
                     sql.Append(version);
                     sql.Append("' ORDER BY HL7SegmentDataElements.seg_code, HL7SegmentDataElements.seq_no;");
-                    //System.out.println(sql.toString());  //for debugging 	           
-                    //UPGRADE_TODO: Method 'java.sql.Connection.createStatement' was converted to 'SupportClass.TransactionManager.manager.CreateStatement' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlConnectioncreateStatement'"
                     System.Data.OleDb.OleDbCommand stmt = SupportClass.TransactionManager.manager.CreateStatement(conn);
-                    //UPGRADE_TODO: Interface 'java.sql.ResultSet' was converted to 'System.Data.OleDb.OleDbDataReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlResultSet'"
                     System.Data.OleDb.OleDbCommand temp_OleDbCommand;
                     temp_OleDbCommand = stmt;
                     temp_OleDbCommand.CommandText = sql.ToString();
@@ -195,7 +182,6 @@ namespace NHapi.Base.SourceGeneration
                         " Table: " + se.table + " Segment Desc: " + segDesc);*/
                     }
                     rs.Close();
-                    //UPGRADE_ISSUE: Method 'java.sql.Statement.close' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javasqlStatementclose'"
                     stmt.Dispose();
                     NormativeDatabase.Instance.returnConnection(conn);
                 }
@@ -464,12 +450,8 @@ namespace NHapi.Base.SourceGeneration
                 System.Console.Out.WriteLine("Usage: SegmentGenerator target_dir [segment_name]");
                 System.Environment.Exit(1);
             }
-
-            //System.setProperty("ca.on.uhn.hl7.database.url", "jdbc:odbc:hl7");
-
             try
             {
-                //UPGRADE_TODO: The differences in the format  of parameters for method 'java.lang.Class.forName'  may cause compilation errors.  "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1092'"
                 System.Type.GetType("sun.jdbc.odbc.JdbcOdbcDriver");
                 if (args.Length == 1)
                 {
@@ -478,9 +460,6 @@ namespace NHapi.Base.SourceGeneration
                 else
                 {
                     System.String source = makeSegment(args[1], "2.4");
-                    //UPGRADE_WARNING: At least one expression was used more than once in the target code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1181'"
-                    //UPGRADE_TODO: Constructor 'java.io.FileWriter.FileWriter' was converted to 'System.IO.StreamWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileWriterFileWriter_javalangString_boolean'"
-                    //UPGRADE_TODO: Class 'java.io.FileWriter' was converted to 'System.IO.StreamWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileWriter'"
                     System.IO.StreamWriter w = new System.IO.StreamWriter(new System.IO.StreamWriter(args[0] + "/" + args[1] + ".java", false, System.Text.Encoding.Default).BaseStream, new System.IO.StreamWriter(args[0] + "/" + args[1] + ".java", false, System.Text.Encoding.Default).Encoding);
                     w.Write(source);
                     w.Flush();

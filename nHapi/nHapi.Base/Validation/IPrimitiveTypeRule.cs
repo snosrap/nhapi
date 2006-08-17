@@ -33,15 +33,15 @@ namespace NHapi.Base.validation
 		/// test().  If no corrections are performed, the original value is returned. 
 		/// 
 		/// </summary>
-		/// <param name="value">an original value to be corrected 
+        /// <param name="originalValue">an original value to be corrected 
 		/// </param>
 		/// <returns> a corrected version of the given value 
 		/// </returns>
-		System.String correct(System.String value_Renamed);
+		System.String correct(System.String originalValue);
 		
 		/// <summary> Tests the given string against the criteria defined by this 
 		/// rule -- returns true if it passes the test, false otherwise.  
 		/// </summary>
-		bool test(System.String value_Renamed);
+		bool test(System.String testValu);
 	}
 }

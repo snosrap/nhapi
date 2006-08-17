@@ -77,14 +77,12 @@ namespace NHapi.Base.SourceGeneration
                 types.Add(System.Convert.ToString(rs[1 - 1]));
             }
 
-            //UPGRADE_ISSUE: Method 'java.sql.Statement.close' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javasqlStatementclose'"
             stmt.Dispose();
             NormativeDatabase.Instance.returnConnection(conn);
 
             System.Console.Out.WriteLine("Generating " + types.Count + " datatypes for version " + version);
             if (types.Count == 0)
             {
-                //UPGRADE_ISSUE: Method 'java.lang.System.getProperty' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangSystem'"
                 log.warn("No version " + version + " data types found in database " + conn.Database);
             }
 
@@ -112,9 +110,7 @@ namespace NHapi.Base.SourceGeneration
                 throw new System.IO.IOException("Can't create file in " + targetDirectory.ToString() + " - it is not a directory.");
 
             //get any components for this data type
-            //UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
             System.Data.OleDb.OleDbConnection conn = NormativeDatabase.Instance.Connection;
-            //UPGRADE_TODO: Method 'java.sql.Connection.createStatement' was converted to 'SupportClass.TransactionManager.manager.CreateStatement' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlConnectioncreateStatement'"
             System.Data.OleDb.OleDbCommand stmt = SupportClass.TransactionManager.manager.CreateStatement(conn);
             System.Text.StringBuilder sql = new System.Text.StringBuilder();
             //this query is adapted from the XML SIG informative document
@@ -131,8 +127,6 @@ namespace NHapi.Base.SourceGeneration
             sql.Append("' AND HL7Versions.hl7_version = '");
             sql.Append(version);
             sql.Append("' ORDER BY HL7DataStructureComponents.seq_no");
-            //System.out.println(sql.toString());  //for debugging
-            //UPGRADE_TODO: Interface 'java.sql.ResultSet' was converted to 'System.Data.OleDb.OleDbDataReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlResultSet'"
             System.Data.OleDb.OleDbCommand temp_OleDbCommand;
             temp_OleDbCommand = stmt;
             temp_OleDbCommand.CommandText = sql.ToString();
@@ -167,7 +161,6 @@ namespace NHapi.Base.SourceGeneration
             }
 
             rs.Close();
-            //UPGRADE_ISSUE: Method 'java.sql.Statement.close' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javasqlStatementclose'"
             stmt.Dispose();
             NormativeDatabase.Instance.returnConnection(conn);
 
@@ -211,9 +204,6 @@ namespace NHapi.Base.SourceGeneration
             if (source != null)
             {
                 System.String targetFile = targetDirectory.ToString() + "/" + dataType + ".cs";
-                //UPGRADE_WARNING: At least one expression was used more than once in the target code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1181'"
-                //UPGRADE_TODO: Constructor 'java.io.FileWriter.FileWriter' was converted to 'System.IO.StreamWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileWriterFileWriter_javalangString_boolean'"
-                //UPGRADE_TODO: Class 'java.io.FileWriter' was converted to 'System.IO.StreamWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileWriter'"
                 using (System.IO.StreamWriter writer = new System.IO.StreamWriter(targetFile))
                 {
                     writer.Write(source);
@@ -229,7 +219,6 @@ namespace NHapi.Base.SourceGeneration
         /// </summary>
         private static System.String makePrimitive(System.String datatype, System.String description, System.String version)
         {
-            //System.out.println("Making primitive: " + datatype);
             System.Text.StringBuilder source = new System.Text.StringBuilder();
 
             source.Append("using System;\n");
@@ -452,7 +441,6 @@ namespace NHapi.Base.SourceGeneration
             //System.out.println(makePrimitive("ID", "identifier"));
             try
             {
-                //UPGRADE_TODO: The differences in the format  of parameters for method 'java.lang.Class.forName'  may cause compilation errors.  "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1092'"
                 System.Type.GetType("sun.jdbc.odbc.JdbcOdbcDriver");
                 //System.setProperty("ca.on.uhn.hl7.database.url", "jdbc:odbc:hl7v25");        
                 //make(new File("c:/testsourcegen"), args[0], args[1]);
@@ -464,12 +452,6 @@ namespace NHapi.Base.SourceGeneration
                 SupportClass.WriteStackTrace(e, Console.Error);
             }
 
-            //test directory maker
-            /*try {
-            makeDirectory(args[0]);
-            } catch (IOException ioe) {
-            ioe.printStackTrace();
-            }*/
         }
         static DataTypeGenerator()
         {

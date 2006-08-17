@@ -51,7 +51,6 @@ namespace NHapi.Base.Model.Primitive
 			}
 			
 		}
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <seealso cref="AbstractPrimitive.getValue">
 		/// </seealso>
 		/// <seealso cref="AbstractPrimitive.setValue(java.lang.String)">

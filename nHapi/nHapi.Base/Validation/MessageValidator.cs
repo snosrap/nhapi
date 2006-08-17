@@ -36,9 +36,6 @@ namespace NHapi.Base.validation
 	/// </author>
 	public class MessageValidator
 	{
-		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'ourLog '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'ourLog' was moved to static method 'NHapi.Base.validation.MessageValidator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog ourLog;
 		
 		private IValidationContext myContext;

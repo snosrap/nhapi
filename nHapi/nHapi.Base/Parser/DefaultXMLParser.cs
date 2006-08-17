@@ -25,8 +25,6 @@ namespace NHapi.Base.Parser
 	public class DefaultXMLParser:XMLParser
 	{
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Parser.DefaultXMLParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		/// <summary>Creates a new instance of DefaultXMLParser </summary>
@@ -48,14 +46,12 @@ namespace NHapi.Base.Parser
 			System.Xml.XmlDocument doc = null;
 			try
 			{
-				//UPGRADE_TODO: Class 'javax.xml.parsers.DocumentBuilder' was converted to 'System.Xml.XmlDocument' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaxxmlparsersDocumentBuilder'"
 				doc = new System.Xml.XmlDocument();
 				System.Xml.XmlElement root = doc.CreateElement(messageName);
 				doc.AppendChild(root);
 			}
 			catch (System.Exception e)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception("Can't create XML document - " + e.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR, e);
 			}
 			encode(source, (System.Xml.XmlElement) doc.DocumentElement);
@@ -97,7 +93,6 @@ namespace NHapi.Base.Parser
 					}
 				}
 			}
-			//UPGRADE_TODO: Class 'org.w3c.dom.DOMException' was converted to 'System.Exceptiont' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 			catch (System.Exception e)
 			{
 				throw new HL7Exception("Can't encode group " + groupObject.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR, e);
@@ -135,7 +130,6 @@ namespace NHapi.Base.Parser
 			System.String[] childNames = groupObject.Names;
 			System.String messageName = groupObject.Message.getName();
 			
-			//UPGRADE_TODO: Method 'org.w3c.dom.Node.getChildNodes' was converted to 'System.Xml.XmlNode.ChildNodes' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 			System.Xml.XmlNodeList allChildNodes = groupElement.ChildNodes;
 			System.Collections.ArrayList unparsedElementList = new System.Collections.ArrayList();
 			for (int i = 0; i < allChildNodes.Count; i++)
@@ -212,7 +206,6 @@ namespace NHapi.Base.Parser
 		private System.Collections.IList getChildElementsByTagName(System.Xml.XmlElement theElement, System.String theName)
 		{
 			System.Collections.IList result = new System.Collections.ArrayList(10);
-			//UPGRADE_TODO: Method 'org.w3c.dom.Node.getChildNodes' was converted to 'System.Xml.XmlNode.ChildNodes' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 			System.Xml.XmlNodeList children = theElement.ChildNodes;
 			
 			for (int i = 0; i < children.Count; i++)
@@ -282,10 +275,8 @@ namespace NHapi.Base.Parser
 			{
 				System.IO.FileInfo messageFile = new System.IO.FileInfo(args[0]);
 				long fileLength = SupportClass.FileLength(messageFile);
-				//UPGRADE_TODO: Constructor 'java.io.FileReader.FileReader' was converted to 'System.IO.StreamReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 				System.IO.StreamReader r = new System.IO.StreamReader(messageFile.FullName, System.Text.Encoding.Default);
 				char[] cbuf = new char[(int) fileLength];
-				//UPGRADE_TODO: Method 'java.io.Reader.read' was converted to 'System.IO.StreamReader.Read' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioReaderread_char[]'"
 				System.Console.Out.WriteLine("Reading message file ... " + r.Read((System.Char[]) cbuf, 0, cbuf.Length) + " of " + fileLength + " chars");
 				r.Close();
 				System.String messString = System.Convert.ToString(cbuf);

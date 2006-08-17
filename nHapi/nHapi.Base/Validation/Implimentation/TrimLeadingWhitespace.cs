@@ -32,8 +32,9 @@ namespace NHapi.Base.validation.impl
 	/// </version>
 	public class TrimLeadingWhitespace : IPrimitiveTypeRule
 	{
-		/// <seealso cref="NHapi.Base.validation.Rule.getDescription()">
-		/// </seealso>
+        /// <summary>
+        /// Description of the rule
+        /// </summary>
 		virtual public System.String Description
 		{
 			get
@@ -42,8 +43,10 @@ namespace NHapi.Base.validation.impl
 			}
 			
 		}
-		/// <seealso cref="NHapi.Base.validation.Rule.getSectionReference()">
-		/// </seealso>
+
+        /// <summary>
+        /// Section reference
+        /// </summary>
 		virtual public System.String SectionReference
 		{
 			get
@@ -53,11 +56,7 @@ namespace NHapi.Base.validation.impl
 			
 		}
 		
-		/// <summary> Removes leading whitespace. 
-		/// 
-		/// </summary>
-		/// <seealso cref="NHapi.Base.validation.PrimitiveTypeRule.correct(java.lang.String)">
-		/// </seealso>
+		/// <summary> Removes leading whitespace.</summary>
 		public virtual System.String correct(System.String value_Renamed)
 		{
 			System.String trmValue = null;
@@ -76,8 +75,6 @@ namespace NHapi.Base.validation.impl
 		}
 		
 		/// <summary> Returns true. </summary>
-		/// <seealso cref="NHapi.Base.validation.PrimitiveTypeRule.test(java.lang.String)">
-		/// </seealso>
 		public virtual bool test(System.String value_Renamed)
 		{
 			return true;

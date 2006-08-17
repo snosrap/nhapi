@@ -41,11 +41,8 @@ namespace NHapi.Base
 				{
 					try
 					{
-						//UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
 						System.Data.OleDb.OleDbConnection conn = NormativeDatabase.Instance.Connection;
-						//UPGRADE_TODO: Method 'java.sql.Connection.createStatement' was converted to 'SupportClass.TransactionManager.manager.CreateStatement' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlConnectioncreateStatement'"
 						System.Data.OleDb.OleDbCommand stmt = SupportClass.TransactionManager.manager.CreateStatement(conn);
-						//UPGRADE_TODO: Interface 'java.sql.ResultSet' was converted to 'System.Data.OleDb.OleDbDataReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlResultSet'"
 						System.Data.OleDb.OleDbCommand temp_OleDbCommand;
 						temp_OleDbCommand = stmt;
 						temp_OleDbCommand.CommandText = "select distinct table_id from TableValues";
@@ -64,7 +61,6 @@ namespace NHapi.Base
 					}
 					catch (System.Data.OleDb.OleDbException sqle)
 					{
-						//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 						throw new LookupException("Can't get table list from database: " + sqle.Message);
 					}
 				}
@@ -73,20 +69,15 @@ namespace NHapi.Base
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.DBTableRepository'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private int[] tableList;
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private System.Collections.Hashtable tables;
-		//UPGRADE_NOTE: Final was removed from the declaration of 'bufferSize '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		private int bufferSize = 3000; //max # of tables or values that can be cached at a time
 		
 		protected internal DBTableRepository()
 		{
 			tableList = null;
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			tables = new System.Collections.Hashtable();
 		}
 		
@@ -114,7 +105,6 @@ namespace NHapi.Base
 			System.String[] values = null;
 			
 			//see if the value list exists in the cache
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = this.tables[key];
 			
 			if (o != null)
@@ -129,13 +119,10 @@ namespace NHapi.Base
 				
 				try
 				{
-					//UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
 					System.Data.OleDb.OleDbConnection conn = NormativeDatabase.Instance.Connection;
-					//UPGRADE_TODO: Method 'java.sql.Connection.createStatement' was converted to 'SupportClass.TransactionManager.manager.CreateStatement' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlConnectioncreateStatement'"
 					System.Data.OleDb.OleDbCommand stmt = SupportClass.TransactionManager.manager.CreateStatement(conn);
 					System.Text.StringBuilder sql = new System.Text.StringBuilder("select table_value from TableValues where table_id = ");
 					sql.Append(table);
-					//UPGRADE_TODO: Interface 'java.sql.ResultSet' was converted to 'System.Data.OleDb.OleDbDataReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlResultSet'"
 					System.Data.OleDb.OleDbCommand temp_OleDbCommand;
 					temp_OleDbCommand = stmt;
 					temp_OleDbCommand.CommandText = sql.ToString();
@@ -152,7 +139,6 @@ namespace NHapi.Base
 				}
 				catch (System.Data.OleDb.OleDbException sqle)
 				{
-					//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 					throw new LookupException("Couldn't look up values for table " + table + ": " + sqle.Message);
 				}
 				
@@ -184,11 +170,8 @@ namespace NHapi.Base
 			
 			try
 			{
-				//UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
 				System.Data.OleDb.OleDbConnection conn = NormativeDatabase.Instance.Connection;
-				//UPGRADE_TODO: Method 'java.sql.Connection.createStatement' was converted to 'SupportClass.TransactionManager.manager.CreateStatement' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlConnectioncreateStatement'"
 				System.Data.OleDb.OleDbCommand stmt = SupportClass.TransactionManager.manager.CreateStatement(conn);
-				//UPGRADE_TODO: Interface 'java.sql.ResultSet' was converted to 'System.Data.OleDb.OleDbDataReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlResultSet'"
 				System.Data.OleDb.OleDbCommand temp_OleDbCommand;
 				temp_OleDbCommand = stmt;
 				temp_OleDbCommand.CommandText = sql.ToString();
@@ -201,7 +184,6 @@ namespace NHapi.Base
 				{
 					throw new UnknownValueException("The value " + value_Renamed + " could not be found in the table " + table + " - SQL: " + sql.ToString());
 				}
-				//UPGRADE_ISSUE: Method 'java.sql.Statement.close' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javasqlStatementclose'"
                 stmt.Dispose();
 				NormativeDatabase.Instance.returnConnection(conn);
 			}
@@ -213,51 +195,7 @@ namespace NHapi.Base
 			return description;
 		}
 		
-		//test 
-		/*
-		public static void main(String args[]) {
-		try {
-		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-		System.setProperty("ca.on.uhn.hl7.database.url", "jdbc:odbc:hl7");
 		
-		DBTableRepository rep = new DBTableRepository();
-		
-		int[] tables = rep.getTables();
-		for (int i = 0; i < tables.length; i++) {
-		//System.out.println("Table " + i + ": " + tables[i]);
-		}
-		
-		for (int c = 0; c < 10; c++) {
-		int table = 1;
-		String val = "M";
-		long before = System.currentTimeMillis();
-		boolean yep = rep.checkValue(table, val);
-		long after = System.currentTimeMillis();
-		System.out.println(val + " exists in table " + table + "? " + yep + " - checking took " + (after-before) + " ms");
-		
-		}
-		
-		for (int h = 0; h < 2; h++) {
-		int table = 1;
-		long before = System.currentTimeMillis();
-		String[] vals = rep.getValues(table);
-		long after = System.currentTimeMillis();
-		for (int i = 0; i < vals.length; i++) {
-		System.out.println("Value " + i + ": " + vals[i] + ": " + rep.getDescription(table, vals[i]));
-		}
-		
-		System.out.println("That took " + (after-before) + " ms");
-		}
-		
-		
-		} catch (ClassNotFoundException cne) {
-		cne.printStackTrace();
-		} catch (LookupException le) {
-		le.printStackTrace();
-		} catch (UnknownValueException uve) {
-		uve.printStackTrace();
-		}
-		}*/
 		static DBTableRepository()
 		{
 			log = HapiLogFactory.getHapiLog(typeof(DBTableRepository));

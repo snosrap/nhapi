@@ -69,7 +69,6 @@ namespace NHapi.Base.Parser
 			}
 			
 		}
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Sets the <i>keepAsOriginalNodes<i></summary>
 		/// <summary> Sets the <i>keepAsOriginalNodes<i>
 		/// 
@@ -106,12 +105,8 @@ namespace NHapi.Base.Parser
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Parser.XMLParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
-        //UPGRADE_NOTE: rlb: DOMParser replaced by XmlDocument....
-		//private DOMParser parser;
         private System.Xml.XmlDocument parser;
 		
 		/// <summary> The nodes whose names match these strings will be kept as original, 
@@ -220,7 +215,6 @@ namespace NHapi.Base.Parser
                 //}
 				m = parseDocument(doc, version);
 			}
-			//UPGRADE_TODO: Class 'org.xml.sax.SAXException' was converted to 'System.Xml.XmlException' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 			catch (System.Xml.XmlException e)
 			{
 				throw new HL7Exception("XmlException parsing XML", HL7Exception.APPLICATION_INTERNAL_ERROR, e);
@@ -265,25 +259,12 @@ namespace NHapi.Base.Parser
 			}
 			
 			System.Xml.XmlDocument doc = encodeDocument(source);
-			//UPGRADE_TODO: Method 'org.w3c.dom.Element.setAttribute' was converted to 'System.Xml.XmlElement.SetAttribute' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_orgw3cdomElementsetAttribute_javalangString_javalangString'"
 			((System.Xml.XmlElement) doc.DocumentElement).SetAttribute("xmlns", "urn:hl7-org:v2xml");
 			
 			System.IO.StringWriter out_Renamed = new System.IO.StringWriter();
 
             return doc.OuterXml;
 
-            //OutputFormat outputFormat = new OutputFormat("", null, true);
-			
-            //XMLSerializer ser = new XMLSerializer(out_Renamed, outputFormat); //default output format
-            //try
-            //{
-            //    ser.serialize(doc);
-            //}
-            //catch (System.IO.IOException e)
-            //{
-            //    throw new HL7Exception("IOException serializing XML document to string", HL7Exception.APPLICATION_INTERNAL_ERROR, e);
-            //}
-            //return out_Renamed.ToString();
 		}
 		
 		/// <summary> <p>Creates an XML Document that corresponds to the given Message object. </p>
@@ -301,7 +282,6 @@ namespace NHapi.Base.Parser
 		/// </summary>
 		public virtual void  parse(ISegment segmentObject, System.Xml.XmlElement segmentElement)
 		{
-			//UPGRADE_TODO: Class 'java.util.HashSet' was converted to 'SupportClass.HashSetSupport' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashSet'"
 			SupportClass.HashSetSupport done = new SupportClass.HashSetSupport();
 			
 			//        for (int i = 1; i <= segmentObject.numFields(); i++) {
@@ -310,7 +290,6 @@ namespace NHapi.Base.Parser
 			//            parseReps(segmentObject, segmentElement, elementName, i);
 			//        }
 			
-			//UPGRADE_TODO: Method 'org.w3c.dom.Node.getChildNodes' was converted to 'System.Xml.XmlNode.ChildNodes' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 			System.Xml.XmlNodeList all = segmentElement.ChildNodes;
 			for (int i = 0; i < all.Count; i++)
 			{
@@ -373,7 +352,6 @@ namespace NHapi.Base.Parser
 						{
 							segmentElement.AppendChild(newNode);
 						}
-						//UPGRADE_TODO: Class 'org.w3c.dom.DOMException' was converted to 'System.Exceptiont' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 						catch (System.Exception e)
 						{
 							throw new HL7Exception("DOMException encoding Segment: ", HL7Exception.APPLICATION_INTERNAL_ERROR, e);
@@ -426,7 +404,6 @@ namespace NHapi.Base.Parser
 		/// <summary>Returns true if any of the given element's children are elements </summary>
 		private bool hasChildElement(System.Xml.XmlElement e)
 		{
-			//UPGRADE_TODO: Method 'org.w3c.dom.Node.getChildNodes' was converted to 'System.Xml.XmlNode.ChildNodes' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 			System.Xml.XmlNodeList children = e.ChildNodes;
 			bool hasElement = false;
 			int c = 0;
@@ -444,7 +421,6 @@ namespace NHapi.Base.Parser
 		/// <summary>Parses a primitive type by filling it with text child, if any </summary>
 		private void  parsePrimitive(IPrimitive datatypeObject, System.Xml.XmlElement datatypeElement)
 		{
-			//UPGRADE_TODO: Method 'org.w3c.dom.Node.getChildNodes' was converted to 'System.Xml.XmlNode.ChildNodes' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 			System.Xml.XmlNodeList children = datatypeElement.ChildNodes;
 			int c = 0;
 			bool full = false;
@@ -467,7 +443,6 @@ namespace NHapi.Base.Parser
 							}
 						}
 					}
-					//UPGRADE_TODO: Class 'org.w3c.dom.DOMException' was converted to 'System.Exceptiont' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 					catch (System.Exception e)
 					{
 						log.error("Error parsing primitive value from TEXT_NODE", e);
@@ -531,7 +506,6 @@ namespace NHapi.Base.Parser
 			if (datatypeObject is GenericComposite)
 			{
 				//elements won't be named GenericComposite.x
-				//UPGRADE_TODO: Method 'org.w3c.dom.Node.getChildNodes' was converted to 'System.Xml.XmlNode.ChildNodes' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 				System.Xml.XmlNodeList children = datatypeElement.ChildNodes;
 				int compNum = 0;
 				for (int i = 0; i < children.Count; i++)
@@ -634,7 +608,6 @@ namespace NHapi.Base.Parser
 				{
 					datatypeElement.AppendChild(t);
 				}
-				//UPGRADE_TODO: Class 'org.w3c.dom.DOMException' was converted to 'System.Exceptiont' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 				catch (System.Exception e)
 				{
 					throw new DataTypeException("DOMException encoding Primitive: ", e);
@@ -663,7 +636,6 @@ namespace NHapi.Base.Parser
 					{
 						datatypeElement.AppendChild(newNode);
 					}
-					//UPGRADE_TODO: Class 'org.w3c.dom.DOMException' was converted to 'System.Exceptiont' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 					catch (System.Exception e)
 					{
 						throw new DataTypeException("DOMException encoding Composite: ", e);
@@ -757,16 +729,12 @@ namespace NHapi.Base.Parser
 		{
 			System.String value_Renamed = null;
 			
-			//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 			int tagStart = message.IndexOf("<" + tagName, startAt);
 			if (tagStart < 0)
 			{
-				//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 				tagStart = message.IndexOf("<" + tagName.ToUpper(), startAt);
 			}
-			//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 			int valStart = message.IndexOf(">", tagStart) + 1;
-			//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 			int valEnd = message.IndexOf("<", valStart);
 			
 			if (tagStart >= 0 && valEnd >= valStart)
@@ -797,10 +765,8 @@ namespace NHapi.Base.Parser
 				PipeParser parser = new PipeParser();
 				System.IO.FileInfo messageFile = new System.IO.FileInfo(args[0]);
 				long fileLength = SupportClass.FileLength(messageFile);
-				//UPGRADE_TODO: Constructor 'java.io.FileReader.FileReader' was converted to 'System.IO.StreamReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 				System.IO.StreamReader r = new System.IO.StreamReader(messageFile.FullName, System.Text.Encoding.Default);
 				char[] cbuf = new char[(int) fileLength];
-				//UPGRADE_TODO: Method 'java.io.Reader.read' was converted to 'System.IO.StreamReader.Read' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioReaderread_char[]'"
 				System.Console.Out.WriteLine("Reading message file ... " + r.Read((System.Char[]) cbuf, 0, cbuf.Length) + " of " + fileLength + " chars");
 				r.Close();
 				System.String messString = System.Convert.ToString(cbuf);
@@ -819,12 +785,7 @@ namespace NHapi.Base.Parser
 						if (typeof(ISegment).IsAssignableFrom(reps[j].GetType()))
 						{
 							//ignore groups
-							//UPGRADE_TODO: Class 'javax.xml.parsers.DocumentBuilder' was converted to 'System.Xml.XmlDocument' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaxxmlparsersDocumentBuilder'"
-							//UPGRADE_ISSUE: Method 'javax.xml.parsers.DocumentBuilderFactory.newInstance' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javaxxmlparsersDocumentBuilderFactory'"
-							//DocumentBuilderFactory.newInstance();
-
 							System.Xml.XmlDocument docBuilder = new System.Xml.XmlDocument();
-							//UPGRADE_TODO: Class 'javax.xml.parsers.DocumentBuilder' was converted to 'System.Xml.XmlDocument' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaxxmlparsersDocumentBuilder'"
 							System.Xml.XmlDocument doc = new System.Xml.XmlDocument(); //new doc for each segment
 							System.Xml.XmlElement root = doc.CreateElement(reps[j].GetType().FullName);
 							doc.AppendChild(root);
@@ -836,7 +797,6 @@ namespace NHapi.Base.Parser
 							System.Object[] segmentConstructArgs = new System.Object[]{null};
 							ISegment s = (ISegment) reps[j].GetType().GetConstructor(segmentConstructTypes).Invoke(segmentConstructArgs);
 							xp.parse(s, root);
-							//UPGRADE_TODO: Class 'javax.xml.parsers.DocumentBuilder' was converted to 'System.Xml.XmlDocument' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaxxmlparsersDocumentBuilder'"
 							System.Xml.XmlDocument doc2 = new System.Xml.XmlDocument();
 							System.Xml.XmlElement root2 = doc2.CreateElement(s.GetType().FullName);
 							doc2.AppendChild(root2);

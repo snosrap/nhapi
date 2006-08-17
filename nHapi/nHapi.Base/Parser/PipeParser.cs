@@ -40,7 +40,6 @@ namespace NHapi.Base.Parser
 	/// </author>
     public class PipeParser : ParserBase
 	{
-		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'AnonymousClassPredicate' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
 		private class AnonymousClassPredicate : FilterIterator.IPredicate
 		{
 			public AnonymousClassPredicate(PipeParser enclosingInstance)
@@ -72,7 +71,6 @@ namespace NHapi.Base.Parser
 				}
 			}
 		}
-		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'AnonymousClassPredicate1' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
 		private class AnonymousClassPredicate1 : FilterIterator.IPredicate
 		{
 			public AnonymousClassPredicate1(System.String name, PipeParser enclosingInstance)
@@ -84,7 +82,6 @@ namespace NHapi.Base.Parser
 				this.name = name;
 				this.enclosingInstance = enclosingInstance;
 			}
-			//UPGRADE_NOTE: Final variable name was copied into class AnonymousClassPredicate1. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1023'"
 			private System.String name;
 			private PipeParser enclosingInstance;
 			public PipeParser Enclosing_Instance
@@ -120,8 +117,6 @@ namespace NHapi.Base.Parser
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Parser.PipeParser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private const System.String segDelim = "\r"; //see section 2.8 of spec
@@ -173,7 +168,6 @@ namespace NHapi.Base.Parser
 			int nextFieldDelimLoc = 0;
 			for (int i = 0; i < 11; i++)
 			{
-				//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 				nextFieldDelimLoc = message.IndexOf((System.Char) fourthChar, nextFieldDelimLoc + 1);
 				if (nextFieldDelimLoc < 0)
 					return null;
@@ -256,7 +250,6 @@ namespace NHapi.Base.Parser
 			}
 			catch (System.IndexOutOfRangeException e)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception("Can't find message structure (MSH-9-3): " + e.Message, HL7Exception.UNSUPPORTED_MESSAGE_TYPE);
 			}
 			
@@ -302,17 +295,14 @@ namespace NHapi.Base.Parser
 				//sometimes people put extra segment delimiters at end of msg ...
 				if (segments[i] != null && segments[i].Length >= 3)
 				{
-					//UPGRADE_NOTE: Final was removed from the declaration of 'name '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 					System.String name = segments[i].Substring(0, (3) - (0));
 					log.debug("Parsing segment " + name);
 					
 					messageIter.Direction = name;
 					FilterIterator.IPredicate byDirection = new AnonymousClassPredicate1(name, this);
 					FilterIterator dirIter = new FilterIterator(segmentIter, byDirection);
-					//UPGRADE_TODO: Method 'java.util.Iterator.hasNext' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratorhasNext'"
 					if (dirIter.MoveNext())
 					{
-						//UPGRADE_TODO: Method 'java.util.Iterator.next' was converted to 'System.Collections.IEnumerator.Current' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratornext'"
 						parse((ISegment) dirIter.Current, segments[i], getEncodingChars(message));
 					}
 				}
@@ -711,7 +701,6 @@ namespace NHapi.Base.Parser
 			int locStartMSH = message.IndexOf("MSH");
 			if (locStartMSH < 0)
 				throw new HL7Exception("Couldn't find MSH segment in message: " + message, HL7Exception.SEGMENT_SEQUENCE_ERROR);
-			//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 			int locEndMSH = message.IndexOf('\r', locStartMSH + 1);
 			if (locEndMSH < 0)
 				locEndMSH = message.Length;
@@ -752,8 +741,6 @@ namespace NHapi.Base.Parser
 			catch (System.Exception e)
 			{
 				SupportClass.WriteStackTrace(e, Console.Error);
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception("Can't parse critical fields from MSH segment (" + e.GetType().FullName + ": " + e.Message + "): " + mshString, HL7Exception.REQUIRED_FIELD_MISSING);
 			}
 			
@@ -776,11 +763,8 @@ namespace NHapi.Base.Parser
 			{
 				int startFieldOne = startMSA + 5;
 				char fieldDelim = message[startFieldOne - 1];
-				//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 				int start = message.IndexOf((System.Char) fieldDelim, startFieldOne) + 1;
-				//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 				int end = message.IndexOf((System.Char) fieldDelim, start);
-				//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 				int segEnd = message.IndexOf(System.Convert.ToString(segDelim), start);
 				if (segEnd > start && segEnd < end)
 					end = segEnd;
@@ -814,7 +798,6 @@ namespace NHapi.Base.Parser
 		public override System.String getVersion(System.String message)
 		{
 			int startMSH = message.IndexOf("MSH");
-			//UPGRADE_WARNING: Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1101'"
 			int endMSH = message.IndexOf(PipeParser.segDelim, startMSH);
 			if (endMSH < 0)
 				endMSH = message.Length;

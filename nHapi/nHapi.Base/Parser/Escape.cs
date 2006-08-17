@@ -33,7 +33,6 @@ namespace NHapi.Base.Parser
 	public class Escape
 	{
 		
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private static System.Collections.Hashtable variousEncChars = new System.Collections.Hashtable(5);
 		
 		/// <summary>Creates a new instance of Escape </summary>
@@ -45,9 +44,7 @@ namespace NHapi.Base.Parser
 		{
 			System.Text.StringBuilder result = new System.Text.StringBuilder();
 			int textLength = text.Length;
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			System.Collections.Hashtable esc = getEscapeSequences(encChars);
-			//UPGRADE_TODO: Method 'java.util.HashMap.keySet' was converted to 'SupportClass.HashSetSupport' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapkeySet'"
 			SupportClass.ISetSupport keys = new SupportClass.HashSetSupport(esc.Keys);
 			System.String escChar = System.Convert.ToString(encChars.EscapeCharacter);
 			int position = 0;
@@ -55,12 +52,9 @@ namespace NHapi.Base.Parser
 			{
 				System.Collections.IEnumerator it = keys.GetEnumerator();
 				bool isReplaced = false;
-				//UPGRADE_TODO: Method 'java.util.Iterator.hasNext' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratorhasNext'"
 				while (it.MoveNext() && !isReplaced)
 				{
-					//UPGRADE_TODO: Method 'java.util.Iterator.next' was converted to 'System.Collections.IEnumerator.Current' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratornext'"
 					System.String seq = (System.String) it.Current;
-					//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 					System.String val = (System.String) esc[seq];
 					if (text.Substring(position, (position + 1) - (position)).Equals(val))
 					{
@@ -81,9 +75,7 @@ namespace NHapi.Base.Parser
 		{
 			System.Text.StringBuilder result = new System.Text.StringBuilder();
 			int textLength = text.Length;
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			System.Collections.Hashtable esc = getEscapeSequences(encChars);
-			//UPGRADE_TODO: Method 'java.util.HashMap.keySet' was converted to 'SupportClass.HashSetSupport' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapkeySet'"
 			SupportClass.ISetSupport keys = new SupportClass.HashSetSupport(esc.Keys);
 			System.String escChar = System.Convert.ToString(encChars.EscapeCharacter);
 			int position = 0;
@@ -91,12 +83,9 @@ namespace NHapi.Base.Parser
 			{
 				System.Collections.IEnumerator it = keys.GetEnumerator();
 				bool isReplaced = false;
-				//UPGRADE_TODO: Method 'java.util.Iterator.hasNext' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratorhasNext'"
 				while (it.MoveNext() && !isReplaced)
 				{
-					//UPGRADE_TODO: Method 'java.util.Iterator.next' was converted to 'System.Collections.IEnumerator.Current' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratornext'"
 					System.String seq = (System.String) it.Current;
-					//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 					System.String val = (System.String) esc[seq];
 					int seqLength = seq.Length;
 					if (position + seqLength <= textLength)
@@ -205,15 +194,11 @@ namespace NHapi.Base.Parser
 		/// <summary> Returns a HashTable with escape sequences as keys, and corresponding 
 		/// Strings as values.  
 		/// </summary>
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private static System.Collections.Hashtable getEscapeSequences(EncodingCharacters encChars)
 		{
 			//escape sequence strings must be assembled using the given escape character 
-			
 			//see if this has already been done for this set of encoding characters
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			System.Collections.Hashtable escapeSequences = null;
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = variousEncChars[encChars];
 			if (o == null)
 			{
@@ -224,7 +209,6 @@ namespace NHapi.Base.Parser
 			else
 			{
 				//we already have escape sequences for these encoding characters
-				//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 				escapeSequences = (System.Collections.Hashtable) o;
 			}
 			return escapeSequences;
@@ -233,10 +217,8 @@ namespace NHapi.Base.Parser
 		/// <summary> Constructs escape sequences using the given escape character - this should only 
 		/// be called by getEscapeCharacter(), which will cache the results for subsequent use.
 		/// </summary>
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private static System.Collections.Hashtable makeEscapeSequences(EncodingCharacters ec)
 		{
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			System.Collections.Hashtable seqs = new System.Collections.Hashtable();
 			char[] codes = new char[]{'F', 'S', 'T', 'R', 'E'};
 			char[] values = new char[]{ec.FieldSeparator, ec.ComponentSeparator, ec.SubcomponentSeparator, ec.RepetitionSeparator, ec.EscapeCharacter};
@@ -263,7 +245,6 @@ namespace NHapi.Base.Parser
 			
 			//test speed gain with cache
 			int n = 100000;
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			System.Collections.Hashtable seqs;
 			EncodingCharacters ec = new EncodingCharacters('|', "^~\\&");
 			//warm up the JIT 

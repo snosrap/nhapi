@@ -38,7 +38,6 @@ namespace NHapi.Base.Model
 			get;
 			
 		}
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <returns> the set of validation rules that applies to this message
 		/// </returns>
 		/// <param name="theContext">the set of validation rules that are to apply to this message

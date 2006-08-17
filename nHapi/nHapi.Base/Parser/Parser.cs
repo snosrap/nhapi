@@ -46,7 +46,6 @@ namespace NHapi.Base.Parser
 			}
 			
 		}
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <returns> the set of validation rules that is applied to messages parsed or encoded by this parser
 		/// </returns>
 		/// <param name="theContext">the set of validation rules to be applied to messages parsed or 
@@ -70,7 +69,6 @@ namespace NHapi.Base.Parser
 		/// </returns>
 		public abstract System.String DefaultEncoding{get;}
 		/// <summary> Returns event->structure maps.  </summary>
-		//UPGRADE_NOTE: Synchronized keyword was removed from method 'getMessageStructures'. Lock expression was added. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1027'"
 		private static System.Collections.IDictionary MessageStructures
 		{
 			get
@@ -87,15 +85,9 @@ namespace NHapi.Base.Parser
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Parser.ParserBase'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
-		
 		private static System.Collections.IDictionary messageStructures = null;
-		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'versions'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		private static readonly System.String[] versions = new System.String[]{"2.0", "2.0D", "2.1", "2.2", "2.3", "2.3.1", "2.4", "2.5"};
-		
 		private IModelClassFactory myFactory;
 		private IValidationContext myContext;
 		private MessageValidator myValidator;
@@ -355,11 +347,9 @@ namespace NHapi.Base.Parser
 			if (!validVersion(version))
 				throw new HL7Exception("The version " + version + " is unknown");
 			
-			//UPGRADE_ISSUE: Class hierarchy differences between 'java.util.Properties' and 'System.Collections.Specialized.NameValueCollection' may cause compilation errors. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1186'"
 			System.Collections.Specialized.NameValueCollection p = null;
 			try
 			{
-				//UPGRADE_ISSUE: Class hierarchy differences between 'java.util.Properties' and 'System.Collections.Specialized.NameValueCollection' may cause compilation errors. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1186'"
 				p = (System.Collections.Specialized.NameValueCollection) MessageStructures[version];
 			}
 			catch (System.IO.IOException ioe)
@@ -380,12 +370,10 @@ namespace NHapi.Base.Parser
 			return structure;
 		}
 		
-		//UPGRADE_NOTE: Synchronized keyword was removed from method 'loadMessageStructures'. Lock expression was added. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1027'"
 		private static System.Collections.IDictionary loadMessageStructures()
 		{
 			lock (typeof(NHapi.Base.Parser.ParserBase))
 			{
-				//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 				System.Collections.IDictionary map = new System.Collections.Hashtable();
 				for (int i = 0; i < versions.Length; i++)
 				{
@@ -440,10 +428,8 @@ namespace NHapi.Base.Parser
 				System.Type messageClass = myFactory.getMessageClass(theName, theVersion, isExplicit);
 				if (messageClass == null)
 				{
-					//UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 					throw new System.Exception("Can't find message class in current package list: " + theName);
 				}
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				log.info("Instantiating msg of class " + messageClass.FullName);
 				System.Reflection.ConstructorInfo constructor = messageClass.GetConstructor(new System.Type[]{typeof(IModelClassFactory)});
 				result = (IMessage) constructor.Invoke(new System.Object[]{myFactory});

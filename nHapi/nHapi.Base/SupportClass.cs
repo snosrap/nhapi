@@ -3091,7 +3091,6 @@ namespace NHapi.Base
         public class CalendarManager
         {
 
-            // UPGRADE_NOTE: This did not come across in the support class, need to resolve handling this.
             public const int ZONE_OFFSET = 0;
             public const int DST_OFFSET = 0;
 

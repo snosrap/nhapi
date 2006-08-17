@@ -4,8 +4,6 @@
 * Created on May 7, 2003 at 3:53:44 PM
 */
 using System;
-//UPGRADE_TODO: The type 'org.apache.commons.logging.Log' could not be found. If it was not included in the conversion, there may be compiler issues. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1262'"
-//using Log = org.apache.commons.logging.Log;
 namespace NHapi.Base.Log
 {
 	
@@ -71,7 +69,6 @@ namespace NHapi.Base.Log
 		/// </param>
 		/// <param name="e">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		void  debug(System.String msgPattern, System.Object[] values, System.Exception e);
 	}
 }

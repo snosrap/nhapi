@@ -52,7 +52,6 @@ namespace NHapi.Base.Model.Primitive
 	/// </version>
 	public abstract class ID:AbstractPrimitive
 	{
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <returns> number of HL7 table from which values should be drawn (defaults to 0) 
 		/// </returns>
 		/// <param name="theTable">HL7 table from which values are to be drawn 
@@ -97,8 +96,6 @@ namespace NHapi.Base.Model.Primitive
 		/// </param>
 		/// <param name="theTable">HL7 table from which values are to be drawn 
 		/// </param>
-		//UPGRADE_ISSUE: Parameter of type 'java.lang.Integer' was migrated to type 'Int32' which is identical to 'int'. You will get a compilation error with method overloads. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1205'"
-		//UPGRADE_NOTE: ref keyword was added to struct-type parameters. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1303'"
 		public ID(IMessage message, int theTable, string description):base(message, description)
 		{
 			myTable = theTable;

@@ -49,7 +49,6 @@ namespace NHapi.Base.Model.Primitive
 	
 	public class CommonDT
 	{
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns the HL7 DT string value.</summary>
 		/// <summary> This method takes in a string HL7 date value and performs validations
 		/// then sets the value field. The stored value will be in the following
@@ -62,7 +61,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				return value_Renamed;
 			}
-			//end method
+			
 			
 			set
 			{
@@ -73,9 +72,6 @@ namespace NHapi.Base.Model.Primitive
 					{
 						System.Globalization.GregorianCalendar cal = new System.Globalization.GregorianCalendar();
 						SupportClass.CalendarManager.manager.Clear(cal);
-						//UPGRADE_ISSUE: Method 'java.util.Calendar.setLenient' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarsetLenient_boolean'"
-						// UPGRADE_ISSUE: Commented out:cal.setLenient(false);
-						
 						//check the length, must be either four, six, or eight digits
 						if ((value.Length != 4) && (value.Length != 6) && (value.Length != 8))
 						{
@@ -138,7 +134,7 @@ namespace NHapi.Base.Model.Primitive
 					value_Renamed = value;
 				} //end else       
 			}
-			//end method
+			
 			
 		}
 		/// <summary> This method takes in an integer value for the year and performs validations,
@@ -153,8 +149,6 @@ namespace NHapi.Base.Model.Primitive
 				{
 					System.Globalization.GregorianCalendar cal = new System.Globalization.GregorianCalendar();
 					SupportClass.CalendarManager.manager.Clear(cal);
-					//UPGRADE_ISSUE: Method 'java.util.Calendar.setLenient' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarsetLenient_boolean'"
-					// UPGRADE_ISSUE: Commented out:cal.setLenient(false);
 					
 					//ensure that the year field is four digits long
 					if (System.Convert.ToString(value).Length != 4)
@@ -183,7 +177,7 @@ namespace NHapi.Base.Model.Primitive
 					throw new DataTypeException("An unexpected exception ocurred", e);
 				} //end catch
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the year as an integer.</summary>
@@ -193,7 +187,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				return year;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the month as an integer.</summary>
@@ -203,7 +197,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				return month;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the day as an integer.</summary>
@@ -212,13 +206,9 @@ namespace NHapi.Base.Model.Primitive
 			get
 			{
 				return day;
-			}
-			//end method
-			
+			}			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Model.primitive.CommonDT'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private System.String value_Renamed;
@@ -236,7 +226,7 @@ namespace NHapi.Base.Model.Primitive
 			year = 0;
 			month = 0;
 			day = 0;
-		} //end constructor
+		} 
 		
 		/// <summary> Constructs a DT object with the given value.
 		/// The stored value will be in the following
@@ -245,7 +235,7 @@ namespace NHapi.Base.Model.Primitive
 		public CommonDT(System.String val)
 		{
 			this.Value = val;
-		} //end constructor
+		} 
 		
 		/// <summary> This method takes in integer values for the year and month and performs validations,
 		/// it then sets the value field formatted as an HL7 date
@@ -258,8 +248,6 @@ namespace NHapi.Base.Model.Primitive
 			{
 				System.Globalization.GregorianCalendar cal = new System.Globalization.GregorianCalendar();
 				SupportClass.CalendarManager.manager.Clear(cal);
-				//UPGRADE_ISSUE: Method 'java.util.Calendar.setLenient' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarsetLenient_boolean'"
-				// UPGRADE_ISSUE: Commented out:cal.setLenient(false);
 				//ensure that the year field is four digits long
 				if (System.Convert.ToString(yr).Length != 4)
 				{
@@ -280,12 +268,11 @@ namespace NHapi.Base.Model.Primitive
 			{
 				throw e;
 			}
-			//end catch
 			catch (System.Exception e)
 			{
 				throw new DataTypeException("An unexpected exception ocurred", e);
-			} //end catch
-		} //end method
+			} 
+		} 
 		
 		/// <summary> This method takes in integer values for the year and month and day
 		/// and performs validations, it then sets the value in the object
@@ -297,9 +284,6 @@ namespace NHapi.Base.Model.Primitive
 			{
 				System.Globalization.GregorianCalendar cal = new System.Globalization.GregorianCalendar();
 				SupportClass.CalendarManager.manager.Clear(cal);
-				//UPGRADE_ISSUE: Method 'java.util.Calendar.setLenient' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarsetLenient_boolean'"
-				// UPGRADE_ISSUE: Commented out:cal.setLenient(false);
-				
 				//ensure that the year field is four digits long
 				if (System.Convert.ToString(yr).Length != 4)
 				{
@@ -319,12 +303,11 @@ namespace NHapi.Base.Model.Primitive
 			{
 				throw e;
 			}
-			//end catch
 			catch (System.Exception e)
 			{
 				throw new DataTypeException("An unexpected exception ocurred", e);
-			} //end catch
-		} //end method
+			}
+		} 
 		
 		/// <summary> Returns a string value representing the input Gregorian Calendar object in
 		/// an Hl7 Date Format.
@@ -336,30 +319,23 @@ namespace NHapi.Base.Model.Primitive
 			{
 				//set the input cal object so that it can report errors
 				//on it's value
-				//UPGRADE_ISSUE: Method 'java.util.Calendar.setLenient' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarsetLenient_boolean'"
-				// UPGRADE_ISSUE: Commented out:cal.setLenient(false);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calYear = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.YEAR);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calMonth = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.MONTH) + 1;
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calDay = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.DAY_OF_MONTH);
 				CommonDT dt = new CommonDT();
 				dt.setYearMonthDayPrecision(calYear, calMonth, calDay);
 				val = dt.Value;
 			}
-			//end try
 			catch (DataTypeException e)
 			{
 				throw e;
 			}
-			//end catch
 			catch (System.Exception e)
 			{
 				throw new DataTypeException("An unexpected exception ocurred", e);
-			} //end catch
+			} 
 			return val;
-		} //end method
+		} 
 		static CommonDT()
 		{
 			log = HapiLogFactory.getHapiLog(typeof(CommonDT));

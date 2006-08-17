@@ -45,7 +45,6 @@ namespace NHapi.Base
 	public class NormativeDatabase
 	{
 		/// <summary> Returns the singleton instance of NormativeDatabase.  </summary>
-		//UPGRADE_NOTE: Synchronized keyword was removed from method 'getInstance'. Lock expression was added. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1027'"
 		private System.Data.OleDb.OleDbConnection _conn;
 		public static NormativeDatabase Instance
 		{
@@ -65,15 +64,12 @@ namespace NHapi.Base
 		/// <summary> Provides a Connection to the normative database. 
 		/// A new connection may be created if none are available.
 		/// </summary>
-		//UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
-		//UPGRADE_NOTE: Synchronized keyword was removed from method 'getConnection'. Lock expression was added. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1027'"
 		virtual public System.Data.OleDb.OleDbConnection Connection
 		{
 			get
 			{
 				lock (this)
 				{
-					//UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
 						try
 						{
                             if (_conn.State != ConnectionState.Open)
@@ -90,8 +86,6 @@ namespace NHapi.Base
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.NormativeDatabase'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private static NormativeDatabase db = null;
@@ -102,7 +96,6 @@ namespace NHapi.Base
 		/// </summary>
 		private NormativeDatabase()
 		{
-			//UPGRADE_ISSUE: Method 'java.lang.System.getProperty' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangSystem'"
 			_connectionString = Properties.Settings.ConnectionString;
 			_conn = new System.Data.OleDb.OleDbConnection(_connectionString);
 			_conn.Open();
@@ -112,7 +105,6 @@ namespace NHapi.Base
 		/// given connection is not in fact a connection to the normative database, it is
 		/// discarded. 
 		/// </summary>
-		//UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
 		public virtual void  returnConnection(System.Data.OleDb.OleDbConnection conn)
 		{
 			//check if this is a normative DB connection 
@@ -125,16 +117,8 @@ namespace NHapi.Base
 		{
 			try
 			{
-				//UPGRADE_TODO: The differences in the format  of parameters for method 'java.lang.Class.forName'  may cause compilation errors.  "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1092'"
-				System.Type.GetType("sun.jdbc.odbc.JdbcOdbcDriver");
-				//UPGRADE_ISSUE: Method 'java.lang.System.setProperty' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangSystem'"
-				//System_Renamed.setProperty("ca.on.uhn.hl7.database.url", "jdbc:odbc:hl7v25");
-                // Above line not supported...
-				//UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"
 				System.Data.OleDb.OleDbConnection conn = NormativeDatabase.Instance.Connection;
-				//UPGRADE_TODO: Method 'java.sql.Connection.createStatement' was converted to 'SupportClass.TransactionManager.manager.CreateStatement' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlConnectioncreateStatement'"
 				System.Data.OleDb.OleDbCommand stmt = SupportClass.TransactionManager.manager.CreateStatement(conn);
-				//UPGRADE_TODO: Interface 'java.sql.ResultSet' was converted to 'System.Data.OleDb.OleDbDataReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javasqlResultSet'"
 				System.Data.OleDb.OleDbCommand temp_OleDbCommand;
 				temp_OleDbCommand = stmt;
 				temp_OleDbCommand.CommandText = "select * from TableValues";
@@ -144,7 +128,6 @@ namespace NHapi.Base
 					System.Object tabNum = rs.GetValue(1 - 1);
 					System.Object val = rs.GetValue(3 - 1);
 					System.Object desc = rs.GetValue(4 - 1);
-					//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Object.toString' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 					System.Console.Out.WriteLine("Table: " + tabNum + " Value: " + val + " Description: " + desc);
 				}
 			}
@@ -152,7 +135,6 @@ namespace NHapi.Base
 			{
 				log.error("test msg!!", e);
 			}
-			//UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 			catch (System.Exception e)
 			{
 				log.error("test msg!!", e);

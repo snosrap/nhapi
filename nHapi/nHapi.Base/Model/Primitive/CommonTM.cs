@@ -68,7 +68,6 @@ namespace NHapi.Base.Model.Primitive
 	/// </author>
 	public class CommonTM
 	{
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns the HL7 TM string value.</summary>
 		/// <summary> This method takes in a string HL7 Time value and performs validations
 		/// then sets the value field.  The stored value will be in the following
@@ -109,7 +108,7 @@ namespace NHapi.Base.Model.Primitive
 				} //end if
 				return returnVal;
 			}
-			//end method
+			
 			
 			set
 			{
@@ -309,7 +308,7 @@ namespace NHapi.Base.Model.Primitive
 					value_Renamed = value;
 				} //end else
 			}
-			//end method
+			
 			
 		}
 		/// <summary> This method takes in an integer value for the hour and performs validations,
@@ -347,11 +346,10 @@ namespace NHapi.Base.Model.Primitive
 				//end catch
 				catch (System.Exception e)
 				{
-					//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 					throw new DataTypeException(e.Message);
 				} //end catch
 			}
-			//end method
+			
 			
 		}
 		/// <summary> This method takes in the four digit (signed) GMT offset and sets the offset
@@ -411,7 +409,7 @@ namespace NHapi.Base.Model.Primitive
 					throw new DataTypeException("An unexpected exception ocurred", e);
 				} //end catch
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the hour as an integer.</summary>
@@ -421,7 +419,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				return hour;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the minute as an integer.</summary>
@@ -431,7 +429,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				return minute;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the second as an integer.</summary>
@@ -441,7 +439,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				return second;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the fractional second value as a float.</summary>
@@ -451,7 +449,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				return fractionOfSec;
 			}
-			//end method
+			
 			
 		}
 		/// <summary> Returns the GMT offset value as an integer, -99 if not set.  </summary>
@@ -461,12 +459,10 @@ namespace NHapi.Base.Model.Primitive
 			{
 				return offSet;
 			}
-			//end method
+			
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Model.primitive.CommonTM'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private System.String value_Renamed;
@@ -533,10 +529,9 @@ namespace NHapi.Base.Model.Primitive
 			//end catch
 			catch (System.Exception e)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new DataTypeException(e.Message);
 			} //end catch
-		} //end method
+		} 
 		
 		/// <summary> This method takes in integer values for the hour, minute, seconds, and fractional seconds
 		/// (going to the tenthousandths precision).
@@ -555,11 +550,9 @@ namespace NHapi.Base.Model.Primitive
 				//multiply the seconds input value by 10000 and round the result
 				//then divide the number by tenthousand and store it back.
 				//This will round the fractional seconds to the nearest tenthousandths
-				//UPGRADE_TODO: Method 'java.lang.Math.round' was converted to 'System.Math.Round' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangMathround_float'"
 				int secMultRound = (int) System.Math.Round((double) (10000F * sec));
 				sec = secMultRound / 10000F;
 				//Now store the second and fractional component
-				//UPGRADE_WARNING: Data types in Visual C# might be different.  Verify the accuracy of narrowing conversions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1042'"
 				second = (int) System.Math.Floor(sec);
 				//validate input seconds value
 				if ((second < 0) || (second >= 60))
@@ -593,7 +586,7 @@ namespace NHapi.Base.Model.Primitive
 			{
 				throw new DataTypeException("An unexpected exception ocurred", e);
 			} //end catch
-		} //end method
+		} 
 		
 		/// <summary> Returns a string value representing the input Gregorian Calendar object in
 		/// an Hl7 Time Format.
@@ -605,22 +598,13 @@ namespace NHapi.Base.Model.Primitive
 			{
 				//set the input cal object so that it can report errors
 				//on it's value
-				//UPGRADE_ISSUE: Method 'java.util.Calendar.setLenient' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarsetLenient_boolean'"
-				// UPGRADE_ISSUE: Commented out:cal.setLenient(false);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calHour = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.HOUR_OF_DAY);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calMin = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.MINUTE);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calSec = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.SECOND);
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
 				int calMilli = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.MILLISECOND);
 				//the inputs seconds and milli seconds should be combined into a float type
 				float fractSec = calMilli / 1000F;
 				float calSecFloat = calSec + fractSec;
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
-				//UPGRADE_ISSUE: Field 'java.util.Calendar.ZONE_OFFSET' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarZONE_OFFSET_f'"
-				//UPGRADE_ISSUE: Field 'java.util.Calendar.DST_OFFSET' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarDST_OFFSET_f'"
 				int calOffset = SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.ZONE_OFFSET) + SupportClass.CalendarManager.manager.Get(cal, SupportClass.CalendarManager.DST_OFFSET);
 				//Note the input's Offset value is in milliseconds, we must convert it to
 				//a 4 digit integer in the HL7 Offset format.
@@ -657,7 +641,7 @@ namespace NHapi.Base.Model.Primitive
 				throw new DataTypeException("An unexpected exception ocurred", e);
 			} //end catch
 			return val;
-		} //end method
+		} 
 		static CommonTM()
 		{
 			log = HapiLogFactory.getHapiLog(typeof(CommonTM));

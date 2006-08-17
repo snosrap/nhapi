@@ -151,7 +151,6 @@ namespace NHapi.Base.SourceGeneration
 		private System.String description;
 		private bool required;
 		private bool repeating;
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private System.Collections.Hashtable existingNames;
 		
 		
@@ -164,7 +163,6 @@ namespace NHapi.Base.SourceGeneration
 			this.required = required;
 			this.repeating = repeating;
 			this.description = description;
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			this.existingNames = new System.Collections.Hashtable();
 		}
 		
@@ -186,47 +184,17 @@ namespace NHapi.Base.SourceGeneration
 		protected internal virtual System.String getIndexName(System.String name)
 		{
 			//see if this name is already being used 
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = existingNames[name];
 			int c = 2;
 			System.String newName = name;
 			while (o != null)
 			{
 				newName = name + c++;
-				//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 				o = existingNames[newName];
 			}
 			name = newName;
 			existingNames[name] = name;
 			return name;
-		}
-		
-		/// <summary> Test harness ... </summary>
-		[STAThread]
-		public static void  Main(System.String[] args)
-		{
-			/*GroupDef def = new GroupDef("ADT_FAKE", true, false);
-			def.addStructure(new SegmentDef("MSH", true, false));
-			def.addStructure(new SegmentDef("PID", false, false));
-			def.addStructure(new SegmentDef("PV1", false, true));
-			System.out.println(def.makeConstructor());
-			System.out.println(def.makeAccessor(0));
-			System.out.println(def.makeAccessor(1));
-			System.out.println(def.makeAccessor(2));
-			*/
-			//UPGRADE_ISSUE: Method 'java.lang.System.setProperty' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangSystem'"
-			//System_Renamed.setProperty("ca.on.uhn.hl7.database.url", "jdbc:odbc:hl7");
-            // Moved to .config file.
-			try
-			{
-				//UPGRADE_TODO: The differences in the format  of parameters for method 'java.lang.Class.forName'  may cause compilation errors.  "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1092'"
-				System.Type.GetType("sun.jdbc.odbc.JdbcOdbcDriver");
-				MessageGenerator.makeAll("c:/java/adapter/source/", "2.4");
-			}
-			catch (System.Exception e)
-			{
-				SupportClass.WriteStackTrace(e, Console.Error);
-			}
 		}
 	}
 }

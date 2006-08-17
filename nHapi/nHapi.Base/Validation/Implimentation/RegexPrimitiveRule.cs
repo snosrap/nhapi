@@ -42,7 +42,6 @@ namespace NHapi.Base.validation.impl
 		{
 			get
 			{
-                //UPGRADE_ISSUE: The myPattern.ToString() may not return pattern string.
 				return "Matches the regular expression " + myPattern.ToString();
 			}
 			
@@ -58,9 +57,7 @@ namespace NHapi.Base.validation.impl
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'myPattern '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		private System.Text.RegularExpressions.Regex myPattern;
-		//UPGRADE_NOTE: Final was removed from the declaration of 'mySectionReference '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		private System.String mySectionReference;
 		
 		/// <param name="theRegex">a regular expression against which to validate primitive
@@ -77,8 +74,6 @@ namespace NHapi.Base.validation.impl
 		/// <summary> Empty string, null, and the HL7 explicit null (two double-quotes) are passed.  
 		/// 
 		/// </summary>
-		/// <seealso cref="NHapi.Base.validation.PrimitiveTypeRule.test(java.lang.String)">
-		/// </seealso>
 		public virtual bool test(System.String value_Renamed)
 		{
 			if (value_Renamed == null || value_Renamed.Equals("\"\"") || value_Renamed.Equals(""))
@@ -91,8 +86,6 @@ namespace NHapi.Base.validation.impl
 			}
 		}
 		
-		/// <seealso cref="NHapi.Base.validation.PrimitiveTypeRule.correct(java.lang.String)">
-		/// </seealso>
 		public virtual System.String correct(System.String value_Renamed)
 		{
 			return value_Renamed;

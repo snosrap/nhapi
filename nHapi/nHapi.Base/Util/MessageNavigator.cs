@@ -46,7 +46,6 @@ namespace NHapi.Base.util
 	/// </author>
 	public class MessageNavigator
 	{
-		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'AnonymousClassPredicate' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
 		private class AnonymousClassPredicate : FilterIterator.IPredicate
 		{
 			public AnonymousClassPredicate(MessageNavigator enclosingInstance)
@@ -288,10 +287,8 @@ namespace NHapi.Base.util
 				it = new FilterIterator(it, predicate);
 			}
 			
-			//UPGRADE_TODO: Method 'java.util.Iterator.hasNext' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratorhasNext'"
 			if (it.MoveNext())
 			{
-				//UPGRADE_TODO: Method 'java.util.Iterator.next' was converted to 'System.Collections.IEnumerator.Current' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratornext'"
 				IStructure next = (IStructure) it.Current;
 				drillHere(next);
 			}
@@ -370,7 +367,6 @@ namespace NHapi.Base.util
 			}
 		}
 		
-		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'GroupContext' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
 		/// <summary> A structure to hold current location information at
 		/// one level of the message tree.  A stack of these
 		/// identifies the current location completely.

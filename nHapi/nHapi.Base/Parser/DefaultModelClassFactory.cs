@@ -20,12 +20,8 @@ namespace NHapi.Base.Parser
 	public class DefaultModelClassFactory : IModelClassFactory
 	{
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Parser.DefaultModelClassFactory'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
-		
 		private const System.String CUSTOM_PACKAGES_RESOURCE_NAME_TEMPLATE = "custom_packages/{0}";
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private static System.Collections.Hashtable packages = null;
 		
 		/// <summary> <p>Attempts to return the message class corresponding to the given name, by 
@@ -130,7 +126,6 @@ namespace NHapi.Base.Parser
 			System.String[] versions = new System.String[]{"2.1", "2.2", "2.3", "2.3.1", "2.4", "2.5"};
 			if (packages == null)
 			{
-				//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 				packages = new System.Collections.Hashtable(10);
 				for (int i = 0; i < versions.Length; i++)
 				{
@@ -139,7 +134,6 @@ namespace NHapi.Base.Parser
 			}
 			
 			//get package list for this version 
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			return (System.String[]) packages[version];
 		}
 		
@@ -150,45 +144,7 @@ namespace NHapi.Base.Parser
 		{
 			System.String[] retVal = null;
             System.Collections.IList packageList = new System.Collections.ArrayList();
-			
-            //UPGRADE_ISSUE: Need to add loading of custom packages....
-
-            ////UPGRADE_ISSUE: Class 'java.lang.ClassLoader' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangClassLoader'"
-            ////UPGRADE_ISSUE: Method 'java.lang.Thread.getContextClassLoader' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangThreadgetContextClassLoader'"
-            //ClassLoader classLoader = SupportClass.ThreadClass.Current().getContextClassLoader();
-			
-            ////UPGRADE_TODO: Method 'java.text.MessageFormat.format' was converted to 'System.String.Format' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
-            //System.String customPackagesResourceName = System.String.Format(CUSTOM_PACKAGES_RESOURCE_NAME_TEMPLATE, new System.Object[]{version});
-			
-            ////UPGRADE_ISSUE: Method 'java.lang.ClassLoader.getResourceAsStream' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangClassLoader'"
-            //System.IO.Stream resourceInputStream = classLoader.getResourceAsStream(customPackagesResourceName);
-			
-            //if (resourceInputStream != null)
-            //{
-            //    //UPGRADE_TODO: The differences in the expected value  of parameters for constructor 'java.io.BufferedReader.BufferedReader'  may cause compilation errors.  "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1092'"
-            //    //UPGRADE_WARNING: At least one expression was used more than once in the target code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1181'"
-            //    System.IO.StreamReader in_Renamed = new System.IO.StreamReader(new System.IO.StreamReader(resourceInputStream, System.Text.Encoding.Default).BaseStream, new System.IO.StreamReader(resourceInputStream, System.Text.Encoding.Default).CurrentEncoding);
-				
-            //    try
-            //    {
-            //        System.String line = in_Renamed.ReadLine();
-            //        while (line != null)
-            //        {
-            //            log.info("Adding package to user-defined package list: " + line);
-            //            packageList.Add(line);
-            //            line = in_Renamed.ReadLine();
-            //        }
-            //    }
-            //    catch (System.IO.IOException e)
-            //    {
-            //        log.error("Can't load all the custom package list - user-defined classes may not be recognized", e);
-            //    }
-            //}
-            //else
-            //{
-            //    log.debug("No user-defined packages for version " + version);
-            //}
-			
+					
 			//add standard package
 			packageList.Add(SourceGenerator.getVersionPackageName(version));
 			retVal = (System.String[]) SupportClass.ICollectionSupport.ToArray(packageList, new System.String[]{});
@@ -236,14 +192,12 @@ namespace NHapi.Base.Parser
 					{
 						log.debug("Trying to load: " + classNameToTry);
 					}
-					//UPGRADE_TODO: The differences in the format  of parameters for method 'java.lang.Class.forName'  may cause compilation errors.  "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1092'"
 					compClass = System.Type.GetType(classNameToTry);
 					if (log.DebugEnabled)
 					{
 						log.debug("Loaded: " + classNameToTry + " class: " + compClass);
 					}
 				}
-				//UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 				catch (System.Exception)
 				{
 					/* just try next one */

@@ -83,7 +83,6 @@ namespace NHapi.Base.util
 		}
 		
 		private SegmentFinder finder;
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.util.Terser'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static IHapiLog log;
 		
 		/// <summary>Creates a new instance of Terser </summary>
@@ -184,7 +183,6 @@ namespace NHapi.Base.util
 				}
 				catch (DataTypeException de)
 				{
-					//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 					System.String message = "Unexpected exception copying data to generic composite: " + de.Message;
 					log.error(message, de);
 					throw new System.ApplicationException(message);
@@ -467,7 +465,6 @@ namespace NHapi.Base.util
 			return n;
 		}
 		
-		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'PathSpec' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
 		/// <summary>Struct for information about a step in a segment path. </summary>
 		private class PathSpec
 		{

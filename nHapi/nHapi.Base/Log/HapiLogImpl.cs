@@ -80,7 +80,6 @@ namespace NHapi.Base.Log
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'delegate '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		private ILog innerLog;
 		
 		internal HapiLogImpl(ILog log)
@@ -99,7 +98,6 @@ namespace NHapi.Base.Log
 		/// </param>
 		/// <param name="t">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public virtual void  debug(System.Object message, System.Exception t)
 		{
 			innerLog.debug(message, t);
@@ -116,7 +114,6 @@ namespace NHapi.Base.Log
 		/// </param>
 		/// <param name="t">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public virtual void  error(System.Object message, System.Exception t)
 		{
 			innerLog.error(message, t);
@@ -133,7 +130,6 @@ namespace NHapi.Base.Log
 		/// </param>
 		/// <param name="t">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public virtual void  fatal(System.Object message, System.Exception t)
 		{
 			innerLog.fatal(message, t);
@@ -150,15 +146,12 @@ namespace NHapi.Base.Log
 		/// </param>
 		/// <param name="t">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public virtual void  info(System.Object message, System.Exception t)
 		{
 			innerLog.info(message, t);
 		}
 		
-		/* (non-Javadoc)
-		* @see java.lang.Object#toString()
-		*/
+		
 		public override System.String ToString()
 		{
 			return innerLog.ToString();
@@ -175,7 +168,6 @@ namespace NHapi.Base.Log
 		/// </param>
 		/// <param name="t">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public virtual void  trace(System.Object message, System.Exception t)
 		{
 			innerLog.trace(message, t);
@@ -192,19 +184,14 @@ namespace NHapi.Base.Log
 		/// </param>
 		/// <param name="t">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public virtual void  warn(System.Object message, System.Exception t)
 		{
 			innerLog.warn(message, t);
 		}
 		
-		/* (non-Javadoc)
-		* @see ca.uhn.log.HapiLog#debug(java.lang.String, java.lang.Object[], java.lang.Throwable)
-		*/
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
+	
 		public virtual void  debug(System.String msgPattern, System.Object[] values, System.Exception t)
 		{
-			//UPGRADE_TODO: Method 'java.text.MessageFormat.format' was converted to 'System.String.Format' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073'"
 			System.String message = System.String.Format(msgPattern, values);
 			innerLog.debug(message, t);
 		}

@@ -31,7 +31,6 @@ namespace NHapi.Base.Model
 	/// </author>
 	public interface IPrimitive:IType
 	{
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns a String representation of the value of this field.</summary>
 		/// <summary> Sets the value of this field if the given value is legal in the context of the
 		/// implementing class.

@@ -35,7 +35,6 @@ namespace NHapi.Base
 	[Serializable]
 	public class HL7Exception: System.Exception
 	{
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns the name of the segment where the error occured, if this has been set
 		/// (null otherwise).
 		/// </summary>
@@ -53,7 +52,6 @@ namespace NHapi.Base
 			}
 			
 		}
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns the sequence number of the segment where the error occured (if there 
 		/// are multiple segments with the same name) if this has been set, -1 otherwise - 
 		/// numbering starts at 1.
@@ -76,7 +74,6 @@ namespace NHapi.Base
 			}
 			
 		}
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns the field number within the segment where the error occured if it has been 
 		/// set, -1 otherwise; numbering starts at 1.
 		/// </summary>
@@ -104,7 +101,6 @@ namespace NHapi.Base
 			get
 			{
 				System.Text.StringBuilder msg = new System.Text.StringBuilder();
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				msg.Append(base.Message);
 				if (SegmentName != null)
 				{
@@ -127,8 +123,6 @@ namespace NHapi.Base
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'ourLog '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'ourLog' was moved to static method 'NHapi.Base.HL7Exception'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog ourLog;
 		
 		public const int ACK_AA = 1;
@@ -165,7 +159,6 @@ namespace NHapi.Base
 		/// </param>
 		/// <param name="cause">The excption that caused this exception tobe thrown.
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public HL7Exception(System.String message, int errorCondition, System.Exception cause):base(message, cause)
 		{
 			this.errCode = errorCondition;
@@ -189,7 +182,6 @@ namespace NHapi.Base
 		/// </summary>
 		/// <param name="cause">The excption that caused this exception tobe thrown.
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public HL7Exception(System.String message, System.Exception cause):base(message, cause)
 		{
 			this.errCode = HL7Exception.APPLICATION_INTERNAL_ERROR;
@@ -200,8 +192,6 @@ namespace NHapi.Base
 		/// </summary>
 		/// <param name="cause">The excption that caused this exception tobe thrown.
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
-        //UPGARDE_NOTE: base class does not have matching signature to below
         //public HL7Exception(System.Exception cause):base(cause)
         //{
         //    this.errCode = HL7Exception.APPLICATION_INTERNAL_ERROR;
@@ -233,7 +223,6 @@ namespace NHapi.Base
 			
 			Terser.Set(errorSegment, 1, rep, 4, 1, System.Convert.ToString(this.errCode));
 			Terser.Set(errorSegment, 1, rep, 4, 3, "hl70357");
-			//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 			Terser.Set(errorSegment, 1, rep, 4, 5, this.Message);
 			
 			//try to get error condition text

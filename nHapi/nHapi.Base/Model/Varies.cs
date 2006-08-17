@@ -43,7 +43,6 @@ namespace NHapi.Base.Model
 	/// </author>
 	public class  Varies : IType
 	{
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <summary> Returns the data contained by this instance of Varies.  Returns a GenericPrimitive unless 
 		/// setData() has been called. 
 		/// </summary>
@@ -108,8 +107,6 @@ namespace NHapi.Base.Model
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Model.Varies'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		private IType data;
@@ -163,7 +160,6 @@ namespace NHapi.Base.Model
 			}
 			catch (System.Exception e)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception(e.GetType().FullName + " trying to set data type of OBX-5", HL7Exception.APPLICATION_INTERNAL_ERROR, e);
 			}
 		}

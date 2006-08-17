@@ -34,7 +34,6 @@ namespace NHapi.Base.validation.impl
 	/// </version>
 	public class RuleBinding
 	{
-		//UPGRADE_NOTE: Respective javadoc comments were merged.  It should be changed in order to comply with .NET documentation conventions. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1199'"
 		/// <returns> true if the binding is currently active
 		/// </returns>
 		/// <param name="isActive">true if the binding is currently active

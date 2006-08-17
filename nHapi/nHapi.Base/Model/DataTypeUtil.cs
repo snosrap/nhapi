@@ -40,8 +40,6 @@ namespace NHapi.Base.Model
 			{
 				int offSet;
 				System.Globalization.GregorianCalendar currentTime = new System.Globalization.GregorianCalendar();
-				//UPGRADE_TODO: Method 'java.util.Calendar.get' was converted to 'SupportClass.CalendarManager.Get' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilCalendarget_int'"
-				//UPGRADE_ISSUE: Field 'java.util.Calendar.ZONE_OFFSET' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javautilCalendarZONE_OFFSET_f'"
 				int gmtOffSet = SupportClass.CalendarManager.manager.Get(currentTime, SupportClass.CalendarManager.ZONE_OFFSET);
 
 				int offSetSignInt;
@@ -61,7 +59,7 @@ namespace NHapi.Base.Model
 				offSet = ((gmtOffSetHours * 100) + gmtOffSetMin) * offSetSignInt;
 				return offSet;
 			}
-			//end method
+			
 			
 		}
 		
@@ -89,6 +87,6 @@ namespace NHapi.Base.Model
 				} //end for
 				return a;
 			} //end else
-		} //end method
+		} 
 	} //end class
 }

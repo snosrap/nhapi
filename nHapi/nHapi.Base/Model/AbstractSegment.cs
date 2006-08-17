@@ -194,27 +194,18 @@ namespace NHapi.Base.Model
 			}
 			catch (System.UnauthorizedAccessException iae)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception("Can't access class " + c.FullName + " (" + iae.GetType().FullName + "): " + iae.Message, HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
 			catch (System.Reflection.TargetInvocationException ite)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception("Can't instantiate class " + c.FullName + " (" + ite.GetType().FullName + "): " + ite.Message, HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
 			catch (System.MethodAccessException nme)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception("Can't instantiate class " + c.FullName + " (" + nme.GetType().FullName + "): " + nme.Message, HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
-            //UPGRADE_NOTE: Exception 'java.lang.InstantiationException' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
             catch (System.Exception ie)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
                 throw new HL7Exception("Can't instantiate class " + c.FullName + " (" + ie.GetType().FullName + "): " + ie.Message, HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
 			return newType;
@@ -256,7 +247,6 @@ namespace NHapi.Base.Model
 			}
 			catch (System.Exception e)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception("Can't retrieve optionality of field " + number + ": " + e.Message, HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
 			
@@ -281,7 +271,6 @@ namespace NHapi.Base.Model
 			}
 			catch (System.Exception e)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception("Can't retrieve max length of field " + number + ": " + e.Message, HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
 			
@@ -304,7 +293,6 @@ namespace NHapi.Base.Model
 			}
 			catch (System.Exception e)
 			{
-				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				throw new HL7Exception("Can't retrieve max repetitions of field " + number + ": " + e.Message, HL7Exception.APPLICATION_INTERNAL_ERROR);
 			}
 			
@@ -340,7 +328,6 @@ namespace NHapi.Base.Model
         {
             if (!typeof(IType).IsAssignableFrom(c))
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
                 throw new HL7Exception("Class " + c.FullName + " does not inherit from " + "ca.on.uhn.datatype.Type", HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
 

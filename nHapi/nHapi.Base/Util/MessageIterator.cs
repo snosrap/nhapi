@@ -49,7 +49,6 @@ namespace NHapi.Base.util
 		{
 			get
 			{
-				//UPGRADE_TODO: Method 'java.util.Iterator.hasNext' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratorhasNext'"
 				if (!MoveNext())
 				{
 					throw new System.ArgumentOutOfRangeException("No more nodes in message");
@@ -60,7 +59,6 @@ namespace NHapi.Base.util
 				}
 				catch (HL7Exception e)
 				{
-					//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 					throw new System.ArgumentOutOfRangeException("HL7Exception: " + e.Message);
 				}
 				clearNext();
@@ -88,8 +86,6 @@ namespace NHapi.Base.util
 		private Position next_Renamed_Field;
 		private bool handleUnexpectedSegments;
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.util.MessageIterator'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
 		
 		/* may add configurability later ... 
@@ -166,7 +162,6 @@ namespace NHapi.Base.util
 					}
 					catch (HL7Exception e)
 					{
-						//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 						throw new System.ApplicationException("HL7Exception arising from bad index: " + e.Message);
 					}
 				}
@@ -210,7 +205,6 @@ namespace NHapi.Base.util
 		/// <summary>Navigates from end of group </summary>
 		private bool nextFromGroupEnd(Position currPos, System.String direction, bool makeNewSegmentIfNeeded)
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
 			//assert isLast(currPos);
 			bool nextExists = true;
 			
@@ -241,7 +235,6 @@ namespace NHapi.Base.util
 				}
 				catch (HL7Exception e)
 				{
-					//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 					throw new System.ApplicationException("HL7Exception arising from bad index: " + e.Message);
 				}
 			}
@@ -359,7 +352,6 @@ namespace NHapi.Base.util
 					}
 					catch (HL7Exception e)
 					{
-						//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 						throw new System.ApplicationException("HL7Exception due to bad index: " + e.Message);
 					}
 				}
@@ -392,7 +384,6 @@ namespace NHapi.Base.util
 		}
 		
 		/// <summary>Not supported </summary>
-		//UPGRADE_NOTE: The equivalent of method 'java.util.Iterator.remove' is not an override method. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1143'"
 		public virtual void  remove()
 		{
 			throw new System.NotSupportedException("Can't remove a node from a message");
@@ -422,7 +413,6 @@ namespace NHapi.Base.util
 							if (child == reps[j])
 							{
 								index = new Index(names[i], j);
-								//UPGRADE_NOTE: Labeled break statement was changed to a goto statement. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1012'"
                                 break;
 							}
 						}
@@ -430,7 +420,6 @@ namespace NHapi.Base.util
 					catch (HL7Exception e)
 					{
 						log.error("", e);
-						//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 						throw new System.ApplicationException("Internal HL7Exception finding structure index: " + e.Message);
 					}
 				}
@@ -528,7 +517,6 @@ namespace NHapi.Base.util
 				return ret.ToString();
 			}
 		}
-		//UPGRADE_TODO: The following method was automatically generated and it must be implemented in order to preserve the class logic. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1232'"
 		virtual public void  Reset()
 		{
 		}

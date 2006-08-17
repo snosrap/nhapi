@@ -81,22 +81,13 @@ namespace NHapi.Base.Model
 			
 		}
 		
-		//UPGRADE_NOTE: Final was removed from the declaration of 'log '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
-		//UPGRADE_NOTE: The initialization of  'log' was moved to static method 'NHapi.Base.Model.AbstractGroup'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static readonly IHapiLog log;
-		
 		private List<string> names;
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private System.Collections.Hashtable structures;
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private System.Collections.Hashtable required;
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private System.Collections.Hashtable repeating;
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private System.Collections.Hashtable classes;
-		//protected Message message;
 		private IGroup parent;
-		//UPGRADE_NOTE: Final was removed from the declaration of 'myFactory '. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1003'"
 		private IModelClassFactory myFactory;
 		
 		/// <summary> This constructor should be used by implementing classes that do not 
@@ -128,13 +119,9 @@ namespace NHapi.Base.Model
 		private void  init()
 		{
 			names = new List<string>();
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			structures = new System.Collections.Hashtable();
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			required = new System.Collections.Hashtable();
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			repeating = new System.Collections.Hashtable();
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			classes = new System.Collections.Hashtable();
 		}
 		
@@ -158,7 +145,6 @@ namespace NHapi.Base.Model
 		/// </summary>
 		public virtual IStructure get_Renamed(System.String name, int rep)
 		{
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = structures[name];
 			if (o == null)
 				throw new HL7Exception(name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
@@ -174,13 +160,11 @@ namespace NHapi.Base.Model
 			else if (rep == list.Count)
 			{
 				//verify that Structure is repeating ... 
-				//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 				System.Boolean repeats = (System.Boolean) this.repeating[name];
 				if (!repeats && list.Count > 0)
 					throw new HL7Exception("Can't create repetition #" + rep + " of Structure " + name + " - this Structure is non-repeating", HL7Exception.APPLICATION_INTERNAL_ERROR);
 				
 				//create a new Structure, add it to the list, and return it
-				//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 				System.Type c = (System.Type) classes[name]; //get class 
 				ret = tryToInstantiateStructure(c, name);
 				list.Add(ret);
@@ -239,7 +223,6 @@ namespace NHapi.Base.Model
 		private bool nameExists(System.String name)
 		{
 			bool exists = false;
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = this.classes[name];
 			if (o != null)
 				exists = true;
@@ -279,12 +262,10 @@ namespace NHapi.Base.Model
 					}
 					catch (System.MethodAccessException)
 					{
-						//UPGRADE_TODO: Method 'java.lang.Class.newInstance' was converted to 'System.Activator.CreateInstance' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangClassnewInstance'"
 						o = System.Activator.CreateInstance(c);
 					}
 					if (!(o is IStructure))
 					{
-						//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 						throw new HL7Exception("Class " + c.FullName + " does not implement " + "ca.on.uhn.hl7.message.Structure", HL7Exception.APPLICATION_INTERNAL_ERROR);
 					}
 					s = (IStructure) o;
@@ -298,7 +279,6 @@ namespace NHapi.Base.Model
 				}
 				else
 				{
-					//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 					throw new HL7Exception("Can't instantiate class " + c.FullName, HL7Exception.APPLICATION_INTERNAL_ERROR, e);
 				}
 			}
@@ -308,7 +288,6 @@ namespace NHapi.Base.Model
 		/// <summary> Returns true if the named structure is required. </summary>
 		public virtual bool isRequired(System.String name)
 		{
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = required[name];
 			if (o == null)
 				throw new HL7Exception("The structure " + name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
@@ -319,7 +298,6 @@ namespace NHapi.Base.Model
 		/// <summary> Returns true if the named structure is required. </summary>
 		public virtual bool isRepeating(System.String name)
 		{
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = repeating[name];
 			if (o == null)
 				throw new HL7Exception("The structure " + name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
@@ -330,7 +308,6 @@ namespace NHapi.Base.Model
 		/// <summary> Returns the number of existing repetitions of the named structure.</summary>
 		public virtual int currentReps(System.String name)
 		{
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = structures[name];
 			if (o == null)
 				throw new HL7Exception("The structure " + name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
@@ -347,7 +324,6 @@ namespace NHapi.Base.Model
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
 		public virtual IStructure[] getAll(System.String name)
 		{
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			System.Object o = structures[name];
 			if (o == null)
 				throw new HL7Exception("The structure " + name + " does not exist in the group " + this.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR);
@@ -363,7 +339,6 @@ namespace NHapi.Base.Model
 		/// <summary> Returns the Class of the Structure at the given name index.  </summary>
 		public virtual System.Type getClass(System.String name)
 		{
-			//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 			return (System.Type) classes[name];
 		}
 		
@@ -378,7 +353,6 @@ namespace NHapi.Base.Model
 		//returns a name for a class of a Structure in this Message  
 		private System.String getName(System.Type c)
 		{
-			//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 			System.String fullName = c.FullName;
 			int dotLoc = fullName.LastIndexOf('.');
 			System.String name = fullName.Substring(dotLoc + 1, (fullName.Length) - (dotLoc + 1));
@@ -404,8 +378,6 @@ namespace NHapi.Base.Model
 		/// </summary>
 		private System.String insert(System.Type c, bool required, bool repeating, int index, System.String name)
 		{
-			//tryToInstantiateStructure(c, name);   //may throw exception
-			
 			//see if there is already something by this name and make a new name if necessary ... 
 			if (nameExists(name))
 			{

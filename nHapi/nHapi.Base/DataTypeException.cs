@@ -40,7 +40,6 @@ namespace NHapi.Base
 		/// </param>
 		/// <param name="cause">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public DataTypeException(System.String message, int errorCondition, System.Exception cause):base(message, errorCondition, cause)
 		{
 		}
@@ -57,21 +56,10 @@ namespace NHapi.Base
 		/// </param>
 		/// <param name="cause">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public DataTypeException(System.String message, System.Exception cause):base(message, cause)
 		{
 		}
-		
-		/// <param name="message">
-		/// </param>
-		/// <param name="cause">
-		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
-        //UPGARDE_NOTE: base exception does not offer just an Exception constructor
-        //public DataTypeException(System.Exception cause):base(cause)
-        //{
-        //}
-		
+			
 		
 		/// <param name="message">
 		/// </param>

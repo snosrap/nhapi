@@ -86,10 +86,8 @@ namespace NHapi.Base.util
 		/// </summary>
 		private bool setNextObject()
 		{
-			//UPGRADE_TODO: Method 'java.util.Iterator.hasNext' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratorhasNext'"
 			while (iter.MoveNext())
 			{
-				//UPGRADE_TODO: Method 'java.util.Iterator.next' was converted to 'System.Collections.IEnumerator.Current' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratornext'"
 				System.Object object_Renamed = iter.Current;
 				if (predicate.evaluate(object_Renamed))
 				{
@@ -102,7 +100,6 @@ namespace NHapi.Base.util
 		}
 		
 		/// <summary>Throws UnsupportedOperationException </summary>
-		//UPGRADE_NOTE: The equivalent of method 'java.util.Iterator.remove' is not an override method. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1143'"
 		public virtual void  remove()
 		{
 			throw new System.NotSupportedException();
@@ -112,7 +109,6 @@ namespace NHapi.Base.util
 		{
 			bool evaluate(System.Object obj);
 		}
-		//UPGRADE_TODO: The following method was automatically generated and it must be implemented in order to preserve the class logic. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1232'"
 		virtual public void  Reset()
 		{
 		}

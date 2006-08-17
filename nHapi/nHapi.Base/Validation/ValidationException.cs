@@ -38,18 +38,10 @@ namespace NHapi.Base.validation
 		/// </param>
 		/// <param name="cause">
 		/// </param>
-		//UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
 		public ValidationException(System.String message, System.Exception cause):base(message, cause)
 		{
 		}
 		
-        //UPGRADE_NOTE: Base exception doesn't support this constructor.
-        ///// <param name="cause">
-        ///// </param>
-        ////UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1100'"
-        //public ValidationException(System.Exception cause):base(cause)
-        //{
-        //}
 		
 		/// <summary> Constructs an instance of <code>ValidationException</code> with the specified detail message.</summary>
 		/// <param name="msg">the detail message.

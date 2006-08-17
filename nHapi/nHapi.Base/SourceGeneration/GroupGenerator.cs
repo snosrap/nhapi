@@ -76,9 +76,6 @@ namespace NHapi.Base.SourceGeneration
             System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Group");
 
             GroupDef group = getGroupDef(structures, groupName, baseDirectory, version, message);
-            //UPGRADE_WARNING: At least one expression was used more than once in the target code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1181'"
-            //UPGRADE_TODO: Constructor 'java.io.FileWriter.FileWriter' was converted to 'System.IO.StreamWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileWriterFileWriter_javalangString_boolean'"
-            //UPGRADE_TODO: Class 'java.io.FileWriter' was converted to 'System.IO.StreamWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileWriter'"
             using (System.IO.StreamWriter out_Renamed = new System.IO.StreamWriter(targetDir.FullName + "/" + group.Name + ".cs"))
             {
                 out_Renamed.Write(makePreamble(group, version));
@@ -168,8 +165,6 @@ namespace NHapi.Base.SourceGeneration
             }
             catch (System.ArgumentException e)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Class.getName' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
                 throw new HL7Exception("Problem creating nested group: " + e.GetType().FullName + ": " + e.Message, HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
 
@@ -255,7 +250,6 @@ namespace NHapi.Base.SourceGeneration
         /// <summary> Returns source code for the contructor for this Group class. </summary>
         public static System.String makeConstructor(GroupDef group, System.String version)
         {
-            //UPGRADE_ISSUE: Method 'java.lang.System.getProperty' was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1000_javalangSystem'"
             bool useFactory = NHapi.Base.Properties.Settings.UseFactory;
 
             System.Text.StringBuilder source = new System.Text.StringBuilder();
