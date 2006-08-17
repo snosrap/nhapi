@@ -324,7 +324,7 @@ namespace NHapi.Base.Sourcegen
         private static System.String makeComposite(System.String dataType, System.String description, System.String[] dataTypes, System.String[] descriptions, int[] tables, System.String version)
         {
             System.Text.StringBuilder source = new System.Text.StringBuilder();
-            source.Append("using System;");
+            source.Append("using System;\r\n");
             source.Append("using NHapi.Base.Model;\r\n");
             source.Append("using NHapi.Base.Log;\r\n\r\n");
             source.Append("using NHapi.Base.Model.Primitive;\r\n\r\n");

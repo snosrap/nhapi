@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ca.uhn.hl7v2.sourcegen;
+using NHapi.Base.Sourcegen;
 
 namespace ModelGenerator
 {
