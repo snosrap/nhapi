@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("nHapi.Base")]
+[assembly: AssemblyTitle("NHapi.Base")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EMCMP")]
-[assembly: AssemblyProduct("nHapi.Base")]
+[assembly: AssemblyProduct("NHapi.Base")]
 [assembly: AssemblyCopyright("Copyright © EMCMP 2006")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
