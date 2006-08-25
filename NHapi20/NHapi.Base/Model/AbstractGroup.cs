@@ -138,9 +138,9 @@ namespace NHapi.Base.Model
 		/// repetition is returned.  Creates the Structure if necessary.  
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		public virtual IStructure getStructure(System.String name)
+		public virtual IStructure GetStructure(System.String name)
 		{
-            return getStructure(name, 0);
+            return GetStructure(name, 0);
 		}
 		
 		/// <summary> Returns a particular repetition of the named Structure. If the given repetition
@@ -152,7 +152,7 @@ namespace NHapi.Base.Model
 		/// or if the given repetition number is more than one greater than the 
 		/// existing number of repetitions.  
 		/// </summary>
-        public virtual IStructure getStructure(System.String name, int rep)
+        public virtual IStructure GetStructure(System.String name, int rep)
 		{
             AbstractGroupItem item = GetGroupItem(name);
 
@@ -319,7 +319,7 @@ namespace NHapi.Base.Model
 		}
 		
 		/// <summary> Returns true if the named structure is required. </summary>
-		public virtual bool isRequired(System.String name)
+		public virtual bool IsRequired(System.String name)
 		{
             AbstractGroupItem item = GetGroupItem(name);
 			if (item == null)
@@ -328,7 +328,7 @@ namespace NHapi.Base.Model
 		}
 		
 		/// <summary> Returns true if the named structure is required. </summary>
-		public virtual bool isRepeating(System.String name)
+		public virtual bool IsRepeating(System.String name)
 		{
             AbstractGroupItem item = GetGroupItem(name);
             if (item == null)
@@ -352,7 +352,7 @@ namespace NHapi.Base.Model
 		/// yet using the get(...) methods. 
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		public virtual IStructure[] getAll(System.String name)
+		public virtual IStructure[] GetAll(System.String name)
 		{
             AbstractGroupItem item = GetGroupItem(name);
             if (item == null)
@@ -366,7 +366,7 @@ namespace NHapi.Base.Model
 		}
 		
 		/// <summary> Returns the Class of the Structure at the given name index.  </summary>
-		public virtual System.Type getClass(System.String name)
+		public virtual System.Type GetClass(System.String name)
 		{
             AbstractGroupItem item = GetGroupItem(name);
             return item.ClassType;

@@ -94,13 +94,13 @@ namespace NHapi.Base.util
 		/// </param>
 		public static void  copy(ISegment from, ISegment to)
 		{
-			int n = from.numFields();
+			int n = from.NumFields();
 			for (int i = 1; i <= n; i++)
 			{
-				IType[] reps = from.getField(i);
+				IType[] reps = from.GetField(i);
 				for (int j = 0; j < reps.Length; j++)
 				{
-					copy(reps[j], to.getField(i, j));
+					copy(reps[j], to.GetField(i, j));
 				}
 			}
 		}

@@ -107,7 +107,7 @@ namespace NHapi.Base.util
 					throw new HL7Exception("Pointer is at root of navigator: there is no current child");
 				
 				System.String childName = this.childNames[this.currentChild];
-				return this.currentGroup.getAll(childName);
+				return this.currentGroup.GetAll(childName);
 			}
 			
 		}
@@ -140,7 +140,7 @@ namespace NHapi.Base.util
 		{
 			if (childNumber != - 1)
 			{
-                IStructure s = currentGroup.getStructure(childNames[childNumber], rep);
+                IStructure s = currentGroup.GetStructure(childNames[childNumber], rep);
 				if (!(s is IGroup))
 				{
 					throw new HL7Exception("Can't drill into segment", HL7Exception.APPLICATION_INTERNAL_ERROR);
@@ -245,7 +245,7 @@ namespace NHapi.Base.util
 			if (this.currentChild != - 1)
 			{
 				System.String childName = this.childNames[this.currentChild];
-                ret = this.currentGroup.getStructure(childName, rep);
+                ret = this.currentGroup.GetStructure(childName, rep);
 			}
 			else
 			{
@@ -275,7 +275,7 @@ namespace NHapi.Base.util
 			}
 			else
 			{
-                start = (this.currentGroup.getStructure(this.childNames[this.currentChild]));
+                start = (this.currentGroup.GetStructure(this.childNames[this.currentChild]));
 			}
 			
 			//using a non-existent direction and not allowing segment creation means that only
@@ -359,7 +359,7 @@ namespace NHapi.Base.util
 			if (this.currentChild == - 1)
 				this.currentChild = 0;
 			
-			System.Type c = this.currentGroup.getClass(this.childNames[this.currentChild]);
+			System.Type c = this.currentGroup.GetClass(this.childNames[this.currentChild]);
 			if (typeof(IGroup).IsAssignableFrom(c))
 			{
 				drillDown(this.currentChild, 0);

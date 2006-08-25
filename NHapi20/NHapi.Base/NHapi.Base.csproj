@@ -41,6 +41,7 @@
     <Compile Include="Model\AbstractMessage.cs" />
     <Compile Include="Model\AbstractPrimitive.cs" />
     <Compile Include="Model\AbstractSegment.cs" />
+    <Compile Include="Model\AbstractSegmentItem.cs" />
     <Compile Include="Model\AbstractType.cs" />
     <Compile Include="Model\IComposite.cs" />
     <Compile Include="DataTypeException.cs" />

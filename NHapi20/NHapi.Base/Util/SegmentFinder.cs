@@ -108,7 +108,7 @@ namespace NHapi.Base.util
 		/// </param>
 		public virtual ISegment getSegment(System.String namePattern, int rep)
 		{
-			IStructure s = getStructure(namePattern, rep);
+			IStructure s = GetStructure(namePattern, rep);
 			if (!typeof(ISegment).IsAssignableFrom(s.GetType()))
 			{
 				throw new HL7Exception(s.getName() + " is not a segment", HL7Exception.APPLICATION_INTERNAL_ERROR);
@@ -119,7 +119,7 @@ namespace NHapi.Base.util
 		/// <summary> As getSegment() but will only return a group.</summary>
 		public virtual IGroup getGroup(System.String namePattern, int rep)
 		{
-			IStructure s = getStructure(namePattern, rep);
+			IStructure s = GetStructure(namePattern, rep);
 			if (!typeof(IGroup).IsAssignableFrom(s.GetType()))
 			{
 				throw new HL7Exception(s.getName() + " is not a group", HL7Exception.APPLICATION_INTERNAL_ERROR);
@@ -127,7 +127,7 @@ namespace NHapi.Base.util
 			return (IGroup) s;
 		}
 		
-		private IStructure getStructure(System.String namePattern, int rep)
+		private IStructure GetStructure(System.String namePattern, int rep)
 		{
 			IStructure s = null;
 			

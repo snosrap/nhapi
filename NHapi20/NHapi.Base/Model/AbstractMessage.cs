@@ -43,7 +43,7 @@ namespace NHapi.Base.Model
 			
 		}
 		/// <summary> Returns the version number.  This default implementation inspects 
-		/// this.getClass().getName().  This should be overridden if you are putting
+		/// this.GetClass().getName().  This should be overridden if you are putting
 		/// a custom message definition in your own package, or it will default.  
 		/// </summary>
 		/// <seealso cref="Message.getVersion()">

@@ -54,13 +54,13 @@ namespace NHapi.Base.Model
 		/// yet using the get(...) methods. 
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		IStructure[] getAll(System.String name);
+		IStructure[] GetAll(System.String name);
 		
 		/// <summary> Returns the named structure.  If this Structure is repeating then the first 
 		/// repetition is returned.  Creates the Structure if necessary.  
 		/// </summary>
 		/// <throws>  HL7Exception if the named Structure is not part of this Group.  </throws>
-		IStructure getStructure(System.String name);
+		IStructure GetStructure(System.String name);
 		
 		/// <summary> Returns a particular repetition of the named Structure. If the given repetition
 		/// number is one greater than the existing number of repetitions then a new  
@@ -71,16 +71,16 @@ namespace NHapi.Base.Model
 		/// or if the given repetition number is more than one greater than the 
 		/// existing number of repetitions.  
 		/// </summary>
-        IStructure getStructure(System.String name, int rep);
+        IStructure GetStructure(System.String name, int rep);
 		
 		/// <summary> Returns true if the named structure is required. </summary>
-		bool isRequired(System.String name);
+		bool IsRequired(System.String name);
 		
 		/// <summary> Returns true if the named structure is repeating. </summary>
-		bool isRepeating(System.String name);
+		bool IsRepeating(System.String name);
 		
 		/// <summary> Returns the Class of the Structure at the given name index.  </summary>
-		System.Type getClass(System.String name);
+		System.Type GetClass(System.String name);
 		
 		/// <summary> Expands the group by introducing a new child Structure (i.e. 
 		/// a new Segment or Group).  This method is used to support handling 

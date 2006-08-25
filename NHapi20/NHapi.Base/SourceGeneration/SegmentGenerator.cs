@@ -350,7 +350,7 @@ namespace NHapi.Base.SourceGeneration
                         source.Append(type);
                         source.Append(" ret = null;\r\n");
                         source.Append("\t\t\ttry\n\t\t\t{\r\n");
-                        source.Append("\t\t\tIType t = this.getField(");
+                        source.Append("\t\t\tIType t = this.GetField(");
                         source.Append(se.field);
                         source.Append(", ");
                         if (se.repetitions == 1)
@@ -402,7 +402,7 @@ namespace NHapi.Base.SourceGeneration
                             source.Append(type);
                             source.Append("[] ret = null;\r\n");
                             source.Append("    try {\r\n");
-                            source.Append("        IType[] t = this.getField(");
+                            source.Append("        IType[] t = this.GetField(");
                             source.Append(se.field);
                             source.Append(");  \r\n");
                             source.Append("        ret = new ");

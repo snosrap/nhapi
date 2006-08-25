@@ -380,7 +380,7 @@ namespace NHapi.Base.SourceGeneration
             source.Append("\t   try {\r\n");
             source.Append("\t      ret = (");
             source.Append(def.Name);
-            source.Append(")this.getStructure(\"");
+            source.Append(")this.GetStructure(\"");
             source.Append(getterName);
             source.Append("\");\r\n");
             source.Append("\t   } catch(HL7Exception e) {\r\n");
@@ -412,7 +412,7 @@ namespace NHapi.Base.SourceGeneration
                 source.Append("(int rep) { \r\n");
                 source.Append("\t   return (");
                 source.Append(def.Name);
-                source.Append(")this.getStructure(\"");
+                source.Append(")this.GetStructure(\"");
                 source.Append(getterName);
                 source.Append("\", rep);\r\n");
                 source.Append("\t}\r\n\r\n");
@@ -429,7 +429,7 @@ namespace NHapi.Base.SourceGeneration
                 source.Append("get{\r\n");
                 source.Append("\t    int reps = -1; \r\n");
                 source.Append("\t    try { \r\n");
-                source.Append("\t        reps = this.getAll(\"");
+                source.Append("\t        reps = this.GetAll(\"");
                 source.Append(getterName);
                 source.Append("\").Length; \r\n");
                 source.Append("\t    } catch (HL7Exception e) { \r\n");

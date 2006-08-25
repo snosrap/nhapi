@@ -200,12 +200,12 @@ namespace NHapi.Base.Parser
 		/// <throws>  EncodingNotSupportedException </throws>
 		public virtual System.String getMessageStructure(System.String message)
 		{
-			return getStructure(message).messageStructure;
+			return GetStructure(message).messageStructure;
 		}
 		
 		/// <returns>s the message structure from MSH-9-3
 		/// </returns>
-		private MessageStructure getStructure(System.String message)
+		private MessageStructure GetStructure(System.String message)
 		{
 			EncodingCharacters ec = getEncodingChars(message);
 			System.String messageStructure = null;
@@ -276,7 +276,7 @@ namespace NHapi.Base.Parser
 		{
 			
 			//try to instantiate a message object of the right class
-			MessageStructure structure = getStructure(message);
+			MessageStructure structure = GetStructure(message);
 			IMessage m = instantiateMessage(structure.messageStructure, version, structure.explicitlyDefined);
 			
 			//MessagePointer ptr = new MessagePointer(this, m, getEncodingChars(message));
@@ -354,9 +354,9 @@ namespace NHapi.Base.Parser
 						statusMessage.Append(" repetition ");
 						statusMessage.Append(j);
 						log.debug(statusMessage.ToString());
-						//parse(destination.getField(i + fieldOffset, j), reps[j], encodingChars, false);
+						//parse(destination.GetField(i + fieldOffset, j), reps[j], encodingChars, false);
 						
-						IType field = destination.getField(i + fieldOffset, j);
+						IType field = destination.GetField(i + fieldOffset, j);
 						if (isMSH2)
 						{
 							Terser.getPrimitive(field, 1, 1).Value = reps[j];
@@ -564,7 +564,7 @@ namespace NHapi.Base.Parser
 		protected internal override System.String doEncode(IMessage source)
 		{
 			//get encoding characters ...
-            ISegment msh = (ISegment)source.getStructure("MSH");
+            ISegment msh = (ISegment)source.GetStructure("MSH");
 			System.String fieldSepString = Terser.Get(msh, 1, 0, 1, 1);
 			
 			if (fieldSepString == null)
@@ -597,7 +597,7 @@ namespace NHapi.Base.Parser
 			System.String[] names = source.Names;
 			for (int i = 0; i < names.Length; i++)
 			{
-				IStructure[] reps = source.getAll(names[i]);
+				IStructure[] reps = source.GetAll(names[i]);
 				for (int rep = 0; rep < reps.Length; rep++)
 				{
 					if (reps[rep] is IGroup)
@@ -630,12 +630,12 @@ namespace NHapi.Base.Parser
 				startAt = 2;
 			
 			//loop through fields; for every field delimit any repetitions and add field delimiter after ...
-			int numFields = source.numFields();
+			int numFields = source.NumFields();
 			for (int i = startAt; i <= numFields; i++)
 			{
 				try
 				{
-					IType[] reps = source.getField(i);
+					IType[] reps = source.GetField(i);
 					for (int j = 0; j < reps.Length; j++)
 					{
 						System.String fieldText = encode(reps[j], encodingChars);

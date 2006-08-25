@@ -118,7 +118,7 @@ namespace NHapi.Base.util
 		/// <summary> Returns the Primitive object at the given location.</summary>
 		private static IPrimitive getPrimitive(ISegment segment, int field, int rep, int component, int subcomponent)
 		{
-			IType type = segment.getField(field, rep);
+			IType type = segment.GetField(field, rep);
 			return getPrimitive(type, component, subcomponent);
 		}
 		
@@ -391,7 +391,7 @@ namespace NHapi.Base.util
 		/// may have different extra components.
 		/// </summary>
 		/*public static int numComponents(Type field) throws HL7Exception {
-		return numComponents(seg.getField(field, rep));
+		return numComponents(seg.GetField(field, rep));
 		}*/
 		
 		/// <summary> Returns the number of sub-components in the specified component, i.e. 
@@ -417,12 +417,12 @@ namespace NHapi.Base.util
 			}
 			return n;
 			/*
-			//Type t = seg.getField(field, rep);
-			if (Varies.class.isAssignableFrom(type.getClass())) {
+			//Type t = seg.GetField(field, rep);
+			if (Varies.class.isAssignableFrom(type.GetClass())) {
 			return numSubComponents(((Varies) type).getData(), component);
-			} else if (Primitive.class.isAssignableFrom(type.getClass()) && component == 1) {
+			} else if (Primitive.class.isAssignableFrom(type.GetClass()) && component == 1) {
 			n = 1;  
-			} else if (Composite.class.isAssignableFrom(type.getClass()) && component <= numStandardComponents(t)) {
+			} else if (Composite.class.isAssignableFrom(type.GetClass()) && component <= numStandardComponents(t)) {
 			n = numComponents(((Composite) type).getComponent(component - 1));
 			} else { //we're being asked about subcomponents of an extra component
 			n = numComponents(t.getExtraComponents().getComponent(component - numStandardComponents(t) - 1));

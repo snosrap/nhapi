@@ -36,14 +36,14 @@ namespace NHapi.Base.Model
 		/// non-repeating fields, and >1 for repeating fields.  Fields are numbered from 1.
 		/// </summary>
 		/// <throws>  HL7Exception if field index is out of range. </throws>
-		IType[] getField(int number);
+		IType[] GetField(int number);
 		
 		/// <summary> Returns a specific repetition of field at the specified index.  If there exist 
 		/// fewer repetitions than are required, the number of repetitions can be increased 
 		/// by specifying the lowest repetition that does not yet exist.  For example 
 		/// if there are two repetitions but three are needed, the third can be created
 		/// and accessed using the following code: <br>
-		/// <code>Type t = getField(x, 2);</code>
+		/// <code>Type t = GetField(x, 2);</code>
 		/// </summary>
 		/// <param name="number">the field number 
 		/// </param>
@@ -54,26 +54,26 @@ namespace NHapi.Base.Model
 		/// NOTE: to facilitate local extensions, no exception is thrown if 
 		/// rep > max cardinality 
 		/// </summary>
-		IType  getField(int number, int rep);
+		IType  GetField(int number, int rep);
 		
 		/// <summary> Returns true if the field at the given index is required, false otherwise.</summary>
 		/// <throws>  HL7Exception if field index is out of range. </throws>
-		bool isRequired(int number);
+		bool IsRequired(int number);
 		
 		/// <summary> Returns the maximum length of the field at the given index, in characters.</summary>
 		/// <throws>  HL7Exception if field index is out of range. </throws>
-		int getLength(int number);
+		int GetLength(int number);
 		
 		/// <summary> Returns the maximum number of repetitions of this field that are allowed.  
 		/// The current cardinality can be obtained by checking the length 
-		/// of the array returned by getLength(n).  
+		/// of the array returned by GetLength(n).  
 		/// </summary>
 		/// <throws>  HL7Exception if field index is out of range. </throws>
-		int getMaxCardinality(int number);
+		int GetMaxCardinality(int number);
 		
 		/// <summary> Returns the number of fields defined by this segment (repeating 
 		/// fields are not counted multiple times).  
 		/// </summary>
-		int numFields();
+		int NumFields();
 	}
 }

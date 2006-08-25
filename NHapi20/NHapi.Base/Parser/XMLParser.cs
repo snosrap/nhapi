@@ -284,7 +284,7 @@ namespace NHapi.Base.Parser
 		{
 			SupportClass.HashSetSupport done = new SupportClass.HashSetSupport();
 			
-			//        for (int i = 1; i <= segmentObject.numFields(); i++) {
+			//        for (int i = 1; i <= segmentObject.NumFields(); i++) {
 			//            String elementName = makeElementName(segmentObject, i);
 			//            done.add(elementName);
 			//            parseReps(segmentObject, segmentElement, elementName, i);
@@ -326,7 +326,7 @@ namespace NHapi.Base.Parser
 			System.Xml.XmlNodeList reps = segmentElement.GetElementsByTagName(fieldName);
 			for (int i = 0; i < reps.Count; i++)
 			{
-				parse(segmentObject.getField(fieldNum, i), (System.Xml.XmlElement) reps.Item(i));
+				parse(segmentObject.GetField(fieldNum, i), (System.Xml.XmlElement) reps.Item(i));
 			}
 		}
 		
@@ -337,11 +337,11 @@ namespace NHapi.Base.Parser
 		public virtual bool encode(ISegment segmentObject, System.Xml.XmlElement segmentElement)
 		{
 			bool hasValue = false;
-			int n = segmentObject.numFields();
+			int n = segmentObject.NumFields();
 			for (int i = 1; i <= n; i++)
 			{
 				System.String name = makeElementName(segmentObject, i);
-				IType[] reps = segmentObject.getField(i);
+				IType[] reps = segmentObject.GetField(i);
 				for (int j = 0; j < reps.Length; j++)
 				{
 					System.Xml.XmlElement newNode = segmentElement.OwnerDocument.CreateElement(name);
@@ -779,7 +779,7 @@ namespace NHapi.Base.Parser
 				System.String[] structNames = mess.Names;
 				for (int i = 0; i < structNames.Length; i++)
 				{
-					IStructure[] reps = mess.getAll(structNames[i]);
+					IStructure[] reps = mess.GetAll(structNames[i]);
 					for (int j = 0; j < reps.Length; j++)
 					{
 						if (typeof(ISegment).IsAssignableFrom(reps[j].GetType()))

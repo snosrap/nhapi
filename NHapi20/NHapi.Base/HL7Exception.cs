@@ -210,7 +210,7 @@ namespace NHapi.Base
 			if (!errorSegment.getName().Equals("ERR"))
 				throw new HL7Exception("Can only populate an ERR segment with an exception -- got: " + errorSegment.GetType().FullName);
 			
-			int rep = errorSegment.getField(1).Length; //append after existing reps
+			int rep = errorSegment.GetField(1).Length; //append after existing reps
 			
 			if (this.SegmentName != null)
 				Terser.Set(errorSegment, 1, rep, 1, 1, this.SegmentName);

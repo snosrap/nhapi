@@ -131,8 +131,8 @@ namespace NHapi.Base.Model
 			try
 			{
 				//get unqualified class name
-				IPrimitive obx2 = (IPrimitive) segment.getField(2, 0);
-				Varies v = (Varies) segment.getField(5, 0);
+				IPrimitive obx2 = (IPrimitive) segment.GetField(2, 0);
+				Varies v = (Varies) segment.GetField(5, 0);
 				
 				if (obx2.Value == null)
 				{

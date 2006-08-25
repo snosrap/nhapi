@@ -70,7 +70,7 @@ namespace NHapi.Base.Parser
 			{
 				for (int i = 0; i < childNames.Length; i++)
 				{
-					IStructure[] reps = groupObject.getAll(childNames[i]);
+					IStructure[] reps = groupObject.GetAll(childNames[i]);
 					for (int j = 0; j < reps.Length; j++)
 					{
 						System.Xml.XmlElement childElement = groupElement.OwnerDocument.CreateElement(makeGroupElementName(messageName, childNames[i]));
@@ -164,18 +164,18 @@ namespace NHapi.Base.Parser
 			System.Collections.IList reps = getChildElementsByTagName(groupElement, makeGroupElementName(messageName, childName));
 			log.debug("# of elements matching " + makeGroupElementName(messageName, childName) + ": " + reps.Count);
 			
-			if (groupObject.isRepeating(childIndexName))
+			if (groupObject.IsRepeating(childIndexName))
 			{
 				for (int i = 0; i < reps.Count; i++)
 				{
-                    parseRep((System.Xml.XmlElement)reps[i], groupObject.getStructure(childIndexName, i));
+                    parseRep((System.Xml.XmlElement)reps[i], groupObject.GetStructure(childIndexName, i));
 				}
 			}
 			else
 			{
 				if (reps.Count > 0)
 				{
-                    parseRep((System.Xml.XmlElement)reps[0], groupObject.getStructure(childIndexName, 0));
+                    parseRep((System.Xml.XmlElement)reps[0], groupObject.GetStructure(childIndexName, 0));
 				}
 				
 				if (reps.Count > 1)
@@ -183,7 +183,7 @@ namespace NHapi.Base.Parser
 					System.String newIndexName = groupObject.addNonstandardSegment(childName);
 					for (int i = 1; i < reps.Count; i++)
 					{
-						parseRep((System.Xml.XmlElement) reps[i], groupObject.getStructure(newIndexName, i - 1));
+						parseRep((System.Xml.XmlElement) reps[i], groupObject.GetStructure(newIndexName, i - 1));
 					}
 				}
 			}
