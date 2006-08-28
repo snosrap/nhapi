@@ -128,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Parser\EventMap\2.1.properties" />
     <None Include="Parser\EventMap\2.2.properties" />
     <None Include="Parser\EventMap\2.3.1.properties" />

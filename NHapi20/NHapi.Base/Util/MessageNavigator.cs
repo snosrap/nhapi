@@ -77,6 +77,10 @@ namespace NHapi.Base.util
 				}
 			}
 		}
+
+        /// <summary>
+        /// THe root element of this message
+        /// </summary>
 		virtual public IGroup Root
 		{
 			get

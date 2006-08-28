@@ -104,7 +104,10 @@ namespace NHapi.Base.util
 		{
 			throw new System.NotSupportedException();
 		}
-		
+
+        /// <summary>
+        /// IPredicate interface
+        /// </summary>
 		public interface IPredicate
 		{
 			bool evaluate(System.Object obj);
