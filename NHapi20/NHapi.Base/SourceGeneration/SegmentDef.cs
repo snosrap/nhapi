@@ -22,98 +22,98 @@
 using System;
 namespace NHapi.Base.SourceGeneration
 {
-	
-	/// <summary> Information about a message segment used in the creation of 
-	/// source code for a Group class.  SegmentDef is a slight misnomer because this 
-	/// also includes group start/end indicators, with group names.  
-	/// 
-	/// </summary>
-	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
-	/// </author>
-	public class SegmentDef : IStructureDef
-	{
-		/// <returns> name of segment 
-		/// </returns>
-		virtual public System.String Name
-		{
-			get
-			{
-				System.String result = this.name;
-				if (result != null && result.Equals("?"))
-				{
-					result = "GenericSegment";
-				}
-				return result;
-			}
-			
-		}
-		/// <returns> name of group, if this is not really a segment but a group start indicator 
-		/// </returns>
-		virtual public System.String GroupName
-		{
-			get
-			{
-				return this.groupName;
-			}
-			
-		}
-		/// <summary> Returns true if this structure is required in the Group.  </summary>
-		virtual public bool Required
-		{
-			get
-			{
-				return this.required;
-			}
-			
-		}
-		/// <summary> Returns true if this structure can repeat in the Group.  </summary>
-		virtual public bool Repeating
-		{
-			get
-			{
-				return this.repeating;
-			}
-			
-		}
-		/// <summary> Returns a text description of the structure.</summary>
-		virtual public System.String Description
-		{
-			get
-			{
-				return this.description;
-			}
-			
-		}
-		/// <summary> Returns a list of the names of the segments that are children of this Structure.
-		/// If the structure is a Segment, a 1-element array is returned containing the segment
-		/// name.  If a Group, an array of all the segments in the Group, including those nested
-		/// in subgroups (depth first).  This method is used to support the XML SIG's convention
-		/// for deriving group names.
-		/// </summary>
-		virtual public System.String[] ChildSegments
-		{
-			get
-			{
-				System.String[] result = new System.String[]{Name};
-				return result;
-			}
-			
-		}
-		
-		private System.String name;
-		private System.String groupName;
-		private System.String description;
-		private bool required;
-		private bool repeating;
-		
-		/// <summary>Creates new SegmentDef </summary>
-		public SegmentDef(System.String name, System.String groupName, bool required, bool repeating, System.String description)
-		{
-			this.name = name;
-			this.groupName = groupName;
-			this.required = required;
-			this.repeating = repeating;
-			this.description = description;
-		}
-	}
+
+    /// <summary> Information about a message segment used in the creation of 
+    /// source code for a Group class.  SegmentDef is a slight misnomer because this 
+    /// also includes group start/end indicators, with group names.  
+    /// 
+    /// </summary>
+    /// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
+    /// </author>
+    public class SegmentDef : IStructureDef
+    {
+        /// <returns> name of segment 
+        /// </returns>
+        virtual public System.String Name
+        {
+            get
+            {
+                System.String result = this.name;
+                if (result != null && result.Equals("?"))
+                {
+                    result = "GenericSegment";
+                }
+                return result;
+            }
+
+        }
+        /// <returns> name of group, if this is not really a segment but a group start indicator 
+        /// </returns>
+        virtual public System.String GroupName
+        {
+            get
+            {
+                return this.groupName;
+            }
+
+        }
+        /// <summary> Returns true if this structure is required in the Group.  </summary>
+        virtual public bool Required
+        {
+            get
+            {
+                return this.required;
+            }
+
+        }
+        /// <summary> Returns true if this structure can repeat in the Group.  </summary>
+        virtual public bool Repeating
+        {
+            get
+            {
+                return this.repeating;
+            }
+
+        }
+        /// <summary> Returns a text description of the structure.</summary>
+        virtual public System.String Description
+        {
+            get
+            {
+                return this.description;
+            }
+
+        }
+        /// <summary> Returns a list of the names of the segments that are children of this Structure.
+        /// If the structure is a Segment, a 1-element array is returned containing the segment
+        /// name.  If a Group, an array of all the segments in the Group, including those nested
+        /// in subgroups (depth first).  This method is used to support the XML SIG's convention
+        /// for deriving group names.
+        /// </summary>
+        virtual public System.String[] ChildSegments
+        {
+            get
+            {
+                System.String[] result = new System.String[] { Name };
+                return result;
+            }
+
+        }
+
+        private System.String name;
+        private System.String groupName;
+        private System.String description;
+        private bool required;
+        private bool repeating;
+
+        /// <summary>Creates new SegmentDef </summary>
+        public SegmentDef(System.String name, System.String groupName, bool required, bool repeating, System.String description)
+        {
+            this.name = name;
+            this.groupName = groupName;
+            this.required = required;
+            this.repeating = repeating;
+            this.description = description;
+        }
+    }
 }

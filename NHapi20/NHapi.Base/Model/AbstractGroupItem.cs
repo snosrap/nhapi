@@ -5,6 +5,9 @@ using NHapi.Base.Model;
 
 namespace NHapi.Base.Model
 {
+    /// <summary>
+    /// Abstract group item
+    /// </summary>
     public class AbstractGroupItem
     {
         private string _name;
@@ -13,6 +16,13 @@ namespace NHapi.Base.Model
         private bool _isRepeating = false;
         private System.Type _class;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="required"></param>
+        /// <param name="repeating"></param>
+        /// <param name="classType"></param>
         public AbstractGroupItem(string name, bool required, bool repeating, System.Type classType)
         {
             _name = name;
@@ -21,27 +31,41 @@ namespace NHapi.Base.Model
             _class = classType;
         }
 
-
+        /// <summary>
+        /// Name of the item
+        /// </summary>
         public string Name
         {
             get { return _name; }
         }
 
+        /// <summary>
+        /// The type of class
+        /// </summary>
         public System.Type ClassType
         {
             get { return _class; }
         }
 
+        /// <summary>
+        /// Is item repeating
+        /// </summary>
         public bool IsRepeating
         {
             get { return _isRepeating; }
         }
 
+        /// <summary>
+        /// Is item required
+        /// </summary>
         public bool IsRequired
         {
             get { return _isRequired; }
         }
 
+        /// <summary>
+        /// The structures of the group item
+        /// </summary>
         public List<IStructure> Structures
         {
             get
@@ -50,6 +74,11 @@ namespace NHapi.Base.Model
             }
         }
 
+        /// <summary>
+        /// Structure indexer
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public IStructure this[int index]
         {
             get

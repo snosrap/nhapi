@@ -26,67 +26,70 @@
 using System;
 namespace NHapi.Base.Model
 {
-	
-	/// <summary> This class is used to provide utility functions for other datatype classes and methods.</summary>
-	
-	public class DataTypeUtil
-	{
-		/// <summary> This method will return a signed four digit integer indicating the local
-		/// GMT offset. This is the HL7 Offset format in integer representation.
-		/// </summary>
-		public static int LocalGMTOffset
-		{
-			get
-			{
-				int offSet;
-				System.Globalization.GregorianCalendar currentTime = new System.Globalization.GregorianCalendar();
-				int gmtOffSet = SupportClass.CalendarManager.manager.Get(currentTime, SupportClass.CalendarManager.ZONE_OFFSET);
 
-				int offSetSignInt;
-				if (gmtOffSet < 0)
-				{
-					offSetSignInt = - 1;
-				}
-				else
-				{
-					offSetSignInt = 1;
-				}
-				//get the absolute value of the gmtOffSet
-				int absGmtOffSet = System.Math.Abs(gmtOffSet);
-				int gmtOffSetHours = absGmtOffSet / (3600 * 1000);
-				int gmtOffSetMin = (absGmtOffSet / 60000) % (60);
-				//return the offset value HL7 format
-				offSet = ((gmtOffSetHours * 100) + gmtOffSetMin) * offSetSignInt;
-				return offSet;
-			}
-			
-			
-		}
-		
-		public DataTypeUtil()
-		{
-		} //end zero arg constructor
-		
-		
-		/// <summary> This method will preappend the zeros to the beginning of num such that the total length
-		/// equals totalDigitLength. It will also return the string representation of the new number.
-		/// </summary>
-		public static System.String preAppendZeroes(int num, int totalDigitLength)
-		{
-			/* preappend the zeros to the beginning of num such that the total length
-			equals totalDigitLength. Return the string representation of the new number*/
-			System.String a = System.Convert.ToString(num);
-			if (a.Length >= totalDigitLength)
-				return a;
-			else
-			{
-				int preAppendAmnt = totalDigitLength - a.Length;
-				for (int j = 0; j < preAppendAmnt; j++)
-				{
-					a = "0" + a;
-				} //end for
-				return a;
-			} //end else
-		} 
-	} //end class
+    /// <summary> This class is used to provide utility functions for other datatype classes and methods.</summary>
+
+    public class DataTypeUtil
+    {
+        /// <summary> This method will return a signed four digit integer indicating the local
+        /// GMT offset. This is the HL7 Offset format in integer representation.
+        /// </summary>
+        public static int LocalGMTOffset
+        {
+            get
+            {
+                int offSet;
+                System.Globalization.GregorianCalendar currentTime = new System.Globalization.GregorianCalendar();
+                int gmtOffSet = SupportClass.CalendarManager.manager.Get(currentTime, SupportClass.CalendarManager.ZONE_OFFSET);
+
+                int offSetSignInt;
+                if (gmtOffSet < 0)
+                {
+                    offSetSignInt = -1;
+                }
+                else
+                {
+                    offSetSignInt = 1;
+                }
+                //get the absolute value of the gmtOffSet
+                int absGmtOffSet = System.Math.Abs(gmtOffSet);
+                int gmtOffSetHours = absGmtOffSet / (3600 * 1000);
+                int gmtOffSetMin = (absGmtOffSet / 60000) % (60);
+                //return the offset value HL7 format
+                offSet = ((gmtOffSetHours * 100) + gmtOffSetMin) * offSetSignInt;
+                return offSet;
+            }
+
+
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public DataTypeUtil()
+        {
+        } //end zero arg constructor
+
+
+        /// <summary> This method will preappend the zeros to the beginning of num such that the total length
+        /// equals totalDigitLength. It will also return the string representation of the new number.
+        /// </summary>
+        public static System.String preAppendZeroes(int num, int totalDigitLength)
+        {
+            /* preappend the zeros to the beginning of num such that the total length
+            equals totalDigitLength. Return the string representation of the new number*/
+            System.String a = System.Convert.ToString(num);
+            if (a.Length >= totalDigitLength)
+                return a;
+            else
+            {
+                int preAppendAmnt = totalDigitLength - a.Length;
+                for (int j = 0; j < preAppendAmnt; j++)
+                {
+                    a = "0" + a;
+                } //end for
+                return a;
+            } //end else
+        }
+    } //end class
 }

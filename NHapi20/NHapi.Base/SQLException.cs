@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NHapi.Base
 {
-    
+
     [global::System.Serializable]
     public class SQLException : Exception
     {

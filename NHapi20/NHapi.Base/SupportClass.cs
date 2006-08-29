@@ -1562,7 +1562,7 @@ namespace NHapi.Base
         private XmlReader CreateXmlReader(System.IO.Stream stream, string URI)
         {
             parserFileName = null;
-            return CreateXmlReader(new System.Xml.XmlTextReader(URI,stream));
+            return CreateXmlReader(new System.Xml.XmlTextReader(URI, stream));
         }
 
 

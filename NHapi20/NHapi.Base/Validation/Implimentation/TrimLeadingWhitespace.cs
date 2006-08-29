@@ -22,62 +22,62 @@ using System;
 using NHapi.Base.validation;
 namespace NHapi.Base.validation.impl
 {
-	
-	/// <summary> Performs no validation but removes leading whitespace in the correct() method.
-	/// 
-	/// </summary>
-	/// <author>  <a href="mailto:bryan.tripp@uhn.on.ca">Bryan Tripp</a>
-	/// </author>
-	/// <version>  $Revision: 1.2 $ updated on $Date: 2005/06/14 20:16:01 $ by $Author: bryan_tripp $
-	/// </version>
-	public class TrimLeadingWhitespace : IPrimitiveTypeRule
-	{
+
+    /// <summary> Performs no validation but removes leading whitespace in the correct() method.
+    /// 
+    /// </summary>
+    /// <author>  <a href="mailto:bryan.tripp@uhn.on.ca">Bryan Tripp</a>
+    /// </author>
+    /// <version>  $Revision: 1.2 $ updated on $Date: 2005/06/14 20:16:01 $ by $Author: bryan_tripp $
+    /// </version>
+    public class TrimLeadingWhitespace : IPrimitiveTypeRule
+    {
         /// <summary>
         /// Description of the rule
         /// </summary>
-		virtual public System.String Description
-		{
-			get
-			{
-				return "Leading whitespace removed";
-			}
-			
-		}
+        virtual public System.String Description
+        {
+            get
+            {
+                return "Leading whitespace removed";
+            }
+
+        }
 
         /// <summary>
         /// Section reference
         /// </summary>
-		virtual public System.String SectionReference
-		{
-			get
-			{
-				return null;
-			}
-			
-		}
-		
-		/// <summary> Removes leading whitespace.</summary>
-		public virtual System.String correct(System.String value_Renamed)
-		{
-			System.String trmValue = null;
-			if (value_Renamed != null)
-			{
-				char[] stringChr = value_Renamed.ToCharArray();
-				for (int i = 0; i < stringChr.Length && trmValue == null; i++)
-				{
-					if (!System.Char.IsWhiteSpace(stringChr[i]))
-					{
-						trmValue = new System.String(stringChr, i, (stringChr.Length - i));
-					}
-				}
-			}
-			return trmValue;
-		}
-		
-		/// <summary> Returns true. </summary>
-		public virtual bool test(System.String value_Renamed)
-		{
-			return true;
-		}
-	}
+        virtual public System.String SectionReference
+        {
+            get
+            {
+                return null;
+            }
+
+        }
+
+        /// <summary> Removes leading whitespace.</summary>
+        public virtual System.String correct(System.String value_Renamed)
+        {
+            System.String trmValue = null;
+            if (value_Renamed != null)
+            {
+                char[] stringChr = value_Renamed.ToCharArray();
+                for (int i = 0; i < stringChr.Length && trmValue == null; i++)
+                {
+                    if (!System.Char.IsWhiteSpace(stringChr[i]))
+                    {
+                        trmValue = new System.String(stringChr, i, (stringChr.Length - i));
+                    }
+                }
+            }
+            return trmValue;
+        }
+
+        /// <summary> Returns true. </summary>
+        public virtual bool test(System.String value_Renamed)
+        {
+            return true;
+        }
+    }
 }

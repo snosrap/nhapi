@@ -29,18 +29,18 @@ using NHapi.Base.Log;
 
 namespace NHapi.Base.SourceGeneration
 {
-	
-	
-	/// <summary> This class is responsible for generating source code for HL7 segment objects.
-	/// Each automatically generated segment inherits from AbstractSegment.
-	/// 
-	/// </summary>
-	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
-	/// </author>
-	/// <author>  Eric Poiseau
-	/// </author>
-	public class SegmentGenerator:System.Object
-	{
+
+
+    /// <summary> This class is responsible for generating source code for HL7 segment objects.
+    /// Each automatically generated segment inherits from AbstractSegment.
+    /// 
+    /// </summary>
+    /// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
+    /// </author>
+    /// <author>  Eric Poiseau
+    /// </author>
+    public class SegmentGenerator : System.Object
+    {
         private static readonly IHapiLog log;
 
         /// <summary> <p>Creates skeletal source code (without correct data structure but no business
@@ -199,30 +199,31 @@ namespace NHapi.Base.SourceGeneration
                 source.Append("namespace ");
                 source.Append(SourceGenerator.getVersionPackageName(version));
                 source.Append("Segment{\r\n\r\n");
-                source.Append("/**\r\n");
-                source.Append(" * <p>Represents an HL7 ");
+                source.Append("///<summary>\r\n");
+                source.Append("/// Represents an HL7 ");
                 source.Append(name);
                 source.Append(" message segment. \r\n");
-                source.Append(" * This segment has the following fields:</p><p>\r\n");
+                source.Append("/// This segment has the following fields:\r\n");
                 for (int i = 0; i < elements.Count; i++)
                 {
                     se = (SegmentElement)elements[i];
+                    source.Append("///");
                     source.Append(" * ");
                     source.Append(name);
                     source.Append("-");
                     source.Append(se.field);
                     source.Append(": ");
-                    source.Append(se.desc);
+                    source.Append(se.GetDescriptionWithoutSpecialCharacters());
                     source.Append(" (");
                     source.Append(se.type);
-                    source.Append(")<br> \r\n");
+                    source.Append(")\r\n");
                 }
-                source.Append(" * </p><p>The get...() methods return data from individual fields.  These methods \r\n");
-                source.Append(" * do not throw exceptions and may therefore have to handle exceptions internally.  \r\n");
-                source.Append(" * If an exception is handled internally, it is logged and null is returned.  \r\n");
-                source.Append(" * This is not expected to happen - if it does happen this indicates not so much \r\n");
-                source.Append(" * an exceptional circumstance as a bug in the code for this class.</p>    \r\n");
-                source.Append(" */\r\n");
+                source.Append("/// The get...() methods return data from individual fields.  These methods \r\n");
+                source.Append("/// do not throw exceptions and may therefore have to handle exceptions internally.  \r\n");
+                source.Append("/// If an exception is handled internally, it is logged and null is returned.  \r\n");
+                source.Append("/// This is not expected to happen - if it does happen this indicates not so much \r\n");
+                source.Append("/// an exceptional circumstance as a bug in the code for this class.\r\n");
+                source.Append("///</summary>\r\n");
                 source.Append("[Serializable]\r\n");
                 source.Append("public class ");
                 source.Append(name);
@@ -321,11 +322,11 @@ namespace NHapi.Base.SourceGeneration
                     {
                         //some entries in 2.1 DB say "unused"
                         System.String type = SourceGenerator.getAlternateType(se.type, version);
-                        source.Append("\t/**\r\n");
-                        source.Append("\t* Returns ");
+                        source.Append("\t///<summary>\r\n");
+                        source.Append("\t/// Returns ");
                         if (se.repetitions != 1)
                             source.Append("a single repetition of ");
-                        source.Append(se.desc);
+                        source.Append(se.GetDescriptionWithoutSpecialCharacters());
                         source.Append("(");
                         source.Append(name);
                         source.Append("-");
@@ -333,10 +334,10 @@ namespace NHapi.Base.SourceGeneration
                         source.Append(").\r\n");
                         if (se.repetitions != 1)
                         {
-                            source.Append("\t* @param rep the repetition number (this is a repeating field)\r\n");
-                            source.Append("\t* @throws HL7Exception if the repetition number is invalid.\r\n");
+                            source.Append("\t/// throws HL7Exception if the repetition number is invalid.\r\n");
+                            source.Append("\t/// <param name=\"rep\">The repetition number (this is a repeating field)</param>\r\n");
                         }
-                        source.Append("\t*/\r\n");
+                        source.Append("\t///</summary>\r\n");
                         source.Append("\tpublic ");
                         source.Append(type);
                         source.Append(" ");
@@ -384,15 +385,15 @@ namespace NHapi.Base.SourceGeneration
                         //add an array accessor as well for repeating fields
                         if (se.repetitions != 1)
                         {
-                            source.Append("  /**\r\n");
-                            source.Append("   * Returns all repetitions of ");
-                            source.Append(se.desc);
+                            source.Append("  ///<summary>\r\n");
+                            source.Append("  /// Returns all repetitions of ");
+                            source.Append(se.GetDescriptionWithoutSpecialCharacters());
                             source.Append(" (");
                             source.Append(name);
                             source.Append("-");
                             source.Append(se.field);
                             source.Append(").\r\n");
-                            source.Append("   */\r\n");
+                            source.Append("   ///</summary>\r\n");
                             source.Append("  public ");
                             source.Append(type);
                             source.Append("[] ");
@@ -439,9 +440,10 @@ namespace NHapi.Base.SourceGeneration
             return source.ToString();
         }
 
-
-
-
+        /// <summary>
+        /// Main class
+        /// </summary>
+        /// <param name="args"></param>
         [STAThread]
         public static void Main(System.String[] args)
         {

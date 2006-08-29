@@ -27,21 +27,21 @@ using NHapi.Base.Model;
 
 namespace NHapi.Base.Model.Primitive
 {
-	
-	/// <summary> Represents an HL7 timestamp, which is related to the HL7 TS type.  In version 2.5, 
-	/// TS is a composite type.  The first component is type DTM, which corresponds to this class
-	/// (actually Model.v25.datatype.DTM inherits from this class at time of writing).  In HL7 versions 
-	/// 2.2-2.4, it wasn't perfectly clear whether TS was composite or primitive.  HAPI interprets  
-	/// it as composite, with the first component having a type that isn't defined by HL7, and we call 
-	/// this type TSComponentOne.  In v2.1, TS is primitive, and corresponds one-to-one with this class.   
-	/// 
-	/// </summary>
-	/// <author>  <a href="mailto:neal.acharya@uhn.on.ca">Neal Acharya</a>
-	/// </author>
-	/// <author>  <a href="mailto:bryan.tripp@uhn.on.ca">Bryan Tripp</a>
-	/// </author>
-	/// <version>  $Revision: 1.4 $ updated on $Date: 2005/06/14 20:09:39 $ by $Author: bryan_tripp $
-	/// </version>
+
+    /// <summary> Represents an HL7 timestamp, which is related to the HL7 TS type.  In version 2.5, 
+    /// TS is a composite type.  The first component is type DTM, which corresponds to this class
+    /// (actually Model.v25.datatype.DTM inherits from this class at time of writing).  In HL7 versions 
+    /// 2.2-2.4, it wasn't perfectly clear whether TS was composite or primitive.  HAPI interprets  
+    /// it as composite, with the first component having a type that isn't defined by HL7, and we call 
+    /// this type TSComponentOne.  In v2.1, TS is primitive, and corresponds one-to-one with this class.   
+    /// 
+    /// </summary>
+    /// <author>  <a href="mailto:neal.acharya@uhn.on.ca">Neal Acharya</a>
+    /// </author>
+    /// <author>  <a href="mailto:bryan.tripp@uhn.on.ca">Bryan Tripp</a>
+    /// </author>
+    /// <version>  $Revision: 1.4 $ updated on $Date: 2005/06/14 20:09:39 $ by $Author: bryan_tripp $
+    /// </version>
     public class TSComponentOne : AbstractPrimitive
     {
         private CommonTS Detail
@@ -211,7 +211,7 @@ namespace NHapi.Base.Model.Primitive
 
         private CommonTS myDetail;
 
-         /// <param name="theMessage">message to which this Type belongs
+        /// <param name="theMessage">message to which this Type belongs
         /// </param>
         public TSComponentOne(IMessage theMessage)
             : base(theMessage)

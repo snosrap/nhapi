@@ -1,4 +1,4 @@
-/// <summary>The contents of this file are subject to the Mozilla Public License Version 1.1 
+/*The contents of this file are subject to the Mozilla Public License Version 1.1 
 /// (the "License"); you may not use this file except in compliance with the License. 
 /// You may obtain a copy of the License at http://www.mozilla.org/MPL/ 
 /// Software distributed under the License is distributed on an "AS IS" basis, 
@@ -18,53 +18,57 @@
 /// and replace  them with the notice and other provisions required by the GPL License.  
 /// If you do not delete the provisions above, a recipient may use your version of 
 /// this file under either the MPL or the GPL. 
-/// </summary>
+*/
 using System;
 
 namespace NHapi.Base
 {
-	
-	/// <summary> Represents a problem with the validity of a data type, such as an attempt 
-	/// to set the value of a primitive type to something invalid for that type. 
-	/// </summary>
-	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
-	/// </author>
-	[Serializable]
-	public class DataTypeException:HL7Exception
-	{
-		
-		
-		/// <param name="message">
-		/// </param>
-		/// <param name="errorCondition">
-		/// </param>
-		/// <param name="cause">
-		/// </param>
-		public DataTypeException(System.String message, int errorCondition, System.Exception cause):base(message, errorCondition, cause)
-		{
-		}
-		
-		/// <param name="message">
-		/// </param>
-		/// <param name="errorCondition">
-		/// </param>
-		public DataTypeException(System.String message, int errorCondition):base(message, errorCondition)
-		{
-		}
-		
-		/// <param name="message">
-		/// </param>
-		/// <param name="cause">
-		/// </param>
-		public DataTypeException(System.String message, System.Exception cause):base(message, cause)
-		{
-		}
-			
-		
-		/// <param name="message">
-		/// </param>
-		public DataTypeException(System.String message):base(message)
-		{
-		}
-	}
+
+    /// <summary> Represents a problem with the validity of a data type, such as an attempt 
+    /// to set the value of a primitive type to something invalid for that type. 
+    /// </summary>
+    /// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
+    /// </author>
+    [Serializable]
+    public class DataTypeException : HL7Exception
+    {
+
+
+        /// <param name="message">
+        /// </param>
+        /// <param name="errorCondition">
+        /// </param>
+        /// <param name="cause">
+        /// </param>
+        public DataTypeException(System.String message, int errorCondition, System.Exception cause)
+            : base(message, errorCondition, cause)
+        {
+        }
+
+        /// <param name="message">
+        /// </param>
+        /// <param name="errorCondition">
+        /// </param>
+        public DataTypeException(System.String message, int errorCondition)
+            : base(message, errorCondition)
+        {
+        }
+
+        /// <param name="message">
+        /// </param>
+        /// <param name="cause">
+        /// </param>
+        public DataTypeException(System.String message, System.Exception cause)
+            : base(message, cause)
+        {
+        }
+
+
+        /// <param name="message">
+        /// </param>
+        public DataTypeException(System.String message)
+            : base(message)
+        {
+        }
+    }
 }

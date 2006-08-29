@@ -21,16 +21,17 @@
 using System;
 namespace NHapi.Base
 {
-	
-	/// <summary> Thrown when a lookup table is not known to a TableRepository. </summary>
-	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
-	/// </author>
-	[Serializable]
-	public class UndefinedTableException:UnknownValueException
-	{
-		
-		public UndefinedTableException(System.String message):base(message)
-		{
-		}
-	}
+
+    /// <summary> Thrown when a lookup table is not known to a TableRepository. </summary>
+    /// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
+    /// </author>
+    [Serializable]
+    public class UndefinedTableException : UnknownValueException
+    {
+
+        public UndefinedTableException(System.String message)
+            : base(message)
+        {
+        }
+    }
 }

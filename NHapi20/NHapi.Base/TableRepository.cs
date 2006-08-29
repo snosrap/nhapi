@@ -21,68 +21,68 @@
 using System;
 namespace NHapi.Base
 {
-	
-	/// <summary> A place where table keys and values are stored.  This may be implemented
-	/// with a database, an LDAP directory, local RAM, etc.  At a minimum, any
-	/// underlying repository must supply the values for standard HL7 tables.
-	/// Site-defined tables may also be supported.
-	/// </summary>
-	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
-	/// </author>
-	public abstract class TableRepository
-	{
-		/// <summary> Returns a TableRepository object.</summary>
-		public static TableRepository Instance
-		{
-			get
-			{
-				if (rep == null)
-				{
-					//currently using DBTableRepository ... 
-					rep = new DBTableRepository();
-				}
-				
-				return rep;
-			}
-			
-		}
-		/// <summary> Returns a list of HL7 tables.  </summary>
-		public abstract int[] Tables{get;}
+
+    /// <summary> A place where table keys and values are stored.  This may be implemented
+    /// with a database, an LDAP directory, local RAM, etc.  At a minimum, any
+    /// underlying repository must supply the values for standard HL7 tables.
+    /// Site-defined tables may also be supported.
+    /// </summary>
+    /// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
+    /// </author>
+    public abstract class TableRepository
+    {
+        /// <summary> Returns a TableRepository object.</summary>
+        public static TableRepository Instance
+        {
+            get
+            {
+                if (rep == null)
+                {
+                    //currently using DBTableRepository ... 
+                    rep = new DBTableRepository();
+                }
+
+                return rep;
+            }
+
+        }
+        /// <summary> Returns a list of HL7 tables.  </summary>
+        public abstract int[] Tables { get;}
+
+        private static TableRepository rep = null;
+
+        /// <summary> Returns true if the given value exists in the given table.</summary>
+        public abstract bool checkValue(int table, System.String value_Renamed);
+
+        /// <summary> Returns a list of the values in the given table. </summary>
+        public abstract System.String[] getValues(int table);
+
+        /// <summary> Returns the value corresponding to the given table and key.</summary>
+        /// <throws>  UnknownValueException if the value can not be found.  This may be an UnknownTableException.   </throws>
+        public abstract System.String getDescription(int table, System.String value_Renamed);
+
+        //test
+        /*
+        public static void main(String[] args) {
 		
-		private static TableRepository rep = null;
+        if (args.length != 2) {
+        System.out.println("Usage: TableRepository table value");
+        System.exit(1);
+        }
+        int table = Integer.parseInt(args[0]);
+        String value = args[1];
 		
-		/// <summary> Returns true if the given value exists in the given table.</summary>
-		public abstract bool checkValue(int table, System.String value_Renamed);
-		
-		/// <summary> Returns a list of the values in the given table. </summary>
-		public abstract System.String[] getValues(int table);
-		
-		/// <summary> Returns the value corresponding to the given table and key.</summary>
-		/// <throws>  UnknownValueException if the value can not be found.  This may be an UnknownTableException.   </throws>
-		public abstract System.String getDescription(int table, System.String value_Renamed);
-		
-		//test
-		/*
-		public static void main(String[] args) {
-		
-		if (args.length != 2) {
-		System.out.println("Usage: TableRepository table value");
-		System.exit(1);
-		}
-		int table = Integer.parseInt(args[0]);
-		String value = args[1];
-		
-		try {
-		//needed by normative DB ... 
-		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-		System.setProperty("ca.on.uhn.hl7.database.url", "jdbc:odbc:hl7");
-		System.out.println("Description: " + TableRepository.getInstance().getDescription(table, value));
-		} catch (UnknownValueException e) {
-		e.printStackTrace();
-		Log.tryToLog(e, "");
-		} catch (ClassNotFoundException cne) {
-		cne.printStackTrace();
-		}
-		}*/
-	}
+        try {
+        //needed by normative DB ... 
+        Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+        System.setProperty("ca.on.uhn.hl7.database.url", "jdbc:odbc:hl7");
+        System.out.println("Description: " + TableRepository.getInstance().getDescription(table, value));
+        } catch (UnknownValueException e) {
+        e.printStackTrace();
+        Log.tryToLog(e, "");
+        } catch (ClassNotFoundException cne) {
+        cne.printStackTrace();
+        }
+        }*/
+    }
 }

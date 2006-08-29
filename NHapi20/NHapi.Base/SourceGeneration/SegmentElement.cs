@@ -21,21 +21,21 @@
 using System;
 namespace NHapi.Base.SourceGeneration
 {
-	
-	/// <summary> A structure for storing a single data element of a segment ... </summary>
-	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
-	/// </author>
-	class SegmentElement
-	{
-		
-		public int field;
-		public System.String rep;
-		public int repetitions;
-		public System.String desc;
-		public int length;
-		public int table;
-		public System.String opt;
-		public System.String type;
+
+    /// <summary> A structure for storing a single data element of a segment ... </summary>
+    /// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
+    /// </author>
+    class SegmentElement
+    {
+
+        public int field;
+        public System.String rep;
+        public int repetitions;
+        public System.String desc;
+        public int length;
+        public int table;
+        public System.String opt;
+        public System.String type;
 
 
         virtual public string GetDescriptionWithoutSpecialCharacters()
@@ -43,12 +43,13 @@ namespace NHapi.Base.SourceGeneration
             string desc = this.desc;
             desc = desc.Replace('\n', ' ');
             desc = desc.Replace('\"', '\'');
+            desc = desc.Replace("&", "and");
             return desc;
         }
 
-		/// <summary>Creates new SegmentElement </summary>
-		public SegmentElement()
-		{
-		}
-	}
+        /// <summary>Creates new SegmentElement </summary>
+        public SegmentElement()
+        {
+        }
+    }
 }

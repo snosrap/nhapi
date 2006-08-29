@@ -26,44 +26,44 @@ using NHapi.Base.Log;
 
 namespace NHapi.Base.SourceGeneration
 {
-	
-	/// <summary> Creates source code for Group classes - these are aggregations of 
-	/// segments and/or other groups that may repeat together within a message.
-	/// Source code is generated from the normative database.  
-	/// 
-	/// </summary>
-	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
-	/// </author>
-	/// <author>  Eric Poiseau
-	/// </author>
-	public class GroupGenerator:System.Object
-	{
-		private static readonly IHapiLog log;
+
+    /// <summary> Creates source code for Group classes - these are aggregations of 
+    /// segments and/or other groups that may repeat together within a message.
+    /// Source code is generated from the normative database.  
+    /// 
+    /// </summary>
+    /// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
+    /// </author>
+    /// <author>  Eric Poiseau
+    /// </author>
+    public class GroupGenerator : System.Object
+    {
+        private static readonly IHapiLog log;
 
         /// <summary>Creates new GroupGenerator </summary>
         public GroupGenerator()
         {
         }
 
-        /// <summary> <p>Creates source code for a Group and returns a GroupDef object that 
+        /// <summary> Creates source code for a Group and returns a GroupDef object that 
         /// describes the Group's name, optionality, repeatability.  The source 
-        /// code is written under the given directory.</p>  
-        /// <p>The structures list may contain [] and {} pairs representing 
+        /// code is written under the given directory.
+        /// The structures list may contain [] and {} pairs representing 
         /// nested groups and their optionality and repeastability.  In these cases
-        /// this method is called recursively.</p>
-        /// <p>If the given structures list begins and ends with repetition and/or 
+        /// this method is called recursively.
+        /// If the given structures list begins and ends with repetition and/or 
         /// optionality markers the repetition and optionality of the returned 
-        /// GroupDef are set accordingly.</p>  
-        /// </summary>
+        /// GroupDef are set accordingly.  
         /// <param name="structures">a list of the structures that comprise this group - must 
         /// be at least 2 long
         /// </param>
+        /// <param name="groupName">The group name</param>
+        /// <param name="version">The version of message</param>
         /// <param name="baseDirectory">the directory to which files should be written
         /// </param>
         /// <param name="message">the message to which this group belongs
         /// </param>
         /// <throws>  HL7Exception if the repetition and optionality markers are not  </throws>
-        /// <summary>      properly nested.  
         /// </summary>
         public static GroupDef writeGroup(IStructureDef[] structures, System.String groupName, System.String baseDirectory, System.String version, System.String message)
         {
@@ -226,19 +226,19 @@ namespace NHapi.Base.SourceGeneration
             preamble.Append("using ");
             preamble.Append(SourceGenerator.getVersionPackageName(version));
             preamble.Append("Segment;\r\n\r\n");
-            preamble.Append("using NHapi.Base.Model;\r\n");
-            preamble.Append("/**\r\n");
-            preamble.Append(" * <p>Represents the ");
-            preamble.Append(group.Name);
-            preamble.Append(" Group.  A Group is an ordered collection of message \r\n");
-            preamble.Append(" * segments that can repeat together or be optionally in/excluded together.\r\n");
-            preamble.Append(" * This Group contains the following elements: </p>\r\n");
-            preamble.Append(makeElementsDoc(group.Structures));
-            preamble.Append(" */\r\n");
+            preamble.Append("using NHapi.Base.Model;\r\n\r\n");
             preamble.Append("namespace ");
             preamble.Append(SourceGenerator.getVersionPackageName(version));
             preamble.Append("Group\n");
             preamble.Append("{\r\n");
+            preamble.Append("///<summary>\r\n");
+            preamble.Append("///Represents the ");
+            preamble.Append(group.Name);
+            preamble.Append(" Group.  A Group is an ordered collection of message \r\n");
+            preamble.Append("/// segments that can repeat together or be optionally in/excluded together.\r\n");
+            preamble.Append("/// This Group contains the following elements: \r\n");
+            preamble.Append(makeElementsDoc(group.Structures));
+            preamble.Append("///</summary>\r\n");
             preamble.Append("[Serializable]\r\n");
             preamble.Append("public class ");
             preamble.Append(group.Name);
@@ -254,11 +254,11 @@ namespace NHapi.Base.SourceGeneration
 
             System.Text.StringBuilder source = new System.Text.StringBuilder();
 
-            source.Append("\t/** \r\n");
-            source.Append("\t * Creates a new ");
+            source.Append("\t///<summary> \r\n");
+            source.Append("\t/// Creates a new ");
             source.Append(group.Name);
             source.Append(" Group.\r\n");
-            source.Append("\t */\r\n");
+            source.Append("\t///</summary>\r\n");
             source.Append("\tpublic ");
             source.Append(group.Name);
             source.Append("(IGroup parent, IModelClassFactory factory) : base(parent, factory){\r\n");
@@ -316,18 +316,19 @@ namespace NHapi.Base.SourceGeneration
             for (int i = 0; i < structures.Length; i++)
             {
                 IStructureDef def = structures[i];
+                elements.Append("///");
                 elements.Append(" * ");
                 elements.Append(i);
                 elements.Append(": ");
                 elements.Append(def.Name);
                 elements.Append(" (");
                 elements.Append(def.Description);
-                elements.Append(") <b>");
+                elements.Append(") ");
                 if (!def.Required)
                     elements.Append("optional ");
                 if (def.Repeating)
                     elements.Append("repeating");
-                elements.Append("</b><br>\r\n");
+                elements.Append("\r\n");
             }
 
             return elements.ToString();
@@ -350,15 +351,15 @@ namespace NHapi.Base.SourceGeneration
             }
 
             //make accessor for first (or only) rep ... 
-            source.Append("\t/**\r\n");
-            source.Append("\t * Returns ");
+            source.Append("\t///<summary>\r\n");
+            source.Append("\t/// Returns ");
             if (def.Repeating)
                 source.Append(" first repetition of ");
             source.Append(indexName);
             source.Append(" (");
             source.Append(def.Description);
             source.Append(") - creates it if necessary\r\n");
-            source.Append("\t */\r\n");
+            source.Append("\t///</summary>\r\n");
             source.Append("\tpublic ");
             source.Append(def.Name);
             source.Append(" ");
@@ -395,16 +396,16 @@ namespace NHapi.Base.SourceGeneration
             if (def.Repeating)
             {
                 //make accessor for specific rep ... 
-                source.Append("\t/**\r\n");
-                source.Append("\t * Returns a specific repetition of ");
+                source.Append("\t///<summary>\r\n");
+                source.Append("\t///Returns a specific repetition of ");
                 source.Append(indexName);
                 source.Append("\r\n");
-                source.Append("\t * (");
+                source.Append("\t/// * (");
                 source.Append(def.Description);
                 source.Append(") - creates it if necessary\r\n");
-                source.Append("\t * throws HL7Exception if the repetition requested is more than one \r\n");
-                source.Append("\t *     greater than the number of existing repetitions.\r\n");
-                source.Append("\t */\r\n");
+                source.Append("\t/// throws HL7Exception if the repetition requested is more than one \r\n");
+                source.Append("\t///     greater than the number of existing repetitions.\r\n");
+                source.Append("\t///</summary>\r\n");
                 source.Append("\tpublic ");
                 source.Append(def.Name);
                 source.Append(" get");
@@ -522,5 +523,5 @@ namespace NHapi.Base.SourceGeneration
         {
             log = HapiLogFactory.getHapiLog(typeof(GroupGenerator));
         }
-	}
+    }
 }

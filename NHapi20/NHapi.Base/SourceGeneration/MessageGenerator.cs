@@ -31,15 +31,15 @@ using System.Data;
 
 namespace NHapi.Base.SourceGeneration
 {
-	
-	/// <summary> Creates source code for HL7 Message objects, using the normative DB.  HL7 Group
-	/// objects are also created as a byproduct.
-	/// 
-	/// </summary>
-	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
-	/// </author>
-	/// <author>  Eric Poiseau
-	/// </author>
+
+    /// <summary> Creates source code for HL7 Message objects, using the normative DB.  HL7 Group
+    /// objects are also created as a byproduct.
+    /// 
+    /// </summary>
+    /// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
+    /// </author>
+    /// <author>  Eric Poiseau
+    /// </author>
     public class MessageGenerator : System.Object
     {
 
@@ -223,19 +223,20 @@ namespace NHapi.Base.SourceGeneration
             preamble.Append("using NHapi.Base;\r\n");
             preamble.Append("using NHapi.Base.Parser;\r\n");
             preamble.Append("using NHapi.Base.Model;\r\n\r\n");
-            preamble.Append("/**\r\n");
-            preamble.Append(" * <p>Represents a ");
-            preamble.Append(message);
-            preamble.Append(" message structure (see chapter ");
-            preamble.Append(chapter);
-            preamble.Append("). This structure contains the \r\n");
-            preamble.Append(" * following elements: </p>\r\n");
-            preamble.Append(GroupGenerator.makeElementsDoc(contents));
-            preamble.Append(" */\r\n");
+
             preamble.Append("namespace ");
             preamble.Append(SourceGenerator.getVersionPackageName(version));
             preamble.Append("Message\r\n\r\n");
             preamble.Append("{\r\n");
+            preamble.Append("///<summary>\r\n");
+            preamble.Append("/// Represents a ");
+            preamble.Append(message);
+            preamble.Append(" message structure (see chapter ");
+            preamble.Append(chapter);
+            preamble.Append("). This structure contains the \r\n");
+            preamble.Append("/// following elements:\r\n");
+            preamble.Append(GroupGenerator.makeElementsDoc(contents));
+            preamble.Append("///</summary>\r\n");
             preamble.Append("[Serializable]\r\n");
             preamble.Append("public class ");
             preamble.Append(message);
@@ -260,26 +261,31 @@ namespace NHapi.Base.SourceGeneration
 
             System.Text.StringBuilder source = new System.Text.StringBuilder();
 
-            source.Append("\t/** \r\n");
-            source.Append("\t * Creates a new ");
+            source.Append("\t///<summary> \r\n");
+            source.Append("\t/// Creates a new ");
             source.Append(messageName);
             source.Append(" Group with custom IModelClassFactory.\r\n");
-            source.Append("\t */\r\n");
+            source.Append("\t///</summary>\r\n");
             source.Append("\tpublic ");
             source.Append(messageName);
             source.Append("(IModelClassFactory factory) : base(factory){\r\n");
             source.Append("\t   init(factory);\r\n");
             source.Append("\t}\r\n\r\n");
-            source.Append("\t/**\r\n");
-            source.Append("\t * Creates a new ");
+            source.Append("\t///<summary>\r\n");
+            source.Append("\t/// Creates a new ");
             source.Append(messageName);
             source.Append(" Group with DefaultModelClassFactory. \r\n");
-            source.Append("\t */ \r\n");
+            source.Append("\t///</summary> \r\n");
             source.Append("\tpublic ");
             source.Append(messageName);
             source.Append("() : base(new DefaultModelClassFactory()) { \r\n");
             source.Append("\t   init(new DefaultModelClassFactory());\r\n");
             source.Append("\t}\r\n\r\n");
+            source.Append("\t///<summary>\r\n");
+            source.Append("\t/// initalize method for ");
+            source.Append(messageName);
+            source.Append(".  This does the segment setup for the message. \r\n");
+            source.Append("\t///</summary> \r\n");
             source.Append("\tprivate void init(IModelClassFactory factory) {\r\n");
             source.Append("\t   try {\r\n");
             int numStructs = structs.Length;

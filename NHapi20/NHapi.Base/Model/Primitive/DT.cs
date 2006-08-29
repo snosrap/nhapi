@@ -27,118 +27,113 @@ using NHapi.Base.Model;
 
 namespace NHapi.Base.Model.Primitive
 {
-	
-	/// <summary> Represents an HL7 DT (date) datatype.   
-	/// 
-	/// </summary>
-	/// <author>  <a href="mailto:neal.acharya@uhn.on.ca">Neal Acharya</a>
-	/// </author>
-	/// <author>  <a href="mailto:bryan.tripp@uhn.on.ca">Bryan Tripp</a>
-	/// </author>
-	/// <version>  $Revision: 1.3 $ updated on $Date: 2005/06/08 00:28:25 $ by $Author: bryan_tripp $
-	/// </version>
-	public abstract class DT:AbstractPrimitive
-	{
-		private CommonDT Detail
-		{
-			get
-			{
-				if (myDetail == null)
-				{
-					myDetail = new CommonDT(Value);
-				}
-				return myDetail;
-			}
-			
-		}
-		/// <seealso cref="AbstractPrimitive.getValue">
-		/// </seealso>
-		/// <seealso cref="AbstractPrimitive.setValue(java.lang.String)">
-		/// </seealso>
-		/// <throws>  DataTypeException if the value is incorrectly formatted and either validation is  </throws>
-		/// <summary>      enabled for this primitive or detail setters / getters have been called, forcing further
-		/// parsing.   
-		/// </summary>
-		override public System.String Value
-		{
-			get
-			{
-				System.String result = base.Value;
-				
-				if (myDetail != null)
-				{
-					result = myDetail.Value;
-				}
-				
-				return result;
-			}
-			
-			set
-			{
-				base.Value = value;
-				
-				if (myDetail != null)
-				{
-					myDetail.Value = value;
-				}
-			}
-			
-		}
-		/// <seealso cref="CommonDT.setYearPrecision(int)">
-		/// </seealso>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int YearPrecision
-		{
-			set
-			{
-				Detail.YearPrecision = value;
-			}
-			
-		}
-		/// <summary> Returns the year as an integer.</summary>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int Year
-		{
-			get
-			{
-				return Detail.Year;
-			}
-			
-		}
-		/// <summary> Returns the month as an integer.</summary>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int Month
-		{
-			get
-			{
-				return Detail.Month;
-			}
-			
-		}
-		/// <summary> Returns the day as an integer.</summary>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int Day
-		{
-			get
-			{
-				return Detail.Day;
-			}
-			
-		}
-		
-		private CommonDT myDetail;
+
+    /// <summary> Represents an HL7 DT (date) datatype.   
+    /// 
+    /// </summary>
+    /// <author>  <a href="mailto:neal.acharya@uhn.on.ca">Neal Acharya</a>
+    /// </author>
+    /// <author>  <a href="mailto:bryan.tripp@uhn.on.ca">Bryan Tripp</a>
+    /// </author>
+    /// <version>  $Revision: 1.3 $ updated on $Date: 2005/06/08 00:28:25 $ by $Author: bryan_tripp $
+    /// </version>
+    public abstract class DT : AbstractPrimitive
+    {
+        private CommonDT Detail
+        {
+            get
+            {
+                if (myDetail == null)
+                {
+                    myDetail = new CommonDT(Value);
+                }
+                return myDetail;
+            }
+
+        }
+        /// <throws>  DataTypeException if the value is incorrectly formatted and either validation is  </throws>
+        /// <summary>      enabled for this primitive or detail setters / getters have been called, forcing further
+        /// parsing.   
+        /// </summary>
+        override public System.String Value
+        {
+            get
+            {
+                System.String result = base.Value;
+
+                if (myDetail != null)
+                {
+                    result = myDetail.Value;
+                }
+
+                return result;
+            }
+
+            set
+            {
+                base.Value = value;
+
+                if (myDetail != null)
+                {
+                    myDetail.Value = value;
+                }
+            }
+
+        }
+
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int YearPrecision
+        {
+            set
+            {
+                Detail.YearPrecision = value;
+            }
+
+        }
+        /// <summary> Returns the year as an integer.</summary>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int Year
+        {
+            get
+            {
+                return Detail.Year;
+            }
+
+        }
+        /// <summary> Returns the month as an integer.</summary>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int Month
+        {
+            get
+            {
+                return Detail.Month;
+            }
+
+        }
+        /// <summary> Returns the day as an integer.</summary>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int Day
+        {
+            get
+            {
+                return Detail.Day;
+            }
+
+        }
+
+        private CommonDT myDetail;
 
         /// <param name="theMessage">message to which this Type belongs
         /// </param>
@@ -148,31 +143,36 @@ namespace NHapi.Base.Model.Primitive
         }
 
 
+        /// <summary>
+        /// DT class
+        /// </summary>
+        /// <param name="theMessage"></param>
+        /// <param name="description"></param>
         public DT(IMessage theMessage, string description)
             : base(theMessage, description)
         {
         }
-		
-		/// <seealso cref="CommonDT.setYearMonthPrecision(int, int)">
-		/// </seealso>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		public virtual void  setYearMonthPrecision(int yr, int mnth)
-		{
-			Detail.setYearMonthPrecision(yr, mnth);
-		}
-		
-		/// <seealso cref="CommonDT.setYearMonthDayPrecision(int, int, int)">
-		/// </seealso>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		public virtual void  setYearMonthDayPrecision(int yr, int mnth, int dy)
-		{
-			Detail.setYearMonthDayPrecision(yr, mnth, dy);
-		}
-	}
+
+        /// <seealso cref="CommonDT.setYearMonthPrecision(int, int)">
+        /// </seealso>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        public virtual void setYearMonthPrecision(int yr, int mnth)
+        {
+            Detail.setYearMonthPrecision(yr, mnth);
+        }
+
+        /// <seealso cref="CommonDT.setYearMonthDayPrecision(int, int, int)">
+        /// </seealso>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        public virtual void setYearMonthDayPrecision(int yr, int mnth, int dy)
+        {
+            Detail.setYearMonthDayPrecision(yr, mnth, dy);
+        }
+    }
 }

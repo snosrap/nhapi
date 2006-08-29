@@ -27,160 +27,160 @@ using NHapi.Base.Model;
 
 namespace NHapi.Base.Model.Primitive
 {
-	
-	/// <summary> Represents an HL7 TM (time) datatype. 
-	/// 
-	/// </summary>
-	/// <author>  <a href="mailto:neal.acharya@uhn.on.ca">Neal Acharya</a>
-	/// </author>
-	/// <author>  <a href="mailto:bryan.tripp@uhn.on.ca">Bryan Tripp</a>
-	/// </author>
-	/// <version>  $Revision: 1.3 $ updated on $Date: 2005/06/08 00:28:25 $ by $Author: bryan_tripp $
-	/// </version>
-	public abstract class TM:AbstractPrimitive
-	{
-		private CommonTM Detail
-		{
-			get
-			{
-				if (myDetail == null)
-				{
-					myDetail = new CommonTM(Value);
-				}
-				return myDetail;
-			}
-			
-		}
-		/// <seealso cref="AbstractPrimitive.getValue">
-		/// </seealso>
-		/// <seealso cref="AbstractPrimitive.setValue(java.lang.String)">
-		/// </seealso>
-		/// <throws>  DataTypeException if the value is incorrectly formatted and either validation is  </throws>
-		/// <summary>      enabled for this primitive or detail setters / getters have been called, forcing further
-		/// parsing.   
-		/// </summary>
-		override public System.String Value
-		{
-			get
-			{
-				System.String result = base.Value;
-				
-				if (myDetail != null)
-				{
-					result = myDetail.Value;
-				}
-				
-				return result;
-			}
-			
-			set
-			{
-				base.Value = value;
-				
-				if (myDetail != null)
-				{
-					myDetail.Value = value;
-				}
-			}
-			
-		}
-		/// <seealso cref="CommonTM.setHourPrecision(int)">
-		/// </seealso>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int HourPrecision
-		{
-			set
-			{
-				Detail.HourPrecision = value;
-			}
-			
-		}
-		/// <seealso cref="CommonTM.setOffset(int)">
-		/// </seealso>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int Offset
-		{
-			set
-			{
-				Detail.Offset = value;
-			}
-			
-		}
-		/// <summary> Returns the hour as an integer.</summary>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int Hour
-		{
-			get
-			{
-				return Detail.Hour;
-			}
-			
-		}
-		/// <summary> Returns the minute as an integer.</summary>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int Minute
-		{
-			get
-			{
-				return Detail.Minute;
-			}
-			
-		}
-		/// <summary> Returns the second as an integer.</summary>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int Second
-		{
-			get
-			{
-				return Detail.Second;
-			}
-			
-		}
-		/// <summary> Returns the fractional second value as a float.</summary>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public float FractSecond
-		{
-			get
-			{
-				return Detail.FractSecond;
-			}
-			
-		}
-		/// <summary> Returns the GMT offset value as an integer.</summary>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		virtual public int GMTOffset
-		{
-			get
-			{
-				return Detail.GMTOffset;
-			}
-			
-		}
-		
-		private CommonTM myDetail;
-		
-		 /// <param name="theMessage">message to which this Type belongs
+
+    /// <summary> Represents an HL7 TM (time) datatype. 
+    /// 
+    /// </summary>
+    /// <author>  <a href="mailto:neal.acharya@uhn.on.ca">Neal Acharya</a>
+    /// </author>
+    /// <author>  <a href="mailto:bryan.tripp@uhn.on.ca">Bryan Tripp</a>
+    /// </author>
+    /// <version>  $Revision: 1.3 $ updated on $Date: 2005/06/08 00:28:25 $ by $Author: bryan_tripp $
+    /// </version>
+    public abstract class TM : AbstractPrimitive
+    {
+        private CommonTM Detail
+        {
+            get
+            {
+                if (myDetail == null)
+                {
+                    myDetail = new CommonTM(Value);
+                }
+                return myDetail;
+            }
+
+        }
+        /// <seealso cref="AbstractPrimitive.getValue">
+        /// </seealso>
+        /// <seealso cref="AbstractPrimitive.setValue(java.lang.String)">
+        /// </seealso>
+        /// <throws>  DataTypeException if the value is incorrectly formatted and either validation is  </throws>
+        /// <summary>      enabled for this primitive or detail setters / getters have been called, forcing further
+        /// parsing.   
+        /// </summary>
+        override public System.String Value
+        {
+            get
+            {
+                System.String result = base.Value;
+
+                if (myDetail != null)
+                {
+                    result = myDetail.Value;
+                }
+
+                return result;
+            }
+
+            set
+            {
+                base.Value = value;
+
+                if (myDetail != null)
+                {
+                    myDetail.Value = value;
+                }
+            }
+
+        }
+        /// <seealso cref="CommonTM.setHourPrecision(int)">
+        /// </seealso>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int HourPrecision
+        {
+            set
+            {
+                Detail.HourPrecision = value;
+            }
+
+        }
+        /// <seealso cref="CommonTM.setOffset(int)">
+        /// </seealso>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int Offset
+        {
+            set
+            {
+                Detail.Offset = value;
+            }
+
+        }
+        /// <summary> Returns the hour as an integer.</summary>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int Hour
+        {
+            get
+            {
+                return Detail.Hour;
+            }
+
+        }
+        /// <summary> Returns the minute as an integer.</summary>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int Minute
+        {
+            get
+            {
+                return Detail.Minute;
+            }
+
+        }
+        /// <summary> Returns the second as an integer.</summary>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int Second
+        {
+            get
+            {
+                return Detail.Second;
+            }
+
+        }
+        /// <summary> Returns the fractional second value as a float.</summary>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public float FractSecond
+        {
+            get
+            {
+                return Detail.FractSecond;
+            }
+
+        }
+        /// <summary> Returns the GMT offset value as an integer.</summary>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        virtual public int GMTOffset
+        {
+            get
+            {
+                return Detail.GMTOffset;
+            }
+
+        }
+
+        private CommonTM myDetail;
+
+        /// <param name="theMessage">message to which this Type belongs
         /// </param>
         public TM(IMessage theMessage)
             : base(theMessage)
@@ -192,27 +192,27 @@ namespace NHapi.Base.Model.Primitive
             : base(theMessage, description)
         {
         }
-		
-		/// <seealso cref="CommonTM.setHourMinutePrecision(int, int)">
-		/// </seealso>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		public virtual void  setHourMinutePrecision(int hr, int min)
-		{
-			Detail.setHourMinutePrecision(hr, min);
-		}
-		
-		/// <seealso cref="CommonTM.setHourMinSecondPrecision(int, int, float)">
-		/// </seealso>
-		/// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
-		/// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
-		/// this method is called.  
-		/// </summary>
-		public virtual void  setHourMinSecondPrecision(int hr, int min, float sec)
-		{
-			Detail.setHourMinSecondPrecision(hr, min, sec);
-		}
-	}
+
+        /// <seealso cref="CommonTM.setHourMinutePrecision(int, int)">
+        /// </seealso>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        public virtual void setHourMinutePrecision(int hr, int min)
+        {
+            Detail.setHourMinutePrecision(hr, min);
+        }
+
+        /// <seealso cref="CommonTM.setHourMinSecondPrecision(int, int, float)">
+        /// </seealso>
+        /// <throws>  DataTypeException if the value is incorrectly formatted.  If validation is enabled, this  </throws>
+        /// <summary>      exception should be thrown at setValue(), but if not, detailed parsing may be deferred until 
+        /// this method is called.  
+        /// </summary>
+        public virtual void setHourMinSecondPrecision(int hr, int min, float sec)
+        {
+            Detail.setHourMinSecondPrecision(hr, min, sec);
+        }
+    }
 }

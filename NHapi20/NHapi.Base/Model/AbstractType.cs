@@ -1,4 +1,4 @@
-/// <summary> The contents of this file are subject to the Mozilla Public License Version 1.1
+/* <summary> The contents of this file are subject to the Mozilla Public License Version 1.1
 /// (the "License"); you may not use this file except in compliance with the License.
 /// You may obtain a copy of the License at http://www.mozilla.org/MPL/
 /// Software distributed under the License is distributed on an "AS IS" basis,
@@ -23,7 +23,8 @@
 /// If you do not delete the provisions above, a recipient may use your version of
 /// this file under either the MPL or the GPL.
 /// 
-/// </summary>
+*/
+
 using System;
 namespace NHapi.Base.Model
 {
@@ -52,8 +53,10 @@ namespace NHapi.Base.Model
             }
 
         }
-        /// <seealso cref="Type.getExtraComponents">
-        /// </seealso>
+
+        /// <summary>
+        /// Extra components
+        /// </summary>
         virtual public ExtraComponents ExtraComponents
         {
             get
@@ -88,12 +91,14 @@ namespace NHapi.Base.Model
         /// <summary> Creates a new instance of AbstractType</summary>
         /// <param name="message">message to which this type belongs 
         /// </param>
-        public AbstractType(IMessage message) : this(message,null)
+        public AbstractType(IMessage message)
+            : this(message, null)
         {
         }
 
         /// <summary> Creates a new instance of AbstractType</summary>
         /// <param name="message">message to which this type belongs 
+        /// <param name="description">The type description</param>
         /// </param>
         public AbstractType(IMessage message, string description)
         {

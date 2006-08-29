@@ -155,7 +155,7 @@ namespace NHapi.Base.SourceGeneration
                 descriptions.Add(de);
                 tables.Add((System.Int32)ta);
             }
-            if (dataType.ToUpper().Equals("TS") && version != "2.5")
+            if (dataType.ToUpper().Equals("TS"))
             {
                 dataTypes[0] = "TSComponentOne";
             }
@@ -230,14 +230,14 @@ namespace NHapi.Base.SourceGeneration
             source.Append("Datatype\r\n");
             source.Append("{\r\n");
             source.Append("///<summary>\r\n");
-            source.Append("///<p>Represents the HL7 ");
+            source.Append("///Represents the HL7 ");
             source.Append(datatype);
             source.Append(" (");
             source.Append(description);
             source.Append(") datatype.  A ");
             source.Append(datatype);
             source.Append(" contains a single String value.\r\n");
-            source.Append("///<summary>\r\n");
+            source.Append("///</summary>\r\n");
             source.Append("[Serializable]\r\n");
             source.Append("public class ");
             source.Append(datatype);
@@ -249,12 +249,19 @@ namespace NHapi.Base.SourceGeneration
             source.Append(datatype);
             source.Append(".\r\n");
             source.Append("\t///<param name=\"message\">The Message to which this Type belongs</param>\r\n");
-            source.Append("\t///<summary>\r\n");
+            source.Append("\t///</summary>\r\n");
             source.Append("\tpublic ");
             source.Append(datatype);
             source.Append("(IMessage message) : base(message){\r\n");
             source.Append("\t}\r\n\r\n");
 
+            source.Append("\t///<summary>\r\n");
+            source.Append("\t///Constructs an uninitialized ");
+            source.Append(datatype);
+            source.Append(".\r\n");
+            source.Append("\t///<param name=\"message\">The Message to which this Type belongs</param>\r\n");
+            source.Append("\t///<param name=\"description\">The description of this type</param>\r\n");
+            source.Append("\t///</summary>\r\n");
             source.Append("\tpublic ");
             source.Append(datatype);
             source.Append("(IMessage message, string description) : base(message,description){\r\n");
@@ -302,7 +309,7 @@ namespace NHapi.Base.SourceGeneration
             for (int i = 0; i < dataTypes.Length; i++)
             {
                 source.Append("/// <li>");
-                source.Append(descriptions[i]);
+                source.Append(GetDescription(descriptions[i]));
                 source.Append(" (");
                 source.Append(dataTypes[i]);
                 source.Append(")</li>\r\n");
@@ -329,6 +336,7 @@ namespace NHapi.Base.SourceGeneration
             source.Append(dataType);
             source.Append(".\r\n");
             source.Append("\t/// <param name=\"message\">The Message to which this Type belongs</param>\r\n");
+            source.Append("\t/// <param name=\"description\">The description of this type</param>\r\n");
             source.Append("\t///</summary>\r\n");
             source.Append("\tpublic ");
             source.Append(dataType);
@@ -375,9 +383,9 @@ namespace NHapi.Base.SourceGeneration
             source.Append("\t///<summary>\r\n");
             source.Append("\t/// Returns an individual data component.\r\n");
             source.Append("\t/// @throws DataTypeException if the given element number is out of range.\r\n");
-            source.Append("\t///<param name=\"number\">The ordinal item to get</param>\r\n");
+            source.Append("\t///<param name=\"index\">The index item to get (zero based)</param>\r\n");
             source.Append("\t///<returns>The data component (as a type) at the requested number (ordinal)</returns>\r\n");
-            source.Append("\t///<summary>\r\n");
+            source.Append("\t///</summary>\r\n");
             source.Append("\tpublic IType this[int index] { \r\n\r\n");
             source.Append("get{\r\n");
             source.Append("\t\ttry { \r\n");
@@ -397,7 +405,7 @@ namespace NHapi.Base.SourceGeneration
                 System.String dtName = SourceGenerator.getAlternateType(dataTypes[i], version);
                 source.Append("\t///<summary>\r\n");
                 source.Append("\t/// Returns ");
-                source.Append(descriptions[i]);
+                source.Append(GetDescription(descriptions[i]));
                 source.Append(" (component #");
                 source.Append(i);
                 source.Append(").  This is a convenience method that saves you from \r\n");
@@ -432,6 +440,13 @@ namespace NHapi.Base.SourceGeneration
             source.Append("}");
 
             return source.ToString();
+        }
+
+        private static string GetDescription(string description)
+        {
+            string ret = description;
+            ret = ret.Replace("&", "and");
+            return ret;
         }
 
         //test

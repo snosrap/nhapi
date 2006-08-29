@@ -43,6 +43,9 @@
     <Compile Include="Model\AbstractSegment.cs" />
     <Compile Include="Model\AbstractSegmentItem.cs" />
     <Compile Include="Model\AbstractType.cs" />
+    <Compile Include="Model\Configuration\HL7PackageConfigurationElement.cs" />
+    <Compile Include="Model\Configuration\HL7PackageConfigurationElementCollection.cs" />
+    <Compile Include="Model\Configuration\HL7PackageConfigurationSection.cs" />
     <Compile Include="Model\IComposite.cs" />
     <Compile Include="DataTypeException.cs" />
     <Compile Include="Model\DataTypeUtil.cs" />

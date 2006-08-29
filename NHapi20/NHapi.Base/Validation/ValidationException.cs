@@ -21,33 +21,35 @@
 using System;
 namespace NHapi.Base.validation
 {
-	
-	/// <summary> A failure to validate against a rule.  </summary>
-	/// <author>  Bryan Tripp
-	/// </author>
-	[Serializable]
-	public class ValidationException:System.Exception
-	{
-		
-		/// <summary> Creates a new instance of <code>ValidationException</code> without detail message.</summary>
-		public ValidationException()
-		{
-		}
-		
-		/// <param name="message">
-		/// </param>
-		/// <param name="cause">
-		/// </param>
-		public ValidationException(System.String message, System.Exception cause):base(message, cause)
-		{
-		}
-		
-		
-		/// <summary> Constructs an instance of <code>ValidationException</code> with the specified detail message.</summary>
-		/// <param name="msg">the detail message.
-		/// </param>
-		public ValidationException(System.String msg):base(msg)
-		{
-		}
-	}
+
+    /// <summary> A failure to validate against a rule.  </summary>
+    /// <author>  Bryan Tripp
+    /// </author>
+    [Serializable]
+    public class ValidationException : System.Exception
+    {
+
+        /// <summary> Creates a new instance of <code>ValidationException</code> without detail message.</summary>
+        public ValidationException()
+        {
+        }
+
+        /// <param name="message">
+        /// </param>
+        /// <param name="cause">
+        /// </param>
+        public ValidationException(System.String message, System.Exception cause)
+            : base(message, cause)
+        {
+        }
+
+
+        /// <summary> Constructs an instance of <code>ValidationException</code> with the specified detail message.</summary>
+        /// <param name="msg">the detail message.
+        /// </param>
+        public ValidationException(System.String msg)
+            : base(msg)
+        {
+        }
+    }
 }

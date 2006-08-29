@@ -53,13 +53,15 @@ namespace NHapi.Base.SourceGeneration
             sb.Append("/// </summary>\n");
             sb.Append("public class " + dataType + ": " + baseClass + "\n");
             sb.Append("{\n");
-            sb.Append("/// <returns>2.3</returns>\n");
+            sb.Append("/// <summary>Return the version\n");
+            sb.Append("/// <returns>" + version + "</returns>\n");
+            sb.Append("///</summary>\r\n");
             sb.Append(@"
             virtual public System.String Version
             {
 			    get
 			    {
-				    return ""2.3"";
+				    return """ + version + @""";
 			    }
 		    }
             ");
@@ -68,13 +70,21 @@ namespace NHapi.Base.SourceGeneration
             {
                 sb.Append("\n\n");
                 sb.Append(@"
+                ///<summary>Construct the type
                 ///<param name=""theMessage"">message to which this Type belongs</param>
+                ///<param name=""theTable"">The table which this type belongs</param>
+                ///</summary>
                 public " + dataType + @"(IMessage theMessage,int theTable):base(theMessage, theTable)
                 {}
                 ");
 
                 sb.Append("\n\n");
                 sb.Append(@"
+                ///<summary>Construct the type
+                ///<param name=""message"">message to which this Type belongs</param>
+                ///<param name=""theTable"">The table which this type belongs</param>
+                ///<param name=""description"">The description of this type</param>
+                ///</summary>
 		        public " + dataType + @"(IMessage message, int theTable, string description) : base(message,theTable, description)
     	        {}
                 ");
@@ -84,13 +94,19 @@ namespace NHapi.Base.SourceGeneration
             {
                 sb.Append("\n\n");
                 sb.Append(@"
+                ///<summary>Construct the type
                 ///<param name=""theMessage"">message to which this Type belongs</param>
+                ///</summary>
                 public " + dataType + @"(IMessage theMessage):base(theMessage)
                 {}
                 ");
 
                 sb.Append("\n\n");
                 sb.Append(@"
+                ///<summary>Construct the type
+                ///<param name=""message"">message to which this Type belongs</param>
+                ///<param name=""description"">The description of this type</param>
+                ///</summary>
 		        public " + dataType + @"(IMessage message, string description) : base(message,description)
     	        {}
                 ");

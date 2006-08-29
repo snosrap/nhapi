@@ -36,84 +36,108 @@
 /// These changes are distributed under the same terms as the original (above). 
 /// </summary>
 using System;
-namespace NHapi.Base.util
+namespace NHapi.Base.Util
 {
-	
-	public class FilterIterator : System.Collections.IEnumerator
-	{
-		public virtual System.Object Current
-		{
-			get
-			{
-				if (!nextObjectSet)
-				{
-					if (!setNextObject())
-					{
-						throw new System.ArgumentOutOfRangeException();
-					}
-				}
-				nextObjectSet = false;
-				return nextObject;
-			}
-			
-		}
-		
-		private FilterIterator.IPredicate predicate;
-		private System.Collections.IEnumerator iter;
-		private System.Object nextObject;
-		private bool nextObjectSet = false;
-		
-		public FilterIterator(System.Collections.IEnumerator iter, FilterIterator.IPredicate predicate)
-		{
-			this.iter = iter;
-			this.predicate = predicate;
-		}
-		
-		public virtual bool MoveNext()
-		{
-			if (nextObjectSet)
-			{
-				return true;
-			}
-			else
-			{
-				return setNextObject();
-			}
-		}
-		
-		/// <summary> Set nextObject to the next object. If there are no more
-		/// objects then return false. Otherwise, return true.
-		/// </summary>
-		private bool setNextObject()
-		{
-			while (iter.MoveNext())
-			{
-				System.Object object_Renamed = iter.Current;
-				if (predicate.evaluate(object_Renamed))
-				{
-					nextObject = object_Renamed;
-					nextObjectSet = true;
-					return true;
-				}
-			}
-			return false;
-		}
-		
-		/// <summary>Throws UnsupportedOperationException </summary>
-		public virtual void  remove()
-		{
-			throw new System.NotSupportedException();
-		}
+    /// <summary>
+    /// Filter iterator class
+    /// </summary>
+    public class FilterIterator : System.Collections.IEnumerator
+    {
+        private FilterIterator.IPredicate predicate;
+        private System.Collections.IEnumerator iter;
+        private System.Object nextObject;
+        private bool nextObjectSet = false;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="iter"></param>
+        /// <param name="predicate"></param>
+        public FilterIterator(System.Collections.IEnumerator iter, FilterIterator.IPredicate predicate)
+        {
+            this.iter = iter;
+            this.predicate = predicate;
+        }
+
+        /// <summary>
+        /// The current item
+        /// </summary>
+        public virtual System.Object Current
+        {
+            get
+            {
+                if (!nextObjectSet)
+                {
+                    if (!setNextObject())
+                    {
+                        throw new System.ArgumentOutOfRangeException();
+                    }
+                }
+                nextObjectSet = false;
+                return nextObject;
+            }
+
+        }
+
+
+
+        /// <summary>
+        /// Move next
+        /// </summary>
+        /// <returns></returns>
+        public virtual bool MoveNext()
+        {
+            if (nextObjectSet)
+            {
+                return true;
+            }
+            else
+            {
+                return setNextObject();
+            }
+        }
+
+        /// <summary> Set nextObject to the next object. If there are no more
+        /// objects then return false. Otherwise, return true.
+        /// </summary>
+        private bool setNextObject()
+        {
+            while (iter.MoveNext())
+            {
+                System.Object object_Renamed = iter.Current;
+                if (predicate.evaluate(object_Renamed))
+                {
+                    nextObject = object_Renamed;
+                    nextObjectSet = true;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>Throws UnsupportedOperationException </summary>
+        public virtual void remove()
+        {
+            throw new System.NotSupportedException();
+        }
 
         /// <summary>
         /// IPredicate interface
         /// </summary>
-		public interface IPredicate
-		{
-			bool evaluate(System.Object obj);
-		}
-		virtual public void  Reset()
-		{
-		}
-	}
+        public interface IPredicate
+        {
+            /// <summary>
+            /// Evaluate the object
+            /// </summary>
+            /// <param name="obj"></param>
+            /// <returns></returns>
+            bool evaluate(System.Object obj);
+        }
+        /// <summary>
+        /// Reset
+        /// </summary>
+        virtual public void Reset()
+        {
+        }
+    }
 }

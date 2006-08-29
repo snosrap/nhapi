@@ -53,291 +53,292 @@
 using System;
 namespace NHapi.Base.Parser
 {
-	
-	
-	
-	/// <summary> 
-	/// Represents the set of special characters used to encode traditionally
-	/// 
-	/// encoded HL7 messages.
-	/// 
-	/// </summary>
-	/// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
-	/// 
-	/// </author>
-	
-	public class EncodingCharacters:System.Object, System.ICloneable
-	{
-		/// <summary> 
-		/// Returns the field separator.
-		/// 
-		/// </summary>
-		virtual public char FieldSeparator
-		{
-			
-			
-			get
-			{
-				
-				return this.fieldSep;
-			}
-			
-			set
-			{
-				
-				this.fieldSep = value;
-			}
-			
-		}
-		/// <summary> 
-		/// Returns the component separator.
-		/// 
-		/// </summary>
-		virtual public char ComponentSeparator
-		{
-			
-			
-			get
-			{
-				
-				return this.encChars[0];
-			}
-			
-			set
-			{
-				
-				this.encChars[0] = value;
-			}
-			
-		}
-		/// <summary> 
-		/// Returns the repetition separator.
-		/// 
-		/// </summary>
-		virtual public char RepetitionSeparator
-		{
-			
-			
-			get
-			{
-				
-				return this.encChars[1];
-			}
-			
-			set
-			{
-				
-				this.encChars[1] = value;
-			}
-			
-		}
-		/// <summary> 
-		/// Returns the escape character.
-		/// 
-		/// </summary>
-		virtual public char EscapeCharacter
-		{
-			
-			
-			get
-			{
-				
-				return this.encChars[2];
-			}
-			
-			set
-			{
-				
-				this.encChars[2] = value;
-			}
-			
-		}
-		/// <summary> 
-		/// Returns the subcomponent separator.
-		/// 
-		/// </summary>
-		virtual public char SubcomponentSeparator
-		{
-			
-			
-			get
-			{
-				
-				return this.encChars[3];
-			}
-			
-			set
-			{
-				
-				this.encChars[3] = value;
-			}
-			
-		}
+
+
+
+    /// <summary> 
+    /// Represents the set of special characters used to encode traditionally
+    /// 
+    /// encoded HL7 messages.
+    /// 
+    /// </summary>
+    /// <author>  Bryan Tripp (bryan_tripp@sourceforge.net)
+    /// 
+    /// </author>
+
+    public class EncodingCharacters : System.Object, System.ICloneable
+    {
+        /// <summary> 
+        /// Returns the field separator.
+        /// 
+        /// </summary>
+        virtual public char FieldSeparator
+        {
+
+
+            get
+            {
+
+                return this.fieldSep;
+            }
+
+            set
+            {
+
+                this.fieldSep = value;
+            }
+
+        }
+        /// <summary> 
+        /// Returns the component separator.
+        /// 
+        /// </summary>
+        virtual public char ComponentSeparator
+        {
+
+
+            get
+            {
+
+                return this.encChars[0];
+            }
+
+            set
+            {
+
+                this.encChars[0] = value;
+            }
+
+        }
+        /// <summary> 
+        /// Returns the repetition separator.
+        /// 
+        /// </summary>
+        virtual public char RepetitionSeparator
+        {
+
+
+            get
+            {
+
+                return this.encChars[1];
+            }
+
+            set
+            {
+
+                this.encChars[1] = value;
+            }
+
+        }
+        /// <summary> 
+        /// Returns the escape character.
+        /// 
+        /// </summary>
+        virtual public char EscapeCharacter
+        {
+
+
+            get
+            {
+
+                return this.encChars[2];
+            }
+
+            set
+            {
+
+                this.encChars[2] = value;
+            }
+
+        }
+        /// <summary> 
+        /// Returns the subcomponent separator.
+        /// 
+        /// </summary>
+        virtual public char SubcomponentSeparator
+        {
+
+
+            get
+            {
+
+                return this.encChars[3];
+            }
+
+            set
+            {
+
+                this.encChars[3] = value;
+            }
+
+        }
+
+
+
+        private char fieldSep;
+
+        private char[] encChars;
+
+
+
+        /// <summary> 
+        /// Creates new EncodingCharacters object with the given character
+        /// 
+        /// values. If the encodingCharacters argument is null, the default
+        /// 
+        /// values are used.
+        /// 
+        /// </summary>
+        /// <param name="encodingCharacters">consists of the characters that appear in
+        /// 
+        /// MSH-2 (see section 2.8 of the HL7 spec).  The characters are
+        /// 
+        /// Component Separator, Repetition Separator, Escape Character, and
+        /// 
+        /// Subcomponent Separator (in that order).
+        /// 
+        /// </param>
+
+        public EncodingCharacters(char fieldSeparator, System.String encodingCharacters)
+        {
+
+            this.fieldSep = fieldSeparator;
+
+            this.encChars = new char[4];
+
+            if (encodingCharacters == null)
+            {
+
+                this.encChars[0] = '^';
+
+                this.encChars[1] = '~';
+
+                this.encChars[2] = '\\';
+
+                this.encChars[3] = '&';
+            }
+            else
+            {
+
+                SupportClass.GetCharsFromString(encodingCharacters, 0, 4, this.encChars, 0);
+            }
+        }
+
+
+
+        public EncodingCharacters(char fieldSeparator, char componentSeparator, char repetitionSeparator, char escapeCharacter, char subcomponentSeparator)
+            : this(fieldSeparator, System.Convert.ToString(componentSeparator) + repetitionSeparator + escapeCharacter + subcomponentSeparator)
+        {
+        }
+
+
+
+        /// <summary>copies contents of "other" </summary>
+
+        public EncodingCharacters(EncodingCharacters other)
+        {
+
+            this.fieldSep = other.FieldSeparator;
+
+            this.encChars = new char[4];
+
+            this.encChars[0] = other.ComponentSeparator;
+
+            this.encChars[1] = other.RepetitionSeparator;
+
+            this.encChars[2] = other.EscapeCharacter;
+
+            this.encChars[3] = other.SubcomponentSeparator;
+        }
+
+
+
+        /// <summary> 
+        /// Returns the encoding characters (not including field separator)
+        /// 
+        /// as a string.
+        /// 
+        /// </summary>
+
+        public override System.String ToString()
+        {
+
+            System.Text.StringBuilder ret = new System.Text.StringBuilder();
+
+            for (int i = 0; i < this.encChars.Length; i++)
+            {
+
+                ret.Append(this.encChars[i]);
+            }
+
+            return ret.ToString();
+        }
+
+
+
+        public virtual System.Object Clone()
+        {
+
+            return new EncodingCharacters(this);
+        }
+
+        /// <seealso cref="java.lang.Object.equals">
+        /// </seealso>
+        public override bool Equals(System.Object o)
+        {
+            if (o is EncodingCharacters)
+            {
+                EncodingCharacters other = (EncodingCharacters)o;
+                if (this.FieldSeparator == other.FieldSeparator && this.ComponentSeparator == other.ComponentSeparator && this.EscapeCharacter == other.EscapeCharacter && this.RepetitionSeparator == other.RepetitionSeparator && this.SubcomponentSeparator == other.SubcomponentSeparator)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <seealso cref="java.lang.Object.hashCode">
+        /// </seealso>
+        public override int GetHashCode()
+        {
+            return 7 * (int)this.ComponentSeparator * (int)this.EscapeCharacter * (int)this.FieldSeparator * (int)this.RepetitionSeparator * (int)this.SubcomponentSeparator;
+        }
+
+        /// <summary> 
+        /// Test harness ...
+        /// 
+        /// </summary>
+
+        /*
+		
+        public static void main(String args[]) {
+		
+        String testChars = "^~\\&";
+		
+        String testChars2 = "$%*+";
 		
 		
 		
-		private char fieldSep;
+        EncodingCharacters ec = new EncodingCharacters('|', testChars);
 		
-		private char[] encChars;
+        System.out.println("test 1: " + ec.getFieldSeparator() + ec.toString());
 		
+        ec = new EncodingCharacters('|', testChars2);
 		
+        System.out.println("test 2: " + ec.getFieldSeparator() + ec.getComponentSeparator() + ec.getRepetitionSeparator() + ec.getEscapeCharacter() + ec.getSubcomponentSeparator());
 		
-		/// <summary> 
-		/// Creates new EncodingCharacters object with the given character
-		/// 
-		/// values. If the encodingCharacters argument is null, the default
-		/// 
-		/// values are used.
-		/// 
-		/// </summary>
-		/// <param name="encodingCharacters">consists of the characters that appear in
-		/// 
-		/// MSH-2 (see section 2.8 of the HL7 spec).  The characters are
-		/// 
-		/// Component Separator, Repetition Separator, Escape Character, and
-		/// 
-		/// Subcomponent Separator (in that order).
-		/// 
-		/// </param>
+        ec = new EncodingCharacters('[', null);
 		
-		public EncodingCharacters(char fieldSeparator, System.String encodingCharacters)
-		{
-			
-			this.fieldSep = fieldSeparator;
-			
-			this.encChars = new char[4];
-			
-			if (encodingCharacters == null)
-			{
-				
-				this.encChars[0] = '^';
-				
-				this.encChars[1] = '~';
-				
-				this.encChars[2] = '\\';
-				
-				this.encChars[3] = '&';
-			}
-			else
-			{
-				
-				SupportClass.GetCharsFromString(encodingCharacters, 0, 4, this.encChars, 0);
-			}
-		}
+        System.out.println("test 3: " + ec.getFieldSeparator() + ec.toString());
 		
-		
-		
-		public EncodingCharacters(char fieldSeparator, char componentSeparator, char repetitionSeparator, char escapeCharacter, char subcomponentSeparator):this(fieldSeparator, System.Convert.ToString(componentSeparator) + repetitionSeparator + escapeCharacter + subcomponentSeparator)
-		{
-		}
-		
-		
-		
-		/// <summary>copies contents of "other" </summary>
-		
-		public EncodingCharacters(EncodingCharacters other)
-		{
-			
-			this.fieldSep = other.FieldSeparator;
-			
-			this.encChars = new char[4];
-			
-			this.encChars[0] = other.ComponentSeparator;
-			
-			this.encChars[1] = other.RepetitionSeparator;
-			
-			this.encChars[2] = other.EscapeCharacter;
-			
-			this.encChars[3] = other.SubcomponentSeparator;
-		}
-		
-		
-		
-		/// <summary> 
-		/// Returns the encoding characters (not including field separator)
-		/// 
-		/// as a string.
-		/// 
-		/// </summary>
-		
-		public override System.String ToString()
-		{
-			
-			System.Text.StringBuilder ret = new System.Text.StringBuilder();
-			
-			for (int i = 0; i < this.encChars.Length; i++)
-			{
-				
-				ret.Append(this.encChars[i]);
-			}
-			
-			return ret.ToString();
-		}
-		
-		
-		
-		public virtual System.Object Clone()
-		{
-			
-			return new EncodingCharacters(this);
-		}
-		
-		/// <seealso cref="java.lang.Object.equals">
-		/// </seealso>
-		public  override bool Equals(System.Object o)
-		{
-			if (o is EncodingCharacters)
-			{
-				EncodingCharacters other = (EncodingCharacters) o;
-				if (this.FieldSeparator == other.FieldSeparator && this.ComponentSeparator == other.ComponentSeparator && this.EscapeCharacter == other.EscapeCharacter && this.RepetitionSeparator == other.RepetitionSeparator && this.SubcomponentSeparator == other.SubcomponentSeparator)
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			}
-			else
-			{
-				return false;
-			}
-		}
-		
-		/// <seealso cref="java.lang.Object.hashCode">
-		/// </seealso>
-		public override int GetHashCode()
-		{
-			return 7 * (int) this.ComponentSeparator * (int) this.EscapeCharacter * (int) this.FieldSeparator * (int) this.RepetitionSeparator * (int) this.SubcomponentSeparator;
-		}
-		
-		/// <summary> 
-		/// Test harness ...
-		/// 
-		/// </summary>
-		
-		/*
-		
-		public static void main(String args[]) {
-		
-		String testChars = "^~\\&";
-		
-		String testChars2 = "$%*+";
-		
-		
-		
-		EncodingCharacters ec = new EncodingCharacters('|', testChars);
-		
-		System.out.println("test 1: " + ec.getFieldSeparator() + ec.toString());
-		
-		ec = new EncodingCharacters('|', testChars2);
-		
-		System.out.println("test 2: " + ec.getFieldSeparator() + ec.getComponentSeparator() + ec.getRepetitionSeparator() + ec.getEscapeCharacter() + ec.getSubcomponentSeparator());
-		
-		ec = new EncodingCharacters('[', null);
-		
-		System.out.println("test 3: " + ec.getFieldSeparator() + ec.toString());
-		
-		}*/
-	}
+        }*/
+    }
 }

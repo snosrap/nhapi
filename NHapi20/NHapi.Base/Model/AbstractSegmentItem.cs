@@ -8,15 +8,14 @@ namespace NHapi.Base.Model
     {
         private List<IType> _fields = new List<IType>();
         private System.Type _type;
-        private bool _required;
-        private int _length;
+        private bool _required = false;
+        private int _length = 0;
         private List<object> _args = new List<object>();
         private int _maxReps;
         private string _description;
 
-
+        ///<summary>
         /// Constructor
-        /// </summary>
         /// <param name="t">the class of the data for this field - this should inherit from IType</param>
         /// <param name="required">whether a value for this field is required in order for the segment 
         /// to be valid</param>
@@ -25,11 +24,12 @@ namespace NHapi.Base.Model
         /// <param name="constructorArgs">an array of objects that will be used as constructor arguments 
         /// if new instances of this class are created (use null for zero-arg constructor)</param>
         /// <throws>  HL7Exception if the given class does not inherit from IType or if it cannot be instantiated. </throws>
+        /// </summary>
         public AbstractSegmentItem(System.Type t, bool required, int maxReps, int length, System.Object[] constructorArgs)
             : this(t, required, maxReps, length, constructorArgs, string.Empty)
         {
         }
-        
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -52,7 +52,8 @@ namespace NHapi.Base.Model
             _type = t;
             _required = required;
             _maxReps = maxReps;
-            _args.AddRange(constructorArgs);
+            if (constructorArgs != null)
+                _args.AddRange(constructorArgs);
             _description = description;
         }
 
@@ -124,6 +125,17 @@ namespace NHapi.Base.Model
             {
                 return _fields;
             }
+        }
+
+        public IType[] GetAllFieldsAsITypeArray()
+        {
+            IType[] fields = new IType[_fields.Count];
+            int i = 0;
+            foreach (IType type in _fields)
+            {
+                fields[i++] = type;
+            }
+            return fields;
         }
 
     }
