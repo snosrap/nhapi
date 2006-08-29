@@ -6,12 +6,16 @@ using NHapi.Base.Model;
 
 namespace NHapi.Model.V21.Datatype
 {
+    /// <summary>
+    /// Composite message
+    /// </summary>
     public class CM : GenericComposite
     {
 
-
-        /// <param name="message">message to which this Type belongs
-        /// </param>
+        /// <summary>
+        /// Composite message
+        /// </summary>
+        /// <param name="message"></param>
         public CM(IMessage message)
             : base(message)
         {

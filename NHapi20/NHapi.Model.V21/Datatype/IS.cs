@@ -3,28 +3,41 @@ using System;
 using NHapi.Base.Model;
 namespace NHapi.Model.V21
 {
-/// <summary>/// Summary description for IS.
-/// </summary>
-public class IS: NHapi.Base.Model.Primitive.IS
-{
-/// <returns>2.3</returns>
+    /// <summary>/// Summary description for IS.
+    /// </summary>
+    public class IS : NHapi.Base.Model.Primitive.IS
+    {
+        /// <summary>Return the version
+        /// <returns>2.1</returns>
+        ///</summary>
 
-            virtual public System.String Version
+        virtual public System.String Version
+        {
+            get
             {
-			    get
-			    {
-				    return "2.3";
-			    }
-		    }
-            
+                return "2.1";
+            }
+        }
 
 
-                ///<param name="theMessage">message to which this Type belongs</param>
-                public IS(IMessage theMessage,int theTable):base(theMessage, theTable)
-                {}
-                
+
+        ///<summary>Construct the type
+        ///<param name="theMessage">message to which this Type belongs</param>
+        ///<param name="theTable">The table which this type belongs</param>
+        ///</summary>
+        public IS(IMessage theMessage, int theTable)
+            : base(theMessage, theTable)
+        { }
 
 
-		        public IS(IMessage message, int theTable, string description) : base(message,theTable, description)
-    	        {}
-                }}
+
+        ///<summary>Construct the type
+        ///<param name="message">message to which this Type belongs</param>
+        ///<param name="theTable">The table which this type belongs</param>
+        ///<param name="description">The description of this type</param>
+        ///</summary>
+        public IS(IMessage message, int theTable, string description)
+            : base(message, theTable, description)
+        { }
+    }
+}
