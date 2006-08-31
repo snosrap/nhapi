@@ -7,19 +7,23 @@ namespace NHapi.Base
     class EventMapper
     {
         private System.Collections.Hashtable _map = new System.Collections.Hashtable();
-        private static EventMapper _instance = new EventMapper();
-        
+        private static readonly EventMapper _instance = new EventMapper();
+
+        #region Constructors
+        static EventMapper()
+        { }
+
         private EventMapper()
         {
             IList<Hl7Package> packages = PackageManager.Instance.GetAllPackages();
-            foreach(Hl7Package package in packages)
+            foreach (Hl7Package package in packages)
             {
                 System.Reflection.Assembly assembly = null;
                 try
                 {
-                    assembly= System.Reflection.Assembly.Load(package.PackageName);
+                    assembly = System.Reflection.Assembly.Load(package.PackageName);
                 }
-                catch(System.IO.FileNotFoundException)
+                catch (System.IO.FileNotFoundException)
                 {
                     //Just skip, this assembly is not used
                 }
@@ -32,7 +36,21 @@ namespace NHapi.Base
                 _map[package.Version] = structures;
             }
         }
+        #endregion
 
+        #region Properties
+        public static EventMapper Instance
+        {
+            get { return _instance; }
+        }
+
+        public System.Collections.Hashtable Maps
+        {
+            get { return _map; }
+        }
+        #endregion
+
+        #region Methods
         private System.Collections.Specialized.NameValueCollection GetAssemblyEventMapping(System.Reflection.Assembly assembly, Hl7Package package)
         {
             System.Collections.Specialized.NameValueCollection structures = new System.Collections.Specialized.NameValueCollection();
@@ -58,15 +76,7 @@ namespace NHapi.Base
             }
             return structures;
         }
+        #endregion
 
-        public static EventMapper Instance
-        {
-            get { return _instance; }
-        }
-
-        public System.Collections.Hashtable Maps
-        {
-            get { return _map; }
-        }
     }
 }

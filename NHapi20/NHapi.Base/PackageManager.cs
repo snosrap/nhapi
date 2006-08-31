@@ -7,15 +7,34 @@ namespace NHapi.Base
 {
     class PackageManager
     {
-        private static PackageManager _instance = new PackageManager();
-        private List<Hl7Package> _packages = new List<Hl7Package>();      
-        
+        private static readonly PackageManager _instance = new PackageManager();
+        private List<Hl7Package> _packages = new List<Hl7Package>();
+
+        #region Constructors
+        static PackageManager()
+        {
+        }
+
         private PackageManager()
         {
             LoadBaseVersions();
             LoadAdditionalVersions();
         }
+        #endregion
 
+        #region Properties
+        public static PackageManager Instance
+        {
+            get { return _instance; }
+        }
+
+        public IList<Hl7Package> GetAllPackages()
+        {
+            return _packages;
+        }
+        #endregion
+
+        #region Methods
         private void LoadBaseVersions()
         {
             string[] versions = new string[] { "2.2", "2.3", "2.3.1", "2.4", "2.5" };
@@ -37,31 +56,26 @@ namespace NHapi.Base
                     _packages.Insert(0,new Hl7Package(package.Name, package.Version));
                 }
             }
-        
-        }
 
-        public static PackageManager Instance
-        {
-            get { return _instance; }
         }
-
-        public IList<Hl7Package> GetAllPackages()
-        {
-            return _packages;
-        }
-
 
         public bool IsValidVersion(string version)
         {
             version = version.ToUpper().Trim();
-            foreach(Hl7Package package in _packages)
+            foreach (Hl7Package package in _packages)
             {
                 if (package.Version.ToUpper().Trim().Equals(version))
                     return true;
             }
             return false;
         }
+        #endregion
 
+
+        
+
+
+        #region Static GetVersion and GetVersionPackage
         /// <summary> Returns the path to the base package for model elements of the given version
         /// - e.g. "NHapi.Model.VXXX".
         /// This package should have the packages datatype, segment, group, and message
@@ -98,5 +112,6 @@ namespace NHapi.Base
             packg = packg.Replace('\\', '.');
             return packg;
         }
+        #endregion
     }
 }
