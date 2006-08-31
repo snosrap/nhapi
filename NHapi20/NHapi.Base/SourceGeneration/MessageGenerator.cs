@@ -121,7 +121,7 @@ namespace NHapi.Base.SourceGeneration
                     baseDirectory = baseDirectory + "/";
                 }
 
-                System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Message");
+                System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + PackageManager.GetVersionPackagePath(version) + "Message");
                 System.Console.Out.WriteLine("Writing " + message + " to " + targetDir.FullName);
                 using (System.IO.StreamWriter out_Renamed = new System.IO.StreamWriter(targetDir.FullName + "/" + message + ".cs"))
                 {
@@ -215,17 +215,17 @@ namespace NHapi.Base.SourceGeneration
             preamble.Append("using System;\r\n");
             preamble.Append("using NHapi.Base.Log;\r\n");
             preamble.Append("using ");
-            preamble.Append(SourceGenerator.getVersionPackageName(version));
+            preamble.Append(PackageManager.GetVersionPackageName(version));
             preamble.Append("Group;\r\n");
             preamble.Append("using ");
-            preamble.Append(SourceGenerator.getVersionPackageName(version));
+            preamble.Append(PackageManager.GetVersionPackageName(version));
             preamble.Append("Segment;\r\n");
             preamble.Append("using NHapi.Base;\r\n");
             preamble.Append("using NHapi.Base.Parser;\r\n");
             preamble.Append("using NHapi.Base.Model;\r\n\r\n");
 
             preamble.Append("namespace ");
-            preamble.Append(SourceGenerator.getVersionPackageName(version));
+            preamble.Append(PackageManager.GetVersionPackageName(version));
             preamble.Append("Message\r\n\r\n");
             preamble.Append("{\r\n");
             preamble.Append("///<summary>\r\n");
@@ -257,7 +257,7 @@ namespace NHapi.Base.SourceGeneration
         /// <summary> Returns source code for the contructor for this Message class.</summary>
         public static System.String makeConstructor(IStructureDef[] structs, System.String messageName, System.String version)
         {
-            bool useFactory = NHapi.Base.Properties.Settings.UseFactory;
+            bool useFactory = NHapi.Base.ConfigurationSettings.UseFactory;
 
             System.Text.StringBuilder source = new System.Text.StringBuilder();
 

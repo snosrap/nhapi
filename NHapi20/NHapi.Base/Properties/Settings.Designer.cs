@@ -7,8 +7,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System.Configuration;
-using System;
 
 namespace NHapi.Base.Properties {
     
@@ -24,28 +22,27 @@ namespace NHapi.Base.Properties {
                 return defaultInstance;
             }
         }
-
-        public static string ConnectionString
-        {
-            get
-            {
-
-                string val = ConfigurationManager.AppSettings["Hl7ConnectionString"];
-                if (val == null)
-                    throw new ApplicationException("You must specify the Hl7ConnectionString in the config file");
-                return val;
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\prj\\COHIE\\Tools\\NHAPI\\hl7db_mod.m" +
+            "db")]
+        public string ConnectionString {
+            get {
+                return ((string)(this["ConnectionString"]));
             }
         }
-
-        public static bool UseFactory
-        {
-            get
-            {
-
-                string val = ConfigurationManager.AppSettings["UseFactory"];
-                if (val == null)
-                    throw new ApplicationException("You must specify the UseFactory in the config file");
-                return Convert.ToBoolean(val);
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UseFactory {
+            get {
+                return ((bool)(this["useFactory"]));
+            }
+            set {
+                this["useFactory"] = value;
             }
         }
     }

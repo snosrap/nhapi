@@ -73,21 +73,13 @@ namespace NHapi.Base.Parser
         {
             get
             {
-                lock (typeof(NHapi.Base.Parser.ParserBase))
-                {
-                    if (messageStructures == null)
-                    {
-                        messageStructures = loadMessageStructures();
-                    }
-                    return messageStructures;
-                }
+                return EventMapper.Instance.Maps;
             }
 
         }
 
         private static readonly IHapiLog log;
-        private static System.Collections.IDictionary messageStructures = null;
-        private static readonly System.String[] versions = new System.String[] { "2.0", "2.0D", "2.1", "2.2", "2.3", "2.3.1", "2.4", "2.5" };
+        
         private IModelClassFactory myFactory;
         private IValidationContext myContext;
         private MessageValidator myValidator;
@@ -136,23 +128,14 @@ namespace NHapi.Base.Parser
         /// </summary>
         public virtual IMessage parse(System.String message)
         {
-            System.String encoding = getEncoding(message);
-            if (!supportsEncoding(encoding))
-            {
-                throw new EncodingNotSupportedException("Can't parse message beginning " + message.Substring(0, (System.Math.Min(message.Length, 50)) - (0)));
-            }
+           
 
             System.String version = getVersion(message);
             if (!validVersion(version))
             {
                 throw new HL7Exception("Can't process message of version '" + version + "' - version not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
             }
-
-            myValidator.validate(message, encoding.Equals("XML"), version);
-            IMessage result = doParse(message, version);
-            myValidator.validate(result);
-
-            return result;
+            return parse(message, version);
         }
 
         /// <summary>
@@ -167,11 +150,6 @@ namespace NHapi.Base.Parser
             if (!supportsEncoding(encoding))
             {
                 throw new EncodingNotSupportedException("Can't parse message beginning " + message.Substring(0, (System.Math.Min(message.Length, 50)) - (0)));
-            }
-
-            if (!validVersion(version))
-            {
-                throw new HL7Exception("Can't process message of version '" + version + "' - version not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
             }
 
             myValidator.validate(message, encoding.Equals("XML"), version);
@@ -347,14 +325,7 @@ namespace NHapi.Base.Parser
         /// </summary>
         public static bool validVersion(System.String version)
         {
-            bool versionOK = false;
-            int c = 0;
-            while (versionOK == false && c < versions.Length)
-            {
-                if (versions[c++].Equals(version))
-                    versionOK = true;
-            }
-            return versionOK;
+            return PackageManager.Instance.IsValidVersion(version);
         }
 
         /// <summary> Given a concatenation of message type and event (e.g. ADT_A04), and the 
@@ -396,38 +367,7 @@ namespace NHapi.Base.Parser
             return structure;
         }
 
-        private static System.Collections.IDictionary loadMessageStructures()
-        {
-            lock (typeof(NHapi.Base.Parser.ParserBase))
-            {
-                System.Collections.IDictionary map = new System.Collections.Hashtable();
-                for (int i = 0; i < versions.Length; i++)
-                {
-                    System.String resource = "NHapi.Base.Parser.EventMap." + versions[i] + ".properties";
-                    System.IO.Stream inResource = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resource);
-                    System.Collections.Specialized.NameValueCollection structures = new System.Collections.Specialized.NameValueCollection();
-                    if (inResource != null)
-                    {
-                        System.IO.StreamReader sr = new System.IO.StreamReader(inResource);
-                        string line = sr.ReadLine();
-                        while (line != null)
-                        {
-                            if ((line.Length > 0) && ('#' != line[0]))
-                            {
-                                string[] lineElements = line.Split(' ', '\t');
-                                structures.Add(lineElements[0], lineElements[1]);
-                            }
-                            line = sr.ReadLine();
-
-                        }
-                    }
-
-                    map[versions[i]] = structures;
-                }
-                return map;
-            }
-        }
-
+    
         /// <summary> Note that the validation context of the resulting message is set to this parser's validation 
         /// context.  The validation context is used within Primitive.setValue().
         /// 

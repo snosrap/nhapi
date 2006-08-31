@@ -50,8 +50,8 @@ namespace NHapi.Base.SourceGeneration
             {
                 baseDirectory = baseDirectory + "/";
             }
-            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Datatype");
-            SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Datatype");
+            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + PackageManager.GetVersionPackagePath(version) + "Datatype");
+            SourceGenerator.makeDirectory(baseDirectory + PackageManager.GetVersionPackagePath(version) + "Datatype");
             //get list of data types
             System.Collections.ArrayList types = new System.Collections.ArrayList();
             System.Data.OleDb.OleDbConnection conn = NormativeDatabase.Instance.Connection;
@@ -226,7 +226,7 @@ namespace NHapi.Base.SourceGeneration
             source.Append("using NHapi.Base;\n");
             source.Append("using NHapi.Base.Model.Primitive;\r\n");
             source.Append("namespace ");
-            source.Append(SourceGenerator.getVersionPackageName(version));
+            source.Append(PackageManager.GetVersionPackageName(version));
             source.Append("Datatype\r\n");
             source.Append("{\r\n");
             source.Append("///<summary>\r\n");
@@ -297,7 +297,7 @@ namespace NHapi.Base.SourceGeneration
             source.Append("using NHapi.Base;\n");
             source.Append("using NHapi.Base.Model.Primitive;\r\n\r\n");
             source.Append("namespace ");
-            source.Append(SourceGenerator.getVersionPackageName(version));
+            source.Append(PackageManager.GetVersionPackageName(version));
             source.Append("Datatype\r\n");
             source.Append("{\r\n\r\n");
             source.Append("///<summary>\r\n");

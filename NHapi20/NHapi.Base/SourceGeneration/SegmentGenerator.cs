@@ -53,7 +53,7 @@ namespace NHapi.Base.SourceGeneration
             {
                 baseDirectory = baseDirectory + "/";
             }
-            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Segment");
+            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + PackageManager.GetVersionPackagePath(version) + "Segment");
 
             //get list of data types
             System.Data.OleDb.OleDbConnection conn = NormativeDatabase.Instance.Connection;
@@ -192,23 +192,23 @@ namespace NHapi.Base.SourceGeneration
                 source.Append("using NHapi.Base.Parser;\r\n");
                 source.Append("using NHapi.Base.Model;\r\n");
                 source.Append("using ");
-                source.Append(SourceGenerator.getVersionPackageName(version));
+                source.Append(PackageManager.GetVersionPackagePath(version));
                 source.Append("Datatype;\r\n");
                 source.Append("using NHapi.Base.Log;\r\n\r\n");
 
                 source.Append("namespace ");
-                source.Append(SourceGenerator.getVersionPackageName(version));
+                source.Append(PackageManager.GetVersionPackageName(version));
                 source.Append("Segment{\r\n\r\n");
                 source.Append("///<summary>\r\n");
                 source.Append("/// Represents an HL7 ");
                 source.Append(name);
                 source.Append(" message segment. \r\n");
-                source.Append("/// This segment has the following fields:\r\n");
+                source.Append("/// This segment has the following fields:<ol>\r\n");
                 for (int i = 0; i < elements.Count; i++)
                 {
                     se = (SegmentElement)elements[i];
                     source.Append("///");
-                    source.Append(" * ");
+                    source.Append("<li>");
                     source.Append(name);
                     source.Append("-");
                     source.Append(se.field);
@@ -216,8 +216,9 @@ namespace NHapi.Base.SourceGeneration
                     source.Append(se.GetDescriptionWithoutSpecialCharacters());
                     source.Append(" (");
                     source.Append(se.type);
-                    source.Append(")\r\n");
+                    source.Append(")</li>\r\n");
                 }
+                source.Append("///</ol>\r\n");
                 source.Append("/// The get...() methods return data from individual fields.  These methods \r\n");
                 source.Append("/// do not throw exceptions and may therefore have to handle exceptions internally.  \r\n");
                 source.Append("/// If an exception is handled internally, it is logged and null is returned.  \r\n");

@@ -96,7 +96,7 @@ namespace NHapi.Base
         /// </summary>
         private NormativeDatabase()
         {
-            _connectionString = Properties.Settings.ConnectionString;
+            _connectionString = ConfigurationSettings.ConnectionString;
             _conn = new System.Data.OleDb.OleDbConnection(_connectionString);
             _conn.Open();
         }

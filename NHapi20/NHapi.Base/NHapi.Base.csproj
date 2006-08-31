@@ -35,7 +35,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationSettings.cs" />
     <Compile Include="DBTableRepository.cs" />
+    <Compile Include="EventMapper.cs" />
+    <Compile Include="Hl7Package.cs" />
     <Compile Include="Model\AbstractGroup.cs" />
     <Compile Include="Model\AbstractGroupItem.cs" />
     <Compile Include="Model\AbstractMessage.cs" />
@@ -43,8 +46,6 @@
     <Compile Include="Model\AbstractSegment.cs" />
     <Compile Include="Model\AbstractSegmentItem.cs" />
     <Compile Include="Model\AbstractType.cs" />
-    <Compile Include="Model\Configuration\HL7PackageConfigurationElement.cs" />
-    <Compile Include="Model\Configuration\HL7PackageConfigurationElementCollection.cs" />
     <Compile Include="Model\Configuration\HL7PackageConfigurationSection.cs" />
     <Compile Include="Model\IComposite.cs" />
     <Compile Include="DataTypeException.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="LookupException.cs" />
     <Compile Include="Parser\IModelClassFactory.cs" />
     <Compile Include="NormativeDatabase.cs" />
+    <Compile Include="PackageManager.cs" />
     <Compile Include="Parser\Parser.cs" />
     <Compile Include="Parser\PipeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,16 +133,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Parser\EventMap\2.1.properties" />
-    <None Include="Parser\EventMap\2.2.properties" />
-    <None Include="Parser\EventMap\2.3.1.properties" />
-    <None Include="Parser\EventMap\2.3.properties" />
-    <None Include="Parser\EventMap\2.4.properties" />
-    <None Include="Parser\EventMap\2.5.properties" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Parser\EventMap\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

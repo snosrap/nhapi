@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Model.V21", "NHapi.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.NUnit", "NHapi.NUnit\NHapi.NUnit.csproj", "{7C7C99F0-672B-4DB1-A125-5ED7A3ADF95E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Model.V25", "NHapi.Model.V25\NHapi.Model.V25.csproj", "{BE6CDFAD-560E-44CC-B23B-87252DD4392C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{7C7C99F0-672B-4DB1-A125-5ED7A3ADF95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C7C99F0-672B-4DB1-A125-5ED7A3ADF95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C7C99F0-672B-4DB1-A125-5ED7A3ADF95E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE6CDFAD-560E-44CC-B23B-87252DD4392C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE6CDFAD-560E-44CC-B23B-87252DD4392C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE6CDFAD-560E-44CC-B23B-87252DD4392C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE6CDFAD-560E-44CC-B23B-87252DD4392C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

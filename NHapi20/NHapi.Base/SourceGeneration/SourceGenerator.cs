@@ -321,42 +321,7 @@ namespace NHapi.Base.SourceGeneration
             return ret;
         }
 
-        /// <summary> Returns the path to the base package for model elements of the given version
-        /// - e.g. "ca/uhn/hl7v2/model/v24/".
-        /// This package should have the packages datatype, segment, group, and message
-        /// under it. The path ends in with a slash.
-        /// </summary>
-        public static System.String getVersionPackagePath(System.String ver)
-        {
-            //if (ParserBase.validVersion(ver) == false)
-            //{
-            //    throw new HL7Exception("The HL7 version " + ver + " is not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
-            //}
-            //System.Text.StringBuilder path = new System.Text.StringBuilder("ca/uhn/hl7v2/model/v");
-            System.Text.StringBuilder path = new System.Text.StringBuilder("NHapi.Model.V");
-            char[] versionChars = new char[ver.Length];
-            SupportClass.GetCharsFromString(ver, 0, ver.Length, versionChars, 0);
-            for (int i = 0; i < versionChars.Length; i++)
-            {
-                if (versionChars[i] != '.')
-                    path.Append(versionChars[i]);
-            }
-            path.Append('/');
-            return path.ToString();
-        }
-
-        /// <summary> Returns the package name for model elements of the given version - e.g.
-        /// "NHapi.Base.Model.v24.".  This method
-        /// is identical to <code>getVersionPackagePath(...)</code> except that path
-        /// separators are replaced with dots.
-        /// </summary>
-        public static System.String getVersionPackageName(System.String ver)
-        {
-            System.String path = getVersionPackagePath(ver);
-            System.String packg = path.Replace('/', '.');
-            packg = packg.Replace('\\', '.');
-            return packg;
-        }
+       
 
         [STAThread]
         public static void Main(System.String[] args)

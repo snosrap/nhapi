@@ -10,7 +10,7 @@ namespace NHapi.Base.SourceGeneration
 
         public static void BuildBaseDataTypes(string baseDirectory, System.String version)
         {
-            string targetDir = baseDirectory + @"\" + SourceGenerator.getVersionPackagePath(version) + "Datatype";
+            string targetDir = baseDirectory + @"\" + PackageManager.GetVersionPackagePath(version) + "Datatype";
 
             BuildFile("DT", targetDir, version);
             BuildFile("ST", targetDir, version);
@@ -33,7 +33,7 @@ namespace NHapi.Base.SourceGeneration
 
         private static string GetClassSource(string dataType, string version)
         {
-            string namespaceName = SourceGenerator.getVersionPackageName(version);
+            string namespaceName = PackageManager.GetVersionPackageName(version);
             namespaceName = namespaceName.Substring(0, namespaceName.Length - 1);
 
 

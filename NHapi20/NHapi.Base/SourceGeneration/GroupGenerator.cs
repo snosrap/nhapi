@@ -73,7 +73,7 @@ namespace NHapi.Base.SourceGeneration
             {
                 baseDirectory = baseDirectory + "/";
             }
-            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "Group");
+            System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + PackageManager.GetVersionPackagePath(version) + "Group");
 
             GroupDef group = getGroupDef(structures, groupName, baseDirectory, version, message);
             using (System.IO.StreamWriter out_Renamed = new System.IO.StreamWriter(targetDir.FullName + "/" + group.Name + ".cs"))
@@ -224,11 +224,11 @@ namespace NHapi.Base.SourceGeneration
             preamble.Append("using NHapi.Base.Log;\r\n");
             preamble.Append("using System;\r\n");
             preamble.Append("using ");
-            preamble.Append(SourceGenerator.getVersionPackageName(version));
+            preamble.Append(PackageManager.GetVersionPackageName(version));
             preamble.Append("Segment;\r\n\r\n");
             preamble.Append("using NHapi.Base.Model;\r\n\r\n");
             preamble.Append("namespace ");
-            preamble.Append(SourceGenerator.getVersionPackageName(version));
+            preamble.Append(PackageManager.GetVersionPackageName(version));
             preamble.Append("Group\n");
             preamble.Append("{\r\n");
             preamble.Append("///<summary>\r\n");
@@ -250,7 +250,7 @@ namespace NHapi.Base.SourceGeneration
         /// <summary> Returns source code for the contructor for this Group class. </summary>
         public static System.String makeConstructor(GroupDef group, System.String version)
         {
-            bool useFactory = NHapi.Base.Properties.Settings.UseFactory;
+            bool useFactory = NHapi.Base.ConfigurationSettings.UseFactory;
 
             System.Text.StringBuilder source = new System.Text.StringBuilder();
 
@@ -313,11 +313,11 @@ namespace NHapi.Base.SourceGeneration
         public static System.String makeElementsDoc(IStructureDef[] structures)
         {
             System.Text.StringBuilder elements = new System.Text.StringBuilder();
+            elements.Append("///<ol>\r\n");
             for (int i = 0; i < structures.Length; i++)
             {
                 IStructureDef def = structures[i];
-                elements.Append("///");
-                elements.Append(" * ");
+                elements.Append("///<li>");
                 elements.Append(i);
                 elements.Append(": ");
                 elements.Append(def.Name);
@@ -328,9 +328,9 @@ namespace NHapi.Base.SourceGeneration
                     elements.Append("optional ");
                 if (def.Repeating)
                     elements.Append("repeating");
-                elements.Append("\r\n");
+                elements.Append("</li>\r\n");
             }
-
+            elements.Append("///</ol>\r\n");
             return elements.ToString();
         }
 

@@ -137,46 +137,21 @@ namespace NHapi.Base.Parser
         public static System.String[] packageList(System.String version)
         {
             //load package lists if necessary ... 
-            System.String[] versions = new System.String[] { "2.1", "2.2", "2.3", "2.3.1", "2.4", "2.5" };
             if (packages == null)
             {
-                packages = new System.Collections.Hashtable(10);
-                for (int i = 0; i < versions.Length; i++)
+                System.Collections.Generic.IList<Hl7Package> packageList = PackageManager.Instance.GetAllPackages();
+                packages = new System.Collections.Hashtable(packageList.Count);
+                foreach(Hl7Package package in packageList)
                 {
-                    packages[versions[i]] = loadPackages(versions[i]);
+                    packages[package.Version] = new string[] { package.PackageName };
                 }
             }
 
-            //get package list for this version 
+            ////get package list for this version 
             return (System.String[])packages[version];
         }
 
 
-        /// <summary> Returns a package list for the given version, including the standard package
-        /// for that version and also user-defined packages (see packageList()). 
-        /// </summary>
-        private static System.String[] loadPackages(System.String version)
-        {
-            System.String[] retVal = null;
-            System.Collections.IList packageList = new System.Collections.ArrayList();
-
-            HL7PackageConfigurationSection configSection = new HL7PackageConfigurationSection();
-            //LOOK FOR SPECIFIC PACKAGES IN THE CONFIGURATION SECTION 
-            //AND PLACE THEM IN FRONT OF THE DEFAULT PACKAGE
-            if (configSection != null)
-            {
-                foreach (HL7PackageConfigurationElement package in configSection.HL7PackageCollection)
-                {
-                    packageList.Add(package.HL7Package);
-                }
-            }
-
-            //add standard package
-            packageList.Add(SourceGenerator.getVersionPackageName(version));
-            retVal = (System.String[])SupportClass.ICollectionSupport.ToArray(packageList, new System.String[] { });
-
-            return retVal;
-        }
 
         /// <summary> Finds a message or segment class by name and version.</summary>
         /// <param name="name">the segment or message structure name 
