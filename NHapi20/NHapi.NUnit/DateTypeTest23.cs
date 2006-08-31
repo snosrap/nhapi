@@ -19,8 +19,8 @@ namespace NHAPI.NUnit
 			DateTime checkDate = DateTime.Now;
 			PipeParser parser = new PipeParser();
 			ADT_A01 a01 = new ADT_A01();
-			a01.PV1.TransferToBadDebtDate.Set(checkDate);
-			Assert.AreEqual(a01.PV1.TransferToBadDebtDate.Value, checkDate.ToString("yyyyMMdd"));
+            a01.PV1.AdmitDateTime.TimeOfAnEvent.Set(checkDate, "yyyyMMdd");
+            Assert.AreEqual(a01.PV1.AdmitDateTime.TimeOfAnEvent.Value, checkDate.ToString("yyyyMMdd"));
 		}
 
 		[Test]
