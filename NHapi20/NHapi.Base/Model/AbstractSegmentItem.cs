@@ -11,7 +11,7 @@ namespace NHapi.Base.Model
         private bool _required = false;
         private int _length = 0;
         private List<object> _args = new List<object>();
-        private int _maxReps;
+        private int _maxReps=-1;
         private string _description;
 
         ///<summary>
@@ -90,7 +90,13 @@ namespace NHapi.Base.Model
         /// </summary>
         public int MaxRepetitions
         {
-            get { return _maxReps; }
+            get
+            {
+                if (_maxReps <= 0)
+                    return int.MaxValue;
+                else
+                    return _maxReps;
+            }
             set { _maxReps = value; }
         }
         /// <summary>
