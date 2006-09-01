@@ -71,6 +71,7 @@
     <Compile Include="Model\IStructure.cs" />
     <Compile Include="Model\IType.cs" />
     <Compile Include="Model\Varies.cs" />
+    <Compile Include="Parser\Constants.cs" />
     <Compile Include="Parser\DefaultModelClassFactory.cs" />
     <Compile Include="Parser\DefaultXMLParser.cs" />
     <Compile Include="Parser\EncodingCharacters.cs" />
@@ -87,7 +88,7 @@
     <Compile Include="Parser\IModelClassFactory.cs" />
     <Compile Include="NormativeDatabase.cs" />
     <Compile Include="PackageManager.cs" />
-    <Compile Include="Parser\Parser.cs" />
+    <Compile Include="Parser\ParserBase.cs" />
     <Compile Include="Parser\PipeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

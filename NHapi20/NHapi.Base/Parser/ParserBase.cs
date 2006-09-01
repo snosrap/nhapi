@@ -36,13 +36,39 @@ namespace NHapi.Base.Parser
     /// </author>
     public abstract class ParserBase
     {
+        private static readonly IHapiLog _log;
+        private IModelClassFactory _modelClassFactory;
+        private IValidationContext _validationContext;
+        private MessageValidator _messageValidator;
+
+        #region Constructors
+        /// <summary> Uses DefaultModelClassFactory for model class lookup. </summary>
+        public ParserBase()  : this(new DefaultModelClassFactory())
+        { }
+
+        /// <param name="theFactory">custom factory to use for model class lookup 
+        /// </param>
+        public ParserBase(IModelClassFactory theFactory)
+        {
+            _modelClassFactory = theFactory;
+            ValidationContext = new DefaultValidation();
+        }
+
+        static ParserBase()
+        {
+            _log = HapiLogFactory.getHapiLog(typeof(ParserBase));
+        }
+        #endregion
+
+
+        #region Properties
         /// <returns> the factory used by this Parser for model class lookup
         /// </returns>
         virtual public IModelClassFactory Factory
         {
             get
             {
-                return myFactory;
+                return _modelClassFactory;
             }
 
         }
@@ -55,19 +81,21 @@ namespace NHapi.Base.Parser
         {
             get
             {
-                return myContext;
+                return _validationContext;
             }
 
             set
             {
-                myContext = value;
-                myValidator = new MessageValidator(value, true);
+                _validationContext = value;
+                _messageValidator = new MessageValidator(value, true);
             }
 
         }
+
         /// <returns> the preferred encoding of this Parser
         /// </returns>
         public abstract System.String DefaultEncoding { get;}
+
         /// <summary> Returns event->structure maps.  </summary>
         private static System.Collections.IDictionary MessageStructures
         {
@@ -77,44 +105,10 @@ namespace NHapi.Base.Parser
             }
 
         }
+        #endregion
 
-        private static readonly IHapiLog log;
-        
-        private IModelClassFactory myFactory;
-        private IValidationContext myContext;
-        private MessageValidator myValidator;
 
-        /// <summary> Uses DefaultModelClassFactory for model class lookup. </summary>
-        public ParserBase()
-        {
-            myFactory = new DefaultModelClassFactory();
-            ValidationContext = new DefaultValidation();
-        }
-
-        /// <param name="theFactory">custom factory to use for model class lookup 
-        /// </param>
-        public ParserBase(IModelClassFactory theFactory)
-        {
-            myFactory = theFactory;
-            ValidationContext = new DefaultValidation();
-        }
-
-        /// <summary> Returns a String representing the encoding of the given message, if 
-        /// the encoding is recognized.  For example if the given message appears 
-        /// to be encoded using HL7 2.x XML rules then "XML" would be returned.  
-        /// If the encoding is not recognized then null is returned.  That this 
-        /// method returns a specific encoding does not guarantee that the 
-        /// message is correctly encoded (e.g. well formed XML) - just that  
-        /// it is not encoded using any other encoding than the one returned.  
-        /// Returns null if the encoding is not recognized.  
-        /// </summary>
-        public abstract System.String getEncoding(System.String message);
-
-        /// <summary> Returns true if and only if the given encoding is supported 
-        /// by this Parser.  
-        /// </summary>
-        public abstract bool supportsEncoding(System.String encoding);
-
+        #region Parse
         /// <summary> Parses a message string and returns the corresponding Message object.
         /// 
         /// </summary>
@@ -128,7 +122,7 @@ namespace NHapi.Base.Parser
         /// </summary>
         public virtual IMessage parse(System.String message)
         {
-           
+
 
             System.String version = getVersion(message);
             if (!validVersion(version))
@@ -152,9 +146,9 @@ namespace NHapi.Base.Parser
                 throw new EncodingNotSupportedException("Can't parse message beginning " + message.Substring(0, (System.Math.Min(message.Length, 50)) - (0)));
             }
 
-            myValidator.validate(message, encoding.Equals("XML"), version);
+            _messageValidator.validate(message, encoding.Equals("XML"), version);
             IMessage result = doParse(message, version);
-            myValidator.validate(result);
+            _messageValidator.validate(result);
 
             return result;
         }
@@ -174,6 +168,9 @@ namespace NHapi.Base.Parser
         /// </summary>
         protected internal abstract IMessage doParse(System.String message, System.String version);
 
+        #endregion
+
+        #region Encode
         /// <summary> Formats a Message object into an HL7 message string using the given 
         /// encoding. 
         /// 
@@ -193,9 +190,9 @@ namespace NHapi.Base.Parser
         /// </summary>
         public virtual System.String encode(IMessage source, System.String encoding)
         {
-            myValidator.validate(source);
+            _messageValidator.validate(source);
             System.String result = doEncode(source, encoding);
-            myValidator.validate(result, encoding.Equals("XML"), source.Version);
+            _messageValidator.validate(result, encoding.Equals("XML"), source.Version);
 
             return result;
         }
@@ -236,9 +233,9 @@ namespace NHapi.Base.Parser
         {
             System.String encoding = DefaultEncoding;
 
-            myValidator.validate(source);
+            _messageValidator.validate(source);
             System.String result = doEncode(source);
-            myValidator.validate(result, encoding.Equals("XML"), source.Version);
+            _messageValidator.validate(result, encoding.Equals("XML"), source.Version);
 
             return result;
         }
@@ -257,6 +254,23 @@ namespace NHapi.Base.Parser
         /// <summary>      supported by this parser.  
         /// </summary>
         protected internal abstract System.String doEncode(IMessage source);
+        #endregion
+
+        /// <summary> Returns a String representing the encoding of the given message, if 
+        /// the encoding is recognized.  For example if the given message appears 
+        /// to be encoded using HL7 2.x XML rules then "XML" would be returned.  
+        /// If the encoding is not recognized then null is returned.  That this 
+        /// method returns a specific encoding does not guarantee that the 
+        /// message is correctly encoded (e.g. well formed XML) - just that  
+        /// it is not encoded using any other encoding than the one returned.  
+        /// Returns null if the encoding is not recognized.  
+        /// </summary>
+        public abstract System.String getEncoding(System.String message);
+
+        /// <summary> Returns true if and only if the given encoding is supported 
+        /// by this Parser.  
+        /// </summary>
+        public abstract bool supportsEncoding(System.String encoding);
 
         /// <summary> <p>Returns a minimal amount of data from a message string, including only the 
         /// data needed to send a response to the remote system.  This includes the 
@@ -367,7 +381,7 @@ namespace NHapi.Base.Parser
             return structure;
         }
 
-    
+
         /// <summary> Note that the validation context of the resulting message is set to this parser's validation 
         /// context.  The validation context is used within Primitive.setValue().
         /// 
@@ -391,27 +405,24 @@ namespace NHapi.Base.Parser
 
             try
             {
-                System.Type messageClass = myFactory.getMessageClass(theName, theVersion, isExplicit);
+                System.Type messageClass = _modelClassFactory.getMessageClass(theName, theVersion, isExplicit);
                 if (messageClass == null)
                 {
                     throw new System.Exception("Can't find message class in current package list: " + theName);
                 }
-                log.info("Instantiating msg of class " + messageClass.FullName);
+                _log.info("Instantiating msg of class " + messageClass.FullName);
                 System.Reflection.ConstructorInfo constructor = messageClass.GetConstructor(new System.Type[] { typeof(IModelClassFactory) });
-                result = (IMessage)constructor.Invoke(new System.Object[] { myFactory });
+                result = (IMessage)constructor.Invoke(new System.Object[] { _modelClassFactory });
             }
             catch (System.Exception e)
             {
                 throw new HL7Exception("Couldn't create Message object of type " + theName, HL7Exception.UNSUPPORTED_MESSAGE_TYPE, e);
             }
 
-            result.ValidationContext = myContext;
+            result.ValidationContext = _validationContext;
 
             return result;
         }
-        static ParserBase()
-        {
-            log = HapiLogFactory.getHapiLog(typeof(ParserBase));
-        }
+
     }
 }

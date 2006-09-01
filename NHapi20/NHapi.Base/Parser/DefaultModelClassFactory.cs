@@ -60,7 +60,7 @@ namespace NHapi.Base.Parser
             {
                 theName = ParserBase.getMessageStructureForEvent(theName, theVersion);
             }
-            mc = findClass(theName, theVersion, "message");
+            mc = findClass(theName, theVersion, ClassType.Message);
             if (mc == null)
                 mc = GenericMessage.getGenericMessageClass(theVersion);
             return mc;
@@ -74,7 +74,7 @@ namespace NHapi.Base.Parser
         /// <returns></returns>
         public virtual System.Type getGroupClass(System.String theName, System.String theVersion)
         {
-            return findClass(theName, theVersion, "group");
+            return findClass(theName, theVersion, ClassType.Group);
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace NHapi.Base.Parser
         /// <returns></returns>
         public virtual System.Type getSegmentClass(System.String theName, System.String theVersion)
         {
-            return findClass(theName, theVersion, "segment");
+            return findClass(theName, theVersion, ClassType.Segment);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace NHapi.Base.Parser
         /// <returns></returns>
         public virtual System.Type getTypeClass(System.String theName, System.String theVersion)
         {
-            return findClass(theName, theVersion, "datatype");
+            return findClass(theName, theVersion, ClassType.Datatype);
         }
 
         /// <summary> <p>Lists all the packages (user-definable) where classes for standard and custom 
@@ -160,7 +160,7 @@ namespace NHapi.Base.Parser
         /// </param>
         /// <param name="type">'message', 'group', 'segment', or 'datatype'  
         /// </param>
-        private static System.Type findClass(System.String name, System.String version, System.String type)
+        private static System.Type findClass(System.String name, System.String version, ClassType type)
         {
             if (ParserBase.validVersion(version) == false)
             {
@@ -171,10 +171,8 @@ namespace NHapi.Base.Parser
             System.String[] packages = packageList(version);
 
             //get subpackage for component type
-            System.String types = "message|group|segment|datatype";
-            if (types.IndexOf(type) < 0)
-                throw new HL7Exception("Can't find " + name + " for version " + version + " -- type must be " + types + " but is " + type);
-            System.String subpackage = type.Substring(0, 1).ToUpper() + type.Substring(1);
+            string typeString = type.ToString();
+            System.String subpackage = typeString.Substring(0, 1).ToUpper() + typeString.Substring(1);
 
             //try to load class from each package
             System.Type compClass = null;

@@ -291,6 +291,7 @@ namespace NHapi.Base.Parser
             FilterIterator segmentIter = new FilterIterator(messageIter, segmentsOnly);
 
             System.String[] segments = split(message, segDelim);
+            EncodingCharacters encodingChars = getEncodingChars(message);
             for (int i = 0; i < segments.Length; i++)
             {
 
@@ -309,7 +310,7 @@ namespace NHapi.Base.Parser
                     FilterIterator dirIter = new FilterIterator(segmentIter, byDirection);
                     if (dirIter.MoveNext())
                     {
-                        parse((ISegment)dirIter.Current, segments[i], getEncodingChars(message));
+                        parse((ISegment)dirIter.Current, segments[i], encodingChars);
                     }
                 }
             }
@@ -572,9 +573,13 @@ namespace NHapi.Base.Parser
             //get encoding characters ...
             ISegment msh = (ISegment)source.GetStructure("MSH");
             System.String fieldSepString = Terser.Get(msh, 1, 0, 1, 1);
-
             if (fieldSepString == null)
-                throw new HL7Exception("Can't encode message: MSH-1 (field separator) is missing");
+            {
+                //cdc: This was breaking when trying to construct a blank message, and there is no way to set the fieldSeperator, so fill in a default
+                //throw new HL7Exception("Can't encode message: MSH-1 (field separator) is missing");
+                fieldSepString = "|";
+                Terser.Set(msh, 1, 0, 1, 1, fieldSepString);
+            }
 
             char fieldSep = '|';
             if (fieldSepString != null && fieldSepString.Length > 0)
@@ -583,7 +588,39 @@ namespace NHapi.Base.Parser
             System.String encCharString = Terser.Get(msh, 2, 0, 1, 1);
 
             if (encCharString == null)
-                throw new HL7Exception("Can't encode message: MSH-2 (encoding characters) is missing");
+            {
+                //cdc: This was breaking when trying to construct a blank message, and there is no way to set the EncChars, so fill in a default
+                //throw new HL7Exception("Can't encode message: MSH-2 (encoding characters) is missing");
+                encCharString = @"^~\&";
+                Terser.Set(msh, 2, 0, 1, 1, encCharString);
+            }
+
+            string version = Terser.Get(msh, 12, 0, 1, 1);
+            if (version == null)
+            {
+                //Put in the message version
+                Terser.Set(msh, 12, 0, 1, 1, source.Version);
+            }
+
+            string msgStructure = Terser.Get(msh, 3, 0, 1, 1);
+            if (msgStructure == null)
+            {
+                //Create the MsgType and Trigger Event if not there
+                string messageTypeFullname = source.getStructureName();
+                int i=messageTypeFullname.IndexOf("_");
+                if (i > 0)
+                {
+                    string type = messageTypeFullname.Substring(0, i);
+                    string triggerEvent = messageTypeFullname.Substring(i+1);
+                    Terser.Set(msh, 9, 0, 1, 1, type);
+                    Terser.Set(msh, 9, 0, 2, 1, triggerEvent);
+                }
+                else
+                {
+                    Terser.Set(msh, 9, 0, 1, 1, messageTypeFullname);
+                }
+               
+            }
 
             if (encCharString.Length != 4)
                 throw new HL7Exception("Encoding characters '" + encCharString + "' invalid -- must be 4 characters", HL7Exception.DATA_TYPE_ERROR);

@@ -42,10 +42,8 @@ namespace NHapi.Base.Model
     public abstract class AbstractSegment : ISegment
     {
         private static readonly IHapiLog log;
-
         private List<AbstractSegmentItem> _items;
-
-        private IGroup parentStructure;
+        private IGroup _parentStructure;
 
         #region Constructor
         /// <summary> Calls the abstract init() method to create the fields in this segment.
@@ -59,7 +57,7 @@ namespace NHapi.Base.Model
         /// </param>
         public AbstractSegment(IGroup parentStructure, IModelClassFactory factory)
         {
-            this.parentStructure = parentStructure;
+            this._parentStructure = parentStructure;
 
             _items = new List<AbstractSegmentItem>();
 
@@ -94,7 +92,7 @@ namespace NHapi.Base.Model
         {
             get
             {
-                return this.parentStructure;
+                return _parentStructure;
             }
 
         }
@@ -114,6 +112,18 @@ namespace NHapi.Base.Model
             return _items[number - 1].GetAllFieldsAsITypeArray();
 
             //return (IType[])_items[number - 1].fields; //note: fields are numbered from 1 from the user's perspective
+        }
+
+        /// <summary> Return the field description.  Fields are numbered from 1.
+        /// </summary>
+        public virtual string getFieldDescription(int number)
+        {
+            ensureEnoughFields(number);
+            if (number < 1 || number > _items.Count)
+            {
+                throw new HL7Exception("Can't retrieve field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
+            }
+            return _items[number - 1].Description;
         }
 
         /// <summary> Returns a specific repetition of field at the specified index.  If there exist 
@@ -144,16 +154,7 @@ namespace NHapi.Base.Model
 
             if (rep > _items[number - 1].MaxRepetitions)
                 throw new HL7Exception("Can't get repetition " + rep + " from field " + number + " - maximum repetitions is only " + _items[number - 1].MaxRepetitions + " reps.", HL7Exception.APPLICATION_INTERNAL_ERROR);
-            /*if (this.GetMaxCardinality(number) > 0 && rep >= this.GetMaxCardinality(number))
-            throw new HL7Exception(
-            "Can't get repetition "
-            + rep
-            + " from field "
-            + number
-            + " - only "
-            + this.GetMaxCardinality(number)
-            + " reps allowed.",
-            HL7Exception.APPLICATION_INTERNAL_ERROR);*/
+           
 
             //add a rep if necessary ... 
             if (rep == currentReps)
