@@ -31,6 +31,39 @@ QRD|20060228155525|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||";
 			Assert.AreEqual("38923", qryR02.QRD.getWhoSubjectFilter(0).IDNumber.Value);
 		}
 
+        [Test]
+        public void CreateBlankMessage()
+        {
+            ADT_A01 a01 = new ADT_A01();
+            DateTime birthDate = new DateTime(1980, 4, 1);
+            a01.MSH.SendingApplication.UniversalID.Value = "ThisOne";
+            a01.MSH.ReceivingApplication.UniversalID.Value = "COHIE";
+            a01.PID.PatientIDExternalID.ID.Value = "123456";
+            a01.PV1.AttendingDoctor.FamilyName.Value = "Jones";
+            a01.PV1.AttendingDoctor.GivenName.Value = "Mike";
+            a01.PID.DateOfBirth.TimeOfAnEvent.SetShortDate(birthDate);
+
+            PipeParser parser = new PipeParser();
+
+            string pipeMessage = parser.encode(a01);
+
+            Assert.IsNotNull(pipeMessage);
+
+            IMessage test = parser.parse(pipeMessage);
+            ADT_A01 a01Test = test as ADT_A01;
+            Assert.IsNotNull(a01Test);
+
+            Assert.AreEqual(a01Test.MSH.ReceivingApplication.UniversalID.Value, "COHIE");
+            Assert.AreEqual(a01Test.PID.PatientIDExternalID.ID.Value, "123456");
+
+            Assert.AreEqual(a01Test.PID.DateOfBirth.TimeOfAnEvent.GetAsDate().ToShortDateString(), birthDate.ToShortDateString());
+
+            Assert.AreEqual(a01Test.PV1.AttendingDoctor.FamilyName.Value, "Jones");
+            Assert.AreEqual(a01Test.MSH.MessageType.MessageType.Value, "ADT");
+            Assert.AreEqual(a01Test.MSH.MessageType.TriggerEvent.Value, "A01");
+            
+        }
+
 		
 		[Test]
 		public void ParseORFR04()
