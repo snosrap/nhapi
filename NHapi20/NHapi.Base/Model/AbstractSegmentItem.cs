@@ -125,7 +125,7 @@ namespace NHapi.Base.Model
         /// <summary>
         /// 
         /// </summary>
-        public IList<IType> fields
+        public IList<IType> Fields
         {
             get
             {

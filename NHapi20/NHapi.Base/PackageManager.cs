@@ -83,11 +83,6 @@ namespace NHapi.Base
         /// </summary>
         public static System.String GetVersionPackagePath(System.String ver)
         {
-            //if (ParserBase.validVersion(ver) == false)
-            //{
-            //    throw new HL7Exception("The HL7 version " + ver + " is not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
-            //}
-            //System.Text.StringBuilder path = new System.Text.StringBuilder("ca/uhn/hl7v2/model/v");
             System.Text.StringBuilder path = new System.Text.StringBuilder("NHapi.Model.V");
             char[] versionChars = new char[ver.Length];
             SupportClass.GetCharsFromString(ver, 0, ver.Length, versionChars, 0);
@@ -96,9 +91,10 @@ namespace NHapi.Base
                 if (versionChars[i] != '.')
                     path.Append(versionChars[i]);
             }
-            path.Append('/');
+            path.Append("/");
             return path.ToString();
         }
+
 
         /// <summary> Returns the package name for model elements of the given version - e.g.
         /// "NHapi.Base.Model.v24.".  This method

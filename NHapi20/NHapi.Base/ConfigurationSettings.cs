@@ -5,13 +5,13 @@ using System.Configuration;
 
 namespace NHapi.Base
 {
-    class ConfigurationSettings
+    public class ConfigurationSettings
     {
         public static bool UseFactory
         {
             get
             {
-                bool useFactory = NHapi.Base.Properties.Settings.Default.UseFactory;
+                bool useFactory = false;
                 string useFactoryFromConfig = System.Configuration.ConfigurationManager.AppSettings["UseFactory"];
                 if(useFactoryFromConfig !=null && useFactoryFromConfig.Length>0)
                 {
@@ -25,7 +25,7 @@ namespace NHapi.Base
         {
             get
             {
-                string conn = NHapi.Base.Properties.Settings.Default.ConnectionString;
+                string conn = "";
                 string connFromConfig = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
                 if (connFromConfig != null && connFromConfig.Length > 0)
                 {

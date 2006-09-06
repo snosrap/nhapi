@@ -192,7 +192,7 @@ namespace NHapi.Base.SourceGeneration
                 source.Append("using NHapi.Base.Parser;\r\n");
                 source.Append("using NHapi.Base.Model;\r\n");
                 source.Append("using ");
-                source.Append(PackageManager.GetVersionPackagePath(version));
+                source.Append(PackageManager.GetVersionPackageName(version));
                 source.Append("Datatype;\r\n");
                 source.Append("using NHapi.Base.Log;\r\n\r\n");
 
@@ -424,6 +424,32 @@ namespace NHapi.Base.SourceGeneration
                             source.Append("  }\r\n");
                             source.Append(" return ret;\r\n");
                             source.Append("}\r\n\r\n");
+
+                            //Add property for the total repetitions of this object
+                            source.Append("  ///<summary>\r\n");
+                            source.Append("  /// Returns the total repetitions of ");
+                            source.Append(se.GetDescriptionWithoutSpecialCharacters());
+                            source.Append(" (");
+                            source.Append(name);
+                            source.Append("-");
+                            source.Append(se.field);
+                            source.Append(").\r\n");
+                            source.Append("   ///</summary>\r\n");
+                            source.Append("  public int ");
+                            source.Append(SourceGenerator.makeAccessorName(se.desc));
+                            source.Append("RepetitionsUsed()\r\n");
+                            source.Append("{\r\n");
+                            source.Append("    try {\r\n");
+                            source.Append("\treturn GetTotalFieldRepetitionsUsed(" + se.field + ");\r\n");
+                            source.Append("    }\r\n");
+                            source.Append("catch (HL7Exception he) {\r\n");
+                            source.Append("        HapiLogFactory.getHapiLog(this.GetType()).error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
+                            source.Append("        throw new System.Exception(\"An unexpected error ocurred\", he);\r\n");
+                            source.Append("} catch (System.Exception cce) {\r\n");
+                            source.Append("        HapiLogFactory.getHapiLog(GetType()).error(\"Unexpected problem obtaining field value.  This is a bug.\", cce);\r\n");
+                            source.Append("        throw new System.Exception(\"An unexpected error ocurred\", cce);\r\n");
+                            source.Append("}\r\n");
+                            source.Append("}\r\n");
                         }
                     }
                 }

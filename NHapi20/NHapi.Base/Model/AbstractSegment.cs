@@ -107,7 +107,7 @@ namespace NHapi.Base.Model
 
             if (number < 1 || number > _items.Count)
             {
-                throw new HL7Exception("Can't retrieve field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
+                throw new HL7Exception("Can't retrieve field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].Fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
             return _items[number - 1].GetAllFieldsAsITypeArray();
 
@@ -116,7 +116,7 @@ namespace NHapi.Base.Model
 
         /// <summary> Return the field description.  Fields are numbered from 1.
         /// </summary>
-        public virtual string getFieldDescription(int number)
+        public virtual string GetFieldDescription(int number)
         {
             ensureEnoughFields(number);
             if (number < 1 || number > _items.Count)
@@ -124,6 +124,16 @@ namespace NHapi.Base.Model
                 throw new HL7Exception("Can't retrieve field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
             return _items[number - 1].Description;
+        }
+
+        /// <summary>
+        /// Returns the total number of items used for the field X.  Fields are numbered from 1.
+        /// </summary>
+        /// <param name="number">Field Number (Starts at 1)</param>
+        /// <returns>0 if no fields users, otherwise, the number of fields used.</returns>
+        public virtual int GetTotalFieldRepetitionsUsed(int number)
+        {
+            return _items[number - 1].Fields.Count;
         }
 
         /// <summary> Returns a specific repetition of field at the specified index.  If there exist 
@@ -143,10 +153,10 @@ namespace NHapi.Base.Model
             ensureEnoughFields(number);
             if (number < 1 || number > _items.Count)
             {
-                throw new HL7Exception("Can't retrieve field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
+                throw new HL7Exception("Can't retrieve field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].Fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
 
-            int currentReps = _items[number - 1].fields.Count;
+            int currentReps = _items[number - 1].Fields.Count;
 
             //check if out of range ... 
             if (rep > currentReps)
@@ -159,10 +169,10 @@ namespace NHapi.Base.Model
             //add a rep if necessary ... 
             if (rep == currentReps)
             {
-                _items[number - 1].fields.Add(createNewType(number));
+                _items[number - 1].Fields.Add(createNewType(number));
             }
 
-            return _items[number - 1].fields[rep];
+            return _items[number - 1].Fields[rep];
         }
 
         /// <summary> Creates a new instance of the Type at the given field number in this segment.  </summary>
@@ -234,7 +244,7 @@ namespace NHapi.Base.Model
         {
             if (number < 1 || number > _items.Count)
             {
-                throw new HL7Exception("Can't retrieve optionality of field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
+                throw new HL7Exception("Can't retrieve optionality of field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].Fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
 
             bool ret = false;
@@ -258,7 +268,7 @@ namespace NHapi.Base.Model
         {
             if (number < 1 || number > _items.Count)
             {
-                throw new HL7Exception("Can't retrieve max length of field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
+                throw new HL7Exception("Can't retrieve max length of field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].Fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
 
             int ret = 0;
@@ -280,7 +290,7 @@ namespace NHapi.Base.Model
         {
             if (number < 1 || number > _items.Count)
             {
-                throw new HL7Exception("Can't retrieve cardinality of field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
+                throw new HL7Exception("Can't retrieve cardinality of field " + number + " from segment " + this.GetType().FullName + " - there are only " + _items[number - 1].Fields.Count + " fields.", HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
 
             int reps = 0;
