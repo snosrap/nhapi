@@ -67,25 +67,20 @@ namespace NHapi.Base.SourceGeneration
 
         public static string MakeName(string fieldDesc)
         {
-            System.Text.StringBuilder aName = new System.Text.StringBuilder();
-            string name = fieldDesc;
-            name = name.Replace("'", "");
-            name = name.Replace("(", "");
-            name = name.Replace(")", "");
-            name = name.Replace("[", "");
-            name = name.Replace("]", "");
-            name = name.Replace("{", "");
-            name = name.Replace("}", "");
-            name = name.Replace("-", "");
-            name = name.Replace(".", "");
-            name = name.Replace(",", "");
-            name = name.Replace("/", "");
-            name = name.Replace("#", "");
-            name = name.Replace("’", "");
-            name = name.Replace("\"", "");
-            name = name.Replace("&", "And");
-
-            string[] splits = name.Split(' ');
+            char[] nameChar = fieldDesc.ToCharArray();
+            System.Text.StringBuilder nameFixed = new System.Text.StringBuilder();
+            for (int i = 0; i < nameChar.Length; i++)
+            {
+                if (char.IsLetterOrDigit(nameChar[i]))
+                {
+                    nameFixed.Append(nameChar[i]);
+                }
+                if (nameChar[i] == ' ')
+                {
+                    nameFixed.Append(" ");
+                }
+            }
+            string[] splits = nameFixed.ToString().Split(' ');
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             foreach (string split in splits)
             {
