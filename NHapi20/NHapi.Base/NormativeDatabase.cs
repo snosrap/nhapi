@@ -86,6 +86,19 @@ namespace NHapi.Base
 
         }
 
+        public void OpenNewConnection(string conn)
+        {
+            lock (this)
+            {
+                _connectionString = conn;
+                if (_conn.State == ConnectionState.Open)
+                    _conn.Close();
+                _conn.ConnectionString = conn;
+                _conn.Open();
+            }
+
+        }
+
         private static readonly IHapiLog log;
 
         private static NormativeDatabase db = null;
