@@ -436,9 +436,10 @@ namespace NHapi.Base.SourceGeneration
                             source.Append(").\r\n");
                             source.Append("   ///</summary>\r\n");
                             source.Append("  public int ");
-                            source.Append(SourceGenerator.makeAccessorName(se.desc));
-                            source.Append("RepetitionsUsed()\r\n");
+                            source.Append(SourceGenerator.MakeName(se.desc));
+                            source.Append("RepetitionsUsed\r\n");
                             source.Append("{\r\n");
+                            source.Append("get{\r\n");
                             source.Append("    try {\r\n");
                             source.Append("\treturn GetTotalFieldRepetitionsUsed(" + se.field + ");\r\n");
                             source.Append("    }\r\n");
@@ -448,6 +449,7 @@ namespace NHapi.Base.SourceGeneration
                             source.Append("} catch (System.Exception cce) {\r\n");
                             source.Append("        HapiLogFactory.getHapiLog(GetType()).error(\"Unexpected problem obtaining field value.  This is a bug.\", cce);\r\n");
                             source.Append("        throw new System.Exception(\"An unexpected error ocurred\", cce);\r\n");
+                            source.Append("}\r\n");
                             source.Append("}\r\n");
                             source.Append("}\r\n");
                         }

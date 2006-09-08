@@ -344,6 +344,7 @@ namespace NHapi.Base.SourceGeneration
             System.String name = def.Name;
             System.String indexName = group.getIndexName(name);
             System.String getterName = indexName;
+
             if (def is GroupDef)
             {
                 System.String unqualifiedName = ((GroupDef)def).UnqualifiedName;
@@ -365,7 +366,7 @@ namespace NHapi.Base.SourceGeneration
             source.Append(" ");
             if (def.Repeating)
             {
-                source.Append("get");
+                source.Append("Get");
                 source.Append(getterName);
                 source.Append("() {\r\n");
             }
@@ -408,7 +409,7 @@ namespace NHapi.Base.SourceGeneration
                 source.Append("\t///</summary>\r\n");
                 source.Append("\tpublic ");
                 source.Append(def.Name);
-                source.Append(" get");
+                source.Append(" Get");
                 source.Append(getterName);
                 source.Append("(int rep) { \r\n");
                 source.Append("\t   return (");
@@ -426,7 +427,7 @@ namespace NHapi.Base.SourceGeneration
                 source.Append("\t */ \r\n");
                 source.Append("\tpublic int ");
                 source.Append(getterName);
-                source.Append("Reps { \r\n");
+                source.Append("RepetitionsUsed { \r\n");
                 source.Append("get{\r\n");
                 source.Append("\t    int reps = -1; \r\n");
                 source.Append("\t    try { \r\n");

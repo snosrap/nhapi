@@ -65,6 +65,63 @@ namespace NHapi.Base.SourceGeneration
             }
         }
 
+        public static string MakeName(string fieldDesc)
+        {
+            System.Text.StringBuilder aName = new System.Text.StringBuilder();
+            string name = fieldDesc;
+            name = name.Replace("'", "");
+            name = name.Replace("(", "");
+            name = name.Replace(")", "");
+            name = name.Replace("[", "");
+            name = name.Replace("]", "");
+            name = name.Replace("{", "");
+            name = name.Replace("}", "");
+            name = name.Replace("-", "");
+            name = name.Replace(".", "");
+            name = name.Replace(",", "");
+            name = name.Replace("/", "");
+            name = name.Replace("#", "");
+            name = name.Replace("’", "");
+            name = name.Replace("\"", "");
+            name = name.Replace("&", "And");
+
+            string[] splits = name.Split(' ');
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            foreach (string split in splits)
+            {
+                if (split.Trim().Length > 0)
+                {
+                    if (IsSpecialWord(split))
+                    {
+                        sb.Append(split.ToUpper());
+                    }
+                    else
+                    {
+                        sb.Append(split[0].ToString().ToUpper());
+                        sb.Append(split.Substring(1).ToLower());
+                    }
+                }
+            }
+            return sb.ToString();
+        }
+
+        private static bool IsSpecialWord(string word)
+        {
+            word = word.ToLower();
+            if (word.Equals("ssn"))
+                return true;
+            else if (word.Equals("id"))
+                return true;
+            else
+                return false;
+        }
+
+        public static string MakePropertyName(string fieldDesc)
+        {
+            string name = MakeName(fieldDesc);
+            return name;
+        }
+
         /// <summary> Make a Java-ish accessor method name out of a field or component description
         /// by removing non-letters and adding "get".  One complication is that some description
         /// entries in the DB have their data types in brackets, and these should not be
@@ -74,52 +131,7 @@ namespace NHapi.Base.SourceGeneration
         /// </summary>
         public static System.String makeAccessorName(System.String fieldDesc)
         {
-            System.Text.StringBuilder aName = new System.Text.StringBuilder("get");
-            char[] chars = fieldDesc.ToCharArray();
-            bool lastCharWasNotLetter = true;
-            int inBrackets = 0;
-            System.Text.StringBuilder bracketContents = new System.Text.StringBuilder();
-            for (int i = 0; i < chars.Length; i++)
-            {
-                if (chars[i] == '(')
-                    inBrackets++;
-                if (chars[i] == ')')
-                    inBrackets--;
-
-                if (System.Char.IsLetterOrDigit(chars[i]))
-                {
-                    if (inBrackets > 0)
-                    {
-                        //buffer everthing in brackets
-                        bracketContents.Append(chars[i]);
-                    }
-                    else
-                    {
-                        //add capitalized bracketed text if appropriate 
-                        if (bracketContents.Length > 0)
-                        {
-                            aName.Append(capitalize(filterBracketedText(bracketContents.ToString())));
-                            bracketContents = new System.Text.StringBuilder();
-                        }
-                        if (lastCharWasNotLetter)
-                        {
-                            //first letter of each word is upper-case
-                            aName.Append(System.Char.ToUpper(chars[i]));
-                        }
-                        else
-                        {
-                            aName.Append(chars[i]);
-                        }
-                        lastCharWasNotLetter = false;
-                    }
-                }
-                else
-                {
-                    lastCharWasNotLetter = true;
-                }
-            }
-            aName.Append(capitalize(filterBracketedText(bracketContents.ToString())));
-            return aName.ToString();
+            return "Get" + MakeName(fieldDesc);
         }
 
         /// <summary> Make a c#-ish accessor method name out of a field or component description
@@ -193,55 +205,12 @@ namespace NHapi.Base.SourceGeneration
         /// </summary>
         public static System.String makeAccessorNameCSharp(System.String fieldDesc, int repitions)
         {
-            System.Text.StringBuilder aName = new System.Text.StringBuilder();
+            string name = MakeName(fieldDesc);
             if (repitions != 1)
-                aName.Append("get");
+                name = "Get" + name;
 
-            char[] chars = fieldDesc.ToCharArray();
-            bool lastCharWasNotLetter = true;
-            int inBrackets = 0;
-            System.Text.StringBuilder bracketContents = new System.Text.StringBuilder();
-            for (int i = 0; i < chars.Length; i++)
-            {
-                if (chars[i] == '(')
-                    inBrackets++;
-                if (chars[i] == ')')
-                    inBrackets--;
 
-                if (System.Char.IsLetterOrDigit(chars[i]))
-                {
-                    if (inBrackets > 0)
-                    {
-                        //buffer everthing in brackets
-                        bracketContents.Append(chars[i]);
-                    }
-                    else
-                    {
-                        //add capitalized bracketed text if appropriate 
-                        if (bracketContents.Length > 0)
-                        {
-                            aName.Append(capitalize(filterBracketedText(bracketContents.ToString())));
-                            bracketContents = new System.Text.StringBuilder();
-                        }
-                        if (lastCharWasNotLetter)
-                        {
-                            //first letter of each word is upper-case
-                            aName.Append(System.Char.ToUpper(chars[i]));
-                        }
-                        else
-                        {
-                            aName.Append(chars[i]);
-                        }
-                        lastCharWasNotLetter = false;
-                    }
-                }
-                else
-                {
-                    lastCharWasNotLetter = true;
-                }
-            }
-            aName.Append(capitalize(filterBracketedText(bracketContents.ToString())));
-            return aName.ToString();
+            return name;
         }
 
         /// <summary> Bracketed text in a field description should be included in the accessor 
