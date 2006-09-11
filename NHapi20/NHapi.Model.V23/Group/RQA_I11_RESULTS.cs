@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Group
 ///Represents the RQA_I11_RESULTS Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBR (Observation request segment) 
-/// * 1: NTE (Notes and comments segment) optional repeating
-/// * 2: RQA_I11_OBSERVATION (a Group object) optional repeating
+///<ol>
+///<li>0: OBR (Observation request segment) </li>
+///<li>1: NTE (Notes and comments segment) optional repeating</li>
+///<li>2: RQA_I11_OBSERVATION (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RQA_I11_RESULTS : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RQA_I11_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public RQA_I11_OBSERVATION getOBSERVATION() {
+	public RQA_I11_OBSERVATION GetOBSERVATION() {
 	   RQA_I11_OBSERVATION ret = null;
 	   try {
 	      ret = (RQA_I11_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RQA_I11_OBSERVATION getOBSERVATION(int rep) { 
+	public RQA_I11_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (RQA_I11_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RQA_I11_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

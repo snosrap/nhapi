@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Group
 ///Represents the SQM_S25_RESOURCES Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RGS (Resource Group) 
-/// * 1: SQM_S25_SERVICE (a Group object) optional repeating
-/// * 2: SQM_S25_GENERAL_RESOURCE (a Group object) optional repeating
-/// * 3: SQM_S25_PERSONNEL_RESOURCE (a Group object) optional repeating
-/// * 4: SQM_S25_LOCATION_RESOURCE (a Group object) optional repeating
+///<ol>
+///<li>0: RGS (Resource Group) </li>
+///<li>1: SQM_S25_SERVICE (a Group object) optional repeating</li>
+///<li>2: SQM_S25_GENERAL_RESOURCE (a Group object) optional repeating</li>
+///<li>3: SQM_S25_PERSONNEL_RESOURCE (a Group object) optional repeating</li>
+///<li>4: SQM_S25_LOCATION_RESOURCE (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SQM_S25_RESOURCES : AbstractGroup {
@@ -55,7 +57,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SQM_S25_SERVICE (a Group object) - creates it if necessary
 	///</summary>
-	public SQM_S25_SERVICE getSERVICE() {
+	public SQM_S25_SERVICE GetSERVICE() {
 	   SQM_S25_SERVICE ret = null;
 	   try {
 	      ret = (SQM_S25_SERVICE)this.GetStructure("SERVICE");
@@ -72,14 +74,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SQM_S25_SERVICE getSERVICE(int rep) { 
+	public SQM_S25_SERVICE GetSERVICE(int rep) { 
 	   return (SQM_S25_SERVICE)this.GetStructure("SERVICE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SQM_S25_SERVICE 
 	 */ 
-	public int SERVICEReps { 
+	public int SERVICERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -96,7 +98,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SQM_S25_GENERAL_RESOURCE (a Group object) - creates it if necessary
 	///</summary>
-	public SQM_S25_GENERAL_RESOURCE getGENERAL_RESOURCE() {
+	public SQM_S25_GENERAL_RESOURCE GetGENERAL_RESOURCE() {
 	   SQM_S25_GENERAL_RESOURCE ret = null;
 	   try {
 	      ret = (SQM_S25_GENERAL_RESOURCE)this.GetStructure("GENERAL_RESOURCE");
@@ -113,14 +115,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SQM_S25_GENERAL_RESOURCE getGENERAL_RESOURCE(int rep) { 
+	public SQM_S25_GENERAL_RESOURCE GetGENERAL_RESOURCE(int rep) { 
 	   return (SQM_S25_GENERAL_RESOURCE)this.GetStructure("GENERAL_RESOURCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SQM_S25_GENERAL_RESOURCE 
 	 */ 
-	public int GENERAL_RESOURCEReps { 
+	public int GENERAL_RESOURCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -137,7 +139,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SQM_S25_PERSONNEL_RESOURCE (a Group object) - creates it if necessary
 	///</summary>
-	public SQM_S25_PERSONNEL_RESOURCE getPERSONNEL_RESOURCE() {
+	public SQM_S25_PERSONNEL_RESOURCE GetPERSONNEL_RESOURCE() {
 	   SQM_S25_PERSONNEL_RESOURCE ret = null;
 	   try {
 	      ret = (SQM_S25_PERSONNEL_RESOURCE)this.GetStructure("PERSONNEL_RESOURCE");
@@ -154,14 +156,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SQM_S25_PERSONNEL_RESOURCE getPERSONNEL_RESOURCE(int rep) { 
+	public SQM_S25_PERSONNEL_RESOURCE GetPERSONNEL_RESOURCE(int rep) { 
 	   return (SQM_S25_PERSONNEL_RESOURCE)this.GetStructure("PERSONNEL_RESOURCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SQM_S25_PERSONNEL_RESOURCE 
 	 */ 
-	public int PERSONNEL_RESOURCEReps { 
+	public int PERSONNEL_RESOURCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -178,7 +180,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SQM_S25_LOCATION_RESOURCE (a Group object) - creates it if necessary
 	///</summary>
-	public SQM_S25_LOCATION_RESOURCE getLOCATION_RESOURCE() {
+	public SQM_S25_LOCATION_RESOURCE GetLOCATION_RESOURCE() {
 	   SQM_S25_LOCATION_RESOURCE ret = null;
 	   try {
 	      ret = (SQM_S25_LOCATION_RESOURCE)this.GetStructure("LOCATION_RESOURCE");
@@ -195,14 +197,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SQM_S25_LOCATION_RESOURCE getLOCATION_RESOURCE(int rep) { 
+	public SQM_S25_LOCATION_RESOURCE GetLOCATION_RESOURCE(int rep) { 
 	   return (SQM_S25_LOCATION_RESOURCE)this.GetStructure("LOCATION_RESOURCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SQM_S25_LOCATION_RESOURCE 
 	 */ 
-	public int LOCATION_RESOURCEReps { 
+	public int LOCATION_RESOURCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

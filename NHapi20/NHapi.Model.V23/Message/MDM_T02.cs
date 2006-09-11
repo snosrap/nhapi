@@ -12,12 +12,14 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a MDM_T02 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: EVN (Event type) 
-/// * 2: PID (Patient Identification) 
-/// * 3: PV1 (Patient visit) 
-/// * 4: TXA (Document notification segment) 
-/// * 5: OBX (Observation segment) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: EVN (Event type) </li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PV1 (Patient visit) </li>
+///<li>4: TXA (Document notification segment) </li>
+///<li>5: OBX (Observation segment) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MDM_T02 : AbstractMessage  {
@@ -135,7 +137,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation segment) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -152,14 +154,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

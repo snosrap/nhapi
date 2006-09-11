@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a ADT_A20 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: EVN (Event type) 
-/// * 2: NPU (Bed status update) 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: EVN (Event type) </li>
+///<li>2: NPU (Bed status update) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A20 : AbstractMessage  {

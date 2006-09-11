@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a ORU_R01 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: ORU_R01_RESPONSE (a Group object) repeating
-/// * 2: DSC (Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: ORU_R01_RESPONSE (a Group object) repeating</li>
+///<li>2: DSC (Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORU_R01 : AbstractMessage  {
@@ -65,7 +67,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORU_R01_RESPONSE (a Group object) - creates it if necessary
 	///</summary>
-	public ORU_R01_RESPONSE getRESPONSE() {
+	public ORU_R01_RESPONSE GetRESPONSE() {
 	   ORU_R01_RESPONSE ret = null;
 	   try {
 	      ret = (ORU_R01_RESPONSE)this.GetStructure("RESPONSE");
@@ -82,14 +84,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORU_R01_RESPONSE getRESPONSE(int rep) { 
+	public ORU_R01_RESPONSE GetRESPONSE(int rep) { 
 	   return (ORU_R01_RESPONSE)this.GetStructure("RESPONSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORU_R01_RESPONSE 
 	 */ 
-	public int RESPONSEReps { 
+	public int RESPONSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the RRA_O02_ADMINISTRATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RXA (Pharmacy administration segment) 
-/// * 1: RXR (Pharmacy route segment) 
+///<ol>
+///<li>0: RXA (Pharmacy administration segment) </li>
+///<li>1: RXR (Pharmacy route segment) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRA_O02_ADMINISTRATION : AbstractGroup {

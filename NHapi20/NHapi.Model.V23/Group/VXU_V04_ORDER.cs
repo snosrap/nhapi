@@ -12,10 +12,12 @@ namespace NHapi.Model.V23.Group
 ///Represents the VXU_V04_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common order segment) optional 
-/// * 1: RXA (Pharmacy administration segment) 
-/// * 2: RXR (Pharmacy route segment) optional 
-/// * 3: VXU_V04_OBSERVATION (a Group object) optional repeating
+///<ol>
+///<li>0: ORC (Common order segment) optional </li>
+///<li>1: RXA (Pharmacy administration segment) </li>
+///<li>2: RXR (Pharmacy route segment) optional </li>
+///<li>3: VXU_V04_OBSERVATION (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VXU_V04_ORDER : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VXU_V04_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public VXU_V04_OBSERVATION getOBSERVATION() {
+	public VXU_V04_OBSERVATION GetOBSERVATION() {
 	   VXU_V04_OBSERVATION ret = null;
 	   try {
 	      ret = (VXU_V04_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VXU_V04_OBSERVATION getOBSERVATION(int rep) { 
+	public VXU_V04_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (VXU_V04_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VXU_V04_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

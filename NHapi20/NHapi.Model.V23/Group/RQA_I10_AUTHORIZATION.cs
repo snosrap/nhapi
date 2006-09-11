@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the RQA_I10_AUTHORIZATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: AUT (Authorization Information) 
-/// * 1: CTD (Contact Data) optional 
+///<ol>
+///<li>0: AUT (Authorization Information) </li>
+///<li>1: CTD (Contact Data) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RQA_I10_AUTHORIZATION : AbstractGroup {

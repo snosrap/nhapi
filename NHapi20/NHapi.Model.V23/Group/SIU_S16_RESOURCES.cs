@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Group
 ///Represents the SIU_S16_RESOURCES Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RGS (Resource Group) 
-/// * 1: SIU_S16_SERVICE (a Group object) optional repeating
-/// * 2: SIU_S16_GENERAL_RESOURCE (a Group object) optional repeating
-/// * 3: SIU_S16_LOCATIONL_RESOURCE (a Group object) optional repeating
-/// * 4: SIU_S16_PERSONNEL_RESOURCE (a Group object) optional repeating
+///<ol>
+///<li>0: RGS (Resource Group) </li>
+///<li>1: SIU_S16_SERVICE (a Group object) optional repeating</li>
+///<li>2: SIU_S16_GENERAL_RESOURCE (a Group object) optional repeating</li>
+///<li>3: SIU_S16_LOCATIONL_RESOURCE (a Group object) optional repeating</li>
+///<li>4: SIU_S16_PERSONNEL_RESOURCE (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SIU_S16_RESOURCES : AbstractGroup {
@@ -55,7 +57,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SIU_S16_SERVICE (a Group object) - creates it if necessary
 	///</summary>
-	public SIU_S16_SERVICE getSERVICE() {
+	public SIU_S16_SERVICE GetSERVICE() {
 	   SIU_S16_SERVICE ret = null;
 	   try {
 	      ret = (SIU_S16_SERVICE)this.GetStructure("SERVICE");
@@ -72,14 +74,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S16_SERVICE getSERVICE(int rep) { 
+	public SIU_S16_SERVICE GetSERVICE(int rep) { 
 	   return (SIU_S16_SERVICE)this.GetStructure("SERVICE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SIU_S16_SERVICE 
 	 */ 
-	public int SERVICEReps { 
+	public int SERVICERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -96,7 +98,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SIU_S16_GENERAL_RESOURCE (a Group object) - creates it if necessary
 	///</summary>
-	public SIU_S16_GENERAL_RESOURCE getGENERAL_RESOURCE() {
+	public SIU_S16_GENERAL_RESOURCE GetGENERAL_RESOURCE() {
 	   SIU_S16_GENERAL_RESOURCE ret = null;
 	   try {
 	      ret = (SIU_S16_GENERAL_RESOURCE)this.GetStructure("GENERAL_RESOURCE");
@@ -113,14 +115,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S16_GENERAL_RESOURCE getGENERAL_RESOURCE(int rep) { 
+	public SIU_S16_GENERAL_RESOURCE GetGENERAL_RESOURCE(int rep) { 
 	   return (SIU_S16_GENERAL_RESOURCE)this.GetStructure("GENERAL_RESOURCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SIU_S16_GENERAL_RESOURCE 
 	 */ 
-	public int GENERAL_RESOURCEReps { 
+	public int GENERAL_RESOURCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -137,7 +139,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SIU_S16_LOCATIONL_RESOURCE (a Group object) - creates it if necessary
 	///</summary>
-	public SIU_S16_LOCATIONL_RESOURCE getLOCATIONL_RESOURCE() {
+	public SIU_S16_LOCATIONL_RESOURCE GetLOCATIONL_RESOURCE() {
 	   SIU_S16_LOCATIONL_RESOURCE ret = null;
 	   try {
 	      ret = (SIU_S16_LOCATIONL_RESOURCE)this.GetStructure("LOCATIONL_RESOURCE");
@@ -154,14 +156,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S16_LOCATIONL_RESOURCE getLOCATIONL_RESOURCE(int rep) { 
+	public SIU_S16_LOCATIONL_RESOURCE GetLOCATIONL_RESOURCE(int rep) { 
 	   return (SIU_S16_LOCATIONL_RESOURCE)this.GetStructure("LOCATIONL_RESOURCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SIU_S16_LOCATIONL_RESOURCE 
 	 */ 
-	public int LOCATIONL_RESOURCEReps { 
+	public int LOCATIONL_RESOURCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -178,7 +180,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SIU_S16_PERSONNEL_RESOURCE (a Group object) - creates it if necessary
 	///</summary>
-	public SIU_S16_PERSONNEL_RESOURCE getPERSONNEL_RESOURCE() {
+	public SIU_S16_PERSONNEL_RESOURCE GetPERSONNEL_RESOURCE() {
 	   SIU_S16_PERSONNEL_RESOURCE ret = null;
 	   try {
 	      ret = (SIU_S16_PERSONNEL_RESOURCE)this.GetStructure("PERSONNEL_RESOURCE");
@@ -195,14 +197,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S16_PERSONNEL_RESOURCE getPERSONNEL_RESOURCE(int rep) { 
+	public SIU_S16_PERSONNEL_RESOURCE GetPERSONNEL_RESOURCE(int rep) { 
 	   return (SIU_S16_PERSONNEL_RESOURCE)this.GetStructure("PERSONNEL_RESOURCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SIU_S16_PERSONNEL_RESOURCE 
 	 */ 
-	public int PERSONNEL_RESOURCEReps { 
+	public int PERSONNEL_RESOURCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

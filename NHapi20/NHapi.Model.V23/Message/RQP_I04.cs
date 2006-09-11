@@ -12,12 +12,14 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a RQP_I04 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: RQP_I04_PROVIDER (a Group object) repeating
-/// * 2: PID (Patient Identification) 
-/// * 3: NK1 (Next of kin) optional repeating
-/// * 4: GT1 (Guarantor) optional repeating
-/// * 5: NTE (Notes and comments segment) optional repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: RQP_I04_PROVIDER (a Group object) repeating</li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: NK1 (Next of kin) optional repeating</li>
+///<li>4: GT1 (Guarantor) optional repeating</li>
+///<li>5: NTE (Notes and comments segment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RQP_I04 : AbstractMessage  {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RQP_I04_PROVIDER (a Group object) - creates it if necessary
 	///</summary>
-	public RQP_I04_PROVIDER getPROVIDER() {
+	public RQP_I04_PROVIDER GetPROVIDER() {
 	   RQP_I04_PROVIDER ret = null;
 	   try {
 	      ret = (RQP_I04_PROVIDER)this.GetStructure("PROVIDER");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RQP_I04_PROVIDER getPROVIDER(int rep) { 
+	public RQP_I04_PROVIDER GetPROVIDER(int rep) { 
 	   return (RQP_I04_PROVIDER)this.GetStructure("PROVIDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RQP_I04_PROVIDER 
 	 */ 
-	public int PROVIDERReps { 
+	public int PROVIDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (Next of kin) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -169,7 +171,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of GT1 (Guarantor) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -186,14 +188,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -210,7 +212,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -227,14 +229,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

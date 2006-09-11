@@ -12,13 +12,15 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a MFK_M01 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MSA (Message acknowledgement segment) 
-/// * 2: MFI (Master file identification segment) 
-/// * 3: ERR (Error segment) optional 
-/// * 4: MFA (Master file acknowledgement segment) optional repeating
-/// * 5: MFI (Master file identification segment) 
-/// * 6: MFK_M01_MF (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MSA (Message acknowledgement segment) </li>
+///<li>2: MFI (Master file identification segment) </li>
+///<li>3: ERR (Error segment) optional </li>
+///<li>4: MFA (Master file acknowledgement segment) optional repeating</li>
+///<li>5: MFI (Master file identification segment) </li>
+///<li>6: MFK_M01_MF (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFK_M01 : AbstractMessage  {
@@ -121,7 +123,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFA (Master file acknowledgement segment) - creates it if necessary
 	///</summary>
-	public MFA getMFA() {
+	public MFA GetMFA() {
 	   MFA ret = null;
 	   try {
 	      ret = (MFA)this.GetStructure("MFA");
@@ -138,14 +140,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFA getMFA(int rep) { 
+	public MFA GetMFA(int rep) { 
 	   return (MFA)this.GetStructure("MFA", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFA 
 	 */ 
-	public int MFAReps { 
+	public int MFARepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -178,7 +180,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFK_M01_MF (a Group object) - creates it if necessary
 	///</summary>
-	public MFK_M01_MF getMF() {
+	public MFK_M01_MF GetMF() {
 	   MFK_M01_MF ret = null;
 	   try {
 	      ret = (MFK_M01_MF)this.GetStructure("MF");
@@ -195,14 +197,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFK_M01_MF getMF(int rep) { 
+	public MFK_M01_MF GetMF(int rep) { 
 	   return (MFK_M01_MF)this.GetStructure("MF", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFK_M01_MF 
 	 */ 
-	public int MFReps { 
+	public int MFRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

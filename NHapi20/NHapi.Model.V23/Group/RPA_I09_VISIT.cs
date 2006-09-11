@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Group
 ///Represents the RPA_I09_VISIT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PV1 (Patient visit) 
-/// * 1: PV2 (Patient visit - additional information) optional 
-/// * 2: NTE (Notes and comments segment) optional repeating
+///<ol>
+///<li>0: PV1 (Patient visit) </li>
+///<li>1: PV2 (Patient visit - additional information) optional </li>
+///<li>2: NTE (Notes and comments segment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RPA_I09_VISIT : AbstractGroup {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

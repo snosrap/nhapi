@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the VXX_V02_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: NK1 (Next of kin) optional repeating
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: NK1 (Next of kin) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VXX_V02_PATIENT : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (Next of kin) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

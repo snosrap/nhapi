@@ -12,10 +12,12 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a RAS_O01 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: NTE (Notes and comments segment) optional repeating
-/// * 2: RAS_O01_PATIENT (a Group object) optional 
-/// * 3: RAS_O01_ORDER (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: NTE (Notes and comments segment) optional repeating</li>
+///<li>2: RAS_O01_PATIENT (a Group object) optional </li>
+///<li>3: RAS_O01_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RAS_O01 : AbstractMessage  {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -124,7 +126,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RAS_O01_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public RAS_O01_ORDER getORDER() {
+	public RAS_O01_ORDER GetORDER() {
 	   RAS_O01_ORDER ret = null;
 	   try {
 	      ret = (RAS_O01_ORDER)this.GetStructure("ORDER");
@@ -141,14 +143,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RAS_O01_ORDER getORDER(int rep) { 
+	public RAS_O01_ORDER GetORDER(int rep) { 
 	   return (RAS_O01_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RAS_O01_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

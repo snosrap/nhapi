@@ -12,10 +12,12 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a PPG_PCJ message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: PID (Patient Identification) 
-/// * 2: PPG_PCJ_PATIENT_VISIT (a Group object) optional 
-/// * 3: PPG_PCJ_PATHWAY (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: PID (Patient Identification) </li>
+///<li>2: PPG_PCJ_PATIENT_VISIT (a Group object) optional </li>
+///<li>3: PPG_PCJ_PATHWAY (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPG_PCJ : AbstractMessage  {
@@ -99,7 +101,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPG_PCJ_PATHWAY (a Group object) - creates it if necessary
 	///</summary>
-	public PPG_PCJ_PATHWAY getPATHWAY() {
+	public PPG_PCJ_PATHWAY GetPATHWAY() {
 	   PPG_PCJ_PATHWAY ret = null;
 	   try {
 	      ret = (PPG_PCJ_PATHWAY)this.GetStructure("PATHWAY");
@@ -116,14 +118,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPG_PCJ_PATHWAY getPATHWAY(int rep) { 
+	public PPG_PCJ_PATHWAY GetPATHWAY(int rep) { 
 	   return (PPG_PCJ_PATHWAY)this.GetStructure("PATHWAY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPG_PCJ_PATHWAY 
 	 */ 
-	public int PATHWAYReps { 
+	public int PATHWAYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

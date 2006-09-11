@@ -12,10 +12,12 @@ namespace NHapi.Model.V23.Group
 ///Represents the SRR_S01_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PV1 (Patient visit) optional 
-/// * 2: PV2 (Patient visit - additional information) optional 
-/// * 3: DG1 (Diagnosis) optional repeating
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PV1 (Patient visit) optional </li>
+///<li>2: PV2 (Patient visit - additional information) optional </li>
+///<li>3: DG1 (Diagnosis) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SRR_S01_PATIENT : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

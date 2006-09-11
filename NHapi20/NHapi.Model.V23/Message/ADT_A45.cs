@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a ADT_A45 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: EVN (Event type) 
-/// * 2: PID (Patient Identification) 
-/// * 3: PD1 (Patient Demographic) optional 
-/// * 4: ADT_A45_MERGE_INFO (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: EVN (Event type) </li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PD1 (Patient Demographic) optional </li>
+///<li>4: ADT_A45_MERGE_INFO (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A45 : AbstractMessage  {
@@ -117,7 +119,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ADT_A45_MERGE_INFO (a Group object) - creates it if necessary
 	///</summary>
-	public ADT_A45_MERGE_INFO getMERGE_INFO() {
+	public ADT_A45_MERGE_INFO GetMERGE_INFO() {
 	   ADT_A45_MERGE_INFO ret = null;
 	   try {
 	      ret = (ADT_A45_MERGE_INFO)this.GetStructure("MERGE_INFO");
@@ -134,14 +136,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ADT_A45_MERGE_INFO getMERGE_INFO(int rep) { 
+	public ADT_A45_MERGE_INFO GetMERGE_INFO(int rep) { 
 	   return (ADT_A45_MERGE_INFO)this.GetStructure("MERGE_INFO", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ADT_A45_MERGE_INFO 
 	 */ 
-	public int MERGE_INFOReps { 
+	public int MERGE_INFORepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

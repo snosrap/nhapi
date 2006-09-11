@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a QRY_Q02 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: QRD (Query definition segment) 
-/// * 2: QRF (Query filter segment) optional 
-/// * 3: DSC (Continuation pointer segment) optional 
-/// * 4: QCK () 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: QRD (Query definition segment) </li>
+///<li>2: QRF (Query filter segment) optional </li>
+///<li>3: DSC (Continuation pointer segment) optional </li>
+///<li>4: QCK () </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class QRY_Q02 : AbstractMessage  {

@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a PRR_PC5 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MSA (Message acknowledgement segment) 
-/// * 2: ERR (Error segment) optional 
-/// * 3: QRD (Query definition segment) 
-/// * 4: PRR_PC5_PATIENT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MSA (Message acknowledgement segment) </li>
+///<li>2: ERR (Error segment) optional </li>
+///<li>3: QRD (Query definition segment) </li>
+///<li>4: PRR_PC5_PATIENT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PRR_PC5 : AbstractMessage  {
@@ -117,7 +119,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PRR_PC5_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public PRR_PC5_PATIENT getPATIENT() {
+	public PRR_PC5_PATIENT GetPATIENT() {
 	   PRR_PC5_PATIENT ret = null;
 	   try {
 	      ret = (PRR_PC5_PATIENT)this.GetStructure("PATIENT");
@@ -134,14 +136,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PRR_PC5_PATIENT getPATIENT(int rep) { 
+	public PRR_PC5_PATIENT GetPATIENT(int rep) { 
 	   return (PRR_PC5_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PRR_PC5_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

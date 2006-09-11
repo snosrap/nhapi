@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a RAR_RAR message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MSA (Message acknowledgement segment) 
-/// * 2: ERR (Error segment) optional 
-/// * 3: RAR_RAR_DEFINITION (a Group object) repeating
-/// * 4: DSC (Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MSA (Message acknowledgement segment) </li>
+///<li>2: ERR (Error segment) optional </li>
+///<li>3: RAR_RAR_DEFINITION (a Group object) repeating</li>
+///<li>4: DSC (Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RAR_RAR : AbstractMessage  {
@@ -101,7 +103,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RAR_RAR_DEFINITION (a Group object) - creates it if necessary
 	///</summary>
-	public RAR_RAR_DEFINITION getDEFINITION() {
+	public RAR_RAR_DEFINITION GetDEFINITION() {
 	   RAR_RAR_DEFINITION ret = null;
 	   try {
 	      ret = (RAR_RAR_DEFINITION)this.GetStructure("DEFINITION");
@@ -118,14 +120,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RAR_RAR_DEFINITION getDEFINITION(int rep) { 
+	public RAR_RAR_DEFINITION GetDEFINITION(int rep) { 
 	   return (RAR_RAR_DEFINITION)this.GetStructure("DEFINITION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RAR_RAR_DEFINITION 
 	 */ 
-	public int DEFINITIONReps { 
+	public int DEFINITIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

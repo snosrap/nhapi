@@ -12,14 +12,16 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a OSR_Q06 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MSA (Message acknowledgement segment) 
-/// * 2: ERR (Error segment) optional 
-/// * 3: NTE (Notes and comments segment) optional repeating
-/// * 4: QRD (Query definition segment) 
-/// * 5: QRF (Query filter segment) optional 
-/// * 6: OSR_Q06_RESPONSE (a Group object) optional 
-/// * 7: DSC (Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MSA (Message acknowledgement segment) </li>
+///<li>2: ERR (Error segment) optional </li>
+///<li>3: NTE (Notes and comments segment) optional repeating</li>
+///<li>4: QRD (Query definition segment) </li>
+///<li>5: QRF (Query filter segment) optional </li>
+///<li>6: OSR_Q06_RESPONSE (a Group object) optional </li>
+///<li>7: DSC (Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OSR_Q06 : AbstractMessage  {
@@ -107,7 +109,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -124,14 +126,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

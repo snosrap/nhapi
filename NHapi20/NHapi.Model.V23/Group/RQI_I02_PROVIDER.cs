@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the RQI_I02_PROVIDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PRD (Provider Data) 
-/// * 1: CTD (Contact Data) optional repeating
+///<ol>
+///<li>0: PRD (Provider Data) </li>
+///<li>1: CTD (Contact Data) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RQI_I02_PROVIDER : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CTD (Contact Data) - creates it if necessary
 	///</summary>
-	public CTD getCTD() {
+	public CTD GetCTD() {
 	   CTD ret = null;
 	   try {
 	      ret = (CTD)this.GetStructure("CTD");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CTD getCTD(int rep) { 
+	public CTD GetCTD(int rep) { 
 	   return (CTD)this.GetStructure("CTD", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CTD 
 	 */ 
-	public int CTDReps { 
+	public int CTDRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

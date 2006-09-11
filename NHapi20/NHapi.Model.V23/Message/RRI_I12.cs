@@ -12,20 +12,22 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a RRI_I12 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MSA (Message acknowledgement segment) optional 
-/// * 2: RF1 (Referral Information Segment) optional 
-/// * 3: RRI_I12_AUTHORIZATION (a Group object) optional 
-/// * 4: RRI_I12_PROVIDER (a Group object) repeating
-/// * 5: PID (Patient Identification) 
-/// * 6: ACC (Accident) optional 
-/// * 7: DG1 (Diagnosis) optional repeating
-/// * 8: DRG (Diagnosis Related Group) optional repeating
-/// * 9: AL1 (Patient allergy information) optional repeating
-/// * 10: RRI_I12_PROCEDURE (a Group object) optional repeating
-/// * 11: RRI_I12_RESULTS (a Group object) optional repeating
-/// * 12: RRI_I12_VISIT (a Group object) optional 
-/// * 13: NTE (Notes and comments segment) optional repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MSA (Message acknowledgement segment) optional </li>
+///<li>2: RF1 (Referral Information Segment) optional </li>
+///<li>3: RRI_I12_AUTHORIZATION (a Group object) optional </li>
+///<li>4: RRI_I12_PROVIDER (a Group object) repeating</li>
+///<li>5: PID (Patient Identification) </li>
+///<li>6: ACC (Accident) optional </li>
+///<li>7: DG1 (Diagnosis) optional repeating</li>
+///<li>8: DRG (Diagnosis Related Group) optional repeating</li>
+///<li>9: AL1 (Patient allergy information) optional repeating</li>
+///<li>10: RRI_I12_PROCEDURE (a Group object) optional repeating</li>
+///<li>11: RRI_I12_RESULTS (a Group object) optional repeating</li>
+///<li>12: RRI_I12_VISIT (a Group object) optional </li>
+///<li>13: NTE (Notes and comments segment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRI_I12 : AbstractMessage  {
@@ -135,7 +137,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRI_I12_PROVIDER (a Group object) - creates it if necessary
 	///</summary>
-	public RRI_I12_PROVIDER getPROVIDER() {
+	public RRI_I12_PROVIDER GetPROVIDER() {
 	   RRI_I12_PROVIDER ret = null;
 	   try {
 	      ret = (RRI_I12_PROVIDER)this.GetStructure("PROVIDER");
@@ -152,14 +154,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRI_I12_PROVIDER getPROVIDER(int rep) { 
+	public RRI_I12_PROVIDER GetPROVIDER(int rep) { 
 	   return (RRI_I12_PROVIDER)this.GetStructure("PROVIDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRI_I12_PROVIDER 
 	 */ 
-	public int PROVIDERReps { 
+	public int PROVIDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -208,7 +210,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -225,14 +227,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -249,7 +251,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DRG (Diagnosis Related Group) - creates it if necessary
 	///</summary>
-	public DRG getDRG() {
+	public DRG GetDRG() {
 	   DRG ret = null;
 	   try {
 	      ret = (DRG)this.GetStructure("DRG");
@@ -266,14 +268,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DRG getDRG(int rep) { 
+	public DRG GetDRG(int rep) { 
 	   return (DRG)this.GetStructure("DRG", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DRG 
 	 */ 
-	public int DRGReps { 
+	public int DRGRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -290,7 +292,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of AL1 (Patient allergy information) - creates it if necessary
 	///</summary>
-	public AL1 getAL1() {
+	public AL1 GetAL1() {
 	   AL1 ret = null;
 	   try {
 	      ret = (AL1)this.GetStructure("AL1");
@@ -307,14 +309,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AL1 getAL1(int rep) { 
+	public AL1 GetAL1(int rep) { 
 	   return (AL1)this.GetStructure("AL1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AL1 
 	 */ 
-	public int AL1Reps { 
+	public int AL1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -331,7 +333,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRI_I12_PROCEDURE (a Group object) - creates it if necessary
 	///</summary>
-	public RRI_I12_PROCEDURE getPROCEDURE() {
+	public RRI_I12_PROCEDURE GetPROCEDURE() {
 	   RRI_I12_PROCEDURE ret = null;
 	   try {
 	      ret = (RRI_I12_PROCEDURE)this.GetStructure("PROCEDURE");
@@ -348,14 +350,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRI_I12_PROCEDURE getPROCEDURE(int rep) { 
+	public RRI_I12_PROCEDURE GetPROCEDURE(int rep) { 
 	   return (RRI_I12_PROCEDURE)this.GetStructure("PROCEDURE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRI_I12_PROCEDURE 
 	 */ 
-	public int PROCEDUREReps { 
+	public int PROCEDURERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -372,7 +374,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRI_I12_RESULTS (a Group object) - creates it if necessary
 	///</summary>
-	public RRI_I12_RESULTS getRESULTS() {
+	public RRI_I12_RESULTS GetRESULTS() {
 	   RRI_I12_RESULTS ret = null;
 	   try {
 	      ret = (RRI_I12_RESULTS)this.GetStructure("RESULTS");
@@ -389,14 +391,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRI_I12_RESULTS getRESULTS(int rep) { 
+	public RRI_I12_RESULTS GetRESULTS(int rep) { 
 	   return (RRI_I12_RESULTS)this.GetStructure("RESULTS", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRI_I12_RESULTS 
 	 */ 
-	public int RESULTSReps { 
+	public int RESULTSRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -429,7 +431,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -446,14 +448,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

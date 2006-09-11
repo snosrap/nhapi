@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Group
 ///Represents the RPA_I08_INSURANCE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: IN1 (Insurance) 
-/// * 1: IN2 (Insurance additional info) optional 
-/// * 2: IN3 (Insurance additional info - certification) optional 
+///<ol>
+///<li>0: IN1 (Insurance) </li>
+///<li>1: IN2 (Insurance additional info) optional </li>
+///<li>2: IN3 (Insurance additional info - certification) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RPA_I08_INSURANCE : AbstractGroup {

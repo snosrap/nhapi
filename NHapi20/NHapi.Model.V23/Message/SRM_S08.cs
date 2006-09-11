@@ -12,12 +12,14 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a SRM_S08 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: ARQ (Appointment Request) 
-/// * 2: APR (Appointment Preferences) optional 
-/// * 3: NTE (Notes and comments segment) optional repeating
-/// * 4: SRM_S08_PATIENT (a Group object) optional repeating
-/// * 5: SRM_S08_RESOURCES (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: ARQ (Appointment Request) </li>
+///<li>2: APR (Appointment Preferences) optional </li>
+///<li>3: NTE (Notes and comments segment) optional repeating</li>
+///<li>4: SRM_S08_PATIENT (a Group object) optional repeating</li>
+///<li>5: SRM_S08_RESOURCES (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SRM_S08 : AbstractMessage  {
@@ -103,7 +105,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -120,14 +122,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -144,7 +146,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SRM_S08_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public SRM_S08_PATIENT getPATIENT() {
+	public SRM_S08_PATIENT GetPATIENT() {
 	   SRM_S08_PATIENT ret = null;
 	   try {
 	      ret = (SRM_S08_PATIENT)this.GetStructure("PATIENT");
@@ -161,14 +163,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SRM_S08_PATIENT getPATIENT(int rep) { 
+	public SRM_S08_PATIENT GetPATIENT(int rep) { 
 	   return (SRM_S08_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SRM_S08_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -185,7 +187,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SRM_S08_RESOURCES (a Group object) - creates it if necessary
 	///</summary>
-	public SRM_S08_RESOURCES getRESOURCES() {
+	public SRM_S08_RESOURCES GetRESOURCES() {
 	   SRM_S08_RESOURCES ret = null;
 	   try {
 	      ret = (SRM_S08_RESOURCES)this.GetStructure("RESOURCES");
@@ -202,14 +204,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SRM_S08_RESOURCES getRESOURCES(int rep) { 
+	public SRM_S08_RESOURCES GetRESOURCES(int rep) { 
 	   return (SRM_S08_RESOURCES)this.GetStructure("RESOURCES", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SRM_S08_RESOURCES 
 	 */ 
-	public int RESOURCESReps { 
+	public int RESOURCESRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

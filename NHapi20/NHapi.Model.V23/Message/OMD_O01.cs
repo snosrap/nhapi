@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a OMD_O01 message structure (see chapter 4.6). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: NTE (Notes and comments segment) optional repeating
-/// * 2: OMD_O01_PATIENT (a Group object) optional 
-/// * 3: OMD_O01_ORDER_DIET (a Group object) repeating
-/// * 4: OMD_O01_ORDER_TRAY (a Group object) optional repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: NTE (Notes and comments segment) optional repeating</li>
+///<li>2: OMD_O01_PATIENT (a Group object) optional </li>
+///<li>3: OMD_O01_ORDER_DIET (a Group object) repeating</li>
+///<li>4: OMD_O01_ORDER_TRAY (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMD_O01 : AbstractMessage  {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -126,7 +128,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OMD_O01_ORDER_DIET (a Group object) - creates it if necessary
 	///</summary>
-	public OMD_O01_ORDER_DIET getORDER_DIET() {
+	public OMD_O01_ORDER_DIET GetORDER_DIET() {
 	   OMD_O01_ORDER_DIET ret = null;
 	   try {
 	      ret = (OMD_O01_ORDER_DIET)this.GetStructure("ORDER_DIET");
@@ -143,14 +145,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OMD_O01_ORDER_DIET getORDER_DIET(int rep) { 
+	public OMD_O01_ORDER_DIET GetORDER_DIET(int rep) { 
 	   return (OMD_O01_ORDER_DIET)this.GetStructure("ORDER_DIET", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OMD_O01_ORDER_DIET 
 	 */ 
-	public int ORDER_DIETReps { 
+	public int ORDER_DIETRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -167,7 +169,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OMD_O01_ORDER_TRAY (a Group object) - creates it if necessary
 	///</summary>
-	public OMD_O01_ORDER_TRAY getORDER_TRAY() {
+	public OMD_O01_ORDER_TRAY GetORDER_TRAY() {
 	   OMD_O01_ORDER_TRAY ret = null;
 	   try {
 	      ret = (OMD_O01_ORDER_TRAY)this.GetStructure("ORDER_TRAY");
@@ -184,14 +186,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OMD_O01_ORDER_TRAY getORDER_TRAY(int rep) { 
+	public OMD_O01_ORDER_TRAY GetORDER_TRAY(int rep) { 
 	   return (OMD_O01_ORDER_TRAY)this.GetStructure("ORDER_TRAY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OMD_O01_ORDER_TRAY 
 	 */ 
-	public int ORDER_TRAYReps { 
+	public int ORDER_TRAYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

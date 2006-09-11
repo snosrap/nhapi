@@ -12,10 +12,12 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a VQQ_Q01 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: VTQ (Virtual Table Query Request) 
-/// * 2: RDF (Table Row Definition) optional 
-/// * 3: DSC (Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: VTQ (Virtual Table Query Request) </li>
+///<li>2: RDF (Table Row Definition) optional </li>
+///<li>3: DSC (Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VQQ_Q01 : AbstractMessage  {

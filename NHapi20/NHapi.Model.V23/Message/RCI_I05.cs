@@ -12,17 +12,19 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a RCI_I05 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MSA (Message acknowledgement segment) 
-/// * 2: QRD (Query definition segment) 
-/// * 3: QRF (Query filter segment) optional 
-/// * 4: RCI_I05_PROVIDER (a Group object) repeating
-/// * 5: PID (Patient Identification) 
-/// * 6: DG1 (Diagnosis) optional repeating
-/// * 7: DRG (Diagnosis Related Group) optional repeating
-/// * 8: AL1 (Patient allergy information) optional repeating
-/// * 9: RCI_I05_OBSERVATION (a Group object) optional repeating
-/// * 10: NTE (Notes and comments segment) optional repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MSA (Message acknowledgement segment) </li>
+///<li>2: QRD (Query definition segment) </li>
+///<li>3: QRF (Query filter segment) optional </li>
+///<li>4: RCI_I05_PROVIDER (a Group object) repeating</li>
+///<li>5: PID (Patient Identification) </li>
+///<li>6: DG1 (Diagnosis) optional repeating</li>
+///<li>7: DRG (Diagnosis Related Group) optional repeating</li>
+///<li>8: AL1 (Patient allergy information) optional repeating</li>
+///<li>9: RCI_I05_OBSERVATION (a Group object) optional repeating</li>
+///<li>10: NTE (Notes and comments segment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RCI_I05 : AbstractMessage  {
@@ -129,7 +131,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RCI_I05_PROVIDER (a Group object) - creates it if necessary
 	///</summary>
-	public RCI_I05_PROVIDER getPROVIDER() {
+	public RCI_I05_PROVIDER GetPROVIDER() {
 	   RCI_I05_PROVIDER ret = null;
 	   try {
 	      ret = (RCI_I05_PROVIDER)this.GetStructure("PROVIDER");
@@ -146,14 +148,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RCI_I05_PROVIDER getPROVIDER(int rep) { 
+	public RCI_I05_PROVIDER GetPROVIDER(int rep) { 
 	   return (RCI_I05_PROVIDER)this.GetStructure("PROVIDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RCI_I05_PROVIDER 
 	 */ 
-	public int PROVIDERReps { 
+	public int PROVIDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -186,7 +188,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -203,14 +205,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -227,7 +229,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DRG (Diagnosis Related Group) - creates it if necessary
 	///</summary>
-	public DRG getDRG() {
+	public DRG GetDRG() {
 	   DRG ret = null;
 	   try {
 	      ret = (DRG)this.GetStructure("DRG");
@@ -244,14 +246,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DRG getDRG(int rep) { 
+	public DRG GetDRG(int rep) { 
 	   return (DRG)this.GetStructure("DRG", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DRG 
 	 */ 
-	public int DRGReps { 
+	public int DRGRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -268,7 +270,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of AL1 (Patient allergy information) - creates it if necessary
 	///</summary>
-	public AL1 getAL1() {
+	public AL1 GetAL1() {
 	   AL1 ret = null;
 	   try {
 	      ret = (AL1)this.GetStructure("AL1");
@@ -285,14 +287,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AL1 getAL1(int rep) { 
+	public AL1 GetAL1(int rep) { 
 	   return (AL1)this.GetStructure("AL1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AL1 
 	 */ 
-	public int AL1Reps { 
+	public int AL1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -309,7 +311,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RCI_I05_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public RCI_I05_OBSERVATION getOBSERVATION() {
+	public RCI_I05_OBSERVATION GetOBSERVATION() {
 	   RCI_I05_OBSERVATION ret = null;
 	   try {
 	      ret = (RCI_I05_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -326,14 +328,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RCI_I05_OBSERVATION getOBSERVATION(int rep) { 
+	public RCI_I05_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (RCI_I05_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RCI_I05_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -350,7 +352,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -367,14 +369,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the RQA_I11_GUARANTOR_INSURANCE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: GT1 (Guarantor) optional repeating
-/// * 1: RQA_I11_INSURANCE (a Group object) repeating
+///<ol>
+///<li>0: GT1 (Guarantor) optional repeating</li>
+///<li>1: RQA_I11_INSURANCE (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RQA_I11_GUARANTOR_INSURANCE : AbstractGroup {
@@ -33,7 +35,7 @@ public class RQA_I11_GUARANTOR_INSURANCE : AbstractGroup {
 	///<summary>
 	/// Returns  first repetition of GT1 (Guarantor) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -50,14 +52,14 @@ public class RQA_I11_GUARANTOR_INSURANCE : AbstractGroup {
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -74,7 +76,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RQA_I11_INSURANCE (a Group object) - creates it if necessary
 	///</summary>
-	public RQA_I11_INSURANCE getINSURANCE() {
+	public RQA_I11_INSURANCE GetINSURANCE() {
 	   RQA_I11_INSURANCE ret = null;
 	   try {
 	      ret = (RQA_I11_INSURANCE)this.GetStructure("INSURANCE");
@@ -91,14 +93,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RQA_I11_INSURANCE getINSURANCE(int rep) { 
+	public RQA_I11_INSURANCE GetINSURANCE(int rep) { 
 	   return (RQA_I11_INSURANCE)this.GetStructure("INSURANCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RQA_I11_INSURANCE 
 	 */ 
-	public int INSURANCEReps { 
+	public int INSURANCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

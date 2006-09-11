@@ -12,17 +12,19 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a ADT_A03 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: EVN (Event type) 
-/// * 2: PID (Patient Identification) 
-/// * 3: PD1 (Patient Demographic) optional 
-/// * 4: PV1 (Patient visit) 
-/// * 5: PV2 (Patient visit - additional information) optional 
-/// * 6: DB1 (Disability Segment) optional repeating
-/// * 7: DG1 (Diagnosis) optional repeating
-/// * 8: DRG (Diagnosis Related Group) optional 
-/// * 9: ADT_A03_PROCEDURE (a Group object) optional repeating
-/// * 10: OBX (Observation segment) optional repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: EVN (Event type) </li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PD1 (Patient Demographic) optional </li>
+///<li>4: PV1 (Patient visit) </li>
+///<li>5: PV2 (Patient visit - additional information) optional </li>
+///<li>6: DB1 (Disability Segment) optional repeating</li>
+///<li>7: DG1 (Diagnosis) optional repeating</li>
+///<li>8: DRG (Diagnosis Related Group) optional </li>
+///<li>9: ADT_A03_PROCEDURE (a Group object) optional repeating</li>
+///<li>10: OBX (Observation segment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A03 : AbstractMessage  {
@@ -161,7 +163,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DB1 (Disability Segment) - creates it if necessary
 	///</summary>
-	public DB1 getDB1() {
+	public DB1 GetDB1() {
 	   DB1 ret = null;
 	   try {
 	      ret = (DB1)this.GetStructure("DB1");
@@ -178,14 +180,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DB1 getDB1(int rep) { 
+	public DB1 GetDB1(int rep) { 
 	   return (DB1)this.GetStructure("DB1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DB1 
 	 */ 
-	public int DB1Reps { 
+	public int DB1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -202,7 +204,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -219,14 +221,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -259,7 +261,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ADT_A03_PROCEDURE (a Group object) - creates it if necessary
 	///</summary>
-	public ADT_A03_PROCEDURE getPROCEDURE() {
+	public ADT_A03_PROCEDURE GetPROCEDURE() {
 	   ADT_A03_PROCEDURE ret = null;
 	   try {
 	      ret = (ADT_A03_PROCEDURE)this.GetStructure("PROCEDURE");
@@ -276,14 +278,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ADT_A03_PROCEDURE getPROCEDURE(int rep) { 
+	public ADT_A03_PROCEDURE GetPROCEDURE(int rep) { 
 	   return (ADT_A03_PROCEDURE)this.GetStructure("PROCEDURE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ADT_A03_PROCEDURE 
 	 */ 
-	public int PROCEDUREReps { 
+	public int PROCEDURERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -300,7 +302,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation segment) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -317,14 +319,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

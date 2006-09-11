@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a UDM_Q05 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: URD (Results/update definition segment) 
-/// * 2: URS (Unsolicited selection segment) optional 
-/// * 3: DSP (Display data segment) repeating
-/// * 4: DSC (Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: URD (Results/update definition segment) </li>
+///<li>2: URS (Unsolicited selection segment) optional </li>
+///<li>3: DSP (Display data segment) repeating</li>
+///<li>4: DSC (Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class UDM_Q05 : AbstractMessage  {
@@ -101,7 +103,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DSP (Display data segment) - creates it if necessary
 	///</summary>
-	public DSP getDSP() {
+	public DSP GetDSP() {
 	   DSP ret = null;
 	   try {
 	      ret = (DSP)this.GetStructure("DSP");
@@ -118,14 +120,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DSP getDSP(int rep) { 
+	public DSP GetDSP(int rep) { 
 	   return (DSP)this.GetStructure("DSP", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DSP 
 	 */ 
-	public int DSPReps { 
+	public int DSPRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

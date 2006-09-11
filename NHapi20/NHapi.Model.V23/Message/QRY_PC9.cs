@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a QRY_PC9 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: QRD (Query definition segment) 
-/// * 2: QRF (Query filter segment) optional 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: QRD (Query definition segment) </li>
+///<li>2: QRF (Query filter segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class QRY_PC9 : AbstractMessage  {

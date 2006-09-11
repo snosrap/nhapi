@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the RRG_O02_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common order segment) 
-/// * 1: RRG_O02_GIVE (a Group object) optional 
+///<ol>
+///<li>0: ORC (Common order segment) </li>
+///<li>1: RRG_O02_GIVE (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRG_O02_ORDER : AbstractGroup {

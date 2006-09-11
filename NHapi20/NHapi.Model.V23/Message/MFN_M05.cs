@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a MFN_M05 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MFI (Master file identification segment) 
-/// * 2: MFN_M05_MF_LOCATION (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MFI (Master file identification segment) </li>
+///<li>2: MFN_M05_MF_LOCATION (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M05 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M05_MF_LOCATION (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M05_MF_LOCATION getMF_LOCATION() {
+	public MFN_M05_MF_LOCATION GetMF_LOCATION() {
 	   MFN_M05_MF_LOCATION ret = null;
 	   try {
 	      ret = (MFN_M05_MF_LOCATION)this.GetStructure("MF_LOCATION");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M05_MF_LOCATION getMF_LOCATION(int rep) { 
+	public MFN_M05_MF_LOCATION GetMF_LOCATION(int rep) { 
 	   return (MFN_M05_MF_LOCATION)this.GetStructure("MF_LOCATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M05_MF_LOCATION 
 	 */ 
-	public int MF_LOCATIONReps { 
+	public int MF_LOCATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

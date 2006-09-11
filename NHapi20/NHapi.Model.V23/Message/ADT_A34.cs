@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a ADT_A34 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: EVN (Event type) 
-/// * 2: PID (Patient Identification) 
-/// * 3: PD1 (Patient Demographic) optional 
-/// * 4: MRG (Merge patient information) 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: EVN (Event type) </li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PD1 (Patient Demographic) optional </li>
+///<li>4: MRG (Merge patient information) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A34 : AbstractMessage  {

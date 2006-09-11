@@ -12,12 +12,14 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a DSR_Q03 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MSA (Message acknowledgement segment) optional 
-/// * 2: QRD (Query definition segment) 
-/// * 3: QRF (Query filter segment) optional 
-/// * 4: DSP (Display data segment) repeating
-/// * 5: DSC (Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MSA (Message acknowledgement segment) optional </li>
+///<li>2: QRD (Query definition segment) </li>
+///<li>3: QRF (Query filter segment) optional </li>
+///<li>4: DSP (Display data segment) repeating</li>
+///<li>5: DSC (Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DSR_Q03 : AbstractMessage  {
@@ -119,7 +121,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DSP (Display data segment) - creates it if necessary
 	///</summary>
-	public DSP getDSP() {
+	public DSP GetDSP() {
 	   DSP ret = null;
 	   try {
 	      ret = (DSP)this.GetStructure("DSP");
@@ -136,14 +138,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DSP getDSP(int rep) { 
+	public DSP GetDSP(int rep) { 
 	   return (DSP)this.GetStructure("DSP", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DSP 
 	 */ 
-	public int DSPReps { 
+	public int DSPRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

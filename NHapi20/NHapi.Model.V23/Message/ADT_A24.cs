@@ -12,16 +12,18 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a ADT_A24 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: EVN (Event type) 
-/// * 2: PID (Patient Identification) 
-/// * 3: PD1 (Patient Demographic) optional 
-/// * 4: PV1 (Patient visit) optional 
-/// * 5: DB1 (Disability Segment) optional repeating
-/// * 6: PID (Patient Identification) 
-/// * 7: PD1 (Patient Demographic) optional 
-/// * 8: PV1 (Patient visit) optional 
-/// * 9: DB1 (Disability Segment) optional repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: EVN (Event type) </li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PD1 (Patient Demographic) optional </li>
+///<li>4: PV1 (Patient visit) optional </li>
+///<li>5: DB1 (Disability Segment) optional repeating</li>
+///<li>6: PID (Patient Identification) </li>
+///<li>7: PD1 (Patient Demographic) optional </li>
+///<li>8: PV1 (Patient visit) optional </li>
+///<li>9: DB1 (Disability Segment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A24 : AbstractMessage  {
@@ -143,7 +145,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DB1 (Disability Segment) - creates it if necessary
 	///</summary>
-	public DB1 getDB1() {
+	public DB1 GetDB1() {
 	   DB1 ret = null;
 	   try {
 	      ret = (DB1)this.GetStructure("DB1");
@@ -160,14 +162,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DB1 getDB1(int rep) { 
+	public DB1 GetDB1(int rep) { 
 	   return (DB1)this.GetStructure("DB1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DB1 
 	 */ 
-	public int DB1Reps { 
+	public int DB1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -232,7 +234,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DB12 (Disability Segment) - creates it if necessary
 	///</summary>
-	public DB1 getDB12() {
+	public DB1 GetDB12() {
 	   DB1 ret = null;
 	   try {
 	      ret = (DB1)this.GetStructure("DB12");
@@ -249,14 +251,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DB1 getDB12(int rep) { 
+	public DB1 GetDB12(int rep) { 
 	   return (DB1)this.GetStructure("DB12", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DB12 
 	 */ 
-	public int DB12Reps { 
+	public int DB12RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

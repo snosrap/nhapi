@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the RRE_O01_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RRE_O01_PATIENT (a Group object) optional 
-/// * 1: RRE_O01_ORDER (a Group object) repeating
+///<ol>
+///<li>0: RRE_O01_PATIENT (a Group object) optional </li>
+///<li>1: RRE_O01_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRE_O01_RESPONSE : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRE_O01_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public RRE_O01_ORDER getORDER() {
+	public RRE_O01_ORDER GetORDER() {
 	   RRE_O01_ORDER ret = null;
 	   try {
 	      ret = (RRE_O01_ORDER)this.GetStructure("ORDER");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRE_O01_ORDER getORDER(int rep) { 
+	public RRE_O01_ORDER GetORDER(int rep) { 
 	   return (RRE_O01_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRE_O01_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

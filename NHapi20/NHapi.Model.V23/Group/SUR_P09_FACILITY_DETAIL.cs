@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Group
 ///Represents the SUR_P09_FACILITY_DETAIL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: FAC (Facility) 
-/// * 1: PDC (Product Detail Country) 
-/// * 2: NTE (Notes and comments segment) 
+///<ol>
+///<li>0: FAC (Facility) </li>
+///<li>1: PDC (Product Detail Country) </li>
+///<li>2: NTE (Notes and comments segment) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SUR_P09_FACILITY_DETAIL : AbstractGroup {

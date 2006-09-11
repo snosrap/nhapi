@@ -12,12 +12,14 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a RPL_I02 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MSA (Message acknowledgement segment) 
-/// * 2: RPL_I02_PROVIDER (a Group object) repeating
-/// * 3: NTE (Notes and comments segment) optional repeating
-/// * 4: DSP (Display data segment) optional repeating
-/// * 5: DSC (Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MSA (Message acknowledgement segment) </li>
+///<li>2: RPL_I02_PROVIDER (a Group object) repeating</li>
+///<li>3: NTE (Notes and comments segment) optional repeating</li>
+///<li>4: DSP (Display data segment) optional repeating</li>
+///<li>5: DSC (Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RPL_I02 : AbstractMessage  {
@@ -87,7 +89,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RPL_I02_PROVIDER (a Group object) - creates it if necessary
 	///</summary>
-	public RPL_I02_PROVIDER getPROVIDER() {
+	public RPL_I02_PROVIDER GetPROVIDER() {
 	   RPL_I02_PROVIDER ret = null;
 	   try {
 	      ret = (RPL_I02_PROVIDER)this.GetStructure("PROVIDER");
@@ -104,14 +106,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RPL_I02_PROVIDER getPROVIDER(int rep) { 
+	public RPL_I02_PROVIDER GetPROVIDER(int rep) { 
 	   return (RPL_I02_PROVIDER)this.GetStructure("PROVIDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RPL_I02_PROVIDER 
 	 */ 
-	public int PROVIDERReps { 
+	public int PROVIDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -169,7 +171,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DSP (Display data segment) - creates it if necessary
 	///</summary>
-	public DSP getDSP() {
+	public DSP GetDSP() {
 	   DSP ret = null;
 	   try {
 	      ret = (DSP)this.GetStructure("DSP");
@@ -186,14 +188,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DSP getDSP(int rep) { 
+	public DSP GetDSP(int rep) { 
 	   return (DSP)this.GetStructure("DSP", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DSP 
 	 */ 
-	public int DSPReps { 
+	public int DSPRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

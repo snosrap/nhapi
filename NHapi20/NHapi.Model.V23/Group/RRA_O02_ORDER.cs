@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the RRA_O02_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common order segment) 
-/// * 1: RRA_O02_ADMINISTRATION (a Group object) optional repeating
+///<ol>
+///<li>0: ORC (Common order segment) </li>
+///<li>1: RRA_O02_ADMINISTRATION (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRA_O02_ORDER : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRA_O02_ADMINISTRATION (a Group object) - creates it if necessary
 	///</summary>
-	public RRA_O02_ADMINISTRATION getADMINISTRATION() {
+	public RRA_O02_ADMINISTRATION GetADMINISTRATION() {
 	   RRA_O02_ADMINISTRATION ret = null;
 	   try {
 	      ret = (RRA_O02_ADMINISTRATION)this.GetStructure("ADMINISTRATION");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRA_O02_ADMINISTRATION getADMINISTRATION(int rep) { 
+	public RRA_O02_ADMINISTRATION GetADMINISTRATION(int rep) { 
 	   return (RRA_O02_ADMINISTRATION)this.GetStructure("ADMINISTRATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRA_O02_ADMINISTRATION 
 	 */ 
-	public int ADMINISTRATIONReps { 
+	public int ADMINISTRATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

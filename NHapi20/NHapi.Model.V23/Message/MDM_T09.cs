@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a MDM_T09 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: EVN (Event type) 
-/// * 2: PID (Patient Identification) 
-/// * 3: PV1 (Patient visit) 
-/// * 4: TXA (Document notification segment) 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: EVN (Event type) </li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PV1 (Patient visit) </li>
+///<li>4: TXA (Document notification segment) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MDM_T09 : AbstractMessage  {

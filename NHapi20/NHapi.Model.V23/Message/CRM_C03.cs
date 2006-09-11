@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a CRM_C03 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: CRM_C03_PATIENT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: CRM_C03_PATIENT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class CRM_C03 : AbstractMessage  {
@@ -63,7 +65,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CRM_C03_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public CRM_C03_PATIENT getPATIENT() {
+	public CRM_C03_PATIENT GetPATIENT() {
 	   CRM_C03_PATIENT ret = null;
 	   try {
 	      ret = (CRM_C03_PATIENT)this.GetStructure("PATIENT");
@@ -80,14 +82,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CRM_C03_PATIENT getPATIENT(int rep) { 
+	public CRM_C03_PATIENT GetPATIENT(int rep) { 
 	   return (CRM_C03_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CRM_C03_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

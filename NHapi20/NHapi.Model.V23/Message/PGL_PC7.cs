@@ -12,10 +12,12 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a PGL_PC7 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: PID (Patient Identification) 
-/// * 2: PGL_PC7_PATIENT_VISIT (a Group object) optional 
-/// * 3: PGL_PC7_GOAL (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: PID (Patient Identification) </li>
+///<li>2: PGL_PC7_PATIENT_VISIT (a Group object) optional </li>
+///<li>3: PGL_PC7_GOAL (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PGL_PC7 : AbstractMessage  {
@@ -99,7 +101,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PGL_PC7_GOAL (a Group object) - creates it if necessary
 	///</summary>
-	public PGL_PC7_GOAL getGOAL() {
+	public PGL_PC7_GOAL GetGOAL() {
 	   PGL_PC7_GOAL ret = null;
 	   try {
 	      ret = (PGL_PC7_GOAL)this.GetStructure("GOAL");
@@ -116,14 +118,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PGL_PC7_GOAL getGOAL(int rep) { 
+	public PGL_PC7_GOAL GetGOAL(int rep) { 
 	   return (PGL_PC7_GOAL)this.GetStructure("GOAL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PGL_PC7_GOAL 
 	 */ 
-	public int GOALReps { 
+	public int GOALRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

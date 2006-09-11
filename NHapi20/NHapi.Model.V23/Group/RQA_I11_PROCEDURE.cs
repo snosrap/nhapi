@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the RQA_I11_PROCEDURE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PR1 (Procedures) 
-/// * 1: RQA_I11_AUTHORIZATION (a Group object) optional 
+///<ol>
+///<li>0: PR1 (Procedures) </li>
+///<li>1: RQA_I11_AUTHORIZATION (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RQA_I11_PROCEDURE : AbstractGroup {

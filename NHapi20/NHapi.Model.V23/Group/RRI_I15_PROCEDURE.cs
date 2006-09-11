@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Group
 ///Represents the RRI_I15_PROCEDURE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PR1 (Procedures) 
-/// * 1: RRI_I15_AUTHORIZATION (a Group object) optional 
+///<ol>
+///<li>0: PR1 (Procedures) </li>
+///<li>1: RRI_I15_AUTHORIZATION (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRI_I15_PROCEDURE : AbstractGroup {

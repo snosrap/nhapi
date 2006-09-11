@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a PPV_PCA message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MSA (Message acknowledgement segment) 
-/// * 2: ERR (Error segment) optional 
-/// * 3: QRD (Query definition segment) 
-/// * 4: PPV_PCA_PATIENT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MSA (Message acknowledgement segment) </li>
+///<li>2: ERR (Error segment) optional </li>
+///<li>3: QRD (Query definition segment) </li>
+///<li>4: PPV_PCA_PATIENT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPV_PCA : AbstractMessage  {
@@ -117,7 +119,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_PATIENT getPATIENT() {
+	public PPV_PCA_PATIENT GetPATIENT() {
 	   PPV_PCA_PATIENT ret = null;
 	   try {
 	      ret = (PPV_PCA_PATIENT)this.GetStructure("PATIENT");
@@ -134,14 +136,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_PATIENT getPATIENT(int rep) { 
+	public PPV_PCA_PATIENT GetPATIENT(int rep) { 
 	   return (PPV_PCA_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

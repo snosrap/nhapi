@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a SIU_S26 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: SCH (Schedule Activity Information) 
-/// * 2: NTE (Notes and comments segment) optional repeating
-/// * 3: SIU_S26_PATIENT (a Group object) optional repeating
-/// * 4: SIU_S26_RESOURCES (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: SCH (Schedule Activity Information) </li>
+///<li>2: NTE (Notes and comments segment) optional repeating</li>
+///<li>3: SIU_S26_PATIENT (a Group object) optional repeating</li>
+///<li>4: SIU_S26_RESOURCES (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SIU_S26 : AbstractMessage  {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -126,7 +128,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SIU_S26_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public SIU_S26_PATIENT getPATIENT() {
+	public SIU_S26_PATIENT GetPATIENT() {
 	   SIU_S26_PATIENT ret = null;
 	   try {
 	      ret = (SIU_S26_PATIENT)this.GetStructure("PATIENT");
@@ -143,14 +145,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S26_PATIENT getPATIENT(int rep) { 
+	public SIU_S26_PATIENT GetPATIENT(int rep) { 
 	   return (SIU_S26_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SIU_S26_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -167,7 +169,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SIU_S26_RESOURCES (a Group object) - creates it if necessary
 	///</summary>
-	public SIU_S26_RESOURCES getRESOURCES() {
+	public SIU_S26_RESOURCES GetRESOURCES() {
 	   SIU_S26_RESOURCES ret = null;
 	   try {
 	      ret = (SIU_S26_RESOURCES)this.GetStructure("RESOURCES");
@@ -184,14 +186,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S26_RESOURCES getRESOURCES(int rep) { 
+	public SIU_S26_RESOURCES GetRESOURCES(int rep) { 
 	   return (SIU_S26_RESOURCES)this.GetStructure("RESOURCES", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SIU_S26_RESOURCES 
 	 */ 
-	public int RESOURCESReps { 
+	public int RESOURCESRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

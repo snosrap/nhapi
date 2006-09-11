@@ -12,8 +12,10 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a CSU_C12 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: CSU_C12_PATIENT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: CSU_C12_PATIENT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class CSU_C12 : AbstractMessage  {
@@ -63,7 +65,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CSU_C12_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public CSU_C12_PATIENT getPATIENT() {
+	public CSU_C12_PATIENT GetPATIENT() {
 	   CSU_C12_PATIENT ret = null;
 	   try {
 	      ret = (CSU_C12_PATIENT)this.GetStructure("PATIENT");
@@ -80,14 +82,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSU_C12_PATIENT getPATIENT(int rep) { 
+	public CSU_C12_PATIENT GetPATIENT(int rep) { 
 	   return (CSU_C12_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSU_C12_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

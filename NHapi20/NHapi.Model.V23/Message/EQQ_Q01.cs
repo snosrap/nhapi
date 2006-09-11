@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a EQQ_Q01 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: EQL (Embedded Query Language) 
-/// * 2: DSC (Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: EQL (Embedded Query Language) </li>
+///<li>2: DSC (Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EQQ_Q01 : AbstractMessage  {

@@ -12,11 +12,13 @@ namespace NHapi.Model.V23.Group
 ///Represents the RRO_O02_ORDER_DETAIL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RXO (Pharmacy prescription order segment) 
-/// * 1: NTE (Notes and comments segment) optional repeating
-/// * 2: RXR (Pharmacy route segment) repeating
-/// * 3: RXC (Pharmacy component order segment) optional repeating
-/// * 4: NTE (Notes and comments segment) optional repeating
+///<ol>
+///<li>0: RXO (Pharmacy prescription order segment) </li>
+///<li>1: NTE (Notes and comments segment) optional repeating</li>
+///<li>2: RXR (Pharmacy route segment) repeating</li>
+///<li>3: RXC (Pharmacy component order segment) optional repeating</li>
+///<li>4: NTE (Notes and comments segment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRO_O02_ORDER_DETAIL : AbstractGroup {
@@ -55,7 +57,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -72,14 +74,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -96,7 +98,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXR (Pharmacy route segment) - creates it if necessary
 	///</summary>
-	public RXR getRXR() {
+	public RXR GetRXR() {
 	   RXR ret = null;
 	   try {
 	      ret = (RXR)this.GetStructure("RXR");
@@ -113,14 +115,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXR getRXR(int rep) { 
+	public RXR GetRXR(int rep) { 
 	   return (RXR)this.GetStructure("RXR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXR 
 	 */ 
-	public int RXRReps { 
+	public int RXRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -137,7 +139,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXC (Pharmacy component order segment) - creates it if necessary
 	///</summary>
-	public RXC getRXC() {
+	public RXC GetRXC() {
 	   RXC ret = null;
 	   try {
 	      ret = (RXC)this.GetStructure("RXC");
@@ -154,14 +156,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXC getRXC(int rep) { 
+	public RXC GetRXC(int rep) { 
 	   return (RXC)this.GetStructure("RXC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXC 
 	 */ 
-	public int RXCReps { 
+	public int RXCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -178,7 +180,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE2 (Notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE2() {
+	public NTE GetNTE2() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE2");
@@ -195,14 +197,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE2(int rep) { 
+	public NTE GetNTE2(int rep) { 
 	   return (NTE)this.GetStructure("NTE2", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE2 
 	 */ 
-	public int NTE2Reps { 
+	public int NTE2RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,9 +12,11 @@ namespace NHapi.Model.V23.Message
 ///<summary>
 /// Represents a MFN_M10 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message header segment) 
-/// * 1: MFI (Master file identification segment) 
-/// * 2: MFN_M10_MF_TEST_BATTERIES (a Group object) optional repeating
+///<ol>
+///<li>0: MSH (Message header segment) </li>
+///<li>1: MFI (Master file identification segment) </li>
+///<li>2: MFN_M10_MF_TEST_BATTERIES (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M10 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M10_MF_TEST_BATTERIES (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M10_MF_TEST_BATTERIES getMF_TEST_BATTERIES() {
+	public MFN_M10_MF_TEST_BATTERIES GetMF_TEST_BATTERIES() {
 	   MFN_M10_MF_TEST_BATTERIES ret = null;
 	   try {
 	      ret = (MFN_M10_MF_TEST_BATTERIES)this.GetStructure("MF_TEST_BATTERIES");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M10_MF_TEST_BATTERIES getMF_TEST_BATTERIES(int rep) { 
+	public MFN_M10_MF_TEST_BATTERIES GetMF_TEST_BATTERIES(int rep) { 
 	   return (MFN_M10_MF_TEST_BATTERIES)this.GetStructure("MF_TEST_BATTERIES", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M10_MF_TEST_BATTERIES 
 	 */ 
-	public int MF_TEST_BATTERIESReps { 
+	public int MF_TEST_BATTERIESRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
