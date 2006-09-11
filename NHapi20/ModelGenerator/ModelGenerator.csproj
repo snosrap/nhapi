@@ -42,18 +42,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\nHapi.Base\NHapi.Base.csproj">
-      <Project>{5A080123-0597-46C3-AE78-2007EFB0DD68}</Project>
-      <Name>NHapi.Base</Name>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\nHapi.Base\NHapi.Base.csproj">
+      <Project>{5A080123-0597-46C3-AE78-2007EFB0DD68}</Project>
+      <Name>NHapi.Base</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
