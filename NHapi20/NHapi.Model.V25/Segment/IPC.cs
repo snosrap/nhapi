@@ -9,16 +9,17 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 IPC message segment. 
-/// This segment has the following fields:
-/// * IPC-1: Accession Identifier (EI)
-/// * IPC-2: Requested Procedure ID (EI)
-/// * IPC-3: Study Instance UID (EI)
-/// * IPC-4: Scheduled Procedure Step ID (EI)
-/// * IPC-5: Modality (CE)
-/// * IPC-6: Protocol Code (CE)
-/// * IPC-7: Scheduled Station Name (EI)
-/// * IPC-8: Scheduled Procedure Step Location (CE)
-/// * IPC-9: Scheduled AE Title (ST)
+/// This segment has the following fields:<ol>
+///<li>IPC-1: Accession Identifier (EI)</li>
+///<li>IPC-2: Requested Procedure ID (EI)</li>
+///<li>IPC-3: Study Instance UID (EI)</li>
+///<li>IPC-4: Scheduled Procedure Step ID (EI)</li>
+///<li>IPC-5: Modality (CE)</li>
+///<li>IPC-6: Protocol Code (CE)</li>
+///<li>IPC-7: Scheduled Station Name (EI)</li>
+///<li>IPC-8: Scheduled Procedure Step Location (CE)</li>
+///<li>IPC-9: Scheduled AE Title (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -169,7 +170,7 @@ public class IPC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProtocolCode(int rep)
+	public CE GetProtocolCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -186,7 +187,7 @@ public class IPC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Protocol Code (IPC-6).
    ///</summary>
-  public CE[] getProtocolCode() {
+  public CE[] GetProtocolCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -204,6 +205,24 @@ public class IPC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Protocol Code (IPC-6).
+   ///</summary>
+  public int ProtocolCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Scheduled Station Name(IPC-7).
 	///</summary>
@@ -232,7 +251,7 @@ public class IPC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getScheduledProcedureStepLocation(int rep)
+	public CE GetScheduledProcedureStepLocation(int rep)
 	{
 			CE ret = null;
 			try
@@ -249,7 +268,7 @@ public class IPC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Scheduled Procedure Step Location (IPC-8).
    ///</summary>
-  public CE[] getScheduledProcedureStepLocation() {
+  public CE[] GetScheduledProcedureStepLocation() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -267,6 +286,24 @@ public class IPC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Scheduled Procedure Step Location (IPC-8).
+   ///</summary>
+  public int ScheduledProcedureStepLocationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Scheduled AE Title(IPC-9).
 	///</summary>

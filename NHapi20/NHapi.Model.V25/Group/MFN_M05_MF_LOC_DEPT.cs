@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the MFN_M05_MF_LOC_DEPT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: LDP (Location Department) 
-/// * 1: LCH (Location Characteristic) optional repeating
-/// * 2: LCC (Location Charge Code) optional repeating
+///<ol>
+///<li>0: LDP (Location Department) </li>
+///<li>1: LCH (Location Characteristic) optional repeating</li>
+///<li>2: LCC (Location Charge Code) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M05_MF_LOC_DEPT : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of LCH (Location Characteristic) - creates it if necessary
 	///</summary>
-	public LCH getLCH() {
+	public LCH GetLCH() {
 	   LCH ret = null;
 	   try {
 	      ret = (LCH)this.GetStructure("LCH");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public LCH getLCH(int rep) { 
+	public LCH GetLCH(int rep) { 
 	   return (LCH)this.GetStructure("LCH", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of LCH 
 	 */ 
-	public int LCHReps { 
+	public int LCHRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of LCC (Location Charge Code) - creates it if necessary
 	///</summary>
-	public LCC getLCC() {
+	public LCC GetLCC() {
 	   LCC ret = null;
 	   try {
 	      ret = (LCC)this.GetStructure("LCC");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public LCC getLCC(int rep) { 
+	public LCC GetLCC(int rep) { 
 	   return (LCC)this.GetStructure("LCC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of LCC 
 	 */ 
-	public int LCCReps { 
+	public int LCCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

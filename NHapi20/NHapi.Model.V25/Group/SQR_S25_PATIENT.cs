@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the SQR_S25_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PV1 (Patient Visit) optional 
-/// * 2: PV2 (Patient Visit - Additional Information) optional 
-/// * 3: DG1 (Diagnosis) optional 
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PV1 (Patient Visit) optional </li>
+///<li>2: PV2 (Patient Visit - Additional Information) optional </li>
+///<li>3: DG1 (Diagnosis) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SQR_S25_PATIENT : AbstractGroup {

@@ -12,7 +12,9 @@ namespace NHapi.Model.V25.Group
 ///Represents the QVR_Q17_QBP Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: Hxx (any HL7 segment) optional 
+///<ol>
+///<li>0: Hxx (any HL7 segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class QVR_Q17_QBP : AbstractGroup {

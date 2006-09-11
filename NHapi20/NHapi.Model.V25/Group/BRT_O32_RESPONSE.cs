@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the BRT_O32_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) optional 
-/// * 1: BRT_O32_ORDER (a Group object) 
+///<ol>
+///<li>0: PID (Patient Identification) optional </li>
+///<li>1: BRT_O32_ORDER (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BRT_O32_RESPONSE : AbstractGroup {

@@ -9,21 +9,22 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 ABS message segment. 
-/// This segment has the following fields:
-/// * ABS-1: Discharge Care Provider (XCN)
-/// * ABS-2: Transfer Medical Service Code (CE)
-/// * ABS-3: Severity of Illness Code (CE)
-/// * ABS-4: Date/Time of Attestation (TS)
-/// * ABS-5: Attested By (XCN)
-/// * ABS-6: Triage Code (CE)
-/// * ABS-7: Abstract Completion Date/Time (TS)
-/// * ABS-8: Abstracted By (XCN)
-/// * ABS-9: Case Category Code (CE)
-/// * ABS-10: Caesarian Section Indicator (ID)
-/// * ABS-11: Gestation Category Code (CE)
-/// * ABS-12: Gestation Period - Weeks (NM)
-/// * ABS-13: Newborn Code (CE)
-/// * ABS-14: Stillborn Indicator (ID)
+/// This segment has the following fields:<ol>
+///<li>ABS-1: Discharge Care Provider (XCN)</li>
+///<li>ABS-2: Transfer Medical Service Code (CE)</li>
+///<li>ABS-3: Severity of Illness Code (CE)</li>
+///<li>ABS-4: Date/Time of Attestation (TS)</li>
+///<li>ABS-5: Attested By (XCN)</li>
+///<li>ABS-6: Triage Code (CE)</li>
+///<li>ABS-7: Abstract Completion Date/Time (TS)</li>
+///<li>ABS-8: Abstracted By (XCN)</li>
+///<li>ABS-9: Case Category Code (CE)</li>
+///<li>ABS-10: Caesarian Section Indicator (ID)</li>
+///<li>ABS-11: Gestation Category Code (CE)</li>
+///<li>ABS-12: Gestation Period - Weeks (NM)</li>
+///<li>ABS-13: Newborn Code (CE)</li>
+///<li>ABS-14: Stillborn Indicator (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

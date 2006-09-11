@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the MFN_M15_MF_INV_ITEM Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: IIM (Inventory Item Master) 
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: IIM (Inventory Item Master) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M15_MF_INV_ITEM : AbstractGroup {

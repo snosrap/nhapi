@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Group
 ///Represents the SQM_S25_RESOURCES Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RGS (Resource Group) 
-/// * 1: SQM_S25_SERVICE (a Group object) 
-/// * 2: SQM_S25_GENERAL_RESOURCE (a Group object) 
-/// * 3: SQM_S25_PERSONNEL_RESOURCE (a Group object) 
-/// * 4: SQM_S25_LOCATION_RESOURCE (a Group object) 
+///<ol>
+///<li>0: RGS (Resource Group) </li>
+///<li>1: SQM_S25_SERVICE (a Group object) </li>
+///<li>2: SQM_S25_GENERAL_RESOURCE (a Group object) </li>
+///<li>3: SQM_S25_PERSONNEL_RESOURCE (a Group object) </li>
+///<li>4: SQM_S25_LOCATION_RESOURCE (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SQM_S25_RESOURCES : AbstractGroup {

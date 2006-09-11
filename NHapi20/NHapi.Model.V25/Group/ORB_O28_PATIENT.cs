@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORB_O28_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: ORB_O28_ORDER (a Group object) 
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: ORB_O28_ORDER (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORB_O28_PATIENT : AbstractGroup {

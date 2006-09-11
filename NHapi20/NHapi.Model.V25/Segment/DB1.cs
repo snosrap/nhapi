@@ -9,15 +9,16 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 DB1 message segment. 
-/// This segment has the following fields:
-/// * DB1-1: Set ID - DB1 (SI)
-/// * DB1-2: Disabled Person Code (IS)
-/// * DB1-3: Disabled Person Identifier (CX)
-/// * DB1-4: Disabled Indicator (ID)
-/// * DB1-5: Disability Start Date (DT)
-/// * DB1-6: Disability End Date (DT)
-/// * DB1-7: Disability Return to Work Date (DT)
-/// * DB1-8: Disability Unable to Work Date (DT)
+/// This segment has the following fields:<ol>
+///<li>DB1-1: Set ID - DB1 (SI)</li>
+///<li>DB1-2: Disabled Person Code (IS)</li>
+///<li>DB1-3: Disabled Person Identifier (CX)</li>
+///<li>DB1-4: Disabled Indicator (ID)</li>
+///<li>DB1-5: Disability Start Date (DT)</li>
+///<li>DB1-6: Disability End Date (DT)</li>
+///<li>DB1-7: Disability Return to Work Date (DT)</li>
+///<li>DB1-8: Disability Unable to Work Date (DT)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -98,7 +99,7 @@ public class DB1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getDisabledPersonIdentifier(int rep)
+	public CX GetDisabledPersonIdentifier(int rep)
 	{
 			CX ret = null;
 			try
@@ -115,7 +116,7 @@ public class DB1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Disabled Person Identifier (DB1-3).
    ///</summary>
-  public CX[] getDisabledPersonIdentifier() {
+  public CX[] GetDisabledPersonIdentifier() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -133,6 +134,24 @@ public class DB1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Disabled Person Identifier (DB1-3).
+   ///</summary>
+  public int DisabledPersonIdentifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Disabled Indicator(DB1-4).
 	///</summary>

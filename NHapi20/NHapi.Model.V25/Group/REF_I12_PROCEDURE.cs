@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the REF_I12_PROCEDURE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PR1 (Procedures) 
-/// * 1: REF_I12_AUTHORIZATION_CONTACT (a Group object) optional 
+///<ol>
+///<li>0: PR1 (Procedures) </li>
+///<li>1: REF_I12_AUTHORIZATION_CONTACT (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class REF_I12_PROCEDURE : AbstractGroup {

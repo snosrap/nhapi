@@ -9,10 +9,11 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 OM5 message segment. 
-/// This segment has the following fields:
-/// * OM5-1: Sequence Number - Test/Observation Master File (NM)
-/// * OM5-2: Test/Observations Included within an Ordered Test Battery (CE)
-/// * OM5-3: Observation ID Suffixes (ST)
+/// This segment has the following fields:<ol>
+///<li>OM5-1: Sequence Number - Test/Observation Master File (NM)</li>
+///<li>OM5-2: Test/Observations Included within an Ordered Test Battery (CE)</li>
+///<li>OM5-3: Observation ID Suffixes (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -65,7 +66,7 @@ public class OM5 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getTestObservationsIncludedWithinAnOrderedTestBattery(int rep)
+	public CE GetTestObservationsIncludedWithinAnOrderedTestBattery(int rep)
 	{
 			CE ret = null;
 			try
@@ -82,7 +83,7 @@ public class OM5 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Test/Observations Included within an Ordered Test Battery (OM5-2).
    ///</summary>
-  public CE[] getTestObservationsIncludedWithinAnOrderedTestBattery() {
+  public CE[] GetTestObservationsIncludedWithinAnOrderedTestBattery() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -100,6 +101,24 @@ public class OM5 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Test/Observations Included within an Ordered Test Battery (OM5-2).
+   ///</summary>
+  public int TestObservationsIncludedWithinAnOrderedTestBatteryRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Observation ID Suffixes(OM5-3).
 	///</summary>

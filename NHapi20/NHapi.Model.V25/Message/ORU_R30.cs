@@ -12,16 +12,18 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a ORU_R30 message structure (see chapter 7.3.4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: PID (Patient Identification) 
-/// * 3: PD1 (Patient Additional Demographic) optional 
-/// * 4: ORU_R30_VISIT (a Group object) optional 
-/// * 5: ORC (Common Order) 
-/// * 6: OBR (Observation Request) 
-/// * 7: NTE (Notes and Comments) optional repeating
-/// * 8: ORU_R30_TIMING_QTY (a Group object) 
-/// * 9: ORU_R30_OBSERVATION (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PD1 (Patient Additional Demographic) optional </li>
+///<li>4: ORU_R30_VISIT (a Group object) optional </li>
+///<li>5: ORC (Common Order) </li>
+///<li>6: OBR (Observation Request) </li>
+///<li>7: NTE (Notes and Comments) optional repeating</li>
+///<li>8: ORU_R30_TIMING_QTY (a Group object) </li>
+///<li>9: ORU_R30_OBSERVATION (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORU_R30 : AbstractMessage  {
@@ -79,7 +81,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -96,14 +98,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -200,7 +202,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -217,14 +219,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -257,7 +259,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORU_R30_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public ORU_R30_OBSERVATION getOBSERVATION() {
+	public ORU_R30_OBSERVATION GetOBSERVATION() {
 	   ORU_R30_OBSERVATION ret = null;
 	   try {
 	      ret = (ORU_R30_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -274,14 +276,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORU_R30_OBSERVATION getOBSERVATION(int rep) { 
+	public ORU_R30_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (ORU_R30_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORU_R30_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

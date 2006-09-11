@@ -12,7 +12,9 @@ namespace NHapi.Model.V25.Group
 ///Represents the BRP_O30_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: BRP_O30_PATIENT (a Group object) optional 
+///<ol>
+///<li>0: BRP_O30_PATIENT (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BRP_O30_RESPONSE : AbstractGroup {

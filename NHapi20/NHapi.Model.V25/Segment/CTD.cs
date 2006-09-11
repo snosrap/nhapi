@@ -9,14 +9,15 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 CTD message segment. 
-/// This segment has the following fields:
-/// * CTD-1: Contact Role (CE)
-/// * CTD-2: Contact Name (XPN)
-/// * CTD-3: Contact Address (XAD)
-/// * CTD-4: Contact Location (PL)
-/// * CTD-5: Contact Communication Information (XTN)
-/// * CTD-6: Preferred Method of Contact (CE)
-/// * CTD-7: Contact Identifiers (PLN)
+/// This segment has the following fields:<ol>
+///<li>CTD-1: Contact Role (CE)</li>
+///<li>CTD-2: Contact Name (XPN)</li>
+///<li>CTD-3: Contact Address (XAD)</li>
+///<li>CTD-4: Contact Location (PL)</li>
+///<li>CTD-5: Contact Communication Information (XTN)</li>
+///<li>CTD-6: Preferred Method of Contact (CE)</li>
+///<li>CTD-7: Contact Identifiers (PLN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -50,7 +51,7 @@ public class CTD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getContactRole(int rep)
+	public CE GetContactRole(int rep)
 	{
 			CE ret = null;
 			try
@@ -67,7 +68,7 @@ public class CTD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Role (CTD-1).
    ///</summary>
-  public CE[] getContactRole() {
+  public CE[] GetContactRole() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -85,12 +86,30 @@ public class CTD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Role (CTD-1).
+   ///</summary>
+  public int ContactRoleRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Name(CTD-2).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getContactName(int rep)
+	public XPN GetContactName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -107,7 +126,7 @@ public class CTD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Name (CTD-2).
    ///</summary>
-  public XPN[] getContactName() {
+  public XPN[] GetContactName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -125,12 +144,30 @@ public class CTD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Name (CTD-2).
+   ///</summary>
+  public int ContactNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Address(CTD-3).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getContactAddress(int rep)
+	public XAD GetContactAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -147,7 +184,7 @@ public class CTD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Address (CTD-3).
    ///</summary>
-  public XAD[] getContactAddress() {
+  public XAD[] GetContactAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -165,6 +202,24 @@ public class CTD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Address (CTD-3).
+   ///</summary>
+  public int ContactAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Contact Location(CTD-4).
 	///</summary>
@@ -193,7 +248,7 @@ public class CTD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getContactCommunicationInformation(int rep)
+	public XTN GetContactCommunicationInformation(int rep)
 	{
 			XTN ret = null;
 			try
@@ -210,7 +265,7 @@ public class CTD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Communication Information (CTD-5).
    ///</summary>
-  public XTN[] getContactCommunicationInformation() {
+  public XTN[] GetContactCommunicationInformation() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -228,6 +283,24 @@ public class CTD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Communication Information (CTD-5).
+   ///</summary>
+  public int ContactCommunicationInformationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Preferred Method of Contact(CTD-6).
 	///</summary>
@@ -256,7 +329,7 @@ public class CTD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PLN getContactIdentifiers(int rep)
+	public PLN GetContactIdentifiers(int rep)
 	{
 			PLN ret = null;
 			try
@@ -273,7 +346,7 @@ public class CTD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Identifiers (CTD-7).
    ///</summary>
-  public PLN[] getContactIdentifiers() {
+  public PLN[] GetContactIdentifiers() {
      PLN[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -291,5 +364,23 @@ public class CTD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Identifiers (CTD-7).
+   ///</summary>
+  public int ContactIdentifiersRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

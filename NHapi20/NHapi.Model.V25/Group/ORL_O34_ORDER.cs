@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORL_O34_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: ORL_O34_TIMING (a Group object) 
-/// * 2: ORL_O34_OBSERVATION_REQUEST (a Group object) optional 
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: ORL_O34_TIMING (a Group object) </li>
+///<li>2: ORL_O34_OBSERVATION_REQUEST (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORL_O34_ORDER : AbstractGroup {

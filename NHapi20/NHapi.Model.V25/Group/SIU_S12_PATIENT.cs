@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Group
 ///Represents the SIU_S12_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PD1 (Patient Additional Demographic) optional 
-/// * 2: PV1 (Patient Visit) optional 
-/// * 3: PV2 (Patient Visit - Additional Information) optional 
-/// * 4: OBX (Observation/Result) optional repeating
-/// * 5: DG1 (Diagnosis) optional repeating
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PD1 (Patient Additional Demographic) optional </li>
+///<li>2: PV1 (Patient Visit) optional </li>
+///<li>3: PV2 (Patient Visit - Additional Information) optional </li>
+///<li>4: OBX (Observation/Result) optional repeating</li>
+///<li>5: DG1 (Diagnosis) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SIU_S12_PATIENT : AbstractGroup {
@@ -105,7 +107,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -122,14 +124,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -146,7 +148,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -163,14 +165,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

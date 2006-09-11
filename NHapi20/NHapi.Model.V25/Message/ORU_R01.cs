@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a ORU_R01 message structure (see chapter 5.7.3.1). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: ORU_R01_PATIENT_RESULT (a Group object) repeating
-/// * 3: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: ORU_R01_PATIENT_RESULT (a Group object) repeating</li>
+///<li>3: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORU_R01 : AbstractMessage  {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -108,7 +110,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORU_R01_PATIENT_RESULT (a Group object) - creates it if necessary
 	///</summary>
-	public ORU_R01_PATIENT_RESULT getPATIENT_RESULT() {
+	public ORU_R01_PATIENT_RESULT GetPATIENT_RESULT() {
 	   ORU_R01_PATIENT_RESULT ret = null;
 	   try {
 	      ret = (ORU_R01_PATIENT_RESULT)this.GetStructure("PATIENT_RESULT");
@@ -125,14 +127,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORU_R01_PATIENT_RESULT getPATIENT_RESULT(int rep) { 
+	public ORU_R01_PATIENT_RESULT GetPATIENT_RESULT(int rep) { 
 	   return (ORU_R01_PATIENT_RESULT)this.GetStructure("PATIENT_RESULT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORU_R01_PATIENT_RESULT 
 	 */ 
-	public int PATIENT_RESULTReps { 
+	public int PATIENT_RESULTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

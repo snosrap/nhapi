@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a OUL_R22 message structure (see chapter 7.3.7). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: NTE (Notes and Comments) optional 
-/// * 3: OUL_R22_PATIENT (a Group object) optional 
-/// * 4: OUL_R22_VISIT (a Group object) optional 
-/// * 5: OUL_R22_SPECIMEN (a Group object) repeating
-/// * 6: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: NTE (Notes and Comments) optional </li>
+///<li>3: OUL_R22_PATIENT (a Group object) optional </li>
+///<li>4: OUL_R22_VISIT (a Group object) optional </li>
+///<li>5: OUL_R22_SPECIMEN (a Group object) repeating</li>
+///<li>6: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OUL_R22 : AbstractMessage  {
@@ -73,7 +75,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -90,14 +92,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -162,7 +164,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OUL_R22_SPECIMEN (a Group object) - creates it if necessary
 	///</summary>
-	public OUL_R22_SPECIMEN getSPECIMEN() {
+	public OUL_R22_SPECIMEN GetSPECIMEN() {
 	   OUL_R22_SPECIMEN ret = null;
 	   try {
 	      ret = (OUL_R22_SPECIMEN)this.GetStructure("SPECIMEN");
@@ -179,14 +181,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OUL_R22_SPECIMEN getSPECIMEN(int rep) { 
+	public OUL_R22_SPECIMEN GetSPECIMEN(int rep) { 
 	   return (OUL_R22_SPECIMEN)this.GetStructure("SPECIMEN", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OUL_R22_SPECIMEN 
 	 */ 
-	public int SPECIMENReps { 
+	public int SPECIMENRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

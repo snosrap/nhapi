@@ -12,16 +12,18 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a MFR_M01 message structure (see chapter 8.4.4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: MSA (Message Acknowledgment) 
-/// * 3: ERR (Error) optional repeating
-/// * 4: QAK (Query Acknowledgment) optional 
-/// * 5: QRD (Original-Style Query Definition) 
-/// * 6: QRF (Original style query filter) optional 
-/// * 7: MFI (Master File Identification) 
-/// * 8: MFR_M01_MF_QUERY (a Group object) repeating
-/// * 9: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: MSA (Message Acknowledgment) </li>
+///<li>3: ERR (Error) optional repeating</li>
+///<li>4: QAK (Query Acknowledgment) optional </li>
+///<li>5: QRD (Original-Style Query Definition) </li>
+///<li>6: QRF (Original style query filter) optional </li>
+///<li>7: MFI (Master File Identification) </li>
+///<li>8: MFR_M01_MF_QUERY (a Group object) repeating</li>
+///<li>9: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFR_M01 : AbstractMessage  {
@@ -79,7 +81,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -96,14 +98,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -136,7 +138,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ERR (Error) - creates it if necessary
 	///</summary>
-	public ERR getERR() {
+	public ERR GetERR() {
 	   ERR ret = null;
 	   try {
 	      ret = (ERR)this.GetStructure("ERR");
@@ -153,14 +155,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ERR getERR(int rep) { 
+	public ERR GetERR(int rep) { 
 	   return (ERR)this.GetStructure("ERR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ERR 
 	 */ 
-	public int ERRReps { 
+	public int ERRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -241,7 +243,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFR_M01_MF_QUERY (a Group object) - creates it if necessary
 	///</summary>
-	public MFR_M01_MF_QUERY getMF_QUERY() {
+	public MFR_M01_MF_QUERY GetMF_QUERY() {
 	   MFR_M01_MF_QUERY ret = null;
 	   try {
 	      ret = (MFR_M01_MF_QUERY)this.GetStructure("MF_QUERY");
@@ -258,14 +260,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFR_M01_MF_QUERY getMF_QUERY(int rep) { 
+	public MFR_M01_MF_QUERY GetMF_QUERY(int rep) { 
 	   return (MFR_M01_MF_QUERY)this.GetStructure("MF_QUERY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFR_M01_MF_QUERY 
 	 */ 
-	public int MF_QUERYReps { 
+	public int MF_QUERYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

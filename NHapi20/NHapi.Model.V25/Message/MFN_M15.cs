@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a MFN_M15 message structure (see chapter 8.12.1). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: MFI (Master File Identification) 
-/// * 3: MFN_M15_MF_INV_ITEM (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: MFI (Master File Identification) </li>
+///<li>3: MFN_M15_MF_INV_ITEM (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M15 : AbstractMessage  {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -124,7 +126,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M15_MF_INV_ITEM (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M15_MF_INV_ITEM getMF_INV_ITEM() {
+	public MFN_M15_MF_INV_ITEM GetMF_INV_ITEM() {
 	   MFN_M15_MF_INV_ITEM ret = null;
 	   try {
 	      ret = (MFN_M15_MF_INV_ITEM)this.GetStructure("MF_INV_ITEM");
@@ -141,14 +143,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M15_MF_INV_ITEM getMF_INV_ITEM(int rep) { 
+	public MFN_M15_MF_INV_ITEM GetMF_INV_ITEM(int rep) { 
 	   return (MFN_M15_MF_INV_ITEM)this.GetStructure("MF_INV_ITEM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M15_MF_INV_ITEM 
 	 */ 
-	public int MF_INV_ITEMReps { 
+	public int MF_INV_ITEMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

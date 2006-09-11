@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the ADR_A19_INSURANCE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: IN1 (Insurance) 
-/// * 1: IN2 (Insurance Additional Information) optional 
-/// * 2: IN3 (Insurance Additional Information, Certification) optional repeating
-/// * 3: ROL (Role) optional repeating
+///<ol>
+///<li>0: IN1 (Insurance) </li>
+///<li>1: IN2 (Insurance Additional Information) optional </li>
+///<li>2: IN3 (Insurance Additional Information, Certification) optional repeating</li>
+///<li>3: ROL (Role) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADR_A19_INSURANCE : AbstractGroup {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of IN3 (Insurance Additional Information, Certification) - creates it if necessary
 	///</summary>
-	public IN3 getIN3() {
+	public IN3 GetIN3() {
 	   IN3 ret = null;
 	   try {
 	      ret = (IN3)this.GetStructure("IN3");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public IN3 getIN3(int rep) { 
+	public IN3 GetIN3(int rep) { 
 	   return (IN3)this.GetStructure("IN3", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of IN3 
 	 */ 
-	public int IN3Reps { 
+	public int IN3RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -110,7 +112,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROL (Role) - creates it if necessary
 	///</summary>
-	public ROL getROL() {
+	public ROL GetROL() {
 	   ROL ret = null;
 	   try {
 	      ret = (ROL)this.GetStructure("ROL");
@@ -127,14 +129,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROL getROL(int rep) { 
+	public ROL GetROL(int rep) { 
 	   return (ROL)this.GetStructure("ROL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROL 
 	 */ 
-	public int ROLReps { 
+	public int ROLRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

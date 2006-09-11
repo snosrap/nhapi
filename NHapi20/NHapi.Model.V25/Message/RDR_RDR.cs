@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a RDR_RDR message structure (see chapter 4.13.17). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional repeating
-/// * 3: SFT (Software Segment) optional repeating
-/// * 4: RDR_RDR_DEFINITION (a Group object) repeating
-/// * 5: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional repeating</li>
+///<li>3: SFT (Software Segment) optional repeating</li>
+///<li>4: RDR_RDR_DEFINITION (a Group object) repeating</li>
+///<li>5: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RDR_RDR : AbstractMessage  {
@@ -87,7 +89,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ERR (Error) - creates it if necessary
 	///</summary>
-	public ERR getERR() {
+	public ERR GetERR() {
 	   ERR ret = null;
 	   try {
 	      ret = (ERR)this.GetStructure("ERR");
@@ -104,14 +106,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ERR getERR(int rep) { 
+	public ERR GetERR(int rep) { 
 	   return (ERR)this.GetStructure("ERR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ERR 
 	 */ 
-	public int ERRReps { 
+	public int ERRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -169,7 +171,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RDR_RDR_DEFINITION (a Group object) - creates it if necessary
 	///</summary>
-	public RDR_RDR_DEFINITION getDEFINITION() {
+	public RDR_RDR_DEFINITION GetDEFINITION() {
 	   RDR_RDR_DEFINITION ret = null;
 	   try {
 	      ret = (RDR_RDR_DEFINITION)this.GetStructure("DEFINITION");
@@ -186,14 +188,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RDR_RDR_DEFINITION getDEFINITION(int rep) { 
+	public RDR_RDR_DEFINITION GetDEFINITION(int rep) { 
 	   return (RDR_RDR_DEFINITION)this.GetStructure("DEFINITION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RDR_RDR_DEFINITION 
 	 */ 
-	public int DEFINITIONReps { 
+	public int DEFINITIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,45 +9,46 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 STF message segment. 
-/// This segment has the following fields:
-/// * STF-1: Primary Key Value - STF (CE)
-/// * STF-2: Staff Identifier List (CX)
-/// * STF-3: Staff Name (XPN)
-/// * STF-4: Staff Type (IS)
-/// * STF-5: Administrative Sex (IS)
-/// * STF-6: Date/Time of Birth (TS)
-/// * STF-7: Active/Inactive Flag (ID)
-/// * STF-8: Department (CE)
-/// * STF-9: Hospital Service - STF (CE)
-/// * STF-10: Phone (XTN)
-/// * STF-11: Office/Home Address/Birthplace (XAD)
-/// * STF-12: Institution Activation Date (DIN)
-/// * STF-13: Institution Inactivation Date (DIN)
-/// * STF-14: Backup Person ID (CE)
-/// * STF-15: E-Mail Address (ST)
-/// * STF-16: Preferred Method of Contact (CE)
-/// * STF-17: Marital Status (CE)
-/// * STF-18: Job Title (ST)
-/// * STF-19: Job Code/Class (JCC)
-/// * STF-20: Employment Status Code (CE)
-/// * STF-21: Additional Insured on Auto (ID)
-/// * STF-22: Driver's License Number - Staff (DLN)
-/// * STF-23: Copy Auto Ins (ID)
-/// * STF-24: Auto Ins. Expires (DT)
-/// * STF-25: Date Last DMV Review (DT)
-/// * STF-26: Date Next DMV Review (DT)
-/// * STF-27: Race (CE)
-/// * STF-28: Ethnic Group (CE)
-/// * STF-29: Re-activation Approval Indicator (ID)
-/// * STF-30: Citizenship (CE)
-/// * STF-31: Death Date and Time (TS)
-/// * STF-32: Death Indicator (ID)
-/// * STF-33: Institution Relationship Type Code (CWE)
-/// * STF-34: Institution Relationship Period (DR)
-/// * STF-35: Expected Return Date (DT)
-/// * STF-36: Cost Center Code (CWE)
-/// * STF-37: Generic Classification Indicator (ID)
-/// * STF-38: Inactive Reason Code (CWE)
+/// This segment has the following fields:<ol>
+///<li>STF-1: Primary Key Value - STF (CE)</li>
+///<li>STF-2: Staff Identifier List (CX)</li>
+///<li>STF-3: Staff Name (XPN)</li>
+///<li>STF-4: Staff Type (IS)</li>
+///<li>STF-5: Administrative Sex (IS)</li>
+///<li>STF-6: Date/Time of Birth (TS)</li>
+///<li>STF-7: Active/Inactive Flag (ID)</li>
+///<li>STF-8: Department (CE)</li>
+///<li>STF-9: Hospital Service - STF (CE)</li>
+///<li>STF-10: Phone (XTN)</li>
+///<li>STF-11: Office/Home Address/Birthplace (XAD)</li>
+///<li>STF-12: Institution Activation Date (DIN)</li>
+///<li>STF-13: Institution Inactivation Date (DIN)</li>
+///<li>STF-14: Backup Person ID (CE)</li>
+///<li>STF-15: E-Mail Address (ST)</li>
+///<li>STF-16: Preferred Method of Contact (CE)</li>
+///<li>STF-17: Marital Status (CE)</li>
+///<li>STF-18: Job Title (ST)</li>
+///<li>STF-19: Job Code/Class (JCC)</li>
+///<li>STF-20: Employment Status Code (CE)</li>
+///<li>STF-21: Additional Insured on Auto (ID)</li>
+///<li>STF-22: Driver's License Number - Staff (DLN)</li>
+///<li>STF-23: Copy Auto Ins (ID)</li>
+///<li>STF-24: Auto Ins. Expires (DT)</li>
+///<li>STF-25: Date Last DMV Review (DT)</li>
+///<li>STF-26: Date Next DMV Review (DT)</li>
+///<li>STF-27: Race (CE)</li>
+///<li>STF-28: Ethnic Group (CE)</li>
+///<li>STF-29: Re-activation Approval Indicator (ID)</li>
+///<li>STF-30: Citizenship (CE)</li>
+///<li>STF-31: Death Date and Time (TS)</li>
+///<li>STF-32: Death Indicator (ID)</li>
+///<li>STF-33: Institution Relationship Type Code (CWE)</li>
+///<li>STF-34: Institution Relationship Period (DR)</li>
+///<li>STF-35: Expected Return Date (DT)</li>
+///<li>STF-36: Cost Center Code (CWE)</li>
+///<li>STF-37: Generic Classification Indicator (ID)</li>
+///<li>STF-38: Inactive Reason Code (CWE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -135,7 +136,7 @@ public class STF : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getStaffIdentifierList(int rep)
+	public CX GetStaffIdentifierList(int rep)
 	{
 			CX ret = null;
 			try
@@ -152,7 +153,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Staff Identifier List (STF-2).
    ///</summary>
-  public CX[] getStaffIdentifierList() {
+  public CX[] GetStaffIdentifierList() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -170,12 +171,30 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Staff Identifier List (STF-2).
+   ///</summary>
+  public int StaffIdentifierListRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Staff Name(STF-3).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getStaffName(int rep)
+	public XPN GetStaffName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -192,7 +211,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Staff Name (STF-3).
    ///</summary>
-  public XPN[] getStaffName() {
+  public XPN[] GetStaffName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -210,12 +229,30 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Staff Name (STF-3).
+   ///</summary>
+  public int StaffNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Staff Type(STF-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getStaffType(int rep)
+	public IS GetStaffType(int rep)
 	{
 			IS ret = null;
 			try
@@ -232,7 +269,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Staff Type (STF-4).
    ///</summary>
-  public IS[] getStaffType() {
+  public IS[] GetStaffType() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -250,6 +287,24 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Staff Type (STF-4).
+   ///</summary>
+  public int StaffTypeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Administrative Sex(STF-5).
 	///</summary>
@@ -324,7 +379,7 @@ public class STF : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getDepartment(int rep)
+	public CE GetDepartment(int rep)
 	{
 			CE ret = null;
 			try
@@ -341,7 +396,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Department (STF-8).
    ///</summary>
-  public CE[] getDepartment() {
+  public CE[] GetDepartment() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -359,12 +414,30 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Department (STF-8).
+   ///</summary>
+  public int DepartmentRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Hospital Service - STF(STF-9).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getHospitalServiceSTF(int rep)
+	public CE GetHospitalServiceSTF(int rep)
 	{
 			CE ret = null;
 			try
@@ -381,7 +454,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Hospital Service - STF (STF-9).
    ///</summary>
-  public CE[] getHospitalServiceSTF() {
+  public CE[] GetHospitalServiceSTF() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -399,12 +472,30 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Hospital Service - STF (STF-9).
+   ///</summary>
+  public int HospitalServiceSTFRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Phone(STF-10).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getPhone(int rep)
+	public XTN GetPhone(int rep)
 	{
 			XTN ret = null;
 			try
@@ -421,7 +512,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Phone (STF-10).
    ///</summary>
-  public XTN[] getPhone() {
+  public XTN[] GetPhone() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -439,12 +530,30 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Phone (STF-10).
+   ///</summary>
+  public int PhoneRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Office/Home Address/Birthplace(STF-11).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getOfficeHomeAddressBirthplace(int rep)
+	public XAD GetOfficeHomeAddressBirthplace(int rep)
 	{
 			XAD ret = null;
 			try
@@ -461,7 +570,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Office/Home Address/Birthplace (STF-11).
    ///</summary>
-  public XAD[] getOfficeHomeAddressBirthplace() {
+  public XAD[] GetOfficeHomeAddressBirthplace() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -479,12 +588,30 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Office/Home Address/Birthplace (STF-11).
+   ///</summary>
+  public int OfficeHomeAddressBirthplaceRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Institution Activation Date(STF-12).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public DIN getInstitutionActivationDate(int rep)
+	public DIN GetInstitutionActivationDate(int rep)
 	{
 			DIN ret = null;
 			try
@@ -501,7 +628,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Institution Activation Date (STF-12).
    ///</summary>
-  public DIN[] getInstitutionActivationDate() {
+  public DIN[] GetInstitutionActivationDate() {
      DIN[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -519,12 +646,30 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Institution Activation Date (STF-12).
+   ///</summary>
+  public int InstitutionActivationDateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Institution Inactivation Date(STF-13).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public DIN getInstitutionInactivationDate(int rep)
+	public DIN GetInstitutionInactivationDate(int rep)
 	{
 			DIN ret = null;
 			try
@@ -541,7 +686,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Institution Inactivation Date (STF-13).
    ///</summary>
-  public DIN[] getInstitutionInactivationDate() {
+  public DIN[] GetInstitutionInactivationDate() {
      DIN[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -559,12 +704,30 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Institution Inactivation Date (STF-13).
+   ///</summary>
+  public int InstitutionInactivationDateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Backup Person ID(STF-14).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getBackupPersonID(int rep)
+	public CE GetBackupPersonID(int rep)
 	{
 			CE ret = null;
 			try
@@ -581,7 +744,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Backup Person ID (STF-14).
    ///</summary>
-  public CE[] getBackupPersonID() {
+  public CE[] GetBackupPersonID() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -599,12 +762,30 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Backup Person ID (STF-14).
+   ///</summary>
+  public int BackupPersonIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of E-Mail Address(STF-15).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getEMailAddress(int rep)
+	public ST GetEMailAddress(int rep)
 	{
 			ST ret = null;
 			try
@@ -621,7 +802,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of E-Mail Address (STF-15).
    ///</summary>
-  public ST[] getEMailAddress() {
+  public ST[] GetEMailAddress() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -639,6 +820,24 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of E-Mail Address (STF-15).
+   ///</summary>
+  public int EMailAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Preferred Method of Contact(STF-16).
 	///</summary>
@@ -966,7 +1165,7 @@ public class STF : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getCitizenship(int rep)
+	public CE GetCitizenship(int rep)
 	{
 			CE ret = null;
 			try
@@ -983,7 +1182,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Citizenship (STF-30).
    ///</summary>
-  public CE[] getCitizenship() {
+  public CE[] GetCitizenship() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(30);  
@@ -1001,6 +1200,24 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Citizenship (STF-30).
+   ///</summary>
+  public int CitizenshipRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(30);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Death Date and Time(STF-31).
 	///</summary>
@@ -1121,7 +1338,7 @@ public class STF : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getCostCenterCode(int rep)
+	public CWE GetCostCenterCode(int rep)
 	{
 			CWE ret = null;
 			try
@@ -1138,7 +1355,7 @@ public class STF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Cost Center Code (STF-36).
    ///</summary>
-  public CWE[] getCostCenterCode() {
+  public CWE[] GetCostCenterCode() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(36);  
@@ -1156,6 +1373,24 @@ public class STF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Cost Center Code (STF-36).
+   ///</summary>
+  public int CostCenterCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(36);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Generic Classification Indicator(STF-37).
 	///</summary>

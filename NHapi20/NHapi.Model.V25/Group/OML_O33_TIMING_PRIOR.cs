@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the OML_O33_TIMING_PRIOR Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: TQ1 (Timing/Quantity) 
-/// * 1: TQ2 (Timing/Quantity Relationship) optional repeating
+///<ol>
+///<li>0: TQ1 (Timing/Quantity) </li>
+///<li>1: TQ2 (Timing/Quantity Relationship) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O33_TIMING_PRIOR : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of TQ2 (Timing/Quantity Relationship) - creates it if necessary
 	///</summary>
-	public TQ2 getTQ2() {
+	public TQ2 GetTQ2() {
 	   TQ2 ret = null;
 	   try {
 	      ret = (TQ2)this.GetStructure("TQ2");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public TQ2 getTQ2(int rep) { 
+	public TQ2 GetTQ2(int rep) { 
 	   return (TQ2)this.GetStructure("TQ2", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of TQ2 
 	 */ 
-	public int TQ2Reps { 
+	public int TQ2RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

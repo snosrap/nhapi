@@ -12,16 +12,18 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORM_O01_ORDER_DETAIL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBR (Observation Request) 
-/// * 1: RQD (Requisition Detail) 
-/// * 2: RQ1 (Requisition Detail-1) 
-/// * 3: RXO (Pharmacy/Treatment Order) 
-/// * 4: ODS (Dietary Orders, Supplements, and Preferences) 
-/// * 5: ODT (Diet Tray Instructions) 
-/// * 6: NTE (Notes and Comments) optional repeating
-/// * 7: CTD (Contact Data) optional 
-/// * 8: DG1 (Diagnosis) optional repeating
-/// * 9: ORM_O01_OBSERVATION (a Group object) 
+///<ol>
+///<li>0: OBR (Observation Request) </li>
+///<li>1: RQD (Requisition Detail) </li>
+///<li>2: RQ1 (Requisition Detail-1) </li>
+///<li>3: RXO (Pharmacy/Treatment Order) </li>
+///<li>4: ODS (Dietary Orders, Supplements, and Preferences) </li>
+///<li>5: ODT (Diet Tray Instructions) </li>
+///<li>6: NTE (Notes and Comments) optional repeating</li>
+///<li>7: CTD (Contact Data) optional </li>
+///<li>8: DG1 (Diagnosis) optional repeating</li>
+///<li>9: ORM_O01_OBSERVATION (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORM_O01_ORDER_DETAIL : AbstractGroup {
@@ -145,7 +147,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -162,14 +164,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -202,7 +204,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -219,14 +221,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

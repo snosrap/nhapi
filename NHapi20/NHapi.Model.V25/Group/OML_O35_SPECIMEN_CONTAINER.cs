@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the OML_O35_SPECIMEN_CONTAINER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SAC (Specimen Container detail) 
-/// * 1: OML_O35_ORDER (a Group object) repeating
+///<ol>
+///<li>0: SAC (Specimen Container detail) </li>
+///<li>1: OML_O35_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O35_SPECIMEN_CONTAINER : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OML_O35_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public OML_O35_ORDER getORDER() {
+	public OML_O35_ORDER GetORDER() {
 	   OML_O35_ORDER ret = null;
 	   try {
 	      ret = (OML_O35_ORDER)this.GetStructure("ORDER");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OML_O35_ORDER getORDER(int rep) { 
+	public OML_O35_ORDER GetORDER(int rep) { 
 	   return (OML_O35_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OML_O35_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

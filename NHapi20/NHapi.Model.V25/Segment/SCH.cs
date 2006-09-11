@@ -9,34 +9,35 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 SCH message segment. 
-/// This segment has the following fields:
-/// * SCH-1: Placer Appointment ID (EI)
-/// * SCH-2: Filler Appointment ID (EI)
-/// * SCH-3: Occurrence Number (NM)
-/// * SCH-4: Placer Group Number (EI)
-/// * SCH-5: Schedule ID (CE)
-/// * SCH-6: Event Reason (CE)
-/// * SCH-7: Appointment Reason (CE)
-/// * SCH-8: Appointment Type (CE)
-/// * SCH-9: Appointment Duration (NM)
-/// * SCH-10: Appointment Duration Units (CE)
-/// * SCH-11: Appointment Timing Quantity (TQ)
-/// * SCH-12: Placer Contact Person (XCN)
-/// * SCH-13: Placer Contact Phone Number (XTN)
-/// * SCH-14: Placer Contact Address (XAD)
-/// * SCH-15: Placer Contact Location (PL)
-/// * SCH-16: Filler Contact Person (XCN)
-/// * SCH-17: Filler Contact Phone Number (XTN)
-/// * SCH-18: Filler Contact Address (XAD)
-/// * SCH-19: Filler Contact Location (PL)
-/// * SCH-20: Entered By Person (XCN)
-/// * SCH-21: Entered By Phone Number (XTN)
-/// * SCH-22: Entered By Location (PL)
-/// * SCH-23: Parent Placer Appointment ID (EI)
-/// * SCH-24: Parent Filler Appointment ID (EI)
-/// * SCH-25: Filler Status Code (CE)
-/// * SCH-26: Placer Order Number (EI)
-/// * SCH-27: Filler Order Number (EI)
+/// This segment has the following fields:<ol>
+///<li>SCH-1: Placer Appointment ID (EI)</li>
+///<li>SCH-2: Filler Appointment ID (EI)</li>
+///<li>SCH-3: Occurrence Number (NM)</li>
+///<li>SCH-4: Placer Group Number (EI)</li>
+///<li>SCH-5: Schedule ID (CE)</li>
+///<li>SCH-6: Event Reason (CE)</li>
+///<li>SCH-7: Appointment Reason (CE)</li>
+///<li>SCH-8: Appointment Type (CE)</li>
+///<li>SCH-9: Appointment Duration (NM)</li>
+///<li>SCH-10: Appointment Duration Units (CE)</li>
+///<li>SCH-11: Appointment Timing Quantity (TQ)</li>
+///<li>SCH-12: Placer Contact Person (XCN)</li>
+///<li>SCH-13: Placer Contact Phone Number (XTN)</li>
+///<li>SCH-14: Placer Contact Address (XAD)</li>
+///<li>SCH-15: Placer Contact Location (PL)</li>
+///<li>SCH-16: Filler Contact Person (XCN)</li>
+///<li>SCH-17: Filler Contact Phone Number (XTN)</li>
+///<li>SCH-18: Filler Contact Address (XAD)</li>
+///<li>SCH-19: Filler Contact Location (PL)</li>
+///<li>SCH-20: Entered By Person (XCN)</li>
+///<li>SCH-21: Entered By Phone Number (XTN)</li>
+///<li>SCH-22: Entered By Location (PL)</li>
+///<li>SCH-23: Parent Placer Appointment ID (EI)</li>
+///<li>SCH-24: Parent Filler Appointment ID (EI)</li>
+///<li>SCH-25: Filler Status Code (CE)</li>
+///<li>SCH-26: Placer Order Number (EI)</li>
+///<li>SCH-27: Filler Order Number (EI)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -320,7 +321,7 @@ public class SCH : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TQ getAppointmentTimingQuantity(int rep)
+	public TQ GetAppointmentTimingQuantity(int rep)
 	{
 			TQ ret = null;
 			try
@@ -337,7 +338,7 @@ public class SCH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Appointment Timing Quantity (SCH-11).
    ///</summary>
-  public TQ[] getAppointmentTimingQuantity() {
+  public TQ[] GetAppointmentTimingQuantity() {
      TQ[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -355,12 +356,30 @@ public class SCH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Appointment Timing Quantity (SCH-11).
+   ///</summary>
+  public int AppointmentTimingQuantityRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Placer Contact Person(SCH-12).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPlacerContactPerson(int rep)
+	public XCN GetPlacerContactPerson(int rep)
 	{
 			XCN ret = null;
 			try
@@ -377,7 +396,7 @@ public class SCH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Contact Person (SCH-12).
    ///</summary>
-  public XCN[] getPlacerContactPerson() {
+  public XCN[] GetPlacerContactPerson() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -395,6 +414,24 @@ public class SCH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Contact Person (SCH-12).
+   ///</summary>
+  public int PlacerContactPersonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Placer Contact Phone Number(SCH-13).
 	///</summary>
@@ -423,7 +460,7 @@ public class SCH : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getPlacerContactAddress(int rep)
+	public XAD GetPlacerContactAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -440,7 +477,7 @@ public class SCH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Contact Address (SCH-14).
    ///</summary>
-  public XAD[] getPlacerContactAddress() {
+  public XAD[] GetPlacerContactAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -458,6 +495,24 @@ public class SCH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Contact Address (SCH-14).
+   ///</summary>
+  public int PlacerContactAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Placer Contact Location(SCH-15).
 	///</summary>
@@ -486,7 +541,7 @@ public class SCH : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getFillerContactPerson(int rep)
+	public XCN GetFillerContactPerson(int rep)
 	{
 			XCN ret = null;
 			try
@@ -503,7 +558,7 @@ public class SCH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Filler Contact Person (SCH-16).
    ///</summary>
-  public XCN[] getFillerContactPerson() {
+  public XCN[] GetFillerContactPerson() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -521,6 +576,24 @@ public class SCH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Filler Contact Person (SCH-16).
+   ///</summary>
+  public int FillerContactPersonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Filler Contact Phone Number(SCH-17).
 	///</summary>
@@ -549,7 +622,7 @@ public class SCH : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getFillerContactAddress(int rep)
+	public XAD GetFillerContactAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -566,7 +639,7 @@ public class SCH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Filler Contact Address (SCH-18).
    ///</summary>
-  public XAD[] getFillerContactAddress() {
+  public XAD[] GetFillerContactAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -584,6 +657,24 @@ public class SCH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Filler Contact Address (SCH-18).
+   ///</summary>
+  public int FillerContactAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Filler Contact Location(SCH-19).
 	///</summary>
@@ -612,7 +703,7 @@ public class SCH : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getEnteredByPerson(int rep)
+	public XCN GetEnteredByPerson(int rep)
 	{
 			XCN ret = null;
 			try
@@ -629,7 +720,7 @@ public class SCH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Entered By Person (SCH-20).
    ///</summary>
-  public XCN[] getEnteredByPerson() {
+  public XCN[] GetEnteredByPerson() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -647,12 +738,30 @@ public class SCH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Entered By Person (SCH-20).
+   ///</summary>
+  public int EnteredByPersonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Entered By Phone Number(SCH-21).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getEnteredByPhoneNumber(int rep)
+	public XTN GetEnteredByPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -669,7 +778,7 @@ public class SCH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Entered By Phone Number (SCH-21).
    ///</summary>
-  public XTN[] getEnteredByPhoneNumber() {
+  public XTN[] GetEnteredByPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -687,6 +796,24 @@ public class SCH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Entered By Phone Number (SCH-21).
+   ///</summary>
+  public int EnteredByPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Entered By Location(SCH-22).
 	///</summary>
@@ -784,7 +911,7 @@ public class SCH : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getPlacerOrderNumber(int rep)
+	public EI GetPlacerOrderNumber(int rep)
 	{
 			EI ret = null;
 			try
@@ -801,7 +928,7 @@ public class SCH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Order Number (SCH-26).
    ///</summary>
-  public EI[] getPlacerOrderNumber() {
+  public EI[] GetPlacerOrderNumber() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(26);  
@@ -819,12 +946,30 @@ public class SCH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Order Number (SCH-26).
+   ///</summary>
+  public int PlacerOrderNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(26);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Filler Order Number(SCH-27).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getFillerOrderNumber(int rep)
+	public EI GetFillerOrderNumber(int rep)
 	{
 			EI ret = null;
 			try
@@ -841,7 +986,7 @@ public class SCH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Filler Order Number (SCH-27).
    ///</summary>
-  public EI[] getFillerOrderNumber() {
+  public EI[] GetFillerOrderNumber() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(27);  
@@ -859,5 +1004,23 @@ public class SCH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Filler Order Number (SCH-27).
+   ///</summary>
+  public int FillerOrderNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(27);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

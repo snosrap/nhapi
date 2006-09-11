@@ -9,19 +9,20 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 AIL message segment. 
-/// This segment has the following fields:
-/// * AIL-1: Set ID - AIL (SI)
-/// * AIL-2: Segment Action Code (ID)
-/// * AIL-3: Location Resource ID (PL)
-/// * AIL-4: Location Type-AIL (CE)
-/// * AIL-5: Location Group (CE)
-/// * AIL-6: Start Date/Time (TS)
-/// * AIL-7: Start Date/Time Offset (NM)
-/// * AIL-8: Start Date/Time Offset Units (CE)
-/// * AIL-9: Duration (NM)
-/// * AIL-10: Duration Units (CE)
-/// * AIL-11: Allow Substitution Code (IS)
-/// * AIL-12: Filler Status Code (CE)
+/// This segment has the following fields:<ol>
+///<li>AIL-1: Set ID - AIL (SI)</li>
+///<li>AIL-2: Segment Action Code (ID)</li>
+///<li>AIL-3: Location Resource ID (PL)</li>
+///<li>AIL-4: Location Type-AIL (CE)</li>
+///<li>AIL-5: Location Group (CE)</li>
+///<li>AIL-6: Start Date/Time (TS)</li>
+///<li>AIL-7: Start Date/Time Offset (NM)</li>
+///<li>AIL-8: Start Date/Time Offset Units (CE)</li>
+///<li>AIL-9: Duration (NM)</li>
+///<li>AIL-10: Duration Units (CE)</li>
+///<li>AIL-11: Allow Substitution Code (IS)</li>
+///<li>AIL-12: Filler Status Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -106,7 +107,7 @@ public class AIL : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PL getLocationResourceID(int rep)
+	public PL GetLocationResourceID(int rep)
 	{
 			PL ret = null;
 			try
@@ -123,7 +124,7 @@ public class AIL : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Location Resource ID (AIL-3).
    ///</summary>
-  public PL[] getLocationResourceID() {
+  public PL[] GetLocationResourceID() {
      PL[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -141,6 +142,24 @@ public class AIL : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Location Resource ID (AIL-3).
+   ///</summary>
+  public int LocationResourceIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Location Type-AIL(AIL-4).
 	///</summary>

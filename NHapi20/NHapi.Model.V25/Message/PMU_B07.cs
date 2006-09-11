@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a PMU_B07 message structure (see chapter 15.3.8). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EVN (Event Type) 
-/// * 3: STF (Staff Identification) 
-/// * 4: PRA (Practitioner Detail) optional 
-/// * 5: PMU_B07_CERTIFICATE (a Group object) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EVN (Event Type) </li>
+///<li>3: STF (Staff Identification) </li>
+///<li>4: PRA (Practitioner Detail) optional </li>
+///<li>5: PMU_B07_CERTIFICATE (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PMU_B07 : AbstractMessage  {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -160,7 +162,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PMU_B07_CERTIFICATE (a Group object) - creates it if necessary
 	///</summary>
-	public PMU_B07_CERTIFICATE getCERTIFICATE() {
+	public PMU_B07_CERTIFICATE GetCERTIFICATE() {
 	   PMU_B07_CERTIFICATE ret = null;
 	   try {
 	      ret = (PMU_B07_CERTIFICATE)this.GetStructure("CERTIFICATE");
@@ -177,14 +179,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PMU_B07_CERTIFICATE getCERTIFICATE(int rep) { 
+	public PMU_B07_CERTIFICATE GetCERTIFICATE(int rep) { 
 	   return (PMU_B07_CERTIFICATE)this.GetStructure("CERTIFICATE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PMU_B07_CERTIFICATE 
 	 */ 
-	public int CERTIFICATEReps { 
+	public int CERTIFICATERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

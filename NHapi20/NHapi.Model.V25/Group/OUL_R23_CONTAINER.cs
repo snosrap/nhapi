@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the OUL_R23_CONTAINER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SAC (Specimen Container detail) 
-/// * 1: INV (Inventory Detail) optional 
-/// * 2: OUL_R23_ORDER (a Group object) repeating
+///<ol>
+///<li>0: SAC (Specimen Container detail) </li>
+///<li>1: INV (Inventory Detail) optional </li>
+///<li>2: OUL_R23_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OUL_R23_CONTAINER : AbstractGroup {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OUL_R23_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public OUL_R23_ORDER getORDER() {
+	public OUL_R23_ORDER GetORDER() {
 	   OUL_R23_ORDER ret = null;
 	   try {
 	      ret = (OUL_R23_ORDER)this.GetStructure("ORDER");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OUL_R23_ORDER getORDER(int rep) { 
+	public OUL_R23_ORDER GetORDER(int rep) { 
 	   return (OUL_R23_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OUL_R23_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

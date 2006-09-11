@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Group
 ///Represents the NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: NCK (System Clock) optional 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: NST (Application control level statistics) optional 
-/// * 3: NTE (Notes and Comments) optional repeating
-/// * 4: NSC (Application Status Change) optional 
-/// * 5: NTE (Notes and Comments) optional repeating
+///<ol>
+///<li>0: NCK (System Clock) optional </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: NST (Application control level statistics) optional </li>
+///<li>3: NTE (Notes and Comments) optional repeating</li>
+///<li>4: NSC (Application Status Change) optional </li>
+///<li>5: NTE (Notes and Comments) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT : AbstractGroup {
@@ -57,7 +59,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -74,14 +76,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -114,7 +116,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE2 (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE2() {
+	public NTE GetNTE2() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE2");
@@ -131,14 +133,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE2(int rep) { 
+	public NTE GetNTE2(int rep) { 
 	   return (NTE)this.GetStructure("NTE2", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE2 
 	 */ 
-	public int NTE2Reps { 
+	public int NTE2RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -171,7 +173,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE3 (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE3() {
+	public NTE GetNTE3() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE3");
@@ -188,14 +190,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE3(int rep) { 
+	public NTE GetNTE3(int rep) { 
 	   return (NTE)this.GetStructure("NTE3", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE3 
 	 */ 
-	public int NTE3Reps { 
+	public int NTE3RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

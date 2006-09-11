@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the RSP_Z86_QUERY_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RSP_Z86_PATIENT (a Group object) optional 
-/// * 1: RSP_Z86_COMMON_ORDER (a Group object) repeating
+///<ol>
+///<li>0: RSP_Z86_PATIENT (a Group object) optional </li>
+///<li>1: RSP_Z86_COMMON_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Z86_QUERY_RESPONSE : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RSP_Z86_COMMON_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_Z86_COMMON_ORDER getCOMMON_ORDER() {
+	public RSP_Z86_COMMON_ORDER GetCOMMON_ORDER() {
 	   RSP_Z86_COMMON_ORDER ret = null;
 	   try {
 	      ret = (RSP_Z86_COMMON_ORDER)this.GetStructure("COMMON_ORDER");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RSP_Z86_COMMON_ORDER getCOMMON_ORDER(int rep) { 
+	public RSP_Z86_COMMON_ORDER GetCOMMON_ORDER(int rep) { 
 	   return (RSP_Z86_COMMON_ORDER)this.GetStructure("COMMON_ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RSP_Z86_COMMON_ORDER 
 	 */ 
-	public int COMMON_ORDERReps { 
+	public int COMMON_ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

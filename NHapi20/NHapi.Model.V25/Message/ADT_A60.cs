@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a ADT_A60 message structure (see chapter 3.3.60). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EVN (Event Type) 
-/// * 3: PID (Patient Identification) 
-/// * 4: PV1 (Patient Visit) optional 
-/// * 5: PV2 (Patient Visit - Additional Information) optional 
-/// * 6: IAM (Patient Adverse Reaction Information) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EVN (Event Type) </li>
+///<li>3: PID (Patient Identification) </li>
+///<li>4: PV1 (Patient Visit) optional </li>
+///<li>5: PV2 (Patient Visit - Additional Information) optional </li>
+///<li>6: IAM (Patient Adverse Reaction Information) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A60 : AbstractMessage  {
@@ -73,7 +75,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -90,14 +92,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -178,7 +180,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of IAM (Patient Adverse Reaction Information) - creates it if necessary
 	///</summary>
-	public IAM getIAM() {
+	public IAM GetIAM() {
 	   IAM ret = null;
 	   try {
 	      ret = (IAM)this.GetStructure("IAM");
@@ -195,14 +197,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public IAM getIAM(int rep) { 
+	public IAM GetIAM(int rep) { 
 	   return (IAM)this.GetStructure("IAM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of IAM 
 	 */ 
-	public int IAMReps { 
+	public int IAMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

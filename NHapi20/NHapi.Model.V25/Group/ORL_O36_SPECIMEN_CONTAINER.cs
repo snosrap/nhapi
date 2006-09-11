@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORL_O36_SPECIMEN_CONTAINER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SAC (Specimen Container detail) 
-/// * 1: ORL_O36_ORDER (a Group object) 
+///<ol>
+///<li>0: SAC (Specimen Container detail) </li>
+///<li>1: ORL_O36_ORDER (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORL_O36_SPECIMEN_CONTAINER : AbstractGroup {

@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the NMQ_N01_QRY_WITH_DETAIL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: QRD (Original-Style Query Definition) 
-/// * 1: QRF (Original style query filter) optional 
+///<ol>
+///<li>0: QRD (Original-Style Query Definition) </li>
+///<li>1: QRF (Original style query filter) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class NMQ_N01_QRY_WITH_DETAIL : AbstractGroup {

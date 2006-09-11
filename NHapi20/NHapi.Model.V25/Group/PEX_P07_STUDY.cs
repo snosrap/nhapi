@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the PEX_P07_STUDY Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: CSR (Clinical Study Registration) 
-/// * 1: CSP (Clinical Study Phase) optional repeating
+///<ol>
+///<li>0: CSR (Clinical Study Registration) </li>
+///<li>1: CSP (Clinical Study Phase) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PEX_P07_STUDY : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CSP (Clinical Study Phase) - creates it if necessary
 	///</summary>
-	public CSP getCSP() {
+	public CSP GetCSP() {
 	   CSP ret = null;
 	   try {
 	      ret = (CSP)this.GetStructure("CSP");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSP getCSP(int rep) { 
+	public CSP GetCSP(int rep) { 
 	   return (CSP)this.GetStructure("CSP", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSP 
 	 */ 
-	public int CSPReps { 
+	public int CSPRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

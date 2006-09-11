@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the BRP_O30_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: BRP_O30_TIMING (a Group object) 
-/// * 2: BPO (Blood product order) optional 
-/// * 3: BPX (Blood product dispense status) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: BRP_O30_TIMING (a Group object) </li>
+///<li>2: BPO (Blood product order) optional </li>
+///<li>3: BPX (Blood product dispense status) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BRP_O30_ORDER : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of BPX (Blood product dispense status) - creates it if necessary
 	///</summary>
-	public BPX getBPX() {
+	public BPX GetBPX() {
 	   BPX ret = null;
 	   try {
 	      ret = (BPX)this.GetStructure("BPX");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public BPX getBPX(int rep) { 
+	public BPX GetBPX(int rep) { 
 	   return (BPX)this.GetStructure("BPX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of BPX 
 	 */ 
-	public int BPXReps { 
+	public int BPXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

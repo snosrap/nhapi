@@ -12,14 +12,16 @@ namespace NHapi.Model.V25.Group
 ///Represents the PEX_P07_PEX_CAUSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PCR (Possible Causal Relationship) 
-/// * 1: PEX_P07_RX_ORDER (a Group object) optional 
-/// * 2: PEX_P07_RX_ADMINISTRATION (a Group object) 
-/// * 3: PRB (Problem Details) optional repeating
-/// * 4: OBX (Observation/Result) optional repeating
-/// * 5: NTE (Notes and Comments) optional repeating
-/// * 6: PEX_P07_ASSOCIATED_PERSON (a Group object) optional 
-/// * 7: PEX_P07_STUDY (a Group object) 
+///<ol>
+///<li>0: PCR (Possible Causal Relationship) </li>
+///<li>1: PEX_P07_RX_ORDER (a Group object) optional </li>
+///<li>2: PEX_P07_RX_ADMINISTRATION (a Group object) </li>
+///<li>3: PRB (Problem Details) optional repeating</li>
+///<li>4: OBX (Observation/Result) optional repeating</li>
+///<li>5: NTE (Notes and Comments) optional repeating</li>
+///<li>6: PEX_P07_ASSOCIATED_PERSON (a Group object) optional </li>
+///<li>7: PEX_P07_STUDY (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PEX_P07_PEX_CAUSE : AbstractGroup {
@@ -93,7 +95,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PRB (Problem Details) - creates it if necessary
 	///</summary>
-	public PRB getPRB() {
+	public PRB GetPRB() {
 	   PRB ret = null;
 	   try {
 	      ret = (PRB)this.GetStructure("PRB");
@@ -110,14 +112,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PRB getPRB(int rep) { 
+	public PRB GetPRB(int rep) { 
 	   return (PRB)this.GetStructure("PRB", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PRB 
 	 */ 
-	public int PRBReps { 
+	public int PRBRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -134,7 +136,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -151,14 +153,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -175,7 +177,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -192,14 +194,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

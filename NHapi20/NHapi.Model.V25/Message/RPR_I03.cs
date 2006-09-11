@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a RPR_I03 message structure (see chapter 11.3.3). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: MSA (Message Acknowledgment) 
-/// * 3: RPR_I03_PROVIDER (a Group object) repeating
-/// * 4: PID (Patient Identification) optional repeating
-/// * 5: NTE (Notes and Comments) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: MSA (Message Acknowledgment) </li>
+///<li>3: RPR_I03_PROVIDER (a Group object) repeating</li>
+///<li>4: PID (Patient Identification) optional repeating</li>
+///<li>5: NTE (Notes and Comments) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RPR_I03 : AbstractMessage  {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RPR_I03_PROVIDER (a Group object) - creates it if necessary
 	///</summary>
-	public RPR_I03_PROVIDER getPROVIDER() {
+	public RPR_I03_PROVIDER GetPROVIDER() {
 	   RPR_I03_PROVIDER ret = null;
 	   try {
 	      ret = (RPR_I03_PROVIDER)this.GetStructure("PROVIDER");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RPR_I03_PROVIDER getPROVIDER(int rep) { 
+	public RPR_I03_PROVIDER GetPROVIDER(int rep) { 
 	   return (RPR_I03_PROVIDER)this.GetStructure("PROVIDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RPR_I03_PROVIDER 
 	 */ 
-	public int PROVIDERReps { 
+	public int PROVIDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -169,7 +171,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PID (Patient Identification) - creates it if necessary
 	///</summary>
-	public PID getPID() {
+	public PID GetPID() {
 	   PID ret = null;
 	   try {
 	      ret = (PID)this.GetStructure("PID");
@@ -186,14 +188,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PID getPID(int rep) { 
+	public PID GetPID(int rep) { 
 	   return (PID)this.GetStructure("PID", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PID 
 	 */ 
-	public int PIDReps { 
+	public int PIDRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -210,7 +212,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -227,14 +229,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

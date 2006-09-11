@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the EAC_U07_SPECIMEN_CONTAINER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SAC (Specimen Container detail) 
-/// * 1: SPM (Specimen) optional repeating
+///<ol>
+///<li>0: SAC (Specimen Container detail) </li>
+///<li>1: SPM (Specimen) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EAC_U07_SPECIMEN_CONTAINER : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SPM (Specimen) - creates it if necessary
 	///</summary>
-	public SPM getSPM() {
+	public SPM GetSPM() {
 	   SPM ret = null;
 	   try {
 	      ret = (SPM)this.GetStructure("SPM");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SPM getSPM(int rep) { 
+	public SPM GetSPM(int rep) { 
 	   return (SPM)this.GetStructure("SPM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SPM 
 	 */ 
-	public int SPMReps { 
+	public int SPMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

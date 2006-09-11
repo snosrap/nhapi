@@ -9,13 +9,14 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 MFI message segment. 
-/// This segment has the following fields:
-/// * MFI-1: Master File Identifier (CE)
-/// * MFI-2: Master File Application Identifier (HD)
-/// * MFI-3: File-Level Event Code (ID)
-/// * MFI-4: Entered Date/Time (TS)
-/// * MFI-5: Effective Date/Time (TS)
-/// * MFI-6: Response Level Code (ID)
+/// This segment has the following fields:<ol>
+///<li>MFI-1: Master File Identifier (CE)</li>
+///<li>MFI-2: Master File Application Identifier (HD)</li>
+///<li>MFI-3: File-Level Event Code (ID)</li>
+///<li>MFI-4: Entered Date/Time (TS)</li>
+///<li>MFI-5: Effective Date/Time (TS)</li>
+///<li>MFI-6: Response Level Code (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

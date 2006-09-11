@@ -9,28 +9,29 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 BPX message segment. 
-/// This segment has the following fields:
-/// * BPX-1: Set ID _ BPX (SI)
-/// * BPX-2: BP Dispense Status (CWE)
-/// * BPX-3: BP Status (ID)
-/// * BPX-4: BP Date/Time of Status (TS)
-/// * BPX-5: BC Donation ID (EI)
-/// * BPX-6: BC Component (CNE)
-/// * BPX-7: BC Donation Type / Intended Use (CNE)
-/// * BPX-8: CP Commercial Product (CWE)
-/// * BPX-9: CP Manufacturer (XON)
-/// * BPX-10: CP Lot Number (EI)
-/// * BPX-11: BP Blood Group (CNE)
-/// * BPX-12: BC Special Testing (CNE)
-/// * BPX-13: BP Expiration Date/Time (TS)
-/// * BPX-14: BP Quantity (NM)
-/// * BPX-15: BP Amount (NM)
-/// * BPX-16: BP Units (CE)
-/// * BPX-17: BP Unique ID (EI)
-/// * BPX-18: BP Actual Dispensed To Location (PL)
-/// * BPX-19: BP Actual Dispensed To Address (XAD)
-/// * BPX-20: BP Dispensed to Receiver (XCN)
-/// * BPX-21: BP Dispensing Individual (XCN)
+/// This segment has the following fields:<ol>
+///<li>BPX-1: Set ID _ BPX (SI)</li>
+///<li>BPX-2: BP Dispense Status (CWE)</li>
+///<li>BPX-3: BP Status (ID)</li>
+///<li>BPX-4: BP Date/Time of Status (TS)</li>
+///<li>BPX-5: BC Donation ID (EI)</li>
+///<li>BPX-6: BC Component (CNE)</li>
+///<li>BPX-7: BC Donation Type / Intended Use (CNE)</li>
+///<li>BPX-8: CP Commercial Product (CWE)</li>
+///<li>BPX-9: CP Manufacturer (XON)</li>
+///<li>BPX-10: CP Lot Number (EI)</li>
+///<li>BPX-11: BP Blood Group (CNE)</li>
+///<li>BPX-12: BC Special Testing (CNE)</li>
+///<li>BPX-13: BP Expiration Date/Time (TS)</li>
+///<li>BPX-14: BP Quantity (NM)</li>
+///<li>BPX-15: BP Amount (NM)</li>
+///<li>BPX-16: BP Units (CE)</li>
+///<li>BPX-17: BP Unique ID (EI)</li>
+///<li>BPX-18: BP Actual Dispensed To Location (PL)</li>
+///<li>BPX-19: BP Actual Dispensed To Address (XAD)</li>
+///<li>BPX-20: BP Dispensed to Receiver (XCN)</li>
+///<li>BPX-21: BP Dispensing Individual (XCN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -331,7 +332,7 @@ public class BPX : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CNE getBCSpecialTesting(int rep)
+	public CNE GetBCSpecialTesting(int rep)
 	{
 			CNE ret = null;
 			try
@@ -348,7 +349,7 @@ public class BPX : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of BC Special Testing (BPX-12).
    ///</summary>
-  public CNE[] getBCSpecialTesting() {
+  public CNE[] GetBCSpecialTesting() {
      CNE[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -366,6 +367,24 @@ public class BPX : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of BC Special Testing (BPX-12).
+   ///</summary>
+  public int BCSpecialTestingRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns BP Expiration Date/Time(BPX-13).
 	///</summary>

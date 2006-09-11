@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Group
 ///Represents the SRM_S01_RESOURCES Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RGS (Resource Group) 
-/// * 1: SRM_S01_SERVICE (a Group object) 
-/// * 2: SRM_S01_GENERAL_RESOURCE (a Group object) 
-/// * 3: SRM_S01_LOCATION_RESOURCE (a Group object) 
-/// * 4: SRM_S01_PERSONNEL_RESOURCE (a Group object) 
+///<ol>
+///<li>0: RGS (Resource Group) </li>
+///<li>1: SRM_S01_SERVICE (a Group object) </li>
+///<li>2: SRM_S01_GENERAL_RESOURCE (a Group object) </li>
+///<li>3: SRM_S01_LOCATION_RESOURCE (a Group object) </li>
+///<li>4: SRM_S01_PERSONNEL_RESOURCE (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SRM_S01_RESOURCES : AbstractGroup {

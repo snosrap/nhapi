@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the OMG_O19_PATIENT_VISIT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PV1 (Patient Visit) 
-/// * 1: PV2 (Patient Visit - Additional Information) optional 
+///<ol>
+///<li>0: PV1 (Patient Visit) </li>
+///<li>1: PV2 (Patient Visit - Additional Information) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMG_O19_PATIENT_VISIT : AbstractGroup {

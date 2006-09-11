@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the DFT_P03_FINANCIAL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: FT1 (Financial Transaction) 
-/// * 1: NTE (Notes and Comments) optional 
-/// * 2: DFT_P03_FINANCIAL_PROCEDURE (a Group object) 
-/// * 3: DFT_P03_FINANCIAL_COMMON_ORDER (a Group object) 
+///<ol>
+///<li>0: FT1 (Financial Transaction) </li>
+///<li>1: NTE (Notes and Comments) optional </li>
+///<li>2: DFT_P03_FINANCIAL_PROCEDURE (a Group object) </li>
+///<li>3: DFT_P03_FINANCIAL_COMMON_ORDER (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DFT_P03_FINANCIAL : AbstractGroup {

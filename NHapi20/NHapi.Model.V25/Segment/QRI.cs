@@ -9,10 +9,11 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 QRI message segment. 
-/// This segment has the following fields:
-/// * QRI-1: Candidate Confidence (NM)
-/// * QRI-2: Match Reason Code (IS)
-/// * QRI-3: Algorithm Descriptor (CE)
+/// This segment has the following fields:<ol>
+///<li>QRI-1: Candidate Confidence (NM)</li>
+///<li>QRI-2: Match Reason Code (IS)</li>
+///<li>QRI-3: Algorithm Descriptor (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -65,7 +66,7 @@ public class QRI : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getMatchReasonCode(int rep)
+	public IS GetMatchReasonCode(int rep)
 	{
 			IS ret = null;
 			try
@@ -82,7 +83,7 @@ public class QRI : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Match Reason Code (QRI-2).
    ///</summary>
-  public IS[] getMatchReasonCode() {
+  public IS[] GetMatchReasonCode() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -100,6 +101,24 @@ public class QRI : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Match Reason Code (QRI-2).
+   ///</summary>
+  public int MatchReasonCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Algorithm Descriptor(QRI-3).
 	///</summary>

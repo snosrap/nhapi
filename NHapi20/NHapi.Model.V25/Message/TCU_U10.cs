@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a TCU_U10 message structure (see chapter 13.3.10). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EQU (Equipment Detail) 
-/// * 3: TCU_U10_TEST_CONFIGURATION (a Group object) repeating
-/// * 4: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EQU (Equipment Detail) </li>
+///<li>3: TCU_U10_TEST_CONFIGURATION (a Group object) repeating</li>
+///<li>4: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class TCU_U10 : AbstractMessage  {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -126,7 +128,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of TCU_U10_TEST_CONFIGURATION (a Group object) - creates it if necessary
 	///</summary>
-	public TCU_U10_TEST_CONFIGURATION getTEST_CONFIGURATION() {
+	public TCU_U10_TEST_CONFIGURATION GetTEST_CONFIGURATION() {
 	   TCU_U10_TEST_CONFIGURATION ret = null;
 	   try {
 	      ret = (TCU_U10_TEST_CONFIGURATION)this.GetStructure("TEST_CONFIGURATION");
@@ -143,14 +145,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public TCU_U10_TEST_CONFIGURATION getTEST_CONFIGURATION(int rep) { 
+	public TCU_U10_TEST_CONFIGURATION GetTEST_CONFIGURATION(int rep) { 
 	   return (TCU_U10_TEST_CONFIGURATION)this.GetStructure("TEST_CONFIGURATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of TCU_U10_TEST_CONFIGURATION 
 	 */ 
-	public int TEST_CONFIGURATIONReps { 
+	public int TEST_CONFIGURATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

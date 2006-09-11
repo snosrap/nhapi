@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the OUL_R23_SPMOBXSACINVOBRORCNTETQ1TQ2OBXTCDSIDNTECTI Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SPM (Specimen) 
-/// * 1: OBX (Observation/Result) optional repeating
-/// * 2: OUL_R23_CONTAINER (a Group object) repeating
+///<ol>
+///<li>0: SPM (Specimen) </li>
+///<li>1: OBX (Observation/Result) optional repeating</li>
+///<li>2: OUL_R23_CONTAINER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OUL_R23_SPMOBXSACINVOBRORCNTETQ1TQ2OBXTCDSIDNTECTI : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OUL_R23_CONTAINER (a Group object) - creates it if necessary
 	///</summary>
-	public OUL_R23_CONTAINER getCONTAINER() {
+	public OUL_R23_CONTAINER GetCONTAINER() {
 	   OUL_R23_CONTAINER ret = null;
 	   try {
 	      ret = (OUL_R23_CONTAINER)this.GetStructure("CONTAINER");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OUL_R23_CONTAINER getCONTAINER(int rep) { 
+	public OUL_R23_CONTAINER GetCONTAINER(int rep) { 
 	   return (OUL_R23_CONTAINER)this.GetStructure("CONTAINER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OUL_R23_CONTAINER 
 	 */ 
-	public int CONTAINERReps { 
+	public int CONTAINERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a MDM_T01 message structure (see chapter 9.5.1). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EVN (Event Type) 
-/// * 3: PID (Patient Identification) 
-/// * 4: PV1 (Patient Visit) 
-/// * 5: MDM_T01_COMMON_ORDER (a Group object) 
-/// * 6: TXA (Transcription Document Header) 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EVN (Event Type) </li>
+///<li>3: PID (Patient Identification) </li>
+///<li>4: PV1 (Patient Visit) </li>
+///<li>5: MDM_T01_COMMON_ORDER (a Group object) </li>
+///<li>6: TXA (Transcription Document Header) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MDM_T01 : AbstractMessage  {
@@ -73,7 +75,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -90,14 +92,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,10 +9,11 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 ODT message segment. 
-/// This segment has the following fields:
-/// * ODT-1: Tray Type (CE)
-/// * ODT-2: Service Period (CE)
-/// * ODT-3: Text Instruction (ST)
+/// This segment has the following fields:<ol>
+///<li>ODT-1: Tray Type (CE)</li>
+///<li>ODT-2: Service Period (CE)</li>
+///<li>ODT-3: Text Instruction (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -65,7 +66,7 @@ public class ODT : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getServicePeriod(int rep)
+	public CE GetServicePeriod(int rep)
 	{
 			CE ret = null;
 			try
@@ -82,7 +83,7 @@ public class ODT : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Service Period (ODT-2).
    ///</summary>
-  public CE[] getServicePeriod() {
+  public CE[] GetServicePeriod() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -100,6 +101,24 @@ public class ODT : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Service Period (ODT-2).
+   ///</summary>
+  public int ServicePeriodRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Text Instruction(ODT-3).
 	///</summary>

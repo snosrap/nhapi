@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the MFN_M06_MF_CLIN_STUDY Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: CM0 (Clinical Study Master) 
-/// * 2: MFN_M06_MF_PHASE_SCHED_DETAIL (a Group object) 
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: CM0 (Clinical Study Master) </li>
+///<li>2: MFN_M06_MF_PHASE_SCHED_DETAIL (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M06_MF_CLIN_STUDY : AbstractGroup {

@@ -12,14 +12,16 @@ namespace NHapi.Model.V25.Group
 ///Represents the OML_O35_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PD1 (Patient Additional Demographic) optional 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: NK1 (Next of Kin / Associated Parties) optional repeating
-/// * 4: OML_O35_PATIENT_VISIT (a Group object) optional 
-/// * 5: OML_O35_INSURANCE (a Group object) 
-/// * 6: GT1 (Guarantor) optional 
-/// * 7: AL1 (Patient Allergy Information) optional repeating
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PD1 (Patient Additional Demographic) optional </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: NK1 (Next of Kin / Associated Parties) optional repeating</li>
+///<li>4: OML_O35_PATIENT_VISIT (a Group object) optional </li>
+///<li>5: OML_O35_INSURANCE (a Group object) </li>
+///<li>6: GT1 (Guarantor) optional </li>
+///<li>7: AL1 (Patient Allergy Information) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O35_PATIENT : AbstractGroup {
@@ -77,7 +79,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -94,14 +96,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -118,7 +120,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (Next of Kin / Associated Parties) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -135,14 +137,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -207,7 +209,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of AL1 (Patient Allergy Information) - creates it if necessary
 	///</summary>
-	public AL1 getAL1() {
+	public AL1 GetAL1() {
 	   AL1 ret = null;
 	   try {
 	      ret = (AL1)this.GetStructure("AL1");
@@ -224,14 +226,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AL1 getAL1(int rep) { 
+	public AL1 GetAL1(int rep) { 
 	   return (AL1)this.GetStructure("AL1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AL1 
 	 */ 
-	public int AL1Reps { 
+	public int AL1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

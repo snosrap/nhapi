@@ -9,10 +9,11 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 ISD message segment. 
-/// This segment has the following fields:
-/// * ISD-1: Reference Interaction Number (unique identifier) (NM)
-/// * ISD-2: Interaction Type Identifier (CE)
-/// * ISD-3: Interaction Active State (CE)
+/// This segment has the following fields:<ol>
+///<li>ISD-1: Reference Interaction Number (unique identifier) (NM)</li>
+///<li>ISD-2: Interaction Type Identifier (CE)</li>
+///<li>ISD-3: Interaction Active State (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

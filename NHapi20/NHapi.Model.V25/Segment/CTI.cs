@@ -9,10 +9,11 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 CTI message segment. 
-/// This segment has the following fields:
-/// * CTI-1: Sponsor Study ID (EI)
-/// * CTI-2: Study Phase Identifier (CE)
-/// * CTI-3: Study Scheduled Time Point (CE)
+/// This segment has the following fields:<ol>
+///<li>CTI-1: Sponsor Study ID (EI)</li>
+///<li>CTI-2: Study Phase Identifier (CE)</li>
+///<li>CTI-3: Study Scheduled Time Point (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

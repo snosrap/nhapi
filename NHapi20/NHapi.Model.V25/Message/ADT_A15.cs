@@ -12,18 +12,20 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a ADT_A15 message structure (see chapter 3.3.15). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EVN (Event Type) 
-/// * 3: PID (Patient Identification) 
-/// * 4: PD1 (Patient Additional Demographic) optional 
-/// * 5: ROL (Role) optional repeating
-/// * 6: PV1 (Patient Visit) 
-/// * 7: PV2 (Patient Visit - Additional Information) optional 
-/// * 8: ROL (Role) optional repeating
-/// * 9: DB1 (Disability) optional repeating
-/// * 10: OBX (Observation/Result) optional repeating
-/// * 11: DG1 (Diagnosis) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EVN (Event Type) </li>
+///<li>3: PID (Patient Identification) </li>
+///<li>4: PD1 (Patient Additional Demographic) optional </li>
+///<li>5: ROL (Role) optional repeating</li>
+///<li>6: PV1 (Patient Visit) </li>
+///<li>7: PV2 (Patient Visit - Additional Information) optional </li>
+///<li>8: ROL (Role) optional repeating</li>
+///<li>9: DB1 (Disability) optional repeating</li>
+///<li>10: OBX (Observation/Result) optional repeating</li>
+///<li>11: DG1 (Diagnosis) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A15 : AbstractMessage  {
@@ -83,7 +85,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -100,14 +102,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -172,7 +174,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROL (Role) - creates it if necessary
 	///</summary>
-	public ROL getROL() {
+	public ROL GetROL() {
 	   ROL ret = null;
 	   try {
 	      ret = (ROL)this.GetStructure("ROL");
@@ -189,14 +191,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROL getROL(int rep) { 
+	public ROL GetROL(int rep) { 
 	   return (ROL)this.GetStructure("ROL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROL 
 	 */ 
-	public int ROLReps { 
+	public int ROLRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -245,7 +247,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROL2 (Role) - creates it if necessary
 	///</summary>
-	public ROL getROL2() {
+	public ROL GetROL2() {
 	   ROL ret = null;
 	   try {
 	      ret = (ROL)this.GetStructure("ROL2");
@@ -262,14 +264,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROL getROL2(int rep) { 
+	public ROL GetROL2(int rep) { 
 	   return (ROL)this.GetStructure("ROL2", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROL2 
 	 */ 
-	public int ROL2Reps { 
+	public int ROL2RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -286,7 +288,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DB1 (Disability) - creates it if necessary
 	///</summary>
-	public DB1 getDB1() {
+	public DB1 GetDB1() {
 	   DB1 ret = null;
 	   try {
 	      ret = (DB1)this.GetStructure("DB1");
@@ -303,14 +305,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DB1 getDB1(int rep) { 
+	public DB1 GetDB1(int rep) { 
 	   return (DB1)this.GetStructure("DB1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DB1 
 	 */ 
-	public int DB1Reps { 
+	public int DB1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -327,7 +329,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -344,14 +346,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -368,7 +370,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -385,14 +387,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

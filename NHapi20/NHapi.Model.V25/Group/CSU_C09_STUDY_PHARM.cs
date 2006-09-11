@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the CSU_C09_STUDY_PHARM Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) optional 
-/// * 1: CSU_C09_RX_ADMIN (a Group object) repeating
+///<ol>
+///<li>0: ORC (Common Order) optional </li>
+///<li>1: CSU_C09_RX_ADMIN (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class CSU_C09_STUDY_PHARM : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CSU_C09_RX_ADMIN (a Group object) - creates it if necessary
 	///</summary>
-	public CSU_C09_RX_ADMIN getRX_ADMIN() {
+	public CSU_C09_RX_ADMIN GetRX_ADMIN() {
 	   CSU_C09_RX_ADMIN ret = null;
 	   try {
 	      ret = (CSU_C09_RX_ADMIN)this.GetStructure("RX_ADMIN");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSU_C09_RX_ADMIN getRX_ADMIN(int rep) { 
+	public CSU_C09_RX_ADMIN GetRX_ADMIN(int rep) { 
 	   return (CSU_C09_RX_ADMIN)this.GetStructure("RX_ADMIN", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSU_C09_RX_ADMIN 
 	 */ 
-	public int RX_ADMINReps { 
+	public int RX_ADMINRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

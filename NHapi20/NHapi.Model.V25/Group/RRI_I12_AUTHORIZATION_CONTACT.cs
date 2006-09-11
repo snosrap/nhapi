@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the RRI_I12_AUTHORIZATION_CONTACT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: AUT (Authorization Information) 
-/// * 1: CTD (Contact Data) optional 
+///<ol>
+///<li>0: AUT (Authorization Information) </li>
+///<li>1: CTD (Contact Data) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRI_I12_AUTHORIZATION_CONTACT : AbstractGroup {

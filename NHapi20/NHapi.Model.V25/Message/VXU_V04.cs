@@ -12,15 +12,17 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a VXU_V04 message structure (see chapter 4.17.6). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: PID (Patient Identification) 
-/// * 3: PD1 (Patient Additional Demographic) optional 
-/// * 4: NK1 (Next of Kin / Associated Parties) optional repeating
-/// * 5: VXU_V04_PATIENT (a Group object) optional 
-/// * 6: GT1 (Guarantor) optional repeating
-/// * 7: VXU_V04_INSURANCE (a Group object) 
-/// * 8: VXU_V04_ORDER (a Group object) 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PD1 (Patient Additional Demographic) optional </li>
+///<li>4: NK1 (Next of Kin / Associated Parties) optional repeating</li>
+///<li>5: VXU_V04_PATIENT (a Group object) optional </li>
+///<li>6: GT1 (Guarantor) optional repeating</li>
+///<li>7: VXU_V04_INSURANCE (a Group object) </li>
+///<li>8: VXU_V04_ORDER (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VXU_V04 : AbstractMessage  {
@@ -77,7 +79,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -94,14 +96,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -150,7 +152,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (Next of Kin / Associated Parties) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -167,14 +169,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -207,7 +209,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of GT1 (Guarantor) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -224,14 +226,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

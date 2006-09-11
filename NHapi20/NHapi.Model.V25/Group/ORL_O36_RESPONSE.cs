@@ -12,7 +12,9 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORL_O36_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORL_O36_PATIENT (a Group object) optional 
+///<ol>
+///<li>0: ORL_O36_PATIENT (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORL_O36_RESPONSE : AbstractGroup {

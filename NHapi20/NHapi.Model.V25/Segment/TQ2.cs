@@ -9,17 +9,18 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 TQ2 message segment. 
-/// This segment has the following fields:
-/// * TQ2-1: Set ID - TQ2 (SI)
-/// * TQ2-2: Sequence/Results Flag (ID)
-/// * TQ2-3: Related Placer Number (EI)
-/// * TQ2-4: Related Filler Number (EI)
-/// * TQ2-5: Related Placer Group Number (EI)
-/// * TQ2-6: Sequence Condition Code (ID)
-/// * TQ2-7: Cyclic Entry/Exit Indicator (ID)
-/// * TQ2-8: Sequence Condition Time Interval (CQ)
-/// * TQ2-9: Cyclic Group Maximum Number of Repeats (NM)
-/// * TQ2-10: Special Service Request Relationship (ID)
+/// This segment has the following fields:<ol>
+///<li>TQ2-1: Set ID - TQ2 (SI)</li>
+///<li>TQ2-2: Sequence/Results Flag (ID)</li>
+///<li>TQ2-3: Related Placer Number (EI)</li>
+///<li>TQ2-4: Related Filler Number (EI)</li>
+///<li>TQ2-5: Related Placer Group Number (EI)</li>
+///<li>TQ2-6: Sequence Condition Code (ID)</li>
+///<li>TQ2-7: Cyclic Entry/Exit Indicator (ID)</li>
+///<li>TQ2-8: Sequence Condition Time Interval (CQ)</li>
+///<li>TQ2-9: Cyclic Group Maximum Number of Repeats (NM)</li>
+///<li>TQ2-10: Special Service Request Relationship (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -102,7 +103,7 @@ public class TQ2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getRelatedPlacerNumber(int rep)
+	public EI GetRelatedPlacerNumber(int rep)
 	{
 			EI ret = null;
 			try
@@ -119,7 +120,7 @@ public class TQ2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Related Placer Number (TQ2-3).
    ///</summary>
-  public EI[] getRelatedPlacerNumber() {
+  public EI[] GetRelatedPlacerNumber() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -137,12 +138,30 @@ public class TQ2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Related Placer Number (TQ2-3).
+   ///</summary>
+  public int RelatedPlacerNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Related Filler Number(TQ2-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getRelatedFillerNumber(int rep)
+	public EI GetRelatedFillerNumber(int rep)
 	{
 			EI ret = null;
 			try
@@ -159,7 +178,7 @@ public class TQ2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Related Filler Number (TQ2-4).
    ///</summary>
-  public EI[] getRelatedFillerNumber() {
+  public EI[] GetRelatedFillerNumber() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -177,12 +196,30 @@ public class TQ2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Related Filler Number (TQ2-4).
+   ///</summary>
+  public int RelatedFillerNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Related Placer Group Number(TQ2-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getRelatedPlacerGroupNumber(int rep)
+	public EI GetRelatedPlacerGroupNumber(int rep)
 	{
 			EI ret = null;
 			try
@@ -199,7 +236,7 @@ public class TQ2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Related Placer Group Number (TQ2-5).
    ///</summary>
-  public EI[] getRelatedPlacerGroupNumber() {
+  public EI[] GetRelatedPlacerGroupNumber() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -217,6 +254,24 @@ public class TQ2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Related Placer Group Number (TQ2-5).
+   ///</summary>
+  public int RelatedPlacerGroupNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Sequence Condition Code(TQ2-6).
 	///</summary>

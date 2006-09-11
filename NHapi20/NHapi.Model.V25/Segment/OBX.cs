@@ -9,26 +9,27 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 OBX message segment. 
-/// This segment has the following fields:
-/// * OBX-1: Set ID - OBX (SI)
-/// * OBX-2: Value Type (ID)
-/// * OBX-3: Observation Identifier (CE)
-/// * OBX-4: Observation Sub-ID (ST)
-/// * OBX-5: Observation Value (varies)
-/// * OBX-6: Units (CE)
-/// * OBX-7: References Range (ST)
-/// * OBX-8: Abnormal Flags (IS)
-/// * OBX-9: Probability (NM)
-/// * OBX-10: Nature of Abnormal Test (ID)
-/// * OBX-11: Observation Result Status (ID)
-/// * OBX-12: Effective Date of Reference Range (TS)
-/// * OBX-13: User Defined Access Checks (ST)
-/// * OBX-14: Date/Time of the Observation (TS)
-/// * OBX-15: Producer's ID (CE)
-/// * OBX-16: Responsible Observer (XCN)
-/// * OBX-17: Observation Method (CE)
-/// * OBX-18: Equipment Instance Identifier (EI)
-/// * OBX-19: Date/Time of the Analysis (TS)
+/// This segment has the following fields:<ol>
+///<li>OBX-1: Set ID - OBX (SI)</li>
+///<li>OBX-2: Value Type (ID)</li>
+///<li>OBX-3: Observation Identifier (CE)</li>
+///<li>OBX-4: Observation Sub-ID (ST)</li>
+///<li>OBX-5: Observation Value (varies)</li>
+///<li>OBX-6: Units (CE)</li>
+///<li>OBX-7: References Range (ST)</li>
+///<li>OBX-8: Abnormal Flags (IS)</li>
+///<li>OBX-9: Probability (NM)</li>
+///<li>OBX-10: Nature of Abnormal Test (ID)</li>
+///<li>OBX-11: Observation Result Status (ID)</li>
+///<li>OBX-12: Effective Date of Reference Range (TS)</li>
+///<li>OBX-13: User Defined Access Checks (ST)</li>
+///<li>OBX-14: Date/Time of the Observation (TS)</li>
+///<li>OBX-15: Producer's ID (CE)</li>
+///<li>OBX-16: Responsible Observer (XCN)</li>
+///<li>OBX-17: Observation Method (CE)</li>
+///<li>OBX-18: Equipment Instance Identifier (EI)</li>
+///<li>OBX-19: Date/Time of the Analysis (TS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -166,7 +167,7 @@ public class OBX : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public Varies getObservationValue(int rep)
+	public Varies GetObservationValue(int rep)
 	{
 			Varies ret = null;
 			try
@@ -183,7 +184,7 @@ public class OBX : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Observation Value (OBX-5).
    ///</summary>
-  public Varies[] getObservationValue() {
+  public Varies[] GetObservationValue() {
      Varies[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -201,6 +202,24 @@ public class OBX : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Observation Value (OBX-5).
+   ///</summary>
+  public int ObservationValueRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Units(OBX-6).
 	///</summary>
@@ -252,7 +271,7 @@ public class OBX : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getAbnormalFlags(int rep)
+	public IS GetAbnormalFlags(int rep)
 	{
 			IS ret = null;
 			try
@@ -269,7 +288,7 @@ public class OBX : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Abnormal Flags (OBX-8).
    ///</summary>
-  public IS[] getAbnormalFlags() {
+  public IS[] GetAbnormalFlags() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -287,6 +306,24 @@ public class OBX : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Abnormal Flags (OBX-8).
+   ///</summary>
+  public int AbnormalFlagsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Probability(OBX-9).
 	///</summary>
@@ -315,7 +352,7 @@ public class OBX : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getNatureOfAbnormalTest(int rep)
+	public ID GetNatureOfAbnormalTest(int rep)
 	{
 			ID ret = null;
 			try
@@ -332,7 +369,7 @@ public class OBX : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Nature of Abnormal Test (OBX-10).
    ///</summary>
-  public ID[] getNatureOfAbnormalTest() {
+  public ID[] GetNatureOfAbnormalTest() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -350,6 +387,24 @@ public class OBX : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Nature of Abnormal Test (OBX-10).
+   ///</summary>
+  public int NatureOfAbnormalTestRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Observation Result Status(OBX-11).
 	///</summary>
@@ -470,7 +525,7 @@ public class OBX : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getResponsibleObserver(int rep)
+	public XCN GetResponsibleObserver(int rep)
 	{
 			XCN ret = null;
 			try
@@ -487,7 +542,7 @@ public class OBX : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Responsible Observer (OBX-16).
    ///</summary>
-  public XCN[] getResponsibleObserver() {
+  public XCN[] GetResponsibleObserver() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -505,12 +560,30 @@ public class OBX : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Responsible Observer (OBX-16).
+   ///</summary>
+  public int ResponsibleObserverRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Observation Method(OBX-17).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getObservationMethod(int rep)
+	public CE GetObservationMethod(int rep)
 	{
 			CE ret = null;
 			try
@@ -527,7 +600,7 @@ public class OBX : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Observation Method (OBX-17).
    ///</summary>
-  public CE[] getObservationMethod() {
+  public CE[] GetObservationMethod() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -545,12 +618,30 @@ public class OBX : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Observation Method (OBX-17).
+   ///</summary>
+  public int ObservationMethodRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Equipment Instance Identifier(OBX-18).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getEquipmentInstanceIdentifier(int rep)
+	public EI GetEquipmentInstanceIdentifier(int rep)
 	{
 			EI ret = null;
 			try
@@ -567,7 +658,7 @@ public class OBX : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Equipment Instance Identifier (OBX-18).
    ///</summary>
-  public EI[] getEquipmentInstanceIdentifier() {
+  public EI[] GetEquipmentInstanceIdentifier() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -585,6 +676,24 @@ public class OBX : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Equipment Instance Identifier (OBX-18).
+   ///</summary>
+  public int EquipmentInstanceIdentifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Date/Time of the Analysis(OBX-19).
 	///</summary>

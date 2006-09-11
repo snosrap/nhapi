@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a NMD_N02 message structure (see chapter 14.3.2). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: NMD_N02_CLOCK_AND_STATS_WITH_NOTES (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: NMD_N02_CLOCK_AND_STATS_WITH_NOTES (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class NMD_N02 : AbstractMessage  {
@@ -65,7 +67,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -82,14 +84,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -106,7 +108,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NMD_N02_CLOCK_AND_STATS_WITH_NOTES (a Group object) - creates it if necessary
 	///</summary>
-	public NMD_N02_CLOCK_AND_STATS_WITH_NOTES getCLOCK_AND_STATS_WITH_NOTES() {
+	public NMD_N02_CLOCK_AND_STATS_WITH_NOTES GetCLOCK_AND_STATS_WITH_NOTES() {
 	   NMD_N02_CLOCK_AND_STATS_WITH_NOTES ret = null;
 	   try {
 	      ret = (NMD_N02_CLOCK_AND_STATS_WITH_NOTES)this.GetStructure("CLOCK_AND_STATS_WITH_NOTES");
@@ -123,14 +125,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NMD_N02_CLOCK_AND_STATS_WITH_NOTES getCLOCK_AND_STATS_WITH_NOTES(int rep) { 
+	public NMD_N02_CLOCK_AND_STATS_WITH_NOTES GetCLOCK_AND_STATS_WITH_NOTES(int rep) { 
 	   return (NMD_N02_CLOCK_AND_STATS_WITH_NOTES)this.GetStructure("CLOCK_AND_STATS_WITH_NOTES", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NMD_N02_CLOCK_AND_STATS_WITH_NOTES 
 	 */ 
-	public int CLOCK_AND_STATS_WITH_NOTESReps { 
+	public int CLOCK_AND_STATS_WITH_NOTESRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the RAR_RAR_DEFINITION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: QRD (Original-Style Query Definition) 
-/// * 1: QRF (Original style query filter) optional 
-/// * 2: RAR_RAR_PATIENT (a Group object) optional 
-/// * 3: RAR_RAR_ORDER (a Group object) repeating
+///<ol>
+///<li>0: QRD (Original-Style Query Definition) </li>
+///<li>1: QRF (Original style query filter) optional </li>
+///<li>2: RAR_RAR_PATIENT (a Group object) optional </li>
+///<li>3: RAR_RAR_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RAR_RAR_DEFINITION : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RAR_RAR_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public RAR_RAR_ORDER getORDER() {
+	public RAR_RAR_ORDER GetORDER() {
 	   RAR_RAR_ORDER ret = null;
 	   try {
 	      ret = (RAR_RAR_ORDER)this.GetStructure("ORDER");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RAR_RAR_ORDER getORDER(int rep) { 
+	public RAR_RAR_ORDER GetORDER(int rep) { 
 	   return (RAR_RAR_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RAR_RAR_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

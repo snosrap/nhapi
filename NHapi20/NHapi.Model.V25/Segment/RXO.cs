@@ -9,35 +9,36 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 RXO message segment. 
-/// This segment has the following fields:
-/// * RXO-1: Requested Give Code (CE)
-/// * RXO-2: Requested Give Amount - Minimum (NM)
-/// * RXO-3: Requested Give Amount - Maximum (NM)
-/// * RXO-4: Requested Give Units (CE)
-/// * RXO-5: Requested Dosage Form (CE)
-/// * RXO-6: Provider's Pharmacy/Treatment Instructions (CE)
-/// * RXO-7: Provider's Administration Instructions (CE)
-/// * RXO-8: Deliver-To Location (LA1)
-/// * RXO-9: Allow Substitutions (ID)
-/// * RXO-10: Requested Dispense Code (CE)
-/// * RXO-11: Requested Dispense Amount (NM)
-/// * RXO-12: Requested Dispense Units (CE)
-/// * RXO-13: Number Of Refills (NM)
-/// * RXO-14: Ordering Provider's DEA Number (XCN)
-/// * RXO-15: Pharmacist/Treatment Supplier's Verifier ID (XCN)
-/// * RXO-16: Needs Human Review (ID)
-/// * RXO-17: Requested Give Per (Time Unit) (ST)
-/// * RXO-18: Requested Give Strength (NM)
-/// * RXO-19: Requested Give Strength Units (CE)
-/// * RXO-20: Indication (CE)
-/// * RXO-21: Requested Give Rate Amount (ST)
-/// * RXO-22: Requested Give Rate Units (CE)
-/// * RXO-23: Total Daily Dose (CQ)
-/// * RXO-24: Supplementary Code (CE)
-/// * RXO-25: Requested Drug Strength Volume (NM)
-/// * RXO-26: Requested Drug Strength Volume Units (CWE)
-/// * RXO-27: Pharmacy Order Type (ID)
-/// * RXO-28: Dispensing Interval (NM)
+/// This segment has the following fields:<ol>
+///<li>RXO-1: Requested Give Code (CE)</li>
+///<li>RXO-2: Requested Give Amount - Minimum (NM)</li>
+///<li>RXO-3: Requested Give Amount - Maximum (NM)</li>
+///<li>RXO-4: Requested Give Units (CE)</li>
+///<li>RXO-5: Requested Dosage Form (CE)</li>
+///<li>RXO-6: Provider's Pharmacy/Treatment Instructions (CE)</li>
+///<li>RXO-7: Provider's Administration Instructions (CE)</li>
+///<li>RXO-8: Deliver-To Location (LA1)</li>
+///<li>RXO-9: Allow Substitutions (ID)</li>
+///<li>RXO-10: Requested Dispense Code (CE)</li>
+///<li>RXO-11: Requested Dispense Amount (NM)</li>
+///<li>RXO-12: Requested Dispense Units (CE)</li>
+///<li>RXO-13: Number Of Refills (NM)</li>
+///<li>RXO-14: Ordering Provider's DEA Number (XCN)</li>
+///<li>RXO-15: Pharmacist/Treatment Supplier's Verifier ID (XCN)</li>
+///<li>RXO-16: Needs Human Review (ID)</li>
+///<li>RXO-17: Requested Give Per (Time Unit) (ST)</li>
+///<li>RXO-18: Requested Give Strength (NM)</li>
+///<li>RXO-19: Requested Give Strength Units (CE)</li>
+///<li>RXO-20: Indication (CE)</li>
+///<li>RXO-21: Requested Give Rate Amount (ST)</li>
+///<li>RXO-22: Requested Give Rate Units (CE)</li>
+///<li>RXO-23: Total Daily Dose (CQ)</li>
+///<li>RXO-24: Supplementary Code (CE)</li>
+///<li>RXO-25: Requested Drug Strength Volume (NM)</li>
+///<li>RXO-26: Requested Drug Strength Volume Units (CWE)</li>
+///<li>RXO-27: Pharmacy Order Type (ID)</li>
+///<li>RXO-28: Dispensing Interval (NM)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -207,7 +208,7 @@ public class RXO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProviderSPharmacyTreatmentInstructions(int rep)
+	public CE GetProviderSPharmacyTreatmentInstructions(int rep)
 	{
 			CE ret = null;
 			try
@@ -224,7 +225,7 @@ public class RXO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Provider's Pharmacy/Treatment Instructions (RXO-6).
    ///</summary>
-  public CE[] getProviderSPharmacyTreatmentInstructions() {
+  public CE[] GetProviderSPharmacyTreatmentInstructions() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -242,12 +243,30 @@ public class RXO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Provider's Pharmacy/Treatment Instructions (RXO-6).
+   ///</summary>
+  public int ProviderSPharmacyTreatmentInstructionsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Provider's Administration Instructions(RXO-7).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProviderSAdministrationInstructions(int rep)
+	public CE GetProviderSAdministrationInstructions(int rep)
 	{
 			CE ret = null;
 			try
@@ -264,7 +283,7 @@ public class RXO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Provider's Administration Instructions (RXO-7).
    ///</summary>
-  public CE[] getProviderSAdministrationInstructions() {
+  public CE[] GetProviderSAdministrationInstructions() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -282,6 +301,24 @@ public class RXO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Provider's Administration Instructions (RXO-7).
+   ///</summary>
+  public int ProviderSAdministrationInstructionsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Deliver-To Location(RXO-8).
 	///</summary>
@@ -425,7 +462,7 @@ public class RXO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getOrderingProviderSDEANumber(int rep)
+	public XCN GetOrderingProviderSDEANumber(int rep)
 	{
 			XCN ret = null;
 			try
@@ -442,7 +479,7 @@ public class RXO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ordering Provider's DEA Number (RXO-14).
    ///</summary>
-  public XCN[] getOrderingProviderSDEANumber() {
+  public XCN[] GetOrderingProviderSDEANumber() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -460,12 +497,30 @@ public class RXO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ordering Provider's DEA Number (RXO-14).
+   ///</summary>
+  public int OrderingProviderSDEANumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Pharmacist/Treatment Supplier's Verifier ID(RXO-15).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPharmacistTreatmentSupplierSVerifierID(int rep)
+	public XCN GetPharmacistTreatmentSupplierSVerifierID(int rep)
 	{
 			XCN ret = null;
 			try
@@ -482,7 +537,7 @@ public class RXO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Pharmacist/Treatment Supplier's Verifier ID (RXO-15).
    ///</summary>
-  public XCN[] getPharmacistTreatmentSupplierSVerifierID() {
+  public XCN[] GetPharmacistTreatmentSupplierSVerifierID() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -500,6 +555,24 @@ public class RXO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Pharmacist/Treatment Supplier's Verifier ID (RXO-15).
+   ///</summary>
+  public int PharmacistTreatmentSupplierSVerifierIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Needs Human Review(RXO-16).
 	///</summary>
@@ -597,7 +670,7 @@ public class RXO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getIndication(int rep)
+	public CE GetIndication(int rep)
 	{
 			CE ret = null;
 			try
@@ -614,7 +687,7 @@ public class RXO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Indication (RXO-20).
    ///</summary>
-  public CE[] getIndication() {
+  public CE[] GetIndication() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -632,6 +705,24 @@ public class RXO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Indication (RXO-20).
+   ///</summary>
+  public int IndicationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Requested Give Rate Amount(RXO-21).
 	///</summary>
@@ -706,7 +797,7 @@ public class RXO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSupplementaryCode(int rep)
+	public CE GetSupplementaryCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -723,7 +814,7 @@ public class RXO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Supplementary Code (RXO-24).
    ///</summary>
-  public CE[] getSupplementaryCode() {
+  public CE[] GetSupplementaryCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -741,6 +832,24 @@ public class RXO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Supplementary Code (RXO-24).
+   ///</summary>
+  public int SupplementaryCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Requested Drug Strength Volume(RXO-25).
 	///</summary>

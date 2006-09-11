@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORB_O28_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: ORB_O28_TIMING (a Group object) 
-/// * 2: BPO (Blood product order) optional 
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: ORB_O28_TIMING (a Group object) </li>
+///<li>2: BPO (Blood product order) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORB_O28_ORDER : AbstractGroup {

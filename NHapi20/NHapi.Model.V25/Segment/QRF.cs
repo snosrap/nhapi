@@ -9,17 +9,18 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 QRF message segment. 
-/// This segment has the following fields:
-/// * QRF-1: Where Subject Filter (ST)
-/// * QRF-2: When Data Start Date/Time (TS)
-/// * QRF-3: When Data End Date/Time (TS)
-/// * QRF-4: What User Qualifier (ST)
-/// * QRF-5: Other QRY Subject Filter (ST)
-/// * QRF-6: Which Date/Time Qualifier (ID)
-/// * QRF-7: Which Date/Time Status Qualifier (ID)
-/// * QRF-8: Date/Time Selection Qualifier (ID)
-/// * QRF-9: When Quantity/Timing Qualifier (TQ)
-/// * QRF-10: Search Confidence Threshold (NM)
+/// This segment has the following fields:<ol>
+///<li>QRF-1: Where Subject Filter (ST)</li>
+///<li>QRF-2: When Data Start Date/Time (TS)</li>
+///<li>QRF-3: When Data End Date/Time (TS)</li>
+///<li>QRF-4: What User Qualifier (ST)</li>
+///<li>QRF-5: Other QRY Subject Filter (ST)</li>
+///<li>QRF-6: Which Date/Time Qualifier (ID)</li>
+///<li>QRF-7: Which Date/Time Status Qualifier (ID)</li>
+///<li>QRF-8: Date/Time Selection Qualifier (ID)</li>
+///<li>QRF-9: When Quantity/Timing Qualifier (TQ)</li>
+///<li>QRF-10: Search Confidence Threshold (NM)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -56,7 +57,7 @@ public class QRF : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getWhereSubjectFilter(int rep)
+	public ST GetWhereSubjectFilter(int rep)
 	{
 			ST ret = null;
 			try
@@ -73,7 +74,7 @@ public class QRF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Where Subject Filter (QRF-1).
    ///</summary>
-  public ST[] getWhereSubjectFilter() {
+  public ST[] GetWhereSubjectFilter() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -91,6 +92,24 @@ public class QRF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Where Subject Filter (QRF-1).
+   ///</summary>
+  public int WhereSubjectFilterRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns When Data Start Date/Time(QRF-2).
 	///</summary>
@@ -142,7 +161,7 @@ public class QRF : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getWhatUserQualifier(int rep)
+	public ST GetWhatUserQualifier(int rep)
 	{
 			ST ret = null;
 			try
@@ -159,7 +178,7 @@ public class QRF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of What User Qualifier (QRF-4).
    ///</summary>
-  public ST[] getWhatUserQualifier() {
+  public ST[] GetWhatUserQualifier() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -177,12 +196,30 @@ public class QRF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of What User Qualifier (QRF-4).
+   ///</summary>
+  public int WhatUserQualifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Other QRY Subject Filter(QRF-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getOtherQRYSubjectFilter(int rep)
+	public ST GetOtherQRYSubjectFilter(int rep)
 	{
 			ST ret = null;
 			try
@@ -199,7 +236,7 @@ public class QRF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Other QRY Subject Filter (QRF-5).
    ///</summary>
-  public ST[] getOtherQRYSubjectFilter() {
+  public ST[] GetOtherQRYSubjectFilter() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -217,12 +254,30 @@ public class QRF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Other QRY Subject Filter (QRF-5).
+   ///</summary>
+  public int OtherQRYSubjectFilterRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Which Date/Time Qualifier(QRF-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getWhichDateTimeQualifier(int rep)
+	public ID GetWhichDateTimeQualifier(int rep)
 	{
 			ID ret = null;
 			try
@@ -239,7 +294,7 @@ public class QRF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Which Date/Time Qualifier (QRF-6).
    ///</summary>
-  public ID[] getWhichDateTimeQualifier() {
+  public ID[] GetWhichDateTimeQualifier() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -257,12 +312,30 @@ public class QRF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Which Date/Time Qualifier (QRF-6).
+   ///</summary>
+  public int WhichDateTimeQualifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Which Date/Time Status Qualifier(QRF-7).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getWhichDateTimeStatusQualifier(int rep)
+	public ID GetWhichDateTimeStatusQualifier(int rep)
 	{
 			ID ret = null;
 			try
@@ -279,7 +352,7 @@ public class QRF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Which Date/Time Status Qualifier (QRF-7).
    ///</summary>
-  public ID[] getWhichDateTimeStatusQualifier() {
+  public ID[] GetWhichDateTimeStatusQualifier() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -297,12 +370,30 @@ public class QRF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Which Date/Time Status Qualifier (QRF-7).
+   ///</summary>
+  public int WhichDateTimeStatusQualifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Date/Time Selection Qualifier(QRF-8).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getDateTimeSelectionQualifier(int rep)
+	public ID GetDateTimeSelectionQualifier(int rep)
 	{
 			ID ret = null;
 			try
@@ -319,7 +410,7 @@ public class QRF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Date/Time Selection Qualifier (QRF-8).
    ///</summary>
-  public ID[] getDateTimeSelectionQualifier() {
+  public ID[] GetDateTimeSelectionQualifier() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -337,6 +428,24 @@ public class QRF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Date/Time Selection Qualifier (QRF-8).
+   ///</summary>
+  public int DateTimeSelectionQualifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns When Quantity/Timing Qualifier(QRF-9).
 	///</summary>

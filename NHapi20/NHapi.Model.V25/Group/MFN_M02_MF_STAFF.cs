@@ -12,15 +12,17 @@ namespace NHapi.Model.V25.Group
 ///Represents the MFN_M02_MF_STAFF Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: STF (Staff Identification) 
-/// * 2: PRA (Practitioner Detail) optional repeating
-/// * 3: ORG (Practitioner Organization Unit) optional repeating
-/// * 4: AFF (Professional Affiliation) optional repeating
-/// * 5: LAN (Language Detail) optional repeating
-/// * 6: EDU (Educational Detail) optional repeating
-/// * 7: CER (Certificate Detail) optional repeating
-/// * 8: NTE (Notes and Comments) optional repeating
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: STF (Staff Identification) </li>
+///<li>2: PRA (Practitioner Detail) optional repeating</li>
+///<li>3: ORG (Practitioner Organization Unit) optional repeating</li>
+///<li>4: AFF (Professional Affiliation) optional repeating</li>
+///<li>5: LAN (Language Detail) optional repeating</li>
+///<li>6: EDU (Educational Detail) optional repeating</li>
+///<li>7: CER (Certificate Detail) optional repeating</li>
+///<li>8: NTE (Notes and Comments) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M02_MF_STAFF : AbstractGroup {
@@ -79,7 +81,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PRA (Practitioner Detail) - creates it if necessary
 	///</summary>
-	public PRA getPRA() {
+	public PRA GetPRA() {
 	   PRA ret = null;
 	   try {
 	      ret = (PRA)this.GetStructure("PRA");
@@ -96,14 +98,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PRA getPRA(int rep) { 
+	public PRA GetPRA(int rep) { 
 	   return (PRA)this.GetStructure("PRA", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PRA 
 	 */ 
-	public int PRAReps { 
+	public int PRARepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -120,7 +122,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORG (Practitioner Organization Unit) - creates it if necessary
 	///</summary>
-	public ORG getORG() {
+	public ORG GetORG() {
 	   ORG ret = null;
 	   try {
 	      ret = (ORG)this.GetStructure("ORG");
@@ -137,14 +139,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORG getORG(int rep) { 
+	public ORG GetORG(int rep) { 
 	   return (ORG)this.GetStructure("ORG", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORG 
 	 */ 
-	public int ORGReps { 
+	public int ORGRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -161,7 +163,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of AFF (Professional Affiliation) - creates it if necessary
 	///</summary>
-	public AFF getAFF() {
+	public AFF GetAFF() {
 	   AFF ret = null;
 	   try {
 	      ret = (AFF)this.GetStructure("AFF");
@@ -178,14 +180,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AFF getAFF(int rep) { 
+	public AFF GetAFF(int rep) { 
 	   return (AFF)this.GetStructure("AFF", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AFF 
 	 */ 
-	public int AFFReps { 
+	public int AFFRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -202,7 +204,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of LAN (Language Detail) - creates it if necessary
 	///</summary>
-	public LAN getLAN() {
+	public LAN GetLAN() {
 	   LAN ret = null;
 	   try {
 	      ret = (LAN)this.GetStructure("LAN");
@@ -219,14 +221,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public LAN getLAN(int rep) { 
+	public LAN GetLAN(int rep) { 
 	   return (LAN)this.GetStructure("LAN", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of LAN 
 	 */ 
-	public int LANReps { 
+	public int LANRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -243,7 +245,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of EDU (Educational Detail) - creates it if necessary
 	///</summary>
-	public EDU getEDU() {
+	public EDU GetEDU() {
 	   EDU ret = null;
 	   try {
 	      ret = (EDU)this.GetStructure("EDU");
@@ -260,14 +262,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public EDU getEDU(int rep) { 
+	public EDU GetEDU(int rep) { 
 	   return (EDU)this.GetStructure("EDU", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of EDU 
 	 */ 
-	public int EDUReps { 
+	public int EDURepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -284,7 +286,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CER (Certificate Detail) - creates it if necessary
 	///</summary>
-	public CER getCER() {
+	public CER GetCER() {
 	   CER ret = null;
 	   try {
 	      ret = (CER)this.GetStructure("CER");
@@ -301,14 +303,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CER getCER(int rep) { 
+	public CER GetCER(int rep) { 
 	   return (CER)this.GetStructure("CER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CER 
 	 */ 
-	public int CERReps { 
+	public int CERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -325,7 +327,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -342,14 +344,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

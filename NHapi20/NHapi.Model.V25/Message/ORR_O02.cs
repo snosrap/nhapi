@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a ORR_O02 message structure (see chapter 4.4.2). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional repeating
-/// * 3: NTE (Notes and Comments) optional repeating
-/// * 4: ORR_O02_RESPONSE (a Group object) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional repeating</li>
+///<li>3: NTE (Notes and Comments) optional repeating</li>
+///<li>4: ORR_O02_RESPONSE (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORR_O02 : AbstractMessage  {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ERR (Error) - creates it if necessary
 	///</summary>
-	public ERR getERR() {
+	public ERR GetERR() {
 	   ERR ret = null;
 	   try {
 	      ret = (ERR)this.GetStructure("ERR");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ERR getERR(int rep) { 
+	public ERR GetERR(int rep) { 
 	   return (ERR)this.GetStructure("ERR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ERR 
 	 */ 
-	public int ERRReps { 
+	public int ERRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -126,7 +128,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -143,14 +145,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

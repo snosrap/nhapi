@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORL_O34_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: ORL_O34_SPECIMEN (a Group object) repeating
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: ORL_O34_SPECIMEN (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORL_O34_PATIENT : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORL_O34_SPECIMEN (a Group object) - creates it if necessary
 	///</summary>
-	public ORL_O34_SPECIMEN getSPECIMEN() {
+	public ORL_O34_SPECIMEN GetSPECIMEN() {
 	   ORL_O34_SPECIMEN ret = null;
 	   try {
 	      ret = (ORL_O34_SPECIMEN)this.GetStructure("SPECIMEN");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORL_O34_SPECIMEN getSPECIMEN(int rep) { 
+	public ORL_O34_SPECIMEN GetSPECIMEN(int rep) { 
 	   return (ORL_O34_SPECIMEN)this.GetStructure("SPECIMEN", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORL_O34_SPECIMEN 
 	 */ 
-	public int SPECIMENReps { 
+	public int SPECIMENRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

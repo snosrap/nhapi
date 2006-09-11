@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a PMU_B04 message structure (see chapter 15.3.4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EVN (Event Type) 
-/// * 3: STF (Staff Identification) 
-/// * 4: PRA (Practitioner Detail) optional repeating
-/// * 5: ORG (Practitioner Organization Unit) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EVN (Event Type) </li>
+///<li>3: STF (Staff Identification) </li>
+///<li>4: PRA (Practitioner Detail) optional repeating</li>
+///<li>5: ORG (Practitioner Organization Unit) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PMU_B04 : AbstractMessage  {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -144,7 +146,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PRA (Practitioner Detail) - creates it if necessary
 	///</summary>
-	public PRA getPRA() {
+	public PRA GetPRA() {
 	   PRA ret = null;
 	   try {
 	      ret = (PRA)this.GetStructure("PRA");
@@ -161,14 +163,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PRA getPRA(int rep) { 
+	public PRA GetPRA(int rep) { 
 	   return (PRA)this.GetStructure("PRA", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PRA 
 	 */ 
-	public int PRAReps { 
+	public int PRARepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -185,7 +187,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORG (Practitioner Organization Unit) - creates it if necessary
 	///</summary>
-	public ORG getORG() {
+	public ORG GetORG() {
 	   ORG ret = null;
 	   try {
 	      ret = (ORG)this.GetStructure("ORG");
@@ -202,14 +204,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORG getORG(int rep) { 
+	public ORG GetORG(int rep) { 
 	   return (ORG)this.GetStructure("ORG", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORG 
 	 */ 
-	public int ORGReps { 
+	public int ORGRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

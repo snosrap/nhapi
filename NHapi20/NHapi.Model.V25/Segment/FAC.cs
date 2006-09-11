@@ -9,19 +9,20 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 FAC message segment. 
-/// This segment has the following fields:
-/// * FAC-1: Facility ID-FAC (EI)
-/// * FAC-2: Facility Type (ID)
-/// * FAC-3: Facility Address (XAD)
-/// * FAC-4: Facility Telecommunication (XTN)
-/// * FAC-5: Contact Person (XCN)
-/// * FAC-6: Contact Title (ST)
-/// * FAC-7: Contact Address (XAD)
-/// * FAC-8: Contact Telecommunication (XTN)
-/// * FAC-9: Signature Authority (XCN)
-/// * FAC-10: Signature Authority Title (ST)
-/// * FAC-11: Signature Authority Address (XAD)
-/// * FAC-12: Signature Authority Telecommunication (XTN)
+/// This segment has the following fields:<ol>
+///<li>FAC-1: Facility ID-FAC (EI)</li>
+///<li>FAC-2: Facility Type (ID)</li>
+///<li>FAC-3: Facility Address (XAD)</li>
+///<li>FAC-4: Facility Telecommunication (XTN)</li>
+///<li>FAC-5: Contact Person (XCN)</li>
+///<li>FAC-6: Contact Title (ST)</li>
+///<li>FAC-7: Contact Address (XAD)</li>
+///<li>FAC-8: Contact Telecommunication (XTN)</li>
+///<li>FAC-9: Signature Authority (XCN)</li>
+///<li>FAC-10: Signature Authority Title (ST)</li>
+///<li>FAC-11: Signature Authority Address (XAD)</li>
+///<li>FAC-12: Signature Authority Telecommunication (XTN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -106,7 +107,7 @@ public class FAC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getFacilityAddress(int rep)
+	public XAD GetFacilityAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -123,7 +124,7 @@ public class FAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Facility Address (FAC-3).
    ///</summary>
-  public XAD[] getFacilityAddress() {
+  public XAD[] GetFacilityAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -141,6 +142,24 @@ public class FAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Facility Address (FAC-3).
+   ///</summary>
+  public int FacilityAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Facility Telecommunication(FAC-4).
 	///</summary>
@@ -169,7 +188,7 @@ public class FAC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getContactPerson(int rep)
+	public XCN GetContactPerson(int rep)
 	{
 			XCN ret = null;
 			try
@@ -186,7 +205,7 @@ public class FAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Person (FAC-5).
    ///</summary>
-  public XCN[] getContactPerson() {
+  public XCN[] GetContactPerson() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -204,12 +223,30 @@ public class FAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Person (FAC-5).
+   ///</summary>
+  public int ContactPersonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Title(FAC-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getContactTitle(int rep)
+	public ST GetContactTitle(int rep)
 	{
 			ST ret = null;
 			try
@@ -226,7 +263,7 @@ public class FAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Title (FAC-6).
    ///</summary>
-  public ST[] getContactTitle() {
+  public ST[] GetContactTitle() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -244,12 +281,30 @@ public class FAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Title (FAC-6).
+   ///</summary>
+  public int ContactTitleRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Address(FAC-7).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getContactAddress(int rep)
+	public XAD GetContactAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -266,7 +321,7 @@ public class FAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Address (FAC-7).
    ///</summary>
-  public XAD[] getContactAddress() {
+  public XAD[] GetContactAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -284,12 +339,30 @@ public class FAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Address (FAC-7).
+   ///</summary>
+  public int ContactAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Telecommunication(FAC-8).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getContactTelecommunication(int rep)
+	public XTN GetContactTelecommunication(int rep)
 	{
 			XTN ret = null;
 			try
@@ -306,7 +379,7 @@ public class FAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Telecommunication (FAC-8).
    ///</summary>
-  public XTN[] getContactTelecommunication() {
+  public XTN[] GetContactTelecommunication() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -324,12 +397,30 @@ public class FAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Telecommunication (FAC-8).
+   ///</summary>
+  public int ContactTelecommunicationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Signature Authority(FAC-9).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getSignatureAuthority(int rep)
+	public XCN GetSignatureAuthority(int rep)
 	{
 			XCN ret = null;
 			try
@@ -346,7 +437,7 @@ public class FAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Signature Authority (FAC-9).
    ///</summary>
-  public XCN[] getSignatureAuthority() {
+  public XCN[] GetSignatureAuthority() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -364,6 +455,24 @@ public class FAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Signature Authority (FAC-9).
+   ///</summary>
+  public int SignatureAuthorityRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Signature Authority Title(FAC-10).
 	///</summary>
@@ -392,7 +501,7 @@ public class FAC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getSignatureAuthorityAddress(int rep)
+	public XAD GetSignatureAuthorityAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -409,7 +518,7 @@ public class FAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Signature Authority Address (FAC-11).
    ///</summary>
-  public XAD[] getSignatureAuthorityAddress() {
+  public XAD[] GetSignatureAuthorityAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -427,6 +536,24 @@ public class FAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Signature Authority Address (FAC-11).
+   ///</summary>
+  public int SignatureAuthorityAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Signature Authority Telecommunication(FAC-12).
 	///</summary>

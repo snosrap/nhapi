@@ -12,7 +12,9 @@ namespace NHapi.Model.V25.Group
 ///Represents the RSP_K23_QUERY_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_K23_QUERY_RESPONSE : AbstractGroup {

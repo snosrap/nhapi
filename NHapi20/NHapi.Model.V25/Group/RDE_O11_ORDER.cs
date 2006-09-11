@@ -12,18 +12,20 @@ namespace NHapi.Model.V25.Group
 ///Represents the RDE_O11_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RDE_O11_TIMING (a Group object) 
-/// * 2: RDE_O11_ORDER_DETAIL (a Group object) optional 
-/// * 3: RXE (Pharmacy/Treatment Encoded Order) 
-/// * 4: NTE (Notes and Comments) optional repeating
-/// * 5: RDE_O11_TIMING_ENCODED (a Group object) repeating
-/// * 6: RXR (Pharmacy/Treatment Route) repeating
-/// * 7: RXC (Pharmacy/Treatment Component Order) optional repeating
-/// * 8: RDE_O11_OBSERVATION (a Group object) 
-/// * 9: FT1 (Financial Transaction) optional repeating
-/// * 10: BLG (Billing) optional 
-/// * 11: CTI (Clinical Trial Identification) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RDE_O11_TIMING (a Group object) </li>
+///<li>2: RDE_O11_ORDER_DETAIL (a Group object) optional </li>
+///<li>3: RXE (Pharmacy/Treatment Encoded Order) </li>
+///<li>4: NTE (Notes and Comments) optional repeating</li>
+///<li>5: RDE_O11_TIMING_ENCODED (a Group object) repeating</li>
+///<li>6: RXR (Pharmacy/Treatment Route) repeating</li>
+///<li>7: RXC (Pharmacy/Treatment Component Order) optional repeating</li>
+///<li>8: RDE_O11_OBSERVATION (a Group object) </li>
+///<li>9: FT1 (Financial Transaction) optional repeating</li>
+///<li>10: BLG (Billing) optional </li>
+///<li>11: CTI (Clinical Trial Identification) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RDE_O11_ORDER : AbstractGroup {
@@ -117,7 +119,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -134,14 +136,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -158,7 +160,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RDE_O11_TIMING_ENCODED (a Group object) - creates it if necessary
 	///</summary>
-	public RDE_O11_TIMING_ENCODED getTIMING_ENCODED() {
+	public RDE_O11_TIMING_ENCODED GetTIMING_ENCODED() {
 	   RDE_O11_TIMING_ENCODED ret = null;
 	   try {
 	      ret = (RDE_O11_TIMING_ENCODED)this.GetStructure("TIMING_ENCODED");
@@ -175,14 +177,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RDE_O11_TIMING_ENCODED getTIMING_ENCODED(int rep) { 
+	public RDE_O11_TIMING_ENCODED GetTIMING_ENCODED(int rep) { 
 	   return (RDE_O11_TIMING_ENCODED)this.GetStructure("TIMING_ENCODED", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RDE_O11_TIMING_ENCODED 
 	 */ 
-	public int TIMING_ENCODEDReps { 
+	public int TIMING_ENCODEDRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -199,7 +201,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXR (Pharmacy/Treatment Route) - creates it if necessary
 	///</summary>
-	public RXR getRXR() {
+	public RXR GetRXR() {
 	   RXR ret = null;
 	   try {
 	      ret = (RXR)this.GetStructure("RXR");
@@ -216,14 +218,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXR getRXR(int rep) { 
+	public RXR GetRXR(int rep) { 
 	   return (RXR)this.GetStructure("RXR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXR 
 	 */ 
-	public int RXRReps { 
+	public int RXRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -240,7 +242,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXC (Pharmacy/Treatment Component Order) - creates it if necessary
 	///</summary>
-	public RXC getRXC() {
+	public RXC GetRXC() {
 	   RXC ret = null;
 	   try {
 	      ret = (RXC)this.GetStructure("RXC");
@@ -257,14 +259,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXC getRXC(int rep) { 
+	public RXC GetRXC(int rep) { 
 	   return (RXC)this.GetStructure("RXC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXC 
 	 */ 
-	public int RXCReps { 
+	public int RXCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -297,7 +299,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of FT1 (Financial Transaction) - creates it if necessary
 	///</summary>
-	public FT1 getFT1() {
+	public FT1 GetFT1() {
 	   FT1 ret = null;
 	   try {
 	      ret = (FT1)this.GetStructure("FT1");
@@ -314,14 +316,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public FT1 getFT1(int rep) { 
+	public FT1 GetFT1(int rep) { 
 	   return (FT1)this.GetStructure("FT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of FT1 
 	 */ 
-	public int FT1Reps { 
+	public int FT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -354,7 +356,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CTI (Clinical Trial Identification) - creates it if necessary
 	///</summary>
-	public CTI getCTI() {
+	public CTI GetCTI() {
 	   CTI ret = null;
 	   try {
 	      ret = (CTI)this.GetStructure("CTI");
@@ -371,14 +373,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CTI getCTI(int rep) { 
+	public CTI GetCTI(int rep) { 
 	   return (CTI)this.GetStructure("CTI", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CTI 
 	 */ 
-	public int CTIReps { 
+	public int CTIRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Group
 ///Represents the SUR_P09_FACILITY Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: FAC (Facility) 
-/// * 1: SUR_P09_PRODUCT (a Group object) repeating
-/// * 2: PSH (Product Summary Header) 
-/// * 3: SUR_P09_FACILITY_DETAIL (a Group object) repeating
-/// * 4: ED (Encapsulated Data (wrong segment)) 
+///<ol>
+///<li>0: FAC (Facility) </li>
+///<li>1: SUR_P09_PRODUCT (a Group object) repeating</li>
+///<li>2: PSH (Product Summary Header) </li>
+///<li>3: SUR_P09_FACILITY_DETAIL (a Group object) repeating</li>
+///<li>4: ED (Encapsulated Data (wrong segment)) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SUR_P09_FACILITY : AbstractGroup {
@@ -55,7 +57,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SUR_P09_PRODUCT (a Group object) - creates it if necessary
 	///</summary>
-	public SUR_P09_PRODUCT getPRODUCT() {
+	public SUR_P09_PRODUCT GetPRODUCT() {
 	   SUR_P09_PRODUCT ret = null;
 	   try {
 	      ret = (SUR_P09_PRODUCT)this.GetStructure("PRODUCT");
@@ -72,14 +74,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SUR_P09_PRODUCT getPRODUCT(int rep) { 
+	public SUR_P09_PRODUCT GetPRODUCT(int rep) { 
 	   return (SUR_P09_PRODUCT)this.GetStructure("PRODUCT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SUR_P09_PRODUCT 
 	 */ 
-	public int PRODUCTReps { 
+	public int PRODUCTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -112,7 +114,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SUR_P09_FACILITY_DETAIL (a Group object) - creates it if necessary
 	///</summary>
-	public SUR_P09_FACILITY_DETAIL getFACILITY_DETAIL() {
+	public SUR_P09_FACILITY_DETAIL GetFACILITY_DETAIL() {
 	   SUR_P09_FACILITY_DETAIL ret = null;
 	   try {
 	      ret = (SUR_P09_FACILITY_DETAIL)this.GetStructure("FACILITY_DETAIL");
@@ -129,14 +131,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SUR_P09_FACILITY_DETAIL getFACILITY_DETAIL(int rep) { 
+	public SUR_P09_FACILITY_DETAIL GetFACILITY_DETAIL(int rep) { 
 	   return (SUR_P09_FACILITY_DETAIL)this.GetStructure("FACILITY_DETAIL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SUR_P09_FACILITY_DETAIL 
 	 */ 
-	public int FACILITY_DETAILReps { 
+	public int FACILITY_DETAILRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,11 +9,12 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 NTE message segment. 
-/// This segment has the following fields:
-/// * NTE-1: Set ID - NTE (SI)
-/// * NTE-2: Source of Comment (ID)
-/// * NTE-3: Comment (FT)
-/// * NTE-4: Comment Type (CE)
+/// This segment has the following fields:<ol>
+///<li>NTE-1: Set ID - NTE (SI)</li>
+///<li>NTE-2: Source of Comment (ID)</li>
+///<li>NTE-3: Comment (FT)</li>
+///<li>NTE-4: Comment Type (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -90,7 +91,7 @@ public class NTE : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public FT getComment(int rep)
+	public FT GetComment(int rep)
 	{
 			FT ret = null;
 			try
@@ -107,7 +108,7 @@ public class NTE : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Comment (NTE-3).
    ///</summary>
-  public FT[] getComment() {
+  public FT[] GetComment() {
      FT[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -125,6 +126,24 @@ public class NTE : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Comment (NTE-3).
+   ///</summary>
+  public int CommentRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Comment Type(NTE-4).
 	///</summary>

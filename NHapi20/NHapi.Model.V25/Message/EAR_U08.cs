@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a EAR_U08 message structure (see chapter 13.3.8). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EQU (Equipment Detail) 
-/// * 3: EAR_U08_COMMAND_RESPONSE (a Group object) repeating
-/// * 4: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EQU (Equipment Detail) </li>
+///<li>3: EAR_U08_COMMAND_RESPONSE (a Group object) repeating</li>
+///<li>4: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EAR_U08 : AbstractMessage  {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -126,7 +128,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of EAR_U08_COMMAND_RESPONSE (a Group object) - creates it if necessary
 	///</summary>
-	public EAR_U08_COMMAND_RESPONSE getCOMMAND_RESPONSE() {
+	public EAR_U08_COMMAND_RESPONSE GetCOMMAND_RESPONSE() {
 	   EAR_U08_COMMAND_RESPONSE ret = null;
 	   try {
 	      ret = (EAR_U08_COMMAND_RESPONSE)this.GetStructure("COMMAND_RESPONSE");
@@ -143,14 +145,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public EAR_U08_COMMAND_RESPONSE getCOMMAND_RESPONSE(int rep) { 
+	public EAR_U08_COMMAND_RESPONSE GetCOMMAND_RESPONSE(int rep) { 
 	   return (EAR_U08_COMMAND_RESPONSE)this.GetStructure("COMMAND_RESPONSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of EAR_U08_COMMAND_RESPONSE 
 	 */ 
-	public int COMMAND_RESPONSEReps { 
+	public int COMMAND_RESPONSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

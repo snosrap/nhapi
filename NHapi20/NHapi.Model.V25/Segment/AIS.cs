@@ -9,19 +9,20 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 AIS message segment. 
-/// This segment has the following fields:
-/// * AIS-1: Set ID - AIS (SI)
-/// * AIS-2: Segment Action Code (ID)
-/// * AIS-3: Universal Service Identifier (CE)
-/// * AIS-4: Start Date/Time (TS)
-/// * AIS-5: Start Date/Time Offset (NM)
-/// * AIS-6: Start Date/Time Offset Units (CE)
-/// * AIS-7: Duration (NM)
-/// * AIS-8: Duration Units (CE)
-/// * AIS-9: Allow Substitution Code (IS)
-/// * AIS-10: Filler Status Code (CE)
-/// * AIS-11: Placer Supplemental Service Information (CE)
-/// * AIS-12: Filler Supplemental Service Information (CE)
+/// This segment has the following fields:<ol>
+///<li>AIS-1: Set ID - AIS (SI)</li>
+///<li>AIS-2: Segment Action Code (ID)</li>
+///<li>AIS-3: Universal Service Identifier (CE)</li>
+///<li>AIS-4: Start Date/Time (TS)</li>
+///<li>AIS-5: Start Date/Time Offset (NM)</li>
+///<li>AIS-6: Start Date/Time Offset Units (CE)</li>
+///<li>AIS-7: Duration (NM)</li>
+///<li>AIS-8: Duration Units (CE)</li>
+///<li>AIS-9: Allow Substitution Code (IS)</li>
+///<li>AIS-10: Filler Status Code (CE)</li>
+///<li>AIS-11: Placer Supplemental Service Information (CE)</li>
+///<li>AIS-12: Filler Supplemental Service Information (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -290,7 +291,7 @@ public class AIS : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getPlacerSupplementalServiceInformation(int rep)
+	public CE GetPlacerSupplementalServiceInformation(int rep)
 	{
 			CE ret = null;
 			try
@@ -307,7 +308,7 @@ public class AIS : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Supplemental Service Information (AIS-11).
    ///</summary>
-  public CE[] getPlacerSupplementalServiceInformation() {
+  public CE[] GetPlacerSupplementalServiceInformation() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -325,12 +326,30 @@ public class AIS : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Supplemental Service Information (AIS-11).
+   ///</summary>
+  public int PlacerSupplementalServiceInformationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Filler Supplemental Service Information(AIS-12).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getFillerSupplementalServiceInformation(int rep)
+	public CE GetFillerSupplementalServiceInformation(int rep)
 	{
 			CE ret = null;
 			try
@@ -347,7 +366,7 @@ public class AIS : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Filler Supplemental Service Information (AIS-12).
    ///</summary>
-  public CE[] getFillerSupplementalServiceInformation() {
+  public CE[] GetFillerSupplementalServiceInformation() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -365,5 +384,23 @@ public class AIS : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Filler Supplemental Service Information (AIS-12).
+   ///</summary>
+  public int FillerSupplementalServiceInformationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

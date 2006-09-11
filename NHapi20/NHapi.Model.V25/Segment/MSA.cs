@@ -9,13 +9,14 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 MSA message segment. 
-/// This segment has the following fields:
-/// * MSA-1: Acknowledgment Code (ID)
-/// * MSA-2: Message Control ID (ST)
-/// * MSA-3: Text Message (ST)
-/// * MSA-4: Expected Sequence Number (NM)
-/// * MSA-5: Delayed Acknowledgment Type (ID)
-/// * MSA-6: Error Condition (CE)
+/// This segment has the following fields:<ol>
+///<li>MSA-1: Acknowledgment Code (ID)</li>
+///<li>MSA-2: Message Control ID (ST)</li>
+///<li>MSA-3: Text Message (ST)</li>
+///<li>MSA-4: Expected Sequence Number (NM)</li>
+///<li>MSA-5: Delayed Acknowledgment Type (ID)</li>
+///<li>MSA-6: Error Condition (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

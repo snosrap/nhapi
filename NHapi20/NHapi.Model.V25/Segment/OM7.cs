@@ -9,31 +9,32 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 OM7 message segment. 
-/// This segment has the following fields:
-/// * OM7-1: Sequence Number - Test/Observation Master File (NM)
-/// * OM7-2: Universal Service Identifier (CE)
-/// * OM7-3: Category Identifier (CE)
-/// * OM7-4: Category Description (TX)
-/// * OM7-5: Category Synonym (ST)
-/// * OM7-6: Effective Test/Service Start Date/Time (TS)
-/// * OM7-7: Effective Test/Service End Date/Time (TS)
-/// * OM7-8: Test/Service Default Duration Quantity (NM)
-/// * OM7-9: Test/Service Default Duration Units (CE)
-/// * OM7-10: Test/Service Default Frequency (IS)
-/// * OM7-11: Consent Indicator (ID)
-/// * OM7-12: Consent Identifier (CE)
-/// * OM7-13: Consent Effective Start Date/Time (TS)
-/// * OM7-14: Consent Effective End Date/Time (TS)
-/// * OM7-15: Consent Interval Quantity (NM)
-/// * OM7-16: Consent Interval Units (CE)
-/// * OM7-17: Consent Waiting Period Quantity (NM)
-/// * OM7-18: Consent Waiting Period Units (CE)
-/// * OM7-19: Effective Date/Time of Change (TS)
-/// * OM7-20: Entered By (XCN)
-/// * OM7-21: Orderable-at Location (PL)
-/// * OM7-22: Formulary Status (IS)
-/// * OM7-23: Special Order Indicator (ID)
-/// * OM7-24: Primary Key Value - CDM (CE)
+/// This segment has the following fields:<ol>
+///<li>OM7-1: Sequence Number - Test/Observation Master File (NM)</li>
+///<li>OM7-2: Universal Service Identifier (CE)</li>
+///<li>OM7-3: Category Identifier (CE)</li>
+///<li>OM7-4: Category Description (TX)</li>
+///<li>OM7-5: Category Synonym (ST)</li>
+///<li>OM7-6: Effective Test/Service Start Date/Time (TS)</li>
+///<li>OM7-7: Effective Test/Service End Date/Time (TS)</li>
+///<li>OM7-8: Test/Service Default Duration Quantity (NM)</li>
+///<li>OM7-9: Test/Service Default Duration Units (CE)</li>
+///<li>OM7-10: Test/Service Default Frequency (IS)</li>
+///<li>OM7-11: Consent Indicator (ID)</li>
+///<li>OM7-12: Consent Identifier (CE)</li>
+///<li>OM7-13: Consent Effective Start Date/Time (TS)</li>
+///<li>OM7-14: Consent Effective End Date/Time (TS)</li>
+///<li>OM7-15: Consent Interval Quantity (NM)</li>
+///<li>OM7-16: Consent Interval Units (CE)</li>
+///<li>OM7-17: Consent Waiting Period Quantity (NM)</li>
+///<li>OM7-18: Consent Waiting Period Units (CE)</li>
+///<li>OM7-19: Effective Date/Time of Change (TS)</li>
+///<li>OM7-20: Entered By (XCN)</li>
+///<li>OM7-21: Orderable-at Location (PL)</li>
+///<li>OM7-22: Formulary Status (IS)</li>
+///<li>OM7-23: Special Order Indicator (ID)</li>
+///<li>OM7-24: Primary Key Value - CDM (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -130,7 +131,7 @@ public class OM7 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getCategoryIdentifier(int rep)
+	public CE GetCategoryIdentifier(int rep)
 	{
 			CE ret = null;
 			try
@@ -147,7 +148,7 @@ public class OM7 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Category Identifier (OM7-3).
    ///</summary>
-  public CE[] getCategoryIdentifier() {
+  public CE[] GetCategoryIdentifier() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -165,6 +166,24 @@ public class OM7 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Category Identifier (OM7-3).
+   ///</summary>
+  public int CategoryIdentifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Category Description(OM7-4).
 	///</summary>
@@ -193,7 +212,7 @@ public class OM7 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getCategorySynonym(int rep)
+	public ST GetCategorySynonym(int rep)
 	{
 			ST ret = null;
 			try
@@ -210,7 +229,7 @@ public class OM7 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Category Synonym (OM7-5).
    ///</summary>
-  public ST[] getCategorySynonym() {
+  public ST[] GetCategorySynonym() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -228,6 +247,24 @@ public class OM7 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Category Synonym (OM7-5).
+   ///</summary>
+  public int CategorySynonymRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Effective Test/Service Start Date/Time(OM7-6).
 	///</summary>
@@ -578,7 +615,7 @@ public class OM7 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PL getOrderableAtLocation(int rep)
+	public PL GetOrderableAtLocation(int rep)
 	{
 			PL ret = null;
 			try
@@ -595,7 +632,7 @@ public class OM7 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Orderable-at Location (OM7-21).
    ///</summary>
-  public PL[] getOrderableAtLocation() {
+  public PL[] GetOrderableAtLocation() {
      PL[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -613,6 +650,24 @@ public class OM7 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Orderable-at Location (OM7-21).
+   ///</summary>
+  public int OrderableAtLocationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Formulary Status(OM7-22).
 	///</summary>
@@ -664,7 +719,7 @@ public class OM7 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getPrimaryKeyValueCDM(int rep)
+	public CE GetPrimaryKeyValueCDM(int rep)
 	{
 			CE ret = null;
 			try
@@ -681,7 +736,7 @@ public class OM7 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Primary Key Value - CDM (OM7-24).
    ///</summary>
-  public CE[] getPrimaryKeyValueCDM() {
+  public CE[] GetPrimaryKeyValueCDM() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -699,5 +754,23 @@ public class OM7 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Primary Key Value - CDM (OM7-24).
+   ///</summary>
+  public int PrimaryKeyValueCDMRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

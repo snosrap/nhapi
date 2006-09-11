@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a OMI_O23 message structure (see chapter 4.4.12). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: OMI_O23_PATIENT (a Group object) optional 
-/// * 4: OMI_O23_ORDER (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: OMI_O23_PATIENT (a Group object) optional </li>
+///<li>4: OMI_O23_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMI_O23 : AbstractMessage  {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -110,7 +112,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -127,14 +129,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -167,7 +169,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OMI_O23_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public OMI_O23_ORDER getORDER() {
+	public OMI_O23_ORDER GetORDER() {
 	   OMI_O23_ORDER ret = null;
 	   try {
 	      ret = (OMI_O23_ORDER)this.GetStructure("ORDER");
@@ -184,14 +186,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OMI_O23_ORDER getORDER(int rep) { 
+	public OMI_O23_ORDER GetORDER(int rep) { 
 	   return (OMI_O23_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OMI_O23_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,14 +12,16 @@ namespace NHapi.Model.V25.Group
 ///Represents the RSP_Z82_COMMON_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RSP_Z82_TIMING (a Group object) 
-/// * 2: RSP_Z82_ORDER_DETAIL (a Group object) optional 
-/// * 3: RSP_Z82_ENCODED_ORDER (a Group object) optional 
-/// * 4: RXD (Pharmacy/Treatment Dispense) 
-/// * 5: RXR (Pharmacy/Treatment Route) repeating
-/// * 6: RXC (Pharmacy/Treatment Component Order) optional repeating
-/// * 7: RSP_Z82_OBSERVATION (a Group object) repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RSP_Z82_TIMING (a Group object) </li>
+///<li>2: RSP_Z82_ORDER_DETAIL (a Group object) optional </li>
+///<li>3: RSP_Z82_ENCODED_ORDER (a Group object) optional </li>
+///<li>4: RXD (Pharmacy/Treatment Dispense) </li>
+///<li>5: RXR (Pharmacy/Treatment Route) repeating</li>
+///<li>6: RXC (Pharmacy/Treatment Component Order) optional repeating</li>
+///<li>7: RSP_Z82_OBSERVATION (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Z82_COMMON_ORDER : AbstractGroup {
@@ -125,7 +127,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXR (Pharmacy/Treatment Route) - creates it if necessary
 	///</summary>
-	public RXR getRXR() {
+	public RXR GetRXR() {
 	   RXR ret = null;
 	   try {
 	      ret = (RXR)this.GetStructure("RXR");
@@ -142,14 +144,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXR getRXR(int rep) { 
+	public RXR GetRXR(int rep) { 
 	   return (RXR)this.GetStructure("RXR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXR 
 	 */ 
-	public int RXRReps { 
+	public int RXRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -166,7 +168,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXC (Pharmacy/Treatment Component Order) - creates it if necessary
 	///</summary>
-	public RXC getRXC() {
+	public RXC GetRXC() {
 	   RXC ret = null;
 	   try {
 	      ret = (RXC)this.GetStructure("RXC");
@@ -183,14 +185,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXC getRXC(int rep) { 
+	public RXC GetRXC(int rep) { 
 	   return (RXC)this.GetStructure("RXC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXC 
 	 */ 
-	public int RXCReps { 
+	public int RXCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -207,7 +209,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RSP_Z82_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_Z82_OBSERVATION getOBSERVATION() {
+	public RSP_Z82_OBSERVATION GetOBSERVATION() {
 	   RSP_Z82_OBSERVATION ret = null;
 	   try {
 	      ret = (RSP_Z82_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -224,14 +226,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RSP_Z82_OBSERVATION getOBSERVATION(int rep) { 
+	public RSP_Z82_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (RSP_Z82_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RSP_Z82_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the SQM_S25_REQUEST Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ARQ (Appointment Request) 
-/// * 1: APR (Appointment Preferences) optional 
-/// * 2: PID (Patient Identification) optional 
-/// * 3: SQM_S25_RESOURCES (a Group object) repeating
+///<ol>
+///<li>0: ARQ (Appointment Request) </li>
+///<li>1: APR (Appointment Preferences) optional </li>
+///<li>2: PID (Patient Identification) optional </li>
+///<li>3: SQM_S25_RESOURCES (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SQM_S25_REQUEST : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SQM_S25_RESOURCES (a Group object) - creates it if necessary
 	///</summary>
-	public SQM_S25_RESOURCES getRESOURCES() {
+	public SQM_S25_RESOURCES GetRESOURCES() {
 	   SQM_S25_RESOURCES ret = null;
 	   try {
 	      ret = (SQM_S25_RESOURCES)this.GetStructure("RESOURCES");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SQM_S25_RESOURCES getRESOURCES(int rep) { 
+	public SQM_S25_RESOURCES GetRESOURCES(int rep) { 
 	   return (SQM_S25_RESOURCES)this.GetStructure("RESOURCES", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SQM_S25_RESOURCES 
 	 */ 
-	public int RESOURCESReps { 
+	public int RESOURCESRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

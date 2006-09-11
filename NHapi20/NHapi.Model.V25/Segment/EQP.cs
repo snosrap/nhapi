@@ -9,12 +9,13 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 EQP message segment. 
-/// This segment has the following fields:
-/// * EQP-1: Event type (CE)
-/// * EQP-2: File Name (ST)
-/// * EQP-3: Start Date/Time (TS)
-/// * EQP-4: End Date/Time (TS)
-/// * EQP-5: Transaction Data (FT)
+/// This segment has the following fields:<ol>
+///<li>EQP-1: Event type (CE)</li>
+///<li>EQP-2: File Name (ST)</li>
+///<li>EQP-3: Start Date/Time (TS)</li>
+///<li>EQP-4: End Date/Time (TS)</li>
+///<li>EQP-5: Transaction Data (FT)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

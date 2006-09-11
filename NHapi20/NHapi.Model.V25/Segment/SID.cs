@@ -9,11 +9,12 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 SID message segment. 
-/// This segment has the following fields:
-/// * SID-1: Application / Method Identifier (CE)
-/// * SID-2: Substance Lot Number (ST)
-/// * SID-3: Substance Container Identifier (ST)
-/// * SID-4: Substance Manufacturer Identifier (CE)
+/// This segment has the following fields:<ol>
+///<li>SID-1: Application / Method Identifier (CE)</li>
+///<li>SID-2: Substance Lot Number (ST)</li>
+///<li>SID-3: Substance Container Identifier (ST)</li>
+///<li>SID-4: Substance Manufacturer Identifier (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

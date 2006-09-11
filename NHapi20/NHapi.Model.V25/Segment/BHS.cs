@@ -9,19 +9,20 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 BHS message segment. 
-/// This segment has the following fields:
-/// * BHS-1: Batch Field Separator (ST)
-/// * BHS-2: Batch Encoding Characters (ST)
-/// * BHS-3: Batch Sending Application (HD)
-/// * BHS-4: Batch Sending Facility (HD)
-/// * BHS-5: Batch Receiving Application (HD)
-/// * BHS-6: Batch Receiving Facility (HD)
-/// * BHS-7: Batch Creation Date/Time (TS)
-/// * BHS-8: Batch Security (ST)
-/// * BHS-9: Batch Name/ID/Type (ST)
-/// * BHS-10: Batch Comment (ST)
-/// * BHS-11: Batch Control ID (ST)
-/// * BHS-12: Reference Batch Control ID (ST)
+/// This segment has the following fields:<ol>
+///<li>BHS-1: Batch Field Separator (ST)</li>
+///<li>BHS-2: Batch Encoding Characters (ST)</li>
+///<li>BHS-3: Batch Sending Application (HD)</li>
+///<li>BHS-4: Batch Sending Facility (HD)</li>
+///<li>BHS-5: Batch Receiving Application (HD)</li>
+///<li>BHS-6: Batch Receiving Facility (HD)</li>
+///<li>BHS-7: Batch Creation Date/Time (TS)</li>
+///<li>BHS-8: Batch Security (ST)</li>
+///<li>BHS-9: Batch Name/ID/Type (ST)</li>
+///<li>BHS-10: Batch Comment (ST)</li>
+///<li>BHS-11: Batch Control ID (ST)</li>
+///<li>BHS-12: Reference Batch Control ID (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

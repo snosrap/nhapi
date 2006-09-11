@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the SQM_S25_SERVICE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: AIS (Appointment Information) 
-/// * 1: APR (Appointment Preferences) optional 
+///<ol>
+///<li>0: AIS (Appointment Information) </li>
+///<li>1: APR (Appointment Preferences) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SQM_S25_SERVICE : AbstractGroup {

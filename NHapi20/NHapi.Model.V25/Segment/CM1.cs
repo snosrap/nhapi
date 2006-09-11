@@ -9,10 +9,11 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 CM1 message segment. 
-/// This segment has the following fields:
-/// * CM1-1: Set ID - CM1 (SI)
-/// * CM1-2: Study Phase Identifier (CE)
-/// * CM1-3: Description of Study Phase (ST)
+/// This segment has the following fields:<ol>
+///<li>CM1-1: Set ID - CM1 (SI)</li>
+///<li>CM1-2: Study Phase Identifier (CE)</li>
+///<li>CM1-3: Description of Study Phase (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

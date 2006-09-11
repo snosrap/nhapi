@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the MFN_M10_MF_TEST_BATT_DETAIL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OM5 (Observation Batteries (Sets)) 
-/// * 1: OM4 (Observations that Require Specimens) optional repeating
+///<ol>
+///<li>0: OM5 (Observation Batteries (Sets)) </li>
+///<li>1: OM4 (Observations that Require Specimens) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M10_MF_TEST_BATT_DETAIL : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OM4 (Observations that Require Specimens) - creates it if necessary
 	///</summary>
-	public OM4 getOM4() {
+	public OM4 GetOM4() {
 	   OM4 ret = null;
 	   try {
 	      ret = (OM4)this.GetStructure("OM4");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OM4 getOM4(int rep) { 
+	public OM4 GetOM4(int rep) { 
 	   return (OM4)this.GetStructure("OM4", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OM4 
 	 */ 
-	public int OM4Reps { 
+	public int OM4RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

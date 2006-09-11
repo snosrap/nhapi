@@ -9,21 +9,22 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 BPO message segment. 
-/// This segment has the following fields:
-/// * BPO-1: Set ID _ BPO (SI)
-/// * BPO-2: BP Universal Service ID (CWE)
-/// * BPO-3: BP  Processing Requirements (CWE)
-/// * BPO-4: BP Quantity (NM)
-/// * BPO-5: BP Amount (NM)
-/// * BPO-6: BP Units (CE)
-/// * BPO-7: BP Intended Use Date/Time (TS)
-/// * BPO-8: BP Intended Dispense From Location (PL)
-/// * BPO-9: BP Intended Dispense From Address (XAD)
-/// * BPO-10: BP Requested Dispense Date/Time (TS)
-/// * BPO-11: BP Requested Dispense To Location (PL)
-/// * BPO-12: BP Requested Dispense To Address (XAD)
-/// * BPO-13: BP Indication for Use (CWE)
-/// * BPO-14: BP Informed Consent Indicator (ID)
+/// This segment has the following fields:<ol>
+///<li>BPO-1: Set ID _ BPO (SI)</li>
+///<li>BPO-2: BP Universal Service ID (CWE)</li>
+///<li>BPO-3: BP  Processing Requirements (CWE)</li>
+///<li>BPO-4: BP Quantity (NM)</li>
+///<li>BPO-5: BP Amount (NM)</li>
+///<li>BPO-6: BP Units (CE)</li>
+///<li>BPO-7: BP Intended Use Date/Time (TS)</li>
+///<li>BPO-8: BP Intended Dispense From Location (PL)</li>
+///<li>BPO-9: BP Intended Dispense From Address (XAD)</li>
+///<li>BPO-10: BP Requested Dispense Date/Time (TS)</li>
+///<li>BPO-11: BP Requested Dispense To Location (PL)</li>
+///<li>BPO-12: BP Requested Dispense To Address (XAD)</li>
+///<li>BPO-13: BP Indication for Use (CWE)</li>
+///<li>BPO-14: BP Informed Consent Indicator (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -110,7 +111,7 @@ public class BPO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getBPProcessingRequirements(int rep)
+	public CWE GetBPProcessingRequirements(int rep)
 	{
 			CWE ret = null;
 			try
@@ -127,7 +128,7 @@ public class BPO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of BP  Processing Requirements (BPO-3).
    ///</summary>
-  public CWE[] getBPProcessingRequirements() {
+  public CWE[] GetBPProcessingRequirements() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -145,6 +146,24 @@ public class BPO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of BP  Processing Requirements (BPO-3).
+   ///</summary>
+  public int BPProcessingRequirementsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns BP Quantity(BPO-4).
 	///</summary>
@@ -357,7 +376,7 @@ public class BPO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getBPIndicationForUse(int rep)
+	public CWE GetBPIndicationForUse(int rep)
 	{
 			CWE ret = null;
 			try
@@ -374,7 +393,7 @@ public class BPO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of BP Indication for Use (BPO-13).
    ///</summary>
-  public CWE[] getBPIndicationForUse() {
+  public CWE[] GetBPIndicationForUse() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -392,6 +411,24 @@ public class BPO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of BP Indication for Use (BPO-13).
+   ///</summary>
+  public int BPIndicationForUseRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns BP Informed Consent Indicator(BPO-14).
 	///</summary>

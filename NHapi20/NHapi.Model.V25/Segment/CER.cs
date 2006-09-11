@@ -9,38 +9,39 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 CER message segment. 
-/// This segment has the following fields:
-/// * CER-1: Set ID _ CER (SI)
-/// * CER-2: Serial Number (ST)
-/// * CER-3: Version (ST)
-/// * CER-4: Granting Authority (XON)
-/// * CER-5: Issuing Authority (XCN)
-/// * CER-6: Signature of Issuing Authority (ED)
-/// * CER-7: Granting Country (ID)
-/// * CER-8: Granting State/Province (CWE)
-/// * CER-9: Granting County/Parish (CWE)
-/// * CER-10: Certificate Type (CWE)
-/// * CER-11: Certificate Domain (CWE)
-/// * CER-12: Subject ID (ID)
-/// * CER-13: Subject Name (ST)
-/// * CER-14: Subject Directory Attribute Extension (Health Professional Data) (CWE)
-/// * CER-15: Subject Public Key Info (CWE)
-/// * CER-16: Authority Key Identifier (CWE)
-/// * CER-17: Basic Constraint (ID)
-/// * CER-18: CRL Distribution Point (CWE)
-/// * CER-19: Jurisdiction Country (ID)
-/// * CER-20: Jurisdiction State/Province (CWE)
-/// * CER-21: Jurisdiction County/Parish (CWE)
-/// * CER-22: Jurisdiction Breadth (CWE)
-/// * CER-23: Granting Date (TS)
-/// * CER-24: Issuing Date (TS)
-/// * CER-25: Activation Date (TS)
-/// * CER-26: Inactivation Date (TS)
-/// * CER-27: Expiration Date (TS)
-/// * CER-28: Renewal Date (TS)
-/// * CER-29: Revocation Date (TS)
-/// * CER-30: Revocation Reason Code (CE)
-/// * CER-31: Certificate Status (CWE)
+/// This segment has the following fields:<ol>
+///<li>CER-1: Set ID _ CER (SI)</li>
+///<li>CER-2: Serial Number (ST)</li>
+///<li>CER-3: Version (ST)</li>
+///<li>CER-4: Granting Authority (XON)</li>
+///<li>CER-5: Issuing Authority (XCN)</li>
+///<li>CER-6: Signature of Issuing Authority (ED)</li>
+///<li>CER-7: Granting Country (ID)</li>
+///<li>CER-8: Granting State/Province (CWE)</li>
+///<li>CER-9: Granting County/Parish (CWE)</li>
+///<li>CER-10: Certificate Type (CWE)</li>
+///<li>CER-11: Certificate Domain (CWE)</li>
+///<li>CER-12: Subject ID (ID)</li>
+///<li>CER-13: Subject Name (ST)</li>
+///<li>CER-14: Subject Directory Attribute Extension (Health Professional Data) (CWE)</li>
+///<li>CER-15: Subject Public Key Info (CWE)</li>
+///<li>CER-16: Authority Key Identifier (CWE)</li>
+///<li>CER-17: Basic Constraint (ID)</li>
+///<li>CER-18: CRL Distribution Point (CWE)</li>
+///<li>CER-19: Jurisdiction Country (ID)</li>
+///<li>CER-20: Jurisdiction State/Province (CWE)</li>
+///<li>CER-21: Jurisdiction County/Parish (CWE)</li>
+///<li>CER-22: Jurisdiction Breadth (CWE)</li>
+///<li>CER-23: Granting Date (TS)</li>
+///<li>CER-24: Issuing Date (TS)</li>
+///<li>CER-25: Activation Date (TS)</li>
+///<li>CER-26: Inactivation Date (TS)</li>
+///<li>CER-27: Expiration Date (TS)</li>
+///<li>CER-28: Renewal Date (TS)</li>
+///<li>CER-29: Revocation Date (TS)</li>
+///<li>CER-30: Revocation Reason Code (CE)</li>
+///<li>CER-31: Certificate Status (CWE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -397,7 +398,7 @@ public class CER : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getSubjectDirectoryAttributeExtensionHealthProfessionalData(int rep)
+	public CWE GetSubjectDirectoryAttributeExtensionHealthProfessionalData(int rep)
 	{
 			CWE ret = null;
 			try
@@ -414,7 +415,7 @@ public class CER : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Subject Directory Attribute Extension (Health Professional Data) (CER-14).
    ///</summary>
-  public CWE[] getSubjectDirectoryAttributeExtensionHealthProfessionalData() {
+  public CWE[] GetSubjectDirectoryAttributeExtensionHealthProfessionalData() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -432,6 +433,24 @@ public class CER : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Subject Directory Attribute Extension (Health Professional Data) (CER-14).
+   ///</summary>
+  public int SubjectDirectoryAttributeExtensionHealthProfessionalDataRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Subject Public Key Info(CER-15).
 	///</summary>
@@ -506,7 +525,7 @@ public class CER : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getCRLDistributionPoint(int rep)
+	public CWE GetCRLDistributionPoint(int rep)
 	{
 			CWE ret = null;
 			try
@@ -523,7 +542,7 @@ public class CER : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of CRL Distribution Point (CER-18).
    ///</summary>
-  public CWE[] getCRLDistributionPoint() {
+  public CWE[] GetCRLDistributionPoint() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -541,6 +560,24 @@ public class CER : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of CRL Distribution Point (CER-18).
+   ///</summary>
+  public int CRLDistributionPointRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Jurisdiction Country(CER-19).
 	///</summary>
@@ -615,7 +652,7 @@ public class CER : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getJurisdictionBreadth(int rep)
+	public CWE GetJurisdictionBreadth(int rep)
 	{
 			CWE ret = null;
 			try
@@ -632,7 +669,7 @@ public class CER : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Jurisdiction Breadth (CER-22).
    ///</summary>
-  public CWE[] getJurisdictionBreadth() {
+  public CWE[] GetJurisdictionBreadth() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(22);  
@@ -650,6 +687,24 @@ public class CER : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Jurisdiction Breadth (CER-22).
+   ///</summary>
+  public int JurisdictionBreadthRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(22);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Granting Date(CER-23).
 	///</summary>

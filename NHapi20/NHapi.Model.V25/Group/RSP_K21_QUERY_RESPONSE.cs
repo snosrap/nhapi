@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the RSP_K21_QUERY_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PD1 (Patient Additional Demographic) optional 
-/// * 2: NK1 (Next of Kin / Associated Parties) optional repeating
-/// * 3: QRI (Query Response Instance) 
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PD1 (Patient Additional Demographic) optional </li>
+///<li>2: NK1 (Next of Kin / Associated Parties) optional repeating</li>
+///<li>3: QRI (Query Response Instance) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_K21_QUERY_RESPONSE : AbstractGroup {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (Next of Kin / Associated Parties) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,26 +9,27 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 BTX message segment. 
-/// This segment has the following fields:
-/// * BTX-1: Set ID _ BTX (SI)
-/// * BTX-2: BC Donation ID (EI)
-/// * BTX-3: BC Component (CNE)
-/// * BTX-4: BC Blood Group (CNE)
-/// * BTX-5: CP Commercial Product (CWE)
-/// * BTX-6: CP Manufacturer (XON)
-/// * BTX-7: CP Lot Number (EI)
-/// * BTX-8: BP Quantity (NM)
-/// * BTX-9: BP Amount (NM)
-/// * BTX-10: BP Units (CE)
-/// * BTX-11: BP Transfusion/Disposition Status (CWE)
-/// * BTX-12: BP Message Status (ID)
-/// * BTX-13: BP Date/Time of Status (TS)
-/// * BTX-14: BP Administrator (XCN)
-/// * BTX-15: BP Verifier (XCN)
-/// * BTX-16: BP Transfusion Start Date/Time of Status (TS)
-/// * BTX-17: BP Transfusion End Date/Time of Status (TS)
-/// * BTX-18: BP Adverse Reaction Type (CWE)
-/// * BTX-19: BP Transfusion Interrupted Reason (CWE)
+/// This segment has the following fields:<ol>
+///<li>BTX-1: Set ID _ BTX (SI)</li>
+///<li>BTX-2: BC Donation ID (EI)</li>
+///<li>BTX-3: BC Component (CNE)</li>
+///<li>BTX-4: BC Blood Group (CNE)</li>
+///<li>BTX-5: CP Commercial Product (CWE)</li>
+///<li>BTX-6: CP Manufacturer (XON)</li>
+///<li>BTX-7: CP Lot Number (EI)</li>
+///<li>BTX-8: BP Quantity (NM)</li>
+///<li>BTX-9: BP Amount (NM)</li>
+///<li>BTX-10: BP Units (CE)</li>
+///<li>BTX-11: BP Transfusion/Disposition Status (CWE)</li>
+///<li>BTX-12: BP Message Status (ID)</li>
+///<li>BTX-13: BP Date/Time of Status (TS)</li>
+///<li>BTX-14: BP Administrator (XCN)</li>
+///<li>BTX-15: BP Verifier (XCN)</li>
+///<li>BTX-16: BP Transfusion Start Date/Time of Status (TS)</li>
+///<li>BTX-17: BP Transfusion End Date/Time of Status (TS)</li>
+///<li>BTX-18: BP Adverse Reaction Type (CWE)</li>
+///<li>BTX-19: BP Transfusion Interrupted Reason (CWE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -465,7 +466,7 @@ public class BTX : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getBPAdverseReactionType(int rep)
+	public CWE GetBPAdverseReactionType(int rep)
 	{
 			CWE ret = null;
 			try
@@ -482,7 +483,7 @@ public class BTX : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of BP Adverse Reaction Type (BTX-18).
    ///</summary>
-  public CWE[] getBPAdverseReactionType() {
+  public CWE[] GetBPAdverseReactionType() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -500,6 +501,24 @@ public class BTX : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of BP Adverse Reaction Type (BTX-18).
+   ///</summary>
+  public int BPAdverseReactionTypeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns BP Transfusion Interrupted Reason(BTX-19).
 	///</summary>

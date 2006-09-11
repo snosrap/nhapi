@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the RSP_K31_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RSP_K31_PATIENT (a Group object) optional 
-/// * 1: RSP_K31_ORDER (a Group object) repeating
+///<ol>
+///<li>0: RSP_K31_PATIENT (a Group object) optional </li>
+///<li>1: RSP_K31_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_K31_RESPONSE : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RSP_K31_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_K31_ORDER getORDER() {
+	public RSP_K31_ORDER GetORDER() {
 	   RSP_K31_ORDER ret = null;
 	   try {
 	      ret = (RSP_K31_ORDER)this.GetStructure("ORDER");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RSP_K31_ORDER getORDER(int rep) { 
+	public RSP_K31_ORDER GetORDER(int rep) { 
 	   return (RSP_K31_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RSP_K31_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

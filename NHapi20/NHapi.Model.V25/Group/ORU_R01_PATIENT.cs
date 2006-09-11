@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORU_R01_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PD1 (Patient Additional Demographic) optional 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: NK1 (Next of Kin / Associated Parties) optional repeating
-/// * 4: ORU_R01_VISIT (a Group object) optional 
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PD1 (Patient Additional Demographic) optional </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: NK1 (Next of Kin / Associated Parties) optional repeating</li>
+///<li>4: ORU_R01_VISIT (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORU_R01_PATIENT : AbstractGroup {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -112,7 +114,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (Next of Kin / Associated Parties) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -129,14 +131,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

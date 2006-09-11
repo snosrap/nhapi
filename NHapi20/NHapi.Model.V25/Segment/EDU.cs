@@ -9,16 +9,17 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 EDU message segment. 
-/// This segment has the following fields:
-/// * EDU-1: Set ID _ EDU (SI)
-/// * EDU-2: Academic Degree (IS)
-/// * EDU-3: Academic Degree Program Date Range (DR)
-/// * EDU-4: Academic Degree Program Participation Date Range (DR)
-/// * EDU-5: Academic Degree Granted Date (DT)
-/// * EDU-6: School (XON)
-/// * EDU-7: School Type Code (CE)
-/// * EDU-8: School Address (XAD)
-/// * EDU-9: Major Field of Study (CWE)
+/// This segment has the following fields:<ol>
+///<li>EDU-1: Set ID _ EDU (SI)</li>
+///<li>EDU-2: Academic Degree (IS)</li>
+///<li>EDU-3: Academic Degree Program Date Range (DR)</li>
+///<li>EDU-4: Academic Degree Program Participation Date Range (DR)</li>
+///<li>EDU-5: Academic Degree Granted Date (DT)</li>
+///<li>EDU-6: School (XON)</li>
+///<li>EDU-7: School Type Code (CE)</li>
+///<li>EDU-8: School Address (XAD)</li>
+///<li>EDU-9: Major Field of Study (CWE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -238,7 +239,7 @@ public class EDU : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getMajorFieldOfStudy(int rep)
+	public CWE GetMajorFieldOfStudy(int rep)
 	{
 			CWE ret = null;
 			try
@@ -255,7 +256,7 @@ public class EDU : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Major Field of Study (EDU-9).
    ///</summary>
-  public CWE[] getMajorFieldOfStudy() {
+  public CWE[] GetMajorFieldOfStudy() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -273,5 +274,23 @@ public class EDU : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Major Field of Study (EDU-9).
+   ///</summary>
+  public int MajorFieldOfStudyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the PEX_P07_PEX_OBSERVATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PEO (Product Experience Observation) 
-/// * 1: PEX_P07_PEX_CAUSE (a Group object) repeating
+///<ol>
+///<li>0: PEO (Product Experience Observation) </li>
+///<li>1: PEX_P07_PEX_CAUSE (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PEX_P07_PEX_OBSERVATION : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PEX_P07_PEX_CAUSE (a Group object) - creates it if necessary
 	///</summary>
-	public PEX_P07_PEX_CAUSE getPEX_CAUSE() {
+	public PEX_P07_PEX_CAUSE GetPEX_CAUSE() {
 	   PEX_P07_PEX_CAUSE ret = null;
 	   try {
 	      ret = (PEX_P07_PEX_CAUSE)this.GetStructure("PEX_CAUSE");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PEX_P07_PEX_CAUSE getPEX_CAUSE(int rep) { 
+	public PEX_P07_PEX_CAUSE GetPEX_CAUSE(int rep) { 
 	   return (PEX_P07_PEX_CAUSE)this.GetStructure("PEX_CAUSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PEX_P07_PEX_CAUSE 
 	 */ 
-	public int PEX_CAUSEReps { 
+	public int PEX_CAUSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

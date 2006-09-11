@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Group
 ///Represents the VXU_V04_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: VXU_V04_TIMING (a Group object) 
-/// * 2: RXA (Pharmacy/Treatment Administration) 
-/// * 3: RXR (Pharmacy/Treatment Route) optional 
-/// * 4: VXU_V04_OBSERVATION (a Group object) 
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: VXU_V04_TIMING (a Group object) </li>
+///<li>2: RXA (Pharmacy/Treatment Administration) </li>
+///<li>3: RXR (Pharmacy/Treatment Route) optional </li>
+///<li>4: VXU_V04_OBSERVATION (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VXU_V04_ORDER : AbstractGroup {

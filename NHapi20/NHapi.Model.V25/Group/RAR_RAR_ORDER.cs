@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the RAR_RAR_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RAR_RAR_ENCODING (a Group object) optional 
-/// * 2: RXA (Pharmacy/Treatment Administration) repeating
-/// * 3: RXR (Pharmacy/Treatment Route) 
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RAR_RAR_ENCODING (a Group object) optional </li>
+///<li>2: RXA (Pharmacy/Treatment Administration) repeating</li>
+///<li>3: RXR (Pharmacy/Treatment Route) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RAR_RAR_ORDER : AbstractGroup {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXA (Pharmacy/Treatment Administration) - creates it if necessary
 	///</summary>
-	public RXA getRXA() {
+	public RXA GetRXA() {
 	   RXA ret = null;
 	   try {
 	      ret = (RXA)this.GetStructure("RXA");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXA getRXA(int rep) { 
+	public RXA GetRXA(int rep) { 
 	   return (RXA)this.GetStructure("RXA", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXA 
 	 */ 
-	public int RXAReps { 
+	public int RXARepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the OMD_O03_ORDER_DIET Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: OMD_O03_TIMING_DIET (a Group object) 
-/// * 2: OMD_O03_DIET (a Group object) optional 
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: OMD_O03_TIMING_DIET (a Group object) </li>
+///<li>2: OMD_O03_DIET (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMD_O03_ORDER_DIET : AbstractGroup {

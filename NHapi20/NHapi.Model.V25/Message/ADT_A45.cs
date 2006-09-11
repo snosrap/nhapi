@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a ADT_A45 message structure (see chapter 3.3.45). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EVN (Event Type) 
-/// * 3: PID (Patient Identification) 
-/// * 4: PD1 (Patient Additional Demographic) optional 
-/// * 5: ADT_A45_MERGE_INFO (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EVN (Event Type) </li>
+///<li>3: PID (Patient Identification) </li>
+///<li>4: PD1 (Patient Additional Demographic) optional </li>
+///<li>5: ADT_A45_MERGE_INFO (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A45 : AbstractMessage  {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -160,7 +162,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ADT_A45_MERGE_INFO (a Group object) - creates it if necessary
 	///</summary>
-	public ADT_A45_MERGE_INFO getMERGE_INFO() {
+	public ADT_A45_MERGE_INFO GetMERGE_INFO() {
 	   ADT_A45_MERGE_INFO ret = null;
 	   try {
 	      ret = (ADT_A45_MERGE_INFO)this.GetStructure("MERGE_INFO");
@@ -177,14 +179,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ADT_A45_MERGE_INFO getMERGE_INFO(int rep) { 
+	public ADT_A45_MERGE_INFO GetMERGE_INFO(int rep) { 
 	   return (ADT_A45_MERGE_INFO)this.GetStructure("MERGE_INFO", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ADT_A45_MERGE_INFO 
 	 */ 
-	public int MERGE_INFOReps { 
+	public int MERGE_INFORepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

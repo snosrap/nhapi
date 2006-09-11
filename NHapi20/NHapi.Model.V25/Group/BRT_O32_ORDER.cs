@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the BRT_O32_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: BRT_O32_TIMING (a Group object) 
-/// * 2: BPO (Blood product order) optional 
-/// * 3: BTX (Blood Product Transfusion/Disposition) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: BRT_O32_TIMING (a Group object) </li>
+///<li>2: BPO (Blood product order) optional </li>
+///<li>3: BTX (Blood Product Transfusion/Disposition) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BRT_O32_ORDER : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of BTX (Blood Product Transfusion/Disposition) - creates it if necessary
 	///</summary>
-	public BTX getBTX() {
+	public BTX GetBTX() {
 	   BTX ret = null;
 	   try {
 	      ret = (BTX)this.GetStructure("BTX");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public BTX getBTX(int rep) { 
+	public BTX GetBTX(int rep) { 
 	   return (BTX)this.GetStructure("BTX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of BTX 
 	 */ 
-	public int BTXReps { 
+	public int BTXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

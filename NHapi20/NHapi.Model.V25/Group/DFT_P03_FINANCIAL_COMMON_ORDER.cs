@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the DFT_P03_FINANCIAL_COMMON_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) optional 
-/// * 1: DFT_P03_FINANCIAL_TIMING_QUANTITY (a Group object) 
-/// * 2: DFT_P03_FINANCIAL_ORDER (a Group object) optional 
-/// * 3: DFT_P03_FINANCIAL_OBSERVATION (a Group object) 
+///<ol>
+///<li>0: ORC (Common Order) optional </li>
+///<li>1: DFT_P03_FINANCIAL_TIMING_QUANTITY (a Group object) </li>
+///<li>2: DFT_P03_FINANCIAL_ORDER (a Group object) optional </li>
+///<li>3: DFT_P03_FINANCIAL_OBSERVATION (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DFT_P03_FINANCIAL_COMMON_ORDER : AbstractGroup {

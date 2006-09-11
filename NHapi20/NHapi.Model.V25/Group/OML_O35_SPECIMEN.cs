@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the OML_O35_SPECIMEN Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SPM (Specimen) 
-/// * 1: OBX (Observation/Result) optional repeating
-/// * 2: OML_O35_SPECIMEN_CONTAINER (a Group object) repeating
+///<ol>
+///<li>0: SPM (Specimen) </li>
+///<li>1: OBX (Observation/Result) optional repeating</li>
+///<li>2: OML_O35_SPECIMEN_CONTAINER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O35_SPECIMEN : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OML_O35_SPECIMEN_CONTAINER (a Group object) - creates it if necessary
 	///</summary>
-	public OML_O35_SPECIMEN_CONTAINER getSPECIMEN_CONTAINER() {
+	public OML_O35_SPECIMEN_CONTAINER GetSPECIMEN_CONTAINER() {
 	   OML_O35_SPECIMEN_CONTAINER ret = null;
 	   try {
 	      ret = (OML_O35_SPECIMEN_CONTAINER)this.GetStructure("SPECIMEN_CONTAINER");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OML_O35_SPECIMEN_CONTAINER getSPECIMEN_CONTAINER(int rep) { 
+	public OML_O35_SPECIMEN_CONTAINER GetSPECIMEN_CONTAINER(int rep) { 
 	   return (OML_O35_SPECIMEN_CONTAINER)this.GetStructure("SPECIMEN_CONTAINER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OML_O35_SPECIMEN_CONTAINER 
 	 */ 
-	public int SPECIMEN_CONTAINERReps { 
+	public int SPECIMEN_CONTAINERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

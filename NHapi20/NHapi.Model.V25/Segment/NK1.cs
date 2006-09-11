@@ -9,46 +9,47 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 NK1 message segment. 
-/// This segment has the following fields:
-/// * NK1-1: Set ID - NK1 (SI)
-/// * NK1-2: Name (XPN)
-/// * NK1-3: Relationship (CE)
-/// * NK1-4: Address (XAD)
-/// * NK1-5: Phone Number (XTN)
-/// * NK1-6: Business Phone Number (XTN)
-/// * NK1-7: Contact Role (CE)
-/// * NK1-8: Start Date (DT)
-/// * NK1-9: End Date (DT)
-/// * NK1-10: Next of Kin / Associated Parties Job Title (ST)
-/// * NK1-11: Next of Kin / Associated Parties Job Code/Class (JCC)
-/// * NK1-12: Next of Kin / Associated Parties Employee Number (CX)
-/// * NK1-13: Organization Name - NK1 (XON)
-/// * NK1-14: Marital Status (CE)
-/// * NK1-15: Administrative Sex (IS)
-/// * NK1-16: Date/Time of Birth (TS)
-/// * NK1-17: Living Dependency (IS)
-/// * NK1-18: Ambulatory Status (IS)
-/// * NK1-19: Citizenship (CE)
-/// * NK1-20: Primary Language (CE)
-/// * NK1-21: Living Arrangement (IS)
-/// * NK1-22: Publicity Code (CE)
-/// * NK1-23: Protection Indicator (ID)
-/// * NK1-24: Student Indicator (IS)
-/// * NK1-25: Religion (CE)
-/// * NK1-26: Mother's Maiden Name (XPN)
-/// * NK1-27: Nationality (CE)
-/// * NK1-28: Ethnic Group (CE)
-/// * NK1-29: Contact Reason (CE)
-/// * NK1-30: Contact Person's Name (XPN)
-/// * NK1-31: Contact Person's Telephone Number (XTN)
-/// * NK1-32: Contact Person's Address (XAD)
-/// * NK1-33: Next of Kin/Associated Party's Identifiers (CX)
-/// * NK1-34: Job Status (IS)
-/// * NK1-35: Race (CE)
-/// * NK1-36: Handicap (IS)
-/// * NK1-37: Contact Person Social Security Number (ST)
-/// * NK1-38: Next of Kin Birth Place (ST)
-/// * NK1-39: VIP Indicator (IS)
+/// This segment has the following fields:<ol>
+///<li>NK1-1: Set ID - NK1 (SI)</li>
+///<li>NK1-2: Name (XPN)</li>
+///<li>NK1-3: Relationship (CE)</li>
+///<li>NK1-4: Address (XAD)</li>
+///<li>NK1-5: Phone Number (XTN)</li>
+///<li>NK1-6: Business Phone Number (XTN)</li>
+///<li>NK1-7: Contact Role (CE)</li>
+///<li>NK1-8: Start Date (DT)</li>
+///<li>NK1-9: End Date (DT)</li>
+///<li>NK1-10: Next of Kin / Associated Parties Job Title (ST)</li>
+///<li>NK1-11: Next of Kin / Associated Parties Job Code/Class (JCC)</li>
+///<li>NK1-12: Next of Kin / Associated Parties Employee Number (CX)</li>
+///<li>NK1-13: Organization Name - NK1 (XON)</li>
+///<li>NK1-14: Marital Status (CE)</li>
+///<li>NK1-15: Administrative Sex (IS)</li>
+///<li>NK1-16: Date/Time of Birth (TS)</li>
+///<li>NK1-17: Living Dependency (IS)</li>
+///<li>NK1-18: Ambulatory Status (IS)</li>
+///<li>NK1-19: Citizenship (CE)</li>
+///<li>NK1-20: Primary Language (CE)</li>
+///<li>NK1-21: Living Arrangement (IS)</li>
+///<li>NK1-22: Publicity Code (CE)</li>
+///<li>NK1-23: Protection Indicator (ID)</li>
+///<li>NK1-24: Student Indicator (IS)</li>
+///<li>NK1-25: Religion (CE)</li>
+///<li>NK1-26: Mother's Maiden Name (XPN)</li>
+///<li>NK1-27: Nationality (CE)</li>
+///<li>NK1-28: Ethnic Group (CE)</li>
+///<li>NK1-29: Contact Reason (CE)</li>
+///<li>NK1-30: Contact Person's Name (XPN)</li>
+///<li>NK1-31: Contact Person's Telephone Number (XTN)</li>
+///<li>NK1-32: Contact Person's Address (XAD)</li>
+///<li>NK1-33: Next of Kin/Associated Party's Identifiers (CX)</li>
+///<li>NK1-34: Job Status (IS)</li>
+///<li>NK1-35: Race (CE)</li>
+///<li>NK1-36: Handicap (IS)</li>
+///<li>NK1-37: Contact Person Social Security Number (ST)</li>
+///<li>NK1-38: Next of Kin Birth Place (ST)</li>
+///<li>NK1-39: VIP Indicator (IS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -137,7 +138,7 @@ public class NK1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getName(int rep)
+	public XPN GetName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -154,7 +155,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Name (NK1-2).
    ///</summary>
-  public XPN[] getName() {
+  public XPN[] GetName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -172,6 +173,24 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Name (NK1-2).
+   ///</summary>
+  public int NameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Relationship(NK1-3).
 	///</summary>
@@ -200,7 +219,7 @@ public class NK1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getAddress(int rep)
+	public XAD GetAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -217,7 +236,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Address (NK1-4).
    ///</summary>
-  public XAD[] getAddress() {
+  public XAD[] GetAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -235,12 +254,30 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Address (NK1-4).
+   ///</summary>
+  public int AddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Phone Number(NK1-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getPhoneNumber(int rep)
+	public XTN GetPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -257,7 +294,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Phone Number (NK1-5).
    ///</summary>
-  public XTN[] getPhoneNumber() {
+  public XTN[] GetPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -275,12 +312,30 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Phone Number (NK1-5).
+   ///</summary>
+  public int PhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Business Phone Number(NK1-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getBusinessPhoneNumber(int rep)
+	public XTN GetBusinessPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -297,7 +352,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Business Phone Number (NK1-6).
    ///</summary>
-  public XTN[] getBusinessPhoneNumber() {
+  public XTN[] GetBusinessPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -315,6 +370,24 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Business Phone Number (NK1-6).
+   ///</summary>
+  public int BusinessPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Contact Role(NK1-7).
 	///</summary>
@@ -458,7 +531,7 @@ public class NK1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getOrganizationNameNK1(int rep)
+	public XON GetOrganizationNameNK1(int rep)
 	{
 			XON ret = null;
 			try
@@ -475,7 +548,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Organization Name - NK1 (NK1-13).
    ///</summary>
-  public XON[] getOrganizationNameNK1() {
+  public XON[] GetOrganizationNameNK1() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -493,6 +566,24 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Organization Name - NK1 (NK1-13).
+   ///</summary>
+  public int OrganizationNameNK1RepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Marital Status(NK1-14).
 	///</summary>
@@ -567,7 +658,7 @@ public class NK1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getLivingDependency(int rep)
+	public IS GetLivingDependency(int rep)
 	{
 			IS ret = null;
 			try
@@ -584,7 +675,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Living Dependency (NK1-17).
    ///</summary>
-  public IS[] getLivingDependency() {
+  public IS[] GetLivingDependency() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -602,12 +693,30 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Living Dependency (NK1-17).
+   ///</summary>
+  public int LivingDependencyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Ambulatory Status(NK1-18).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getAmbulatoryStatus(int rep)
+	public IS GetAmbulatoryStatus(int rep)
 	{
 			IS ret = null;
 			try
@@ -624,7 +733,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ambulatory Status (NK1-18).
    ///</summary>
-  public IS[] getAmbulatoryStatus() {
+  public IS[] GetAmbulatoryStatus() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -642,12 +751,30 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ambulatory Status (NK1-18).
+   ///</summary>
+  public int AmbulatoryStatusRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Citizenship(NK1-19).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getCitizenship(int rep)
+	public CE GetCitizenship(int rep)
 	{
 			CE ret = null;
 			try
@@ -664,7 +791,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Citizenship (NK1-19).
    ///</summary>
-  public CE[] getCitizenship() {
+  public CE[] GetCitizenship() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -682,6 +809,24 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Citizenship (NK1-19).
+   ///</summary>
+  public int CitizenshipRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Primary Language(NK1-20).
 	///</summary>
@@ -825,7 +970,7 @@ public class NK1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getMotherSMaidenName(int rep)
+	public XPN GetMotherSMaidenName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -842,7 +987,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Mother's Maiden Name (NK1-26).
    ///</summary>
-  public XPN[] getMotherSMaidenName() {
+  public XPN[] GetMotherSMaidenName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(26);  
@@ -860,6 +1005,24 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Mother's Maiden Name (NK1-26).
+   ///</summary>
+  public int MotherSMaidenNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(26);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Nationality(NK1-27).
 	///</summary>
@@ -888,7 +1051,7 @@ public class NK1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getEthnicGroup(int rep)
+	public CE GetEthnicGroup(int rep)
 	{
 			CE ret = null;
 			try
@@ -905,7 +1068,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ethnic Group (NK1-28).
    ///</summary>
-  public CE[] getEthnicGroup() {
+  public CE[] GetEthnicGroup() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(28);  
@@ -923,12 +1086,30 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ethnic Group (NK1-28).
+   ///</summary>
+  public int EthnicGroupRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(28);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Reason(NK1-29).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getContactReason(int rep)
+	public CE GetContactReason(int rep)
 	{
 			CE ret = null;
 			try
@@ -945,7 +1126,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Reason (NK1-29).
    ///</summary>
-  public CE[] getContactReason() {
+  public CE[] GetContactReason() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(29);  
@@ -963,12 +1144,30 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Reason (NK1-29).
+   ///</summary>
+  public int ContactReasonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(29);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Person's Name(NK1-30).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getContactPersonSName(int rep)
+	public XPN GetContactPersonSName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -985,7 +1184,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Person's Name (NK1-30).
    ///</summary>
-  public XPN[] getContactPersonSName() {
+  public XPN[] GetContactPersonSName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(30);  
@@ -1003,12 +1202,30 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Person's Name (NK1-30).
+   ///</summary>
+  public int ContactPersonSNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(30);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Person's Telephone Number(NK1-31).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getContactPersonSTelephoneNumber(int rep)
+	public XTN GetContactPersonSTelephoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -1025,7 +1242,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Person's Telephone Number (NK1-31).
    ///</summary>
-  public XTN[] getContactPersonSTelephoneNumber() {
+  public XTN[] GetContactPersonSTelephoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(31);  
@@ -1043,12 +1260,30 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Person's Telephone Number (NK1-31).
+   ///</summary>
+  public int ContactPersonSTelephoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(31);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Person's Address(NK1-32).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getContactPersonSAddress(int rep)
+	public XAD GetContactPersonSAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -1065,7 +1300,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Person's Address (NK1-32).
    ///</summary>
-  public XAD[] getContactPersonSAddress() {
+  public XAD[] GetContactPersonSAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(32);  
@@ -1083,12 +1318,30 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Person's Address (NK1-32).
+   ///</summary>
+  public int ContactPersonSAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(32);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Next of Kin/Associated Party's Identifiers(NK1-33).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getNextOfKinAssociatedPartySIdentifiers(int rep)
+	public CX GetNextOfKinAssociatedPartySIdentifiers(int rep)
 	{
 			CX ret = null;
 			try
@@ -1105,7 +1358,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Next of Kin/Associated Party's Identifiers (NK1-33).
    ///</summary>
-  public CX[] getNextOfKinAssociatedPartySIdentifiers() {
+  public CX[] GetNextOfKinAssociatedPartySIdentifiers() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(33);  
@@ -1123,6 +1376,24 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Next of Kin/Associated Party's Identifiers (NK1-33).
+   ///</summary>
+  public int NextOfKinAssociatedPartySIdentifiersRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(33);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Job Status(NK1-34).
 	///</summary>
@@ -1151,7 +1422,7 @@ public class NK1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getRace(int rep)
+	public CE GetRace(int rep)
 	{
 			CE ret = null;
 			try
@@ -1168,7 +1439,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Race (NK1-35).
    ///</summary>
-  public CE[] getRace() {
+  public CE[] GetRace() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(35);  
@@ -1186,6 +1457,24 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Race (NK1-35).
+   ///</summary>
+  public int RaceRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(35);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Handicap(NK1-36).
 	///</summary>

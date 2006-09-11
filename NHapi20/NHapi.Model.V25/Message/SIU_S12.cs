@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a SIU_S12 message structure (see chapter 10.4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SCH (Scheduling Activity Information) 
-/// * 2: TQ1 (Timing/Quantity) optional repeating
-/// * 3: NTE (Notes and Comments) optional repeating
-/// * 4: SIU_S12_PATIENT (a Group object) 
-/// * 5: SIU_S12_RESOURCES (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SCH (Scheduling Activity Information) </li>
+///<li>2: TQ1 (Timing/Quantity) optional repeating</li>
+///<li>3: NTE (Notes and Comments) optional repeating</li>
+///<li>4: SIU_S12_PATIENT (a Group object) </li>
+///<li>5: SIU_S12_RESOURCES (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SIU_S12 : AbstractMessage  {
@@ -87,7 +89,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of TQ1 (Timing/Quantity) - creates it if necessary
 	///</summary>
-	public TQ1 getTQ1() {
+	public TQ1 GetTQ1() {
 	   TQ1 ret = null;
 	   try {
 	      ret = (TQ1)this.GetStructure("TQ1");
@@ -104,14 +106,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public TQ1 getTQ1(int rep) { 
+	public TQ1 GetTQ1(int rep) { 
 	   return (TQ1)this.GetStructure("TQ1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of TQ1 
 	 */ 
-	public int TQ1Reps { 
+	public int TQ1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -185,7 +187,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SIU_S12_RESOURCES (a Group object) - creates it if necessary
 	///</summary>
-	public SIU_S12_RESOURCES getRESOURCES() {
+	public SIU_S12_RESOURCES GetRESOURCES() {
 	   SIU_S12_RESOURCES ret = null;
 	   try {
 	      ret = (SIU_S12_RESOURCES)this.GetStructure("RESOURCES");
@@ -202,14 +204,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S12_RESOURCES getRESOURCES(int rep) { 
+	public SIU_S12_RESOURCES GetRESOURCES(int rep) { 
 	   return (SIU_S12_RESOURCES)this.GetStructure("RESOURCES", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SIU_S12_RESOURCES 
 	 */ 
-	public int RESOURCESReps { 
+	public int RESOURCESRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

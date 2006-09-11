@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the MFR_M01_MF_QUERY Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: Hxx (any HL7 segment) optional 
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: Hxx (any HL7 segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFR_M01_MF_QUERY : AbstractGroup {

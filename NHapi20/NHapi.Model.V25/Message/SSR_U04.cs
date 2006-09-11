@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a SSR_U04 message structure (see chapter 13.3.4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EQU (Equipment Detail) 
-/// * 3: SSR_U04_SPECIMEN_CONTAINER (a Group object) repeating
-/// * 4: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EQU (Equipment Detail) </li>
+///<li>3: SSR_U04_SPECIMEN_CONTAINER (a Group object) repeating</li>
+///<li>4: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SSR_U04 : AbstractMessage  {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -126,7 +128,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SSR_U04_SPECIMEN_CONTAINER (a Group object) - creates it if necessary
 	///</summary>
-	public SSR_U04_SPECIMEN_CONTAINER getSPECIMEN_CONTAINER() {
+	public SSR_U04_SPECIMEN_CONTAINER GetSPECIMEN_CONTAINER() {
 	   SSR_U04_SPECIMEN_CONTAINER ret = null;
 	   try {
 	      ret = (SSR_U04_SPECIMEN_CONTAINER)this.GetStructure("SPECIMEN_CONTAINER");
@@ -143,14 +145,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SSR_U04_SPECIMEN_CONTAINER getSPECIMEN_CONTAINER(int rep) { 
+	public SSR_U04_SPECIMEN_CONTAINER GetSPECIMEN_CONTAINER(int rep) { 
 	   return (SSR_U04_SPECIMEN_CONTAINER)this.GetStructure("SPECIMEN_CONTAINER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SSR_U04_SPECIMEN_CONTAINER 
 	 */ 
-	public int SPECIMEN_CONTAINERReps { 
+	public int SPECIMEN_CONTAINERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

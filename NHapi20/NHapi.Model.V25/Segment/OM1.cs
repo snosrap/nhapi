@@ -9,54 +9,55 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 OM1 message segment. 
-/// This segment has the following fields:
-/// * OM1-1: Sequence Number - Test/Observation Master File (NM)
-/// * OM1-2: Producer's Service/Test/Observation ID (CE)
-/// * OM1-3: Permitted Data Types (ID)
-/// * OM1-4: Specimen Required (ID)
-/// * OM1-5: Producer ID (CE)
-/// * OM1-6: Observation Description (TX)
-/// * OM1-7: Other Service/Test/Observation IDs for the Observation (CE)
-/// * OM1-8: Other Names (ST)
-/// * OM1-9: Preferred Report Name for the Observation (ST)
-/// * OM1-10: Preferred Short Name or Mnemonic for Observation (ST)
-/// * OM1-11: Preferred Long Name for the Observation (ST)
-/// * OM1-12: Orderability (ID)
-/// * OM1-13: Identity of Instrument Used to Perform this Study (CE)
-/// * OM1-14: Coded Representation of Method (CE)
-/// * OM1-15: Portable Device Indicator (ID)
-/// * OM1-16: Observation Producing Department/Section (CE)
-/// * OM1-17: Telephone Number of Section (XTN)
-/// * OM1-18: Nature of Service/Test/Observation (IS)
-/// * OM1-19: Report Subheader (CE)
-/// * OM1-20: Report Display Order (ST)
-/// * OM1-21: Date/Time Stamp for any change in Definition for the Observation (TS)
-/// * OM1-22: Effective Date/Time of Change (TS)
-/// * OM1-23: Typical Turn-Around Time (NM)
-/// * OM1-24: Processing Time (NM)
-/// * OM1-25: Processing Priority (ID)
-/// * OM1-26: Reporting Priority (ID)
-/// * OM1-27: Outside Site(s) Where Observation may be Performed (CE)
-/// * OM1-28: Address of Outside Site(s) (XAD)
-/// * OM1-29: Phone Number of Outside Site (XTN)
-/// * OM1-30: Confidentiality Code (CWE)
-/// * OM1-31: Observations Required to Interpret the Observation (CE)
-/// * OM1-32: Interpretation of Observations (TX)
-/// * OM1-33: Contraindications to Observations (CE)
-/// * OM1-34: Reflex Tests/Observations (CE)
-/// * OM1-35: Rules that Trigger Reflex Testing (TX)
-/// * OM1-36: Fixed Canned Message (CE)
-/// * OM1-37: Patient Preparation (TX)
-/// * OM1-38: Procedure Medication (CE)
-/// * OM1-39: Factors that may Affect the Observation (TX)
-/// * OM1-40: Service/Test/Observation Performance Schedule (ST)
-/// * OM1-41: Description of Test Methods (TX)
-/// * OM1-42: Kind of Quantity Observed (CE)
-/// * OM1-43: Point Versus Interval (CE)
-/// * OM1-44: Challenge Information (TX)
-/// * OM1-45: Relationship Modifier (CE)
-/// * OM1-46: Target Anatomic Site Of Test (CE)
-/// * OM1-47: Modality Of Imaging Measurement (CE)
+/// This segment has the following fields:<ol>
+///<li>OM1-1: Sequence Number - Test/Observation Master File (NM)</li>
+///<li>OM1-2: Producer's Service/Test/Observation ID (CE)</li>
+///<li>OM1-3: Permitted Data Types (ID)</li>
+///<li>OM1-4: Specimen Required (ID)</li>
+///<li>OM1-5: Producer ID (CE)</li>
+///<li>OM1-6: Observation Description (TX)</li>
+///<li>OM1-7: Other Service/Test/Observation IDs for the Observation (CE)</li>
+///<li>OM1-8: Other Names (ST)</li>
+///<li>OM1-9: Preferred Report Name for the Observation (ST)</li>
+///<li>OM1-10: Preferred Short Name or Mnemonic for Observation (ST)</li>
+///<li>OM1-11: Preferred Long Name for the Observation (ST)</li>
+///<li>OM1-12: Orderability (ID)</li>
+///<li>OM1-13: Identity of Instrument Used to Perform this Study (CE)</li>
+///<li>OM1-14: Coded Representation of Method (CE)</li>
+///<li>OM1-15: Portable Device Indicator (ID)</li>
+///<li>OM1-16: Observation Producing Department/Section (CE)</li>
+///<li>OM1-17: Telephone Number of Section (XTN)</li>
+///<li>OM1-18: Nature of Service/Test/Observation (IS)</li>
+///<li>OM1-19: Report Subheader (CE)</li>
+///<li>OM1-20: Report Display Order (ST)</li>
+///<li>OM1-21: Date/Time Stamp for any change in Definition for the Observation (TS)</li>
+///<li>OM1-22: Effective Date/Time of Change (TS)</li>
+///<li>OM1-23: Typical Turn-Around Time (NM)</li>
+///<li>OM1-24: Processing Time (NM)</li>
+///<li>OM1-25: Processing Priority (ID)</li>
+///<li>OM1-26: Reporting Priority (ID)</li>
+///<li>OM1-27: Outside Site(s) Where Observation may be Performed (CE)</li>
+///<li>OM1-28: Address of Outside Site(s) (XAD)</li>
+///<li>OM1-29: Phone Number of Outside Site (XTN)</li>
+///<li>OM1-30: Confidentiality Code (CWE)</li>
+///<li>OM1-31: Observations Required to Interpret the Observation (CE)</li>
+///<li>OM1-32: Interpretation of Observations (TX)</li>
+///<li>OM1-33: Contraindications to Observations (CE)</li>
+///<li>OM1-34: Reflex Tests/Observations (CE)</li>
+///<li>OM1-35: Rules that Trigger Reflex Testing (TX)</li>
+///<li>OM1-36: Fixed Canned Message (CE)</li>
+///<li>OM1-37: Patient Preparation (TX)</li>
+///<li>OM1-38: Procedure Medication (CE)</li>
+///<li>OM1-39: Factors that may Affect the Observation (TX)</li>
+///<li>OM1-40: Service/Test/Observation Performance Schedule (ST)</li>
+///<li>OM1-41: Description of Test Methods (TX)</li>
+///<li>OM1-42: Kind of Quantity Observed (CE)</li>
+///<li>OM1-43: Point Versus Interval (CE)</li>
+///<li>OM1-44: Challenge Information (TX)</li>
+///<li>OM1-45: Relationship Modifier (CE)</li>
+///<li>OM1-46: Target Anatomic Site Of Test (CE)</li>
+///<li>OM1-47: Modality Of Imaging Measurement (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -176,7 +177,7 @@ public class OM1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getPermittedDataTypes(int rep)
+	public ID GetPermittedDataTypes(int rep)
 	{
 			ID ret = null;
 			try
@@ -193,7 +194,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Permitted Data Types (OM1-3).
    ///</summary>
-  public ID[] getPermittedDataTypes() {
+  public ID[] GetPermittedDataTypes() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -211,6 +212,24 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Permitted Data Types (OM1-3).
+   ///</summary>
+  public int PermittedDataTypesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Required(OM1-4).
 	///</summary>
@@ -308,7 +327,7 @@ public class OM1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getOtherNames(int rep)
+	public ST GetOtherNames(int rep)
 	{
 			ST ret = null;
 			try
@@ -325,7 +344,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Other Names (OM1-8).
    ///</summary>
-  public ST[] getOtherNames() {
+  public ST[] GetOtherNames() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -343,6 +362,24 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Other Names (OM1-8).
+   ///</summary>
+  public int OtherNamesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Preferred Report Name for the Observation(OM1-9).
 	///</summary>
@@ -440,7 +477,7 @@ public class OM1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getIdentityOfInstrumentUsedToPerformThisStudy(int rep)
+	public CE GetIdentityOfInstrumentUsedToPerformThisStudy(int rep)
 	{
 			CE ret = null;
 			try
@@ -457,7 +494,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Identity of Instrument Used to Perform this Study (OM1-13).
    ///</summary>
-  public CE[] getIdentityOfInstrumentUsedToPerformThisStudy() {
+  public CE[] GetIdentityOfInstrumentUsedToPerformThisStudy() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -475,12 +512,30 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Identity of Instrument Used to Perform this Study (OM1-13).
+   ///</summary>
+  public int IdentityOfInstrumentUsedToPerformThisStudyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Coded Representation of Method(OM1-14).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getCodedRepresentationOfMethod(int rep)
+	public CE GetCodedRepresentationOfMethod(int rep)
 	{
 			CE ret = null;
 			try
@@ -497,7 +552,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Coded Representation of Method (OM1-14).
    ///</summary>
-  public CE[] getCodedRepresentationOfMethod() {
+  public CE[] GetCodedRepresentationOfMethod() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -515,6 +570,24 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Coded Representation of Method (OM1-14).
+   ///</summary>
+  public int CodedRepresentationOfMethodRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Portable Device Indicator(OM1-15).
 	///</summary>
@@ -543,7 +616,7 @@ public class OM1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getObservationProducingDepartmentSection(int rep)
+	public CE GetObservationProducingDepartmentSection(int rep)
 	{
 			CE ret = null;
 			try
@@ -560,7 +633,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Observation Producing Department/Section (OM1-16).
    ///</summary>
-  public CE[] getObservationProducingDepartmentSection() {
+  public CE[] GetObservationProducingDepartmentSection() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -578,6 +651,24 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Observation Producing Department/Section (OM1-16).
+   ///</summary>
+  public int ObservationProducingDepartmentSectionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Telephone Number of Section(OM1-17).
 	///</summary>
@@ -767,7 +858,7 @@ public class OM1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getProcessingPriority(int rep)
+	public ID GetProcessingPriority(int rep)
 	{
 			ID ret = null;
 			try
@@ -784,7 +875,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Processing Priority (OM1-25).
    ///</summary>
-  public ID[] getProcessingPriority() {
+  public ID[] GetProcessingPriority() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(25);  
@@ -802,6 +893,24 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Processing Priority (OM1-25).
+   ///</summary>
+  public int ProcessingPriorityRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(25);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Reporting Priority(OM1-26).
 	///</summary>
@@ -830,7 +939,7 @@ public class OM1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getOutsideSiteSWhereObservationMayBePerformed(int rep)
+	public CE GetOutsideSiteSWhereObservationMayBePerformed(int rep)
 	{
 			CE ret = null;
 			try
@@ -847,7 +956,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Outside Site(s) Where Observation may be Performed (OM1-27).
    ///</summary>
-  public CE[] getOutsideSiteSWhereObservationMayBePerformed() {
+  public CE[] GetOutsideSiteSWhereObservationMayBePerformed() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(27);  
@@ -865,12 +974,30 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Outside Site(s) Where Observation may be Performed (OM1-27).
+   ///</summary>
+  public int OutsideSiteSWhereObservationMayBePerformedRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(27);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Address of Outside Site(s)(OM1-28).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getAddressOfOutsideSiteS(int rep)
+	public XAD GetAddressOfOutsideSiteS(int rep)
 	{
 			XAD ret = null;
 			try
@@ -887,7 +1014,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Address of Outside Site(s) (OM1-28).
    ///</summary>
-  public XAD[] getAddressOfOutsideSiteS() {
+  public XAD[] GetAddressOfOutsideSiteS() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(28);  
@@ -905,6 +1032,24 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Address of Outside Site(s) (OM1-28).
+   ///</summary>
+  public int AddressOfOutsideSiteSRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(28);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Phone Number of Outside Site(OM1-29).
 	///</summary>
@@ -1025,7 +1170,7 @@ public class OM1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getReflexTestsObservations(int rep)
+	public CE GetReflexTestsObservations(int rep)
 	{
 			CE ret = null;
 			try
@@ -1042,7 +1187,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Reflex Tests/Observations (OM1-34).
    ///</summary>
-  public CE[] getReflexTestsObservations() {
+  public CE[] GetReflexTestsObservations() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(34);  
@@ -1060,6 +1205,24 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Reflex Tests/Observations (OM1-34).
+   ///</summary>
+  public int ReflexTestsObservationsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(34);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Rules that Trigger Reflex Testing(OM1-35).
 	///</summary>
@@ -1180,7 +1343,7 @@ public class OM1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getServiceTestObservationPerformanceSchedule(int rep)
+	public ST GetServiceTestObservationPerformanceSchedule(int rep)
 	{
 			ST ret = null;
 			try
@@ -1197,7 +1360,7 @@ public class OM1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Service/Test/Observation Performance Schedule (OM1-40).
    ///</summary>
-  public ST[] getServiceTestObservationPerformanceSchedule() {
+  public ST[] GetServiceTestObservationPerformanceSchedule() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(40);  
@@ -1215,6 +1378,24 @@ public class OM1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Service/Test/Observation Performance Schedule (OM1-40).
+   ///</summary>
+  public int ServiceTestObservationPerformanceScheduleRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(40);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Description of Test Methods(OM1-41).
 	///</summary>

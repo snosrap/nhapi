@@ -9,14 +9,15 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 URD message segment. 
-/// This segment has the following fields:
-/// * URD-1: R/U Date/Time (TS)
-/// * URD-2: Report Priority (ID)
-/// * URD-3: R/U Who Subject Definition (XCN)
-/// * URD-4: R/U What Subject Definition (CE)
-/// * URD-5: R/U What Department Code (CE)
-/// * URD-6: R/U Display/Print Locations (ST)
-/// * URD-7: R/U Results Level (ID)
+/// This segment has the following fields:<ol>
+///<li>URD-1: R/U Date/Time (TS)</li>
+///<li>URD-2: Report Priority (ID)</li>
+///<li>URD-3: R/U Who Subject Definition (XCN)</li>
+///<li>URD-4: R/U What Subject Definition (CE)</li>
+///<li>URD-5: R/U What Department Code (CE)</li>
+///<li>URD-6: R/U Display/Print Locations (ST)</li>
+///<li>URD-7: R/U Results Level (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -96,7 +97,7 @@ public class URD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getRUWhoSubjectDefinition(int rep)
+	public XCN GetRUWhoSubjectDefinition(int rep)
 	{
 			XCN ret = null;
 			try
@@ -113,7 +114,7 @@ public class URD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of R/U Who Subject Definition (URD-3).
    ///</summary>
-  public XCN[] getRUWhoSubjectDefinition() {
+  public XCN[] GetRUWhoSubjectDefinition() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -131,12 +132,30 @@ public class URD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of R/U Who Subject Definition (URD-3).
+   ///</summary>
+  public int RUWhoSubjectDefinitionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of R/U What Subject Definition(URD-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getRUWhatSubjectDefinition(int rep)
+	public CE GetRUWhatSubjectDefinition(int rep)
 	{
 			CE ret = null;
 			try
@@ -153,7 +172,7 @@ public class URD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of R/U What Subject Definition (URD-4).
    ///</summary>
-  public CE[] getRUWhatSubjectDefinition() {
+  public CE[] GetRUWhatSubjectDefinition() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -171,12 +190,30 @@ public class URD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of R/U What Subject Definition (URD-4).
+   ///</summary>
+  public int RUWhatSubjectDefinitionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of R/U What Department Code(URD-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getRUWhatDepartmentCode(int rep)
+	public CE GetRUWhatDepartmentCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -193,7 +230,7 @@ public class URD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of R/U What Department Code (URD-5).
    ///</summary>
-  public CE[] getRUWhatDepartmentCode() {
+  public CE[] GetRUWhatDepartmentCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -211,12 +248,30 @@ public class URD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of R/U What Department Code (URD-5).
+   ///</summary>
+  public int RUWhatDepartmentCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of R/U Display/Print Locations(URD-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getRUDisplayPrintLocations(int rep)
+	public ST GetRUDisplayPrintLocations(int rep)
 	{
 			ST ret = null;
 			try
@@ -233,7 +288,7 @@ public class URD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of R/U Display/Print Locations (URD-6).
    ///</summary>
-  public ST[] getRUDisplayPrintLocations() {
+  public ST[] GetRUDisplayPrintLocations() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -251,6 +306,24 @@ public class URD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of R/U Display/Print Locations (URD-6).
+   ///</summary>
+  public int RUDisplayPrintLocationsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns R/U Results Level(URD-7).
 	///</summary>

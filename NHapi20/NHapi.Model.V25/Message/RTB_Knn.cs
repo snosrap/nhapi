@@ -12,15 +12,17 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a RTB_Knn message structure (see chapter 5.3.2.4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: MSA (Message Acknowledgment) 
-/// * 3: ERR (Error) optional 
-/// * 4: QAK (Query Acknowledgment) 
-/// * 5: QPD (Query Parameter Definition) 
-/// * 6: Hxx (any HL7 segment) 
-/// * 7: Hxx (any HL7 segment) 
-/// * 8: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: MSA (Message Acknowledgment) </li>
+///<li>3: ERR (Error) optional </li>
+///<li>4: QAK (Query Acknowledgment) </li>
+///<li>5: QPD (Query Parameter Definition) </li>
+///<li>6: Hxx (any HL7 segment) </li>
+///<li>7: Hxx (any HL7 segment) </li>
+///<li>8: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RTB_Knn : AbstractMessage  {
@@ -77,7 +79,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -94,14 +96,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

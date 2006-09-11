@@ -9,18 +9,19 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 DRG message segment. 
-/// This segment has the following fields:
-/// * DRG-1: Diagnostic Related Group (CE)
-/// * DRG-2: DRG Assigned Date/Time (TS)
-/// * DRG-3: DRG Approval Indicator (ID)
-/// * DRG-4: DRG Grouper Review Code (IS)
-/// * DRG-5: Outlier Type (CE)
-/// * DRG-6: Outlier Days (NM)
-/// * DRG-7: Outlier Cost (CP)
-/// * DRG-8: DRG Payor (IS)
-/// * DRG-9: Outlier Reimbursement (CP)
-/// * DRG-10: Confidential Indicator (ID)
-/// * DRG-11: DRG Transfer Type (IS)
+/// This segment has the following fields:<ol>
+///<li>DRG-1: Diagnostic Related Group (CE)</li>
+///<li>DRG-2: DRG Assigned Date/Time (TS)</li>
+///<li>DRG-3: DRG Approval Indicator (ID)</li>
+///<li>DRG-4: DRG Grouper Review Code (IS)</li>
+///<li>DRG-5: Outlier Type (CE)</li>
+///<li>DRG-6: Outlier Days (NM)</li>
+///<li>DRG-7: Outlier Cost (CP)</li>
+///<li>DRG-8: DRG Payor (IS)</li>
+///<li>DRG-9: Outlier Reimbursement (CP)</li>
+///<li>DRG-10: Confidential Indicator (ID)</li>
+///<li>DRG-11: DRG Transfer Type (IS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORD_O04_ORDER_DIET Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: ORD_O04_TIMING_DIET (a Group object) 
-/// * 2: ODS (Dietary Orders, Supplements, and Preferences) optional repeating
-/// * 3: NTE (Notes and Comments) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: ORD_O04_TIMING_DIET (a Group object) </li>
+///<li>2: ODS (Dietary Orders, Supplements, and Preferences) optional repeating</li>
+///<li>3: NTE (Notes and Comments) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORD_O04_ORDER_DIET : AbstractGroup {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ODS (Dietary Orders, Supplements, and Preferences) - creates it if necessary
 	///</summary>
-	public ODS getODS() {
+	public ODS GetODS() {
 	   ODS ret = null;
 	   try {
 	      ret = (ODS)this.GetStructure("ODS");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ODS getODS(int rep) { 
+	public ODS GetODS(int rep) { 
 	   return (ODS)this.GetStructure("ODS", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ODS 
 	 */ 
-	public int ODSReps { 
+	public int ODSRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -110,7 +112,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -127,14 +129,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

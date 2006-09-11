@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a PPG_PCG message structure (see chapter 12.3.4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: PID (Patient Identification) 
-/// * 3: PPG_PCG_PATIENT_VISIT (a Group object) optional 
-/// * 4: PPG_PCG_PATHWAY (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PPG_PCG_PATIENT_VISIT (a Group object) optional </li>
+///<li>4: PPG_PCG_PATHWAY (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPG_PCG : AbstractMessage  {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -142,7 +144,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPG_PCG_PATHWAY (a Group object) - creates it if necessary
 	///</summary>
-	public PPG_PCG_PATHWAY getPATHWAY() {
+	public PPG_PCG_PATHWAY GetPATHWAY() {
 	   PPG_PCG_PATHWAY ret = null;
 	   try {
 	      ret = (PPG_PCG_PATHWAY)this.GetStructure("PATHWAY");
@@ -159,14 +161,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPG_PCG_PATHWAY getPATHWAY(int rep) { 
+	public PPG_PCG_PATHWAY GetPATHWAY(int rep) { 
 	   return (PPG_PCG_PATHWAY)this.GetStructure("PATHWAY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPG_PCG_PATHWAY 
 	 */ 
-	public int PATHWAYReps { 
+	public int PATHWAYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

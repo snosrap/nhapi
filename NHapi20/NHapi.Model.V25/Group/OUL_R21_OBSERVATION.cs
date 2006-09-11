@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the OUL_R21_OBSERVATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBX (Observation/Result) optional 
-/// * 1: TCD (Test Code Detail) optional 
-/// * 2: SID (Substance Identifier) optional repeating
-/// * 3: NTE (Notes and Comments) optional repeating
+///<ol>
+///<li>0: OBX (Observation/Result) optional </li>
+///<li>1: TCD (Test Code Detail) optional </li>
+///<li>2: SID (Substance Identifier) optional repeating</li>
+///<li>3: NTE (Notes and Comments) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OUL_R21_OBSERVATION : AbstractGroup {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SID (Substance Identifier) - creates it if necessary
 	///</summary>
-	public SID getSID() {
+	public SID GetSID() {
 	   SID ret = null;
 	   try {
 	      ret = (SID)this.GetStructure("SID");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SID getSID(int rep) { 
+	public SID GetSID(int rep) { 
 	   return (SID)this.GetStructure("SID", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SID 
 	 */ 
-	public int SIDReps { 
+	public int SIDRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -110,7 +112,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -127,14 +129,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

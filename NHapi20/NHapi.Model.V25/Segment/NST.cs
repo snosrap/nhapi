@@ -9,22 +9,23 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 NST message segment. 
-/// This segment has the following fields:
-/// * NST-1: Statistics Available (ID)
-/// * NST-2: Source Identifier (ST)
-/// * NST-3: Source Type (ID)
-/// * NST-4: Statistics Start (TS)
-/// * NST-5: Statistics End (TS)
-/// * NST-6: Receive Character Count (NM)
-/// * NST-7: Send Character Count (NM)
-/// * NST-8: Messages Received (NM)
-/// * NST-9: Messages Sent (NM)
-/// * NST-10: Checksum Errors Received (NM)
-/// * NST-11: Length Errors Received (NM)
-/// * NST-12: Other Errors Received (NM)
-/// * NST-13: Connect Timeouts (NM)
-/// * NST-14: Receive Timeouts (NM)
-/// * NST-15: Application control-level Errors (NM)
+/// This segment has the following fields:<ol>
+///<li>NST-1: Statistics Available (ID)</li>
+///<li>NST-2: Source Identifier (ST)</li>
+///<li>NST-3: Source Type (ID)</li>
+///<li>NST-4: Statistics Start (TS)</li>
+///<li>NST-5: Statistics End (TS)</li>
+///<li>NST-6: Receive Character Count (NM)</li>
+///<li>NST-7: Send Character Count (NM)</li>
+///<li>NST-8: Messages Received (NM)</li>
+///<li>NST-9: Messages Sent (NM)</li>
+///<li>NST-10: Checksum Errors Received (NM)</li>
+///<li>NST-11: Length Errors Received (NM)</li>
+///<li>NST-12: Other Errors Received (NM)</li>
+///<li>NST-13: Connect Timeouts (NM)</li>
+///<li>NST-14: Receive Timeouts (NM)</li>
+///<li>NST-15: Application control-level Errors (NM)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

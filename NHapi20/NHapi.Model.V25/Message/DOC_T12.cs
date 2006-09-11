@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a DOC_T12 message structure (see chapter 9.8.1). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: QAK (Query Acknowledgment) optional 
-/// * 4: QRD (Original-Style Query Definition) 
-/// * 5: DOC_T12_RESULT (a Group object) repeating
-/// * 6: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: QAK (Query Acknowledgment) optional </li>
+///<li>4: QRD (Original-Style Query Definition) </li>
+///<li>5: DOC_T12_RESULT (a Group object) repeating</li>
+///<li>6: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DOC_T12 : AbstractMessage  {
@@ -137,7 +139,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DOC_T12_RESULT (a Group object) - creates it if necessary
 	///</summary>
-	public DOC_T12_RESULT getRESULT() {
+	public DOC_T12_RESULT GetRESULT() {
 	   DOC_T12_RESULT ret = null;
 	   try {
 	      ret = (DOC_T12_RESULT)this.GetStructure("RESULT");
@@ -154,14 +156,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DOC_T12_RESULT getRESULT(int rep) { 
+	public DOC_T12_RESULT GetRESULT(int rep) { 
 	   return (DOC_T12_RESULT)this.GetStructure("RESULT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DOC_T12_RESULT 
 	 */ 
-	public int RESULTReps { 
+	public int RESULTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

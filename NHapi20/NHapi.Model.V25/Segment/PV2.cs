@@ -9,56 +9,57 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 PV2 message segment. 
-/// This segment has the following fields:
-/// * PV2-1: Prior Pending Location (PL)
-/// * PV2-2: Accommodation Code (CE)
-/// * PV2-3: Admit Reason (CE)
-/// * PV2-4: Transfer Reason (CE)
-/// * PV2-5: Patient Valuables (ST)
-/// * PV2-6: Patient Valuables Location (ST)
-/// * PV2-7: Visit User Code (IS)
-/// * PV2-8: Expected Admit Date/Time (TS)
-/// * PV2-9: Expected Discharge Date/Time (TS)
-/// * PV2-10: Estimated Length of Inpatient Stay (NM)
-/// * PV2-11: Actual Length of Inpatient Stay (NM)
-/// * PV2-12: Visit Description (ST)
-/// * PV2-13: Referral Source Code (XCN)
-/// * PV2-14: Previous Service Date (DT)
-/// * PV2-15: Employment Illness Related Indicator (ID)
-/// * PV2-16: Purge Status Code (IS)
-/// * PV2-17: Purge Status Date (DT)
-/// * PV2-18: Special Program Code (IS)
-/// * PV2-19: Retention Indicator (ID)
-/// * PV2-20: Expected Number of Insurance Plans (NM)
-/// * PV2-21: Visit Publicity Code (IS)
-/// * PV2-22: Visit Protection Indicator (ID)
-/// * PV2-23: Clinic Organization Name (XON)
-/// * PV2-24: Patient Status Code (IS)
-/// * PV2-25: Visit Priority Code (IS)
-/// * PV2-26: Previous Treatment Date (DT)
-/// * PV2-27: Expected Discharge Disposition (IS)
-/// * PV2-28: Signature on File Date (DT)
-/// * PV2-29: First Similar Illness Date (DT)
-/// * PV2-30: Patient Charge Adjustment Code (CE)
-/// * PV2-31: Recurring Service Code (IS)
-/// * PV2-32: Billing Media Code (ID)
-/// * PV2-33: Expected Surgery Date and Time (TS)
-/// * PV2-34: Military Partnership Code (ID)
-/// * PV2-35: Military Non-Availability Code (ID)
-/// * PV2-36: Newborn Baby Indicator (ID)
-/// * PV2-37: Baby Detained Indicator (ID)
-/// * PV2-38: Mode of Arrival Code (CE)
-/// * PV2-39: Recreational Drug Use Code (CE)
-/// * PV2-40: Admission Level of Care Code (CE)
-/// * PV2-41: Precaution Code (CE)
-/// * PV2-42: Patient Condition Code (CE)
-/// * PV2-43: Living Will Code (IS)
-/// * PV2-44: Organ Donor Code (IS)
-/// * PV2-45: Advance Directive Code (CE)
-/// * PV2-46: Patient Status Effective Date (DT)
-/// * PV2-47: Expected LOA Return Date/Time (TS)
-/// * PV2-48: Expected Pre-admission Testing Date/Time (TS)
-/// * PV2-49: Notify Clergy Code (IS)
+/// This segment has the following fields:<ol>
+///<li>PV2-1: Prior Pending Location (PL)</li>
+///<li>PV2-2: Accommodation Code (CE)</li>
+///<li>PV2-3: Admit Reason (CE)</li>
+///<li>PV2-4: Transfer Reason (CE)</li>
+///<li>PV2-5: Patient Valuables (ST)</li>
+///<li>PV2-6: Patient Valuables Location (ST)</li>
+///<li>PV2-7: Visit User Code (IS)</li>
+///<li>PV2-8: Expected Admit Date/Time (TS)</li>
+///<li>PV2-9: Expected Discharge Date/Time (TS)</li>
+///<li>PV2-10: Estimated Length of Inpatient Stay (NM)</li>
+///<li>PV2-11: Actual Length of Inpatient Stay (NM)</li>
+///<li>PV2-12: Visit Description (ST)</li>
+///<li>PV2-13: Referral Source Code (XCN)</li>
+///<li>PV2-14: Previous Service Date (DT)</li>
+///<li>PV2-15: Employment Illness Related Indicator (ID)</li>
+///<li>PV2-16: Purge Status Code (IS)</li>
+///<li>PV2-17: Purge Status Date (DT)</li>
+///<li>PV2-18: Special Program Code (IS)</li>
+///<li>PV2-19: Retention Indicator (ID)</li>
+///<li>PV2-20: Expected Number of Insurance Plans (NM)</li>
+///<li>PV2-21: Visit Publicity Code (IS)</li>
+///<li>PV2-22: Visit Protection Indicator (ID)</li>
+///<li>PV2-23: Clinic Organization Name (XON)</li>
+///<li>PV2-24: Patient Status Code (IS)</li>
+///<li>PV2-25: Visit Priority Code (IS)</li>
+///<li>PV2-26: Previous Treatment Date (DT)</li>
+///<li>PV2-27: Expected Discharge Disposition (IS)</li>
+///<li>PV2-28: Signature on File Date (DT)</li>
+///<li>PV2-29: First Similar Illness Date (DT)</li>
+///<li>PV2-30: Patient Charge Adjustment Code (CE)</li>
+///<li>PV2-31: Recurring Service Code (IS)</li>
+///<li>PV2-32: Billing Media Code (ID)</li>
+///<li>PV2-33: Expected Surgery Date and Time (TS)</li>
+///<li>PV2-34: Military Partnership Code (ID)</li>
+///<li>PV2-35: Military Non-Availability Code (ID)</li>
+///<li>PV2-36: Newborn Baby Indicator (ID)</li>
+///<li>PV2-37: Baby Detained Indicator (ID)</li>
+///<li>PV2-38: Mode of Arrival Code (CE)</li>
+///<li>PV2-39: Recreational Drug Use Code (CE)</li>
+///<li>PV2-40: Admission Level of Care Code (CE)</li>
+///<li>PV2-41: Precaution Code (CE)</li>
+///<li>PV2-42: Patient Condition Code (CE)</li>
+///<li>PV2-43: Living Will Code (IS)</li>
+///<li>PV2-44: Organ Donor Code (IS)</li>
+///<li>PV2-45: Advance Directive Code (CE)</li>
+///<li>PV2-46: Patient Status Effective Date (DT)</li>
+///<li>PV2-47: Expected LOA Return Date/Time (TS)</li>
+///<li>PV2-48: Expected Pre-admission Testing Date/Time (TS)</li>
+///<li>PV2-49: Notify Clergy Code (IS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -226,7 +227,7 @@ public class PV2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getPatientValuables(int rep)
+	public ST GetPatientValuables(int rep)
 	{
 			ST ret = null;
 			try
@@ -243,7 +244,7 @@ public class PV2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Patient Valuables (PV2-5).
    ///</summary>
-  public ST[] getPatientValuables() {
+  public ST[] GetPatientValuables() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -261,6 +262,24 @@ public class PV2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Patient Valuables (PV2-5).
+   ///</summary>
+  public int PatientValuablesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Patient Valuables Location(PV2-6).
 	///</summary>
@@ -289,7 +308,7 @@ public class PV2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getVisitUserCode(int rep)
+	public IS GetVisitUserCode(int rep)
 	{
 			IS ret = null;
 			try
@@ -306,7 +325,7 @@ public class PV2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Visit User Code (PV2-7).
    ///</summary>
-  public IS[] getVisitUserCode() {
+  public IS[] GetVisitUserCode() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -324,6 +343,24 @@ public class PV2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Visit User Code (PV2-7).
+   ///</summary>
+  public int VisitUserCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Expected Admit Date/Time(PV2-8).
 	///</summary>
@@ -444,7 +481,7 @@ public class PV2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getReferralSourceCode(int rep)
+	public XCN GetReferralSourceCode(int rep)
 	{
 			XCN ret = null;
 			try
@@ -461,7 +498,7 @@ public class PV2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Referral Source Code (PV2-13).
    ///</summary>
-  public XCN[] getReferralSourceCode() {
+  public XCN[] GetReferralSourceCode() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -479,6 +516,24 @@ public class PV2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Referral Source Code (PV2-13).
+   ///</summary>
+  public int ReferralSourceCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Previous Service Date(PV2-14).
 	///</summary>
@@ -691,7 +746,7 @@ public class PV2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getClinicOrganizationName(int rep)
+	public XON GetClinicOrganizationName(int rep)
 	{
 			XON ret = null;
 			try
@@ -708,7 +763,7 @@ public class PV2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Clinic Organization Name (PV2-23).
    ///</summary>
-  public XON[] getClinicOrganizationName() {
+  public XON[] GetClinicOrganizationName() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(23);  
@@ -726,6 +781,24 @@ public class PV2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Clinic Organization Name (PV2-23).
+   ///</summary>
+  public int ClinicOrganizationNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(23);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Patient Status Code(PV2-24).
 	///</summary>
@@ -1076,7 +1149,7 @@ public class PV2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getRecreationalDrugUseCode(int rep)
+	public CE GetRecreationalDrugUseCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -1093,7 +1166,7 @@ public class PV2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Recreational Drug Use Code (PV2-39).
    ///</summary>
-  public CE[] getRecreationalDrugUseCode() {
+  public CE[] GetRecreationalDrugUseCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(39);  
@@ -1111,6 +1184,24 @@ public class PV2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Recreational Drug Use Code (PV2-39).
+   ///</summary>
+  public int RecreationalDrugUseCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(39);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Admission Level of Care Code(PV2-40).
 	///</summary>
@@ -1139,7 +1230,7 @@ public class PV2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getPrecautionCode(int rep)
+	public CE GetPrecautionCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -1156,7 +1247,7 @@ public class PV2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Precaution Code (PV2-41).
    ///</summary>
-  public CE[] getPrecautionCode() {
+  public CE[] GetPrecautionCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(41);  
@@ -1174,6 +1265,24 @@ public class PV2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Precaution Code (PV2-41).
+   ///</summary>
+  public int PrecautionCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(41);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Patient Condition Code(PV2-42).
 	///</summary>
@@ -1248,7 +1357,7 @@ public class PV2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getAdvanceDirectiveCode(int rep)
+	public CE GetAdvanceDirectiveCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -1265,7 +1374,7 @@ public class PV2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Advance Directive Code (PV2-45).
    ///</summary>
-  public CE[] getAdvanceDirectiveCode() {
+  public CE[] GetAdvanceDirectiveCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(45);  
@@ -1283,6 +1392,24 @@ public class PV2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Advance Directive Code (PV2-45).
+   ///</summary>
+  public int AdvanceDirectiveCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(45);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Patient Status Effective Date(PV2-46).
 	///</summary>
@@ -1357,7 +1484,7 @@ public class PV2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getNotifyClergyCode(int rep)
+	public IS GetNotifyClergyCode(int rep)
 	{
 			IS ret = null;
 			try
@@ -1374,7 +1501,7 @@ public class PV2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Notify Clergy Code (PV2-49).
    ///</summary>
-  public IS[] getNotifyClergyCode() {
+  public IS[] GetNotifyClergyCode() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(49);  
@@ -1392,5 +1519,23 @@ public class PV2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Notify Clergy Code (PV2-49).
+   ///</summary>
+  public int NotifyClergyCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(49);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Group
 ///Represents the CSU_C09_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PD1 (Patient Additional Demographic) optional 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: CSU_C09_VISIT (a Group object) optional 
-/// * 4: CSR (Clinical Study Registration) 
-/// * 5: CSU_C09_STUDY_PHASE (a Group object) repeating
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PD1 (Patient Additional Demographic) optional </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: CSU_C09_VISIT (a Group object) optional </li>
+///<li>4: CSR (Clinical Study Registration) </li>
+///<li>5: CSU_C09_STUDY_PHASE (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class CSU_C09_PATIENT : AbstractGroup {
@@ -73,7 +75,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -90,14 +92,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -146,7 +148,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CSU_C09_STUDY_PHASE (a Group object) - creates it if necessary
 	///</summary>
-	public CSU_C09_STUDY_PHASE getSTUDY_PHASE() {
+	public CSU_C09_STUDY_PHASE GetSTUDY_PHASE() {
 	   CSU_C09_STUDY_PHASE ret = null;
 	   try {
 	      ret = (CSU_C09_STUDY_PHASE)this.GetStructure("STUDY_PHASE");
@@ -163,14 +165,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSU_C09_STUDY_PHASE getSTUDY_PHASE(int rep) { 
+	public CSU_C09_STUDY_PHASE GetSTUDY_PHASE(int rep) { 
 	   return (CSU_C09_STUDY_PHASE)this.GetStructure("STUDY_PHASE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSU_C09_STUDY_PHASE 
 	 */ 
-	public int STUDY_PHASEReps { 
+	public int STUDY_PHASERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

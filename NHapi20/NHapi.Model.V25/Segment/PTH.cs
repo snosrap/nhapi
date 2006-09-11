@@ -9,13 +9,14 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 PTH message segment. 
-/// This segment has the following fields:
-/// * PTH-1: Action Code (ID)
-/// * PTH-2: Pathway ID (CE)
-/// * PTH-3: Pathway Instance ID (EI)
-/// * PTH-4: Pathway Established Date/Time (TS)
-/// * PTH-5: Pathway Life Cycle Status (CE)
-/// * PTH-6: Change Pathway Life Cycle Status Date/Time (TS)
+/// This segment has the following fields:<ol>
+///<li>PTH-1: Action Code (ID)</li>
+///<li>PTH-2: Pathway ID (CE)</li>
+///<li>PTH-3: Pathway Instance ID (EI)</li>
+///<li>PTH-4: Pathway Established Date/Time (TS)</li>
+///<li>PTH-5: Pathway Life Cycle Status (CE)</li>
+///<li>PTH-6: Change Pathway Life Cycle Status Date/Time (TS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

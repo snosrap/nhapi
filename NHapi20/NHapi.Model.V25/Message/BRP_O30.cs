@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a BRP_O30 message structure (see chapter 4.20.4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional repeating
-/// * 3: SFT (Software Segment) optional repeating
-/// * 4: NTE (Notes and Comments) optional repeating
-/// * 5: BRP_O30_RESPONSE (a Group object) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional repeating</li>
+///<li>3: SFT (Software Segment) optional repeating</li>
+///<li>4: NTE (Notes and Comments) optional repeating</li>
+///<li>5: BRP_O30_RESPONSE (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BRP_O30 : AbstractMessage  {
@@ -87,7 +89,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ERR (Error) - creates it if necessary
 	///</summary>
-	public ERR getERR() {
+	public ERR GetERR() {
 	   ERR ret = null;
 	   try {
 	      ret = (ERR)this.GetStructure("ERR");
@@ -104,14 +106,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ERR getERR(int rep) { 
+	public ERR GetERR(int rep) { 
 	   return (ERR)this.GetStructure("ERR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ERR 
 	 */ 
-	public int ERRReps { 
+	public int ERRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -169,7 +171,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -186,14 +188,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

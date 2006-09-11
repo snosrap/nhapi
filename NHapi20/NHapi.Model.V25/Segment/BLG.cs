@@ -9,11 +9,12 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 BLG message segment. 
-/// This segment has the following fields:
-/// * BLG-1: When to Charge (CCD)
-/// * BLG-2: Charge Type (ID)
-/// * BLG-3: Account ID (CX)
-/// * BLG-4: Charge Type Reason (CWE)
+/// This segment has the following fields:<ol>
+///<li>BLG-1: When to Charge (CCD)</li>
+///<li>BLG-2: Charge Type (ID)</li>
+///<li>BLG-3: Account ID (CX)</li>
+///<li>BLG-4: Charge Type Reason (CWE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

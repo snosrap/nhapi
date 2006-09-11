@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the RSP_Z82_VISIT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: AL1 (Patient Allergy Information) repeating
-/// * 1: PV1 (Patient Visit) 
-/// * 2: PV2 (Patient Visit - Additional Information) optional 
+///<ol>
+///<li>0: AL1 (Patient Allergy Information) repeating</li>
+///<li>1: PV1 (Patient Visit) </li>
+///<li>2: PV2 (Patient Visit - Additional Information) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Z82_VISIT : AbstractGroup {
@@ -35,7 +37,7 @@ public class RSP_Z82_VISIT : AbstractGroup {
 	///<summary>
 	/// Returns  first repetition of AL1 (Patient Allergy Information) - creates it if necessary
 	///</summary>
-	public AL1 getAL1() {
+	public AL1 GetAL1() {
 	   AL1 ret = null;
 	   try {
 	      ret = (AL1)this.GetStructure("AL1");
@@ -52,14 +54,14 @@ public class RSP_Z82_VISIT : AbstractGroup {
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AL1 getAL1(int rep) { 
+	public AL1 GetAL1(int rep) { 
 	   return (AL1)this.GetStructure("AL1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AL1 
 	 */ 
-	public int AL1Reps { 
+	public int AL1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

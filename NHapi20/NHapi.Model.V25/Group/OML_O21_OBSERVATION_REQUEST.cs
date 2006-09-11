@@ -12,14 +12,16 @@ namespace NHapi.Model.V25.Group
 ///Represents the OML_O21_OBSERVATION_REQUEST Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBR (Observation Request) 
-/// * 1: TCD (Test Code Detail) optional 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: CTD (Contact Data) optional 
-/// * 4: DG1 (Diagnosis) optional repeating
-/// * 5: OML_O21_OBSERVATION (a Group object) 
-/// * 6: OML_O21_SPECIMEN (a Group object) 
-/// * 7: OML_O21_PRIOR_RESULT (a Group object) 
+///<ol>
+///<li>0: OBR (Observation Request) </li>
+///<li>1: TCD (Test Code Detail) optional </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: CTD (Contact Data) optional </li>
+///<li>4: DG1 (Diagnosis) optional repeating</li>
+///<li>5: OML_O21_OBSERVATION (a Group object) </li>
+///<li>6: OML_O21_SPECIMEN (a Group object) </li>
+///<li>7: OML_O21_PRIOR_RESULT (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O21_OBSERVATION_REQUEST : AbstractGroup {
@@ -77,7 +79,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -94,14 +96,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -134,7 +136,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -151,14 +153,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

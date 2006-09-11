@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a EAN_U09 message structure (see chapter 13.3.9). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EQU (Equipment Detail) 
-/// * 3: EAN_U09_NOTIFICATION (a Group object) repeating
-/// * 4: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EQU (Equipment Detail) </li>
+///<li>3: EAN_U09_NOTIFICATION (a Group object) repeating</li>
+///<li>4: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EAN_U09 : AbstractMessage  {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -126,7 +128,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of EAN_U09_NOTIFICATION (a Group object) - creates it if necessary
 	///</summary>
-	public EAN_U09_NOTIFICATION getNOTIFICATION() {
+	public EAN_U09_NOTIFICATION GetNOTIFICATION() {
 	   EAN_U09_NOTIFICATION ret = null;
 	   try {
 	      ret = (EAN_U09_NOTIFICATION)this.GetStructure("NOTIFICATION");
@@ -143,14 +145,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public EAN_U09_NOTIFICATION getNOTIFICATION(int rep) { 
+	public EAN_U09_NOTIFICATION GetNOTIFICATION(int rep) { 
 	   return (EAN_U09_NOTIFICATION)this.GetStructure("NOTIFICATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of EAN_U09_NOTIFICATION 
 	 */ 
-	public int NOTIFICATIONReps { 
+	public int NOTIFICATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

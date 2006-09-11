@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the TCU_U10_TEST_CONFIGURATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SPM (Specimen) optional 
-/// * 1: TCC (Test Code Configuration) repeating
+///<ol>
+///<li>0: SPM (Specimen) optional </li>
+///<li>1: TCC (Test Code Configuration) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class TCU_U10_TEST_CONFIGURATION : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of TCC (Test Code Configuration) - creates it if necessary
 	///</summary>
-	public TCC getTCC() {
+	public TCC GetTCC() {
 	   TCC ret = null;
 	   try {
 	      ret = (TCC)this.GetStructure("TCC");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public TCC getTCC(int rep) { 
+	public TCC GetTCC(int rep) { 
 	   return (TCC)this.GetStructure("TCC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of TCC 
 	 */ 
-	public int TCCReps { 
+	public int TCCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

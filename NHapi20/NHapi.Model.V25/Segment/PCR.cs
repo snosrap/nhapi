@@ -9,30 +9,31 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 PCR message segment. 
-/// This segment has the following fields:
-/// * PCR-1: Implicated Product (CE)
-/// * PCR-2: Generic Product (IS)
-/// * PCR-3: Product Class (CE)
-/// * PCR-4: Total Duration Of Therapy (CQ)
-/// * PCR-5: Product Manufacture Date (TS)
-/// * PCR-6: Product Expiration Date (TS)
-/// * PCR-7: Product Implantation Date (TS)
-/// * PCR-8: Product Explantation Date (TS)
-/// * PCR-9: Single Use Device (IS)
-/// * PCR-10: Indication For Product Use (CE)
-/// * PCR-11: Product Problem (IS)
-/// * PCR-12: Product Serial/Lot Number (ST)
-/// * PCR-13: Product Available For Inspection (IS)
-/// * PCR-14: Product Evaluation Performed (CE)
-/// * PCR-15: Product Evaluation Status (CE)
-/// * PCR-16: Product Evaluation Results (CE)
-/// * PCR-17: Evaluated Product Source (ID)
-/// * PCR-18: Date Product Returned To Manufacturer (TS)
-/// * PCR-19: Device Operator Qualifications (ID)
-/// * PCR-20: Relatedness Assessment (ID)
-/// * PCR-21: Action Taken In Response To The Event (ID)
-/// * PCR-22: Event Causality Observations (ID)
-/// * PCR-23: Indirect Exposure Mechanism (ID)
+/// This segment has the following fields:<ol>
+///<li>PCR-1: Implicated Product (CE)</li>
+///<li>PCR-2: Generic Product (IS)</li>
+///<li>PCR-3: Product Class (CE)</li>
+///<li>PCR-4: Total Duration Of Therapy (CQ)</li>
+///<li>PCR-5: Product Manufacture Date (TS)</li>
+///<li>PCR-6: Product Expiration Date (TS)</li>
+///<li>PCR-7: Product Implantation Date (TS)</li>
+///<li>PCR-8: Product Explantation Date (TS)</li>
+///<li>PCR-9: Single Use Device (IS)</li>
+///<li>PCR-10: Indication For Product Use (CE)</li>
+///<li>PCR-11: Product Problem (IS)</li>
+///<li>PCR-12: Product Serial/Lot Number (ST)</li>
+///<li>PCR-13: Product Available For Inspection (IS)</li>
+///<li>PCR-14: Product Evaluation Performed (CE)</li>
+///<li>PCR-15: Product Evaluation Status (CE)</li>
+///<li>PCR-16: Product Evaluation Results (CE)</li>
+///<li>PCR-17: Evaluated Product Source (ID)</li>
+///<li>PCR-18: Date Product Returned To Manufacturer (TS)</li>
+///<li>PCR-19: Device Operator Qualifications (ID)</li>
+///<li>PCR-20: Relatedness Assessment (ID)</li>
+///<li>PCR-21: Action Taken In Response To The Event (ID)</li>
+///<li>PCR-22: Event Causality Observations (ID)</li>
+///<li>PCR-23: Indirect Exposure Mechanism (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -335,7 +336,7 @@ public class PCR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getProductSerialLotNumber(int rep)
+	public ST GetProductSerialLotNumber(int rep)
 	{
 			ST ret = null;
 			try
@@ -352,7 +353,7 @@ public class PCR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Product Serial/Lot Number (PCR-12).
    ///</summary>
-  public ST[] getProductSerialLotNumber() {
+  public ST[] GetProductSerialLotNumber() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -370,6 +371,24 @@ public class PCR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Product Serial/Lot Number (PCR-12).
+   ///</summary>
+  public int ProductSerialLotNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Product Available For Inspection(PCR-13).
 	///</summary>
@@ -559,7 +578,7 @@ public class PCR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getActionTakenInResponseToTheEvent(int rep)
+	public ID GetActionTakenInResponseToTheEvent(int rep)
 	{
 			ID ret = null;
 			try
@@ -576,7 +595,7 @@ public class PCR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Action Taken In Response To The Event (PCR-21).
    ///</summary>
-  public ID[] getActionTakenInResponseToTheEvent() {
+  public ID[] GetActionTakenInResponseToTheEvent() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -594,12 +613,30 @@ public class PCR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Action Taken In Response To The Event (PCR-21).
+   ///</summary>
+  public int ActionTakenInResponseToTheEventRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Event Causality Observations(PCR-22).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getEventCausalityObservations(int rep)
+	public ID GetEventCausalityObservations(int rep)
 	{
 			ID ret = null;
 			try
@@ -616,7 +653,7 @@ public class PCR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Causality Observations (PCR-22).
    ///</summary>
-  public ID[] getEventCausalityObservations() {
+  public ID[] GetEventCausalityObservations() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(22);  
@@ -634,12 +671,30 @@ public class PCR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Causality Observations (PCR-22).
+   ///</summary>
+  public int EventCausalityObservationsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(22);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Indirect Exposure Mechanism(PCR-23).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getIndirectExposureMechanism(int rep)
+	public ID GetIndirectExposureMechanism(int rep)
 	{
 			ID ret = null;
 			try
@@ -656,7 +711,7 @@ public class PCR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Indirect Exposure Mechanism (PCR-23).
    ///</summary>
-  public ID[] getIndirectExposureMechanism() {
+  public ID[] GetIndirectExposureMechanism() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(23);  
@@ -674,5 +729,23 @@ public class PCR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Indirect Exposure Mechanism (PCR-23).
+   ///</summary>
+  public int IndirectExposureMechanismRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(23);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

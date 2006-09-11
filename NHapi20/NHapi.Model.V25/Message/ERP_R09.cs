@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a ERP_R09 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: MSA (Message Acknowledgment) 
-/// * 3: ERR (Error) optional 
-/// * 4: QAK (Query Acknowledgment) 
-/// * 5: ERQ (Event replay query) 
-/// * 6: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: MSA (Message Acknowledgment) </li>
+///<li>3: ERR (Error) optional </li>
+///<li>4: QAK (Query Acknowledgment) </li>
+///<li>5: ERQ (Event replay query) </li>
+///<li>6: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ERP_R09 : AbstractMessage  {
@@ -73,7 +75,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -90,14 +92,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Group
 ///Represents the RSP_Q11_QUERY_RESULT_CLUSTER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: LOC (Location Identification) 
-/// * 2: LCH (Location Characteristic) optional repeating
-/// * 3: LRL (Location Relationship) optional repeating
-/// * 4: RSP_Q11_MF_LOC_DEPT (a Group object) repeating
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: LOC (Location Identification) </li>
+///<li>2: LCH (Location Characteristic) optional repeating</li>
+///<li>3: LRL (Location Relationship) optional repeating</li>
+///<li>4: RSP_Q11_MF_LOC_DEPT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Q11_QUERY_RESULT_CLUSTER : AbstractGroup {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of LCH (Location Characteristic) - creates it if necessary
 	///</summary>
-	public LCH getLCH() {
+	public LCH GetLCH() {
 	   LCH ret = null;
 	   try {
 	      ret = (LCH)this.GetStructure("LCH");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public LCH getLCH(int rep) { 
+	public LCH GetLCH(int rep) { 
 	   return (LCH)this.GetStructure("LCH", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of LCH 
 	 */ 
-	public int LCHReps { 
+	public int LCHRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -112,7 +114,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of LRL (Location Relationship) - creates it if necessary
 	///</summary>
-	public LRL getLRL() {
+	public LRL GetLRL() {
 	   LRL ret = null;
 	   try {
 	      ret = (LRL)this.GetStructure("LRL");
@@ -129,14 +131,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public LRL getLRL(int rep) { 
+	public LRL GetLRL(int rep) { 
 	   return (LRL)this.GetStructure("LRL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of LRL 
 	 */ 
-	public int LRLReps { 
+	public int LRLRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -153,7 +155,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RSP_Q11_MF_LOC_DEPT (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_Q11_MF_LOC_DEPT getMF_LOC_DEPT() {
+	public RSP_Q11_MF_LOC_DEPT GetMF_LOC_DEPT() {
 	   RSP_Q11_MF_LOC_DEPT ret = null;
 	   try {
 	      ret = (RSP_Q11_MF_LOC_DEPT)this.GetStructure("MF_LOC_DEPT");
@@ -170,14 +172,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RSP_Q11_MF_LOC_DEPT getMF_LOC_DEPT(int rep) { 
+	public RSP_Q11_MF_LOC_DEPT GetMF_LOC_DEPT(int rep) { 
 	   return (RSP_Q11_MF_LOC_DEPT)this.GetStructure("MF_LOC_DEPT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RSP_Q11_MF_LOC_DEPT 
 	 */ 
-	public int MF_LOC_DEPTReps { 
+	public int MF_LOC_DEPTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,59 +9,60 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 PV1 message segment. 
-/// This segment has the following fields:
-/// * PV1-1: Set ID - PV1 (SI)
-/// * PV1-2: Patient Class (IS)
-/// * PV1-3: Assigned Patient Location (PL)
-/// * PV1-4: Admission Type (IS)
-/// * PV1-5: Preadmit Number (CX)
-/// * PV1-6: Prior Patient Location (PL)
-/// * PV1-7: Attending Doctor (XCN)
-/// * PV1-8: Referring Doctor (XCN)
-/// * PV1-9: Consulting Doctor (XCN)
-/// * PV1-10: Hospital Service (IS)
-/// * PV1-11: Temporary Location (PL)
-/// * PV1-12: Preadmit Test Indicator (IS)
-/// * PV1-13: Re-admission Indicator (IS)
-/// * PV1-14: Admit Source (IS)
-/// * PV1-15: Ambulatory Status (IS)
-/// * PV1-16: VIP Indicator (IS)
-/// * PV1-17: Admitting Doctor (XCN)
-/// * PV1-18: Patient Type (IS)
-/// * PV1-19: Visit Number (CX)
-/// * PV1-20: Financial Class (FC)
-/// * PV1-21: Charge Price Indicator (IS)
-/// * PV1-22: Courtesy Code (IS)
-/// * PV1-23: Credit Rating (IS)
-/// * PV1-24: Contract Code (IS)
-/// * PV1-25: Contract Effective Date (DT)
-/// * PV1-26: Contract Amount (NM)
-/// * PV1-27: Contract Period (NM)
-/// * PV1-28: Interest Code (IS)
-/// * PV1-29: Transfer to Bad Debt Code (IS)
-/// * PV1-30: Transfer to Bad Debt Date (DT)
-/// * PV1-31: Bad Debt Agency Code (IS)
-/// * PV1-32: Bad Debt Transfer Amount (NM)
-/// * PV1-33: Bad Debt Recovery Amount (NM)
-/// * PV1-34: Delete Account Indicator (IS)
-/// * PV1-35: Delete Account Date (DT)
-/// * PV1-36: Discharge Disposition (IS)
-/// * PV1-37: Discharged to Location (DLD)
-/// * PV1-38: Diet Type (CE)
-/// * PV1-39: Servicing Facility (IS)
-/// * PV1-40: Bed Status (IS)
-/// * PV1-41: Account Status (IS)
-/// * PV1-42: Pending Location (PL)
-/// * PV1-43: Prior Temporary Location (PL)
-/// * PV1-44: Admit Date/Time (TS)
-/// * PV1-45: Discharge Date/Time (TS)
-/// * PV1-46: Current Patient Balance (NM)
-/// * PV1-47: Total Charges (NM)
-/// * PV1-48: Total Adjustments (NM)
-/// * PV1-49: Total Payments (NM)
-/// * PV1-50: Alternate Visit ID (CX)
-/// * PV1-51: Visit Indicator (IS)
-/// * PV1-52: Other Healthcare Provider (XCN)
+/// This segment has the following fields:<ol>
+///<li>PV1-1: Set ID - PV1 (SI)</li>
+///<li>PV1-2: Patient Class (IS)</li>
+///<li>PV1-3: Assigned Patient Location (PL)</li>
+///<li>PV1-4: Admission Type (IS)</li>
+///<li>PV1-5: Preadmit Number (CX)</li>
+///<li>PV1-6: Prior Patient Location (PL)</li>
+///<li>PV1-7: Attending Doctor (XCN)</li>
+///<li>PV1-8: Referring Doctor (XCN)</li>
+///<li>PV1-9: Consulting Doctor (XCN)</li>
+///<li>PV1-10: Hospital Service (IS)</li>
+///<li>PV1-11: Temporary Location (PL)</li>
+///<li>PV1-12: Preadmit Test Indicator (IS)</li>
+///<li>PV1-13: Re-admission Indicator (IS)</li>
+///<li>PV1-14: Admit Source (IS)</li>
+///<li>PV1-15: Ambulatory Status (IS)</li>
+///<li>PV1-16: VIP Indicator (IS)</li>
+///<li>PV1-17: Admitting Doctor (XCN)</li>
+///<li>PV1-18: Patient Type (IS)</li>
+///<li>PV1-19: Visit Number (CX)</li>
+///<li>PV1-20: Financial Class (FC)</li>
+///<li>PV1-21: Charge Price Indicator (IS)</li>
+///<li>PV1-22: Courtesy Code (IS)</li>
+///<li>PV1-23: Credit Rating (IS)</li>
+///<li>PV1-24: Contract Code (IS)</li>
+///<li>PV1-25: Contract Effective Date (DT)</li>
+///<li>PV1-26: Contract Amount (NM)</li>
+///<li>PV1-27: Contract Period (NM)</li>
+///<li>PV1-28: Interest Code (IS)</li>
+///<li>PV1-29: Transfer to Bad Debt Code (IS)</li>
+///<li>PV1-30: Transfer to Bad Debt Date (DT)</li>
+///<li>PV1-31: Bad Debt Agency Code (IS)</li>
+///<li>PV1-32: Bad Debt Transfer Amount (NM)</li>
+///<li>PV1-33: Bad Debt Recovery Amount (NM)</li>
+///<li>PV1-34: Delete Account Indicator (IS)</li>
+///<li>PV1-35: Delete Account Date (DT)</li>
+///<li>PV1-36: Discharge Disposition (IS)</li>
+///<li>PV1-37: Discharged to Location (DLD)</li>
+///<li>PV1-38: Diet Type (CE)</li>
+///<li>PV1-39: Servicing Facility (IS)</li>
+///<li>PV1-40: Bed Status (IS)</li>
+///<li>PV1-41: Account Status (IS)</li>
+///<li>PV1-42: Pending Location (PL)</li>
+///<li>PV1-43: Prior Temporary Location (PL)</li>
+///<li>PV1-44: Admit Date/Time (TS)</li>
+///<li>PV1-45: Discharge Date/Time (TS)</li>
+///<li>PV1-46: Current Patient Balance (NM)</li>
+///<li>PV1-47: Total Charges (NM)</li>
+///<li>PV1-48: Total Adjustments (NM)</li>
+///<li>PV1-49: Total Payments (NM)</li>
+///<li>PV1-50: Alternate Visit ID (CX)</li>
+///<li>PV1-51: Visit Indicator (IS)</li>
+///<li>PV1-52: Other Healthcare Provider (XCN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -278,7 +279,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getAttendingDoctor(int rep)
+	public XCN GetAttendingDoctor(int rep)
 	{
 			XCN ret = null;
 			try
@@ -295,7 +296,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Attending Doctor (PV1-7).
    ///</summary>
-  public XCN[] getAttendingDoctor() {
+  public XCN[] GetAttendingDoctor() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -313,12 +314,30 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Attending Doctor (PV1-7).
+   ///</summary>
+  public int AttendingDoctorRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Referring Doctor(PV1-8).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getReferringDoctor(int rep)
+	public XCN GetReferringDoctor(int rep)
 	{
 			XCN ret = null;
 			try
@@ -335,7 +354,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Referring Doctor (PV1-8).
    ///</summary>
-  public XCN[] getReferringDoctor() {
+  public XCN[] GetReferringDoctor() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -353,12 +372,30 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Referring Doctor (PV1-8).
+   ///</summary>
+  public int ReferringDoctorRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Consulting Doctor(PV1-9).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getConsultingDoctor(int rep)
+	public XCN GetConsultingDoctor(int rep)
 	{
 			XCN ret = null;
 			try
@@ -375,7 +412,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Consulting Doctor (PV1-9).
    ///</summary>
-  public XCN[] getConsultingDoctor() {
+  public XCN[] GetConsultingDoctor() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -393,6 +430,24 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Consulting Doctor (PV1-9).
+   ///</summary>
+  public int ConsultingDoctorRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Hospital Service(PV1-10).
 	///</summary>
@@ -513,7 +568,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getAmbulatoryStatus(int rep)
+	public IS GetAmbulatoryStatus(int rep)
 	{
 			IS ret = null;
 			try
@@ -530,7 +585,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ambulatory Status (PV1-15).
    ///</summary>
-  public IS[] getAmbulatoryStatus() {
+  public IS[] GetAmbulatoryStatus() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -548,6 +603,24 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ambulatory Status (PV1-15).
+   ///</summary>
+  public int AmbulatoryStatusRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns VIP Indicator(PV1-16).
 	///</summary>
@@ -576,7 +649,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getAdmittingDoctor(int rep)
+	public XCN GetAdmittingDoctor(int rep)
 	{
 			XCN ret = null;
 			try
@@ -593,7 +666,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Admitting Doctor (PV1-17).
    ///</summary>
-  public XCN[] getAdmittingDoctor() {
+  public XCN[] GetAdmittingDoctor() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -611,6 +684,24 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Admitting Doctor (PV1-17).
+   ///</summary>
+  public int AdmittingDoctorRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Patient Type(PV1-18).
 	///</summary>
@@ -662,7 +753,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public FC getFinancialClass(int rep)
+	public FC GetFinancialClass(int rep)
 	{
 			FC ret = null;
 			try
@@ -679,7 +770,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Financial Class (PV1-20).
    ///</summary>
-  public FC[] getFinancialClass() {
+  public FC[] GetFinancialClass() {
      FC[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -697,6 +788,24 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Financial Class (PV1-20).
+   ///</summary>
+  public int FinancialClassRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Charge Price Indicator(PV1-21).
 	///</summary>
@@ -771,7 +880,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getContractCode(int rep)
+	public IS GetContractCode(int rep)
 	{
 			IS ret = null;
 			try
@@ -788,7 +897,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contract Code (PV1-24).
    ///</summary>
-  public IS[] getContractCode() {
+  public IS[] GetContractCode() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -806,12 +915,30 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contract Code (PV1-24).
+   ///</summary>
+  public int ContractCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contract Effective Date(PV1-25).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public DT getContractEffectiveDate(int rep)
+	public DT GetContractEffectiveDate(int rep)
 	{
 			DT ret = null;
 			try
@@ -828,7 +955,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contract Effective Date (PV1-25).
    ///</summary>
-  public DT[] getContractEffectiveDate() {
+  public DT[] GetContractEffectiveDate() {
      DT[] ret = null;
     try {
         IType[] t = this.GetField(25);  
@@ -846,12 +973,30 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contract Effective Date (PV1-25).
+   ///</summary>
+  public int ContractEffectiveDateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(25);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contract Amount(PV1-26).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public NM getContractAmount(int rep)
+	public NM GetContractAmount(int rep)
 	{
 			NM ret = null;
 			try
@@ -868,7 +1013,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contract Amount (PV1-26).
    ///</summary>
-  public NM[] getContractAmount() {
+  public NM[] GetContractAmount() {
      NM[] ret = null;
     try {
         IType[] t = this.GetField(26);  
@@ -886,12 +1031,30 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contract Amount (PV1-26).
+   ///</summary>
+  public int ContractAmountRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(26);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contract Period(PV1-27).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public NM getContractPeriod(int rep)
+	public NM GetContractPeriod(int rep)
 	{
 			NM ret = null;
 			try
@@ -908,7 +1071,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contract Period (PV1-27).
    ///</summary>
-  public NM[] getContractPeriod() {
+  public NM[] GetContractPeriod() {
      NM[] ret = null;
     try {
         IType[] t = this.GetField(27);  
@@ -926,6 +1089,24 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contract Period (PV1-27).
+   ///</summary>
+  public int ContractPeriodRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(27);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Interest Code(PV1-28).
 	///</summary>
@@ -1322,7 +1503,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TS getDischargeDateTime(int rep)
+	public TS GetDischargeDateTime(int rep)
 	{
 			TS ret = null;
 			try
@@ -1339,7 +1520,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Discharge Date/Time (PV1-45).
    ///</summary>
-  public TS[] getDischargeDateTime() {
+  public TS[] GetDischargeDateTime() {
      TS[] ret = null;
     try {
         IType[] t = this.GetField(45);  
@@ -1357,6 +1538,24 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Discharge Date/Time (PV1-45).
+   ///</summary>
+  public int DischargeDateTimeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(45);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Current Patient Balance(PV1-46).
 	///</summary>
@@ -1500,7 +1699,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getOtherHealthcareProvider(int rep)
+	public XCN GetOtherHealthcareProvider(int rep)
 	{
 			XCN ret = null;
 			try
@@ -1517,7 +1716,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Other Healthcare Provider (PV1-52).
    ///</summary>
-  public XCN[] getOtherHealthcareProvider() {
+  public XCN[] GetOtherHealthcareProvider() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(52);  
@@ -1535,5 +1734,23 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Other Healthcare Provider (PV1-52).
+   ///</summary>
+  public int OtherHealthcareProviderRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(52);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

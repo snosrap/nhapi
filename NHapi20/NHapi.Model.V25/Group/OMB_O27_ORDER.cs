@@ -12,15 +12,17 @@ namespace NHapi.Model.V25.Group
 ///Represents the OMB_O27_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: OMB_O27_TIMING (a Group object) 
-/// * 2: BPO (Blood product order) 
-/// * 3: SPM (Specimen) optional 
-/// * 4: NTE (Notes and Comments) optional repeating
-/// * 5: DG1 (Diagnosis) optional repeating
-/// * 6: OMB_O27_OBSERVATION (a Group object) 
-/// * 7: FT1 (Financial Transaction) optional repeating
-/// * 8: BLG (Billing) optional 
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: OMB_O27_TIMING (a Group object) </li>
+///<li>2: BPO (Blood product order) </li>
+///<li>3: SPM (Specimen) optional </li>
+///<li>4: NTE (Notes and Comments) optional repeating</li>
+///<li>5: DG1 (Diagnosis) optional repeating</li>
+///<li>6: OMB_O27_OBSERVATION (a Group object) </li>
+///<li>7: FT1 (Financial Transaction) optional repeating</li>
+///<li>8: BLG (Billing) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMB_O27_ORDER : AbstractGroup {
@@ -111,7 +113,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -128,14 +130,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -152,7 +154,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -169,14 +171,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -209,7 +211,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of FT1 (Financial Transaction) - creates it if necessary
 	///</summary>
-	public FT1 getFT1() {
+	public FT1 GetFT1() {
 	   FT1 ret = null;
 	   try {
 	      ret = (FT1)this.GetStructure("FT1");
@@ -226,14 +228,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public FT1 getFT1(int rep) { 
+	public FT1 GetFT1(int rep) { 
 	   return (FT1)this.GetStructure("FT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of FT1 
 	 */ 
-	public int FT1Reps { 
+	public int FT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

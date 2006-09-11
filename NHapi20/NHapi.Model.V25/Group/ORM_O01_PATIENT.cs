@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORM_O01_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PD1 (Patient Additional Demographic) optional 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: ORM_O01_PATIENT_VISIT (a Group object) optional 
-/// * 4: ORM_O01_INSURANCE (a Group object) 
-/// * 5: GT1 (Guarantor) optional 
-/// * 6: AL1 (Patient Allergy Information) optional repeating
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PD1 (Patient Additional Demographic) optional </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: ORM_O01_PATIENT_VISIT (a Group object) optional </li>
+///<li>4: ORM_O01_INSURANCE (a Group object) </li>
+///<li>5: GT1 (Guarantor) optional </li>
+///<li>6: AL1 (Patient Allergy Information) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORM_O01_PATIENT : AbstractGroup {
@@ -75,7 +77,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -92,14 +94,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -164,7 +166,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of AL1 (Patient Allergy Information) - creates it if necessary
 	///</summary>
-	public AL1 getAL1() {
+	public AL1 GetAL1() {
 	   AL1 ret = null;
 	   try {
 	      ret = (AL1)this.GetStructure("AL1");
@@ -181,14 +183,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AL1 getAL1(int rep) { 
+	public AL1 GetAL1(int rep) { 
 	   return (AL1)this.GetStructure("AL1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AL1 
 	 */ 
-	public int AL1Reps { 
+	public int AL1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the NMQ_N01_CLOCK_AND_STATISTICS Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: NCK (System Clock) optional 
-/// * 1: NST (Application control level statistics) optional 
-/// * 2: NSC (Application Status Change) optional 
+///<ol>
+///<li>0: NCK (System Clock) optional </li>
+///<li>1: NST (Application control level statistics) optional </li>
+///<li>2: NSC (Application Status Change) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class NMQ_N01_CLOCK_AND_STATISTICS : AbstractGroup {

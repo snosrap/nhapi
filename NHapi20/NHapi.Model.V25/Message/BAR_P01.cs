@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a BAR_P01 message structure (see chapter 6.4.1). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EVN (Event Type) 
-/// * 3: PID (Patient Identification) 
-/// * 4: PD1 (Patient Additional Demographic) optional 
-/// * 5: ROL (Role) optional repeating
-/// * 6: BAR_P01_VISIT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EVN (Event Type) </li>
+///<li>3: PID (Patient Identification) </li>
+///<li>4: PD1 (Patient Additional Demographic) optional </li>
+///<li>5: ROL (Role) optional repeating</li>
+///<li>6: BAR_P01_VISIT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BAR_P01 : AbstractMessage  {
@@ -73,7 +75,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -90,14 +92,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -162,7 +164,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROL (Role) - creates it if necessary
 	///</summary>
-	public ROL getROL() {
+	public ROL GetROL() {
 	   ROL ret = null;
 	   try {
 	      ret = (ROL)this.GetStructure("ROL");
@@ -179,14 +181,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROL getROL(int rep) { 
+	public ROL GetROL(int rep) { 
 	   return (ROL)this.GetStructure("ROL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROL 
 	 */ 
-	public int ROLReps { 
+	public int ROLRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -203,7 +205,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of BAR_P01_VISIT (a Group object) - creates it if necessary
 	///</summary>
-	public BAR_P01_VISIT getVISIT() {
+	public BAR_P01_VISIT GetVISIT() {
 	   BAR_P01_VISIT ret = null;
 	   try {
 	      ret = (BAR_P01_VISIT)this.GetStructure("VISIT");
@@ -220,14 +222,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public BAR_P01_VISIT getVISIT(int rep) { 
+	public BAR_P01_VISIT GetVISIT(int rep) { 
 	   return (BAR_P01_VISIT)this.GetStructure("VISIT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of BAR_P01_VISIT 
 	 */ 
-	public int VISITReps { 
+	public int VISITRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

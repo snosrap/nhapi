@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the OUL_R21_CONTAINER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SAC (Specimen Container detail) 
-/// * 1: SID (Substance Identifier) optional 
+///<ol>
+///<li>0: SAC (Specimen Container detail) </li>
+///<li>1: SID (Substance Identifier) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OUL_R21_CONTAINER : AbstractGroup {

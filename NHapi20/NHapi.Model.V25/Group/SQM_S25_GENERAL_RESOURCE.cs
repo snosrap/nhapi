@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the SQM_S25_GENERAL_RESOURCE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: AIG (Appointment Information _ General Resource) 
-/// * 1: APR (Appointment Preferences) optional 
+///<ol>
+///<li>0: AIG (Appointment Information _ General Resource) </li>
+///<li>1: APR (Appointment Preferences) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SQM_S25_GENERAL_RESOURCE : AbstractGroup {

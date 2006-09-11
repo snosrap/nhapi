@@ -12,7 +12,9 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORL_O36_OBSERVATION_REQUEST Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBR (Observation Request) 
+///<ol>
+///<li>0: OBR (Observation Request) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORL_O36_OBSERVATION_REQUEST : AbstractGroup {

@@ -12,12 +12,14 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a PMU_B08 message structure (see chapter 15.3.9). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EVN (Event Type) 
-/// * 3: STF (Staff Identification) 
-/// * 4: PRA (Practitioner Detail) optional 
-/// * 5: CER (Certificate Detail) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EVN (Event Type) </li>
+///<li>3: STF (Staff Identification) </li>
+///<li>4: PRA (Practitioner Detail) optional </li>
+///<li>5: CER (Certificate Detail) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PMU_B08 : AbstractMessage  {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -160,7 +162,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CER (Certificate Detail) - creates it if necessary
 	///</summary>
-	public CER getCER() {
+	public CER GetCER() {
 	   CER ret = null;
 	   try {
 	      ret = (CER)this.GetStructure("CER");
@@ -177,14 +179,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CER getCER(int rep) { 
+	public CER GetCER(int rep) { 
 	   return (CER)this.GetStructure("CER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CER 
 	 */ 
-	public int CERReps { 
+	public int CERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

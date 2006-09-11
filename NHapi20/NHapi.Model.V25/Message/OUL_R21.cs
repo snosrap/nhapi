@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a OUL_R21 message structure (see chapter 7.3.2). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: NTE (Notes and Comments) optional 
-/// * 3: OUL_R21_PATIENT (a Group object) optional 
-/// * 4: OUL_R21_VISIT (a Group object) optional 
-/// * 5: OUL_R21_ORDER_OBSERVATION (a Group object) repeating
-/// * 6: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: NTE (Notes and Comments) optional </li>
+///<li>3: OUL_R21_PATIENT (a Group object) optional </li>
+///<li>4: OUL_R21_VISIT (a Group object) optional </li>
+///<li>5: OUL_R21_ORDER_OBSERVATION (a Group object) repeating</li>
+///<li>6: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OUL_R21 : AbstractMessage  {
@@ -73,7 +75,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -90,14 +92,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -162,7 +164,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OUL_R21_ORDER_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public OUL_R21_ORDER_OBSERVATION getORDER_OBSERVATION() {
+	public OUL_R21_ORDER_OBSERVATION GetORDER_OBSERVATION() {
 	   OUL_R21_ORDER_OBSERVATION ret = null;
 	   try {
 	      ret = (OUL_R21_ORDER_OBSERVATION)this.GetStructure("ORDER_OBSERVATION");
@@ -179,14 +181,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OUL_R21_ORDER_OBSERVATION getORDER_OBSERVATION(int rep) { 
+	public OUL_R21_ORDER_OBSERVATION GetORDER_OBSERVATION(int rep) { 
 	   return (OUL_R21_ORDER_OBSERVATION)this.GetStructure("ORDER_OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OUL_R21_ORDER_OBSERVATION 
 	 */ 
-	public int ORDER_OBSERVATIONReps { 
+	public int ORDER_OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

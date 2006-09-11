@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a EAC_U07 message structure (see chapter 13.3.7). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: EQU (Equipment Detail) 
-/// * 3: EAC_U07_COMMAND (a Group object) repeating
-/// * 4: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: EQU (Equipment Detail) </li>
+///<li>3: EAC_U07_COMMAND (a Group object) repeating</li>
+///<li>4: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EAC_U07 : AbstractMessage  {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -126,7 +128,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of EAC_U07_COMMAND (a Group object) - creates it if necessary
 	///</summary>
-	public EAC_U07_COMMAND getCOMMAND() {
+	public EAC_U07_COMMAND GetCOMMAND() {
 	   EAC_U07_COMMAND ret = null;
 	   try {
 	      ret = (EAC_U07_COMMAND)this.GetStructure("COMMAND");
@@ -143,14 +145,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public EAC_U07_COMMAND getCOMMAND(int rep) { 
+	public EAC_U07_COMMAND GetCOMMAND(int rep) { 
 	   return (EAC_U07_COMMAND)this.GetStructure("COMMAND", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of EAC_U07_COMMAND 
 	 */ 
-	public int COMMANDReps { 
+	public int COMMANDRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

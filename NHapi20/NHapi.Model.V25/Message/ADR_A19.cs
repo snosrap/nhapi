@@ -12,15 +12,17 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a ADR_A19 message structure (see chapter 3.3.19). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: MSA (Message Acknowledgment) 
-/// * 3: ERR (Error) optional 
-/// * 4: QAK (Query Acknowledgment) optional 
-/// * 5: QRD (Original-Style Query Definition) 
-/// * 6: QRF (Original style query filter) optional 
-/// * 7: ADR_A19_QUERY_RESPONSE (a Group object) repeating
-/// * 8: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: MSA (Message Acknowledgment) </li>
+///<li>3: ERR (Error) optional </li>
+///<li>4: QAK (Query Acknowledgment) optional </li>
+///<li>5: QRD (Original-Style Query Definition) </li>
+///<li>6: QRF (Original style query filter) optional </li>
+///<li>7: ADR_A19_QUERY_RESPONSE (a Group object) repeating</li>
+///<li>8: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADR_A19 : AbstractMessage  {
@@ -77,7 +79,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -94,14 +96,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -198,7 +200,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ADR_A19_QUERY_RESPONSE (a Group object) - creates it if necessary
 	///</summary>
-	public ADR_A19_QUERY_RESPONSE getQUERY_RESPONSE() {
+	public ADR_A19_QUERY_RESPONSE GetQUERY_RESPONSE() {
 	   ADR_A19_QUERY_RESPONSE ret = null;
 	   try {
 	      ret = (ADR_A19_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE");
@@ -215,14 +217,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ADR_A19_QUERY_RESPONSE getQUERY_RESPONSE(int rep) { 
+	public ADR_A19_QUERY_RESPONSE GetQUERY_RESPONSE(int rep) { 
 	   return (ADR_A19_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ADR_A19_QUERY_RESPONSE 
 	 */ 
-	public int QUERY_RESPONSEReps { 
+	public int QUERY_RESPONSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

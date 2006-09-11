@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Group
 ///Represents the RGV_O15_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RGV_O15_TIMING (a Group object) 
-/// * 2: RGV_O15_ORDER_DETAIL (a Group object) optional 
-/// * 3: RGV_O15_ENCODING (a Group object) optional 
-/// * 4: RGV_O15_GIVE (a Group object) repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RGV_O15_TIMING (a Group object) </li>
+///<li>2: RGV_O15_ORDER_DETAIL (a Group object) optional </li>
+///<li>3: RGV_O15_ENCODING (a Group object) optional </li>
+///<li>4: RGV_O15_GIVE (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RGV_O15_ORDER : AbstractGroup {
@@ -103,7 +105,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RGV_O15_GIVE (a Group object) - creates it if necessary
 	///</summary>
-	public RGV_O15_GIVE getGIVE() {
+	public RGV_O15_GIVE GetGIVE() {
 	   RGV_O15_GIVE ret = null;
 	   try {
 	      ret = (RGV_O15_GIVE)this.GetStructure("GIVE");
@@ -120,14 +122,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RGV_O15_GIVE getGIVE(int rep) { 
+	public RGV_O15_GIVE GetGIVE(int rep) { 
 	   return (RGV_O15_GIVE)this.GetStructure("GIVE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RGV_O15_GIVE 
 	 */ 
-	public int GIVEReps { 
+	public int GIVERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

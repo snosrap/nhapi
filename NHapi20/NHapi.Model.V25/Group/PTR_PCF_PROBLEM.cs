@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Group
 ///Represents the PTR_PCF_PROBLEM Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PRB (Problem Details) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: VAR (Variance) optional repeating
-/// * 3: PTR_PCF_PROBLEM_ROLE (a Group object) 
-/// * 4: PTR_PCF_PROBLEM_OBSERVATION (a Group object) 
-/// * 5: PTR_PCF_GOAL (a Group object) 
-/// * 6: PTR_PCF_ORDER (a Group object) 
+///<ol>
+///<li>0: PRB (Problem Details) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: VAR (Variance) optional repeating</li>
+///<li>3: PTR_PCF_PROBLEM_ROLE (a Group object) </li>
+///<li>4: PTR_PCF_PROBLEM_OBSERVATION (a Group object) </li>
+///<li>5: PTR_PCF_GOAL (a Group object) </li>
+///<li>6: PTR_PCF_ORDER (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PTR_PCF_PROBLEM : AbstractGroup {
@@ -59,7 +61,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -76,14 +78,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -100,7 +102,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VAR (Variance) - creates it if necessary
 	///</summary>
-	public VAR getVAR() {
+	public VAR GetVAR() {
 	   VAR ret = null;
 	   try {
 	      ret = (VAR)this.GetStructure("VAR");
@@ -117,14 +119,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VAR getVAR(int rep) { 
+	public VAR GetVAR(int rep) { 
 	   return (VAR)this.GetStructure("VAR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VAR 
 	 */ 
-	public int VARReps { 
+	public int VARRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,12 +9,13 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 EQU message segment. 
-/// This segment has the following fields:
-/// * EQU-1: Equipment Instance Identifier (EI)
-/// * EQU-2: Event Date/Time (TS)
-/// * EQU-3: Equipment State (CE)
-/// * EQU-4: Local/Remote Control State (CE)
-/// * EQU-5: Alert Level (CE)
+/// This segment has the following fields:<ol>
+///<li>EQU-1: Equipment Instance Identifier (EI)</li>
+///<li>EQU-2: Event Date/Time (TS)</li>
+///<li>EQU-3: Equipment State (CE)</li>
+///<li>EQU-4: Local/Remote Control State (CE)</li>
+///<li>EQU-5: Alert Level (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a SUR_P09 message structure (see chapter 7.11.2). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SUR_P09_FACILITY (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SUR_P09_FACILITY (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SUR_P09 : AbstractMessage  {
@@ -63,7 +65,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SUR_P09_FACILITY (a Group object) - creates it if necessary
 	///</summary>
-	public SUR_P09_FACILITY getFACILITY() {
+	public SUR_P09_FACILITY GetFACILITY() {
 	   SUR_P09_FACILITY ret = null;
 	   try {
 	      ret = (SUR_P09_FACILITY)this.GetStructure("FACILITY");
@@ -80,14 +82,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SUR_P09_FACILITY getFACILITY(int rep) { 
+	public SUR_P09_FACILITY GetFACILITY(int rep) { 
 	   return (SUR_P09_FACILITY)this.GetStructure("FACILITY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SUR_P09_FACILITY 
 	 */ 
-	public int FACILITYReps { 
+	public int FACILITYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

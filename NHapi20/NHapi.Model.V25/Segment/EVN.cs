@@ -9,14 +9,15 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 EVN message segment. 
-/// This segment has the following fields:
-/// * EVN-1: Event Type Code (ID)
-/// * EVN-2: Recorded Date/Time (TS)
-/// * EVN-3: Date/Time Planned Event (TS)
-/// * EVN-4: Event Reason Code (IS)
-/// * EVN-5: Operator ID (XCN)
-/// * EVN-6: Event Occurred (TS)
-/// * EVN-7: Event Facility (HD)
+/// This segment has the following fields:<ol>
+///<li>EVN-1: Event Type Code (ID)</li>
+///<li>EVN-2: Recorded Date/Time (TS)</li>
+///<li>EVN-3: Date/Time Planned Event (TS)</li>
+///<li>EVN-4: Event Reason Code (IS)</li>
+///<li>EVN-5: Operator ID (XCN)</li>
+///<li>EVN-6: Event Occurred (TS)</li>
+///<li>EVN-7: Event Facility (HD)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -142,7 +143,7 @@ public class EVN : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getOperatorID(int rep)
+	public XCN GetOperatorID(int rep)
 	{
 			XCN ret = null;
 			try
@@ -159,7 +160,7 @@ public class EVN : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Operator ID (EVN-5).
    ///</summary>
-  public XCN[] getOperatorID() {
+  public XCN[] GetOperatorID() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -177,6 +178,24 @@ public class EVN : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Operator ID (EVN-5).
+   ///</summary>
+  public int OperatorIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Event Occurred(EVN-6).
 	///</summary>

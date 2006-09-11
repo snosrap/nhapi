@@ -9,36 +9,37 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 SPM message segment. 
-/// This segment has the following fields:
-/// * SPM-1: Set ID _ SPM (SI)
-/// * SPM-2: Specimen ID (EIP)
-/// * SPM-3: Specimen Parent IDs (EIP)
-/// * SPM-4: Specimen Type (CWE)
-/// * SPM-5: Specimen Type Modifier (CWE)
-/// * SPM-6: Specimen Additives (CWE)
-/// * SPM-7: Specimen Collection Method (CWE)
-/// * SPM-8: Specimen Source Site (CWE)
-/// * SPM-9: Specimen Source Site Modifier (CWE)
-/// * SPM-10: Specimen Collection Site (CWE)
-/// * SPM-11: Specimen Role (CWE)
-/// * SPM-12: Specimen Collection Amount (CQ)
-/// * SPM-13: Grouped Specimen Count (NM)
-/// * SPM-14: Specimen Description (ST)
-/// * SPM-15: Specimen Handling Code (CWE)
-/// * SPM-16: Specimen Risk Code (CWE)
-/// * SPM-17: Specimen Collection Date/Time (DR)
-/// * SPM-18: Specimen Received Date/Time (TS)
-/// * SPM-19: Specimen Expiration Date/Time (TS)
-/// * SPM-20: Specimen Availability (ID)
-/// * SPM-21: Specimen Reject Reason (CWE)
-/// * SPM-22: Specimen Quality (CWE)
-/// * SPM-23: Specimen Appropriateness (CWE)
-/// * SPM-24: Specimen Condition (CWE)
-/// * SPM-25: Specimen Current Quantity (CQ)
-/// * SPM-26: Number of Specimen Containers (NM)
-/// * SPM-27: Container Type (CWE)
-/// * SPM-28: Container Condition (CWE)
-/// * SPM-29: Specimen Child Role (CWE)
+/// This segment has the following fields:<ol>
+///<li>SPM-1: Set ID _ SPM (SI)</li>
+///<li>SPM-2: Specimen ID (EIP)</li>
+///<li>SPM-3: Specimen Parent IDs (EIP)</li>
+///<li>SPM-4: Specimen Type (CWE)</li>
+///<li>SPM-5: Specimen Type Modifier (CWE)</li>
+///<li>SPM-6: Specimen Additives (CWE)</li>
+///<li>SPM-7: Specimen Collection Method (CWE)</li>
+///<li>SPM-8: Specimen Source Site (CWE)</li>
+///<li>SPM-9: Specimen Source Site Modifier (CWE)</li>
+///<li>SPM-10: Specimen Collection Site (CWE)</li>
+///<li>SPM-11: Specimen Role (CWE)</li>
+///<li>SPM-12: Specimen Collection Amount (CQ)</li>
+///<li>SPM-13: Grouped Specimen Count (NM)</li>
+///<li>SPM-14: Specimen Description (ST)</li>
+///<li>SPM-15: Specimen Handling Code (CWE)</li>
+///<li>SPM-16: Specimen Risk Code (CWE)</li>
+///<li>SPM-17: Specimen Collection Date/Time (DR)</li>
+///<li>SPM-18: Specimen Received Date/Time (TS)</li>
+///<li>SPM-19: Specimen Expiration Date/Time (TS)</li>
+///<li>SPM-20: Specimen Availability (ID)</li>
+///<li>SPM-21: Specimen Reject Reason (CWE)</li>
+///<li>SPM-22: Specimen Quality (CWE)</li>
+///<li>SPM-23: Specimen Appropriateness (CWE)</li>
+///<li>SPM-24: Specimen Condition (CWE)</li>
+///<li>SPM-25: Specimen Current Quantity (CQ)</li>
+///<li>SPM-26: Number of Specimen Containers (NM)</li>
+///<li>SPM-27: Container Type (CWE)</li>
+///<li>SPM-28: Container Condition (CWE)</li>
+///<li>SPM-29: Specimen Child Role (CWE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -140,7 +141,7 @@ public class SPM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EIP getSpecimenParentIDs(int rep)
+	public EIP GetSpecimenParentIDs(int rep)
 	{
 			EIP ret = null;
 			try
@@ -157,7 +158,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Parent IDs (SPM-3).
    ///</summary>
-  public EIP[] getSpecimenParentIDs() {
+  public EIP[] GetSpecimenParentIDs() {
      EIP[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -175,6 +176,24 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Parent IDs (SPM-3).
+   ///</summary>
+  public int SpecimenParentIDsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Type(SPM-4).
 	///</summary>
@@ -203,7 +222,7 @@ public class SPM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getSpecimenTypeModifier(int rep)
+	public CWE GetSpecimenTypeModifier(int rep)
 	{
 			CWE ret = null;
 			try
@@ -220,7 +239,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Type Modifier (SPM-5).
    ///</summary>
-  public CWE[] getSpecimenTypeModifier() {
+  public CWE[] GetSpecimenTypeModifier() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -238,12 +257,30 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Type Modifier (SPM-5).
+   ///</summary>
+  public int SpecimenTypeModifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Specimen Additives(SPM-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getSpecimenAdditives(int rep)
+	public CWE GetSpecimenAdditives(int rep)
 	{
 			CWE ret = null;
 			try
@@ -260,7 +297,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Additives (SPM-6).
    ///</summary>
-  public CWE[] getSpecimenAdditives() {
+  public CWE[] GetSpecimenAdditives() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -278,6 +315,24 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Additives (SPM-6).
+   ///</summary>
+  public int SpecimenAdditivesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Collection Method(SPM-7).
 	///</summary>
@@ -329,7 +384,7 @@ public class SPM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getSpecimenSourceSiteModifier(int rep)
+	public CWE GetSpecimenSourceSiteModifier(int rep)
 	{
 			CWE ret = null;
 			try
@@ -346,7 +401,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Source Site Modifier (SPM-9).
    ///</summary>
-  public CWE[] getSpecimenSourceSiteModifier() {
+  public CWE[] GetSpecimenSourceSiteModifier() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -364,6 +419,24 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Source Site Modifier (SPM-9).
+   ///</summary>
+  public int SpecimenSourceSiteModifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Collection Site(SPM-10).
 	///</summary>
@@ -392,7 +465,7 @@ public class SPM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getSpecimenRole(int rep)
+	public CWE GetSpecimenRole(int rep)
 	{
 			CWE ret = null;
 			try
@@ -409,7 +482,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Role (SPM-11).
    ///</summary>
-  public CWE[] getSpecimenRole() {
+  public CWE[] GetSpecimenRole() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -427,6 +500,24 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Role (SPM-11).
+   ///</summary>
+  public int SpecimenRoleRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Collection Amount(SPM-12).
 	///</summary>
@@ -478,7 +569,7 @@ public class SPM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getSpecimenDescription(int rep)
+	public ST GetSpecimenDescription(int rep)
 	{
 			ST ret = null;
 			try
@@ -495,7 +586,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Description (SPM-14).
    ///</summary>
-  public ST[] getSpecimenDescription() {
+  public ST[] GetSpecimenDescription() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -513,12 +604,30 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Description (SPM-14).
+   ///</summary>
+  public int SpecimenDescriptionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Specimen Handling Code(SPM-15).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getSpecimenHandlingCode(int rep)
+	public CWE GetSpecimenHandlingCode(int rep)
 	{
 			CWE ret = null;
 			try
@@ -535,7 +644,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Handling Code (SPM-15).
    ///</summary>
-  public CWE[] getSpecimenHandlingCode() {
+  public CWE[] GetSpecimenHandlingCode() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -553,12 +662,30 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Handling Code (SPM-15).
+   ///</summary>
+  public int SpecimenHandlingCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Specimen Risk Code(SPM-16).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getSpecimenRiskCode(int rep)
+	public CWE GetSpecimenRiskCode(int rep)
 	{
 			CWE ret = null;
 			try
@@ -575,7 +702,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Risk Code (SPM-16).
    ///</summary>
-  public CWE[] getSpecimenRiskCode() {
+  public CWE[] GetSpecimenRiskCode() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -593,6 +720,24 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Risk Code (SPM-16).
+   ///</summary>
+  public int SpecimenRiskCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Collection Date/Time(SPM-17).
 	///</summary>
@@ -690,7 +835,7 @@ public class SPM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getSpecimenRejectReason(int rep)
+	public CWE GetSpecimenRejectReason(int rep)
 	{
 			CWE ret = null;
 			try
@@ -707,7 +852,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Reject Reason (SPM-21).
    ///</summary>
-  public CWE[] getSpecimenRejectReason() {
+  public CWE[] GetSpecimenRejectReason() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -725,6 +870,24 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Reject Reason (SPM-21).
+   ///</summary>
+  public int SpecimenRejectReasonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Quality(SPM-22).
 	///</summary>
@@ -776,7 +939,7 @@ public class SPM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getSpecimenCondition(int rep)
+	public CWE GetSpecimenCondition(int rep)
 	{
 			CWE ret = null;
 			try
@@ -793,7 +956,7 @@ public class SPM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Condition (SPM-24).
    ///</summary>
-  public CWE[] getSpecimenCondition() {
+  public CWE[] GetSpecimenCondition() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -811,6 +974,24 @@ public class SPM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Condition (SPM-24).
+   ///</summary>
+  public int SpecimenConditionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Current Quantity(SPM-25).
 	///</summary>

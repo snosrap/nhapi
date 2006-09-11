@@ -12,14 +12,16 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a RSP_Z86 message structure (see chapter 5.9.1.2.1). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: MSA (Message Acknowledgment) 
-/// * 3: ERR (Error) optional 
-/// * 4: QAK (Query Acknowledgment) 
-/// * 5: QPD (Query Parameter Definition) 
-/// * 6: RSP_Z86_QUERY_RESPONSE (a Group object) repeating
-/// * 7: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: MSA (Message Acknowledgment) </li>
+///<li>3: ERR (Error) optional </li>
+///<li>4: QAK (Query Acknowledgment) </li>
+///<li>5: QPD (Query Parameter Definition) </li>
+///<li>6: RSP_Z86_QUERY_RESPONSE (a Group object) repeating</li>
+///<li>7: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Z86 : AbstractMessage  {
@@ -75,7 +77,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -92,14 +94,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -180,7 +182,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RSP_Z86_QUERY_RESPONSE (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_Z86_QUERY_RESPONSE getQUERY_RESPONSE() {
+	public RSP_Z86_QUERY_RESPONSE GetQUERY_RESPONSE() {
 	   RSP_Z86_QUERY_RESPONSE ret = null;
 	   try {
 	      ret = (RSP_Z86_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE");
@@ -197,14 +199,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RSP_Z86_QUERY_RESPONSE getQUERY_RESPONSE(int rep) { 
+	public RSP_Z86_QUERY_RESPONSE GetQUERY_RESPONSE(int rep) { 
 	   return (RSP_Z86_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RSP_Z86_QUERY_RESPONSE 
 	 */ 
-	public int QUERY_RESPONSEReps { 
+	public int QUERY_RESPONSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

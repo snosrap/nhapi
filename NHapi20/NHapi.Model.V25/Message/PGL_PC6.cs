@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a PGL_PC6 message structure (see chapter 12.3.1). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: PID (Patient Identification) 
-/// * 3: PGL_PC6_PATIENT_VISIT (a Group object) optional 
-/// * 4: PGL_PC6_GOAL (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: PGL_PC6_PATIENT_VISIT (a Group object) optional </li>
+///<li>4: PGL_PC6_GOAL (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PGL_PC6 : AbstractMessage  {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -142,7 +144,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PGL_PC6_GOAL (a Group object) - creates it if necessary
 	///</summary>
-	public PGL_PC6_GOAL getGOAL() {
+	public PGL_PC6_GOAL GetGOAL() {
 	   PGL_PC6_GOAL ret = null;
 	   try {
 	      ret = (PGL_PC6_GOAL)this.GetStructure("GOAL");
@@ -159,14 +161,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PGL_PC6_GOAL getGOAL(int rep) { 
+	public PGL_PC6_GOAL GetGOAL(int rep) { 
 	   return (PGL_PC6_GOAL)this.GetStructure("GOAL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PGL_PC6_GOAL 
 	 */ 
-	public int GOALReps { 
+	public int GOALRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

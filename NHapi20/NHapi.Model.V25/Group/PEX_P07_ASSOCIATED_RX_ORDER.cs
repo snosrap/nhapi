@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the PEX_P07_ASSOCIATED_RX_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RXE (Pharmacy/Treatment Encoded Order) 
-/// * 1: PEX_P07_NK1_TIMING_QTY (a Group object) repeating
-/// * 2: RXR (Pharmacy/Treatment Route) optional repeating
+///<ol>
+///<li>0: RXE (Pharmacy/Treatment Encoded Order) </li>
+///<li>1: PEX_P07_NK1_TIMING_QTY (a Group object) repeating</li>
+///<li>2: RXR (Pharmacy/Treatment Route) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PEX_P07_ASSOCIATED_RX_ORDER : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PEX_P07_NK1_TIMING_QTY (a Group object) - creates it if necessary
 	///</summary>
-	public PEX_P07_NK1_TIMING_QTY getNK1_TIMING_QTY() {
+	public PEX_P07_NK1_TIMING_QTY GetNK1_TIMING_QTY() {
 	   PEX_P07_NK1_TIMING_QTY ret = null;
 	   try {
 	      ret = (PEX_P07_NK1_TIMING_QTY)this.GetStructure("NK1_TIMING_QTY");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PEX_P07_NK1_TIMING_QTY getNK1_TIMING_QTY(int rep) { 
+	public PEX_P07_NK1_TIMING_QTY GetNK1_TIMING_QTY(int rep) { 
 	   return (PEX_P07_NK1_TIMING_QTY)this.GetStructure("NK1_TIMING_QTY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PEX_P07_NK1_TIMING_QTY 
 	 */ 
-	public int NK1_TIMING_QTYReps { 
+	public int NK1_TIMING_QTYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXR (Pharmacy/Treatment Route) - creates it if necessary
 	///</summary>
-	public RXR getRXR() {
+	public RXR GetRXR() {
 	   RXR ret = null;
 	   try {
 	      ret = (RXR)this.GetStructure("RXR");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXR getRXR(int rep) { 
+	public RXR GetRXR(int rep) { 
 	   return (RXR)this.GetStructure("RXR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXR 
 	 */ 
-	public int RXRReps { 
+	public int RXRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the RRA_O18_ADMINISTRATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RXA (Pharmacy/Treatment Administration) repeating
-/// * 1: RXR (Pharmacy/Treatment Route) 
+///<ol>
+///<li>0: RXA (Pharmacy/Treatment Administration) repeating</li>
+///<li>1: RXR (Pharmacy/Treatment Route) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRA_O18_ADMINISTRATION : AbstractGroup {
@@ -33,7 +35,7 @@ public class RRA_O18_ADMINISTRATION : AbstractGroup {
 	///<summary>
 	/// Returns  first repetition of RXA (Pharmacy/Treatment Administration) - creates it if necessary
 	///</summary>
-	public RXA getRXA() {
+	public RXA GetRXA() {
 	   RXA ret = null;
 	   try {
 	      ret = (RXA)this.GetStructure("RXA");
@@ -50,14 +52,14 @@ public class RRA_O18_ADMINISTRATION : AbstractGroup {
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXA getRXA(int rep) { 
+	public RXA GetRXA(int rep) { 
 	   return (RXA)this.GetStructure("RXA", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXA 
 	 */ 
-	public int RXAReps { 
+	public int RXARepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

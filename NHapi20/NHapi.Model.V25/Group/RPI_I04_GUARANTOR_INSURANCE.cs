@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the RPI_I04_GUARANTOR_INSURANCE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: GT1 (Guarantor) optional repeating
-/// * 1: RPI_I04_INSURANCE (a Group object) repeating
+///<ol>
+///<li>0: GT1 (Guarantor) optional repeating</li>
+///<li>1: RPI_I04_INSURANCE (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RPI_I04_GUARANTOR_INSURANCE : AbstractGroup {
@@ -33,7 +35,7 @@ public class RPI_I04_GUARANTOR_INSURANCE : AbstractGroup {
 	///<summary>
 	/// Returns  first repetition of GT1 (Guarantor) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -50,14 +52,14 @@ public class RPI_I04_GUARANTOR_INSURANCE : AbstractGroup {
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -74,7 +76,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RPI_I04_INSURANCE (a Group object) - creates it if necessary
 	///</summary>
-	public RPI_I04_INSURANCE getINSURANCE() {
+	public RPI_I04_INSURANCE GetINSURANCE() {
 	   RPI_I04_INSURANCE ret = null;
 	   try {
 	      ret = (RPI_I04_INSURANCE)this.GetStructure("INSURANCE");
@@ -91,14 +93,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RPI_I04_INSURANCE getINSURANCE(int rep) { 
+	public RPI_I04_INSURANCE GetINSURANCE(int rep) { 
 	   return (RPI_I04_INSURANCE)this.GetStructure("INSURANCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RPI_I04_INSURANCE 
 	 */ 
-	public int INSURANCEReps { 
+	public int INSURANCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

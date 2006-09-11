@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Group
 ///Represents the ORI_O24_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: ORI_O24_TIMING (a Group object) 
-/// * 2: OBR (Observation Request) 
-/// * 3: NTE (Notes and Comments) optional repeating
-/// * 4: IPC (Imaging Procedure Control Segment) repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: ORI_O24_TIMING (a Group object) </li>
+///<li>2: OBR (Observation Request) </li>
+///<li>3: NTE (Notes and Comments) optional repeating</li>
+///<li>4: IPC (Imaging Procedure Control Segment) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORI_O24_ORDER : AbstractGroup {
@@ -87,7 +89,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -104,14 +106,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of IPC (Imaging Procedure Control Segment) - creates it if necessary
 	///</summary>
-	public IPC getIPC() {
+	public IPC GetIPC() {
 	   IPC ret = null;
 	   try {
 	      ret = (IPC)this.GetStructure("IPC");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public IPC getIPC(int rep) { 
+	public IPC GetIPC(int rep) { 
 	   return (IPC)this.GetStructure("IPC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of IPC 
 	 */ 
-	public int IPCReps { 
+	public int IPCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

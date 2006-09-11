@@ -12,24 +12,26 @@ namespace NHapi.Model.V25.Group
 ///Represents the BAR_P05_VISIT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PV1 (Patient Visit) optional 
-/// * 1: PV2 (Patient Visit - Additional Information) optional 
-/// * 2: ROL (Role) optional repeating
-/// * 3: DB1 (Disability) optional repeating
-/// * 4: OBX (Observation/Result) optional repeating
-/// * 5: AL1 (Patient Allergy Information) optional repeating
-/// * 6: DG1 (Diagnosis) optional repeating
-/// * 7: DRG (Diagnosis Related Group) optional 
-/// * 8: BAR_P05_PROCEDURE (a Group object) 
-/// * 9: GT1 (Guarantor) optional repeating
-/// * 10: NK1 (Next of Kin / Associated Parties) optional repeating
-/// * 11: BAR_P05_INSURANCE (a Group object) 
-/// * 12: ACC (Accident) optional 
-/// * 13: UB1 (UB82) optional 
-/// * 14: UB2 (UB92 Data) optional 
-/// * 15: ABS (Abstract) optional 
-/// * 16: BLC (Blood Code) optional repeating
-/// * 17: RMI (Risk Management Incident) optional 
+///<ol>
+///<li>0: PV1 (Patient Visit) optional </li>
+///<li>1: PV2 (Patient Visit - Additional Information) optional </li>
+///<li>2: ROL (Role) optional repeating</li>
+///<li>3: DB1 (Disability) optional repeating</li>
+///<li>4: OBX (Observation/Result) optional repeating</li>
+///<li>5: AL1 (Patient Allergy Information) optional repeating</li>
+///<li>6: DG1 (Diagnosis) optional repeating</li>
+///<li>7: DRG (Diagnosis Related Group) optional </li>
+///<li>8: BAR_P05_PROCEDURE (a Group object) </li>
+///<li>9: GT1 (Guarantor) optional repeating</li>
+///<li>10: NK1 (Next of Kin / Associated Parties) optional repeating</li>
+///<li>11: BAR_P05_INSURANCE (a Group object) </li>
+///<li>12: ACC (Accident) optional </li>
+///<li>13: UB1 (UB82) optional </li>
+///<li>14: UB2 (UB92 Data) optional </li>
+///<li>15: ABS (Abstract) optional </li>
+///<li>16: BLC (Blood Code) optional repeating</li>
+///<li>17: RMI (Risk Management Incident) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BAR_P05_VISIT : AbstractGroup {
@@ -97,7 +99,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROL (Role) - creates it if necessary
 	///</summary>
-	public ROL getROL() {
+	public ROL GetROL() {
 	   ROL ret = null;
 	   try {
 	      ret = (ROL)this.GetStructure("ROL");
@@ -114,14 +116,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROL getROL(int rep) { 
+	public ROL GetROL(int rep) { 
 	   return (ROL)this.GetStructure("ROL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROL 
 	 */ 
-	public int ROLReps { 
+	public int ROLRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -138,7 +140,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DB1 (Disability) - creates it if necessary
 	///</summary>
-	public DB1 getDB1() {
+	public DB1 GetDB1() {
 	   DB1 ret = null;
 	   try {
 	      ret = (DB1)this.GetStructure("DB1");
@@ -155,14 +157,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DB1 getDB1(int rep) { 
+	public DB1 GetDB1(int rep) { 
 	   return (DB1)this.GetStructure("DB1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DB1 
 	 */ 
-	public int DB1Reps { 
+	public int DB1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -179,7 +181,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -196,14 +198,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -220,7 +222,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of AL1 (Patient Allergy Information) - creates it if necessary
 	///</summary>
-	public AL1 getAL1() {
+	public AL1 GetAL1() {
 	   AL1 ret = null;
 	   try {
 	      ret = (AL1)this.GetStructure("AL1");
@@ -237,14 +239,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AL1 getAL1(int rep) { 
+	public AL1 GetAL1(int rep) { 
 	   return (AL1)this.GetStructure("AL1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AL1 
 	 */ 
-	public int AL1Reps { 
+	public int AL1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -261,7 +263,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -278,14 +280,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -334,7 +336,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of GT1 (Guarantor) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -351,14 +353,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -375,7 +377,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (Next of Kin / Associated Parties) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -392,14 +394,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -496,7 +498,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of BLC (Blood Code) - creates it if necessary
 	///</summary>
-	public BLC getBLC() {
+	public BLC GetBLC() {
 	   BLC ret = null;
 	   try {
 	      ret = (BLC)this.GetStructure("BLC");
@@ -513,14 +515,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public BLC getBLC(int rep) { 
+	public BLC GetBLC(int rep) { 
 	   return (BLC)this.GetStructure("BLC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of BLC 
 	 */ 
-	public int BLCReps { 
+	public int BLCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

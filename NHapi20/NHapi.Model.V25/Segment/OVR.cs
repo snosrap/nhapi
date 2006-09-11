@@ -9,12 +9,13 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 OVR message segment. 
-/// This segment has the following fields:
-/// * OVR-1: Business Rule Override Type (CWE)
-/// * OVR-2: Business Rule Override Code (CWE)
-/// * OVR-3: Override Comments (TX)
-/// * OVR-4: Override Entered By (XCN)
-/// * OVR-5: Override Authorized By (XCN)
+/// This segment has the following fields:<ol>
+///<li>OVR-1: Business Rule Override Type (CWE)</li>
+///<li>OVR-2: Business Rule Override Code (CWE)</li>
+///<li>OVR-3: Override Comments (TX)</li>
+///<li>OVR-4: Override Entered By (XCN)</li>
+///<li>OVR-5: Override Authorized By (XCN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

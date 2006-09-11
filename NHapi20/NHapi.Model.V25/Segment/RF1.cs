@@ -9,18 +9,19 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 RF1 message segment. 
-/// This segment has the following fields:
-/// * RF1-1: Referral Status (CE)
-/// * RF1-2: Referral Priority (CE)
-/// * RF1-3: Referral Type (CE)
-/// * RF1-4: Referral Disposition (CE)
-/// * RF1-5: Referral Category (CE)
-/// * RF1-6: Originating Referral Identifier (EI)
-/// * RF1-7: Effective Date (TS)
-/// * RF1-8: Expiration Date (TS)
-/// * RF1-9: Process Date (TS)
-/// * RF1-10: Referral Reason (CE)
-/// * RF1-11: External Referral Identifier (EI)
+/// This segment has the following fields:<ol>
+///<li>RF1-1: Referral Status (CE)</li>
+///<li>RF1-2: Referral Priority (CE)</li>
+///<li>RF1-3: Referral Type (CE)</li>
+///<li>RF1-4: Referral Disposition (CE)</li>
+///<li>RF1-5: Referral Category (CE)</li>
+///<li>RF1-6: Originating Referral Identifier (EI)</li>
+///<li>RF1-7: Effective Date (TS)</li>
+///<li>RF1-8: Expiration Date (TS)</li>
+///<li>RF1-9: Process Date (TS)</li>
+///<li>RF1-10: Referral Reason (CE)</li>
+///<li>RF1-11: External Referral Identifier (EI)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -127,7 +128,7 @@ public class RF1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getReferralDisposition(int rep)
+	public CE GetReferralDisposition(int rep)
 	{
 			CE ret = null;
 			try
@@ -144,7 +145,7 @@ public class RF1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Referral Disposition (RF1-4).
    ///</summary>
-  public CE[] getReferralDisposition() {
+  public CE[] GetReferralDisposition() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -162,6 +163,24 @@ public class RF1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Referral Disposition (RF1-4).
+   ///</summary>
+  public int ReferralDispositionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Referral Category(RF1-5).
 	///</summary>
@@ -282,7 +301,7 @@ public class RF1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getReferralReason(int rep)
+	public CE GetReferralReason(int rep)
 	{
 			CE ret = null;
 			try
@@ -299,7 +318,7 @@ public class RF1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Referral Reason (RF1-10).
    ///</summary>
-  public CE[] getReferralReason() {
+  public CE[] GetReferralReason() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -317,12 +336,30 @@ public class RF1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Referral Reason (RF1-10).
+   ///</summary>
+  public int ReferralReasonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of External Referral Identifier(RF1-11).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getExternalReferralIdentifier(int rep)
+	public EI GetExternalReferralIdentifier(int rep)
 	{
 			EI ret = null;
 			try
@@ -339,7 +376,7 @@ public class RF1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of External Referral Identifier (RF1-11).
    ///</summary>
-  public EI[] getExternalReferralIdentifier() {
+  public EI[] GetExternalReferralIdentifier() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -357,5 +394,23 @@ public class RF1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of External Referral Identifier (RF1-11).
+   ///</summary>
+  public int ExternalReferralIdentifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the EAC_U07_COMMAND Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ECD (Equipment Command) 
-/// * 1: TQ1 (Timing/Quantity) optional 
-/// * 2: EAC_U07_SPECIMEN_CONTAINER (a Group object) optional 
-/// * 3: CNS (Clear Notification) optional 
+///<ol>
+///<li>0: ECD (Equipment Command) </li>
+///<li>1: TQ1 (Timing/Quantity) optional </li>
+///<li>2: EAC_U07_SPECIMEN_CONTAINER (a Group object) optional </li>
+///<li>3: CNS (Clear Notification) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EAC_U07_COMMAND : AbstractGroup {

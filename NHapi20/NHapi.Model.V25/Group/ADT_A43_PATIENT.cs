@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Group
 ///Represents the ADT_A43_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PD1 (Patient Additional Demographic) optional 
-/// * 2: MRG (Merge Patient Information) 
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PD1 (Patient Additional Demographic) optional </li>
+///<li>2: MRG (Merge Patient Information) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A43_PATIENT : AbstractGroup {

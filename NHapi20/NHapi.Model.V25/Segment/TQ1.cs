@@ -9,21 +9,22 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 TQ1 message segment. 
-/// This segment has the following fields:
-/// * TQ1-1: Set ID - TQ1 (SI)
-/// * TQ1-2: Quantity (CQ)
-/// * TQ1-3: Repeat Pattern (RPT)
-/// * TQ1-4: Explicit Time (TM)
-/// * TQ1-5: Relative Time and Units (CQ)
-/// * TQ1-6: Service Duration (CQ)
-/// * TQ1-7: Start date/time (TS)
-/// * TQ1-8: End date/time (TS)
-/// * TQ1-9: Priority (CWE)
-/// * TQ1-10: Condition text (TX)
-/// * TQ1-11: Text instruction (TX)
-/// * TQ1-12: Conjunction (ID)
-/// * TQ1-13: Occurrence duration (CQ)
-/// * TQ1-14: Total occurrence's (NM)
+/// This segment has the following fields:<ol>
+///<li>TQ1-1: Set ID - TQ1 (SI)</li>
+///<li>TQ1-2: Quantity (CQ)</li>
+///<li>TQ1-3: Repeat Pattern (RPT)</li>
+///<li>TQ1-4: Explicit Time (TM)</li>
+///<li>TQ1-5: Relative Time and Units (CQ)</li>
+///<li>TQ1-6: Service Duration (CQ)</li>
+///<li>TQ1-7: Start date/time (TS)</li>
+///<li>TQ1-8: End date/time (TS)</li>
+///<li>TQ1-9: Priority (CWE)</li>
+///<li>TQ1-10: Condition text (TX)</li>
+///<li>TQ1-11: Text instruction (TX)</li>
+///<li>TQ1-12: Conjunction (ID)</li>
+///<li>TQ1-13: Occurrence duration (CQ)</li>
+///<li>TQ1-14: Total occurrence's (NM)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -110,7 +111,7 @@ public class TQ1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public RPT getRepeatPattern(int rep)
+	public RPT GetRepeatPattern(int rep)
 	{
 			RPT ret = null;
 			try
@@ -127,7 +128,7 @@ public class TQ1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Repeat Pattern (TQ1-3).
    ///</summary>
-  public RPT[] getRepeatPattern() {
+  public RPT[] GetRepeatPattern() {
      RPT[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -145,12 +146,30 @@ public class TQ1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Repeat Pattern (TQ1-3).
+   ///</summary>
+  public int RepeatPatternRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Explicit Time(TQ1-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TM getExplicitTime(int rep)
+	public TM GetExplicitTime(int rep)
 	{
 			TM ret = null;
 			try
@@ -167,7 +186,7 @@ public class TQ1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Explicit Time (TQ1-4).
    ///</summary>
-  public TM[] getExplicitTime() {
+  public TM[] GetExplicitTime() {
      TM[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -185,12 +204,30 @@ public class TQ1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Explicit Time (TQ1-4).
+   ///</summary>
+  public int ExplicitTimeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Relative Time and Units(TQ1-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CQ getRelativeTimeAndUnits(int rep)
+	public CQ GetRelativeTimeAndUnits(int rep)
 	{
 			CQ ret = null;
 			try
@@ -207,7 +244,7 @@ public class TQ1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Relative Time and Units (TQ1-5).
    ///</summary>
-  public CQ[] getRelativeTimeAndUnits() {
+  public CQ[] GetRelativeTimeAndUnits() {
      CQ[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -225,6 +262,24 @@ public class TQ1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Relative Time and Units (TQ1-5).
+   ///</summary>
+  public int RelativeTimeAndUnitsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Service Duration(TQ1-6).
 	///</summary>
@@ -299,7 +354,7 @@ public class TQ1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CWE getPriority(int rep)
+	public CWE GetPriority(int rep)
 	{
 			CWE ret = null;
 			try
@@ -316,7 +371,7 @@ public class TQ1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Priority (TQ1-9).
    ///</summary>
-  public CWE[] getPriority() {
+  public CWE[] GetPriority() {
      CWE[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -334,6 +389,24 @@ public class TQ1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Priority (TQ1-9).
+   ///</summary>
+  public int PriorityRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Condition text(TQ1-10).
 	///</summary>

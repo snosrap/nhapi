@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the EAN_U09_NOTIFICATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: NDS (Notification Detail) 
-/// * 1: NTE (Notes and Comments) optional 
+///<ol>
+///<li>0: NDS (Notification Detail) </li>
+///<li>1: NTE (Notes and Comments) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EAN_U09_NOTIFICATION : AbstractGroup {

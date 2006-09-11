@@ -9,27 +9,28 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 IAM message segment. 
-/// This segment has the following fields:
-/// * IAM-1: Set ID - IAM (SI)
-/// * IAM-2: Allergen Type Code (CE)
-/// * IAM-3: Allergen Code/Mnemonic/Description (CE)
-/// * IAM-4: Allergy Severity Code (CE)
-/// * IAM-5: Allergy Reaction Code (ST)
-/// * IAM-6: Allergy Action Code (CNE)
-/// * IAM-7: Allergy Unique Identifier (EI)
-/// * IAM-8: Action Reason (ST)
-/// * IAM-9: Sensitivity to Causative Agent Code (CE)
-/// * IAM-10: Allergen Group Code/Mnemonic/Description (CE)
-/// * IAM-11: Onset Date (DT)
-/// * IAM-12: Onset Date Text (ST)
-/// * IAM-13: Reported Date/Time (TS)
-/// * IAM-14: Reported By (XPN)
-/// * IAM-15: Relationship to Patient Code (CE)
-/// * IAM-16: Alert Device Code (CE)
-/// * IAM-17: Allergy Clinical Status Code (CE)
-/// * IAM-18: Statused by Person (XCN)
-/// * IAM-19: Statused by Organization (XON)
-/// * IAM-20: Statused at Date/Time (TS)
+/// This segment has the following fields:<ol>
+///<li>IAM-1: Set ID - IAM (SI)</li>
+///<li>IAM-2: Allergen Type Code (CE)</li>
+///<li>IAM-3: Allergen Code/Mnemonic/Description (CE)</li>
+///<li>IAM-4: Allergy Severity Code (CE)</li>
+///<li>IAM-5: Allergy Reaction Code (ST)</li>
+///<li>IAM-6: Allergy Action Code (CNE)</li>
+///<li>IAM-7: Allergy Unique Identifier (EI)</li>
+///<li>IAM-8: Action Reason (ST)</li>
+///<li>IAM-9: Sensitivity to Causative Agent Code (CE)</li>
+///<li>IAM-10: Allergen Group Code/Mnemonic/Description (CE)</li>
+///<li>IAM-11: Onset Date (DT)</li>
+///<li>IAM-12: Onset Date Text (ST)</li>
+///<li>IAM-13: Reported Date/Time (TS)</li>
+///<li>IAM-14: Reported By (XPN)</li>
+///<li>IAM-15: Relationship to Patient Code (CE)</li>
+///<li>IAM-16: Alert Device Code (CE)</li>
+///<li>IAM-17: Allergy Clinical Status Code (CE)</li>
+///<li>IAM-18: Statused by Person (XCN)</li>
+///<li>IAM-19: Statused by Organization (XON)</li>
+///<li>IAM-20: Statused at Date/Time (TS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -168,7 +169,7 @@ public class IAM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getAllergyReactionCode(int rep)
+	public ST GetAllergyReactionCode(int rep)
 	{
 			ST ret = null;
 			try
@@ -185,7 +186,7 @@ public class IAM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Allergy Reaction Code (IAM-5).
    ///</summary>
-  public ST[] getAllergyReactionCode() {
+  public ST[] GetAllergyReactionCode() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -203,6 +204,24 @@ public class IAM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Allergy Reaction Code (IAM-5).
+   ///</summary>
+  public int AllergyReactionCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Allergy Action Code(IAM-6).
 	///</summary>

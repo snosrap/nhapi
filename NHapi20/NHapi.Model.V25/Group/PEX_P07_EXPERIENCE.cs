@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the PEX_P07_EXPERIENCE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PES (Product Experience Sender) 
-/// * 1: PEX_P07_PEX_OBSERVATION (a Group object) repeating
+///<ol>
+///<li>0: PES (Product Experience Sender) </li>
+///<li>1: PEX_P07_PEX_OBSERVATION (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PEX_P07_EXPERIENCE : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PEX_P07_PEX_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public PEX_P07_PEX_OBSERVATION getPEX_OBSERVATION() {
+	public PEX_P07_PEX_OBSERVATION GetPEX_OBSERVATION() {
 	   PEX_P07_PEX_OBSERVATION ret = null;
 	   try {
 	      ret = (PEX_P07_PEX_OBSERVATION)this.GetStructure("PEX_OBSERVATION");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PEX_P07_PEX_OBSERVATION getPEX_OBSERVATION(int rep) { 
+	public PEX_P07_PEX_OBSERVATION GetPEX_OBSERVATION(int rep) { 
 	   return (PEX_P07_PEX_OBSERVATION)this.GetStructure("PEX_OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PEX_P07_PEX_OBSERVATION 
 	 */ 
-	public int PEX_OBSERVATIONReps { 
+	public int PEX_OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

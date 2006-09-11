@@ -12,8 +12,10 @@ namespace NHapi.Model.V25.Group
 ///Represents the OMG_O19_PATIENT_PRIOR Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient Identification) 
-/// * 1: PD1 (Patient Additional Demographic) optional 
+///<ol>
+///<li>0: PID (Patient Identification) </li>
+///<li>1: PD1 (Patient Additional Demographic) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMG_O19_PATIENT_PRIOR : AbstractGroup {

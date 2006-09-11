@@ -9,40 +9,41 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 RXD message segment. 
-/// This segment has the following fields:
-/// * RXD-1: Dispense Sub-ID Counter (NM)
-/// * RXD-2: Dispense/Give Code (CE)
-/// * RXD-3: Date/Time Dispensed (TS)
-/// * RXD-4: Actual Dispense Amount (NM)
-/// * RXD-5: Actual Dispense Units (CE)
-/// * RXD-6: Actual Dosage Form (CE)
-/// * RXD-7: Prescription Number (ST)
-/// * RXD-8: Number of Refills Remaining (NM)
-/// * RXD-9: Dispense Notes (ST)
-/// * RXD-10: Dispensing Provider (XCN)
-/// * RXD-11: Substitution Status (ID)
-/// * RXD-12: Total Daily Dose (CQ)
-/// * RXD-13: Dispense-to Location (LA2)
-/// * RXD-14: Needs Human Review (ID)
-/// * RXD-15: Pharmacy/Treatment Supplier's Special Dispensing Instructions (CE)
-/// * RXD-16: Actual Strength (NM)
-/// * RXD-17: Actual Strength Unit (CE)
-/// * RXD-18: Substance Lot Number (ST)
-/// * RXD-19: Substance Expiration Date (TS)
-/// * RXD-20: Substance Manufacturer Name (CE)
-/// * RXD-21: Indication (CE)
-/// * RXD-22: Dispense Package Size (NM)
-/// * RXD-23: Dispense Package Size Unit (CE)
-/// * RXD-24: Dispense Package Method (ID)
-/// * RXD-25: Supplementary Code (CE)
-/// * RXD-26: Initiating Location (CE)
-/// * RXD-27: Packaging/Assembly Location (CE)
-/// * RXD-28: Actual Drug Strength Volume (NM)
-/// * RXD-29: Actual Drug Strength Volume Units (CWE)
-/// * RXD-30: Dispense to Pharmacy (CWE)
-/// * RXD-31: Dispense to Pharmacy Address (XAD)
-/// * RXD-32: Pharmacy Order Type (ID)
-/// * RXD-33: Dispense Type (CWE)
+/// This segment has the following fields:<ol>
+///<li>RXD-1: Dispense Sub-ID Counter (NM)</li>
+///<li>RXD-2: Dispense/Give Code (CE)</li>
+///<li>RXD-3: Date/Time Dispensed (TS)</li>
+///<li>RXD-4: Actual Dispense Amount (NM)</li>
+///<li>RXD-5: Actual Dispense Units (CE)</li>
+///<li>RXD-6: Actual Dosage Form (CE)</li>
+///<li>RXD-7: Prescription Number (ST)</li>
+///<li>RXD-8: Number of Refills Remaining (NM)</li>
+///<li>RXD-9: Dispense Notes (ST)</li>
+///<li>RXD-10: Dispensing Provider (XCN)</li>
+///<li>RXD-11: Substitution Status (ID)</li>
+///<li>RXD-12: Total Daily Dose (CQ)</li>
+///<li>RXD-13: Dispense-to Location (LA2)</li>
+///<li>RXD-14: Needs Human Review (ID)</li>
+///<li>RXD-15: Pharmacy/Treatment Supplier's Special Dispensing Instructions (CE)</li>
+///<li>RXD-16: Actual Strength (NM)</li>
+///<li>RXD-17: Actual Strength Unit (CE)</li>
+///<li>RXD-18: Substance Lot Number (ST)</li>
+///<li>RXD-19: Substance Expiration Date (TS)</li>
+///<li>RXD-20: Substance Manufacturer Name (CE)</li>
+///<li>RXD-21: Indication (CE)</li>
+///<li>RXD-22: Dispense Package Size (NM)</li>
+///<li>RXD-23: Dispense Package Size Unit (CE)</li>
+///<li>RXD-24: Dispense Package Method (ID)</li>
+///<li>RXD-25: Supplementary Code (CE)</li>
+///<li>RXD-26: Initiating Location (CE)</li>
+///<li>RXD-27: Packaging/Assembly Location (CE)</li>
+///<li>RXD-28: Actual Drug Strength Volume (NM)</li>
+///<li>RXD-29: Actual Drug Strength Volume Units (CWE)</li>
+///<li>RXD-30: Dispense to Pharmacy (CWE)</li>
+///<li>RXD-31: Dispense to Pharmacy Address (XAD)</li>
+///<li>RXD-32: Pharmacy Order Type (ID)</li>
+///<li>RXD-33: Dispense Type (CWE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -286,7 +287,7 @@ public class RXD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getDispenseNotes(int rep)
+	public ST GetDispenseNotes(int rep)
 	{
 			ST ret = null;
 			try
@@ -303,7 +304,7 @@ public class RXD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Dispense Notes (RXD-9).
    ///</summary>
-  public ST[] getDispenseNotes() {
+  public ST[] GetDispenseNotes() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -321,12 +322,30 @@ public class RXD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Dispense Notes (RXD-9).
+   ///</summary>
+  public int DispenseNotesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Dispensing Provider(RXD-10).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getDispensingProvider(int rep)
+	public XCN GetDispensingProvider(int rep)
 	{
 			XCN ret = null;
 			try
@@ -343,7 +362,7 @@ public class RXD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Dispensing Provider (RXD-10).
    ///</summary>
-  public XCN[] getDispensingProvider() {
+  public XCN[] GetDispensingProvider() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -361,6 +380,24 @@ public class RXD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Dispensing Provider (RXD-10).
+   ///</summary>
+  public int DispensingProviderRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Substitution Status(RXD-11).
 	///</summary>
@@ -458,7 +495,7 @@ public class RXD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getPharmacyTreatmentSupplierSSpecialDispensingInstructions(int rep)
+	public CE GetPharmacyTreatmentSupplierSSpecialDispensingInstructions(int rep)
 	{
 			CE ret = null;
 			try
@@ -475,7 +512,7 @@ public class RXD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Pharmacy/Treatment Supplier's Special Dispensing Instructions (RXD-15).
    ///</summary>
-  public CE[] getPharmacyTreatmentSupplierSSpecialDispensingInstructions() {
+  public CE[] GetPharmacyTreatmentSupplierSSpecialDispensingInstructions() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -493,6 +530,24 @@ public class RXD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Pharmacy/Treatment Supplier's Special Dispensing Instructions (RXD-15).
+   ///</summary>
+  public int PharmacyTreatmentSupplierSSpecialDispensingInstructionsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Actual Strength(RXD-16).
 	///</summary>
@@ -544,7 +599,7 @@ public class RXD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getSubstanceLotNumber(int rep)
+	public ST GetSubstanceLotNumber(int rep)
 	{
 			ST ret = null;
 			try
@@ -561,7 +616,7 @@ public class RXD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Lot Number (RXD-18).
    ///</summary>
-  public ST[] getSubstanceLotNumber() {
+  public ST[] GetSubstanceLotNumber() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -579,12 +634,30 @@ public class RXD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Lot Number (RXD-18).
+   ///</summary>
+  public int SubstanceLotNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Substance Expiration Date(RXD-19).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TS getSubstanceExpirationDate(int rep)
+	public TS GetSubstanceExpirationDate(int rep)
 	{
 			TS ret = null;
 			try
@@ -601,7 +674,7 @@ public class RXD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Expiration Date (RXD-19).
    ///</summary>
-  public TS[] getSubstanceExpirationDate() {
+  public TS[] GetSubstanceExpirationDate() {
      TS[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -619,12 +692,30 @@ public class RXD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Expiration Date (RXD-19).
+   ///</summary>
+  public int SubstanceExpirationDateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Substance Manufacturer Name(RXD-20).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSubstanceManufacturerName(int rep)
+	public CE GetSubstanceManufacturerName(int rep)
 	{
 			CE ret = null;
 			try
@@ -641,7 +732,7 @@ public class RXD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Manufacturer Name (RXD-20).
    ///</summary>
-  public CE[] getSubstanceManufacturerName() {
+  public CE[] GetSubstanceManufacturerName() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -659,12 +750,30 @@ public class RXD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Manufacturer Name (RXD-20).
+   ///</summary>
+  public int SubstanceManufacturerNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Indication(RXD-21).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getIndication(int rep)
+	public CE GetIndication(int rep)
 	{
 			CE ret = null;
 			try
@@ -681,7 +790,7 @@ public class RXD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Indication (RXD-21).
    ///</summary>
-  public CE[] getIndication() {
+  public CE[] GetIndication() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -699,6 +808,24 @@ public class RXD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Indication (RXD-21).
+   ///</summary>
+  public int IndicationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Dispense Package Size(RXD-22).
 	///</summary>
@@ -773,7 +900,7 @@ public class RXD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSupplementaryCode(int rep)
+	public CE GetSupplementaryCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -790,7 +917,7 @@ public class RXD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Supplementary Code (RXD-25).
    ///</summary>
-  public CE[] getSupplementaryCode() {
+  public CE[] GetSupplementaryCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(25);  
@@ -808,6 +935,24 @@ public class RXD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Supplementary Code (RXD-25).
+   ///</summary>
+  public int SupplementaryCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(25);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Initiating Location(RXD-26).
 	///</summary>

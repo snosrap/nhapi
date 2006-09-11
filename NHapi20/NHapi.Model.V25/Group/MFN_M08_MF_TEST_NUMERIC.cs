@@ -12,11 +12,13 @@ namespace NHapi.Model.V25.Group
 ///Represents the MFN_M08_MF_TEST_NUMERIC Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: OM1 (General Segment) 
-/// * 2: OM2 (Numeric Observation) optional 
-/// * 3: OM3 (Categorical Service/Test/Observation) optional 
-/// * 4: OM4 (Observations that Require Specimens) optional 
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: OM1 (General Segment) </li>
+///<li>2: OM2 (Numeric Observation) optional </li>
+///<li>3: OM3 (Categorical Service/Test/Observation) optional </li>
+///<li>4: OM4 (Observations that Require Specimens) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M08_MF_TEST_NUMERIC : AbstractGroup {

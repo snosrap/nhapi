@@ -9,9 +9,10 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 FTS message segment. 
-/// This segment has the following fields:
-/// * FTS-1: File Batch Count (NM)
-/// * FTS-2: File Trailer Comment (ST)
+/// This segment has the following fields:<ol>
+///<li>FTS-1: File Batch Count (NM)</li>
+///<li>FTS-2: File Trailer Comment (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

@@ -9,14 +9,15 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 RQ1 message segment. 
-/// This segment has the following fields:
-/// * RQ1-1: Anticipated Price (ST)
-/// * RQ1-2: Manufacturer Identifier (CE)
-/// * RQ1-3: Manufacturer's Catalog (ST)
-/// * RQ1-4: Vendor ID (CE)
-/// * RQ1-5: Vendor Catalog (ST)
-/// * RQ1-6: Taxable (ID)
-/// * RQ1-7: Substitute Allowed (ID)
+/// This segment has the following fields:<ol>
+///<li>RQ1-1: Anticipated Price (ST)</li>
+///<li>RQ1-2: Manufacturer Identifier (CE)</li>
+///<li>RQ1-3: Manufacturer's Catalog (ST)</li>
+///<li>RQ1-4: Vendor ID (CE)</li>
+///<li>RQ1-5: Vendor Catalog (ST)</li>
+///<li>RQ1-6: Taxable (ID)</li>
+///<li>RQ1-7: Substitute Allowed (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

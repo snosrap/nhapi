@@ -9,38 +9,39 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 FT1 message segment. 
-/// This segment has the following fields:
-/// * FT1-1: Set ID - FT1 (SI)
-/// * FT1-2: Transaction ID (ST)
-/// * FT1-3: Transaction Batch ID (ST)
-/// * FT1-4: Transaction Date (DR)
-/// * FT1-5: Transaction Posting Date (TS)
-/// * FT1-6: Transaction Type (IS)
-/// * FT1-7: Transaction Code (CE)
-/// * FT1-8: Transaction Description (ST)
-/// * FT1-9: Transaction Description - Alt (ST)
-/// * FT1-10: Transaction Quantity (NM)
-/// * FT1-11: Transaction Amount - Extended (CP)
-/// * FT1-12: Transaction Amount - Unit (CP)
-/// * FT1-13: Department Code (CE)
-/// * FT1-14: Insurance Plan ID (CE)
-/// * FT1-15: Insurance Amount (CP)
-/// * FT1-16: Assigned Patient Location (PL)
-/// * FT1-17: Fee Schedule (IS)
-/// * FT1-18: Patient Type (IS)
-/// * FT1-19: Diagnosis Code - FT1 (CE)
-/// * FT1-20: Performed By Code (XCN)
-/// * FT1-21: Ordered By Code (XCN)
-/// * FT1-22: Unit Cost (CP)
-/// * FT1-23: Filler Order Number (EI)
-/// * FT1-24: Entered By Code (XCN)
-/// * FT1-25: Procedure Code (CE)
-/// * FT1-26: Procedure Code Modifier (CE)
-/// * FT1-27: Advanced Beneficiary Notice Code (CE)
-/// * FT1-28: Medically Necessary Duplicate Procedure Reason. (CWE)
-/// * FT1-29: NDC Code (CNE)
-/// * FT1-30: Payment Reference ID (CX)
-/// * FT1-31: Transaction Reference Key (SI)
+/// This segment has the following fields:<ol>
+///<li>FT1-1: Set ID - FT1 (SI)</li>
+///<li>FT1-2: Transaction ID (ST)</li>
+///<li>FT1-3: Transaction Batch ID (ST)</li>
+///<li>FT1-4: Transaction Date (DR)</li>
+///<li>FT1-5: Transaction Posting Date (TS)</li>
+///<li>FT1-6: Transaction Type (IS)</li>
+///<li>FT1-7: Transaction Code (CE)</li>
+///<li>FT1-8: Transaction Description (ST)</li>
+///<li>FT1-9: Transaction Description - Alt (ST)</li>
+///<li>FT1-10: Transaction Quantity (NM)</li>
+///<li>FT1-11: Transaction Amount - Extended (CP)</li>
+///<li>FT1-12: Transaction Amount - Unit (CP)</li>
+///<li>FT1-13: Department Code (CE)</li>
+///<li>FT1-14: Insurance Plan ID (CE)</li>
+///<li>FT1-15: Insurance Amount (CP)</li>
+///<li>FT1-16: Assigned Patient Location (PL)</li>
+///<li>FT1-17: Fee Schedule (IS)</li>
+///<li>FT1-18: Patient Type (IS)</li>
+///<li>FT1-19: Diagnosis Code - FT1 (CE)</li>
+///<li>FT1-20: Performed By Code (XCN)</li>
+///<li>FT1-21: Ordered By Code (XCN)</li>
+///<li>FT1-22: Unit Cost (CP)</li>
+///<li>FT1-23: Filler Order Number (EI)</li>
+///<li>FT1-24: Entered By Code (XCN)</li>
+///<li>FT1-25: Procedure Code (CE)</li>
+///<li>FT1-26: Procedure Code Modifier (CE)</li>
+///<li>FT1-27: Advanced Beneficiary Notice Code (CE)</li>
+///<li>FT1-28: Medically Necessary Duplicate Procedure Reason. (CWE)</li>
+///<li>FT1-29: NDC Code (CNE)</li>
+///<li>FT1-30: Payment Reference ID (CX)</li>
+///<li>FT1-31: Transaction Reference Key (SI)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -512,7 +513,7 @@ public class FT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getDiagnosisCodeFT1(int rep)
+	public CE GetDiagnosisCodeFT1(int rep)
 	{
 			CE ret = null;
 			try
@@ -529,7 +530,7 @@ public class FT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Diagnosis Code - FT1 (FT1-19).
    ///</summary>
-  public CE[] getDiagnosisCodeFT1() {
+  public CE[] GetDiagnosisCodeFT1() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -547,12 +548,30 @@ public class FT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Diagnosis Code - FT1 (FT1-19).
+   ///</summary>
+  public int DiagnosisCodeFT1RepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Performed By Code(FT1-20).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPerformedByCode(int rep)
+	public XCN GetPerformedByCode(int rep)
 	{
 			XCN ret = null;
 			try
@@ -569,7 +588,7 @@ public class FT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Performed By Code (FT1-20).
    ///</summary>
-  public XCN[] getPerformedByCode() {
+  public XCN[] GetPerformedByCode() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -587,12 +606,30 @@ public class FT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Performed By Code (FT1-20).
+   ///</summary>
+  public int PerformedByCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Ordered By Code(FT1-21).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getOrderedByCode(int rep)
+	public XCN GetOrderedByCode(int rep)
 	{
 			XCN ret = null;
 			try
@@ -609,7 +646,7 @@ public class FT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ordered By Code (FT1-21).
    ///</summary>
-  public XCN[] getOrderedByCode() {
+  public XCN[] GetOrderedByCode() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -627,6 +664,24 @@ public class FT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ordered By Code (FT1-21).
+   ///</summary>
+  public int OrderedByCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Unit Cost(FT1-22).
 	///</summary>
@@ -678,7 +733,7 @@ public class FT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getEnteredByCode(int rep)
+	public XCN GetEnteredByCode(int rep)
 	{
 			XCN ret = null;
 			try
@@ -695,7 +750,7 @@ public class FT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Entered By Code (FT1-24).
    ///</summary>
-  public XCN[] getEnteredByCode() {
+  public XCN[] GetEnteredByCode() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -713,6 +768,24 @@ public class FT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Entered By Code (FT1-24).
+   ///</summary>
+  public int EnteredByCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Procedure Code(FT1-25).
 	///</summary>
@@ -741,7 +814,7 @@ public class FT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProcedureCodeModifier(int rep)
+	public CE GetProcedureCodeModifier(int rep)
 	{
 			CE ret = null;
 			try
@@ -758,7 +831,7 @@ public class FT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Procedure Code Modifier (FT1-26).
    ///</summary>
-  public CE[] getProcedureCodeModifier() {
+  public CE[] GetProcedureCodeModifier() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(26);  
@@ -776,6 +849,24 @@ public class FT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Procedure Code Modifier (FT1-26).
+   ///</summary>
+  public int ProcedureCodeModifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(26);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Advanced Beneficiary Notice Code(FT1-27).
 	///</summary>
@@ -873,7 +964,7 @@ public class FT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public SI getTransactionReferenceKey(int rep)
+	public SI GetTransactionReferenceKey(int rep)
 	{
 			SI ret = null;
 			try
@@ -890,7 +981,7 @@ public class FT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Transaction Reference Key (FT1-31).
    ///</summary>
-  public SI[] getTransactionReferenceKey() {
+  public SI[] GetTransactionReferenceKey() {
      SI[] ret = null;
     try {
         IType[] t = this.GetField(31);  
@@ -908,5 +999,23 @@ public class FT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Transaction Reference Key (FT1-31).
+   ///</summary>
+  public int TransactionReferenceKeyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(31);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

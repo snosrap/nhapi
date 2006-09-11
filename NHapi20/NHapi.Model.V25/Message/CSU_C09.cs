@@ -12,9 +12,11 @@ namespace NHapi.Model.V25.Message
 ///<summary>
 /// Represents a CSU_C09 message structure (see chapter 7.7.2). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SFT (Software Segment) optional repeating
-/// * 2: CSU_C09_PATIENT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SFT (Software Segment) optional repeating</li>
+///<li>2: CSU_C09_PATIENT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class CSU_C09 : AbstractMessage  {
@@ -65,7 +67,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SFT (Software Segment) - creates it if necessary
 	///</summary>
-	public SFT getSFT() {
+	public SFT GetSFT() {
 	   SFT ret = null;
 	   try {
 	      ret = (SFT)this.GetStructure("SFT");
@@ -82,14 +84,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SFT getSFT(int rep) { 
+	public SFT GetSFT(int rep) { 
 	   return (SFT)this.GetStructure("SFT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SFT 
 	 */ 
-	public int SFTReps { 
+	public int SFTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -106,7 +108,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CSU_C09_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public CSU_C09_PATIENT getPATIENT() {
+	public CSU_C09_PATIENT GetPATIENT() {
 	   CSU_C09_PATIENT ret = null;
 	   try {
 	      ret = (CSU_C09_PATIENT)this.GetStructure("PATIENT");
@@ -123,14 +125,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSU_C09_PATIENT getPATIENT(int rep) { 
+	public CSU_C09_PATIENT GetPATIENT(int rep) { 
 	   return (CSU_C09_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSU_C09_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

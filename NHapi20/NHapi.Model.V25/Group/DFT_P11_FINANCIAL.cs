@@ -12,13 +12,15 @@ namespace NHapi.Model.V25.Group
 ///Represents the DFT_P11_FINANCIAL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: FT1 (Financial Transaction) 
-/// * 1: DFT_P11_FINANCIAL_PROCEDURE (a Group object) 
-/// * 2: DFT_P11_FINANCIAL_COMMON_ORDER (a Group object) 
-/// * 3: DG1 (Diagnosis) optional repeating
-/// * 4: DRG (Diagnosis Related Group) optional 
-/// * 5: GT1 (Guarantor) optional repeating
-/// * 6: DFT_P11_FINANCIAL_INSURANCE (a Group object) 
+///<ol>
+///<li>0: FT1 (Financial Transaction) </li>
+///<li>1: DFT_P11_FINANCIAL_PROCEDURE (a Group object) </li>
+///<li>2: DFT_P11_FINANCIAL_COMMON_ORDER (a Group object) </li>
+///<li>3: DG1 (Diagnosis) optional repeating</li>
+///<li>4: DRG (Diagnosis Related Group) optional </li>
+///<li>5: GT1 (Guarantor) optional repeating</li>
+///<li>6: DFT_P11_FINANCIAL_INSURANCE (a Group object) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DFT_P11_FINANCIAL : AbstractGroup {
@@ -91,7 +93,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -108,14 +110,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -148,7 +150,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of GT1 (Guarantor) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -165,14 +167,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,14 +12,16 @@ namespace NHapi.Model.V25.Group
 ///Represents the RSP_Z86_COMMON_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RSP_Z86_TIMING (a Group object) 
-/// * 2: RSP_Z86_ORDER_DETAIL (a Group object) optional 
-/// * 3: RSP_Z86_ENCODED_ORDER (a Group object) optional 
-/// * 4: RSP_Z86_DISPENSE (a Group object) optional 
-/// * 5: RSP_Z86_GIVE (a Group object) optional 
-/// * 6: RSP_Z86_ADMINISTRATION (a Group object) optional 
-/// * 7: RSP_Z86_OBSERVATION (a Group object) repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RSP_Z86_TIMING (a Group object) </li>
+///<li>2: RSP_Z86_ORDER_DETAIL (a Group object) optional </li>
+///<li>3: RSP_Z86_ENCODED_ORDER (a Group object) optional </li>
+///<li>4: RSP_Z86_DISPENSE (a Group object) optional </li>
+///<li>5: RSP_Z86_GIVE (a Group object) optional </li>
+///<li>6: RSP_Z86_ADMINISTRATION (a Group object) optional </li>
+///<li>7: RSP_Z86_OBSERVATION (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Z86_COMMON_ORDER : AbstractGroup {
@@ -157,7 +159,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RSP_Z86_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_Z86_OBSERVATION getOBSERVATION() {
+	public RSP_Z86_OBSERVATION GetOBSERVATION() {
 	   RSP_Z86_OBSERVATION ret = null;
 	   try {
 	      ret = (RSP_Z86_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -174,14 +176,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RSP_Z86_OBSERVATION getOBSERVATION(int rep) { 
+	public RSP_Z86_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (RSP_Z86_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RSP_Z86_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the MFR_M06_MF_QUERY Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: CM0 (Clinical Study Master) 
-/// * 2: CM1 (Clinical Study Phase Master) optional repeating
-/// * 3: CM2 (Clinical Study Schedule Master) optional repeating
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: CM0 (Clinical Study Master) </li>
+///<li>2: CM1 (Clinical Study Phase Master) optional repeating</li>
+///<li>3: CM2 (Clinical Study Schedule Master) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFR_M06_MF_QUERY : AbstractGroup {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CM1 (Clinical Study Phase Master) - creates it if necessary
 	///</summary>
-	public CM1 getCM1() {
+	public CM1 GetCM1() {
 	   CM1 ret = null;
 	   try {
 	      ret = (CM1)this.GetStructure("CM1");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CM1 getCM1(int rep) { 
+	public CM1 GetCM1(int rep) { 
 	   return (CM1)this.GetStructure("CM1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CM1 
 	 */ 
-	public int CM1Reps { 
+	public int CM1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -110,7 +112,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CM2 (Clinical Study Schedule Master) - creates it if necessary
 	///</summary>
-	public CM2 getCM2() {
+	public CM2 GetCM2() {
 	   CM2 ret = null;
 	   try {
 	      ret = (CM2)this.GetStructure("CM2");
@@ -127,14 +129,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CM2 getCM2(int rep) { 
+	public CM2 GetCM2(int rep) { 
 	   return (CM2)this.GetStructure("CM2", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CM2 
 	 */ 
-	public int CM2Reps { 
+	public int CM2RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,10 +12,12 @@ namespace NHapi.Model.V25.Group
 ///Represents the OML_O21_PRIOR_RESULT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OML_O21_PATIENT_PRIOR (a Group object) optional 
-/// * 1: OML_O21_PATIENT_VISIT_PRIOR (a Group object) optional 
-/// * 2: AL1 (Patient Allergy Information) optional repeating
-/// * 3: OML_O21_ORDER_PRIOR (a Group object) repeating
+///<ol>
+///<li>0: OML_O21_PATIENT_PRIOR (a Group object) optional </li>
+///<li>1: OML_O21_PATIENT_VISIT_PRIOR (a Group object) optional </li>
+///<li>2: AL1 (Patient Allergy Information) optional repeating</li>
+///<li>3: OML_O21_ORDER_PRIOR (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O21_PRIOR_RESULT : AbstractGroup {
@@ -69,7 +71,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of AL1 (Patient Allergy Information) - creates it if necessary
 	///</summary>
-	public AL1 getAL1() {
+	public AL1 GetAL1() {
 	   AL1 ret = null;
 	   try {
 	      ret = (AL1)this.GetStructure("AL1");
@@ -86,14 +88,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AL1 getAL1(int rep) { 
+	public AL1 GetAL1(int rep) { 
 	   return (AL1)this.GetStructure("AL1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AL1 
 	 */ 
-	public int AL1Reps { 
+	public int AL1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -110,7 +112,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OML_O21_ORDER_PRIOR (a Group object) - creates it if necessary
 	///</summary>
-	public OML_O21_ORDER_PRIOR getORDER_PRIOR() {
+	public OML_O21_ORDER_PRIOR GetORDER_PRIOR() {
 	   OML_O21_ORDER_PRIOR ret = null;
 	   try {
 	      ret = (OML_O21_ORDER_PRIOR)this.GetStructure("ORDER_PRIOR");
@@ -127,14 +129,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OML_O21_ORDER_PRIOR getORDER_PRIOR(int rep) { 
+	public OML_O21_ORDER_PRIOR GetORDER_PRIOR(int rep) { 
 	   return (OML_O21_ORDER_PRIOR)this.GetStructure("ORDER_PRIOR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OML_O21_ORDER_PRIOR 
 	 */ 
-	public int ORDER_PRIORReps { 
+	public int ORDER_PRIORRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,21 +9,22 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 AIG message segment. 
-/// This segment has the following fields:
-/// * AIG-1: Set ID - AIG (SI)
-/// * AIG-2: Segment Action Code (ID)
-/// * AIG-3: Resource ID (CE)
-/// * AIG-4: Resource Type (CE)
-/// * AIG-5: Resource Group (CE)
-/// * AIG-6: Resource Quantity (NM)
-/// * AIG-7: Resource Quantity Units (CE)
-/// * AIG-8: Start Date/Time (TS)
-/// * AIG-9: Start Date/Time Offset (NM)
-/// * AIG-10: Start Date/Time Offset Units (CE)
-/// * AIG-11: Duration (NM)
-/// * AIG-12: Duration Units (CE)
-/// * AIG-13: Allow Substitution Code (IS)
-/// * AIG-14: Filler Status Code (CE)
+/// This segment has the following fields:<ol>
+///<li>AIG-1: Set ID - AIG (SI)</li>
+///<li>AIG-2: Segment Action Code (ID)</li>
+///<li>AIG-3: Resource ID (CE)</li>
+///<li>AIG-4: Resource Type (CE)</li>
+///<li>AIG-5: Resource Group (CE)</li>
+///<li>AIG-6: Resource Quantity (NM)</li>
+///<li>AIG-7: Resource Quantity Units (CE)</li>
+///<li>AIG-8: Start Date/Time (TS)</li>
+///<li>AIG-9: Start Date/Time Offset (NM)</li>
+///<li>AIG-10: Start Date/Time Offset Units (CE)</li>
+///<li>AIG-11: Duration (NM)</li>
+///<li>AIG-12: Duration Units (CE)</li>
+///<li>AIG-13: Allow Substitution Code (IS)</li>
+///<li>AIG-14: Filler Status Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -156,7 +157,7 @@ public class AIG : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getResourceGroup(int rep)
+	public CE GetResourceGroup(int rep)
 	{
 			CE ret = null;
 			try
@@ -173,7 +174,7 @@ public class AIG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Resource Group (AIG-5).
    ///</summary>
-  public CE[] getResourceGroup() {
+  public CE[] GetResourceGroup() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -191,6 +192,24 @@ public class AIG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Resource Group (AIG-5).
+   ///</summary>
+  public int ResourceGroupRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Resource Quantity(AIG-6).
 	///</summary>

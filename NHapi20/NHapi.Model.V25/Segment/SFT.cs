@@ -9,13 +9,14 @@ namespace NHapi.Model.V25.Segment{
 
 ///<summary>
 /// Represents an HL7 SFT message segment. 
-/// This segment has the following fields:
-/// * SFT-1: Software Vendor Organization (XON)
-/// * SFT-2: Software Certified Version or Release Number (ST)
-/// * SFT-3: Software Product Name (ST)
-/// * SFT-4: Software Binary ID (ST)
-/// * SFT-5: Software Product Information (TX)
-/// * SFT-6: Software Install Date (TS)
+/// This segment has the following fields:<ol>
+///<li>SFT-1: Software Vendor Organization (XON)</li>
+///<li>SFT-2: Software Certified Version or Release Number (ST)</li>
+///<li>SFT-3: Software Product Name (ST)</li>
+///<li>SFT-4: Software Binary ID (ST)</li>
+///<li>SFT-5: Software Product Information (TX)</li>
+///<li>SFT-6: Software Install Date (TS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
