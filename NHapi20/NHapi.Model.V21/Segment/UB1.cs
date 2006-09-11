@@ -221,7 +221,7 @@ public class UB1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getCONDITIONCODE(int rep)
+	public ID GetCONDITIONCODE(int rep)
 	{
 			ID ret = null;
 			try
@@ -238,7 +238,7 @@ public class UB1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of CONDITION CODE (UB1-7).
    ///</summary>
-  public ID[] getCONDITIONCODE() {
+  public ID[] GetCONDITIONCODE() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -256,6 +256,24 @@ public class UB1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of CONDITION CODE (UB1-7).
+   ///</summary>
+  public int CONDITIONCODERepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns COVERED DAYS - (23)(UB1-8).
 	///</summary>
@@ -307,7 +325,7 @@ public class UB1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CM getVALUEAMOUNTCODE(int rep)
+	public CM GetVALUEAMOUNTCODE(int rep)
 	{
 			CM ret = null;
 			try
@@ -324,7 +342,7 @@ public class UB1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of VALUE AMOUNT and CODE (UB1-10).
    ///</summary>
-  public CM[] getVALUEAMOUNTCODE() {
+  public CM[] GetVALUEAMOUNTCODE() {
      CM[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -342,6 +360,24 @@ public class UB1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of VALUE AMOUNT and CODE (UB1-10).
+   ///</summary>
+  public int VALUEAMOUNTCODERepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns NUMBER OF GRACE DAYS (90)(UB1-11).
 	///</summary>
@@ -462,7 +498,7 @@ public class UB1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getOCCURRENCE2832(int rep)
+	public ID GetOCCURRENCE2832(int rep)
 	{
 			ID ret = null;
 			try
@@ -479,7 +515,7 @@ public class UB1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of OCCURRENCE (28-32) (UB1-16).
    ///</summary>
-  public ID[] getOCCURRENCE2832() {
+  public ID[] GetOCCURRENCE2832() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -497,6 +533,24 @@ public class UB1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of OCCURRENCE (28-32) (UB1-16).
+   ///</summary>
+  public int OCCURRENCE2832RepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns OCCURRENCE SPAN (33)(UB1-17).
 	///</summary>

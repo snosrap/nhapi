@@ -364,7 +364,7 @@ public class ORC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TN getCALLBACKPHONENUMBER(int rep)
+	public TN GetCALLBACKPHONENUMBER(int rep)
 	{
 			TN ret = null;
 			try
@@ -381,7 +381,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of CALL BACK PHONE NUMBER (ORC-14).
    ///</summary>
-  public TN[] getCALLBACKPHONENUMBER() {
+  public TN[] GetCALLBACKPHONENUMBER() {
      TN[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -399,5 +399,23 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of CALL BACK PHONE NUMBER (ORC-14).
+   ///</summary>
+  public int CALLBACKPHONENUMBERRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

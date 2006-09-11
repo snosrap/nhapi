@@ -350,7 +350,7 @@ public class RX1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getCOMPONENTDRUGIDS(int rep)
+	public ID GetCOMPONENTDRUGIDS(int rep)
 	{
 			ID ret = null;
 			try
@@ -367,7 +367,7 @@ public class RX1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of COMPONENT DRUG IDS (RX1-15).
    ///</summary>
-  public ID[] getCOMPONENTDRUGIDS() {
+  public ID[] GetCOMPONENTDRUGIDS() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -385,6 +385,24 @@ public class RX1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of COMPONENT DRUG IDS (RX1-15).
+   ///</summary>
+  public int COMPONENTDRUGIDSRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns PRESCRIPTION TYPE(RX1-16).
 	///</summary>
@@ -620,7 +638,7 @@ public class RX1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TX getPHARMACYINSTRUCTIONS(int rep)
+	public TX GetPHARMACYINSTRUCTIONS(int rep)
 	{
 			TX ret = null;
 			try
@@ -637,7 +655,7 @@ public class RX1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of PHARMACY INSTRUCTIONS (RX1-28).
    ///</summary>
-  public TX[] getPHARMACYINSTRUCTIONS() {
+  public TX[] GetPHARMACYINSTRUCTIONS() {
      TX[] ret = null;
     try {
         IType[] t = this.GetField(28);  
@@ -655,12 +673,30 @@ public class RX1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of PHARMACY INSTRUCTIONS (RX1-28).
+   ///</summary>
+  public int PHARMACYINSTRUCTIONSRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(28);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of PATIENT INSTRUCTIONS(RX1-29).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TX getPATIENTINSTRUCTIONS(int rep)
+	public TX GetPATIENTINSTRUCTIONS(int rep)
 	{
 			TX ret = null;
 			try
@@ -677,7 +713,7 @@ public class RX1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of PATIENT INSTRUCTIONS (RX1-29).
    ///</summary>
-  public TX[] getPATIENTINSTRUCTIONS() {
+  public TX[] GetPATIENTINSTRUCTIONS() {
      TX[] ret = null;
     try {
         IType[] t = this.GetField(29);  
@@ -695,12 +731,30 @@ public class RX1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of PATIENT INSTRUCTIONS (RX1-29).
+   ///</summary>
+  public int PATIENTINSTRUCTIONSRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(29);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of INSTRUCTIONS (SIG)(RX1-30).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TX getINSTRUCTIONS(int rep)
+	public TX GetINSTRUCTIONS(int rep)
 	{
 			TX ret = null;
 			try
@@ -717,7 +771,7 @@ public class RX1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of INSTRUCTIONS (SIG) (RX1-30).
    ///</summary>
-  public TX[] getINSTRUCTIONS() {
+  public TX[] GetINSTRUCTIONS() {
      TX[] ret = null;
     try {
         IType[] t = this.GetField(30);  
@@ -735,5 +789,23 @@ public class RX1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of INSTRUCTIONS (SIG) (RX1-30).
+   ///</summary>
+  public int INSTRUCTIONSRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(30);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

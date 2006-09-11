@@ -53,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (NOTES AND COMMENTS) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -70,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

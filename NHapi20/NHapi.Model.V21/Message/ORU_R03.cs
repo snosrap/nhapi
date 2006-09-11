@@ -67,7 +67,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORU_R03_PATIENT_RESULT (a Group object) - creates it if necessary
 	///</summary>
-	public ORU_R03_PATIENT_RESULT getPATIENT_RESULT() {
+	public ORU_R03_PATIENT_RESULT GetPATIENT_RESULT() {
 	   ORU_R03_PATIENT_RESULT ret = null;
 	   try {
 	      ret = (ORU_R03_PATIENT_RESULT)this.GetStructure("PATIENT_RESULT");
@@ -84,14 +84,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORU_R03_PATIENT_RESULT getPATIENT_RESULT(int rep) { 
+	public ORU_R03_PATIENT_RESULT GetPATIENT_RESULT(int rep) { 
 	   return (ORU_R03_PATIENT_RESULT)this.GetStructure("PATIENT_RESULT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORU_R03_PATIENT_RESULT 
 	 */ 
-	public int PATIENT_RESULTReps { 
+	public int PATIENT_RESULTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

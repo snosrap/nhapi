@@ -83,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ADT_A17_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public ADT_A17_PATIENT getPATIENT() {
+	public ADT_A17_PATIENT GetPATIENT() {
 	   ADT_A17_PATIENT ret = null;
 	   try {
 	      ret = (ADT_A17_PATIENT)this.GetStructure("PATIENT");
@@ -100,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ADT_A17_PATIENT getPATIENT(int rep) { 
+	public ADT_A17_PATIENT GetPATIENT(int rep) { 
 	   return (ADT_A17_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ADT_A17_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

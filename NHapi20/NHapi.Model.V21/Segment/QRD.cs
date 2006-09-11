@@ -222,7 +222,7 @@ public class QRD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getWHOSUBJECTFILTER(int rep)
+	public ST GetWHOSUBJECTFILTER(int rep)
 	{
 			ST ret = null;
 			try
@@ -239,7 +239,7 @@ public class QRD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of WHO SUBJECT FILTER (QRD-8).
    ///</summary>
-  public ST[] getWHOSUBJECTFILTER() {
+  public ST[] GetWHOSUBJECTFILTER() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -257,12 +257,30 @@ public class QRD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of WHO SUBJECT FILTER (QRD-8).
+   ///</summary>
+  public int WHOSUBJECTFILTERRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of WHAT SUBJECT FILTER(QRD-9).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getWHATSUBJECTFILTER(int rep)
+	public ID GetWHATSUBJECTFILTER(int rep)
 	{
 			ID ret = null;
 			try
@@ -279,7 +297,7 @@ public class QRD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of WHAT SUBJECT FILTER (QRD-9).
    ///</summary>
-  public ID[] getWHATSUBJECTFILTER() {
+  public ID[] GetWHATSUBJECTFILTER() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -297,12 +315,30 @@ public class QRD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of WHAT SUBJECT FILTER (QRD-9).
+   ///</summary>
+  public int WHATSUBJECTFILTERRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of WHAT DEPARTMENT DATA CODE(QRD-10).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getWHATDEPARTMENTDATACODE(int rep)
+	public ST GetWHATDEPARTMENTDATACODE(int rep)
 	{
 			ST ret = null;
 			try
@@ -319,7 +355,7 @@ public class QRD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of WHAT DEPARTMENT DATA CODE (QRD-10).
    ///</summary>
-  public ST[] getWHATDEPARTMENTDATACODE() {
+  public ST[] GetWHATDEPARTMENTDATACODE() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -337,12 +373,30 @@ public class QRD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of WHAT DEPARTMENT DATA CODE (QRD-10).
+   ///</summary>
+  public int WHATDEPARTMENTDATACODERepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of WHAT DATA CODE VALUE QUAL.(QRD-11).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getWHATDATACODEVALUEQUAL(int rep)
+	public ST GetWHATDATACODEVALUEQUAL(int rep)
 	{
 			ST ret = null;
 			try
@@ -359,7 +413,7 @@ public class QRD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of WHAT DATA CODE VALUE QUAL. (QRD-11).
    ///</summary>
-  public ST[] getWHATDATACODEVALUEQUAL() {
+  public ST[] GetWHATDATACODEVALUEQUAL() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -377,6 +431,24 @@ public class QRD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of WHAT DATA CODE VALUE QUAL. (QRD-11).
+   ///</summary>
+  public int WHATDATACODEVALUEQUALRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns QUERY RESULTS LEVEL(QRD-12).
 	///</summary>

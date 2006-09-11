@@ -139,7 +139,7 @@ public class NK1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TN getNEXTOFKINPHONENUMBER(int rep)
+	public TN GetNEXTOFKINPHONENUMBER(int rep)
 	{
 			TN ret = null;
 			try
@@ -156,7 +156,7 @@ public class NK1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of NEXT OF KIN - PHONE NUMBER (NK1-5).
    ///</summary>
-  public TN[] getNEXTOFKINPHONENUMBER() {
+  public TN[] GetNEXTOFKINPHONENUMBER() {
      TN[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -174,5 +174,23 @@ public class NK1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of NEXT OF KIN - PHONE NUMBER (NK1-5).
+   ///</summary>
+  public int NEXTOFKINPHONENUMBERRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

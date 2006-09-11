@@ -89,7 +89,7 @@ public class NTE : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TX getCOMMENT(int rep)
+	public TX GetCOMMENT(int rep)
 	{
 			TX ret = null;
 			try
@@ -106,7 +106,7 @@ public class NTE : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of COMMENT (NTE-3).
    ///</summary>
-  public TX[] getCOMMENT() {
+  public TX[] GetCOMMENT() {
      TX[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -124,5 +124,23 @@ public class NTE : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of COMMENT (NTE-3).
+   ///</summary>
+  public int COMMENTRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

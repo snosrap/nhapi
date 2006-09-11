@@ -103,7 +103,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DSP (DISPLAY DATA) - creates it if necessary
 	///</summary>
-	public DSP getDSP() {
+	public DSP GetDSP() {
 	   DSP ret = null;
 	   try {
 	      ret = (DSP)this.GetStructure("DSP");
@@ -120,14 +120,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DSP getDSP(int rep) { 
+	public DSP GetDSP(int rep) { 
 	   return (DSP)this.GetStructure("DSP", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DSP 
 	 */ 
-	public int DSPReps { 
+	public int DSPRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -316,7 +316,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CN getCOLLECTORIDENTIFIER(int rep)
+	public CN GetCOLLECTORIDENTIFIER(int rep)
 	{
 			CN ret = null;
 			try
@@ -333,7 +333,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of COLLECTOR IDENTIFIER (OBR-10).
    ///</summary>
-  public CN[] getCOLLECTORIDENTIFIER() {
+  public CN[] GetCOLLECTORIDENTIFIER() {
      CN[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -351,6 +351,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of COLLECTOR IDENTIFIER (OBR-10).
+   ///</summary>
+  public int COLLECTORIDENTIFIERRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns SPECIMEN ACTION CODE(OBR-11).
 	///</summary>
@@ -471,7 +489,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CN getORDERINGPROVIDER(int rep)
+	public CN GetORDERINGPROVIDER(int rep)
 	{
 			CN ret = null;
 			try
@@ -488,7 +506,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of ORDERING PROVIDER (OBR-16).
    ///</summary>
-  public CN[] getORDERINGPROVIDER() {
+  public CN[] GetORDERINGPROVIDER() {
      CN[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -506,12 +524,30 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of ORDERING PROVIDER (OBR-16).
+   ///</summary>
+  public int ORDERINGPROVIDERRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of ORDER CALL-BACK PHONE NUM(OBR-17).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TN getORDERCALLBACKPHONENUM(int rep)
+	public TN GetORDERCALLBACKPHONENUM(int rep)
 	{
 			TN ret = null;
 			try
@@ -528,7 +564,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of ORDER CALL-BACK PHONE NUM (OBR-17).
    ///</summary>
-  public TN[] getORDERCALLBACKPHONENUM() {
+  public TN[] GetORDERCALLBACKPHONENUM() {
      TN[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -546,6 +582,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of ORDER CALL-BACK PHONE NUM (OBR-17).
+   ///</summary>
+  public int ORDERCALLBACKPHONENUMRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns PLACERS FIELD #1(OBR-18).
 	///</summary>
@@ -758,7 +812,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CM getQUANTITYTIMING(int rep)
+	public CM GetQUANTITYTIMING(int rep)
 	{
 			CM ret = null;
 			try
@@ -775,7 +829,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of QUANTITY/TIMING (OBR-27).
    ///</summary>
-  public CM[] getQUANTITYTIMING() {
+  public CM[] GetQUANTITYTIMING() {
      CM[] ret = null;
     try {
         IType[] t = this.GetField(27);  
@@ -793,12 +847,30 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of QUANTITY/TIMING (OBR-27).
+   ///</summary>
+  public int QUANTITYTIMINGRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(27);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of RESULT COPIES TO(OBR-28).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CN getRESULTCOPIESTO(int rep)
+	public CN GetRESULTCOPIESTO(int rep)
 	{
 			CN ret = null;
 			try
@@ -815,7 +887,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of RESULT COPIES TO (OBR-28).
    ///</summary>
-  public CN[] getRESULTCOPIESTO() {
+  public CN[] GetRESULTCOPIESTO() {
      CN[] ret = null;
     try {
         IType[] t = this.GetField(28);  
@@ -833,6 +905,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of RESULT COPIES TO (OBR-28).
+   ///</summary>
+  public int RESULTCOPIESTORepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(28);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns PARENT ACCESSION #(OBR-29).
 	///</summary>
@@ -884,7 +974,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getREASONFORSTUDY(int rep)
+	public CE GetREASONFORSTUDY(int rep)
 	{
 			CE ret = null;
 			try
@@ -901,7 +991,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of REASON FOR STUDY (OBR-31).
    ///</summary>
-  public CE[] getREASONFORSTUDY() {
+  public CE[] GetREASONFORSTUDY() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(31);  
@@ -919,6 +1009,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of REASON FOR STUDY (OBR-31).
+   ///</summary>
+  public int REASONFORSTUDYRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(31);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns PRINCIPAL RESULT INTERPRETER(OBR-32).
 	///</summary>

@@ -101,7 +101,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of BAR_P01_VISIT (a Group object) - creates it if necessary
 	///</summary>
-	public BAR_P01_VISIT getVISIT() {
+	public BAR_P01_VISIT GetVISIT() {
 	   BAR_P01_VISIT ret = null;
 	   try {
 	      ret = (BAR_P01_VISIT)this.GetStructure("VISIT");
@@ -118,14 +118,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public BAR_P01_VISIT getVISIT(int rep) { 
+	public BAR_P01_VISIT GetVISIT(int rep) { 
 	   return (BAR_P01_VISIT)this.GetStructure("VISIT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of BAR_P01_VISIT 
 	 */ 
-	public int VISITReps { 
+	public int VISITRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

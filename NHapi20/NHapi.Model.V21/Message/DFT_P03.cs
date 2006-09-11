@@ -119,7 +119,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of FT1 (FINANCIAL TRANSACTION) - creates it if necessary
 	///</summary>
-	public FT1 getFT1() {
+	public FT1 GetFT1() {
 	   FT1 ret = null;
 	   try {
 	      ret = (FT1)this.GetStructure("FT1");
@@ -136,14 +136,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public FT1 getFT1(int rep) { 
+	public FT1 GetFT1(int rep) { 
 	   return (FT1)this.GetStructure("FT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of FT1 
 	 */ 
-	public int FT1Reps { 
+	public int FT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

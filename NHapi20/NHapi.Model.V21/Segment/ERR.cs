@@ -5,7 +5,6 @@ using NHapi.Base.Model;
 using NHapi.Model.V21.Datatype;
 using NHapi.Base.Log;
 
-
 namespace NHapi.Model.V21.Segment{
 
 ///<summary>
@@ -40,7 +39,7 @@ public class ERR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getERRORCODEANDLOCATION(int rep)
+	public ID GetERRORCODEANDLOCATION(int rep)
 	{
 			ID ret = null;
 			try
@@ -57,7 +56,7 @@ public class ERR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of ERROR CODE AND LOCATION (ERR-1).
    ///</summary>
-  public ID[] getERRORCODEANDLOCATION() {
+  public ID[] GetERRORCODEANDLOCATION() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -75,5 +74,23 @@ public class ERR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of ERROR CODE AND LOCATION (ERR-1).
+   ///</summary>
+  public int ERRORCODEANDLOCATIONRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

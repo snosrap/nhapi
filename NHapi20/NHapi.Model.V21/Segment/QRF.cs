@@ -47,7 +47,7 @@ public class QRF : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getWHERESUBJECTFILTER(int rep)
+	public ST GetWHERESUBJECTFILTER(int rep)
 	{
 			ST ret = null;
 			try
@@ -64,7 +64,7 @@ public class QRF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of WHERE SUBJECT FILTER (QRF-1).
    ///</summary>
-  public ST[] getWHERESUBJECTFILTER() {
+  public ST[] GetWHERESUBJECTFILTER() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -82,6 +82,24 @@ public class QRF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of WHERE SUBJECT FILTER (QRF-1).
+   ///</summary>
+  public int WHERESUBJECTFILTERRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns WHEN DATA START DATE/TIME(QRF-2).
 	///</summary>
@@ -133,7 +151,7 @@ public class QRF : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getWHATUSERQUALIFIER(int rep)
+	public ST GetWHATUSERQUALIFIER(int rep)
 	{
 			ST ret = null;
 			try
@@ -150,7 +168,7 @@ public class QRF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of WHAT USER QUALIFIER (QRF-4).
    ///</summary>
-  public ST[] getWHATUSERQUALIFIER() {
+  public ST[] GetWHATUSERQUALIFIER() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -168,12 +186,30 @@ public class QRF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of WHAT USER QUALIFIER (QRF-4).
+   ///</summary>
+  public int WHATUSERQUALIFIERRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of OTHER QRY SUBJECT FILTER(QRF-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getOTHERQRYSUBJECTFILTER(int rep)
+	public ST GetOTHERQRYSUBJECTFILTER(int rep)
 	{
 			ST ret = null;
 			try
@@ -190,7 +226,7 @@ public class QRF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of OTHER QRY SUBJECT FILTER (QRF-5).
    ///</summary>
-  public ST[] getOTHERQRYSUBJECTFILTER() {
+  public ST[] GetOTHERQRYSUBJECTFILTER() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -208,5 +244,23 @@ public class QRF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of OTHER QRY SUBJECT FILTER (QRF-5).
+   ///</summary>
+  public int OTHERQRYSUBJECTFILTERRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

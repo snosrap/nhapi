@@ -63,7 +63,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (DIAGNOSIS) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -80,14 +80,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -104,7 +104,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PR1 (PROCEDURES) - creates it if necessary
 	///</summary>
-	public PR1 getPR1() {
+	public PR1 GetPR1() {
 	   PR1 ret = null;
 	   try {
 	      ret = (PR1)this.GetStructure("PR1");
@@ -121,14 +121,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PR1 getPR1(int rep) { 
+	public PR1 GetPR1(int rep) { 
 	   return (PR1)this.GetStructure("PR1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PR1 
 	 */ 
-	public int PR1Reps { 
+	public int PR1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -145,7 +145,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of GT1 (GUARANTOR) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -162,14 +162,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -186,7 +186,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (NEXT OF KIN) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -203,14 +203,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -227,7 +227,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of IN1 (INSURANCE) - creates it if necessary
 	///</summary>
-	public IN1 getIN1() {
+	public IN1 GetIN1() {
 	   IN1 ret = null;
 	   try {
 	      ret = (IN1)this.GetStructure("IN1");
@@ -244,14 +244,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public IN1 getIN1(int rep) { 
+	public IN1 GetIN1(int rep) { 
 	   return (IN1)this.GetStructure("IN1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of IN1 
 	 */ 
-	public int IN1Reps { 
+	public int IN1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

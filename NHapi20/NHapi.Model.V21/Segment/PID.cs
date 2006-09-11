@@ -261,7 +261,7 @@ public class PID : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PN getPATIENTALIAS(int rep)
+	public PN GetPATIENTALIAS(int rep)
 	{
 			PN ret = null;
 			try
@@ -278,7 +278,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of PATIENT ALIAS (PID-9).
    ///</summary>
-  public PN[] getPATIENTALIAS() {
+  public PN[] GetPATIENTALIAS() {
      PN[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -296,6 +296,24 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of PATIENT ALIAS (PID-9).
+   ///</summary>
+  public int PATIENTALIASRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns ETHNIC GROUP(PID-10).
 	///</summary>
@@ -370,7 +388,7 @@ public class PID : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TN getPHONENUMBERHOME(int rep)
+	public TN GetPHONENUMBERHOME(int rep)
 	{
 			TN ret = null;
 			try
@@ -387,7 +405,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of PHONE NUMBER - HOME (PID-13).
    ///</summary>
-  public TN[] getPHONENUMBERHOME() {
+  public TN[] GetPHONENUMBERHOME() {
      TN[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -405,12 +423,30 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of PHONE NUMBER - HOME (PID-13).
+   ///</summary>
+  public int PHONENUMBERHOMERepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of PHONE NUMBER - BUSINESS(PID-14).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TN getPHONENUMBERBUSINESS(int rep)
+	public TN GetPHONENUMBERBUSINESS(int rep)
 	{
 			TN ret = null;
 			try
@@ -427,7 +463,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of PHONE NUMBER - BUSINESS (PID-14).
    ///</summary>
-  public TN[] getPHONENUMBERBUSINESS() {
+  public TN[] GetPHONENUMBERBUSINESS() {
      TN[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -445,6 +481,24 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of PHONE NUMBER - BUSINESS (PID-14).
+   ///</summary>
+  public int PHONENUMBERBUSINESSRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns LANGUAGE - PATIENT(PID-15).
 	///</summary>

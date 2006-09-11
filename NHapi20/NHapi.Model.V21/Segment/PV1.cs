@@ -319,7 +319,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CN getCONSULTINGDOCTOR(int rep)
+	public CN GetCONSULTINGDOCTOR(int rep)
 	{
 			CN ret = null;
 			try
@@ -336,7 +336,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of CONSULTING DOCTOR (PV1-9).
    ///</summary>
-  public CN[] getCONSULTINGDOCTOR() {
+  public CN[] GetCONSULTINGDOCTOR() {
      CN[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -354,6 +354,24 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of CONSULTING DOCTOR (PV1-9).
+   ///</summary>
+  public int CONSULTINGDOCTORRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns HOSPITAL SERVICE(PV1-10).
 	///</summary>
@@ -589,7 +607,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getFINANCIALCLASS(int rep)
+	public ID GetFINANCIALCLASS(int rep)
 	{
 			ID ret = null;
 			try
@@ -606,7 +624,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of FINANCIAL CLASS (PV1-20).
    ///</summary>
-  public ID[] getFINANCIALCLASS() {
+  public ID[] GetFINANCIALCLASS() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -624,6 +642,24 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of FINANCIAL CLASS (PV1-20).
+   ///</summary>
+  public int FINANCIALCLASSRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns CHARGE PRICE INDICATOR(PV1-21).
 	///</summary>
@@ -698,7 +734,7 @@ public class PV1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getCONTRACTCODE(int rep)
+	public ID GetCONTRACTCODE(int rep)
 	{
 			ID ret = null;
 			try
@@ -715,7 +751,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of CONTRACT CODE (PV1-24).
    ///</summary>
-  public ID[] getCONTRACTCODE() {
+  public ID[] GetCONTRACTCODE() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -733,12 +769,30 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of CONTRACT CODE (PV1-24).
+   ///</summary>
+  public int CONTRACTCODERepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of CONTRACT EFFECTIVE DATE(PV1-25).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public DT getCONTRACTEFFECTIVEDATE(int rep)
+	public DT GetCONTRACTEFFECTIVEDATE(int rep)
 	{
 			DT ret = null;
 			try
@@ -755,7 +809,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of CONTRACT EFFECTIVE DATE (PV1-25).
    ///</summary>
-  public DT[] getCONTRACTEFFECTIVEDATE() {
+  public DT[] GetCONTRACTEFFECTIVEDATE() {
      DT[] ret = null;
     try {
         IType[] t = this.GetField(25);  
@@ -773,12 +827,30 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of CONTRACT EFFECTIVE DATE (PV1-25).
+   ///</summary>
+  public int CONTRACTEFFECTIVEDATERepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(25);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of CONTRACT AMOUNT(PV1-26).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public NM getCONTRACTAMOUNT(int rep)
+	public NM GetCONTRACTAMOUNT(int rep)
 	{
 			NM ret = null;
 			try
@@ -795,7 +867,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of CONTRACT AMOUNT (PV1-26).
    ///</summary>
-  public NM[] getCONTRACTAMOUNT() {
+  public NM[] GetCONTRACTAMOUNT() {
      NM[] ret = null;
     try {
         IType[] t = this.GetField(26);  
@@ -813,12 +885,30 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of CONTRACT AMOUNT (PV1-26).
+   ///</summary>
+  public int CONTRACTAMOUNTRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(26);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of CONTRACT PERIOD(PV1-27).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public NM getCONTRACTPERIOD(int rep)
+	public NM GetCONTRACTPERIOD(int rep)
 	{
 			NM ret = null;
 			try
@@ -835,7 +925,7 @@ public class PV1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of CONTRACT PERIOD (PV1-27).
    ///</summary>
-  public NM[] getCONTRACTPERIOD() {
+  public NM[] GetCONTRACTPERIOD() {
      NM[] ret = null;
     try {
         IType[] t = this.GetField(27);  
@@ -853,6 +943,24 @@ public class PV1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of CONTRACT PERIOD (PV1-27).
+   ///</summary>
+  public int CONTRACTPERIODRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(27);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns INTEREST CODE(PV1-28).
 	///</summary>

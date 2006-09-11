@@ -91,7 +91,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (NOTES AND COMMENTS) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -108,14 +108,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -132,7 +132,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (RESULT) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -149,14 +149,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -173,7 +173,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE2 (NOTES AND COMMENTS) - creates it if necessary
 	///</summary>
-	public NTE getNTE2() {
+	public NTE GetNTE2() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE2");
@@ -190,14 +190,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE2(int rep) { 
+	public NTE GetNTE2(int rep) { 
 	   return (NTE)this.GetStructure("NTE2", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE2 
 	 */ 
-	public int NTE2Reps { 
+	public int NTE2RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

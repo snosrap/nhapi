@@ -63,7 +63,7 @@ public class PR1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public SI getSETIDPROCEDURE(int rep)
+	public SI GetSETIDPROCEDURE(int rep)
 	{
 			SI ret = null;
 			try
@@ -80,7 +80,7 @@ public class PR1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of SET ID - PROCEDURE (PR1-1).
    ///</summary>
-  public SI[] getSETIDPROCEDURE() {
+  public SI[] GetSETIDPROCEDURE() {
      SI[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -98,6 +98,24 @@ public class PR1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of SET ID - PROCEDURE (PR1-1).
+   ///</summary>
+  public int SETIDPROCEDURERepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns PROCEDURE CODING METHOD.(PR1-2).
 	///</summary>

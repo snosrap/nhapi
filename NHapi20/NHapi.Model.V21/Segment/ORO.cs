@@ -91,7 +91,7 @@ public class ORO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CN getRESULTSCOPIESTO(int rep)
+	public CN GetRESULTSCOPIESTO(int rep)
 	{
 			CN ret = null;
 			try
@@ -108,7 +108,7 @@ public class ORO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of RESULTS COPIES TO (ORO-3).
    ///</summary>
-  public CN[] getRESULTSCOPIESTO() {
+  public CN[] GetRESULTSCOPIESTO() {
      CN[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -126,6 +126,24 @@ public class ORO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of RESULTS COPIES TO (ORO-3).
+   ///</summary>
+  public int RESULTSCOPIESTORepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns STOCK LOCATION(ORO-4).
 	///</summary>

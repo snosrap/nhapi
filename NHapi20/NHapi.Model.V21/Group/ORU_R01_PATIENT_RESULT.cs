@@ -51,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORU_R01_ORDER_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public ORU_R01_ORDER_OBSERVATION getORDER_OBSERVATION() {
+	public ORU_R01_ORDER_OBSERVATION GetORDER_OBSERVATION() {
 	   ORU_R01_ORDER_OBSERVATION ret = null;
 	   try {
 	      ret = (ORU_R01_ORDER_OBSERVATION)this.GetStructure("ORDER_OBSERVATION");
@@ -68,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORU_R01_ORDER_OBSERVATION getORDER_OBSERVATION(int rep) { 
+	public ORU_R01_ORDER_OBSERVATION GetORDER_OBSERVATION(int rep) { 
 	   return (ORU_R01_ORDER_OBSERVATION)this.GetStructure("ORDER_OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORU_R01_ORDER_OBSERVATION 
 	 */ 
-	public int ORDER_OBSERVATIONReps { 
+	public int ORDER_OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

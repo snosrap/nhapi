@@ -222,7 +222,7 @@ public class OBX : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getABNORMALFLAGS(int rep)
+	public ST GetABNORMALFLAGS(int rep)
 	{
 			ST ret = null;
 			try
@@ -239,7 +239,7 @@ public class OBX : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of ABNORMAL FLAGS (OBX-8).
    ///</summary>
-  public ST[] getABNORMALFLAGS() {
+  public ST[] GetABNORMALFLAGS() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -257,6 +257,24 @@ public class OBX : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of ABNORMAL FLAGS (OBX-8).
+   ///</summary>
+  public int ABNORMALFLAGSRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns PROBABILITY(OBX-9).
 	///</summary>
