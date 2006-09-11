@@ -9,11 +9,12 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 LCC message segment. 
-/// This segment has the following fields:
-/// * LCC-1: Primary Key Value - LCC (PL)
-/// * LCC-2: Location Department (IS)
-/// * LCC-3: Accommodation Type (CE)
-/// * LCC-4: Charge Code (CE)
+/// This segment has the following fields:<ol>
+///<li>LCC-1: Primary Key Value - LCC (PL)</li>
+///<li>LCC-2: Location Department (IS)</li>
+///<li>LCC-3: Accommodation Type (CE)</li>
+///<li>LCC-4: Charge Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -90,7 +91,7 @@ public class LCC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getAccommodationType(int rep)
+	public CE GetAccommodationType(int rep)
 	{
 			CE ret = null;
 			try
@@ -107,7 +108,7 @@ public class LCC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Accommodation Type (LCC-3).
    ///</summary>
-  public CE[] getAccommodationType() {
+  public CE[] GetAccommodationType() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -125,12 +126,30 @@ public class LCC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Accommodation Type (LCC-3).
+   ///</summary>
+  public int AccommodationTypeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Charge Code(LCC-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getChargeCode(int rep)
+	public CE GetChargeCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -147,7 +166,7 @@ public class LCC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Charge Code (LCC-4).
    ///</summary>
-  public CE[] getChargeCode() {
+  public CE[] GetChargeCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -165,5 +184,23 @@ public class LCC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Charge Code (LCC-4).
+   ///</summary>
+  public int ChargeCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

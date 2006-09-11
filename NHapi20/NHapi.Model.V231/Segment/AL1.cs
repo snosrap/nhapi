@@ -9,13 +9,14 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 AL1 message segment. 
-/// This segment has the following fields:
-/// * AL1-1: Set ID - AL1 (SI)
-/// * AL1-2: Allergy Type (IS)
-/// * AL1-3: Allergy Code/Mnemonic/Description (CE)
-/// * AL1-4: Allergy Severity (IS)
-/// * AL1-5: Allergy Reaction (ST)
-/// * AL1-6: Identification Date (DT)
+/// This segment has the following fields:<ol>
+///<li>AL1-1: Set ID - AL1 (SI)</li>
+///<li>AL1-2: Allergy Type (IS)</li>
+///<li>AL1-3: Allergy Code/Mnemonic/Description (CE)</li>
+///<li>AL1-4: Allergy Severity (IS)</li>
+///<li>AL1-5: Allergy Reaction (ST)</li>
+///<li>AL1-6: Identification Date (DT)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -140,7 +141,7 @@ public class AL1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getAllergyReaction(int rep)
+	public ST GetAllergyReaction(int rep)
 	{
 			ST ret = null;
 			try
@@ -157,7 +158,7 @@ public class AL1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Allergy Reaction (AL1-5).
    ///</summary>
-  public ST[] getAllergyReaction() {
+  public ST[] GetAllergyReaction() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -175,6 +176,24 @@ public class AL1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Allergy Reaction (AL1-5).
+   ///</summary>
+  public int AllergyReactionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Identification Date(AL1-6).
 	///</summary>

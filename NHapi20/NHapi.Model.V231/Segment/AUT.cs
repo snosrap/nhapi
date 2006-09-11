@@ -9,17 +9,18 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 AUT message segment. 
-/// This segment has the following fields:
-/// * AUT-1: Authorizing Payor, Plan ID (CE)
-/// * AUT-2: Authorizing Payor, Company ID (CE)
-/// * AUT-3: Authorizing Payor, Company Name (ST)
-/// * AUT-4: Authorization Effective Date (TS)
-/// * AUT-5: Authorization Expiration Date (TS)
-/// * AUT-6: Authorization Identifier (EI)
-/// * AUT-7: Reimbursement Limit (CP)
-/// * AUT-8: Requested Number of Treatments (NM)
-/// * AUT-9: Authorized Number of Treatments (NM)
-/// * AUT-10: Process Date (TS)
+/// This segment has the following fields:<ol>
+///<li>AUT-1: Authorizing Payor, Plan ID (CE)</li>
+///<li>AUT-2: Authorizing Payor, Company ID (CE)</li>
+///<li>AUT-3: Authorizing Payor, Company Name (ST)</li>
+///<li>AUT-4: Authorization Effective Date (TS)</li>
+///<li>AUT-5: Authorization Expiration Date (TS)</li>
+///<li>AUT-6: Authorization Identifier (EI)</li>
+///<li>AUT-7: Reimbursement Limit (CP)</li>
+///<li>AUT-8: Requested Number of Treatments (NM)</li>
+///<li>AUT-9: Authorized Number of Treatments (NM)</li>
+///<li>AUT-10: Process Date (TS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

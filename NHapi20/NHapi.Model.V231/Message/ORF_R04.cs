@@ -12,14 +12,16 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a ORF_R04 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: QRD (QRD - original-style query definition segment) 
-/// * 3: QRF (QRF - original style query filter segment) optional 
-/// * 4: ORF_R04_QUERY_RESPONSE (a Group object) repeating
-/// * 5: ERR (ERR - error segment) optional 
-/// * 6: QAK (Query Acknowledgement) optional 
-/// * 7: DSC (DSC - Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: QRD (QRD - original-style query definition segment) </li>
+///<li>3: QRF (QRF - original style query filter segment) optional </li>
+///<li>4: ORF_R04_QUERY_RESPONSE (a Group object) repeating</li>
+///<li>5: ERR (ERR - error segment) optional </li>
+///<li>6: QAK (Query Acknowledgement) optional </li>
+///<li>7: DSC (DSC - Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORF_R04 : AbstractMessage  {
@@ -123,7 +125,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORF_R04_QUERY_RESPONSE (a Group object) - creates it if necessary
 	///</summary>
-	public ORF_R04_QUERY_RESPONSE getQUERY_RESPONSE() {
+	public ORF_R04_QUERY_RESPONSE GetQUERY_RESPONSE() {
 	   ORF_R04_QUERY_RESPONSE ret = null;
 	   try {
 	      ret = (ORF_R04_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE");
@@ -140,14 +142,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORF_R04_QUERY_RESPONSE getQUERY_RESPONSE(int rep) { 
+	public ORF_R04_QUERY_RESPONSE GetQUERY_RESPONSE(int rep) { 
 	   return (ORF_R04_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORF_R04_QUERY_RESPONSE 
 	 */ 
-	public int QUERY_RESPONSEReps { 
+	public int QUERY_RESPONSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

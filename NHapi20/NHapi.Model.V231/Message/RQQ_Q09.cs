@@ -12,9 +12,11 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a RQQ_Q09 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: ERQ (ERQ - event replay query segment) 
-/// * 2: DSC (DSC - Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: ERQ (ERQ - event replay query segment) </li>
+///<li>2: DSC (DSC - Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RQQ_Q09 : AbstractMessage  {

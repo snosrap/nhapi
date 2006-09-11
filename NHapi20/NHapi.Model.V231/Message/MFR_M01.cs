@@ -12,15 +12,17 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a MFR_M01 message structure (see chapter ). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional 
-/// * 3: QAK (Query Acknowledgement) optional 
-/// * 4: QRD (QRD - original-style query definition segment) 
-/// * 5: QRF (QRF - original style query filter segment) optional 
-/// * 6: MFI (MFI - master file identification segment) 
-/// * 7: MFR_M01_MF_QUERY (a Group object) repeating
-/// * 8: DSC (DSC - Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional </li>
+///<li>3: QAK (Query Acknowledgement) optional </li>
+///<li>4: QRD (QRD - original-style query definition segment) </li>
+///<li>5: QRF (QRF - original style query filter segment) optional </li>
+///<li>6: MFI (MFI - master file identification segment) </li>
+///<li>7: MFR_M01_MF_QUERY (a Group object) repeating</li>
+///<li>8: DSC (DSC - Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFR_M01 : AbstractMessage  {
@@ -173,7 +175,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFR_M01_MF_QUERY (a Group object) - creates it if necessary
 	///</summary>
-	public MFR_M01_MF_QUERY getMF_QUERY() {
+	public MFR_M01_MF_QUERY GetMF_QUERY() {
 	   MFR_M01_MF_QUERY ret = null;
 	   try {
 	      ret = (MFR_M01_MF_QUERY)this.GetStructure("MF_QUERY");
@@ -190,14 +192,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFR_M01_MF_QUERY getMF_QUERY(int rep) { 
+	public MFR_M01_MF_QUERY GetMF_QUERY(int rep) { 
 	   return (MFR_M01_MF_QUERY)this.GetStructure("MF_QUERY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFR_M01_MF_QUERY 
 	 */ 
-	public int MF_QUERYReps { 
+	public int MF_QUERYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

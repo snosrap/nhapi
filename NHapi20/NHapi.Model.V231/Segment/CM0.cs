@@ -9,18 +9,19 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 CM0 message segment. 
-/// This segment has the following fields:
-/// * CM0-1: Set ID - CM0 (SI)
-/// * CM0-2: Sponsor Study ID (EI)
-/// * CM0-3: Alternate Study ID (EI)
-/// * CM0-4: Title of Study (ST)
-/// * CM0-5: Chairman of Study (XCN)
-/// * CM0-6: Last IRB Approval Date (DT)
-/// * CM0-7: Total Accrual to Date (NM)
-/// * CM0-8: Last Accrual Date (DT)
-/// * CM0-9: Contact for Study (XCN)
-/// * CM0-10: Contact's Tel. Number (XTN)
-/// * CM0-11: Contact's Address (XAD)
+/// This segment has the following fields:<ol>
+///<li>CM0-1: Set ID - CM0 (SI)</li>
+///<li>CM0-2: Sponsor Study ID (EI)</li>
+///<li>CM0-3: Alternate Study ID (EI)</li>
+///<li>CM0-4: Title of Study (ST)</li>
+///<li>CM0-5: Chairman of Study (XCN)</li>
+///<li>CM0-6: Last IRB Approval Date (DT)</li>
+///<li>CM0-7: Total Accrual to Date (NM)</li>
+///<li>CM0-8: Last Accrual Date (DT)</li>
+///<li>CM0-9: Contact for Study (XCN)</li>
+///<li>CM0-10: Contact's Tel. Number (XTN)</li>
+///<li>CM0-11: Contact's Address (XAD)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -104,7 +105,7 @@ public class CM0 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getAlternateStudyID(int rep)
+	public EI GetAlternateStudyID(int rep)
 	{
 			EI ret = null;
 			try
@@ -121,7 +122,7 @@ public class CM0 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Alternate Study ID (CM0-3).
    ///</summary>
-  public EI[] getAlternateStudyID() {
+  public EI[] GetAlternateStudyID() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -139,6 +140,24 @@ public class CM0 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Alternate Study ID (CM0-3).
+   ///</summary>
+  public int AlternateStudyIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Title of Study(CM0-4).
 	///</summary>
@@ -167,7 +186,7 @@ public class CM0 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getChairmanOfStudy(int rep)
+	public XCN GetChairmanOfStudy(int rep)
 	{
 			XCN ret = null;
 			try
@@ -184,7 +203,7 @@ public class CM0 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Chairman of Study (CM0-5).
    ///</summary>
-  public XCN[] getChairmanOfStudy() {
+  public XCN[] GetChairmanOfStudy() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -202,6 +221,24 @@ public class CM0 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Chairman of Study (CM0-5).
+   ///</summary>
+  public int ChairmanOfStudyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Last IRB Approval Date(CM0-6).
 	///</summary>
@@ -276,7 +313,7 @@ public class CM0 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getContactForStudy(int rep)
+	public XCN GetContactForStudy(int rep)
 	{
 			XCN ret = null;
 			try
@@ -293,7 +330,7 @@ public class CM0 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact for Study (CM0-9).
    ///</summary>
-  public XCN[] getContactForStudy() {
+  public XCN[] GetContactForStudy() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -311,6 +348,24 @@ public class CM0 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact for Study (CM0-9).
+   ///</summary>
+  public int ContactForStudyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Contact's Tel. Number(CM0-10).
 	///</summary>
@@ -339,7 +394,7 @@ public class CM0 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getContactSAddress(int rep)
+	public XAD GetContactSAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -356,7 +411,7 @@ public class CM0 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact's Address (CM0-11).
    ///</summary>
-  public XAD[] getContactSAddress() {
+  public XAD[] GetContactSAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -374,5 +429,23 @@ public class CM0 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact's Address (CM0-11).
+   ///</summary>
+  public int ContactSAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

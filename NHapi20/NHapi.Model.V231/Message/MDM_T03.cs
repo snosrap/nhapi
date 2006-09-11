@@ -12,11 +12,13 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a MDM_T03 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: EVN (EVN - event type segment) 
-/// * 2: PID (PID - patient identification segment) 
-/// * 3: PV1 (PV1 - patient visit segment-) 
-/// * 4: TXA (Document notification segment) 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: EVN (EVN - event type segment) </li>
+///<li>2: PID (PID - patient identification segment) </li>
+///<li>3: PV1 (PV1 - patient visit segment-) </li>
+///<li>4: TXA (Document notification segment) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MDM_T03 : AbstractMessage  {

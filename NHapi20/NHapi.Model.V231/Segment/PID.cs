@@ -9,37 +9,38 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 PID message segment. 
-/// This segment has the following fields:
-/// * PID-1: Set ID - PID (SI)
-/// * PID-2: Patient ID (CX)
-/// * PID-3: Patient Identifier List (CX)
-/// * PID-4: Alternate Patient ID - PID (CX)
-/// * PID-5: Patient Name (XPN)
-/// * PID-6: Mother’s Maiden Name (XPN)
-/// * PID-7: Date/Time Of Birth (TS)
-/// * PID-8: Sex (IS)
-/// * PID-9: Patient Alias (XPN)
-/// * PID-10: Race (CE)
-/// * PID-11: Patient Address (XAD)
-/// * PID-12: County Code (IS)
-/// * PID-13: Phone Number - Home (XTN)
-/// * PID-14: Phone Number - Business (XTN)
-/// * PID-15: Primary Language (CE)
-/// * PID-16: Marital Status (CE)
-/// * PID-17: Religion (CE)
-/// * PID-18: Patient Account Number (CX)
-/// * PID-19: SSN Number - Patient (ST)
-/// * PID-20: Driver's License Number - Patient (DLN)
-/// * PID-21: Mother's Identifier (CX)
-/// * PID-22: Ethnic Group (CE)
-/// * PID-23: Birth Place (ST)
-/// * PID-24: Multiple Birth Indicator (ID)
-/// * PID-25: Birth Order (NM)
-/// * PID-26: Citizenship (CE)
-/// * PID-27: Veterans Military Status (CE)
-/// * PID-28: Nationality (CE)
-/// * PID-29: Patient Death Date and Time (TS)
-/// * PID-30: Patient Death Indicator (ID)
+/// This segment has the following fields:<ol>
+///<li>PID-1: Set ID - PID (SI)</li>
+///<li>PID-2: Patient ID (CX)</li>
+///<li>PID-3: Patient Identifier List (CX)</li>
+///<li>PID-4: Alternate Patient ID - PID (CX)</li>
+///<li>PID-5: Patient Name (XPN)</li>
+///<li>PID-6: Mother’s Maiden Name (XPN)</li>
+///<li>PID-7: Date/Time Of Birth (TS)</li>
+///<li>PID-8: Sex (IS)</li>
+///<li>PID-9: Patient Alias (XPN)</li>
+///<li>PID-10: Race (CE)</li>
+///<li>PID-11: Patient Address (XAD)</li>
+///<li>PID-12: County Code (IS)</li>
+///<li>PID-13: Phone Number - Home (XTN)</li>
+///<li>PID-14: Phone Number - Business (XTN)</li>
+///<li>PID-15: Primary Language (CE)</li>
+///<li>PID-16: Marital Status (CE)</li>
+///<li>PID-17: Religion (CE)</li>
+///<li>PID-18: Patient Account Number (CX)</li>
+///<li>PID-19: SSN Number - Patient (ST)</li>
+///<li>PID-20: Driver's License Number - Patient (DLN)</li>
+///<li>PID-21: Mother's Identifier (CX)</li>
+///<li>PID-22: Ethnic Group (CE)</li>
+///<li>PID-23: Birth Place (ST)</li>
+///<li>PID-24: Multiple Birth Indicator (ID)</li>
+///<li>PID-25: Birth Order (NM)</li>
+///<li>PID-26: Citizenship (CE)</li>
+///<li>PID-27: Veterans Military Status (CE)</li>
+///<li>PID-28: Nationality (CE)</li>
+///<li>PID-29: Patient Death Date and Time (TS)</li>
+///<li>PID-30: Patient Death Indicator (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -142,7 +143,7 @@ public class PID : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getPatientIdentifierList(int rep)
+	public CX GetPatientIdentifierList(int rep)
 	{
 			CX ret = null;
 			try
@@ -159,7 +160,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Patient Identifier List (PID-3).
    ///</summary>
-  public CX[] getPatientIdentifierList() {
+  public CX[] GetPatientIdentifierList() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -177,12 +178,30 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Patient Identifier List (PID-3).
+   ///</summary>
+  public int PatientIdentifierListRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Alternate Patient ID - PID(PID-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getAlternatePatientIDPID(int rep)
+	public CX GetAlternatePatientIDPID(int rep)
 	{
 			CX ret = null;
 			try
@@ -199,7 +218,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Alternate Patient ID - PID (PID-4).
    ///</summary>
-  public CX[] getAlternatePatientIDPID() {
+  public CX[] GetAlternatePatientIDPID() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -217,12 +236,30 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Alternate Patient ID - PID (PID-4).
+   ///</summary>
+  public int AlternatePatientIDPIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Patient Name(PID-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getPatientName(int rep)
+	public XPN GetPatientName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -239,7 +276,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Patient Name (PID-5).
    ///</summary>
-  public XPN[] getPatientName() {
+  public XPN[] GetPatientName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -257,12 +294,30 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Patient Name (PID-5).
+   ///</summary>
+  public int PatientNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Mother’s Maiden Name(PID-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getMotherSMaidenName(int rep)
+	public XPN GetMotherSMaidenName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -279,7 +334,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Mother’s Maiden Name (PID-6).
    ///</summary>
-  public XPN[] getMotherSMaidenName() {
+  public XPN[] GetMotherSMaidenName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -297,6 +352,24 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Mother’s Maiden Name (PID-6).
+   ///</summary>
+  public int MotherSMaidenNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Date/Time Of Birth(PID-7).
 	///</summary>
@@ -348,7 +421,7 @@ public class PID : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getPatientAlias(int rep)
+	public XPN GetPatientAlias(int rep)
 	{
 			XPN ret = null;
 			try
@@ -365,7 +438,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Patient Alias (PID-9).
    ///</summary>
-  public XPN[] getPatientAlias() {
+  public XPN[] GetPatientAlias() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -383,12 +456,30 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Patient Alias (PID-9).
+   ///</summary>
+  public int PatientAliasRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Race(PID-10).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getRace(int rep)
+	public CE GetRace(int rep)
 	{
 			CE ret = null;
 			try
@@ -405,7 +496,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Race (PID-10).
    ///</summary>
-  public CE[] getRace() {
+  public CE[] GetRace() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -423,12 +514,30 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Race (PID-10).
+   ///</summary>
+  public int RaceRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Patient Address(PID-11).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getPatientAddress(int rep)
+	public XAD GetPatientAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -445,7 +554,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Patient Address (PID-11).
    ///</summary>
-  public XAD[] getPatientAddress() {
+  public XAD[] GetPatientAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -463,6 +572,24 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Patient Address (PID-11).
+   ///</summary>
+  public int PatientAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns County Code(PID-12).
 	///</summary>
@@ -491,7 +618,7 @@ public class PID : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getPhoneNumberHome(int rep)
+	public XTN GetPhoneNumberHome(int rep)
 	{
 			XTN ret = null;
 			try
@@ -508,7 +635,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Phone Number - Home (PID-13).
    ///</summary>
-  public XTN[] getPhoneNumberHome() {
+  public XTN[] GetPhoneNumberHome() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -526,12 +653,30 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Phone Number - Home (PID-13).
+   ///</summary>
+  public int PhoneNumberHomeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Phone Number - Business(PID-14).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getPhoneNumberBusiness(int rep)
+	public XTN GetPhoneNumberBusiness(int rep)
 	{
 			XTN ret = null;
 			try
@@ -548,7 +693,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Phone Number - Business (PID-14).
    ///</summary>
-  public XTN[] getPhoneNumberBusiness() {
+  public XTN[] GetPhoneNumberBusiness() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -566,6 +711,24 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Phone Number - Business (PID-14).
+   ///</summary>
+  public int PhoneNumberBusinessRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Primary Language(PID-15).
 	///</summary>
@@ -709,7 +872,7 @@ public class PID : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getMotherSIdentifier(int rep)
+	public CX GetMotherSIdentifier(int rep)
 	{
 			CX ret = null;
 			try
@@ -726,7 +889,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Mother's Identifier (PID-21).
    ///</summary>
-  public CX[] getMotherSIdentifier() {
+  public CX[] GetMotherSIdentifier() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -744,12 +907,30 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Mother's Identifier (PID-21).
+   ///</summary>
+  public int MotherSIdentifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Ethnic Group(PID-22).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getEthnicGroup(int rep)
+	public CE GetEthnicGroup(int rep)
 	{
 			CE ret = null;
 			try
@@ -766,7 +947,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ethnic Group (PID-22).
    ///</summary>
-  public CE[] getEthnicGroup() {
+  public CE[] GetEthnicGroup() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(22);  
@@ -784,6 +965,24 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ethnic Group (PID-22).
+   ///</summary>
+  public int EthnicGroupRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(22);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Birth Place(PID-23).
 	///</summary>
@@ -858,7 +1057,7 @@ public class PID : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getCitizenship(int rep)
+	public CE GetCitizenship(int rep)
 	{
 			CE ret = null;
 			try
@@ -875,7 +1074,7 @@ public class PID : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Citizenship (PID-26).
    ///</summary>
-  public CE[] getCitizenship() {
+  public CE[] GetCitizenship() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(26);  
@@ -893,6 +1092,24 @@ public class PID : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Citizenship (PID-26).
+   ///</summary>
+  public int CitizenshipRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(26);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Veterans Military Status(PID-27).
 	///</summary>

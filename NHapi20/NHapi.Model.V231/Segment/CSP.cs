@@ -9,11 +9,12 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 CSP message segment. 
-/// This segment has the following fields:
-/// * CSP-1: Study Phase Identifier (CE)
-/// * CSP-2: Date/time Study Phase Began (TS)
-/// * CSP-3: Date/time Study Phase Ended (TS)
-/// * CSP-4: Study Phase Evaluability (CE)
+/// This segment has the following fields:<ol>
+///<li>CSP-1: Study Phase Identifier (CE)</li>
+///<li>CSP-2: Date/time Study Phase Began (TS)</li>
+///<li>CSP-3: Date/time Study Phase Ended (TS)</li>
+///<li>CSP-4: Study Phase Evaluability (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

@@ -12,11 +12,13 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a RRE_O02 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional 
-/// * 3: NTE (NTE - notes and comments segment) optional repeating
-/// * 4: RRE_O02_RESPONSE (a Group object) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional </li>
+///<li>3: NTE (NTE - notes and comments segment) optional repeating</li>
+///<li>4: RRE_O02_RESPONSE (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRE_O02 : AbstractMessage  {
@@ -101,7 +103,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (NTE - notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -118,14 +120,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

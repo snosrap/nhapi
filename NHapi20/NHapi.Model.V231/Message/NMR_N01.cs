@@ -12,11 +12,13 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a NMR_N01 message structure (see chapter 14). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional repeating
-/// * 3: QRD (QRD - original-style query definition segment) optional 
-/// * 4: NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT (a Group object) repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional repeating</li>
+///<li>3: QRD (QRD - original-style query definition segment) optional </li>
+///<li>4: NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class NMR_N01 : AbstractMessage  {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ERR (ERR - error segment) - creates it if necessary
 	///</summary>
-	public ERR getERR() {
+	public ERR GetERR() {
 	   ERR ret = null;
 	   try {
 	      ret = (ERR)this.GetStructure("ERR");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ERR getERR(int rep) { 
+	public ERR GetERR(int rep) { 
 	   return (ERR)this.GetStructure("ERR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ERR 
 	 */ 
-	public int ERRReps { 
+	public int ERRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -142,7 +144,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT (a Group object) - creates it if necessary
 	///</summary>
-	public NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT getCLOCK_AND_STATS_WITH_NOTES_ALT() {
+	public NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT GetCLOCK_AND_STATS_WITH_NOTES_ALT() {
 	   NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT ret = null;
 	   try {
 	      ret = (NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT)this.GetStructure("CLOCK_AND_STATS_WITH_NOTES_ALT");
@@ -159,14 +161,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT getCLOCK_AND_STATS_WITH_NOTES_ALT(int rep) { 
+	public NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT GetCLOCK_AND_STATS_WITH_NOTES_ALT(int rep) { 
 	   return (NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT)this.GetStructure("CLOCK_AND_STATS_WITH_NOTES_ALT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT 
 	 */ 
-	public int CLOCK_AND_STATS_WITH_NOTES_ALTReps { 
+	public int CLOCK_AND_STATS_WITH_NOTES_ALTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

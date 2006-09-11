@@ -12,10 +12,12 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a SRR_S01 message structure (see chapter ). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional 
-/// * 3: SRR_S01_SCHEDULE (a Group object) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional </li>
+///<li>3: SRR_S01_SCHEDULE (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SRR_S01 : AbstractMessage  {

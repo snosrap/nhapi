@@ -12,9 +12,11 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a ORU_R01 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: ORU_R01_PATIENT_RESULT (a Group object) repeating
-/// * 2: DSC (DSC - Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: ORU_R01_PATIENT_RESULT (a Group object) repeating</li>
+///<li>2: DSC (DSC - Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORU_R01 : AbstractMessage  {
@@ -65,7 +67,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORU_R01_PATIENT_RESULT (a Group object) - creates it if necessary
 	///</summary>
-	public ORU_R01_PATIENT_RESULT getPATIENT_RESULT() {
+	public ORU_R01_PATIENT_RESULT GetPATIENT_RESULT() {
 	   ORU_R01_PATIENT_RESULT ret = null;
 	   try {
 	      ret = (ORU_R01_PATIENT_RESULT)this.GetStructure("PATIENT_RESULT");
@@ -82,14 +84,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORU_R01_PATIENT_RESULT getPATIENT_RESULT(int rep) { 
+	public ORU_R01_PATIENT_RESULT GetPATIENT_RESULT(int rep) { 
 	   return (ORU_R01_PATIENT_RESULT)this.GetStructure("PATIENT_RESULT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORU_R01_PATIENT_RESULT 
 	 */ 
-	public int PATIENT_RESULTReps { 
+	public int PATIENT_RESULTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

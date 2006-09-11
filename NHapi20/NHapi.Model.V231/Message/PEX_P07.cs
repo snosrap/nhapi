@@ -12,13 +12,15 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a PEX_P07 message structure (see chapter ). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: EVN (EVN - event type segment) 
-/// * 2: PID (PID - patient identification segment) 
-/// * 3: PD1 (PD1 - patient additional demographic segment) optional 
-/// * 4: NTE (NTE - notes and comments segment) optional repeating
-/// * 5: PEX_P07_VISIT (a Group object) optional 
-/// * 6: PEX_P07_EXPERIENCE (a Group object) repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: EVN (EVN - event type segment) </li>
+///<li>2: PID (PID - patient identification segment) </li>
+///<li>3: PD1 (PD1 - patient additional demographic segment) optional </li>
+///<li>4: NTE (NTE - notes and comments segment) optional repeating</li>
+///<li>5: PEX_P07_VISIT (a Group object) optional </li>
+///<li>6: PEX_P07_EXPERIENCE (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PEX_P07 : AbstractMessage  {
@@ -121,7 +123,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (NTE - notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -138,14 +140,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -178,7 +180,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PEX_P07_EXPERIENCE (a Group object) - creates it if necessary
 	///</summary>
-	public PEX_P07_EXPERIENCE getEXPERIENCE() {
+	public PEX_P07_EXPERIENCE GetEXPERIENCE() {
 	   PEX_P07_EXPERIENCE ret = null;
 	   try {
 	      ret = (PEX_P07_EXPERIENCE)this.GetStructure("EXPERIENCE");
@@ -195,14 +197,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PEX_P07_EXPERIENCE getEXPERIENCE(int rep) { 
+	public PEX_P07_EXPERIENCE GetEXPERIENCE(int rep) { 
 	   return (PEX_P07_EXPERIENCE)this.GetStructure("EXPERIENCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PEX_P07_EXPERIENCE 
 	 */ 
-	public int EXPERIENCEReps { 
+	public int EXPERIENCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

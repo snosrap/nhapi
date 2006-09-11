@@ -12,14 +12,16 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a RQC_I06 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: QRD (QRD - original-style query definition segment) 
-/// * 2: QRF (QRF - original style query filter segment) optional 
-/// * 3: RQC_I06_PROVIDER (a Group object) repeating
-/// * 4: PID (PID - patient identification segment) 
-/// * 5: NK1 (NK1 - next of kin / associated parties segment-) optional repeating
-/// * 6: GT1 (GT1 - guarantor segment) optional 
-/// * 7: NTE (NTE - notes and comments segment) optional repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: QRD (QRD - original-style query definition segment) </li>
+///<li>2: QRF (QRF - original style query filter segment) optional </li>
+///<li>3: RQC_I06_PROVIDER (a Group object) repeating</li>
+///<li>4: PID (PID - patient identification segment) </li>
+///<li>5: NK1 (NK1 - next of kin / associated parties segment-) optional repeating</li>
+///<li>6: GT1 (GT1 - guarantor segment) optional </li>
+///<li>7: NTE (NTE - notes and comments segment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RQC_I06 : AbstractMessage  {
@@ -107,7 +109,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RQC_I06_PROVIDER (a Group object) - creates it if necessary
 	///</summary>
-	public RQC_I06_PROVIDER getPROVIDER() {
+	public RQC_I06_PROVIDER GetPROVIDER() {
 	   RQC_I06_PROVIDER ret = null;
 	   try {
 	      ret = (RQC_I06_PROVIDER)this.GetStructure("PROVIDER");
@@ -124,14 +126,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RQC_I06_PROVIDER getPROVIDER(int rep) { 
+	public RQC_I06_PROVIDER GetPROVIDER(int rep) { 
 	   return (RQC_I06_PROVIDER)this.GetStructure("PROVIDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RQC_I06_PROVIDER 
 	 */ 
-	public int PROVIDERReps { 
+	public int PROVIDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -164,7 +166,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (NK1 - next of kin / associated parties segment-) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -181,14 +183,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -221,7 +223,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (NTE - notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -238,14 +240,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

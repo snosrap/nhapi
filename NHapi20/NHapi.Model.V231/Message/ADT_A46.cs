@@ -12,11 +12,13 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a ADT_A46 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: EVN (EVN - event type segment) 
-/// * 2: PID (PID - patient identification segment) 
-/// * 3: PD1 (PD1 - patient additional demographic segment) optional 
-/// * 4: MRG (MRG - merge patient information segment-) 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: EVN (EVN - event type segment) </li>
+///<li>2: PID (PID - patient identification segment) </li>
+///<li>3: PD1 (PD1 - patient additional demographic segment) optional </li>
+///<li>4: MRG (MRG - merge patient information segment-) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A46 : AbstractMessage  {

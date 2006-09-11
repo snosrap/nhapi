@@ -9,32 +9,33 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 PEO message segment. 
-/// This segment has the following fields:
-/// * PEO-1: Event Identifiers Used (CE)
-/// * PEO-2: Event Symptom/Diagnosis Code (CE)
-/// * PEO-3: Event Onset Date/Time (TS)
-/// * PEO-4: Event Exacerbation Date/Time (TS)
-/// * PEO-5: Event Improved Date/Time (TS)
-/// * PEO-6: Event Ended Data/Time (TS)
-/// * PEO-7: Event Location Occurred Address (XAD)
-/// * PEO-8: Event Qualification (ID)
-/// * PEO-9: Event Serious (ID)
-/// * PEO-10: Event Expected (ID)
-/// * PEO-11: Event Outcome (ID)
-/// * PEO-12: Patient Outcome (ID)
-/// * PEO-13: Event Description From Others (FT)
-/// * PEO-14: Event From Original Reporter (FT)
-/// * PEO-15: Event Description From Patient (FT)
-/// * PEO-16: Event Description From Practitioner (FT)
-/// * PEO-17: Event Description From Autopsy (FT)
-/// * PEO-18: Cause Of Death (CE)
-/// * PEO-19: Primary Observer Name (XPN)
-/// * PEO-20: Primary Observer Address (XAD)
-/// * PEO-21: Primary Observer Telephone (XTN)
-/// * PEO-22: Primary Observer’s Qualification (ID)
-/// * PEO-23: Confirmation Provided By (ID)
-/// * PEO-24: Primary Observer Aware Date/Time (TS)
-/// * PEO-25: Primary Observer’s identity May Be Divulged (ID)
+/// This segment has the following fields:<ol>
+///<li>PEO-1: Event Identifiers Used (CE)</li>
+///<li>PEO-2: Event Symptom/Diagnosis Code (CE)</li>
+///<li>PEO-3: Event Onset Date/Time (TS)</li>
+///<li>PEO-4: Event Exacerbation Date/Time (TS)</li>
+///<li>PEO-5: Event Improved Date/Time (TS)</li>
+///<li>PEO-6: Event Ended Data/Time (TS)</li>
+///<li>PEO-7: Event Location Occurred Address (XAD)</li>
+///<li>PEO-8: Event Qualification (ID)</li>
+///<li>PEO-9: Event Serious (ID)</li>
+///<li>PEO-10: Event Expected (ID)</li>
+///<li>PEO-11: Event Outcome (ID)</li>
+///<li>PEO-12: Patient Outcome (ID)</li>
+///<li>PEO-13: Event Description From Others (FT)</li>
+///<li>PEO-14: Event From Original Reporter (FT)</li>
+///<li>PEO-15: Event Description From Patient (FT)</li>
+///<li>PEO-16: Event Description From Practitioner (FT)</li>
+///<li>PEO-17: Event Description From Autopsy (FT)</li>
+///<li>PEO-18: Cause Of Death (CE)</li>
+///<li>PEO-19: Primary Observer Name (XPN)</li>
+///<li>PEO-20: Primary Observer Address (XAD)</li>
+///<li>PEO-21: Primary Observer Telephone (XTN)</li>
+///<li>PEO-22: Primary Observer’s Qualification (ID)</li>
+///<li>PEO-23: Confirmation Provided By (ID)</li>
+///<li>PEO-24: Primary Observer Aware Date/Time (TS)</li>
+///<li>PEO-25: Primary Observer’s identity May Be Divulged (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -86,7 +87,7 @@ public class PEO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getEventIdentifiersUsed(int rep)
+	public CE GetEventIdentifiersUsed(int rep)
 	{
 			CE ret = null;
 			try
@@ -103,7 +104,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Identifiers Used (PEO-1).
    ///</summary>
-  public CE[] getEventIdentifiersUsed() {
+  public CE[] GetEventIdentifiersUsed() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -121,12 +122,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Identifiers Used (PEO-1).
+   ///</summary>
+  public int EventIdentifiersUsedRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Event Symptom/Diagnosis Code(PEO-2).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getEventSymptomDiagnosisCode(int rep)
+	public CE GetEventSymptomDiagnosisCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -143,7 +162,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Symptom/Diagnosis Code (PEO-2).
    ///</summary>
-  public CE[] getEventSymptomDiagnosisCode() {
+  public CE[] GetEventSymptomDiagnosisCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -161,6 +180,24 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Symptom/Diagnosis Code (PEO-2).
+   ///</summary>
+  public int EventSymptomDiagnosisCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Event Onset Date/Time(PEO-3).
 	///</summary>
@@ -258,7 +295,7 @@ public class PEO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getEventLocationOccurredAddress(int rep)
+	public XAD GetEventLocationOccurredAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -275,7 +312,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Location Occurred Address (PEO-7).
    ///</summary>
-  public XAD[] getEventLocationOccurredAddress() {
+  public XAD[] GetEventLocationOccurredAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -293,12 +330,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Location Occurred Address (PEO-7).
+   ///</summary>
+  public int EventLocationOccurredAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Event Qualification(PEO-8).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getEventQualification(int rep)
+	public ID GetEventQualification(int rep)
 	{
 			ID ret = null;
 			try
@@ -315,7 +370,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Qualification (PEO-8).
    ///</summary>
-  public ID[] getEventQualification() {
+  public ID[] GetEventQualification() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -333,6 +388,24 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Qualification (PEO-8).
+   ///</summary>
+  public int EventQualificationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Event Serious(PEO-9).
 	///</summary>
@@ -384,7 +457,7 @@ public class PEO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getEventOutcome(int rep)
+	public ID GetEventOutcome(int rep)
 	{
 			ID ret = null;
 			try
@@ -401,7 +474,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Outcome (PEO-11).
    ///</summary>
-  public ID[] getEventOutcome() {
+  public ID[] GetEventOutcome() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -419,6 +492,24 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Outcome (PEO-11).
+   ///</summary>
+  public int EventOutcomeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Patient Outcome(PEO-12).
 	///</summary>
@@ -447,7 +538,7 @@ public class PEO : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public FT getEventDescriptionFromOthers(int rep)
+	public FT GetEventDescriptionFromOthers(int rep)
 	{
 			FT ret = null;
 			try
@@ -464,7 +555,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Description From Others (PEO-13).
    ///</summary>
-  public FT[] getEventDescriptionFromOthers() {
+  public FT[] GetEventDescriptionFromOthers() {
      FT[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -482,12 +573,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Description From Others (PEO-13).
+   ///</summary>
+  public int EventDescriptionFromOthersRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Event From Original Reporter(PEO-14).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public FT getEventFromOriginalReporter(int rep)
+	public FT GetEventFromOriginalReporter(int rep)
 	{
 			FT ret = null;
 			try
@@ -504,7 +613,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event From Original Reporter (PEO-14).
    ///</summary>
-  public FT[] getEventFromOriginalReporter() {
+  public FT[] GetEventFromOriginalReporter() {
      FT[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -522,12 +631,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event From Original Reporter (PEO-14).
+   ///</summary>
+  public int EventFromOriginalReporterRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Event Description From Patient(PEO-15).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public FT getEventDescriptionFromPatient(int rep)
+	public FT GetEventDescriptionFromPatient(int rep)
 	{
 			FT ret = null;
 			try
@@ -544,7 +671,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Description From Patient (PEO-15).
    ///</summary>
-  public FT[] getEventDescriptionFromPatient() {
+  public FT[] GetEventDescriptionFromPatient() {
      FT[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -562,12 +689,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Description From Patient (PEO-15).
+   ///</summary>
+  public int EventDescriptionFromPatientRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Event Description From Practitioner(PEO-16).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public FT getEventDescriptionFromPractitioner(int rep)
+	public FT GetEventDescriptionFromPractitioner(int rep)
 	{
 			FT ret = null;
 			try
@@ -584,7 +729,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Description From Practitioner (PEO-16).
    ///</summary>
-  public FT[] getEventDescriptionFromPractitioner() {
+  public FT[] GetEventDescriptionFromPractitioner() {
      FT[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -602,12 +747,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Description From Practitioner (PEO-16).
+   ///</summary>
+  public int EventDescriptionFromPractitionerRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Event Description From Autopsy(PEO-17).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public FT getEventDescriptionFromAutopsy(int rep)
+	public FT GetEventDescriptionFromAutopsy(int rep)
 	{
 			FT ret = null;
 			try
@@ -624,7 +787,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Description From Autopsy (PEO-17).
    ///</summary>
-  public FT[] getEventDescriptionFromAutopsy() {
+  public FT[] GetEventDescriptionFromAutopsy() {
      FT[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -642,12 +805,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Description From Autopsy (PEO-17).
+   ///</summary>
+  public int EventDescriptionFromAutopsyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Cause Of Death(PEO-18).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getCauseOfDeath(int rep)
+	public CE GetCauseOfDeath(int rep)
 	{
 			CE ret = null;
 			try
@@ -664,7 +845,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Cause Of Death (PEO-18).
    ///</summary>
-  public CE[] getCauseOfDeath() {
+  public CE[] GetCauseOfDeath() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -682,12 +863,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Cause Of Death (PEO-18).
+   ///</summary>
+  public int CauseOfDeathRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Primary Observer Name(PEO-19).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getPrimaryObserverName(int rep)
+	public XPN GetPrimaryObserverName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -704,7 +903,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Primary Observer Name (PEO-19).
    ///</summary>
-  public XPN[] getPrimaryObserverName() {
+  public XPN[] GetPrimaryObserverName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -722,12 +921,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Primary Observer Name (PEO-19).
+   ///</summary>
+  public int PrimaryObserverNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Primary Observer Address(PEO-20).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getPrimaryObserverAddress(int rep)
+	public XAD GetPrimaryObserverAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -744,7 +961,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Primary Observer Address (PEO-20).
    ///</summary>
-  public XAD[] getPrimaryObserverAddress() {
+  public XAD[] GetPrimaryObserverAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -762,12 +979,30 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Primary Observer Address (PEO-20).
+   ///</summary>
+  public int PrimaryObserverAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Primary Observer Telephone(PEO-21).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getPrimaryObserverTelephone(int rep)
+	public XTN GetPrimaryObserverTelephone(int rep)
 	{
 			XTN ret = null;
 			try
@@ -784,7 +1019,7 @@ public class PEO : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Primary Observer Telephone (PEO-21).
    ///</summary>
-  public XTN[] getPrimaryObserverTelephone() {
+  public XTN[] GetPrimaryObserverTelephone() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -802,6 +1037,24 @@ public class PEO : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Primary Observer Telephone (PEO-21).
+   ///</summary>
+  public int PrimaryObserverTelephoneRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Primary Observer’s Qualification(PEO-22).
 	///</summary>

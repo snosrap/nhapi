@@ -9,79 +9,80 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 IN2 message segment. 
-/// This segment has the following fields:
-/// * IN2-1: Insured’s Employee ID (CX)
-/// * IN2-2: Insured’s Social Security Number (ST)
-/// * IN2-3: Insured’s Employer’s Name and ID (XCN)
-/// * IN2-4: Employer Information Data (IS)
-/// * IN2-5: Mail Claim Party (IS)
-/// * IN2-6: Medicare Health Ins Card Number (ST)
-/// * IN2-7: Medicaid Case Name (XPN)
-/// * IN2-8: Medicaid Case Number (ST)
-/// * IN2-9: Military Sponsor Name (XPN)
-/// * IN2-10: Military ID Number (ST)
-/// * IN2-11: Dependent Of Military Recipient (CE)
-/// * IN2-12: Military Organization (ST)
-/// * IN2-13: Military Station (ST)
-/// * IN2-14: Military Service (IS)
-/// * IN2-15: Military Rank/Grade (IS)
-/// * IN2-16: Military Status (IS)
-/// * IN2-17: Military Retire Date (DT)
-/// * IN2-18: Military Non-Avail Cert On File (ID)
-/// * IN2-19: Baby Coverage (ID)
-/// * IN2-20: Combine Baby Bill (ID)
-/// * IN2-21: Blood Deductible (ST)
-/// * IN2-22: Special Coverage Approval Name (XPN)
-/// * IN2-23: Special Coverage Approval Title (ST)
-/// * IN2-24: Non-Covered Insurance Code (IS)
-/// * IN2-25: Payor ID (CX)
-/// * IN2-26: Payor Subscriber ID (CX)
-/// * IN2-27: Eligibility Source (IS)
-/// * IN2-28: Room Coverage Type/Amount (RMC)
-/// * IN2-29: Policy Type/Amount (PTA)
-/// * IN2-30: Daily Deductible (DDI)
-/// * IN2-31: Living Dependency (IS)
-/// * IN2-32: Ambulatory Status (IS)
-/// * IN2-33: Citizenship (CE)
-/// * IN2-34: Primary Language (CE)
-/// * IN2-35: Living Arrangement (IS)
-/// * IN2-36: Publicity Code (CE)
-/// * IN2-37: Protection Indicator (ID)
-/// * IN2-38: Student Indicator (IS)
-/// * IN2-39: Religion (CE)
-/// * IN2-40: Mother’s Maiden Name (XPN)
-/// * IN2-41: Nationality (CE)
-/// * IN2-42: Ethnic Group (CE)
-/// * IN2-43: Marital Status (CE)
-/// * IN2-44: Insured’s Employment Start Date (DT)
-/// * IN2-45: Employment Stop Date (DT)
-/// * IN2-46: Job Title (ST)
-/// * IN2-47: Job Code/Class (JCC)
-/// * IN2-48: Job Status (IS)
-/// * IN2-49: Employer Contact Person Name (XPN)
-/// * IN2-50: Employer Contact Person Phone Number (XTN)
-/// * IN2-51: Employer Contact Reason (IS)
-/// * IN2-52: Insured’s Contact Person’s Name (XPN)
-/// * IN2-53: Insured’s Contact Person Phone Number (XTN)
-/// * IN2-54: Insured’s Contact Person Reason (IS)
-/// * IN2-55: Relationship To The Patient Start Date (DT)
-/// * IN2-56: Relationship To The Patient Stop Date (DT)
-/// * IN2-57: Insurance Co. Contact Reason (IS)
-/// * IN2-58: Insurance Co Contact Phone Number (XTN)
-/// * IN2-59: Policy Scope (IS)
-/// * IN2-60: Policy Source (IS)
-/// * IN2-61: Patient Member Number (CX)
-/// * IN2-62: Guarantor’s Relationship To Insured (CE)
-/// * IN2-63: Insured’s Phone Number - Home (XTN)
-/// * IN2-64: Insured’s Employer Phone Number (XTN)
-/// * IN2-65: Military Handicapped Program (CE)
-/// * IN2-66: Suspend Flag (ID)
-/// * IN2-67: Copay Limit Flag (ID)
-/// * IN2-68: Stoploss Limit Flag (ID)
-/// * IN2-69: Insured Organization Name And ID (XON)
-/// * IN2-70: Insured Employer Organization Name And ID (XON)
-/// * IN2-71: Race (CE)
-/// * IN2-72: HCFA Patient’s Relationship to Insured (CE)
+/// This segment has the following fields:<ol>
+///<li>IN2-1: Insured’s Employee ID (CX)</li>
+///<li>IN2-2: Insured’s Social Security Number (ST)</li>
+///<li>IN2-3: Insured’s Employer’s Name and ID (XCN)</li>
+///<li>IN2-4: Employer Information Data (IS)</li>
+///<li>IN2-5: Mail Claim Party (IS)</li>
+///<li>IN2-6: Medicare Health Ins Card Number (ST)</li>
+///<li>IN2-7: Medicaid Case Name (XPN)</li>
+///<li>IN2-8: Medicaid Case Number (ST)</li>
+///<li>IN2-9: Military Sponsor Name (XPN)</li>
+///<li>IN2-10: Military ID Number (ST)</li>
+///<li>IN2-11: Dependent Of Military Recipient (CE)</li>
+///<li>IN2-12: Military Organization (ST)</li>
+///<li>IN2-13: Military Station (ST)</li>
+///<li>IN2-14: Military Service (IS)</li>
+///<li>IN2-15: Military Rank/Grade (IS)</li>
+///<li>IN2-16: Military Status (IS)</li>
+///<li>IN2-17: Military Retire Date (DT)</li>
+///<li>IN2-18: Military Non-Avail Cert On File (ID)</li>
+///<li>IN2-19: Baby Coverage (ID)</li>
+///<li>IN2-20: Combine Baby Bill (ID)</li>
+///<li>IN2-21: Blood Deductible (ST)</li>
+///<li>IN2-22: Special Coverage Approval Name (XPN)</li>
+///<li>IN2-23: Special Coverage Approval Title (ST)</li>
+///<li>IN2-24: Non-Covered Insurance Code (IS)</li>
+///<li>IN2-25: Payor ID (CX)</li>
+///<li>IN2-26: Payor Subscriber ID (CX)</li>
+///<li>IN2-27: Eligibility Source (IS)</li>
+///<li>IN2-28: Room Coverage Type/Amount (RMC)</li>
+///<li>IN2-29: Policy Type/Amount (PTA)</li>
+///<li>IN2-30: Daily Deductible (DDI)</li>
+///<li>IN2-31: Living Dependency (IS)</li>
+///<li>IN2-32: Ambulatory Status (IS)</li>
+///<li>IN2-33: Citizenship (CE)</li>
+///<li>IN2-34: Primary Language (CE)</li>
+///<li>IN2-35: Living Arrangement (IS)</li>
+///<li>IN2-36: Publicity Code (CE)</li>
+///<li>IN2-37: Protection Indicator (ID)</li>
+///<li>IN2-38: Student Indicator (IS)</li>
+///<li>IN2-39: Religion (CE)</li>
+///<li>IN2-40: Mother’s Maiden Name (XPN)</li>
+///<li>IN2-41: Nationality (CE)</li>
+///<li>IN2-42: Ethnic Group (CE)</li>
+///<li>IN2-43: Marital Status (CE)</li>
+///<li>IN2-44: Insured’s Employment Start Date (DT)</li>
+///<li>IN2-45: Employment Stop Date (DT)</li>
+///<li>IN2-46: Job Title (ST)</li>
+///<li>IN2-47: Job Code/Class (JCC)</li>
+///<li>IN2-48: Job Status (IS)</li>
+///<li>IN2-49: Employer Contact Person Name (XPN)</li>
+///<li>IN2-50: Employer Contact Person Phone Number (XTN)</li>
+///<li>IN2-51: Employer Contact Reason (IS)</li>
+///<li>IN2-52: Insured’s Contact Person’s Name (XPN)</li>
+///<li>IN2-53: Insured’s Contact Person Phone Number (XTN)</li>
+///<li>IN2-54: Insured’s Contact Person Reason (IS)</li>
+///<li>IN2-55: Relationship To The Patient Start Date (DT)</li>
+///<li>IN2-56: Relationship To The Patient Stop Date (DT)</li>
+///<li>IN2-57: Insurance Co. Contact Reason (IS)</li>
+///<li>IN2-58: Insurance Co Contact Phone Number (XTN)</li>
+///<li>IN2-59: Policy Scope (IS)</li>
+///<li>IN2-60: Policy Source (IS)</li>
+///<li>IN2-61: Patient Member Number (CX)</li>
+///<li>IN2-62: Guarantor’s Relationship To Insured (CE)</li>
+///<li>IN2-63: Insured’s Phone Number - Home (XTN)</li>
+///<li>IN2-64: Insured’s Employer Phone Number (XTN)</li>
+///<li>IN2-65: Military Handicapped Program (CE)</li>
+///<li>IN2-66: Suspend Flag (ID)</li>
+///<li>IN2-67: Copay Limit Flag (ID)</li>
+///<li>IN2-68: Stoploss Limit Flag (ID)</li>
+///<li>IN2-69: Insured Organization Name And ID (XON)</li>
+///<li>IN2-70: Insured Employer Organization Name And ID (XON)</li>
+///<li>IN2-71: Race (CE)</li>
+///<li>IN2-72: HCFA Patient’s Relationship to Insured (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -180,7 +181,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getInsuredSEmployeeID(int rep)
+	public CX GetInsuredSEmployeeID(int rep)
 	{
 			CX ret = null;
 			try
@@ -197,7 +198,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Insured’s Employee ID (IN2-1).
    ///</summary>
-  public CX[] getInsuredSEmployeeID() {
+  public CX[] GetInsuredSEmployeeID() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -215,6 +216,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Insured’s Employee ID (IN2-1).
+   ///</summary>
+  public int InsuredSEmployeeIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Insured’s Social Security Number(IN2-2).
 	///</summary>
@@ -243,7 +262,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getInsuredSEmployerSNameAndID(int rep)
+	public XCN GetInsuredSEmployerSNameAndID(int rep)
 	{
 			XCN ret = null;
 			try
@@ -260,7 +279,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Insured’s Employer’s Name and ID (IN2-3).
    ///</summary>
-  public XCN[] getInsuredSEmployerSNameAndID() {
+  public XCN[] GetInsuredSEmployerSNameAndID() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -278,6 +297,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Insured’s Employer’s Name and ID (IN2-3).
+   ///</summary>
+  public int InsuredSEmployerSNameAndIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Employer Information Data(IN2-4).
 	///</summary>
@@ -306,7 +343,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getMailClaimParty(int rep)
+	public IS GetMailClaimParty(int rep)
 	{
 			IS ret = null;
 			try
@@ -323,7 +360,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Mail Claim Party (IN2-5).
    ///</summary>
-  public IS[] getMailClaimParty() {
+  public IS[] GetMailClaimParty() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -341,6 +378,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Mail Claim Party (IN2-5).
+   ///</summary>
+  public int MailClaimPartyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Medicare Health Ins Card Number(IN2-6).
 	///</summary>
@@ -369,7 +424,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getMedicaidCaseName(int rep)
+	public XPN GetMedicaidCaseName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -386,7 +441,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Medicaid Case Name (IN2-7).
    ///</summary>
-  public XPN[] getMedicaidCaseName() {
+  public XPN[] GetMedicaidCaseName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -404,6 +459,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Medicaid Case Name (IN2-7).
+   ///</summary>
+  public int MedicaidCaseNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Medicaid Case Number(IN2-8).
 	///</summary>
@@ -432,7 +505,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getMilitarySponsorName(int rep)
+	public XPN GetMilitarySponsorName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -449,7 +522,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Military Sponsor Name (IN2-9).
    ///</summary>
-  public XPN[] getMilitarySponsorName() {
+  public XPN[] GetMilitarySponsorName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -467,6 +540,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Military Sponsor Name (IN2-9).
+   ///</summary>
+  public int MilitarySponsorNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Military ID Number(IN2-10).
 	///</summary>
@@ -748,7 +839,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getSpecialCoverageApprovalName(int rep)
+	public XPN GetSpecialCoverageApprovalName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -765,7 +856,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Special Coverage Approval Name (IN2-22).
    ///</summary>
-  public XPN[] getSpecialCoverageApprovalName() {
+  public XPN[] GetSpecialCoverageApprovalName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(22);  
@@ -783,6 +874,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Special Coverage Approval Name (IN2-22).
+   ///</summary>
+  public int SpecialCoverageApprovalNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(22);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Special Coverage Approval Title(IN2-23).
 	///</summary>
@@ -811,7 +920,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getNonCoveredInsuranceCode(int rep)
+	public IS GetNonCoveredInsuranceCode(int rep)
 	{
 			IS ret = null;
 			try
@@ -828,7 +937,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Non-Covered Insurance Code (IN2-24).
    ///</summary>
-  public IS[] getNonCoveredInsuranceCode() {
+  public IS[] GetNonCoveredInsuranceCode() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -846,12 +955,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Non-Covered Insurance Code (IN2-24).
+   ///</summary>
+  public int NonCoveredInsuranceCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Payor ID(IN2-25).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getPayorID(int rep)
+	public CX GetPayorID(int rep)
 	{
 			CX ret = null;
 			try
@@ -868,7 +995,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Payor ID (IN2-25).
    ///</summary>
-  public CX[] getPayorID() {
+  public CX[] GetPayorID() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(25);  
@@ -886,12 +1013,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Payor ID (IN2-25).
+   ///</summary>
+  public int PayorIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(25);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Payor Subscriber ID(IN2-26).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getPayorSubscriberID(int rep)
+	public CX GetPayorSubscriberID(int rep)
 	{
 			CX ret = null;
 			try
@@ -908,7 +1053,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Payor Subscriber ID (IN2-26).
    ///</summary>
-  public CX[] getPayorSubscriberID() {
+  public CX[] GetPayorSubscriberID() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(26);  
@@ -926,6 +1071,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Payor Subscriber ID (IN2-26).
+   ///</summary>
+  public int PayorSubscriberIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(26);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Eligibility Source(IN2-27).
 	///</summary>
@@ -954,7 +1117,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public RMC getRoomCoverageTypeAmount(int rep)
+	public RMC GetRoomCoverageTypeAmount(int rep)
 	{
 			RMC ret = null;
 			try
@@ -971,7 +1134,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Room Coverage Type/Amount (IN2-28).
    ///</summary>
-  public RMC[] getRoomCoverageTypeAmount() {
+  public RMC[] GetRoomCoverageTypeAmount() {
      RMC[] ret = null;
     try {
         IType[] t = this.GetField(28);  
@@ -989,12 +1152,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Room Coverage Type/Amount (IN2-28).
+   ///</summary>
+  public int RoomCoverageTypeAmountRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(28);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Policy Type/Amount(IN2-29).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PTA getPolicyTypeAmount(int rep)
+	public PTA GetPolicyTypeAmount(int rep)
 	{
 			PTA ret = null;
 			try
@@ -1011,7 +1192,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Policy Type/Amount (IN2-29).
    ///</summary>
-  public PTA[] getPolicyTypeAmount() {
+  public PTA[] GetPolicyTypeAmount() {
      PTA[] ret = null;
     try {
         IType[] t = this.GetField(29);  
@@ -1029,6 +1210,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Policy Type/Amount (IN2-29).
+   ///</summary>
+  public int PolicyTypeAmountRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(29);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Daily Deductible(IN2-30).
 	///</summary>
@@ -1080,7 +1279,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getAmbulatoryStatus(int rep)
+	public IS GetAmbulatoryStatus(int rep)
 	{
 			IS ret = null;
 			try
@@ -1097,7 +1296,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ambulatory Status (IN2-32).
    ///</summary>
-  public IS[] getAmbulatoryStatus() {
+  public IS[] GetAmbulatoryStatus() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(32);  
@@ -1115,12 +1314,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ambulatory Status (IN2-32).
+   ///</summary>
+  public int AmbulatoryStatusRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(32);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Citizenship(IN2-33).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getCitizenship(int rep)
+	public CE GetCitizenship(int rep)
 	{
 			CE ret = null;
 			try
@@ -1137,7 +1354,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Citizenship (IN2-33).
    ///</summary>
-  public CE[] getCitizenship() {
+  public CE[] GetCitizenship() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(33);  
@@ -1155,6 +1372,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Citizenship (IN2-33).
+   ///</summary>
+  public int CitizenshipRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(33);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Primary Language(IN2-34).
 	///</summary>
@@ -1298,7 +1533,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getMotherSMaidenName(int rep)
+	public XPN GetMotherSMaidenName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -1315,7 +1550,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Mother’s Maiden Name (IN2-40).
    ///</summary>
-  public XPN[] getMotherSMaidenName() {
+  public XPN[] GetMotherSMaidenName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(40);  
@@ -1333,6 +1568,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Mother’s Maiden Name (IN2-40).
+   ///</summary>
+  public int MotherSMaidenNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(40);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Nationality(IN2-41).
 	///</summary>
@@ -1361,7 +1614,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getEthnicGroup(int rep)
+	public CE GetEthnicGroup(int rep)
 	{
 			CE ret = null;
 			try
@@ -1378,7 +1631,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ethnic Group (IN2-42).
    ///</summary>
-  public CE[] getEthnicGroup() {
+  public CE[] GetEthnicGroup() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(42);  
@@ -1396,12 +1649,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ethnic Group (IN2-42).
+   ///</summary>
+  public int EthnicGroupRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(42);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Marital Status(IN2-43).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getMaritalStatus(int rep)
+	public CE GetMaritalStatus(int rep)
 	{
 			CE ret = null;
 			try
@@ -1418,7 +1689,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Marital Status (IN2-43).
    ///</summary>
-  public CE[] getMaritalStatus() {
+  public CE[] GetMaritalStatus() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(43);  
@@ -1436,6 +1707,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Marital Status (IN2-43).
+   ///</summary>
+  public int MaritalStatusRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(43);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Insured’s Employment Start Date(IN2-44).
 	///</summary>
@@ -1556,7 +1845,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getEmployerContactPersonName(int rep)
+	public XPN GetEmployerContactPersonName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -1573,7 +1862,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Employer Contact Person Name (IN2-49).
    ///</summary>
-  public XPN[] getEmployerContactPersonName() {
+  public XPN[] GetEmployerContactPersonName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(49);  
@@ -1591,12 +1880,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Employer Contact Person Name (IN2-49).
+   ///</summary>
+  public int EmployerContactPersonNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(49);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Employer Contact Person Phone Number(IN2-50).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getEmployerContactPersonPhoneNumber(int rep)
+	public XTN GetEmployerContactPersonPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -1613,7 +1920,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Employer Contact Person Phone Number (IN2-50).
    ///</summary>
-  public XTN[] getEmployerContactPersonPhoneNumber() {
+  public XTN[] GetEmployerContactPersonPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(50);  
@@ -1631,6 +1938,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Employer Contact Person Phone Number (IN2-50).
+   ///</summary>
+  public int EmployerContactPersonPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(50);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Employer Contact Reason(IN2-51).
 	///</summary>
@@ -1659,7 +1984,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getInsuredSContactPersonSName(int rep)
+	public XPN GetInsuredSContactPersonSName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -1676,7 +2001,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Insured’s Contact Person’s Name (IN2-52).
    ///</summary>
-  public XPN[] getInsuredSContactPersonSName() {
+  public XPN[] GetInsuredSContactPersonSName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(52);  
@@ -1694,12 +2019,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Insured’s Contact Person’s Name (IN2-52).
+   ///</summary>
+  public int InsuredSContactPersonSNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(52);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Insured’s Contact Person Phone Number(IN2-53).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getInsuredSContactPersonPhoneNumber(int rep)
+	public XTN GetInsuredSContactPersonPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -1716,7 +2059,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Insured’s Contact Person Phone Number (IN2-53).
    ///</summary>
-  public XTN[] getInsuredSContactPersonPhoneNumber() {
+  public XTN[] GetInsuredSContactPersonPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(53);  
@@ -1734,12 +2077,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Insured’s Contact Person Phone Number (IN2-53).
+   ///</summary>
+  public int InsuredSContactPersonPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(53);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Insured’s Contact Person Reason(IN2-54).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getInsuredSContactPersonReason(int rep)
+	public IS GetInsuredSContactPersonReason(int rep)
 	{
 			IS ret = null;
 			try
@@ -1756,7 +2117,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Insured’s Contact Person Reason (IN2-54).
    ///</summary>
-  public IS[] getInsuredSContactPersonReason() {
+  public IS[] GetInsuredSContactPersonReason() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(54);  
@@ -1774,6 +2135,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Insured’s Contact Person Reason (IN2-54).
+   ///</summary>
+  public int InsuredSContactPersonReasonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(54);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Relationship To The Patient Start Date(IN2-55).
 	///</summary>
@@ -1802,7 +2181,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public DT getRelationshipToThePatientStopDate(int rep)
+	public DT GetRelationshipToThePatientStopDate(int rep)
 	{
 			DT ret = null;
 			try
@@ -1819,7 +2198,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Relationship To The Patient Stop Date (IN2-56).
    ///</summary>
-  public DT[] getRelationshipToThePatientStopDate() {
+  public DT[] GetRelationshipToThePatientStopDate() {
      DT[] ret = null;
     try {
         IType[] t = this.GetField(56);  
@@ -1837,6 +2216,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Relationship To The Patient Stop Date (IN2-56).
+   ///</summary>
+  public int RelationshipToThePatientStopDateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(56);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Insurance Co. Contact Reason(IN2-57).
 	///</summary>
@@ -1980,7 +2377,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getInsuredSPhoneNumberHome(int rep)
+	public XTN GetInsuredSPhoneNumberHome(int rep)
 	{
 			XTN ret = null;
 			try
@@ -1997,7 +2394,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Insured’s Phone Number - Home (IN2-63).
    ///</summary>
-  public XTN[] getInsuredSPhoneNumberHome() {
+  public XTN[] GetInsuredSPhoneNumberHome() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(63);  
@@ -2015,12 +2412,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Insured’s Phone Number - Home (IN2-63).
+   ///</summary>
+  public int InsuredSPhoneNumberHomeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(63);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Insured’s Employer Phone Number(IN2-64).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getInsuredSEmployerPhoneNumber(int rep)
+	public XTN GetInsuredSEmployerPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -2037,7 +2452,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Insured’s Employer Phone Number (IN2-64).
    ///</summary>
-  public XTN[] getInsuredSEmployerPhoneNumber() {
+  public XTN[] GetInsuredSEmployerPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(64);  
@@ -2055,6 +2470,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Insured’s Employer Phone Number (IN2-64).
+   ///</summary>
+  public int InsuredSEmployerPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(64);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Military Handicapped Program(IN2-65).
 	///</summary>
@@ -2152,7 +2585,7 @@ public class IN2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getInsuredOrganizationNameAndID(int rep)
+	public XON GetInsuredOrganizationNameAndID(int rep)
 	{
 			XON ret = null;
 			try
@@ -2169,7 +2602,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Insured Organization Name And ID (IN2-69).
    ///</summary>
-  public XON[] getInsuredOrganizationNameAndID() {
+  public XON[] GetInsuredOrganizationNameAndID() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(69);  
@@ -2187,12 +2620,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Insured Organization Name And ID (IN2-69).
+   ///</summary>
+  public int InsuredOrganizationNameAndIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(69);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Insured Employer Organization Name And ID(IN2-70).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getInsuredEmployerOrganizationNameAndID(int rep)
+	public XON GetInsuredEmployerOrganizationNameAndID(int rep)
 	{
 			XON ret = null;
 			try
@@ -2209,7 +2660,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Insured Employer Organization Name And ID (IN2-70).
    ///</summary>
-  public XON[] getInsuredEmployerOrganizationNameAndID() {
+  public XON[] GetInsuredEmployerOrganizationNameAndID() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(70);  
@@ -2227,12 +2678,30 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Insured Employer Organization Name And ID (IN2-70).
+   ///</summary>
+  public int InsuredEmployerOrganizationNameAndIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(70);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Race(IN2-71).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getRace(int rep)
+	public CE GetRace(int rep)
 	{
 			CE ret = null;
 			try
@@ -2249,7 +2718,7 @@ public class IN2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Race (IN2-71).
    ///</summary>
-  public CE[] getRace() {
+  public CE[] GetRace() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(71);  
@@ -2267,6 +2736,24 @@ public class IN2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Race (IN2-71).
+   ///</summary>
+  public int RaceRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(71);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns HCFA Patient’s Relationship to Insured(IN2-72).
 	///</summary>

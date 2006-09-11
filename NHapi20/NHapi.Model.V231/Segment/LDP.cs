@@ -9,18 +9,19 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 LDP message segment. 
-/// This segment has the following fields:
-/// * LDP-1: Primary Key Value - LDP (PL)
-/// * LDP-2: Location Department (IS)
-/// * LDP-3: Location Service (IS)
-/// * LDP-4: Specialty Type (CE)
-/// * LDP-5: Valid Patient Classes (IS)
-/// * LDP-6: Active/Inactive Flag (ID)
-/// * LDP-7: Activation Date  LDP (TS)
-/// * LDP-8: Inactivation Date - LDP (TS)
-/// * LDP-9: Inactivated Reason (ST)
-/// * LDP-10: Visiting Hours (VH)
-/// * LDP-11: Contact Phone (XTN)
+/// This segment has the following fields:<ol>
+///<li>LDP-1: Primary Key Value - LDP (PL)</li>
+///<li>LDP-2: Location Department (IS)</li>
+///<li>LDP-3: Location Service (IS)</li>
+///<li>LDP-4: Specialty Type (CE)</li>
+///<li>LDP-5: Valid Patient Classes (IS)</li>
+///<li>LDP-6: Active/Inactive Flag (ID)</li>
+///<li>LDP-7: Activation Date  LDP (TS)</li>
+///<li>LDP-8: Inactivation Date - LDP (TS)</li>
+///<li>LDP-9: Inactivated Reason (ST)</li>
+///<li>LDP-10: Visiting Hours (VH)</li>
+///<li>LDP-11: Contact Phone (XTN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -104,7 +105,7 @@ public class LDP : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getLocationService(int rep)
+	public IS GetLocationService(int rep)
 	{
 			IS ret = null;
 			try
@@ -121,7 +122,7 @@ public class LDP : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Location Service (LDP-3).
    ///</summary>
-  public IS[] getLocationService() {
+  public IS[] GetLocationService() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -139,12 +140,30 @@ public class LDP : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Location Service (LDP-3).
+   ///</summary>
+  public int LocationServiceRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Specialty Type(LDP-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSpecialtyType(int rep)
+	public CE GetSpecialtyType(int rep)
 	{
 			CE ret = null;
 			try
@@ -161,7 +180,7 @@ public class LDP : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specialty Type (LDP-4).
    ///</summary>
-  public CE[] getSpecialtyType() {
+  public CE[] GetSpecialtyType() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -179,12 +198,30 @@ public class LDP : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specialty Type (LDP-4).
+   ///</summary>
+  public int SpecialtyTypeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Valid Patient Classes(LDP-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getValidPatientClasses(int rep)
+	public IS GetValidPatientClasses(int rep)
 	{
 			IS ret = null;
 			try
@@ -201,7 +238,7 @@ public class LDP : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Valid Patient Classes (LDP-5).
    ///</summary>
-  public IS[] getValidPatientClasses() {
+  public IS[] GetValidPatientClasses() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -219,6 +256,24 @@ public class LDP : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Valid Patient Classes (LDP-5).
+   ///</summary>
+  public int ValidPatientClassesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Active/Inactive Flag(LDP-6).
 	///</summary>
@@ -316,7 +371,7 @@ public class LDP : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public VH getVisitingHours(int rep)
+	public VH GetVisitingHours(int rep)
 	{
 			VH ret = null;
 			try
@@ -333,7 +388,7 @@ public class LDP : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Visiting Hours (LDP-10).
    ///</summary>
-  public VH[] getVisitingHours() {
+  public VH[] GetVisitingHours() {
      VH[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -351,6 +406,24 @@ public class LDP : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Visiting Hours (LDP-10).
+   ///</summary>
+  public int VisitingHoursRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Contact Phone(LDP-11).
 	///</summary>

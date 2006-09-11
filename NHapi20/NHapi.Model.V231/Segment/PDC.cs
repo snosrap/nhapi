@@ -9,22 +9,23 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 PDC message segment. 
-/// This segment has the following fields:
-/// * PDC-1: Manufacturer/Distributor (XON)
-/// * PDC-2: Country (CE)
-/// * PDC-3: Brand Name (ST)
-/// * PDC-4: Device Family Name (ST)
-/// * PDC-5: Generic Name (CE)
-/// * PDC-6: Model Identifier (ST)
-/// * PDC-7: Catalogue Identifier (ST)
-/// * PDC-8: Other Identifier (ST)
-/// * PDC-9: Product Code (CE)
-/// * PDC-10: Marketing Basis (ID)
-/// * PDC-11: Marketing Approval ID (ST)
-/// * PDC-12: Labeled Shelf Life (CQ)
-/// * PDC-13: Expected Shelf Life (CQ)
-/// * PDC-14: Date First Marketed (TS)
-/// * PDC-15: Date Last Marketed (TS)
+/// This segment has the following fields:<ol>
+///<li>PDC-1: Manufacturer/Distributor (XON)</li>
+///<li>PDC-2: Country (CE)</li>
+///<li>PDC-3: Brand Name (ST)</li>
+///<li>PDC-4: Device Family Name (ST)</li>
+///<li>PDC-5: Generic Name (CE)</li>
+///<li>PDC-6: Model Identifier (ST)</li>
+///<li>PDC-7: Catalogue Identifier (ST)</li>
+///<li>PDC-8: Other Identifier (ST)</li>
+///<li>PDC-9: Product Code (CE)</li>
+///<li>PDC-10: Marketing Basis (ID)</li>
+///<li>PDC-11: Marketing Approval ID (ST)</li>
+///<li>PDC-12: Labeled Shelf Life (CQ)</li>
+///<li>PDC-13: Expected Shelf Life (CQ)</li>
+///<li>PDC-14: Date First Marketed (TS)</li>
+///<li>PDC-15: Date Last Marketed (TS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -66,7 +67,7 @@ public class PDC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getManufacturerDistributor(int rep)
+	public XON GetManufacturerDistributor(int rep)
 	{
 			XON ret = null;
 			try
@@ -83,7 +84,7 @@ public class PDC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Manufacturer/Distributor (PDC-1).
    ///</summary>
-  public XON[] getManufacturerDistributor() {
+  public XON[] GetManufacturerDistributor() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -101,6 +102,24 @@ public class PDC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Manufacturer/Distributor (PDC-1).
+   ///</summary>
+  public int ManufacturerDistributorRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Country(PDC-2).
 	///</summary>
@@ -198,7 +217,7 @@ public class PDC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getModelIdentifier(int rep)
+	public ST GetModelIdentifier(int rep)
 	{
 			ST ret = null;
 			try
@@ -215,7 +234,7 @@ public class PDC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Model Identifier (PDC-6).
    ///</summary>
-  public ST[] getModelIdentifier() {
+  public ST[] GetModelIdentifier() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -233,6 +252,24 @@ public class PDC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Model Identifier (PDC-6).
+   ///</summary>
+  public int ModelIdentifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Catalogue Identifier(PDC-7).
 	///</summary>
@@ -261,7 +298,7 @@ public class PDC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getOtherIdentifier(int rep)
+	public ST GetOtherIdentifier(int rep)
 	{
 			ST ret = null;
 			try
@@ -278,7 +315,7 @@ public class PDC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Other Identifier (PDC-8).
    ///</summary>
-  public ST[] getOtherIdentifier() {
+  public ST[] GetOtherIdentifier() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -296,6 +333,24 @@ public class PDC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Other Identifier (PDC-8).
+   ///</summary>
+  public int OtherIdentifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Product Code(PDC-9).
 	///</summary>

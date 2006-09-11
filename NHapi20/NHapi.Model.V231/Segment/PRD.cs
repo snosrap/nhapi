@@ -9,16 +9,17 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 PRD message segment. 
-/// This segment has the following fields:
-/// * PRD-1: Provider Role (CE)
-/// * PRD-2: Provider Name (XPN)
-/// * PRD-3: Provider Address (XAD)
-/// * PRD-4: Provider Location (PL)
-/// * PRD-5: Provider Communication Information (XTN)
-/// * PRD-6: Preferred Method Of Contact (CE)
-/// * PRD-7: Provider Identifiers (PI)
-/// * PRD-8: Effective Start Date of Provider Role (TS)
-/// * PRD-9: Effective End Date of Provider Role (TS)
+/// This segment has the following fields:<ol>
+///<li>PRD-1: Provider Role (CE)</li>
+///<li>PRD-2: Provider Name (XPN)</li>
+///<li>PRD-3: Provider Address (XAD)</li>
+///<li>PRD-4: Provider Location (PL)</li>
+///<li>PRD-5: Provider Communication Information (XTN)</li>
+///<li>PRD-6: Preferred Method Of Contact (CE)</li>
+///<li>PRD-7: Provider Identifiers (PI)</li>
+///<li>PRD-8: Effective Start Date of Provider Role (TS)</li>
+///<li>PRD-9: Effective End Date of Provider Role (TS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -54,7 +55,7 @@ public class PRD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProviderRole(int rep)
+	public CE GetProviderRole(int rep)
 	{
 			CE ret = null;
 			try
@@ -71,7 +72,7 @@ public class PRD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Provider Role (PRD-1).
    ///</summary>
-  public CE[] getProviderRole() {
+  public CE[] GetProviderRole() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -89,12 +90,30 @@ public class PRD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Provider Role (PRD-1).
+   ///</summary>
+  public int ProviderRoleRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Provider Name(PRD-2).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getProviderName(int rep)
+	public XPN GetProviderName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -111,7 +130,7 @@ public class PRD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Provider Name (PRD-2).
    ///</summary>
-  public XPN[] getProviderName() {
+  public XPN[] GetProviderName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -129,12 +148,30 @@ public class PRD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Provider Name (PRD-2).
+   ///</summary>
+  public int ProviderNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Provider Address(PRD-3).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getProviderAddress(int rep)
+	public XAD GetProviderAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -151,7 +188,7 @@ public class PRD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Provider Address (PRD-3).
    ///</summary>
-  public XAD[] getProviderAddress() {
+  public XAD[] GetProviderAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -169,6 +206,24 @@ public class PRD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Provider Address (PRD-3).
+   ///</summary>
+  public int ProviderAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Provider Location(PRD-4).
 	///</summary>
@@ -197,7 +252,7 @@ public class PRD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getProviderCommunicationInformation(int rep)
+	public XTN GetProviderCommunicationInformation(int rep)
 	{
 			XTN ret = null;
 			try
@@ -214,7 +269,7 @@ public class PRD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Provider Communication Information (PRD-5).
    ///</summary>
-  public XTN[] getProviderCommunicationInformation() {
+  public XTN[] GetProviderCommunicationInformation() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -232,6 +287,24 @@ public class PRD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Provider Communication Information (PRD-5).
+   ///</summary>
+  public int ProviderCommunicationInformationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Preferred Method Of Contact(PRD-6).
 	///</summary>
@@ -260,7 +333,7 @@ public class PRD : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PI getProviderIdentifiers(int rep)
+	public PI GetProviderIdentifiers(int rep)
 	{
 			PI ret = null;
 			try
@@ -277,7 +350,7 @@ public class PRD : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Provider Identifiers (PRD-7).
    ///</summary>
-  public PI[] getProviderIdentifiers() {
+  public PI[] GetProviderIdentifiers() {
      PI[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -295,6 +368,24 @@ public class PRD : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Provider Identifiers (PRD-7).
+   ///</summary>
+  public int ProviderIdentifiersRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Effective Start Date of Provider Role(PRD-8).
 	///</summary>

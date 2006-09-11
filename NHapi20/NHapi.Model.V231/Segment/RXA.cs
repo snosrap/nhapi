@@ -9,29 +9,30 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 RXA message segment. 
-/// This segment has the following fields:
-/// * RXA-1: Give Sub-ID Counter (NM)
-/// * RXA-2: Administration Sub-ID Counter (NM)
-/// * RXA-3: Date/Time Start of Administration (TS)
-/// * RXA-4: Date/Time End of Administration (TS)
-/// * RXA-5: Administered Code (CE)
-/// * RXA-6: Administered Amount (NM)
-/// * RXA-7: Administered Units (CE)
-/// * RXA-8: Administered Dosage Form (CE)
-/// * RXA-9: Administration Notes (CE)
-/// * RXA-10: Administering Provider (XCN)
-/// * RXA-11: Administered-at Location (LA2)
-/// * RXA-12: Administered Per (Time Unit) (ST)
-/// * RXA-13: Administered Strength (NM)
-/// * RXA-14: Administered Strength Units (CE)
-/// * RXA-15: Substance Lot Number (ST)
-/// * RXA-16: Substance Expiration Date (TS)
-/// * RXA-17: Substance Manufacturer Name (CE)
-/// * RXA-18: Substance Refusal Reason (CE)
-/// * RXA-19: Indication (CE)
-/// * RXA-20: Completion Status (ID)
-/// * RXA-21: Action Code-RXA (ID)
-/// * RXA-22: System Entry Date/Time (TS)
+/// This segment has the following fields:<ol>
+///<li>RXA-1: Give Sub-ID Counter (NM)</li>
+///<li>RXA-2: Administration Sub-ID Counter (NM)</li>
+///<li>RXA-3: Date/Time Start of Administration (TS)</li>
+///<li>RXA-4: Date/Time End of Administration (TS)</li>
+///<li>RXA-5: Administered Code (CE)</li>
+///<li>RXA-6: Administered Amount (NM)</li>
+///<li>RXA-7: Administered Units (CE)</li>
+///<li>RXA-8: Administered Dosage Form (CE)</li>
+///<li>RXA-9: Administration Notes (CE)</li>
+///<li>RXA-10: Administering Provider (XCN)</li>
+///<li>RXA-11: Administered-at Location (LA2)</li>
+///<li>RXA-12: Administered Per (Time Unit) (ST)</li>
+///<li>RXA-13: Administered Strength (NM)</li>
+///<li>RXA-14: Administered Strength Units (CE)</li>
+///<li>RXA-15: Substance Lot Number (ST)</li>
+///<li>RXA-16: Substance Expiration Date (TS)</li>
+///<li>RXA-17: Substance Manufacturer Name (CE)</li>
+///<li>RXA-18: Substance Refusal Reason (CE)</li>
+///<li>RXA-19: Indication (CE)</li>
+///<li>RXA-20: Completion Status (ID)</li>
+///<li>RXA-21: Action Code-RXA (ID)</li>
+///<li>RXA-22: System Entry Date/Time (TS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -264,7 +265,7 @@ public class RXA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getAdministrationNotes(int rep)
+	public CE GetAdministrationNotes(int rep)
 	{
 			CE ret = null;
 			try
@@ -281,7 +282,7 @@ public class RXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Administration Notes (RXA-9).
    ///</summary>
-  public CE[] getAdministrationNotes() {
+  public CE[] GetAdministrationNotes() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -299,12 +300,30 @@ public class RXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Administration Notes (RXA-9).
+   ///</summary>
+  public int AdministrationNotesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Administering Provider(RXA-10).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getAdministeringProvider(int rep)
+	public XCN GetAdministeringProvider(int rep)
 	{
 			XCN ret = null;
 			try
@@ -321,7 +340,7 @@ public class RXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Administering Provider (RXA-10).
    ///</summary>
-  public XCN[] getAdministeringProvider() {
+  public XCN[] GetAdministeringProvider() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -339,6 +358,24 @@ public class RXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Administering Provider (RXA-10).
+   ///</summary>
+  public int AdministeringProviderRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Administered-at Location(RXA-11).
 	///</summary>
@@ -436,7 +473,7 @@ public class RXA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getSubstanceLotNumber(int rep)
+	public ST GetSubstanceLotNumber(int rep)
 	{
 			ST ret = null;
 			try
@@ -453,7 +490,7 @@ public class RXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Lot Number (RXA-15).
    ///</summary>
-  public ST[] getSubstanceLotNumber() {
+  public ST[] GetSubstanceLotNumber() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -471,12 +508,30 @@ public class RXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Lot Number (RXA-15).
+   ///</summary>
+  public int SubstanceLotNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Substance Expiration Date(RXA-16).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TS getSubstanceExpirationDate(int rep)
+	public TS GetSubstanceExpirationDate(int rep)
 	{
 			TS ret = null;
 			try
@@ -493,7 +548,7 @@ public class RXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Expiration Date (RXA-16).
    ///</summary>
-  public TS[] getSubstanceExpirationDate() {
+  public TS[] GetSubstanceExpirationDate() {
      TS[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -511,12 +566,30 @@ public class RXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Expiration Date (RXA-16).
+   ///</summary>
+  public int SubstanceExpirationDateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Substance Manufacturer Name(RXA-17).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSubstanceManufacturerName(int rep)
+	public CE GetSubstanceManufacturerName(int rep)
 	{
 			CE ret = null;
 			try
@@ -533,7 +606,7 @@ public class RXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Manufacturer Name (RXA-17).
    ///</summary>
-  public CE[] getSubstanceManufacturerName() {
+  public CE[] GetSubstanceManufacturerName() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -551,12 +624,30 @@ public class RXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Manufacturer Name (RXA-17).
+   ///</summary>
+  public int SubstanceManufacturerNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Substance Refusal Reason(RXA-18).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSubstanceRefusalReason(int rep)
+	public CE GetSubstanceRefusalReason(int rep)
 	{
 			CE ret = null;
 			try
@@ -573,7 +664,7 @@ public class RXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Refusal Reason (RXA-18).
    ///</summary>
-  public CE[] getSubstanceRefusalReason() {
+  public CE[] GetSubstanceRefusalReason() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -591,12 +682,30 @@ public class RXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Refusal Reason (RXA-18).
+   ///</summary>
+  public int SubstanceRefusalReasonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Indication(RXA-19).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getIndication(int rep)
+	public CE GetIndication(int rep)
 	{
 			CE ret = null;
 			try
@@ -613,7 +722,7 @@ public class RXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Indication (RXA-19).
    ///</summary>
-  public CE[] getIndication() {
+  public CE[] GetIndication() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -631,6 +740,24 @@ public class RXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Indication (RXA-19).
+   ///</summary>
+  public int IndicationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Completion Status(RXA-20).
 	///</summary>

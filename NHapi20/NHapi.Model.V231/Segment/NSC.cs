@@ -9,16 +9,17 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 NSC message segment. 
-/// This segment has the following fields:
-/// * NSC-1: Network Change Type (IS)
-/// * NSC-2: Current CPU (ST)
-/// * NSC-3: Current Fileserver (ST)
-/// * NSC-4: Current Application (ST)
-/// * NSC-5: Current Facility (ST)
-/// * NSC-6: New CPU (ST)
-/// * NSC-7: New Fileserver (ST)
-/// * NSC-8: New Application (ST)
-/// * NSC-9: New Facility (ST)
+/// This segment has the following fields:<ol>
+///<li>NSC-1: Network Change Type (IS)</li>
+///<li>NSC-2: Current CPU (ST)</li>
+///<li>NSC-3: Current Fileserver (ST)</li>
+///<li>NSC-4: Current Application (ST)</li>
+///<li>NSC-5: Current Facility (ST)</li>
+///<li>NSC-6: New CPU (ST)</li>
+///<li>NSC-7: New Fileserver (ST)</li>
+///<li>NSC-8: New Application (ST)</li>
+///<li>NSC-9: New Facility (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

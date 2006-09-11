@@ -9,20 +9,21 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 CDM message segment. 
-/// This segment has the following fields:
-/// * CDM-1: Primary Key Value - CDM (CE)
-/// * CDM-2: Charge Code Alias (CE)
-/// * CDM-3: Charge Description Short (ST)
-/// * CDM-4: Charge Description Long (ST)
-/// * CDM-5: Description Override Indicator (IS)
-/// * CDM-6: Exploding Charges (CE)
-/// * CDM-7: Procedure Code (CE)
-/// * CDM-8: Active/Inactive Flag (ID)
-/// * CDM-9: Inventory Number (CE)
-/// * CDM-10: Resource Load (NM)
-/// * CDM-11: Contract Number (CK)
-/// * CDM-12: Contract Organization (XON)
-/// * CDM-13: Room Fee Indicator (ID)
+/// This segment has the following fields:<ol>
+///<li>CDM-1: Primary Key Value - CDM (CE)</li>
+///<li>CDM-2: Charge Code Alias (CE)</li>
+///<li>CDM-3: Charge Description Short (ST)</li>
+///<li>CDM-4: Charge Description Long (ST)</li>
+///<li>CDM-5: Description Override Indicator (IS)</li>
+///<li>CDM-6: Exploding Charges (CE)</li>
+///<li>CDM-7: Procedure Code (CE)</li>
+///<li>CDM-8: Active/Inactive Flag (ID)</li>
+///<li>CDM-9: Inventory Number (CE)</li>
+///<li>CDM-10: Resource Load (NM)</li>
+///<li>CDM-11: Contract Number (CK)</li>
+///<li>CDM-12: Contract Organization (XON)</li>
+///<li>CDM-13: Room Fee Indicator (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -85,7 +86,7 @@ public class CDM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getChargeCodeAlias(int rep)
+	public CE GetChargeCodeAlias(int rep)
 	{
 			CE ret = null;
 			try
@@ -102,7 +103,7 @@ public class CDM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Charge Code Alias (CDM-2).
    ///</summary>
-  public CE[] getChargeCodeAlias() {
+  public CE[] GetChargeCodeAlias() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -120,6 +121,24 @@ public class CDM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Charge Code Alias (CDM-2).
+   ///</summary>
+  public int ChargeCodeAliasRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Charge Description Short(CDM-3).
 	///</summary>
@@ -194,7 +213,7 @@ public class CDM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getExplodingCharges(int rep)
+	public CE GetExplodingCharges(int rep)
 	{
 			CE ret = null;
 			try
@@ -211,7 +230,7 @@ public class CDM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Exploding Charges (CDM-6).
    ///</summary>
-  public CE[] getExplodingCharges() {
+  public CE[] GetExplodingCharges() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -229,12 +248,30 @@ public class CDM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Exploding Charges (CDM-6).
+   ///</summary>
+  public int ExplodingChargesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Procedure Code(CDM-7).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProcedureCode(int rep)
+	public CE GetProcedureCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -251,7 +288,7 @@ public class CDM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Procedure Code (CDM-7).
    ///</summary>
-  public CE[] getProcedureCode() {
+  public CE[] GetProcedureCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -269,6 +306,24 @@ public class CDM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Procedure Code (CDM-7).
+   ///</summary>
+  public int ProcedureCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Active/Inactive Flag(CDM-8).
 	///</summary>
@@ -297,7 +352,7 @@ public class CDM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getInventoryNumber(int rep)
+	public CE GetInventoryNumber(int rep)
 	{
 			CE ret = null;
 			try
@@ -314,7 +369,7 @@ public class CDM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Inventory Number (CDM-9).
    ///</summary>
-  public CE[] getInventoryNumber() {
+  public CE[] GetInventoryNumber() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -332,6 +387,24 @@ public class CDM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Inventory Number (CDM-9).
+   ///</summary>
+  public int InventoryNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Resource Load(CDM-10).
 	///</summary>
@@ -360,7 +433,7 @@ public class CDM : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CK getContractNumber(int rep)
+	public CK GetContractNumber(int rep)
 	{
 			CK ret = null;
 			try
@@ -377,7 +450,7 @@ public class CDM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contract Number (CDM-11).
    ///</summary>
-  public CK[] getContractNumber() {
+  public CK[] GetContractNumber() {
      CK[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -395,12 +468,30 @@ public class CDM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contract Number (CDM-11).
+   ///</summary>
+  public int ContractNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contract Organization(CDM-12).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getContractOrganization(int rep)
+	public XON GetContractOrganization(int rep)
 	{
 			XON ret = null;
 			try
@@ -417,7 +508,7 @@ public class CDM : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contract Organization (CDM-12).
    ///</summary>
-  public XON[] getContractOrganization() {
+  public XON[] GetContractOrganization() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -435,6 +526,24 @@ public class CDM : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contract Organization (CDM-12).
+   ///</summary>
+  public int ContractOrganizationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Room Fee Indicator(CDM-13).
 	///</summary>

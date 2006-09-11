@@ -12,11 +12,13 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a VXX_V02 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: QRD (QRD - original-style query definition segment) 
-/// * 3: QRF (QRF - original style query filter segment) optional 
-/// * 4: VXX_V02_PATIENT (a Group object) repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: QRD (QRD - original-style query definition segment) </li>
+///<li>3: QRF (QRF - original style query filter segment) optional </li>
+///<li>4: VXX_V02_PATIENT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VXX_V02 : AbstractMessage  {
@@ -117,7 +119,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VXX_V02_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public VXX_V02_PATIENT getPATIENT() {
+	public VXX_V02_PATIENT GetPATIENT() {
 	   VXX_V02_PATIENT ret = null;
 	   try {
 	      ret = (VXX_V02_PATIENT)this.GetStructure("PATIENT");
@@ -134,14 +136,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VXX_V02_PATIENT getPATIENT(int rep) { 
+	public VXX_V02_PATIENT GetPATIENT(int rep) { 
 	   return (VXX_V02_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VXX_V02_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

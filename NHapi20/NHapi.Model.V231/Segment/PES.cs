@@ -9,20 +9,21 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 PES message segment. 
-/// This segment has the following fields:
-/// * PES-1: Sender Organization Name (XON)
-/// * PES-2: Sender Individual Name (XCN)
-/// * PES-3: Sender Address (XAD)
-/// * PES-4: Sender Telephone (XTN)
-/// * PES-5: Sender Event Identifier (EI)
-/// * PES-6: Sender Sequence Number (NM)
-/// * PES-7: Sender Event Description (FT)
-/// * PES-8: Sender Comment (FT)
-/// * PES-9: Sender Aware Date/Time (TS)
-/// * PES-10: Event Report Date (TS)
-/// * PES-11: Event Report Timing/Type (ID)
-/// * PES-12: Event Report Source (ID)
-/// * PES-13: Event Reported To (ID)
+/// This segment has the following fields:<ol>
+///<li>PES-1: Sender Organization Name (XON)</li>
+///<li>PES-2: Sender Individual Name (XCN)</li>
+///<li>PES-3: Sender Address (XAD)</li>
+///<li>PES-4: Sender Telephone (XTN)</li>
+///<li>PES-5: Sender Event Identifier (EI)</li>
+///<li>PES-6: Sender Sequence Number (NM)</li>
+///<li>PES-7: Sender Event Description (FT)</li>
+///<li>PES-8: Sender Comment (FT)</li>
+///<li>PES-9: Sender Aware Date/Time (TS)</li>
+///<li>PES-10: Event Report Date (TS)</li>
+///<li>PES-11: Event Report Timing/Type (ID)</li>
+///<li>PES-12: Event Report Source (ID)</li>
+///<li>PES-13: Event Reported To (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -62,7 +63,7 @@ public class PES : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getSenderOrganizationName(int rep)
+	public XON GetSenderOrganizationName(int rep)
 	{
 			XON ret = null;
 			try
@@ -79,7 +80,7 @@ public class PES : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Sender Organization Name (PES-1).
    ///</summary>
-  public XON[] getSenderOrganizationName() {
+  public XON[] GetSenderOrganizationName() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -97,12 +98,30 @@ public class PES : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Sender Organization Name (PES-1).
+   ///</summary>
+  public int SenderOrganizationNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Sender Individual Name(PES-2).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getSenderIndividualName(int rep)
+	public XCN GetSenderIndividualName(int rep)
 	{
 			XCN ret = null;
 			try
@@ -119,7 +138,7 @@ public class PES : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Sender Individual Name (PES-2).
    ///</summary>
-  public XCN[] getSenderIndividualName() {
+  public XCN[] GetSenderIndividualName() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -137,12 +156,30 @@ public class PES : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Sender Individual Name (PES-2).
+   ///</summary>
+  public int SenderIndividualNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Sender Address(PES-3).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getSenderAddress(int rep)
+	public XAD GetSenderAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -159,7 +196,7 @@ public class PES : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Sender Address (PES-3).
    ///</summary>
-  public XAD[] getSenderAddress() {
+  public XAD[] GetSenderAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -177,12 +214,30 @@ public class PES : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Sender Address (PES-3).
+   ///</summary>
+  public int SenderAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Sender Telephone(PES-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getSenderTelephone(int rep)
+	public XTN GetSenderTelephone(int rep)
 	{
 			XTN ret = null;
 			try
@@ -199,7 +254,7 @@ public class PES : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Sender Telephone (PES-4).
    ///</summary>
-  public XTN[] getSenderTelephone() {
+  public XTN[] GetSenderTelephone() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -217,6 +272,24 @@ public class PES : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Sender Telephone (PES-4).
+   ///</summary>
+  public int SenderTelephoneRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Sender Event Identifier(PES-5).
 	///</summary>
@@ -268,7 +341,7 @@ public class PES : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public FT getSenderEventDescription(int rep)
+	public FT GetSenderEventDescription(int rep)
 	{
 			FT ret = null;
 			try
@@ -285,7 +358,7 @@ public class PES : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Sender Event Description (PES-7).
    ///</summary>
-  public FT[] getSenderEventDescription() {
+  public FT[] GetSenderEventDescription() {
      FT[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -303,6 +376,24 @@ public class PES : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Sender Event Description (PES-7).
+   ///</summary>
+  public int SenderEventDescriptionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Sender Comment(PES-8).
 	///</summary>
@@ -377,7 +468,7 @@ public class PES : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getEventReportTimingType(int rep)
+	public ID GetEventReportTimingType(int rep)
 	{
 			ID ret = null;
 			try
@@ -394,7 +485,7 @@ public class PES : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Report Timing/Type (PES-11).
    ///</summary>
-  public ID[] getEventReportTimingType() {
+  public ID[] GetEventReportTimingType() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -412,6 +503,24 @@ public class PES : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Report Timing/Type (PES-11).
+   ///</summary>
+  public int EventReportTimingTypeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Event Report Source(PES-12).
 	///</summary>
@@ -440,7 +549,7 @@ public class PES : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getEventReportedTo(int rep)
+	public ID GetEventReportedTo(int rep)
 	{
 			ID ret = null;
 			try
@@ -457,7 +566,7 @@ public class PES : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Event Reported To (PES-13).
    ///</summary>
-  public ID[] getEventReportedTo() {
+  public ID[] GetEventReportedTo() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -475,5 +584,23 @@ public class PES : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Event Reported To (PES-13).
+   ///</summary>
+  public int EventReportedToRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

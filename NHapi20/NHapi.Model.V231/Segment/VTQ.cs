@@ -9,12 +9,13 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 VTQ message segment. 
-/// This segment has the following fields:
-/// * VTQ-1: Query Tag (ST)
-/// * VTQ-2: Query/ Response Format Code (ID)
-/// * VTQ-3: VT Query Name (CE)
-/// * VTQ-4: Virtual Table Name (CE)
-/// * VTQ-5: Selection Criteria (QSC)
+/// This segment has the following fields:<ol>
+///<li>VTQ-1: Query Tag (ST)</li>
+///<li>VTQ-2: Query/ Response Format Code (ID)</li>
+///<li>VTQ-3: VT Query Name (CE)</li>
+///<li>VTQ-4: Virtual Table Name (CE)</li>
+///<li>VTQ-5: Selection Criteria (QSC)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -138,7 +139,7 @@ public class VTQ : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public QSC getSelectionCriteria(int rep)
+	public QSC GetSelectionCriteria(int rep)
 	{
 			QSC ret = null;
 			try
@@ -155,7 +156,7 @@ public class VTQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Selection Criteria (VTQ-5).
    ///</summary>
-  public QSC[] getSelectionCriteria() {
+  public QSC[] GetSelectionCriteria() {
      QSC[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -173,5 +174,23 @@ public class VTQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Selection Criteria (VTQ-5).
+   ///</summary>
+  public int SelectionCriteriaRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

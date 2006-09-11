@@ -12,10 +12,12 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a QCK_Q02 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional 
-/// * 3: QAK (Query Acknowledgement) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional </li>
+///<li>3: QAK (Query Acknowledgement) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class QCK_Q02 : AbstractMessage  {

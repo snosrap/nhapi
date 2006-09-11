@@ -12,20 +12,22 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a DFT_P03 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: EVN (EVN - event type segment) 
-/// * 2: PID (PID - patient identification segment) 
-/// * 3: PD1 (PD1 - patient additional demographic segment) optional 
-/// * 4: PV1 (PV1 - patient visit segment-) optional 
-/// * 5: PV2 (PV2 - patient visit - additional information segment) optional 
-/// * 6: DB1 (DB1 - Disability segment) optional repeating
-/// * 7: OBX (OBX - observation/result segment) optional repeating
-/// * 8: DFT_P03_FINANCIAL (a Group object) repeating
-/// * 9: DG1 (DG1 - diagnosis segment) optional repeating
-/// * 10: DRG (DRG - diagnosis related group segment) optional 
-/// * 11: GT1 (GT1 - guarantor segment) optional repeating
-/// * 12: DFT_P03_INSURANCE (a Group object) optional repeating
-/// * 13: ACC (ACC - accident segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: EVN (EVN - event type segment) </li>
+///<li>2: PID (PID - patient identification segment) </li>
+///<li>3: PD1 (PD1 - patient additional demographic segment) optional </li>
+///<li>4: PV1 (PV1 - patient visit segment-) optional </li>
+///<li>5: PV2 (PV2 - patient visit - additional information segment) optional </li>
+///<li>6: DB1 (DB1 - Disability segment) optional repeating</li>
+///<li>7: OBX (OBX - observation/result segment) optional repeating</li>
+///<li>8: DFT_P03_FINANCIAL (a Group object) repeating</li>
+///<li>9: DG1 (DG1 - diagnosis segment) optional repeating</li>
+///<li>10: DRG (DRG - diagnosis related group segment) optional </li>
+///<li>11: GT1 (GT1 - guarantor segment) optional repeating</li>
+///<li>12: DFT_P03_INSURANCE (a Group object) optional repeating</li>
+///<li>13: ACC (ACC - accident segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DFT_P03 : AbstractMessage  {
@@ -167,7 +169,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DB1 (DB1 - Disability segment) - creates it if necessary
 	///</summary>
-	public DB1 getDB1() {
+	public DB1 GetDB1() {
 	   DB1 ret = null;
 	   try {
 	      ret = (DB1)this.GetStructure("DB1");
@@ -184,14 +186,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DB1 getDB1(int rep) { 
+	public DB1 GetDB1(int rep) { 
 	   return (DB1)this.GetStructure("DB1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DB1 
 	 */ 
-	public int DB1Reps { 
+	public int DB1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -208,7 +210,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (OBX - observation/result segment) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -225,14 +227,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -249,7 +251,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DFT_P03_FINANCIAL (a Group object) - creates it if necessary
 	///</summary>
-	public DFT_P03_FINANCIAL getFINANCIAL() {
+	public DFT_P03_FINANCIAL GetFINANCIAL() {
 	   DFT_P03_FINANCIAL ret = null;
 	   try {
 	      ret = (DFT_P03_FINANCIAL)this.GetStructure("FINANCIAL");
@@ -266,14 +268,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DFT_P03_FINANCIAL getFINANCIAL(int rep) { 
+	public DFT_P03_FINANCIAL GetFINANCIAL(int rep) { 
 	   return (DFT_P03_FINANCIAL)this.GetStructure("FINANCIAL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DFT_P03_FINANCIAL 
 	 */ 
-	public int FINANCIALReps { 
+	public int FINANCIALRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -290,7 +292,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (DG1 - diagnosis segment) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -307,14 +309,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -347,7 +349,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of GT1 (GT1 - guarantor segment) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -364,14 +366,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -388,7 +390,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DFT_P03_INSURANCE (a Group object) - creates it if necessary
 	///</summary>
-	public DFT_P03_INSURANCE getINSURANCE() {
+	public DFT_P03_INSURANCE GetINSURANCE() {
 	   DFT_P03_INSURANCE ret = null;
 	   try {
 	      ret = (DFT_P03_INSURANCE)this.GetStructure("INSURANCE");
@@ -405,14 +407,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DFT_P03_INSURANCE getINSURANCE(int rep) { 
+	public DFT_P03_INSURANCE GetINSURANCE(int rep) { 
 	   return (DFT_P03_INSURANCE)this.GetStructure("INSURANCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DFT_P03_INSURANCE 
 	 */ 
-	public int INSURANCEReps { 
+	public int INSURANCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

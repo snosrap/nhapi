@@ -12,12 +12,14 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a ERP_R09 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional 
-/// * 3: QAK (Query Acknowledgement) 
-/// * 4: ERQ (ERQ - event replay query segment) 
-/// * 5: DSC (DSC - Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional </li>
+///<li>3: QAK (Query Acknowledgement) </li>
+///<li>4: ERQ (ERQ - event replay query segment) </li>
+///<li>5: DSC (DSC - Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ERP_R09 : AbstractMessage  {

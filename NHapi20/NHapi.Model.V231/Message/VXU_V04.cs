@@ -12,13 +12,15 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a VXU_V04 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: PID (PID - patient identification segment) 
-/// * 2: PD1 (PD1 - patient additional demographic segment) optional 
-/// * 3: NK1 (NK1 - next of kin / associated parties segment-) optional repeating
-/// * 4: VXU_V04_PATIENT (a Group object) optional 
-/// * 5: VXU_V04_INSURANCE (a Group object) optional repeating
-/// * 6: VXU_V04_ORDER (a Group object) optional repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: PID (PID - patient identification segment) </li>
+///<li>2: PD1 (PD1 - patient additional demographic segment) optional </li>
+///<li>3: NK1 (NK1 - next of kin / associated parties segment-) optional repeating</li>
+///<li>4: VXU_V04_PATIENT (a Group object) optional </li>
+///<li>5: VXU_V04_INSURANCE (a Group object) optional repeating</li>
+///<li>6: VXU_V04_ORDER (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VXU_V04 : AbstractMessage  {
@@ -105,7 +107,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (NK1 - next of kin / associated parties segment-) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -122,14 +124,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -162,7 +164,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VXU_V04_INSURANCE (a Group object) - creates it if necessary
 	///</summary>
-	public VXU_V04_INSURANCE getINSURANCE() {
+	public VXU_V04_INSURANCE GetINSURANCE() {
 	   VXU_V04_INSURANCE ret = null;
 	   try {
 	      ret = (VXU_V04_INSURANCE)this.GetStructure("INSURANCE");
@@ -179,14 +181,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VXU_V04_INSURANCE getINSURANCE(int rep) { 
+	public VXU_V04_INSURANCE GetINSURANCE(int rep) { 
 	   return (VXU_V04_INSURANCE)this.GetStructure("INSURANCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VXU_V04_INSURANCE 
 	 */ 
-	public int INSURANCEReps { 
+	public int INSURANCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -203,7 +205,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VXU_V04_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public VXU_V04_ORDER getORDER() {
+	public VXU_V04_ORDER GetORDER() {
 	   VXU_V04_ORDER ret = null;
 	   try {
 	      ret = (VXU_V04_ORDER)this.GetStructure("ORDER");
@@ -220,14 +222,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VXU_V04_ORDER getORDER(int rep) { 
+	public VXU_V04_ORDER GetORDER(int rep) { 
 	   return (VXU_V04_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VXU_V04_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

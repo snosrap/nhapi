@@ -12,11 +12,13 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a BAR_P01 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: EVN (EVN - event type segment) 
-/// * 2: PID (PID - patient identification segment) 
-/// * 3: PD1 (PD1 - patient additional demographic segment) optional 
-/// * 4: BAR_P01_VISIT (a Group object) repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: EVN (EVN - event type segment) </li>
+///<li>2: PID (PID - patient identification segment) </li>
+///<li>3: PD1 (PD1 - patient additional demographic segment) optional </li>
+///<li>4: BAR_P01_VISIT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BAR_P01 : AbstractMessage  {
@@ -117,7 +119,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of BAR_P01_VISIT (a Group object) - creates it if necessary
 	///</summary>
-	public BAR_P01_VISIT getVISIT() {
+	public BAR_P01_VISIT GetVISIT() {
 	   BAR_P01_VISIT ret = null;
 	   try {
 	      ret = (BAR_P01_VISIT)this.GetStructure("VISIT");
@@ -134,14 +136,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public BAR_P01_VISIT getVISIT(int rep) { 
+	public BAR_P01_VISIT GetVISIT(int rep) { 
 	   return (BAR_P01_VISIT)this.GetStructure("VISIT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of BAR_P01_VISIT 
 	 */ 
-	public int VISITReps { 
+	public int VISITRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

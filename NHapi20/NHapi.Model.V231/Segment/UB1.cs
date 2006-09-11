@@ -9,30 +9,31 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 UB1 message segment. 
-/// This segment has the following fields:
-/// * UB1-1: Set ID - UB1 (SI)
-/// * UB1-2: Blood Deductible  (43) (NM)
-/// * UB1-3: Blood Furnished-Pints Of (40) (NM)
-/// * UB1-4: Blood Replaced-Pints (41) (NM)
-/// * UB1-5: Blood Not Replaced-Pints(42) (NM)
-/// * UB1-6: Co-Insurance Days (25) (NM)
-/// * UB1-7: Condition Code (35-39) (IS)
-/// * UB1-8: Covered Days - (23) (NM)
-/// * UB1-9: Non Covered Days - (24) (NM)
-/// * UB1-10: Value Amount and Code (46-49) (UVC)
-/// * UB1-11: Number Of Grace Days (90) (NM)
-/// * UB1-12: Special Program Indicator (44) (CE)
-/// * UB1-13: PSRO/UR Approval Indicator (87) (CE)
-/// * UB1-14: PSRO/UR Approved Stay-Fm (88) (DT)
-/// * UB1-15: PSRO/UR Approved Stay-To (89) (DT)
-/// * UB1-16: Occurrence (28-32) (OCD)
-/// * UB1-17: Occurrence Span (33) (CE)
-/// * UB1-18: Occur Span Start Date(33) (DT)
-/// * UB1-19: Occur Span End Date (33) (DT)
-/// * UB1-20: UB-82 Locator 2 (ST)
-/// * UB1-21: UB-82 Locator 9 (ST)
-/// * UB1-22: UB-82 Locator 27 (ST)
-/// * UB1-23: UB-82 Locator 45 (ST)
+/// This segment has the following fields:<ol>
+///<li>UB1-1: Set ID - UB1 (SI)</li>
+///<li>UB1-2: Blood Deductible  (43) (NM)</li>
+///<li>UB1-3: Blood Furnished-Pints Of (40) (NM)</li>
+///<li>UB1-4: Blood Replaced-Pints (41) (NM)</li>
+///<li>UB1-5: Blood Not Replaced-Pints(42) (NM)</li>
+///<li>UB1-6: Co-Insurance Days (25) (NM)</li>
+///<li>UB1-7: Condition Code (35-39) (IS)</li>
+///<li>UB1-8: Covered Days - (23) (NM)</li>
+///<li>UB1-9: Non Covered Days - (24) (NM)</li>
+///<li>UB1-10: Value Amount and Code (46-49) (UVC)</li>
+///<li>UB1-11: Number Of Grace Days (90) (NM)</li>
+///<li>UB1-12: Special Program Indicator (44) (CE)</li>
+///<li>UB1-13: PSRO/UR Approval Indicator (87) (CE)</li>
+///<li>UB1-14: PSRO/UR Approved Stay-Fm (88) (DT)</li>
+///<li>UB1-15: PSRO/UR Approved Stay-To (89) (DT)</li>
+///<li>UB1-16: Occurrence (28-32) (OCD)</li>
+///<li>UB1-17: Occurrence Span (33) (CE)</li>
+///<li>UB1-18: Occur Span Start Date(33) (DT)</li>
+///<li>UB1-19: Occur Span End Date (33) (DT)</li>
+///<li>UB1-20: UB-82 Locator 2 (ST)</li>
+///<li>UB1-21: UB-82 Locator 9 (ST)</li>
+///<li>UB1-22: UB-82 Locator 27 (ST)</li>
+///<li>UB1-23: UB-82 Locator 45 (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -220,7 +221,7 @@ public class UB1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getConditionCode3539(int rep)
+	public IS GetConditionCode3539(int rep)
 	{
 			IS ret = null;
 			try
@@ -237,7 +238,7 @@ public class UB1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Condition Code (35-39) (UB1-7).
    ///</summary>
-  public IS[] getConditionCode3539() {
+  public IS[] GetConditionCode3539() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -255,6 +256,24 @@ public class UB1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Condition Code (35-39) (UB1-7).
+   ///</summary>
+  public int ConditionCode3539RepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Covered Days - (23)(UB1-8).
 	///</summary>
@@ -306,7 +325,7 @@ public class UB1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public UVC getValueAmountCode4649(int rep)
+	public UVC GetValueAmountCode4649(int rep)
 	{
 			UVC ret = null;
 			try
@@ -323,7 +342,7 @@ public class UB1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Value Amount and Code (46-49) (UB1-10).
    ///</summary>
-  public UVC[] getValueAmountCode4649() {
+  public UVC[] GetValueAmountCode4649() {
      UVC[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -341,6 +360,24 @@ public class UB1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Value Amount and Code (46-49) (UB1-10).
+   ///</summary>
+  public int ValueAmountCode4649RepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Number Of Grace Days (90)(UB1-11).
 	///</summary>
@@ -461,7 +498,7 @@ public class UB1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public OCD getOccurrence2832(int rep)
+	public OCD GetOccurrence2832(int rep)
 	{
 			OCD ret = null;
 			try
@@ -478,7 +515,7 @@ public class UB1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Occurrence (28-32) (UB1-16).
    ///</summary>
-  public OCD[] getOccurrence2832() {
+  public OCD[] GetOccurrence2832() {
      OCD[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -496,6 +533,24 @@ public class UB1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Occurrence (28-32) (UB1-16).
+   ///</summary>
+  public int Occurrence2832RepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Occurrence Span (33)(UB1-17).
 	///</summary>

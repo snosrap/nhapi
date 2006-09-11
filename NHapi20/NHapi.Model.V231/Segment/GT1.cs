@@ -9,62 +9,63 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 GT1 message segment. 
-/// This segment has the following fields:
-/// * GT1-1: Set ID - GT1 (SI)
-/// * GT1-2: Guarantor Number (CX)
-/// * GT1-3: Guarantor Name (XPN)
-/// * GT1-4: Guarantor Spouse Name (XPN)
-/// * GT1-5: Guarantor Address (XAD)
-/// * GT1-6: Guarantor Ph Num-Home (XTN)
-/// * GT1-7: Guarantor Ph Num-Business (XTN)
-/// * GT1-8: Guarantor Date/Time Of Birth (TS)
-/// * GT1-9: Guarantor Sex (IS)
-/// * GT1-10: Guarantor Type (IS)
-/// * GT1-11: Guarantor Relationship (CE)
-/// * GT1-12: Guarantor SSN (ST)
-/// * GT1-13: Guarantor Date - Begin (DT)
-/// * GT1-14: Guarantor Date - End (DT)
-/// * GT1-15: Guarantor Priority (NM)
-/// * GT1-16: Guarantor Employer Name (XPN)
-/// * GT1-17: Guarantor Employer Address (XAD)
-/// * GT1-18: Guarantor Employer Phone Number (XTN)
-/// * GT1-19: Guarantor Employee ID Number (CX)
-/// * GT1-20: Guarantor Employment Status (IS)
-/// * GT1-21: Guarantor Organization Name (XON)
-/// * GT1-22: Guarantor Billing Hold Flag (ID)
-/// * GT1-23: Guarantor Credit Rating Code (CE)
-/// * GT1-24: Guarantor Death Date And Time (TS)
-/// * GT1-25: Guarantor Death Flag (ID)
-/// * GT1-26: Guarantor Charge Adjustment Code (CE)
-/// * GT1-27: Guarantor Household Annual Income (CP)
-/// * GT1-28: Guarantor Household Size (NM)
-/// * GT1-29: Guarantor Employer ID Number (CX)
-/// * GT1-30: Guarantor Marital Status Code (CE)
-/// * GT1-31: Guarantor Hire Effective Date (DT)
-/// * GT1-32: Employment Stop Date (DT)
-/// * GT1-33: Living Dependency (IS)
-/// * GT1-34: Ambulatory Status (IS)
-/// * GT1-35: Citizenship (CE)
-/// * GT1-36: Primary Language (CE)
-/// * GT1-37: Living Arrangement (IS)
-/// * GT1-38: Publicity Code (CE)
-/// * GT1-39: Protection Indicator (ID)
-/// * GT1-40: Student Indicator (IS)
-/// * GT1-41: Religion (CE)
-/// * GT1-42: Mother’s Maiden Name (XPN)
-/// * GT1-43: Nationality (CE)
-/// * GT1-44: Ethnic Group (CE)
-/// * GT1-45: Contact Person’s Name (XPN)
-/// * GT1-46: Contact Person’s Telephone Number (XTN)
-/// * GT1-47: Contact Reason (CE)
-/// * GT1-48: Contact Relationship (IS)
-/// * GT1-49: Job Title (ST)
-/// * GT1-50: Job Code/Class (JCC)
-/// * GT1-51: Guarantor Employer’s Organization Name (XON)
-/// * GT1-52: Handicap (IS)
-/// * GT1-53: Job Status (IS)
-/// * GT1-54: Guarantor Financial Class (FC)
-/// * GT1-55: Guarantor Race (CE)
+/// This segment has the following fields:<ol>
+///<li>GT1-1: Set ID - GT1 (SI)</li>
+///<li>GT1-2: Guarantor Number (CX)</li>
+///<li>GT1-3: Guarantor Name (XPN)</li>
+///<li>GT1-4: Guarantor Spouse Name (XPN)</li>
+///<li>GT1-5: Guarantor Address (XAD)</li>
+///<li>GT1-6: Guarantor Ph Num-Home (XTN)</li>
+///<li>GT1-7: Guarantor Ph Num-Business (XTN)</li>
+///<li>GT1-8: Guarantor Date/Time Of Birth (TS)</li>
+///<li>GT1-9: Guarantor Sex (IS)</li>
+///<li>GT1-10: Guarantor Type (IS)</li>
+///<li>GT1-11: Guarantor Relationship (CE)</li>
+///<li>GT1-12: Guarantor SSN (ST)</li>
+///<li>GT1-13: Guarantor Date - Begin (DT)</li>
+///<li>GT1-14: Guarantor Date - End (DT)</li>
+///<li>GT1-15: Guarantor Priority (NM)</li>
+///<li>GT1-16: Guarantor Employer Name (XPN)</li>
+///<li>GT1-17: Guarantor Employer Address (XAD)</li>
+///<li>GT1-18: Guarantor Employer Phone Number (XTN)</li>
+///<li>GT1-19: Guarantor Employee ID Number (CX)</li>
+///<li>GT1-20: Guarantor Employment Status (IS)</li>
+///<li>GT1-21: Guarantor Organization Name (XON)</li>
+///<li>GT1-22: Guarantor Billing Hold Flag (ID)</li>
+///<li>GT1-23: Guarantor Credit Rating Code (CE)</li>
+///<li>GT1-24: Guarantor Death Date And Time (TS)</li>
+///<li>GT1-25: Guarantor Death Flag (ID)</li>
+///<li>GT1-26: Guarantor Charge Adjustment Code (CE)</li>
+///<li>GT1-27: Guarantor Household Annual Income (CP)</li>
+///<li>GT1-28: Guarantor Household Size (NM)</li>
+///<li>GT1-29: Guarantor Employer ID Number (CX)</li>
+///<li>GT1-30: Guarantor Marital Status Code (CE)</li>
+///<li>GT1-31: Guarantor Hire Effective Date (DT)</li>
+///<li>GT1-32: Employment Stop Date (DT)</li>
+///<li>GT1-33: Living Dependency (IS)</li>
+///<li>GT1-34: Ambulatory Status (IS)</li>
+///<li>GT1-35: Citizenship (CE)</li>
+///<li>GT1-36: Primary Language (CE)</li>
+///<li>GT1-37: Living Arrangement (IS)</li>
+///<li>GT1-38: Publicity Code (CE)</li>
+///<li>GT1-39: Protection Indicator (ID)</li>
+///<li>GT1-40: Student Indicator (IS)</li>
+///<li>GT1-41: Religion (CE)</li>
+///<li>GT1-42: Mother’s Maiden Name (XPN)</li>
+///<li>GT1-43: Nationality (CE)</li>
+///<li>GT1-44: Ethnic Group (CE)</li>
+///<li>GT1-45: Contact Person’s Name (XPN)</li>
+///<li>GT1-46: Contact Person’s Telephone Number (XTN)</li>
+///<li>GT1-47: Contact Reason (CE)</li>
+///<li>GT1-48: Contact Relationship (IS)</li>
+///<li>GT1-49: Job Title (ST)</li>
+///<li>GT1-50: Job Code/Class (JCC)</li>
+///<li>GT1-51: Guarantor Employer’s Organization Name (XON)</li>
+///<li>GT1-52: Handicap (IS)</li>
+///<li>GT1-53: Job Status (IS)</li>
+///<li>GT1-54: Guarantor Financial Class (FC)</li>
+///<li>GT1-55: Guarantor Race (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -169,7 +170,7 @@ public class GT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getGuarantorNumber(int rep)
+	public CX GetGuarantorNumber(int rep)
 	{
 			CX ret = null;
 			try
@@ -186,7 +187,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Number (GT1-2).
    ///</summary>
-  public CX[] getGuarantorNumber() {
+  public CX[] GetGuarantorNumber() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -204,12 +205,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Number (GT1-2).
+   ///</summary>
+  public int GuarantorNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Guarantor Name(GT1-3).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getGuarantorName(int rep)
+	public XPN GetGuarantorName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -226,7 +245,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Name (GT1-3).
    ///</summary>
-  public XPN[] getGuarantorName() {
+  public XPN[] GetGuarantorName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -244,12 +263,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Name (GT1-3).
+   ///</summary>
+  public int GuarantorNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Guarantor Spouse Name(GT1-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getGuarantorSpouseName(int rep)
+	public XPN GetGuarantorSpouseName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -266,7 +303,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Spouse Name (GT1-4).
    ///</summary>
-  public XPN[] getGuarantorSpouseName() {
+  public XPN[] GetGuarantorSpouseName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -284,12 +321,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Spouse Name (GT1-4).
+   ///</summary>
+  public int GuarantorSpouseNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Guarantor Address(GT1-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getGuarantorAddress(int rep)
+	public XAD GetGuarantorAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -306,7 +361,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Address (GT1-5).
    ///</summary>
-  public XAD[] getGuarantorAddress() {
+  public XAD[] GetGuarantorAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -324,12 +379,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Address (GT1-5).
+   ///</summary>
+  public int GuarantorAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Guarantor Ph Num-Home(GT1-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getGuarantorPhNumHome(int rep)
+	public XTN GetGuarantorPhNumHome(int rep)
 	{
 			XTN ret = null;
 			try
@@ -346,7 +419,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Ph Num-Home (GT1-6).
    ///</summary>
-  public XTN[] getGuarantorPhNumHome() {
+  public XTN[] GetGuarantorPhNumHome() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -364,12 +437,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Ph Num-Home (GT1-6).
+   ///</summary>
+  public int GuarantorPhNumHomeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Guarantor Ph Num-Business(GT1-7).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getGuarantorPhNumBusiness(int rep)
+	public XTN GetGuarantorPhNumBusiness(int rep)
 	{
 			XTN ret = null;
 			try
@@ -386,7 +477,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Ph Num-Business (GT1-7).
    ///</summary>
-  public XTN[] getGuarantorPhNumBusiness() {
+  public XTN[] GetGuarantorPhNumBusiness() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -404,6 +495,24 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Ph Num-Business (GT1-7).
+   ///</summary>
+  public int GuarantorPhNumBusinessRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Guarantor Date/Time Of Birth(GT1-8).
 	///</summary>
@@ -593,7 +702,7 @@ public class GT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getGuarantorEmployerName(int rep)
+	public XPN GetGuarantorEmployerName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -610,7 +719,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Employer Name (GT1-16).
    ///</summary>
-  public XPN[] getGuarantorEmployerName() {
+  public XPN[] GetGuarantorEmployerName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -628,12 +737,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Employer Name (GT1-16).
+   ///</summary>
+  public int GuarantorEmployerNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Guarantor Employer Address(GT1-17).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getGuarantorEmployerAddress(int rep)
+	public XAD GetGuarantorEmployerAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -650,7 +777,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Employer Address (GT1-17).
    ///</summary>
-  public XAD[] getGuarantorEmployerAddress() {
+  public XAD[] GetGuarantorEmployerAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -668,12 +795,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Employer Address (GT1-17).
+   ///</summary>
+  public int GuarantorEmployerAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Guarantor Employer Phone Number(GT1-18).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getGuarantorEmployerPhoneNumber(int rep)
+	public XTN GetGuarantorEmployerPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -690,7 +835,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Employer Phone Number (GT1-18).
    ///</summary>
-  public XTN[] getGuarantorEmployerPhoneNumber() {
+  public XTN[] GetGuarantorEmployerPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -708,12 +853,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Employer Phone Number (GT1-18).
+   ///</summary>
+  public int GuarantorEmployerPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Guarantor Employee ID Number(GT1-19).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getGuarantorEmployeeIDNumber(int rep)
+	public CX GetGuarantorEmployeeIDNumber(int rep)
 	{
 			CX ret = null;
 			try
@@ -730,7 +893,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Employee ID Number (GT1-19).
    ///</summary>
-  public CX[] getGuarantorEmployeeIDNumber() {
+  public CX[] GetGuarantorEmployeeIDNumber() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -748,6 +911,24 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Employee ID Number (GT1-19).
+   ///</summary>
+  public int GuarantorEmployeeIDNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Guarantor Employment Status(GT1-20).
 	///</summary>
@@ -776,7 +957,7 @@ public class GT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getGuarantorOrganizationName(int rep)
+	public XON GetGuarantorOrganizationName(int rep)
 	{
 			XON ret = null;
 			try
@@ -793,7 +974,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Organization Name (GT1-21).
    ///</summary>
-  public XON[] getGuarantorOrganizationName() {
+  public XON[] GetGuarantorOrganizationName() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -811,6 +992,24 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Organization Name (GT1-21).
+   ///</summary>
+  public int GuarantorOrganizationNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Guarantor Billing Hold Flag(GT1-22).
 	///</summary>
@@ -977,7 +1176,7 @@ public class GT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getGuarantorEmployerIDNumber(int rep)
+	public CX GetGuarantorEmployerIDNumber(int rep)
 	{
 			CX ret = null;
 			try
@@ -994,7 +1193,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Employer ID Number (GT1-29).
    ///</summary>
-  public CX[] getGuarantorEmployerIDNumber() {
+  public CX[] GetGuarantorEmployerIDNumber() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(29);  
@@ -1012,6 +1211,24 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Employer ID Number (GT1-29).
+   ///</summary>
+  public int GuarantorEmployerIDNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(29);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Guarantor Marital Status Code(GT1-30).
 	///</summary>
@@ -1109,7 +1326,7 @@ public class GT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getAmbulatoryStatus(int rep)
+	public IS GetAmbulatoryStatus(int rep)
 	{
 			IS ret = null;
 			try
@@ -1126,7 +1343,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ambulatory Status (GT1-34).
    ///</summary>
-  public IS[] getAmbulatoryStatus() {
+  public IS[] GetAmbulatoryStatus() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(34);  
@@ -1144,12 +1361,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ambulatory Status (GT1-34).
+   ///</summary>
+  public int AmbulatoryStatusRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(34);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Citizenship(GT1-35).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getCitizenship(int rep)
+	public CE GetCitizenship(int rep)
 	{
 			CE ret = null;
 			try
@@ -1166,7 +1401,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Citizenship (GT1-35).
    ///</summary>
-  public CE[] getCitizenship() {
+  public CE[] GetCitizenship() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(35);  
@@ -1184,6 +1419,24 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Citizenship (GT1-35).
+   ///</summary>
+  public int CitizenshipRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(35);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Primary Language(GT1-36).
 	///</summary>
@@ -1327,7 +1580,7 @@ public class GT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getMotherSMaidenName(int rep)
+	public XPN GetMotherSMaidenName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -1344,7 +1597,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Mother’s Maiden Name (GT1-42).
    ///</summary>
-  public XPN[] getMotherSMaidenName() {
+  public XPN[] GetMotherSMaidenName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(42);  
@@ -1362,6 +1615,24 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Mother’s Maiden Name (GT1-42).
+   ///</summary>
+  public int MotherSMaidenNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(42);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Nationality(GT1-43).
 	///</summary>
@@ -1390,7 +1661,7 @@ public class GT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getEthnicGroup(int rep)
+	public CE GetEthnicGroup(int rep)
 	{
 			CE ret = null;
 			try
@@ -1407,7 +1678,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ethnic Group (GT1-44).
    ///</summary>
-  public CE[] getEthnicGroup() {
+  public CE[] GetEthnicGroup() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(44);  
@@ -1425,12 +1696,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ethnic Group (GT1-44).
+   ///</summary>
+  public int EthnicGroupRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(44);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Person’s Name(GT1-45).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getContactPersonSName(int rep)
+	public XPN GetContactPersonSName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -1447,7 +1736,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Person’s Name (GT1-45).
    ///</summary>
-  public XPN[] getContactPersonSName() {
+  public XPN[] GetContactPersonSName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(45);  
@@ -1465,12 +1754,30 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Person’s Name (GT1-45).
+   ///</summary>
+  public int ContactPersonSNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(45);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Contact Person’s Telephone Number(GT1-46).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getContactPersonSTelephoneNumber(int rep)
+	public XTN GetContactPersonSTelephoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -1487,7 +1794,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Contact Person’s Telephone Number (GT1-46).
    ///</summary>
-  public XTN[] getContactPersonSTelephoneNumber() {
+  public XTN[] GetContactPersonSTelephoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(46);  
@@ -1505,6 +1812,24 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Contact Person’s Telephone Number (GT1-46).
+   ///</summary>
+  public int ContactPersonSTelephoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(46);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Contact Reason(GT1-47).
 	///</summary>
@@ -1602,7 +1927,7 @@ public class GT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getGuarantorEmployerSOrganizationName(int rep)
+	public XON GetGuarantorEmployerSOrganizationName(int rep)
 	{
 			XON ret = null;
 			try
@@ -1619,7 +1944,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Employer’s Organization Name (GT1-51).
    ///</summary>
-  public XON[] getGuarantorEmployerSOrganizationName() {
+  public XON[] GetGuarantorEmployerSOrganizationName() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(51);  
@@ -1637,6 +1962,24 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Employer’s Organization Name (GT1-51).
+   ///</summary>
+  public int GuarantorEmployerSOrganizationNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(51);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Handicap(GT1-52).
 	///</summary>
@@ -1711,7 +2054,7 @@ public class GT1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getGuarantorRace(int rep)
+	public CE GetGuarantorRace(int rep)
 	{
 			CE ret = null;
 			try
@@ -1728,7 +2071,7 @@ public class GT1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Guarantor Race (GT1-55).
    ///</summary>
-  public CE[] getGuarantorRace() {
+  public CE[] GetGuarantorRace() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(55);  
@@ -1746,5 +2089,23 @@ public class GT1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Guarantor Race (GT1-55).
+   ///</summary>
+  public int GuarantorRaceRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(55);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

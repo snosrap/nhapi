@@ -12,12 +12,14 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a PTR_PCF message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional 
-/// * 3: QAK (Query Acknowledgement) optional 
-/// * 4: QRD (QRD - original-style query definition segment) 
-/// * 5: PTR_PCF_PATIENT (a Group object) repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional </li>
+///<li>3: QAK (Query Acknowledgement) optional </li>
+///<li>4: QRD (QRD - original-style query definition segment) </li>
+///<li>5: PTR_PCF_PATIENT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PTR_PCF : AbstractMessage  {
@@ -135,7 +137,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PTR_PCF_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public PTR_PCF_PATIENT getPATIENT() {
+	public PTR_PCF_PATIENT GetPATIENT() {
 	   PTR_PCF_PATIENT ret = null;
 	   try {
 	      ret = (PTR_PCF_PATIENT)this.GetStructure("PATIENT");
@@ -152,14 +154,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PTR_PCF_PATIENT getPATIENT(int rep) { 
+	public PTR_PCF_PATIENT GetPATIENT(int rep) { 
 	   return (PTR_PCF_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PTR_PCF_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

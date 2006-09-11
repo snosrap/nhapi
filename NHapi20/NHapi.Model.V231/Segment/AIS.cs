@@ -9,17 +9,18 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 AIS message segment. 
-/// This segment has the following fields:
-/// * AIS-1: Set ID - AIS (SI)
-/// * AIS-2: Segment Action Code (ID)
-/// * AIS-3: Universal Service ID (CE)
-/// * AIS-4: Start Date/Time (TS)
-/// * AIS-5: Start Date/Time Offset (NM)
-/// * AIS-6: Start Date/Time Offset Units (CE)
-/// * AIS-7: Duration (NM)
-/// * AIS-8: Duration Units (CE)
-/// * AIS-9: Allow Substitution Code (IS)
-/// * AIS-10: Filler Status Code (CE)
+/// This segment has the following fields:<ol>
+///<li>AIS-1: Set ID - AIS (SI)</li>
+///<li>AIS-2: Segment Action Code (ID)</li>
+///<li>AIS-3: Universal Service ID (CE)</li>
+///<li>AIS-4: Start Date/Time (TS)</li>
+///<li>AIS-5: Start Date/Time Offset (NM)</li>
+///<li>AIS-6: Start Date/Time Offset Units (CE)</li>
+///<li>AIS-7: Duration (NM)</li>
+///<li>AIS-8: Duration Units (CE)</li>
+///<li>AIS-9: Allow Substitution Code (IS)</li>
+///<li>AIS-10: Filler Status Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

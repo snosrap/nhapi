@@ -12,13 +12,15 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a TBR_R08 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional 
-/// * 3: QAK (Query Acknowledgement) 
-/// * 4: RDF (RDF - table row definition segment) 
-/// * 5: RDT (RDT - table row data segment) repeating
-/// * 6: DSC (DSC - Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional </li>
+///<li>3: QAK (Query Acknowledgement) </li>
+///<li>4: RDF (RDF - table row definition segment) </li>
+///<li>5: RDT (RDT - table row data segment) repeating</li>
+///<li>6: DSC (DSC - Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class TBR_R08 : AbstractMessage  {
@@ -137,7 +139,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RDT (RDT - table row data segment) - creates it if necessary
 	///</summary>
-	public RDT getRDT() {
+	public RDT GetRDT() {
 	   RDT ret = null;
 	   try {
 	      ret = (RDT)this.GetStructure("RDT");
@@ -154,14 +156,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RDT getRDT(int rep) { 
+	public RDT GetRDT(int rep) { 
 	   return (RDT)this.GetStructure("RDT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RDT 
 	 */ 
-	public int RDTReps { 
+	public int RDTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

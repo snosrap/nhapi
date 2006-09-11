@@ -12,9 +12,11 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a MFN_M01 message structure (see chapter ). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MFI (MFI - master file identification segment) 
-/// * 2: MFN_M01_MF (a Group object) repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MFI (MFI - master file identification segment) </li>
+///<li>2: MFN_M01_MF (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M01 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M01_MF (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M01_MF getMF() {
+	public MFN_M01_MF GetMF() {
 	   MFN_M01_MF ret = null;
 	   try {
 	      ret = (MFN_M01_MF)this.GetStructure("MF");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M01_MF getMF(int rep) { 
+	public MFN_M01_MF GetMF(int rep) { 
 	   return (MFN_M01_MF)this.GetStructure("MF", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M01_MF 
 	 */ 
-	public int MFReps { 
+	public int MFRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,9 +9,10 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 QAK message segment. 
-/// This segment has the following fields:
-/// * QAK-1: Query Tag (ST)
-/// * QAK-2: Query Response Status (ID)
+/// This segment has the following fields:<ol>
+///<li>QAK-1: Query Tag (ST)</li>
+///<li>QAK-2: Query Response Status (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

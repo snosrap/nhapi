@@ -12,11 +12,13 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a ROR_R0R message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional 
-/// * 3: ROR_R0R_DEFINITION (a Group object) repeating
-/// * 4: DSC (DSC - Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional </li>
+///<li>3: ROR_R0R_DEFINITION (a Group object) repeating</li>
+///<li>4: DSC (DSC - Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ROR_R0R : AbstractMessage  {
@@ -101,7 +103,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROR_R0R_DEFINITION (a Group object) - creates it if necessary
 	///</summary>
-	public ROR_R0R_DEFINITION getDEFINITION() {
+	public ROR_R0R_DEFINITION GetDEFINITION() {
 	   ROR_R0R_DEFINITION ret = null;
 	   try {
 	      ret = (ROR_R0R_DEFINITION)this.GetStructure("DEFINITION");
@@ -118,14 +120,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROR_R0R_DEFINITION getDEFINITION(int rep) { 
+	public ROR_R0R_DEFINITION GetDEFINITION(int rep) { 
 	   return (ROR_R0R_DEFINITION)this.GetStructure("DEFINITION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROR_R0R_DEFINITION 
 	 */ 
-	public int DEFINITIONReps { 
+	public int DEFINITIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,12 +9,13 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 LCH message segment. 
-/// This segment has the following fields:
-/// * LCH-1: Primary Key Value - LCH (PL)
-/// * LCH-2: Segment Action Code (ID)
-/// * LCH-3: Segment Unique Key (EI)
-/// * LCH-4: Location Characteristic ID (CE)
-/// * LCH-5: Location Characteristic Value (CE)
+/// This segment has the following fields:<ol>
+///<li>LCH-1: Primary Key Value - LCH (PL)</li>
+///<li>LCH-2: Segment Action Code (ID)</li>
+///<li>LCH-3: Segment Unique Key (EI)</li>
+///<li>LCH-4: Location Characteristic ID (CE)</li>
+///<li>LCH-5: Location Characteristic Value (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

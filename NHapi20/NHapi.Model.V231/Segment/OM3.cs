@@ -9,14 +9,15 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 OM3 message segment. 
-/// This segment has the following fields:
-/// * OM3-1: Sequence Number - Test/Observation Master File (NM)
-/// * OM3-2: Preferred Coding System (CE)
-/// * OM3-3: Valid Coded “Answers” (CE)
-/// * OM3-4: Normal Text/Codes for Categorical Observations (CE)
-/// * OM3-5: Abnormal Text/Codes for Categorical Observations (CE)
-/// * OM3-6: Critical Text Codes for Categorical Observations (CE)
-/// * OM3-7: Value Type (ID)
+/// This segment has the following fields:<ol>
+///<li>OM3-1: Sequence Number - Test/Observation Master File (NM)</li>
+///<li>OM3-2: Preferred Coding System (CE)</li>
+///<li>OM3-3: Valid Coded “Answers” (CE)</li>
+///<li>OM3-4: Normal Text/Codes for Categorical Observations (CE)</li>
+///<li>OM3-5: Abnormal Text/Codes for Categorical Observations (CE)</li>
+///<li>OM3-6: Critical Text Codes for Categorical Observations (CE)</li>
+///<li>OM3-7: Value Type (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -119,7 +120,7 @@ public class OM3 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getNormalTextCodesForCategoricalObservations(int rep)
+	public CE GetNormalTextCodesForCategoricalObservations(int rep)
 	{
 			CE ret = null;
 			try
@@ -136,7 +137,7 @@ public class OM3 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Normal Text/Codes for Categorical Observations (OM3-4).
    ///</summary>
-  public CE[] getNormalTextCodesForCategoricalObservations() {
+  public CE[] GetNormalTextCodesForCategoricalObservations() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -154,6 +155,24 @@ public class OM3 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Normal Text/Codes for Categorical Observations (OM3-4).
+   ///</summary>
+  public int NormalTextCodesForCategoricalObservationsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Abnormal Text/Codes for Categorical Observations(OM3-5).
 	///</summary>

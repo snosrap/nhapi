@@ -12,9 +12,11 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a MFN_M03 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MFI (MFI - master file identification segment) 
-/// * 2: MFN_M03_MF_TEST (a Group object) repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MFI (MFI - master file identification segment) </li>
+///<li>2: MFN_M03_MF_TEST (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M03 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M03_MF_TEST (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M03_MF_TEST getMF_TEST() {
+	public MFN_M03_MF_TEST GetMF_TEST() {
 	   MFN_M03_MF_TEST ret = null;
 	   try {
 	      ret = (MFN_M03_MF_TEST)this.GetStructure("MF_TEST");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M03_MF_TEST getMF_TEST(int rep) { 
+	public MFN_M03_MF_TEST GetMF_TEST(int rep) { 
 	   return (MFN_M03_MF_TEST)this.GetStructure("MF_TEST", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M03_MF_TEST 
 	 */ 
-	public int MF_TESTReps { 
+	public int MF_TESTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,10 +9,11 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 BTS message segment. 
-/// This segment has the following fields:
-/// * BTS-1: Batch Message Count (ST)
-/// * BTS-2: Batch Comment (ST)
-/// * BTS-3: Batch Totals (NM)
+/// This segment has the following fields:<ol>
+///<li>BTS-1: Batch Message Count (ST)</li>
+///<li>BTS-2: Batch Comment (ST)</li>
+///<li>BTS-3: Batch Totals (NM)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -88,7 +89,7 @@ public class BTS : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public NM getBatchTotals(int rep)
+	public NM GetBatchTotals(int rep)
 	{
 			NM ret = null;
 			try
@@ -105,7 +106,7 @@ public class BTS : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Batch Totals (BTS-3).
    ///</summary>
-  public NM[] getBatchTotals() {
+  public NM[] GetBatchTotals() {
      NM[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -123,5 +124,23 @@ public class BTS : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Batch Totals (BTS-3).
+   ///</summary>
+  public int BatchTotalsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

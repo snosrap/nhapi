@@ -9,15 +9,16 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 ROL message segment. 
-/// This segment has the following fields:
-/// * ROL-1: Role Instance ID (EI)
-/// * ROL-2: Action Code (ID)
-/// * ROL-3: Role-ROL (CE)
-/// * ROL-4: Role Person (XCN)
-/// * ROL-5: Role Begin Date/Time (TS)
-/// * ROL-6: Role End Date/Time (TS)
-/// * ROL-7: Role Duration (CE)
-/// * ROL-8: Role Action Reason (CE)
+/// This segment has the following fields:<ol>
+///<li>ROL-1: Role Instance ID (EI)</li>
+///<li>ROL-2: Action Code (ID)</li>
+///<li>ROL-3: Role-ROL (CE)</li>
+///<li>ROL-4: Role Person (XCN)</li>
+///<li>ROL-5: Role Begin Date/Time (TS)</li>
+///<li>ROL-6: Role End Date/Time (TS)</li>
+///<li>ROL-7: Role Duration (CE)</li>
+///<li>ROL-8: Role Action Reason (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -121,7 +122,7 @@ public class ROL : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getRolePerson(int rep)
+	public XCN GetRolePerson(int rep)
 	{
 			XCN ret = null;
 			try
@@ -138,7 +139,7 @@ public class ROL : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Role Person (ROL-4).
    ///</summary>
-  public XCN[] getRolePerson() {
+  public XCN[] GetRolePerson() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -156,6 +157,24 @@ public class ROL : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Role Person (ROL-4).
+   ///</summary>
+  public int RolePersonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Role Begin Date/Time(ROL-5).
 	///</summary>

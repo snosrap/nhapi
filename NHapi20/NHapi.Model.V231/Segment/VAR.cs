@@ -9,13 +9,14 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 VAR message segment. 
-/// This segment has the following fields:
-/// * VAR-1: Variance Instance ID (EI)
-/// * VAR-2: Documented Date/Time (TS)
-/// * VAR-3: Stated Variance Date/Time (TS)
-/// * VAR-4: Variance Originator (XCN)
-/// * VAR-5: Variance Classification (CE)
-/// * VAR-6: Variance Description (ST)
+/// This segment has the following fields:<ol>
+///<li>VAR-1: Variance Instance ID (EI)</li>
+///<li>VAR-2: Documented Date/Time (TS)</li>
+///<li>VAR-3: Stated Variance Date/Time (TS)</li>
+///<li>VAR-4: Variance Originator (XCN)</li>
+///<li>VAR-5: Variance Classification (CE)</li>
+///<li>VAR-6: Variance Description (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -117,7 +118,7 @@ public class VAR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getVarianceOriginator(int rep)
+	public XCN GetVarianceOriginator(int rep)
 	{
 			XCN ret = null;
 			try
@@ -134,7 +135,7 @@ public class VAR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Variance Originator (VAR-4).
    ///</summary>
-  public XCN[] getVarianceOriginator() {
+  public XCN[] GetVarianceOriginator() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -152,6 +153,24 @@ public class VAR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Variance Originator (VAR-4).
+   ///</summary>
+  public int VarianceOriginatorRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Variance Classification(VAR-5).
 	///</summary>
@@ -180,7 +199,7 @@ public class VAR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getVarianceDescription(int rep)
+	public ST GetVarianceDescription(int rep)
 	{
 			ST ret = null;
 			try
@@ -197,7 +216,7 @@ public class VAR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Variance Description (VAR-6).
    ///</summary>
-  public ST[] getVarianceDescription() {
+  public ST[] GetVarianceDescription() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -215,5 +234,23 @@ public class VAR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Variance Description (VAR-6).
+   ///</summary>
+  public int VarianceDescriptionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

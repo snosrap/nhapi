@@ -9,37 +9,38 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 RXE message segment. 
-/// This segment has the following fields:
-/// * RXE-1: Quantity/Timing (TQ)
-/// * RXE-2: Give Code (CE)
-/// * RXE-3: Give Amount - Minimum (NM)
-/// * RXE-4: Give Amount - Maximum (NM)
-/// * RXE-5: Give Units (CE)
-/// * RXE-6: Give Dosage Form (CE)
-/// * RXE-7: Provider’s Administration Instructions (CE)
-/// * RXE-8: Deliver-to Location (LA1)
-/// * RXE-9: Substitution Status (ID)
-/// * RXE-10: Dispense Amount (NM)
-/// * RXE-11: Dispense Units (CE)
-/// * RXE-12: Number Of Refills (NM)
-/// * RXE-13: Ordering Provider’s DEA Number (XCN)
-/// * RXE-14: Pharmacist/Treatment Supplier’s Verifier ID (XCN)
-/// * RXE-15: Prescription Number (ST)
-/// * RXE-16: Number of Refills Remaining (NM)
-/// * RXE-17: Number of Refills/Doses Dispensed (NM)
-/// * RXE-18: D/T of Most Recent Refill or Dose Dispensed (TS)
-/// * RXE-19: Total Daily Dose (CQ)
-/// * RXE-20: Needs Human Review (ID)
-/// * RXE-21: Pharmacy/Treatment Supplier’s Special Dispensing Instructions (CE)
-/// * RXE-22: Give Per (Time Unit) (ST)
-/// * RXE-23: Give Rate Amount (ST)
-/// * RXE-24: Give Rate Units (CE)
-/// * RXE-25: Give Strength (NM)
-/// * RXE-26: Give Strength Units (CE)
-/// * RXE-27: Give Indication (CE)
-/// * RXE-28: Dispense Package Size (NM)
-/// * RXE-29: Dispense Package Size Unit (CE)
-/// * RXE-30: Dispense Package Method (ID)
+/// This segment has the following fields:<ol>
+///<li>RXE-1: Quantity/Timing (TQ)</li>
+///<li>RXE-2: Give Code (CE)</li>
+///<li>RXE-3: Give Amount - Minimum (NM)</li>
+///<li>RXE-4: Give Amount - Maximum (NM)</li>
+///<li>RXE-5: Give Units (CE)</li>
+///<li>RXE-6: Give Dosage Form (CE)</li>
+///<li>RXE-7: Provider’s Administration Instructions (CE)</li>
+///<li>RXE-8: Deliver-to Location (LA1)</li>
+///<li>RXE-9: Substitution Status (ID)</li>
+///<li>RXE-10: Dispense Amount (NM)</li>
+///<li>RXE-11: Dispense Units (CE)</li>
+///<li>RXE-12: Number Of Refills (NM)</li>
+///<li>RXE-13: Ordering Provider’s DEA Number (XCN)</li>
+///<li>RXE-14: Pharmacist/Treatment Supplier’s Verifier ID (XCN)</li>
+///<li>RXE-15: Prescription Number (ST)</li>
+///<li>RXE-16: Number of Refills Remaining (NM)</li>
+///<li>RXE-17: Number of Refills/Doses Dispensed (NM)</li>
+///<li>RXE-18: D/T of Most Recent Refill or Dose Dispensed (TS)</li>
+///<li>RXE-19: Total Daily Dose (CQ)</li>
+///<li>RXE-20: Needs Human Review (ID)</li>
+///<li>RXE-21: Pharmacy/Treatment Supplier’s Special Dispensing Instructions (CE)</li>
+///<li>RXE-22: Give Per (Time Unit) (ST)</li>
+///<li>RXE-23: Give Rate Amount (ST)</li>
+///<li>RXE-24: Give Rate Units (CE)</li>
+///<li>RXE-25: Give Strength (NM)</li>
+///<li>RXE-26: Give Strength Units (CE)</li>
+///<li>RXE-27: Give Indication (CE)</li>
+///<li>RXE-28: Dispense Package Size (NM)</li>
+///<li>RXE-29: Dispense Package Size Unit (CE)</li>
+///<li>RXE-30: Dispense Package Method (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -234,7 +235,7 @@ public class RXE : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProviderSAdministrationInstructions(int rep)
+	public CE GetProviderSAdministrationInstructions(int rep)
 	{
 			CE ret = null;
 			try
@@ -251,7 +252,7 @@ public class RXE : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Provider’s Administration Instructions (RXE-7).
    ///</summary>
-  public CE[] getProviderSAdministrationInstructions() {
+  public CE[] GetProviderSAdministrationInstructions() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -269,6 +270,24 @@ public class RXE : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Provider’s Administration Instructions (RXE-7).
+   ///</summary>
+  public int ProviderSAdministrationInstructionsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Deliver-to Location(RXE-8).
 	///</summary>
@@ -389,7 +408,7 @@ public class RXE : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getOrderingProviderSDEANumber(int rep)
+	public XCN GetOrderingProviderSDEANumber(int rep)
 	{
 			XCN ret = null;
 			try
@@ -406,7 +425,7 @@ public class RXE : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ordering Provider’s DEA Number (RXE-13).
    ///</summary>
-  public XCN[] getOrderingProviderSDEANumber() {
+  public XCN[] GetOrderingProviderSDEANumber() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -424,12 +443,30 @@ public class RXE : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ordering Provider’s DEA Number (RXE-13).
+   ///</summary>
+  public int OrderingProviderSDEANumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Pharmacist/Treatment Supplier’s Verifier ID(RXE-14).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPharmacistTreatmentSupplierSVerifierID(int rep)
+	public XCN GetPharmacistTreatmentSupplierSVerifierID(int rep)
 	{
 			XCN ret = null;
 			try
@@ -446,7 +483,7 @@ public class RXE : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Pharmacist/Treatment Supplier’s Verifier ID (RXE-14).
    ///</summary>
-  public XCN[] getPharmacistTreatmentSupplierSVerifierID() {
+  public XCN[] GetPharmacistTreatmentSupplierSVerifierID() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -464,6 +501,24 @@ public class RXE : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Pharmacist/Treatment Supplier’s Verifier ID (RXE-14).
+   ///</summary>
+  public int PharmacistTreatmentSupplierSVerifierIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Prescription Number(RXE-15).
 	///</summary>
@@ -607,7 +662,7 @@ public class RXE : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getPharmacyTreatmentSupplierSSpecialDispensingInstructions(int rep)
+	public CE GetPharmacyTreatmentSupplierSSpecialDispensingInstructions(int rep)
 	{
 			CE ret = null;
 			try
@@ -624,7 +679,7 @@ public class RXE : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Pharmacy/Treatment Supplier’s Special Dispensing Instructions (RXE-21).
    ///</summary>
-  public CE[] getPharmacyTreatmentSupplierSSpecialDispensingInstructions() {
+  public CE[] GetPharmacyTreatmentSupplierSSpecialDispensingInstructions() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -642,6 +697,24 @@ public class RXE : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Pharmacy/Treatment Supplier’s Special Dispensing Instructions (RXE-21).
+   ///</summary>
+  public int PharmacyTreatmentSupplierSSpecialDispensingInstructionsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Give Per (Time Unit)(RXE-22).
 	///</summary>
@@ -762,7 +835,7 @@ public class RXE : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getGiveIndication(int rep)
+	public CE GetGiveIndication(int rep)
 	{
 			CE ret = null;
 			try
@@ -779,7 +852,7 @@ public class RXE : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Give Indication (RXE-27).
    ///</summary>
-  public CE[] getGiveIndication() {
+  public CE[] GetGiveIndication() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(27);  
@@ -797,6 +870,24 @@ public class RXE : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Give Indication (RXE-27).
+   ///</summary>
+  public int GiveIndicationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(27);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Dispense Package Size(RXE-28).
 	///</summary>

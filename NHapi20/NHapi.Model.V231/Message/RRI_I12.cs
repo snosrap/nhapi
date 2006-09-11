@@ -12,20 +12,22 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a RRI_I12 message structure (see chapter ). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) optional 
-/// * 2: RF1 (Referral Infomation) optional 
-/// * 3: RRI_I12_AUTHORIZATION_CONTACT (a Group object) optional 
-/// * 4: RRI_I12_PROVIDER_CONTACT (a Group object) repeating
-/// * 5: PID (PID - patient identification segment) 
-/// * 6: ACC (ACC - accident segment) optional 
-/// * 7: DG1 (DG1 - diagnosis segment) optional repeating
-/// * 8: DRG (DRG - diagnosis related group segment) optional repeating
-/// * 9: AL1 (AL1 - patient allergy information segment) optional repeating
-/// * 10: RRI_I12_PROCEDURE (a Group object) optional repeating
-/// * 11: RRI_I12_OBSERVATION (a Group object) optional repeating
-/// * 12: RRI_I12_PATIENT_VISIT (a Group object) optional 
-/// * 13: NTE (NTE - notes and comments segment) optional repeating
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) optional </li>
+///<li>2: RF1 (Referral Infomation) optional </li>
+///<li>3: RRI_I12_AUTHORIZATION_CONTACT (a Group object) optional </li>
+///<li>4: RRI_I12_PROVIDER_CONTACT (a Group object) repeating</li>
+///<li>5: PID (PID - patient identification segment) </li>
+///<li>6: ACC (ACC - accident segment) optional </li>
+///<li>7: DG1 (DG1 - diagnosis segment) optional repeating</li>
+///<li>8: DRG (DRG - diagnosis related group segment) optional repeating</li>
+///<li>9: AL1 (AL1 - patient allergy information segment) optional repeating</li>
+///<li>10: RRI_I12_PROCEDURE (a Group object) optional repeating</li>
+///<li>11: RRI_I12_OBSERVATION (a Group object) optional repeating</li>
+///<li>12: RRI_I12_PATIENT_VISIT (a Group object) optional </li>
+///<li>13: NTE (NTE - notes and comments segment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRI_I12 : AbstractMessage  {
@@ -135,7 +137,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRI_I12_PROVIDER_CONTACT (a Group object) - creates it if necessary
 	///</summary>
-	public RRI_I12_PROVIDER_CONTACT getPROVIDER_CONTACT() {
+	public RRI_I12_PROVIDER_CONTACT GetPROVIDER_CONTACT() {
 	   RRI_I12_PROVIDER_CONTACT ret = null;
 	   try {
 	      ret = (RRI_I12_PROVIDER_CONTACT)this.GetStructure("PROVIDER_CONTACT");
@@ -152,14 +154,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRI_I12_PROVIDER_CONTACT getPROVIDER_CONTACT(int rep) { 
+	public RRI_I12_PROVIDER_CONTACT GetPROVIDER_CONTACT(int rep) { 
 	   return (RRI_I12_PROVIDER_CONTACT)this.GetStructure("PROVIDER_CONTACT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRI_I12_PROVIDER_CONTACT 
 	 */ 
-	public int PROVIDER_CONTACTReps { 
+	public int PROVIDER_CONTACTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -208,7 +210,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (DG1 - diagnosis segment) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -225,14 +227,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -249,7 +251,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DRG (DRG - diagnosis related group segment) - creates it if necessary
 	///</summary>
-	public DRG getDRG() {
+	public DRG GetDRG() {
 	   DRG ret = null;
 	   try {
 	      ret = (DRG)this.GetStructure("DRG");
@@ -266,14 +268,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DRG getDRG(int rep) { 
+	public DRG GetDRG(int rep) { 
 	   return (DRG)this.GetStructure("DRG", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DRG 
 	 */ 
-	public int DRGReps { 
+	public int DRGRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -290,7 +292,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of AL1 (AL1 - patient allergy information segment) - creates it if necessary
 	///</summary>
-	public AL1 getAL1() {
+	public AL1 GetAL1() {
 	   AL1 ret = null;
 	   try {
 	      ret = (AL1)this.GetStructure("AL1");
@@ -307,14 +309,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AL1 getAL1(int rep) { 
+	public AL1 GetAL1(int rep) { 
 	   return (AL1)this.GetStructure("AL1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AL1 
 	 */ 
-	public int AL1Reps { 
+	public int AL1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -331,7 +333,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRI_I12_PROCEDURE (a Group object) - creates it if necessary
 	///</summary>
-	public RRI_I12_PROCEDURE getPROCEDURE() {
+	public RRI_I12_PROCEDURE GetPROCEDURE() {
 	   RRI_I12_PROCEDURE ret = null;
 	   try {
 	      ret = (RRI_I12_PROCEDURE)this.GetStructure("PROCEDURE");
@@ -348,14 +350,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRI_I12_PROCEDURE getPROCEDURE(int rep) { 
+	public RRI_I12_PROCEDURE GetPROCEDURE(int rep) { 
 	   return (RRI_I12_PROCEDURE)this.GetStructure("PROCEDURE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRI_I12_PROCEDURE 
 	 */ 
-	public int PROCEDUREReps { 
+	public int PROCEDURERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -372,7 +374,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRI_I12_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public RRI_I12_OBSERVATION getOBSERVATION() {
+	public RRI_I12_OBSERVATION GetOBSERVATION() {
 	   RRI_I12_OBSERVATION ret = null;
 	   try {
 	      ret = (RRI_I12_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -389,14 +391,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRI_I12_OBSERVATION getOBSERVATION(int rep) { 
+	public RRI_I12_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (RRI_I12_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRI_I12_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -429,7 +431,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (NTE - notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -446,14 +448,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

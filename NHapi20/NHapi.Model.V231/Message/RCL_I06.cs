@@ -12,18 +12,20 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a RCL_I06 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: QRD (QRD - original-style query definition segment) 
-/// * 3: QRF (QRF - original style query filter segment) optional 
-/// * 4: RCL_I06_PROVIDER (a Group object) repeating
-/// * 5: PID (PID - patient identification segment) 
-/// * 6: DG1 (DG1 - diagnosis segment) optional repeating
-/// * 7: DRG (DRG - diagnosis related group segment) optional repeating
-/// * 8: AL1 (AL1 - patient allergy information segment) optional repeating
-/// * 9: NTE (NTE - notes and comments segment) optional repeating
-/// * 10: DSP (DSP - display data segment) optional repeating
-/// * 11: DSC (DSC - Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: QRD (QRD - original-style query definition segment) </li>
+///<li>3: QRF (QRF - original style query filter segment) optional </li>
+///<li>4: RCL_I06_PROVIDER (a Group object) repeating</li>
+///<li>5: PID (PID - patient identification segment) </li>
+///<li>6: DG1 (DG1 - diagnosis segment) optional repeating</li>
+///<li>7: DRG (DRG - diagnosis related group segment) optional repeating</li>
+///<li>8: AL1 (AL1 - patient allergy information segment) optional repeating</li>
+///<li>9: NTE (NTE - notes and comments segment) optional repeating</li>
+///<li>10: DSP (DSP - display data segment) optional repeating</li>
+///<li>11: DSC (DSC - Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RCL_I06 : AbstractMessage  {
@@ -131,7 +133,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RCL_I06_PROVIDER (a Group object) - creates it if necessary
 	///</summary>
-	public RCL_I06_PROVIDER getPROVIDER() {
+	public RCL_I06_PROVIDER GetPROVIDER() {
 	   RCL_I06_PROVIDER ret = null;
 	   try {
 	      ret = (RCL_I06_PROVIDER)this.GetStructure("PROVIDER");
@@ -148,14 +150,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RCL_I06_PROVIDER getPROVIDER(int rep) { 
+	public RCL_I06_PROVIDER GetPROVIDER(int rep) { 
 	   return (RCL_I06_PROVIDER)this.GetStructure("PROVIDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RCL_I06_PROVIDER 
 	 */ 
-	public int PROVIDERReps { 
+	public int PROVIDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -188,7 +190,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (DG1 - diagnosis segment) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -205,14 +207,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -229,7 +231,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DRG (DRG - diagnosis related group segment) - creates it if necessary
 	///</summary>
-	public DRG getDRG() {
+	public DRG GetDRG() {
 	   DRG ret = null;
 	   try {
 	      ret = (DRG)this.GetStructure("DRG");
@@ -246,14 +248,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DRG getDRG(int rep) { 
+	public DRG GetDRG(int rep) { 
 	   return (DRG)this.GetStructure("DRG", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DRG 
 	 */ 
-	public int DRGReps { 
+	public int DRGRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -270,7 +272,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of AL1 (AL1 - patient allergy information segment) - creates it if necessary
 	///</summary>
-	public AL1 getAL1() {
+	public AL1 GetAL1() {
 	   AL1 ret = null;
 	   try {
 	      ret = (AL1)this.GetStructure("AL1");
@@ -287,14 +289,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public AL1 getAL1(int rep) { 
+	public AL1 GetAL1(int rep) { 
 	   return (AL1)this.GetStructure("AL1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of AL1 
 	 */ 
-	public int AL1Reps { 
+	public int AL1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -311,7 +313,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (NTE - notes and comments segment) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -328,14 +330,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -352,7 +354,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DSP (DSP - display data segment) - creates it if necessary
 	///</summary>
-	public DSP getDSP() {
+	public DSP GetDSP() {
 	   DSP ret = null;
 	   try {
 	      ret = (DSP)this.GetStructure("DSP");
@@ -369,14 +371,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DSP getDSP(int rep) { 
+	public DSP GetDSP(int rep) { 
 	   return (DSP)this.GetStructure("DSP", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DSP 
 	 */ 
-	public int DSPReps { 
+	public int DSPRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

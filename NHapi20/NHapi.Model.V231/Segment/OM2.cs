@@ -9,17 +9,18 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 OM2 message segment. 
-/// This segment has the following fields:
-/// * OM2-1: Sequence Number - Test/Observation Master File (NM)
-/// * OM2-2: Units of Measure (CE)
-/// * OM2-3: Range of Decimal Precision (NM)
-/// * OM2-4: Corresponding SI Units of Measure (CE)
-/// * OM2-5: SI Conversion Factor (TX)
-/// * OM2-6: Reference (Normal) Range - Ordinal and Continuous Obs (RFR)
-/// * OM2-7: Critical Range for Ordinal and Continuous Obs (NR)
-/// * OM2-8: Absolute Range for Ordinal and Continuous Obs (RFR)
-/// * OM2-9: Delta Check Criteria (DLT)
-/// * OM2-10: Minimum Meaningful Increments (NM)
+/// This segment has the following fields:<ol>
+///<li>OM2-1: Sequence Number - Test/Observation Master File (NM)</li>
+///<li>OM2-2: Units of Measure (CE)</li>
+///<li>OM2-3: Range of Decimal Precision (NM)</li>
+///<li>OM2-4: Corresponding SI Units of Measure (CE)</li>
+///<li>OM2-5: SI Conversion Factor (TX)</li>
+///<li>OM2-6: Reference (Normal) Range - Ordinal and Continuous Obs (RFR)</li>
+///<li>OM2-7: Critical Range for Ordinal and Continuous Obs (NR)</li>
+///<li>OM2-8: Absolute Range for Ordinal and Continuous Obs (RFR)</li>
+///<li>OM2-9: Delta Check Criteria (DLT)</li>
+///<li>OM2-10: Minimum Meaningful Increments (NM)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -102,7 +103,7 @@ public class OM2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public NM getRangeOfDecimalPrecision(int rep)
+	public NM GetRangeOfDecimalPrecision(int rep)
 	{
 			NM ret = null;
 			try
@@ -119,7 +120,7 @@ public class OM2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Range of Decimal Precision (OM2-3).
    ///</summary>
-  public NM[] getRangeOfDecimalPrecision() {
+  public NM[] GetRangeOfDecimalPrecision() {
      NM[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -137,6 +138,24 @@ public class OM2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Range of Decimal Precision (OM2-3).
+   ///</summary>
+  public int RangeOfDecimalPrecisionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Corresponding SI Units of Measure(OM2-4).
 	///</summary>
@@ -257,7 +276,7 @@ public class OM2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public DLT getDeltaCheckCriteria(int rep)
+	public DLT GetDeltaCheckCriteria(int rep)
 	{
 			DLT ret = null;
 			try
@@ -274,7 +293,7 @@ public class OM2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Delta Check Criteria (OM2-9).
    ///</summary>
-  public DLT[] getDeltaCheckCriteria() {
+  public DLT[] GetDeltaCheckCriteria() {
      DLT[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -292,6 +311,24 @@ public class OM2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Delta Check Criteria (OM2-9).
+   ///</summary>
+  public int DeltaCheckCriteriaRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Minimum Meaningful Increments(OM2-10).
 	///</summary>

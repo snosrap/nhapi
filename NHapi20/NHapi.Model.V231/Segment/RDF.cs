@@ -9,9 +9,10 @@ namespace NHapi.Model.V231.Segment{
 
 ///<summary>
 /// Represents an HL7 RDF message segment. 
-/// This segment has the following fields:
-/// * RDF-1: Number of Columns per Row (NM)
-/// * RDF-2: Column Description (RCD)
+/// This segment has the following fields:<ol>
+///<li>RDF-1: Number of Columns per Row (NM)</li>
+///<li>RDF-2: Column Description (RCD)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -63,7 +64,7 @@ public class RDF : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public RCD getColumnDescription(int rep)
+	public RCD GetColumnDescription(int rep)
 	{
 			RCD ret = null;
 			try
@@ -80,7 +81,7 @@ public class RDF : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Column Description (RDF-2).
    ///</summary>
-  public RCD[] getColumnDescription() {
+  public RCD[] GetColumnDescription() {
      RCD[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -98,5 +99,23 @@ public class RDF : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Column Description (RDF-2).
+   ///</summary>
+  public int ColumnDescriptionRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

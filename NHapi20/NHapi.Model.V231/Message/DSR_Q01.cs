@@ -12,14 +12,16 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a DSR_Q01 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: MSA (MSA - message acknowledgment segment) 
-/// * 2: ERR (ERR - error segment) optional 
-/// * 3: QAK (Query Acknowledgement) optional 
-/// * 4: QRD (QRD - original-style query definition segment) 
-/// * 5: QRF (QRF - original style query filter segment) optional 
-/// * 6: DSP (DSP - display data segment) repeating
-/// * 7: DSC (DSC - Continuation pointer segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: MSA (MSA - message acknowledgment segment) </li>
+///<li>2: ERR (ERR - error segment) optional </li>
+///<li>3: QAK (Query Acknowledgement) optional </li>
+///<li>4: QRD (QRD - original-style query definition segment) </li>
+///<li>5: QRF (QRF - original style query filter segment) optional </li>
+///<li>6: DSP (DSP - display data segment) repeating</li>
+///<li>7: DSC (DSC - Continuation pointer segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DSR_Q01 : AbstractMessage  {
@@ -155,7 +157,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DSP (DSP - display data segment) - creates it if necessary
 	///</summary>
-	public DSP getDSP() {
+	public DSP GetDSP() {
 	   DSP ret = null;
 	   try {
 	      ret = (DSP)this.GetStructure("DSP");
@@ -172,14 +174,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DSP getDSP(int rep) { 
+	public DSP GetDSP(int rep) { 
 	   return (DSP)this.GetStructure("DSP", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DSP 
 	 */ 
-	public int DSPReps { 
+	public int DSPRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

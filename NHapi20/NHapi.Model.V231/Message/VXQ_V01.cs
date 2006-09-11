@@ -12,9 +12,11 @@ namespace NHapi.Model.V231.Message
 ///<summary>
 /// Represents a VXQ_V01 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (MSH - message header segment) 
-/// * 1: QRD (QRD - original-style query definition segment) 
-/// * 2: QRF (QRF - original style query filter segment) optional 
+///<ol>
+///<li>0: MSH (MSH - message header segment) </li>
+///<li>1: QRD (QRD - original-style query definition segment) </li>
+///<li>2: QRF (QRF - original style query filter segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VXQ_V01 : AbstractMessage  {
