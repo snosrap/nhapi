@@ -24,7 +24,7 @@ QRD|20060228155525|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||";
 			NHapi.Model.V231.Message.QRY_R02 qryR02 = m as NHapi.Model.V231.Message.QRY_R02;
 
 			Assert.IsNotNull(qryR02);
-			Assert.AreEqual("38923", qryR02.QRD.getWhoSubjectFilter(0).IDNumber.Value);
+			Assert.AreEqual("38923", qryR02.QRD.GetWhoSubjectFilter(0).IDNumber.Value);
 		}
 
         [Test]
@@ -44,12 +44,12 @@ OBR||01444^00001||CAI^CALCIUM IONIZED|||200606191614||||L|||||045716^STEELE, AND
             NHapi.Model.V231.Message.ORM_O01 ormo01 = m as NHapi.Model.V231.Message.ORM_O01;
 
             Assert.IsNotNull(ormo01);
-            Assert.AreEqual("TRAINONLYPOE", (ormo01.PATIENT.PID.getPatientName()[0]).FamilyLastName.FamilyName.Value);
+            Assert.AreEqual("TRAINONLYPOE", (ormo01.PATIENT.PID.GetPatientName()[0]).FamilyLastName.FamilyName.Value);
             Assert.AreEqual("19770903", ormo01.PATIENT.PID.DateTimeOfBirth.TimeOfAnEvent.Value);
             Assert.AreEqual("F", ormo01.PATIENT.PID.Sex.Value);
-            Assert.AreEqual("W", ((ormo01.PATIENT.PID.getRace()[0]).Identifier.Value));
+            Assert.AreEqual("W", ((ormo01.PATIENT.PID.GetRace()[0]).Identifier.Value));
 
-            Assert.AreEqual("ABAZA, MONA M", ormo01.PATIENT.PATIENT_VISIT.PV1.getAttendingDoctor()[0].FamilyLastName.FamilyName.Value);
+            Assert.AreEqual("ABAZA, MONA M", ormo01.PATIENT.PATIENT_VISIT.PV1.GetAttendingDoctor(0).FamilyLastName.FamilyName.Value);
         }
 
         [Test]
@@ -169,7 +169,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			NHapi.Model.V231.Message.ORF_R04 orfR04 = m as NHapi.Model.V231.Message.ORF_R04;
 			Assert.IsNotNull(orfR04);
-			Assert.AreEqual("12", orfR04.getQUERY_RESPONSE().getORDER().getOBSERVATION().OBX.getObservationValue()[0].Data.ToString());
+			Assert.AreEqual("12", orfR04.GetQUERY_RESPONSE().GetORDER().GetOBSERVATION().OBX.GetObservationValue()[0].Data.ToString());
 
 		}
 

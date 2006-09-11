@@ -24,7 +24,7 @@ QRD|20060228155525|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||";
             NHapi.Model.V24.Message.QRY_R02 qryR02 = m as NHapi.Model.V24.Message.QRY_R02;
 
 			Assert.IsNotNull(qryR02);
-			Assert.AreEqual("38923", qryR02.QRD.getWhoSubjectFilter(0).IDNumber.Value);
+			Assert.AreEqual("38923", qryR02.QRD.GetWhoSubjectFilter(0).IDNumber.Value);
 		}
 
 		
@@ -45,7 +45,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			NHapi.Model.V24.Message.ORF_R04 orfR04 = m as NHapi.Model.V24.Message.ORF_R04;
 			Assert.IsNotNull(orfR04);
-			Assert.AreEqual("12", orfR04.getRESPONSE().getORDER().getOBSERVATION().OBX.getObservationValue()[0].Data.ToString());
+			Assert.AreEqual("12", orfR04.GetRESPONSE().GetORDER().GetOBSERVATION().OBX.GetObservationValue()[0].Data.ToString());
 
 		}
 

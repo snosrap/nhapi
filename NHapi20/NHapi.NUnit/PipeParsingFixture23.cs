@@ -28,7 +28,7 @@ QRD|20060228155525|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||";
 			QRY_R02 qryR02 = m as QRY_R02;
 
 			Assert.IsNotNull(qryR02);
-			Assert.AreEqual("38923", qryR02.QRD.getWhoSubjectFilter(0).IDNumber.Value);
+			Assert.AreEqual("38923", qryR02.QRD.GetWhoSubjectFilter(0).IDNumber.Value);
 		}
 
         [Test]
@@ -82,7 +82,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			ORF_R04 orfR04 = m as ORF_R04;
 			Assert.IsNotNull(orfR04);
-			Assert.AreEqual("12", orfR04.getQUERY_RESPONSE().getORDER().getOBSERVATION().OBX.getObservationValue()[0].Data.ToString());
+			Assert.AreEqual("12", orfR04.GetQUERY_RESPONSE().GetORDER().GetOBSERVATION().OBX.GetObservationValue()[0].Data.ToString());
 
 		}
 
