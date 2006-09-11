@@ -67,77 +67,29 @@ namespace NHapi.Base.SourceGeneration
 
         public static string MakeName(string fieldDesc)
         {
-            char[] nameChar = fieldDesc.ToCharArray();
-            System.Text.StringBuilder nameFixed = new System.Text.StringBuilder();
-            for (int i = 0; i < nameChar.Length; i++)
-            {
-                if (char.IsLetterOrDigit(nameChar[i]))
-                {
-                    nameFixed.Append(nameChar[i]);
-                }
-                if (nameChar[i] == ' ')
-                {
-                    nameFixed.Append(" ");
-                }
-            }
-            string[] splits = nameFixed.ToString().Split(' ');
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
-            foreach (string split in splits)
-            {
-                if (split.Trim().Length > 0)
-                {
-                    if (IsSpecialWord(split))
-                    {
-                        sb.Append(split.ToUpper());
-                    }
-                    else
-                    {
-                        sb.Append(split[0].ToString().ToUpper());
-                        sb.Append(split.Substring(1).ToLower());
-                    }
-                }
-            }
-            return sb.ToString();
-        }
-
-        private static bool IsSpecialWord(string word)
-        {
-            word = word.ToLower();
-            if (word.Equals("ssn"))
-                return true;
-            else if (word.Equals("id"))
-                return true;
-            else
-                return false;
-        }
-
-        public static string MakePropertyName(string fieldDesc)
-        {
-            string name = MakeName(fieldDesc);
-            return name;
-        }
-
-        /// <summary> Make a Java-ish accessor method name out of a field or component description
-        /// by removing non-letters and adding "get".  One complication is that some description
-        /// entries in the DB have their data types in brackets, and these should not be
-        /// part of the method name.  On the other hand, sometimes critical distinguishing
-        /// information is in brackets, so we can't omit everything in brackets.  The approach
-        /// taken here is to eliminate bracketed text if a it looks like a data type.
-        /// </summary>
-        public static System.String makeAccessorName(System.String fieldDesc)
-        {
-            return "Get" + MakeName(fieldDesc);
-        }
-
-        /// <summary> Make a c#-ish accessor method name out of a field or component description
-        /// by removing non-letters and adding "get".  One complication is that some description
-        /// entries in the DB have their data types in brackets, and these should not be
-        /// part of the method name.  On the other hand, sometimes critical distinguishing
-        /// information is in brackets, so we can't omit everything in brackets.  The approach
-        /// taken here is to eliminate bracketed text if a it looks like a data type.
-        /// </summary>
-        public static System.String makeAccessorNameCSharp(System.String fieldDesc)
-        {
+            //char[] nameChar = fieldDesc.ToCharArray();
+            //System.Text.StringBuilder nameFixed = new System.Text.StringBuilder();
+            //for (int i = 0; i < nameChar.Length; i++)
+            //{
+            //    if (char.IsLetterOrDigit(nameChar[i]))
+            //    {
+            //        nameFixed.Append(nameChar[i]);
+            //    }
+            //    if (nameChar[i] == ' ')
+            //    {
+            //        nameFixed.Append(" ");
+            //    }
+            //}
+            //string[] splits = nameFixed.ToString().Split(' ');
+            //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            //foreach (string split in splits)
+            //{
+            //    if (split.Trim().Length > 0)
+            //    {
+            //        sb.Append(GetWord(split));
+            //    }
+            //}
+            //return sb.ToString();
             System.Text.StringBuilder aName = new System.Text.StringBuilder();
             char[] chars = fieldDesc.ToCharArray();
             bool lastCharWasNotLetter = true;
@@ -185,10 +137,29 @@ namespace NHapi.Base.SourceGeneration
             aName.Append(capitalize(filterBracketedText(bracketContents.ToString())));
             if (System.Char.IsDigit(aName[0]))
             {
-                return "get" + aName.ToString();
+                return "Get" + aName.ToString();
             }
             else
                 return aName.ToString();
+        }
+
+
+        public static string MakePropertyName(string fieldDesc)
+        {
+            string name = MakeName(fieldDesc);
+            return name;
+        }
+
+        /// <summary> Make a Java-ish accessor method name out of a field or component description
+        /// by removing non-letters and adding "get".  One complication is that some description
+        /// entries in the DB have their data types in brackets, and these should not be
+        /// part of the method name.  On the other hand, sometimes critical distinguishing
+        /// information is in brackets, so we can't omit everything in brackets.  The approach
+        /// taken here is to eliminate bracketed text if a it looks like a data type.
+        /// </summary>
+        public static System.String MakeAccessorName(System.String fieldDesc)
+        {
+            return MakeName(fieldDesc);
         }
 
         /// <summary> Make a C#-ish accessor method name out of a field or component description
@@ -198,10 +169,10 @@ namespace NHapi.Base.SourceGeneration
         /// information is in brackets, so we can't omit everything in brackets.  The approach
         /// taken here is to eliminate bracketed text if a it looks like a data type.
         /// </summary>
-        public static System.String makeAccessorNameCSharp(System.String fieldDesc, int repitions)
+        public static System.String MakeAccessorName(System.String fieldDesc, int repitions)
         {
             string name = MakeName(fieldDesc);
-            if (repitions != 1)
+            if (repitions != 1 && !name.StartsWith("Get"))
                 name = "Get" + name;
 
 

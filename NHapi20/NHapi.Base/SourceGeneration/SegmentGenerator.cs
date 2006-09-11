@@ -342,7 +342,7 @@ namespace NHapi.Base.SourceGeneration
                         source.Append("\tpublic ");
                         source.Append(type);
                         source.Append(" ");
-                        source.Append(SourceGenerator.makeAccessorNameCSharp(se.desc, se.repetitions));
+                        source.Append(SourceGenerator.MakeAccessorName(se.desc, se.repetitions));
                         if (se.repetitions != 1)
                             source.Append("(int rep)");
                         source.Append("\n\t{\r\n");
@@ -397,8 +397,8 @@ namespace NHapi.Base.SourceGeneration
                             source.Append("   ///</summary>\r\n");
                             source.Append("  public ");
                             source.Append(type);
-                            source.Append("[] ");
-                            source.Append(SourceGenerator.makeAccessorName(se.desc));
+                            source.Append("[] Get");
+                            source.Append(SourceGenerator.MakeAccessorName(se.desc));
                             source.Append("() {\r\n");
                             source.Append("     ");
                             source.Append(type);

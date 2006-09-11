@@ -414,7 +414,7 @@ namespace NHapi.Base.SourceGeneration
                 source.Append("\tpublic ");
                 source.Append(dtName);
                 source.Append(" ");
-                source.Append(SourceGenerator.makeAccessorNameCSharp(descriptions[i]));
+                source.Append(SourceGenerator.MakeAccessorName(descriptions[i]));
                 source.Append(" {\r\n");
                 source.Append("get{\r\n");
                 source.Append("\t   ");
