@@ -12,12 +12,14 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a QBP_Q13 message structure (see chapter 5). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: QPD (Query Parameter Definition) 
-/// * 2: QBP_Q13_QBP (a Group object) optional 
-/// * 3: RDF (Table Row Definition) optional 
-/// * 4: RCP (Response Control Parameter) 
-/// * 5: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: QPD (Query Parameter Definition) </li>
+///<li>2: QBP_Q13_QBP (a Group object) optional </li>
+///<li>3: RDF (Table Row Definition) optional </li>
+///<li>4: RCP (Response Control Parameter) </li>
+///<li>5: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class QBP_Q13 : AbstractMessage  {

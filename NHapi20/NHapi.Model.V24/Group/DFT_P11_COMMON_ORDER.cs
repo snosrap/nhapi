@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the DFT_P11_COMMON_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) optional 
-/// * 1: DFT_P11_ORDER (a Group object) optional 
-/// * 2: DFT_P11_OBSERVATION (a Group object) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) optional </li>
+///<li>1: DFT_P11_ORDER (a Group object) optional </li>
+///<li>2: DFT_P11_OBSERVATION (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DFT_P11_COMMON_ORDER : AbstractGroup {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DFT_P11_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public DFT_P11_OBSERVATION getOBSERVATION() {
+	public DFT_P11_OBSERVATION GetOBSERVATION() {
 	   DFT_P11_OBSERVATION ret = null;
 	   try {
 	      ret = (DFT_P11_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DFT_P11_OBSERVATION getOBSERVATION(int rep) { 
+	public DFT_P11_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (DFT_P11_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DFT_P11_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

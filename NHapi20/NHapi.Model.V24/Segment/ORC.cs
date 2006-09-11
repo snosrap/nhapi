@@ -9,32 +9,33 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 ORC message segment. 
-/// This segment has the following fields:
-/// * ORC-1: Order Control (ID)
-/// * ORC-2: Placer Order Number (EI)
-/// * ORC-3: Filler Order Number (EI)
-/// * ORC-4: Placer Group Number (EI)
-/// * ORC-5: Order Status (ID)
-/// * ORC-6: Response Flag (ID)
-/// * ORC-7: Quantity/Timing (TQ)
-/// * ORC-8: Parent (EIP)
-/// * ORC-9: Date/Time of Transaction (TS)
-/// * ORC-10: Entered By (XCN)
-/// * ORC-11: Verified By (XCN)
-/// * ORC-12: Ordering Provider (XCN)
-/// * ORC-13: Enterer's Location (PL)
-/// * ORC-14: Call Back Phone Number (XTN)
-/// * ORC-15: Order Effective Date/Time (TS)
-/// * ORC-16: Order Control Code Reason (CE)
-/// * ORC-17: Entering Organization (CE)
-/// * ORC-18: Entering Device (CE)
-/// * ORC-19: Action By (XCN)
-/// * ORC-20: Advanced Beneficiary Notice Code (CE)
-/// * ORC-21: Ordering Facility Name (XON)
-/// * ORC-22: Ordering Facility Address (XAD)
-/// * ORC-23: Ordering Facility Phone Number (XTN)
-/// * ORC-24: Ordering Provider Address (XAD)
-/// * ORC-25: Order Status Modifier (CWE)
+/// This segment has the following fields:<ol>
+///<li>ORC-1: Order Control (ID)</li>
+///<li>ORC-2: Placer Order Number (EI)</li>
+///<li>ORC-3: Filler Order Number (EI)</li>
+///<li>ORC-4: Placer Group Number (EI)</li>
+///<li>ORC-5: Order Status (ID)</li>
+///<li>ORC-6: Response Flag (ID)</li>
+///<li>ORC-7: Quantity/Timing (TQ)</li>
+///<li>ORC-8: Parent (EIP)</li>
+///<li>ORC-9: Date/Time of Transaction (TS)</li>
+///<li>ORC-10: Entered By (XCN)</li>
+///<li>ORC-11: Verified By (XCN)</li>
+///<li>ORC-12: Ordering Provider (XCN)</li>
+///<li>ORC-13: Enterer's Location (PL)</li>
+///<li>ORC-14: Call Back Phone Number (XTN)</li>
+///<li>ORC-15: Order Effective Date/Time (TS)</li>
+///<li>ORC-16: Order Control Code Reason (CE)</li>
+///<li>ORC-17: Entering Organization (CE)</li>
+///<li>ORC-18: Entering Device (CE)</li>
+///<li>ORC-19: Action By (XCN)</li>
+///<li>ORC-20: Advanced Beneficiary Notice Code (CE)</li>
+///<li>ORC-21: Ordering Facility Name (XON)</li>
+///<li>ORC-22: Ordering Facility Address (XAD)</li>
+///<li>ORC-23: Ordering Facility Phone Number (XTN)</li>
+///<li>ORC-24: Ordering Provider Address (XAD)</li>
+///<li>ORC-25: Order Status Modifier (CWE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -224,7 +225,7 @@ public class ORC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TQ getQuantityTiming(int rep)
+	public TQ GetQuantityTiming(int rep)
 	{
 			TQ ret = null;
 			try
@@ -241,7 +242,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Quantity/Timing (ORC-7).
    ///</summary>
-  public TQ[] getQuantityTiming() {
+  public TQ[] GetQuantityTiming() {
      TQ[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -259,6 +260,24 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Quantity/Timing (ORC-7).
+   ///</summary>
+  public int QuantityTimingRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Parent(ORC-8).
 	///</summary>
@@ -310,7 +329,7 @@ public class ORC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getEnteredBy(int rep)
+	public XCN GetEnteredBy(int rep)
 	{
 			XCN ret = null;
 			try
@@ -327,7 +346,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Entered By (ORC-10).
    ///</summary>
-  public XCN[] getEnteredBy() {
+  public XCN[] GetEnteredBy() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -345,12 +364,30 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Entered By (ORC-10).
+   ///</summary>
+  public int EnteredByRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Verified By(ORC-11).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getVerifiedBy(int rep)
+	public XCN GetVerifiedBy(int rep)
 	{
 			XCN ret = null;
 			try
@@ -367,7 +404,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Verified By (ORC-11).
    ///</summary>
-  public XCN[] getVerifiedBy() {
+  public XCN[] GetVerifiedBy() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -385,12 +422,30 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Verified By (ORC-11).
+   ///</summary>
+  public int VerifiedByRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Ordering Provider(ORC-12).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getOrderingProvider(int rep)
+	public XCN GetOrderingProvider(int rep)
 	{
 			XCN ret = null;
 			try
@@ -407,7 +462,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ordering Provider (ORC-12).
    ///</summary>
-  public XCN[] getOrderingProvider() {
+  public XCN[] GetOrderingProvider() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -425,6 +480,24 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ordering Provider (ORC-12).
+   ///</summary>
+  public int OrderingProviderRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Enterer's Location(ORC-13).
 	///</summary>
@@ -453,7 +526,7 @@ public class ORC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getCallBackPhoneNumber(int rep)
+	public XTN GetCallBackPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -470,7 +543,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Call Back Phone Number (ORC-14).
    ///</summary>
-  public XTN[] getCallBackPhoneNumber() {
+  public XTN[] GetCallBackPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -488,6 +561,24 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Call Back Phone Number (ORC-14).
+   ///</summary>
+  public int CallBackPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Order Effective Date/Time(ORC-15).
 	///</summary>
@@ -585,7 +676,7 @@ public class ORC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getActionBy(int rep)
+	public XCN GetActionBy(int rep)
 	{
 			XCN ret = null;
 			try
@@ -602,7 +693,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Action By (ORC-19).
    ///</summary>
-  public XCN[] getActionBy() {
+  public XCN[] GetActionBy() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -620,6 +711,24 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Action By (ORC-19).
+   ///</summary>
+  public int ActionByRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Advanced Beneficiary Notice Code(ORC-20).
 	///</summary>
@@ -648,7 +757,7 @@ public class ORC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getOrderingFacilityName(int rep)
+	public XON GetOrderingFacilityName(int rep)
 	{
 			XON ret = null;
 			try
@@ -665,7 +774,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ordering Facility Name (ORC-21).
    ///</summary>
-  public XON[] getOrderingFacilityName() {
+  public XON[] GetOrderingFacilityName() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -683,12 +792,30 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ordering Facility Name (ORC-21).
+   ///</summary>
+  public int OrderingFacilityNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Ordering Facility Address(ORC-22).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getOrderingFacilityAddress(int rep)
+	public XAD GetOrderingFacilityAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -705,7 +832,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ordering Facility Address (ORC-22).
    ///</summary>
-  public XAD[] getOrderingFacilityAddress() {
+  public XAD[] GetOrderingFacilityAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(22);  
@@ -723,12 +850,30 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ordering Facility Address (ORC-22).
+   ///</summary>
+  public int OrderingFacilityAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(22);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Ordering Facility Phone Number(ORC-23).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getOrderingFacilityPhoneNumber(int rep)
+	public XTN GetOrderingFacilityPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -745,7 +890,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ordering Facility Phone Number (ORC-23).
    ///</summary>
-  public XTN[] getOrderingFacilityPhoneNumber() {
+  public XTN[] GetOrderingFacilityPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(23);  
@@ -763,12 +908,30 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ordering Facility Phone Number (ORC-23).
+   ///</summary>
+  public int OrderingFacilityPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(23);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Ordering Provider Address(ORC-24).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getOrderingProviderAddress(int rep)
+	public XAD GetOrderingProviderAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -785,7 +948,7 @@ public class ORC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ordering Provider Address (ORC-24).
    ///</summary>
-  public XAD[] getOrderingProviderAddress() {
+  public XAD[] GetOrderingProviderAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -803,6 +966,24 @@ public class ORC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ordering Provider Address (ORC-24).
+   ///</summary>
+  public int OrderingProviderAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Order Status Modifier(ORC-25).
 	///</summary>

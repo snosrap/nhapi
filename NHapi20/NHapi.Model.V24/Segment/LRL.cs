@@ -9,13 +9,14 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 LRL message segment. 
-/// This segment has the following fields:
-/// * LRL-1: Primary Key Value - LRL (PL)
-/// * LRL-2: Segment Action Code (ID)
-/// * LRL-3: Segment Unique Key (EI)
-/// * LRL-4: Location Relationship ID (CE)
-/// * LRL-5: Organizational Location Relationship Value (XON)
-/// * LRL-6: Patient Location Relationship Value (PL)
+/// This segment has the following fields:<ol>
+///<li>LRL-1: Primary Key Value - LRL (PL)</li>
+///<li>LRL-2: Segment Action Code (ID)</li>
+///<li>LRL-3: Segment Unique Key (EI)</li>
+///<li>LRL-4: Location Relationship ID (CE)</li>
+///<li>LRL-5: Organizational Location Relationship Value (XON)</li>
+///<li>LRL-6: Patient Location Relationship Value (PL)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -140,7 +141,7 @@ public class LRL : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getOrganizationalLocationRelationshipValue(int rep)
+	public XON GetOrganizationalLocationRelationshipValue(int rep)
 	{
 			XON ret = null;
 			try
@@ -157,7 +158,7 @@ public class LRL : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Organizational Location Relationship Value (LRL-5).
    ///</summary>
-  public XON[] getOrganizationalLocationRelationshipValue() {
+  public XON[] GetOrganizationalLocationRelationshipValue() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -175,6 +176,24 @@ public class LRL : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Organizational Location Relationship Value (LRL-5).
+   ///</summary>
+  public int OrganizationalLocationRelationshipValueRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Patient Location Relationship Value(LRL-6).
 	///</summary>

@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the MFN_M03_MF_TEST Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: OM1 (General Segment) 
-/// * 2: Hxx (any HL7 segment) 
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: OM1 (General Segment) </li>
+///<li>2: Hxx (any HL7 segment) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M03_MF_TEST : AbstractGroup {

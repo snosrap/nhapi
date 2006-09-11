@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a MFN_M07 message structure (see chapter 8). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MFI (Master File Identification) 
-/// * 2: MFN_M07_MF_CLIN_STUDY_SCHED (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MFI (Master File Identification) </li>
+///<li>2: MFN_M07_MF_CLIN_STUDY_SCHED (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M07 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M07_MF_CLIN_STUDY_SCHED (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M07_MF_CLIN_STUDY_SCHED getMF_CLIN_STUDY_SCHED() {
+	public MFN_M07_MF_CLIN_STUDY_SCHED GetMF_CLIN_STUDY_SCHED() {
 	   MFN_M07_MF_CLIN_STUDY_SCHED ret = null;
 	   try {
 	      ret = (MFN_M07_MF_CLIN_STUDY_SCHED)this.GetStructure("MF_CLIN_STUDY_SCHED");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M07_MF_CLIN_STUDY_SCHED getMF_CLIN_STUDY_SCHED(int rep) { 
+	public MFN_M07_MF_CLIN_STUDY_SCHED GetMF_CLIN_STUDY_SCHED(int rep) { 
 	   return (MFN_M07_MF_CLIN_STUDY_SCHED)this.GetStructure("MF_CLIN_STUDY_SCHED", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M07_MF_CLIN_STUDY_SCHED 
 	 */ 
-	public int MF_CLIN_STUDY_SCHEDReps { 
+	public int MF_CLIN_STUDY_SCHEDRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,17 +9,18 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 RQD message segment. 
-/// This segment has the following fields:
-/// * RQD-1: Requisition Line Number (SI)
-/// * RQD-2: Item Code - Internal (CE)
-/// * RQD-3: Item Code - External (CE)
-/// * RQD-4: Hospital Item Code (CE)
-/// * RQD-5: Requisition Quantity (NM)
-/// * RQD-6: Requisition Unit of Measure (CE)
-/// * RQD-7: Dept. Cost Center (IS)
-/// * RQD-8: Item Natural Account Code (IS)
-/// * RQD-9: Deliver To ID (CE)
-/// * RQD-10: Date Needed (DT)
+/// This segment has the following fields:<ol>
+///<li>RQD-1: Requisition Line Number (SI)</li>
+///<li>RQD-2: Item Code - Internal (CE)</li>
+///<li>RQD-3: Item Code - External (CE)</li>
+///<li>RQD-4: Hospital Item Code (CE)</li>
+///<li>RQD-5: Requisition Quantity (NM)</li>
+///<li>RQD-6: Requisition Unit of Measure (CE)</li>
+///<li>RQD-7: Dept. Cost Center (IS)</li>
+///<li>RQD-8: Item Natural Account Code (IS)</li>
+///<li>RQD-9: Deliver To ID (CE)</li>
+///<li>RQD-10: Date Needed (DT)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

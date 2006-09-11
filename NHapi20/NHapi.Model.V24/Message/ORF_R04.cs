@@ -12,14 +12,16 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a ORF_R04 message structure (see chapter 7). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: QRD (Original-Style Query Definition) 
-/// * 3: QRF (Original Style Query Filter) optional 
-/// * 4: ORF_R04_RESPONSE (a Group object) repeating
-/// * 5: ERR (Error) optional 
-/// * 6: QAK (Query Acknowledgment) optional 
-/// * 7: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: QRD (Original-Style Query Definition) </li>
+///<li>3: QRF (Original Style Query Filter) optional </li>
+///<li>4: ORF_R04_RESPONSE (a Group object) repeating</li>
+///<li>5: ERR (Error) optional </li>
+///<li>6: QAK (Query Acknowledgment) optional </li>
+///<li>7: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORF_R04 : AbstractMessage  {
@@ -123,7 +125,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORF_R04_RESPONSE (a Group object) - creates it if necessary
 	///</summary>
-	public ORF_R04_RESPONSE getRESPONSE() {
+	public ORF_R04_RESPONSE GetRESPONSE() {
 	   ORF_R04_RESPONSE ret = null;
 	   try {
 	      ret = (ORF_R04_RESPONSE)this.GetStructure("RESPONSE");
@@ -140,14 +142,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORF_R04_RESPONSE getRESPONSE(int rep) { 
+	public ORF_R04_RESPONSE GetRESPONSE(int rep) { 
 	   return (ORF_R04_RESPONSE)this.GetStructure("RESPONSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORF_R04_RESPONSE 
 	 */ 
-	public int RESPONSEReps { 
+	public int RESPONSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Group
 ///Represents the PEX_P07_ASSOCIATED_PERSON Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: NK1 (Next of kin / associated parties) 
-/// * 1: PEX_P07_ASSOCIATED_RX_ORDER (a Group object) optional 
-/// * 2: PEX_P07_ASSOCIATED_RX_ADMIN (a Group object) optional repeating
-/// * 3: PRB (Problem Details) optional repeating
-/// * 4: OBX (Observation/Result) optional repeating
+///<ol>
+///<li>0: NK1 (Next of kin / associated parties) </li>
+///<li>1: PEX_P07_ASSOCIATED_RX_ORDER (a Group object) optional </li>
+///<li>2: PEX_P07_ASSOCIATED_RX_ADMIN (a Group object) optional repeating</li>
+///<li>3: PRB (Problem Details) optional repeating</li>
+///<li>4: OBX (Observation/Result) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PEX_P07_ASSOCIATED_PERSON : AbstractGroup {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PEX_P07_ASSOCIATED_RX_ADMIN (a Group object) - creates it if necessary
 	///</summary>
-	public PEX_P07_ASSOCIATED_RX_ADMIN getASSOCIATED_RX_ADMIN() {
+	public PEX_P07_ASSOCIATED_RX_ADMIN GetASSOCIATED_RX_ADMIN() {
 	   PEX_P07_ASSOCIATED_RX_ADMIN ret = null;
 	   try {
 	      ret = (PEX_P07_ASSOCIATED_RX_ADMIN)this.GetStructure("ASSOCIATED_RX_ADMIN");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PEX_P07_ASSOCIATED_RX_ADMIN getASSOCIATED_RX_ADMIN(int rep) { 
+	public PEX_P07_ASSOCIATED_RX_ADMIN GetASSOCIATED_RX_ADMIN(int rep) { 
 	   return (PEX_P07_ASSOCIATED_RX_ADMIN)this.GetStructure("ASSOCIATED_RX_ADMIN", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PEX_P07_ASSOCIATED_RX_ADMIN 
 	 */ 
-	public int ASSOCIATED_RX_ADMINReps { 
+	public int ASSOCIATED_RX_ADMINRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -112,7 +114,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PRB (Problem Details) - creates it if necessary
 	///</summary>
-	public PRB getPRB() {
+	public PRB GetPRB() {
 	   PRB ret = null;
 	   try {
 	      ret = (PRB)this.GetStructure("PRB");
@@ -129,14 +131,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PRB getPRB(int rep) { 
+	public PRB GetPRB(int rep) { 
 	   return (PRB)this.GetStructure("PRB", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PRB 
 	 */ 
-	public int PRBReps { 
+	public int PRBRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -153,7 +155,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -170,14 +172,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

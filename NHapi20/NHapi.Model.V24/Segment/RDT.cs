@@ -9,8 +9,9 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 RDT message segment. 
-/// This segment has the following fields:
-/// * RDT-1: Column Value (varies)
+/// This segment has the following fields:<ol>
+///<li>RDT-1: Column Value (varies)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

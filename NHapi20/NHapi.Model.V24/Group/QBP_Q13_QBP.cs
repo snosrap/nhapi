@@ -12,7 +12,9 @@ namespace NHapi.Model.V24.Group
 ///Represents the QBP_Q13_QBP Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: Zxx (any Z segment) optional 
+///<ol>
+///<li>0: Zxx (any Z segment) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class QBP_Q13_QBP : AbstractGroup {

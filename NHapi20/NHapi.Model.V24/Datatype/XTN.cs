@@ -78,7 +78,7 @@ get{
 	/// Returns [(999)] 999-9999 [X99999][C any text] (component #0).  This is a convenience method that saves you from 
 	/// casting and handling an exception.
 	///</summary>
-	public TN get9999999X99999CAnyText {
+	public TN Get9999999X99999CAnyText {
 get{
 	   TN ret = null;
 	   try {

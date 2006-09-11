@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Group
 ///Represents the MFN_M02_MF_STAFF Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: STF (Staff Identification) 
-/// * 2: PRA (Practitioner Detail) optional 
-/// * 3: ORG (Practitioner Organization Unit) optional 
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: STF (Staff Identification) </li>
+///<li>2: PRA (Practitioner Detail) optional </li>
+///<li>3: ORG (Practitioner Organization Unit) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M02_MF_STAFF : AbstractGroup {

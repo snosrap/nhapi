@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a ACK message structure (see chapter all). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ACK : AbstractMessage  {

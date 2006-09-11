@@ -9,11 +9,12 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 EQL message segment. 
-/// This segment has the following fields:
-/// * EQL-1: Query Tag (ST)
-/// * EQL-2: Query/Response Format Code (ID)
-/// * EQL-3: EQL Query Name (CE)
-/// * EQL-4: EQL Query Statement (ST)
+/// This segment has the following fields:<ol>
+///<li>EQL-1: Query Tag (ST)</li>
+///<li>EQL-2: Query/Response Format Code (ID)</li>
+///<li>EQL-3: EQL Query Name (CE)</li>
+///<li>EQL-4: EQL Query Statement (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

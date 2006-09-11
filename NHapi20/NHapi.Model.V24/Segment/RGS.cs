@@ -9,10 +9,11 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 RGS message segment. 
-/// This segment has the following fields:
-/// * RGS-1: Set ID - RGS (SI)
-/// * RGS-2: Segment Action Code (ID)
-/// * RGS-3: Resource Group ID (CE)
+/// This segment has the following fields:<ol>
+///<li>RGS-1: Set ID - RGS (SI)</li>
+///<li>RGS-2: Segment Action Code (ID)</li>
+///<li>RGS-3: Resource Group ID (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

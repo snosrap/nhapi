@@ -9,9 +9,10 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 BLC message segment. 
-/// This segment has the following fields:
-/// * BLC-1: Blood Product Code (CE)
-/// * BLC-2: Blood Amount (CQ)
+/// This segment has the following fields:<ol>
+///<li>BLC-1: Blood Product Code (CE)</li>
+///<li>BLC-2: Blood Amount (CQ)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

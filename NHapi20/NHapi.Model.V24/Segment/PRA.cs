@@ -9,19 +9,20 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 PRA message segment. 
-/// This segment has the following fields:
-/// * PRA-1: Primary Key Value - PRA (CE)
-/// * PRA-2: Practitioner Group (CE)
-/// * PRA-3: Practitioner Category (IS)
-/// * PRA-4: Provider Billing (ID)
-/// * PRA-5: Specialty (SPD)
-/// * PRA-6: Practitioner ID Numbers (PLN)
-/// * PRA-7: Privileges (PIP)
-/// * PRA-8: Date Entered Practice (DT)
-/// * PRA-9: Institution (CE)
-/// * PRA-10: Date Left Practice (DT)
-/// * PRA-11: Government Reimbursement Billing Eligibility (CE)
-/// * PRA-12: Set ID - PRA (SI)
+/// This segment has the following fields:<ol>
+///<li>PRA-1: Primary Key Value - PRA (CE)</li>
+///<li>PRA-2: Practitioner Group (CE)</li>
+///<li>PRA-3: Practitioner Category (IS)</li>
+///<li>PRA-4: Provider Billing (ID)</li>
+///<li>PRA-5: Specialty (SPD)</li>
+///<li>PRA-6: Practitioner ID Numbers (PLN)</li>
+///<li>PRA-7: Privileges (PIP)</li>
+///<li>PRA-8: Date Entered Practice (DT)</li>
+///<li>PRA-9: Institution (CE)</li>
+///<li>PRA-10: Date Left Practice (DT)</li>
+///<li>PRA-11: Government Reimbursement Billing Eligibility (CE)</li>
+///<li>PRA-12: Set ID - PRA (SI)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -83,7 +84,7 @@ public class PRA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getPractitionerGroup(int rep)
+	public CE GetPractitionerGroup(int rep)
 	{
 			CE ret = null;
 			try
@@ -100,7 +101,7 @@ public class PRA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Practitioner Group (PRA-2).
    ///</summary>
-  public CE[] getPractitionerGroup() {
+  public CE[] GetPractitionerGroup() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -118,12 +119,30 @@ public class PRA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Practitioner Group (PRA-2).
+   ///</summary>
+  public int PractitionerGroupRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Practitioner Category(PRA-3).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getPractitionerCategory(int rep)
+	public IS GetPractitionerCategory(int rep)
 	{
 			IS ret = null;
 			try
@@ -140,7 +159,7 @@ public class PRA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Practitioner Category (PRA-3).
    ///</summary>
-  public IS[] getPractitionerCategory() {
+  public IS[] GetPractitionerCategory() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -158,6 +177,24 @@ public class PRA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Practitioner Category (PRA-3).
+   ///</summary>
+  public int PractitionerCategoryRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Provider Billing(PRA-4).
 	///</summary>
@@ -186,7 +223,7 @@ public class PRA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public SPD getSpecialty(int rep)
+	public SPD GetSpecialty(int rep)
 	{
 			SPD ret = null;
 			try
@@ -203,7 +240,7 @@ public class PRA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specialty (PRA-5).
    ///</summary>
-  public SPD[] getSpecialty() {
+  public SPD[] GetSpecialty() {
      SPD[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -221,12 +258,30 @@ public class PRA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specialty (PRA-5).
+   ///</summary>
+  public int SpecialtyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Practitioner ID Numbers(PRA-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PLN getPractitionerIDNumbers(int rep)
+	public PLN GetPractitionerIDNumbers(int rep)
 	{
 			PLN ret = null;
 			try
@@ -243,7 +298,7 @@ public class PRA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Practitioner ID Numbers (PRA-6).
    ///</summary>
-  public PLN[] getPractitionerIDNumbers() {
+  public PLN[] GetPractitionerIDNumbers() {
      PLN[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -261,12 +316,30 @@ public class PRA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Practitioner ID Numbers (PRA-6).
+   ///</summary>
+  public int PractitionerIDNumbersRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Privileges(PRA-7).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PIP getPrivileges(int rep)
+	public PIP GetPrivileges(int rep)
 	{
 			PIP ret = null;
 			try
@@ -283,7 +356,7 @@ public class PRA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Privileges (PRA-7).
    ///</summary>
-  public PIP[] getPrivileges() {
+  public PIP[] GetPrivileges() {
      PIP[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -301,6 +374,24 @@ public class PRA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Privileges (PRA-7).
+   ///</summary>
+  public int PrivilegesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Date Entered Practice(PRA-8).
 	///</summary>
@@ -375,7 +466,7 @@ public class PRA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getGovernmentReimbursementBillingEligibility(int rep)
+	public CE GetGovernmentReimbursementBillingEligibility(int rep)
 	{
 			CE ret = null;
 			try
@@ -392,7 +483,7 @@ public class PRA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Government Reimbursement Billing Eligibility (PRA-11).
    ///</summary>
-  public CE[] getGovernmentReimbursementBillingEligibility() {
+  public CE[] GetGovernmentReimbursementBillingEligibility() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -410,6 +501,24 @@ public class PRA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Government Reimbursement Billing Eligibility (PRA-11).
+   ///</summary>
+  public int GovernmentReimbursementBillingEligibilityRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Set ID - PRA(PRA-12).
 	///</summary>

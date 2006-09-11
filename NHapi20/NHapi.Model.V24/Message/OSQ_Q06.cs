@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a OSQ_Q06 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: QRD (Original-Style Query Definition) 
-/// * 2: QRF (Original Style Query Filter) optional 
-/// * 3: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: QRD (Original-Style Query Definition) </li>
+///<li>2: QRF (Original Style Query Filter) optional </li>
+///<li>3: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OSQ_Q06 : AbstractMessage  {

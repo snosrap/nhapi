@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the SUR_P09_PRODUCT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PSH (Product Summary Header) 
-/// * 1: PDC (Product Detail Country) 
+///<ol>
+///<li>0: PSH (Product Summary Header) </li>
+///<li>1: PDC (Product Detail Country) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SUR_P09_PRODUCT : AbstractGroup {

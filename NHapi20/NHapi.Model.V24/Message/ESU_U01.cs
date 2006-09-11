@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a ESU_U01 message structure (see chapter 13). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EQU (Equipment Detail) 
-/// * 2: ISD (Interaction Status Detail) optional repeating
-/// * 3: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EQU (Equipment Detail) </li>
+///<li>2: ISD (Interaction Status Detail) optional repeating</li>
+///<li>3: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ESU_U01 : AbstractMessage  {
@@ -83,7 +85,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ISD (Interaction Status Detail) - creates it if necessary
 	///</summary>
-	public ISD getISD() {
+	public ISD GetISD() {
 	   ISD ret = null;
 	   try {
 	      ret = (ISD)this.GetStructure("ISD");
@@ -100,14 +102,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ISD getISD(int rep) { 
+	public ISD GetISD(int rep) { 
 	   return (ISD)this.GetStructure("ISD", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ISD 
 	 */ 
-	public int ISDReps { 
+	public int ISDRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a MFN_M08 message structure (see chapter 8). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MFI (Master File Identification) 
-/// * 2: MFN_M08_MF_TEST_NUMERIC (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MFI (Master File Identification) </li>
+///<li>2: MFN_M08_MF_TEST_NUMERIC (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M08 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M08_MF_TEST_NUMERIC (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M08_MF_TEST_NUMERIC getMF_TEST_NUMERIC() {
+	public MFN_M08_MF_TEST_NUMERIC GetMF_TEST_NUMERIC() {
 	   MFN_M08_MF_TEST_NUMERIC ret = null;
 	   try {
 	      ret = (MFN_M08_MF_TEST_NUMERIC)this.GetStructure("MF_TEST_NUMERIC");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M08_MF_TEST_NUMERIC getMF_TEST_NUMERIC(int rep) { 
+	public MFN_M08_MF_TEST_NUMERIC GetMF_TEST_NUMERIC(int rep) { 
 	   return (MFN_M08_MF_TEST_NUMERIC)this.GetStructure("MF_TEST_NUMERIC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M08_MF_TEST_NUMERIC 
 	 */ 
-	public int MF_TEST_NUMERICReps { 
+	public int MF_TEST_NUMERICRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,13 +12,15 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a BAR_P10 message structure (see chapter 6). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EVN (Event Type) 
-/// * 2: PID (Patient identification) 
-/// * 3: PV1 (Patient visit) 
-/// * 4: DG1 (Diagnosis) optional repeating
-/// * 5: GP1 (Grouping/Reimbursement - Visit) 
-/// * 6: BAR_P10_PROCEDURE (a Group object) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EVN (Event Type) </li>
+///<li>2: PID (Patient identification) </li>
+///<li>3: PV1 (Patient visit) </li>
+///<li>4: DG1 (Diagnosis) optional repeating</li>
+///<li>5: GP1 (Grouping/Reimbursement - Visit) </li>
+///<li>6: BAR_P10_PROCEDURE (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BAR_P10 : AbstractMessage  {
@@ -121,7 +123,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -138,14 +140,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -178,7 +180,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of BAR_P10_PROCEDURE (a Group object) - creates it if necessary
 	///</summary>
-	public BAR_P10_PROCEDURE getPROCEDURE() {
+	public BAR_P10_PROCEDURE GetPROCEDURE() {
 	   BAR_P10_PROCEDURE ret = null;
 	   try {
 	      ret = (BAR_P10_PROCEDURE)this.GetStructure("PROCEDURE");
@@ -195,14 +197,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public BAR_P10_PROCEDURE getPROCEDURE(int rep) { 
+	public BAR_P10_PROCEDURE GetPROCEDURE(int rep) { 
 	   return (BAR_P10_PROCEDURE)this.GetStructure("PROCEDURE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of BAR_P10_PROCEDURE 
 	 */ 
-	public int PROCEDUREReps { 
+	public int PROCEDURERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

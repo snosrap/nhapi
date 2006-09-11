@@ -12,14 +12,16 @@ namespace NHapi.Model.V24.Group
 ///Represents the OMP_O09_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RXO (Pharmacy/Treatment Order) 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: RXR (Pharmacy/Treatment Route) repeating
-/// * 4: OMP_O09_COMPONENT (a Group object) optional 
-/// * 5: OMP_O09_OBSERVATION (a Group object) optional repeating
-/// * 6: FT1 (Financial Transaction) optional repeating
-/// * 7: BLG (Billing) optional 
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RXO (Pharmacy/Treatment Order) </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: RXR (Pharmacy/Treatment Route) repeating</li>
+///<li>4: OMP_O09_COMPONENT (a Group object) optional </li>
+///<li>5: OMP_O09_OBSERVATION (a Group object) optional repeating</li>
+///<li>6: FT1 (Financial Transaction) optional repeating</li>
+///<li>7: BLG (Billing) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMP_O09_ORDER : AbstractGroup {
@@ -77,7 +79,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -94,14 +96,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -118,7 +120,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXR (Pharmacy/Treatment Route) - creates it if necessary
 	///</summary>
-	public RXR getRXR() {
+	public RXR GetRXR() {
 	   RXR ret = null;
 	   try {
 	      ret = (RXR)this.GetStructure("RXR");
@@ -135,14 +137,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXR getRXR(int rep) { 
+	public RXR GetRXR(int rep) { 
 	   return (RXR)this.GetStructure("RXR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXR 
 	 */ 
-	public int RXRReps { 
+	public int RXRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -175,7 +177,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OMP_O09_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public OMP_O09_OBSERVATION getOBSERVATION() {
+	public OMP_O09_OBSERVATION GetOBSERVATION() {
 	   OMP_O09_OBSERVATION ret = null;
 	   try {
 	      ret = (OMP_O09_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -192,14 +194,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OMP_O09_OBSERVATION getOBSERVATION(int rep) { 
+	public OMP_O09_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (OMP_O09_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OMP_O09_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -216,7 +218,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of FT1 (Financial Transaction) - creates it if necessary
 	///</summary>
-	public FT1 getFT1() {
+	public FT1 GetFT1() {
 	   FT1 ret = null;
 	   try {
 	      ret = (FT1)this.GetStructure("FT1");
@@ -233,14 +235,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public FT1 getFT1(int rep) { 
+	public FT1 GetFT1(int rep) { 
 	   return (FT1)this.GetStructure("FT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of FT1 
 	 */ 
-	public int FT1Reps { 
+	public int FT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

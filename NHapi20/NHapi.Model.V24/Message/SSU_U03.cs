@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a SSU_U03 message structure (see chapter 13). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EQU (Equipment Detail) 
-/// * 2: SSU_U03_SPECIMEN_CONTAINER (a Group object) repeating
-/// * 3: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EQU (Equipment Detail) </li>
+///<li>2: SSU_U03_SPECIMEN_CONTAINER (a Group object) repeating</li>
+///<li>3: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SSU_U03 : AbstractMessage  {
@@ -83,7 +85,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SSU_U03_SPECIMEN_CONTAINER (a Group object) - creates it if necessary
 	///</summary>
-	public SSU_U03_SPECIMEN_CONTAINER getSPECIMEN_CONTAINER() {
+	public SSU_U03_SPECIMEN_CONTAINER GetSPECIMEN_CONTAINER() {
 	   SSU_U03_SPECIMEN_CONTAINER ret = null;
 	   try {
 	      ret = (SSU_U03_SPECIMEN_CONTAINER)this.GetStructure("SPECIMEN_CONTAINER");
@@ -100,14 +102,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SSU_U03_SPECIMEN_CONTAINER getSPECIMEN_CONTAINER(int rep) { 
+	public SSU_U03_SPECIMEN_CONTAINER GetSPECIMEN_CONTAINER(int rep) { 
 	   return (SSU_U03_SPECIMEN_CONTAINER)this.GetStructure("SPECIMEN_CONTAINER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SSU_U03_SPECIMEN_CONTAINER 
 	 */ 
-	public int SPECIMEN_CONTAINERReps { 
+	public int SPECIMEN_CONTAINERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

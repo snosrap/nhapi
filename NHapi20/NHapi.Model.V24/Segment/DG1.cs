@@ -9,26 +9,27 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 DG1 message segment. 
-/// This segment has the following fields:
-/// * DG1-1: Set ID - DG1 (SI)
-/// * DG1-2: Diagnosis Coding Method (ID)
-/// * DG1-3: Diagnosis Code - DG1 (CE)
-/// * DG1-4: Diagnosis Description (ST)
-/// * DG1-5: Diagnosis Date/Time (TS)
-/// * DG1-6: Diagnosis Type (IS)
-/// * DG1-7: Major Diagnostic Category (CE)
-/// * DG1-8: Diagnostic Related Group (CE)
-/// * DG1-9: DRG Approval Indicator (ID)
-/// * DG1-10: DRG Grouper Review Code (IS)
-/// * DG1-11: Outlier Type (CE)
-/// * DG1-12: Outlier Days (NM)
-/// * DG1-13: Outlier Cost (CP)
-/// * DG1-14: Grouper Version And Type (ST)
-/// * DG1-15: Diagnosis Priority (ID)
-/// * DG1-16: Diagnosing Clinician (XCN)
-/// * DG1-17: Diagnosis Classification (IS)
-/// * DG1-18: Confidential Indicator (ID)
-/// * DG1-19: Attestation Date/Time (TS)
+/// This segment has the following fields:<ol>
+///<li>DG1-1: Set ID - DG1 (SI)</li>
+///<li>DG1-2: Diagnosis Coding Method (ID)</li>
+///<li>DG1-3: Diagnosis Code - DG1 (CE)</li>
+///<li>DG1-4: Diagnosis Description (ST)</li>
+///<li>DG1-5: Diagnosis Date/Time (TS)</li>
+///<li>DG1-6: Diagnosis Type (IS)</li>
+///<li>DG1-7: Major Diagnostic Category (CE)</li>
+///<li>DG1-8: Diagnostic Related Group (CE)</li>
+///<li>DG1-9: DRG Approval Indicator (ID)</li>
+///<li>DG1-10: DRG Grouper Review Code (IS)</li>
+///<li>DG1-11: Outlier Type (CE)</li>
+///<li>DG1-12: Outlier Days (NM)</li>
+///<li>DG1-13: Outlier Cost (CP)</li>
+///<li>DG1-14: Grouper Version And Type (ST)</li>
+///<li>DG1-15: Diagnosis Priority (ID)</li>
+///<li>DG1-16: Diagnosing Clinician (XCN)</li>
+///<li>DG1-17: Diagnosis Classification (IS)</li>
+///<li>DG1-18: Confidential Indicator (ID)</li>
+///<li>DG1-19: Attestation Date/Time (TS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -419,7 +420,7 @@ public class DG1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getDiagnosingClinician(int rep)
+	public XCN GetDiagnosingClinician(int rep)
 	{
 			XCN ret = null;
 			try
@@ -436,7 +437,7 @@ public class DG1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Diagnosing Clinician (DG1-16).
    ///</summary>
-  public XCN[] getDiagnosingClinician() {
+  public XCN[] GetDiagnosingClinician() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -454,6 +455,24 @@ public class DG1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Diagnosing Clinician (DG1-16).
+   ///</summary>
+  public int DiagnosingClinicianRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Diagnosis Classification(DG1-17).
 	///</summary>

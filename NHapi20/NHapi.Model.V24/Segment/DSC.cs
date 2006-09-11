@@ -9,9 +9,10 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 DSC message segment. 
-/// This segment has the following fields:
-/// * DSC-1: Continuation Pointer (ST)
-/// * DSC-2: Continuation Style (ID)
+/// This segment has the following fields:<ol>
+///<li>DSC-1: Continuation Pointer (ST)</li>
+///<li>DSC-2: Continuation Style (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

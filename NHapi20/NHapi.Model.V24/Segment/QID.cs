@@ -9,9 +9,10 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 QID message segment. 
-/// This segment has the following fields:
-/// * QID-1: Query Tag (ST)
-/// * QID-2: Message Query Name (CE)
+/// This segment has the following fields:<ol>
+///<li>QID-1: Query Tag (ST)</li>
+///<li>QID-2: Message Query Name (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

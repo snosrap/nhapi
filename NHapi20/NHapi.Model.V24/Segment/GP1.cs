@@ -9,12 +9,13 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 GP1 message segment. 
-/// This segment has the following fields:
-/// * GP1-1: Type of Bill Code (IS)
-/// * GP1-2: Revenue Code (IS)
-/// * GP1-3: Overall Claim Disposition Code (IS)
-/// * GP1-4: OCE Edits per Visit Code (IS)
-/// * GP1-5: Outlier Cost (CP)
+/// This segment has the following fields:<ol>
+///<li>GP1-1: Type of Bill Code (IS)</li>
+///<li>GP1-2: Revenue Code (IS)</li>
+///<li>GP1-3: Overall Claim Disposition Code (IS)</li>
+///<li>GP1-4: OCE Edits per Visit Code (IS)</li>
+///<li>GP1-5: Outlier Cost (CP)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -69,7 +70,7 @@ public class GP1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getRevenueCode(int rep)
+	public IS GetRevenueCode(int rep)
 	{
 			IS ret = null;
 			try
@@ -86,7 +87,7 @@ public class GP1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Revenue Code (GP1-2).
    ///</summary>
-  public IS[] getRevenueCode() {
+  public IS[] GetRevenueCode() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -104,6 +105,24 @@ public class GP1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Revenue Code (GP1-2).
+   ///</summary>
+  public int RevenueCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Overall Claim Disposition Code(GP1-3).
 	///</summary>
@@ -132,7 +151,7 @@ public class GP1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getOCEEditsPerVisitCode(int rep)
+	public IS GetOCEEditsPerVisitCode(int rep)
 	{
 			IS ret = null;
 			try
@@ -149,7 +168,7 @@ public class GP1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of OCE Edits per Visit Code (GP1-4).
    ///</summary>
-  public IS[] getOCEEditsPerVisitCode() {
+  public IS[] GetOCEEditsPerVisitCode() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -167,6 +186,24 @@ public class GP1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of OCE Edits per Visit Code (GP1-4).
+   ///</summary>
+  public int OCEEditsPerVisitCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Outlier Cost(GP1-5).
 	///</summary>

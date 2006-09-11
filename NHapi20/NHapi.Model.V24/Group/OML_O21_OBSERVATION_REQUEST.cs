@@ -12,13 +12,15 @@ namespace NHapi.Model.V24.Group
 ///Represents the OML_O21_OBSERVATION_REQUEST Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBR (Observation Request) 
-/// * 1: OML_O21_CONTAINER_2 (a Group object) optional repeating
-/// * 2: TCD (Test Code Detail) optional 
-/// * 3: NTE (Notes and Comments) optional repeating
-/// * 4: DG1 (Diagnosis) optional repeating
-/// * 5: OML_O21_OBSERVATION (a Group object) optional repeating
-/// * 6: OML_O21_PRIOR_RESULT (a Group object) optional repeating
+///<ol>
+///<li>0: OBR (Observation Request) </li>
+///<li>1: OML_O21_CONTAINER_2 (a Group object) optional repeating</li>
+///<li>2: TCD (Test Code Detail) optional </li>
+///<li>3: NTE (Notes and Comments) optional repeating</li>
+///<li>4: DG1 (Diagnosis) optional repeating</li>
+///<li>5: OML_O21_OBSERVATION (a Group object) optional repeating</li>
+///<li>6: OML_O21_PRIOR_RESULT (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O21_OBSERVATION_REQUEST : AbstractGroup {
@@ -59,7 +61,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OML_O21_CONTAINER_2 (a Group object) - creates it if necessary
 	///</summary>
-	public OML_O21_CONTAINER_2 getCONTAINER_2() {
+	public OML_O21_CONTAINER_2 GetCONTAINER_2() {
 	   OML_O21_CONTAINER_2 ret = null;
 	   try {
 	      ret = (OML_O21_CONTAINER_2)this.GetStructure("CONTAINER_2");
@@ -76,14 +78,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OML_O21_CONTAINER_2 getCONTAINER_2(int rep) { 
+	public OML_O21_CONTAINER_2 GetCONTAINER_2(int rep) { 
 	   return (OML_O21_CONTAINER_2)this.GetStructure("CONTAINER_2", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OML_O21_CONTAINER_2 
 	 */ 
-	public int CONTAINER_2Reps { 
+	public int CONTAINER_2RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -116,7 +118,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -133,14 +135,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -157,7 +159,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -174,14 +176,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -198,7 +200,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OML_O21_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public OML_O21_OBSERVATION getOBSERVATION() {
+	public OML_O21_OBSERVATION GetOBSERVATION() {
 	   OML_O21_OBSERVATION ret = null;
 	   try {
 	      ret = (OML_O21_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -215,14 +217,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OML_O21_OBSERVATION getOBSERVATION(int rep) { 
+	public OML_O21_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (OML_O21_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OML_O21_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -239,7 +241,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OML_O21_PRIOR_RESULT (a Group object) - creates it if necessary
 	///</summary>
-	public OML_O21_PRIOR_RESULT getPRIOR_RESULT() {
+	public OML_O21_PRIOR_RESULT GetPRIOR_RESULT() {
 	   OML_O21_PRIOR_RESULT ret = null;
 	   try {
 	      ret = (OML_O21_PRIOR_RESULT)this.GetStructure("PRIOR_RESULT");
@@ -256,14 +258,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OML_O21_PRIOR_RESULT getPRIOR_RESULT(int rep) { 
+	public OML_O21_PRIOR_RESULT GetPRIOR_RESULT(int rep) { 
 	   return (OML_O21_PRIOR_RESULT)this.GetStructure("PRIOR_RESULT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OML_O21_PRIOR_RESULT 
 	 */ 
-	public int PRIOR_RESULTReps { 
+	public int PRIOR_RESULTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

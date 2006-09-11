@@ -9,19 +9,20 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 FHS message segment. 
-/// This segment has the following fields:
-/// * FHS-1: File Field Separator (ST)
-/// * FHS-2: File Encoding Characters (ST)
-/// * FHS-3: File Sending Application (ST)
-/// * FHS-4: File Sending Facility (ST)
-/// * FHS-5: File Receiving Application (ST)
-/// * FHS-6: File Receiving Facility (ST)
-/// * FHS-7: File Creation Date/Time (TS)
-/// * FHS-8: File Security (ST)
-/// * FHS-9: File Name/ID (ST)
-/// * FHS-10: File Header Comment (ST)
-/// * FHS-11: File Control ID (ST)
-/// * FHS-12: Reference File Control ID (ST)
+/// This segment has the following fields:<ol>
+///<li>FHS-1: File Field Separator (ST)</li>
+///<li>FHS-2: File Encoding Characters (ST)</li>
+///<li>FHS-3: File Sending Application (ST)</li>
+///<li>FHS-4: File Sending Facility (ST)</li>
+///<li>FHS-5: File Receiving Application (ST)</li>
+///<li>FHS-6: File Receiving Facility (ST)</li>
+///<li>FHS-7: File Creation Date/Time (TS)</li>
+///<li>FHS-8: File Security (ST)</li>
+///<li>FHS-9: File Name/ID (ST)</li>
+///<li>FHS-10: File Header Comment (ST)</li>
+///<li>FHS-11: File Control ID (ST)</li>
+///<li>FHS-12: Reference File Control ID (ST)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

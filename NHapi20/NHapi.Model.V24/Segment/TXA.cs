@@ -9,30 +9,31 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 TXA message segment. 
-/// This segment has the following fields:
-/// * TXA-1: Set ID- TXA (SI)
-/// * TXA-2: Document Type (IS)
-/// * TXA-3: Document Content Presentation (ID)
-/// * TXA-4: Activity Date/Time (TS)
-/// * TXA-5: Primary Activity Provider Code/Name (XCN)
-/// * TXA-6: Origination Date/Time (TS)
-/// * TXA-7: Transcription Date/Time (TS)
-/// * TXA-8: Edit Date/Time (TS)
-/// * TXA-9: Originator Code/Name (XCN)
-/// * TXA-10: Assigned Document Authenticator (XCN)
-/// * TXA-11: Transcriptionist Code/Name (XCN)
-/// * TXA-12: Unique Document Number (EI)
-/// * TXA-13: Parent Document Number (EI)
-/// * TXA-14: Placer Order Number (EI)
-/// * TXA-15: Filler Order Number (EI)
-/// * TXA-16: Unique Document File Name (ST)
-/// * TXA-17: Document Completion Status (ID)
-/// * TXA-18: Document Confidentiality Status (ID)
-/// * TXA-19: Document Availability Status (ID)
-/// * TXA-20: Document Storage Status (ID)
-/// * TXA-21: Document Change Reason (ST)
-/// * TXA-22: Authentication Person, Time Stamp (PPN)
-/// * TXA-23: Distributed Copies (Code and Name of Recipients) (XCN)
+/// This segment has the following fields:<ol>
+///<li>TXA-1: Set ID- TXA (SI)</li>
+///<li>TXA-2: Document Type (IS)</li>
+///<li>TXA-3: Document Content Presentation (ID)</li>
+///<li>TXA-4: Activity Date/Time (TS)</li>
+///<li>TXA-5: Primary Activity Provider Code/Name (XCN)</li>
+///<li>TXA-6: Origination Date/Time (TS)</li>
+///<li>TXA-7: Transcription Date/Time (TS)</li>
+///<li>TXA-8: Edit Date/Time (TS)</li>
+///<li>TXA-9: Originator Code/Name (XCN)</li>
+///<li>TXA-10: Assigned Document Authenticator (XCN)</li>
+///<li>TXA-11: Transcriptionist Code/Name (XCN)</li>
+///<li>TXA-12: Unique Document Number (EI)</li>
+///<li>TXA-13: Parent Document Number (EI)</li>
+///<li>TXA-14: Placer Order Number (EI)</li>
+///<li>TXA-15: Filler Order Number (EI)</li>
+///<li>TXA-16: Unique Document File Name (ST)</li>
+///<li>TXA-17: Document Completion Status (ID)</li>
+///<li>TXA-18: Document Confidentiality Status (ID)</li>
+///<li>TXA-19: Document Availability Status (ID)</li>
+///<li>TXA-20: Document Storage Status (ID)</li>
+///<li>TXA-21: Document Change Reason (ST)</li>
+///<li>TXA-22: Authentication Person, Time Stamp (PPN)</li>
+///<li>TXA-23: Distributed Copies (Code and Name of Recipients) (XCN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -174,7 +175,7 @@ public class TXA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPrimaryActivityProviderCodeName(int rep)
+	public XCN GetPrimaryActivityProviderCodeName(int rep)
 	{
 			XCN ret = null;
 			try
@@ -191,7 +192,7 @@ public class TXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Primary Activity Provider Code/Name (TXA-5).
    ///</summary>
-  public XCN[] getPrimaryActivityProviderCodeName() {
+  public XCN[] GetPrimaryActivityProviderCodeName() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -209,6 +210,24 @@ public class TXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Primary Activity Provider Code/Name (TXA-5).
+   ///</summary>
+  public int PrimaryActivityProviderCodeNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Origination Date/Time(TXA-6).
 	///</summary>
@@ -260,7 +279,7 @@ public class TXA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TS getEditDateTime(int rep)
+	public TS GetEditDateTime(int rep)
 	{
 			TS ret = null;
 			try
@@ -277,7 +296,7 @@ public class TXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Edit Date/Time (TXA-8).
    ///</summary>
-  public TS[] getEditDateTime() {
+  public TS[] GetEditDateTime() {
      TS[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -295,12 +314,30 @@ public class TXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Edit Date/Time (TXA-8).
+   ///</summary>
+  public int EditDateTimeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Originator Code/Name(TXA-9).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getOriginatorCodeName(int rep)
+	public XCN GetOriginatorCodeName(int rep)
 	{
 			XCN ret = null;
 			try
@@ -317,7 +354,7 @@ public class TXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Originator Code/Name (TXA-9).
    ///</summary>
-  public XCN[] getOriginatorCodeName() {
+  public XCN[] GetOriginatorCodeName() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -335,12 +372,30 @@ public class TXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Originator Code/Name (TXA-9).
+   ///</summary>
+  public int OriginatorCodeNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Assigned Document Authenticator(TXA-10).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getAssignedDocumentAuthenticator(int rep)
+	public XCN GetAssignedDocumentAuthenticator(int rep)
 	{
 			XCN ret = null;
 			try
@@ -357,7 +412,7 @@ public class TXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Assigned Document Authenticator (TXA-10).
    ///</summary>
-  public XCN[] getAssignedDocumentAuthenticator() {
+  public XCN[] GetAssignedDocumentAuthenticator() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -375,12 +430,30 @@ public class TXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Assigned Document Authenticator (TXA-10).
+   ///</summary>
+  public int AssignedDocumentAuthenticatorRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Transcriptionist Code/Name(TXA-11).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getTranscriptionistCodeName(int rep)
+	public XCN GetTranscriptionistCodeName(int rep)
 	{
 			XCN ret = null;
 			try
@@ -397,7 +470,7 @@ public class TXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Transcriptionist Code/Name (TXA-11).
    ///</summary>
-  public XCN[] getTranscriptionistCodeName() {
+  public XCN[] GetTranscriptionistCodeName() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -415,6 +488,24 @@ public class TXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Transcriptionist Code/Name (TXA-11).
+   ///</summary>
+  public int TranscriptionistCodeNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Unique Document Number(TXA-12).
 	///</summary>
@@ -466,7 +557,7 @@ public class TXA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getPlacerOrderNumber(int rep)
+	public EI GetPlacerOrderNumber(int rep)
 	{
 			EI ret = null;
 			try
@@ -483,7 +574,7 @@ public class TXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Order Number (TXA-14).
    ///</summary>
-  public EI[] getPlacerOrderNumber() {
+  public EI[] GetPlacerOrderNumber() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -501,6 +592,24 @@ public class TXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Order Number (TXA-14).
+   ///</summary>
+  public int PlacerOrderNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Filler Order Number(TXA-15).
 	///</summary>
@@ -667,7 +776,7 @@ public class TXA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PPN getAuthenticationPersonTimeStamp(int rep)
+	public PPN GetAuthenticationPersonTimeStamp(int rep)
 	{
 			PPN ret = null;
 			try
@@ -684,7 +793,7 @@ public class TXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Authentication Person, Time Stamp (TXA-22).
    ///</summary>
-  public PPN[] getAuthenticationPersonTimeStamp() {
+  public PPN[] GetAuthenticationPersonTimeStamp() {
      PPN[] ret = null;
     try {
         IType[] t = this.GetField(22);  
@@ -702,12 +811,30 @@ public class TXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Authentication Person, Time Stamp (TXA-22).
+   ///</summary>
+  public int AuthenticationPersonTimeStampRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(22);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Distributed Copies (Code and Name of Recipients)(TXA-23).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getDistributedCopiesCodeandNameofRecipients(int rep)
+	public XCN GetDistributedCopiesCodeandNameofRecipients(int rep)
 	{
 			XCN ret = null;
 			try
@@ -724,7 +851,7 @@ public class TXA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Distributed Copies (Code and Name of Recipients) (TXA-23).
    ///</summary>
-  public XCN[] getDistributedCopiesCodeandNameofRecipients() {
+  public XCN[] GetDistributedCopiesCodeandNameofRecipients() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(23);  
@@ -742,5 +869,23 @@ public class TXA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Distributed Copies (Code and Name of Recipients) (TXA-23).
+   ///</summary>
+  public int DistributedCopiesCodeandNameofRecipientsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(23);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a OML_O21 message structure (see chapter 4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: OML_O21_PATIENT (a Group object) optional 
-/// * 3: OML_O21_ORDER_GENERAL (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: OML_O21_PATIENT (a Group object) optional </li>
+///<li>3: OML_O21_ORDER_GENERAL (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O21 : AbstractMessage  {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -124,7 +126,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OML_O21_ORDER_GENERAL (a Group object) - creates it if necessary
 	///</summary>
-	public OML_O21_ORDER_GENERAL getORDER_GENERAL() {
+	public OML_O21_ORDER_GENERAL GetORDER_GENERAL() {
 	   OML_O21_ORDER_GENERAL ret = null;
 	   try {
 	      ret = (OML_O21_ORDER_GENERAL)this.GetStructure("ORDER_GENERAL");
@@ -141,14 +143,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OML_O21_ORDER_GENERAL getORDER_GENERAL(int rep) { 
+	public OML_O21_ORDER_GENERAL GetORDER_GENERAL(int rep) { 
 	   return (OML_O21_ORDER_GENERAL)this.GetStructure("ORDER_GENERAL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OML_O21_ORDER_GENERAL 
 	 */ 
-	public int ORDER_GENERALReps { 
+	public int ORDER_GENERALRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

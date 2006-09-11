@@ -12,12 +12,14 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a ADT_A52 message structure (see chapter 3). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EVN (Event Type) 
-/// * 2: PID (Patient identification) 
-/// * 3: PD1 (patient additional demographic) optional 
-/// * 4: PV1 (Patient visit) 
-/// * 5: PV2 (Patient visit - additional information) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EVN (Event Type) </li>
+///<li>2: PID (Patient identification) </li>
+///<li>3: PD1 (patient additional demographic) optional </li>
+///<li>4: PV1 (Patient visit) </li>
+///<li>5: PV2 (Patient visit - additional information) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A52 : AbstractMessage  {

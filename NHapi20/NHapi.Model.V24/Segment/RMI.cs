@@ -9,10 +9,11 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 RMI message segment. 
-/// This segment has the following fields:
-/// * RMI-1: Risk Management Incident Code (CE)
-/// * RMI-2: Date/Time Incident (TS)
-/// * RMI-3: Incident Type Code (CE)
+/// This segment has the following fields:<ol>
+///<li>RMI-1: Risk Management Incident Code (CE)</li>
+///<li>RMI-2: Date/Time Incident (TS)</li>
+///<li>RMI-3: Incident Type Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

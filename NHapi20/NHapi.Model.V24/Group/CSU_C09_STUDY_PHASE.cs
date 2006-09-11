@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the CSU_C09_STUDY_PHASE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: CSP (Clinical Study Phase) optional repeating
-/// * 1: CSU_C09_STUDY_SCHEDULE (a Group object) repeating
+///<ol>
+///<li>0: CSP (Clinical Study Phase) optional repeating</li>
+///<li>1: CSU_C09_STUDY_SCHEDULE (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class CSU_C09_STUDY_PHASE : AbstractGroup {
@@ -33,7 +35,7 @@ public class CSU_C09_STUDY_PHASE : AbstractGroup {
 	///<summary>
 	/// Returns  first repetition of CSP (Clinical Study Phase) - creates it if necessary
 	///</summary>
-	public CSP getCSP() {
+	public CSP GetCSP() {
 	   CSP ret = null;
 	   try {
 	      ret = (CSP)this.GetStructure("CSP");
@@ -50,14 +52,14 @@ public class CSU_C09_STUDY_PHASE : AbstractGroup {
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSP getCSP(int rep) { 
+	public CSP GetCSP(int rep) { 
 	   return (CSP)this.GetStructure("CSP", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSP 
 	 */ 
-	public int CSPReps { 
+	public int CSPRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -74,7 +76,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CSU_C09_STUDY_SCHEDULE (a Group object) - creates it if necessary
 	///</summary>
-	public CSU_C09_STUDY_SCHEDULE getSTUDY_SCHEDULE() {
+	public CSU_C09_STUDY_SCHEDULE GetSTUDY_SCHEDULE() {
 	   CSU_C09_STUDY_SCHEDULE ret = null;
 	   try {
 	      ret = (CSU_C09_STUDY_SCHEDULE)this.GetStructure("STUDY_SCHEDULE");
@@ -91,14 +93,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSU_C09_STUDY_SCHEDULE getSTUDY_SCHEDULE(int rep) { 
+	public CSU_C09_STUDY_SCHEDULE GetSTUDY_SCHEDULE(int rep) { 
 	   return (CSU_C09_STUDY_SCHEDULE)this.GetStructure("STUDY_SCHEDULE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSU_C09_STUDY_SCHEDULE 
 	 */ 
-	public int STUDY_SCHEDULEReps { 
+	public int STUDY_SCHEDULERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the CSU_C09_STUDY_SCHEDULE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: CSS (Clinical Study Data Schedule Segment) optional 
-/// * 1: CSU_C09_STUDY_OBSERVATION (a Group object) repeating
-/// * 2: CSU_C09_STUDY_PHARM (a Group object) repeating
+///<ol>
+///<li>0: CSS (Clinical Study Data Schedule Segment) optional </li>
+///<li>1: CSU_C09_STUDY_OBSERVATION (a Group object) repeating</li>
+///<li>2: CSU_C09_STUDY_PHARM (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class CSU_C09_STUDY_SCHEDULE : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CSU_C09_STUDY_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public CSU_C09_STUDY_OBSERVATION getSTUDY_OBSERVATION() {
+	public CSU_C09_STUDY_OBSERVATION GetSTUDY_OBSERVATION() {
 	   CSU_C09_STUDY_OBSERVATION ret = null;
 	   try {
 	      ret = (CSU_C09_STUDY_OBSERVATION)this.GetStructure("STUDY_OBSERVATION");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSU_C09_STUDY_OBSERVATION getSTUDY_OBSERVATION(int rep) { 
+	public CSU_C09_STUDY_OBSERVATION GetSTUDY_OBSERVATION(int rep) { 
 	   return (CSU_C09_STUDY_OBSERVATION)this.GetStructure("STUDY_OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSU_C09_STUDY_OBSERVATION 
 	 */ 
-	public int STUDY_OBSERVATIONReps { 
+	public int STUDY_OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CSU_C09_STUDY_PHARM (a Group object) - creates it if necessary
 	///</summary>
-	public CSU_C09_STUDY_PHARM getSTUDY_PHARM() {
+	public CSU_C09_STUDY_PHARM GetSTUDY_PHARM() {
 	   CSU_C09_STUDY_PHARM ret = null;
 	   try {
 	      ret = (CSU_C09_STUDY_PHARM)this.GetStructure("STUDY_PHARM");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSU_C09_STUDY_PHARM getSTUDY_PHARM(int rep) { 
+	public CSU_C09_STUDY_PHARM GetSTUDY_PHARM(int rep) { 
 	   return (CSU_C09_STUDY_PHARM)this.GetStructure("STUDY_PHARM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSU_C09_STUDY_PHARM 
 	 */ 
-	public int STUDY_PHARMReps { 
+	public int STUDY_PHARMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

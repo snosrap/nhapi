@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a ESR_U02 message structure (see chapter 13). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EQU (Equipment Detail) 
-/// * 2: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EQU (Equipment Detail) </li>
+///<li>2: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ESR_U02 : AbstractMessage  {

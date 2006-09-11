@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Group
 ///Represents the RGV_O15_GIVE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RXG (Pharmacy/Treatment Give) 
-/// * 1: RXR (Pharmacy/Treatment Route) repeating
-/// * 2: RXC (Pharmacy/Treatment Component Order) optional repeating
-/// * 3: RGV_O15_OBSERVATION (a Group object) repeating
+///<ol>
+///<li>0: RXG (Pharmacy/Treatment Give) </li>
+///<li>1: RXR (Pharmacy/Treatment Route) repeating</li>
+///<li>2: RXC (Pharmacy/Treatment Component Order) optional repeating</li>
+///<li>3: RGV_O15_OBSERVATION (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RGV_O15_GIVE : AbstractGroup {
@@ -53,7 +55,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXR (Pharmacy/Treatment Route) - creates it if necessary
 	///</summary>
-	public RXR getRXR() {
+	public RXR GetRXR() {
 	   RXR ret = null;
 	   try {
 	      ret = (RXR)this.GetStructure("RXR");
@@ -70,14 +72,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXR getRXR(int rep) { 
+	public RXR GetRXR(int rep) { 
 	   return (RXR)this.GetStructure("RXR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXR 
 	 */ 
-	public int RXRReps { 
+	public int RXRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -94,7 +96,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXC (Pharmacy/Treatment Component Order) - creates it if necessary
 	///</summary>
-	public RXC getRXC() {
+	public RXC GetRXC() {
 	   RXC ret = null;
 	   try {
 	      ret = (RXC)this.GetStructure("RXC");
@@ -111,14 +113,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXC getRXC(int rep) { 
+	public RXC GetRXC(int rep) { 
 	   return (RXC)this.GetStructure("RXC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXC 
 	 */ 
-	public int RXCReps { 
+	public int RXCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -135,7 +137,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RGV_O15_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public RGV_O15_OBSERVATION getOBSERVATION() {
+	public RGV_O15_OBSERVATION GetOBSERVATION() {
 	   RGV_O15_OBSERVATION ret = null;
 	   try {
 	      ret = (RGV_O15_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -152,14 +154,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RGV_O15_OBSERVATION getOBSERVATION(int rep) { 
+	public RGV_O15_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (RGV_O15_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RGV_O15_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

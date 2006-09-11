@@ -9,19 +9,20 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 AIP message segment. 
-/// This segment has the following fields:
-/// * AIP-1: Set ID - AIP (SI)
-/// * AIP-2: Segment Action Code (ID)
-/// * AIP-3: Personnel Resource ID (XCN)
-/// * AIP-4: Resource Role (CE)
-/// * AIP-5: Resource Group (CE)
-/// * AIP-6: Start Date/Time (TS)
-/// * AIP-7: Start Date/Time Offset (NM)
-/// * AIP-8: Start Date/Time Offset Units (CE)
-/// * AIP-9: Duration (NM)
-/// * AIP-10: Duration Units (CE)
-/// * AIP-11: Allow Substitution Code (IS)
-/// * AIP-12: Filler Status Code (CE)
+/// This segment has the following fields:<ol>
+///<li>AIP-1: Set ID - AIP (SI)</li>
+///<li>AIP-2: Segment Action Code (ID)</li>
+///<li>AIP-3: Personnel Resource ID (XCN)</li>
+///<li>AIP-4: Resource Role (CE)</li>
+///<li>AIP-5: Resource Group (CE)</li>
+///<li>AIP-6: Start Date/Time (TS)</li>
+///<li>AIP-7: Start Date/Time Offset (NM)</li>
+///<li>AIP-8: Start Date/Time Offset Units (CE)</li>
+///<li>AIP-9: Duration (NM)</li>
+///<li>AIP-10: Duration Units (CE)</li>
+///<li>AIP-11: Allow Substitution Code (IS)</li>
+///<li>AIP-12: Filler Status Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -106,7 +107,7 @@ public class AIP : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPersonnelResourceID(int rep)
+	public XCN GetPersonnelResourceID(int rep)
 	{
 			XCN ret = null;
 			try
@@ -123,7 +124,7 @@ public class AIP : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Personnel Resource ID (AIP-3).
    ///</summary>
-  public XCN[] getPersonnelResourceID() {
+  public XCN[] GetPersonnelResourceID() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -141,6 +142,24 @@ public class AIP : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Personnel Resource ID (AIP-3).
+   ///</summary>
+  public int PersonnelResourceIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Resource Role(AIP-4).
 	///</summary>

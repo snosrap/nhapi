@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a OMN_O07 message structure (see chapter 4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: OMN_O07_PATIENT (a Group object) optional 
-/// * 3: OMN_O07_ORDER (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: OMN_O07_PATIENT (a Group object) optional </li>
+///<li>3: OMN_O07_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMN_O07 : AbstractMessage  {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -124,7 +126,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OMN_O07_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public OMN_O07_ORDER getORDER() {
+	public OMN_O07_ORDER GetORDER() {
 	   OMN_O07_ORDER ret = null;
 	   try {
 	      ret = (OMN_O07_ORDER)this.GetStructure("ORDER");
@@ -141,14 +143,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OMN_O07_ORDER getORDER(int rep) { 
+	public OMN_O07_ORDER GetORDER(int rep) { 
 	   return (OMN_O07_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OMN_O07_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Group
 ///Represents the PPV_PCA_ORDER_DETAIL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBR (Observation Request) 
-/// * 1: RXO (Pharmacy/Treatment Order) 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: VAR (Variance) optional repeating
-/// * 4: PPV_PCA_ORDER_OBSERVATION (a Group object) optional repeating
+///<ol>
+///<li>0: OBR (Observation Request) </li>
+///<li>1: RXO (Pharmacy/Treatment Order) </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: VAR (Variance) optional repeating</li>
+///<li>4: PPV_PCA_ORDER_OBSERVATION (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPV_PCA_ORDER_DETAIL : AbstractGroup {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -112,7 +114,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VAR (Variance) - creates it if necessary
 	///</summary>
-	public VAR getVAR() {
+	public VAR GetVAR() {
 	   VAR ret = null;
 	   try {
 	      ret = (VAR)this.GetStructure("VAR");
@@ -129,14 +131,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VAR getVAR(int rep) { 
+	public VAR GetVAR(int rep) { 
 	   return (VAR)this.GetStructure("VAR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VAR 
 	 */ 
-	public int VARReps { 
+	public int VARRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -153,7 +155,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_ORDER_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_ORDER_OBSERVATION getORDER_OBSERVATION() {
+	public PPV_PCA_ORDER_OBSERVATION GetORDER_OBSERVATION() {
 	   PPV_PCA_ORDER_OBSERVATION ret = null;
 	   try {
 	      ret = (PPV_PCA_ORDER_OBSERVATION)this.GetStructure("ORDER_OBSERVATION");
@@ -170,14 +172,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_ORDER_OBSERVATION getORDER_OBSERVATION(int rep) { 
+	public PPV_PCA_ORDER_OBSERVATION GetORDER_OBSERVATION(int rep) { 
 	   return (PPV_PCA_ORDER_OBSERVATION)this.GetStructure("ORDER_OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_ORDER_OBSERVATION 
 	 */ 
-	public int ORDER_OBSERVATIONReps { 
+	public int ORDER_OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

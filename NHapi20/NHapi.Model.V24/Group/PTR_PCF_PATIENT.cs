@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the PTR_PCF_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient identification) 
-/// * 1: PTR_PCF_PATIENT_VISIT (a Group object) optional 
-/// * 2: PTR_PCF_PATHWAY (a Group object) repeating
+///<ol>
+///<li>0: PID (Patient identification) </li>
+///<li>1: PTR_PCF_PATIENT_VISIT (a Group object) optional </li>
+///<li>2: PTR_PCF_PATHWAY (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PTR_PCF_PATIENT : AbstractGroup {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PTR_PCF_PATHWAY (a Group object) - creates it if necessary
 	///</summary>
-	public PTR_PCF_PATHWAY getPATHWAY() {
+	public PTR_PCF_PATHWAY GetPATHWAY() {
 	   PTR_PCF_PATHWAY ret = null;
 	   try {
 	      ret = (PTR_PCF_PATHWAY)this.GetStructure("PATHWAY");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PTR_PCF_PATHWAY getPATHWAY(int rep) { 
+	public PTR_PCF_PATHWAY GetPATHWAY(int rep) { 
 	   return (PTR_PCF_PATHWAY)this.GetStructure("PATHWAY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PTR_PCF_PATHWAY 
 	 */ 
-	public int PATHWAYReps { 
+	public int PATHWAYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

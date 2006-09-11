@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the PEX_P07_ASSOCIATED_RX_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RXE (Pharmacy/Treatment Encoded Order) 
-/// * 1: RXR (Pharmacy/Treatment Route) optional repeating
+///<ol>
+///<li>0: RXE (Pharmacy/Treatment Encoded Order) </li>
+///<li>1: RXR (Pharmacy/Treatment Route) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PEX_P07_ASSOCIATED_RX_ORDER : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXR (Pharmacy/Treatment Route) - creates it if necessary
 	///</summary>
-	public RXR getRXR() {
+	public RXR GetRXR() {
 	   RXR ret = null;
 	   try {
 	      ret = (RXR)this.GetStructure("RXR");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXR getRXR(int rep) { 
+	public RXR GetRXR(int rep) { 
 	   return (RXR)this.GetStructure("RXR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXR 
 	 */ 
-	public int RXRReps { 
+	public int RXRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

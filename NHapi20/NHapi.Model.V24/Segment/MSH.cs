@@ -9,28 +9,29 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 MSH message segment. 
-/// This segment has the following fields:
-/// * MSH-1: Field Separator (ST)
-/// * MSH-2: Encoding Characters (ST)
-/// * MSH-3: Sending Application (HD)
-/// * MSH-4: Sending Facility (HD)
-/// * MSH-5: Receiving Application (HD)
-/// * MSH-6: Receiving Facility (HD)
-/// * MSH-7: Date/Time Of Message (TS)
-/// * MSH-8: Security (ST)
-/// * MSH-9: Message Type (MSG)
-/// * MSH-10: Message Control ID (ST)
-/// * MSH-11: Processing ID (PT)
-/// * MSH-12: Version ID (VID)
-/// * MSH-13: Sequence Number (NM)
-/// * MSH-14: Continuation Pointer (ST)
-/// * MSH-15: Accept Acknowledgment Type (ID)
-/// * MSH-16: Application Acknowledgment Type (ID)
-/// * MSH-17: Country Code (ID)
-/// * MSH-18: Character Set (ID)
-/// * MSH-19: Principal Language Of Message (CE)
-/// * MSH-20: Alternate Character Set Handling Scheme (ID)
-/// * MSH-21: Conformance Statement ID (ID)
+/// This segment has the following fields:<ol>
+///<li>MSH-1: Field Separator (ST)</li>
+///<li>MSH-2: Encoding Characters (ST)</li>
+///<li>MSH-3: Sending Application (HD)</li>
+///<li>MSH-4: Sending Facility (HD)</li>
+///<li>MSH-5: Receiving Application (HD)</li>
+///<li>MSH-6: Receiving Facility (HD)</li>
+///<li>MSH-7: Date/Time Of Message (TS)</li>
+///<li>MSH-8: Security (ST)</li>
+///<li>MSH-9: Message Type (MSG)</li>
+///<li>MSH-10: Message Control ID (ST)</li>
+///<li>MSH-11: Processing ID (PT)</li>
+///<li>MSH-12: Version ID (VID)</li>
+///<li>MSH-13: Sequence Number (NM)</li>
+///<li>MSH-14: Continuation Pointer (ST)</li>
+///<li>MSH-15: Accept Acknowledgment Type (ID)</li>
+///<li>MSH-16: Application Acknowledgment Type (ID)</li>
+///<li>MSH-17: Country Code (ID)</li>
+///<li>MSH-18: Character Set (ID)</li>
+///<li>MSH-19: Principal Language Of Message (CE)</li>
+///<li>MSH-20: Alternate Character Set Handling Scheme (ID)</li>
+///<li>MSH-21: Conformance Statement ID (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -469,7 +470,7 @@ public class MSH : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getCharacterSet(int rep)
+	public ID GetCharacterSet(int rep)
 	{
 			ID ret = null;
 			try
@@ -486,7 +487,7 @@ public class MSH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Character Set (MSH-18).
    ///</summary>
-  public ID[] getCharacterSet() {
+  public ID[] GetCharacterSet() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -504,6 +505,24 @@ public class MSH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Character Set (MSH-18).
+   ///</summary>
+  public int CharacterSetRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Principal Language Of Message(MSH-19).
 	///</summary>
@@ -555,7 +574,7 @@ public class MSH : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getConformanceStatementID(int rep)
+	public ID GetConformanceStatementID(int rep)
 	{
 			ID ret = null;
 			try
@@ -572,7 +591,7 @@ public class MSH : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Conformance Statement ID (MSH-21).
    ///</summary>
-  public ID[] getConformanceStatementID() {
+  public ID[] GetConformanceStatementID() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -590,5 +609,23 @@ public class MSH : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Conformance Statement ID (MSH-21).
+   ///</summary>
+  public int ConformanceStatementIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

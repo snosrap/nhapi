@@ -9,32 +9,33 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 IN3 message segment. 
-/// This segment has the following fields:
-/// * IN3-1: Set ID - IN3 (SI)
-/// * IN3-2: Certification Number (CX)
-/// * IN3-3: Certified By (XCN)
-/// * IN3-4: Certification Required (ID)
-/// * IN3-5: Penalty (MOP)
-/// * IN3-6: Certification Date/Time (TS)
-/// * IN3-7: Certification Modify Date/Time (TS)
-/// * IN3-8: Operator (XCN)
-/// * IN3-9: Certification Begin Date (DT)
-/// * IN3-10: Certification End Date (DT)
-/// * IN3-11: Days (DTN)
-/// * IN3-12: Non-Concur Code/Description (CE)
-/// * IN3-13: Non-Concur Effective Date/Time (TS)
-/// * IN3-14: Physician Reviewer (XCN)
-/// * IN3-15: Certification Contact (ST)
-/// * IN3-16: Certification Contact Phone Number (XTN)
-/// * IN3-17: Appeal Reason (CE)
-/// * IN3-18: Certification Agency (CE)
-/// * IN3-19: Certification Agency Phone Number (XTN)
-/// * IN3-20: Pre-Certification Req/Window (PCF)
-/// * IN3-21: Case Manager (ST)
-/// * IN3-22: Second Opinion Date (DT)
-/// * IN3-23: Second Opinion Status (IS)
-/// * IN3-24: Second Opinion Documentation Received (IS)
-/// * IN3-25: Second Opinion Physician (XCN)
+/// This segment has the following fields:<ol>
+///<li>IN3-1: Set ID - IN3 (SI)</li>
+///<li>IN3-2: Certification Number (CX)</li>
+///<li>IN3-3: Certified By (XCN)</li>
+///<li>IN3-4: Certification Required (ID)</li>
+///<li>IN3-5: Penalty (MOP)</li>
+///<li>IN3-6: Certification Date/Time (TS)</li>
+///<li>IN3-7: Certification Modify Date/Time (TS)</li>
+///<li>IN3-8: Operator (XCN)</li>
+///<li>IN3-9: Certification Begin Date (DT)</li>
+///<li>IN3-10: Certification End Date (DT)</li>
+///<li>IN3-11: Days (DTN)</li>
+///<li>IN3-12: Non-Concur Code/Description (CE)</li>
+///<li>IN3-13: Non-Concur Effective Date/Time (TS)</li>
+///<li>IN3-14: Physician Reviewer (XCN)</li>
+///<li>IN3-15: Certification Contact (ST)</li>
+///<li>IN3-16: Certification Contact Phone Number (XTN)</li>
+///<li>IN3-17: Appeal Reason (CE)</li>
+///<li>IN3-18: Certification Agency (CE)</li>
+///<li>IN3-19: Certification Agency Phone Number (XTN)</li>
+///<li>IN3-20: Pre-Certification Req/Window (PCF)</li>
+///<li>IN3-21: Case Manager (ST)</li>
+///<li>IN3-22: Second Opinion Date (DT)</li>
+///<li>IN3-23: Second Opinion Status (IS)</li>
+///<li>IN3-24: Second Opinion Documentation Received (IS)</li>
+///<li>IN3-25: Second Opinion Physician (XCN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -132,7 +133,7 @@ public class IN3 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getCertifiedBy(int rep)
+	public XCN GetCertifiedBy(int rep)
 	{
 			XCN ret = null;
 			try
@@ -149,7 +150,7 @@ public class IN3 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Certified By (IN3-3).
    ///</summary>
-  public XCN[] getCertifiedBy() {
+  public XCN[] GetCertifiedBy() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -167,6 +168,24 @@ public class IN3 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Certified By (IN3-3).
+   ///</summary>
+  public int CertifiedByRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Certification Required(IN3-4).
 	///</summary>
@@ -264,7 +283,7 @@ public class IN3 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getOperator(int rep)
+	public XCN GetOperator(int rep)
 	{
 			XCN ret = null;
 			try
@@ -281,7 +300,7 @@ public class IN3 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Operator (IN3-8).
    ///</summary>
-  public XCN[] getOperator() {
+  public XCN[] GetOperator() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -299,6 +318,24 @@ public class IN3 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Operator (IN3-8).
+   ///</summary>
+  public int OperatorRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Certification Begin Date(IN3-9).
 	///</summary>
@@ -419,7 +456,7 @@ public class IN3 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPhysicianReviewer(int rep)
+	public XCN GetPhysicianReviewer(int rep)
 	{
 			XCN ret = null;
 			try
@@ -436,7 +473,7 @@ public class IN3 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Physician Reviewer (IN3-14).
    ///</summary>
-  public XCN[] getPhysicianReviewer() {
+  public XCN[] GetPhysicianReviewer() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -454,6 +491,24 @@ public class IN3 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Physician Reviewer (IN3-14).
+   ///</summary>
+  public int PhysicianReviewerRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Certification Contact(IN3-15).
 	///</summary>
@@ -482,7 +537,7 @@ public class IN3 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getCertificationContactPhoneNumber(int rep)
+	public XTN GetCertificationContactPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -499,7 +554,7 @@ public class IN3 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Certification Contact Phone Number (IN3-16).
    ///</summary>
-  public XTN[] getCertificationContactPhoneNumber() {
+  public XTN[] GetCertificationContactPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -517,6 +572,24 @@ public class IN3 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Certification Contact Phone Number (IN3-16).
+   ///</summary>
+  public int CertificationContactPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Appeal Reason(IN3-17).
 	///</summary>
@@ -568,7 +641,7 @@ public class IN3 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getCertificationAgencyPhoneNumber(int rep)
+	public XTN GetCertificationAgencyPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -585,7 +658,7 @@ public class IN3 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Certification Agency Phone Number (IN3-19).
    ///</summary>
-  public XTN[] getCertificationAgencyPhoneNumber() {
+  public XTN[] GetCertificationAgencyPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -603,12 +676,30 @@ public class IN3 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Certification Agency Phone Number (IN3-19).
+   ///</summary>
+  public int CertificationAgencyPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Pre-Certification Req/Window(IN3-20).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public PCF getPreCertificationReqWindow(int rep)
+	public PCF GetPreCertificationReqWindow(int rep)
 	{
 			PCF ret = null;
 			try
@@ -625,7 +716,7 @@ public class IN3 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Pre-Certification Req/Window (IN3-20).
    ///</summary>
-  public PCF[] getPreCertificationReqWindow() {
+  public PCF[] GetPreCertificationReqWindow() {
      PCF[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -643,6 +734,24 @@ public class IN3 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Pre-Certification Req/Window (IN3-20).
+   ///</summary>
+  public int PreCertificationReqWindowRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Case Manager(IN3-21).
 	///</summary>
@@ -717,7 +826,7 @@ public class IN3 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getSecondOpinionDocumentationReceived(int rep)
+	public IS GetSecondOpinionDocumentationReceived(int rep)
 	{
 			IS ret = null;
 			try
@@ -734,7 +843,7 @@ public class IN3 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Second Opinion Documentation Received (IN3-24).
    ///</summary>
-  public IS[] getSecondOpinionDocumentationReceived() {
+  public IS[] GetSecondOpinionDocumentationReceived() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -752,12 +861,30 @@ public class IN3 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Second Opinion Documentation Received (IN3-24).
+   ///</summary>
+  public int SecondOpinionDocumentationReceivedRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Second Opinion Physician(IN3-25).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getSecondOpinionPhysician(int rep)
+	public XCN GetSecondOpinionPhysician(int rep)
 	{
 			XCN ret = null;
 			try
@@ -774,7 +901,7 @@ public class IN3 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Second Opinion Physician (IN3-25).
    ///</summary>
-  public XCN[] getSecondOpinionPhysician() {
+  public XCN[] GetSecondOpinionPhysician() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(25);  
@@ -792,5 +919,23 @@ public class IN3 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Second Opinion Physician (IN3-25).
+   ///</summary>
+  public int SecondOpinionPhysicianRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(25);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

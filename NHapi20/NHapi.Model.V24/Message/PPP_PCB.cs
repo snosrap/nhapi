@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a PPP_PCB message structure (see chapter 12). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: PID (Patient identification) 
-/// * 2: PPP_PCB_PATIENT_VISIT (a Group object) optional 
-/// * 3: PPP_PCB_PATHWAY (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: PID (Patient identification) </li>
+///<li>2: PPP_PCB_PATIENT_VISIT (a Group object) optional </li>
+///<li>3: PPP_PCB_PATHWAY (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPP_PCB : AbstractMessage  {
@@ -99,7 +101,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPP_PCB_PATHWAY (a Group object) - creates it if necessary
 	///</summary>
-	public PPP_PCB_PATHWAY getPATHWAY() {
+	public PPP_PCB_PATHWAY GetPATHWAY() {
 	   PPP_PCB_PATHWAY ret = null;
 	   try {
 	      ret = (PPP_PCB_PATHWAY)this.GetStructure("PATHWAY");
@@ -116,14 +118,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPP_PCB_PATHWAY getPATHWAY(int rep) { 
+	public PPP_PCB_PATHWAY GetPATHWAY(int rep) { 
 	   return (PPP_PCB_PATHWAY)this.GetStructure("PATHWAY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPP_PCB_PATHWAY 
 	 */ 
-	public int PATHWAYReps { 
+	public int PATHWAYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

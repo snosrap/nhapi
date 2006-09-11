@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the BAR_P06_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient identification) 
-/// * 1: PV1 (Patient visit) optional 
+///<ol>
+///<li>0: PID (Patient identification) </li>
+///<li>1: PV1 (Patient visit) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BAR_P06_PATIENT : AbstractGroup {

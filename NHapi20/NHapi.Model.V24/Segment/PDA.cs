@@ -9,16 +9,17 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 PDA message segment. 
-/// This segment has the following fields:
-/// * PDA-1: Death Cause Code (CE)
-/// * PDA-2: Death Location (PL)
-/// * PDA-3: Death Certified Indicator (ID)
-/// * PDA-4: Death Certificate Signed Date/Time (TS)
-/// * PDA-5: Death Certified By (XCN)
-/// * PDA-6: Autopsy Indicator (ID)
-/// * PDA-7: Autopsy Start and End Date/Time (DR)
-/// * PDA-8: Autopsy Performed By (XCN)
-/// * PDA-9: Coroner Indicator (ID)
+/// This segment has the following fields:<ol>
+///<li>PDA-1: Death Cause Code (CE)</li>
+///<li>PDA-2: Death Location (PL)</li>
+///<li>PDA-3: Death Certified Indicator (ID)</li>
+///<li>PDA-4: Death Certificate Signed Date/Time (TS)</li>
+///<li>PDA-5: Death Certified By (XCN)</li>
+///<li>PDA-6: Autopsy Indicator (ID)</li>
+///<li>PDA-7: Autopsy Start and End Date/Time (DR)</li>
+///<li>PDA-8: Autopsy Performed By (XCN)</li>
+///<li>PDA-9: Coroner Indicator (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -54,7 +55,7 @@ public class PDA : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getDeathCauseCode(int rep)
+	public CE GetDeathCauseCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -71,7 +72,7 @@ public class PDA : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Death Cause Code (PDA-1).
    ///</summary>
-  public CE[] getDeathCauseCode() {
+  public CE[] GetDeathCauseCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -89,6 +90,24 @@ public class PDA : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Death Cause Code (PDA-1).
+   ///</summary>
+  public int DeathCauseCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Death Location(PDA-2).
 	///</summary>

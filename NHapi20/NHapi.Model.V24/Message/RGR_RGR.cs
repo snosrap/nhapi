@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a RGR_RGR message structure (see chapter 4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: RGR_RGR_DEFINTION (a Group object) repeating
-/// * 4: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: RGR_RGR_DEFINTION (a Group object) repeating</li>
+///<li>4: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RGR_RGR : AbstractMessage  {
@@ -101,7 +103,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RGR_RGR_DEFINTION (a Group object) - creates it if necessary
 	///</summary>
-	public RGR_RGR_DEFINTION getDEFINTION() {
+	public RGR_RGR_DEFINTION GetDEFINTION() {
 	   RGR_RGR_DEFINTION ret = null;
 	   try {
 	      ret = (RGR_RGR_DEFINTION)this.GetStructure("DEFINTION");
@@ -118,14 +120,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RGR_RGR_DEFINTION getDEFINTION(int rep) { 
+	public RGR_RGR_DEFINTION GetDEFINTION(int rep) { 
 	   return (RGR_RGR_DEFINTION)this.GetStructure("DEFINTION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RGR_RGR_DEFINTION 
 	 */ 
-	public int DEFINTIONReps { 
+	public int DEFINTIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

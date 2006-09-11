@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the EAR_U08_COMMAND_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ECD (Equipment Command) 
-/// * 1: SAC (Specimen and container detail) optional 
-/// * 2: ECR (Equipment Command Response) 
+///<ol>
+///<li>0: ECD (Equipment Command) </li>
+///<li>1: SAC (Specimen and container detail) optional </li>
+///<li>2: ECR (Equipment Command Response) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EAR_U08_COMMAND_RESPONSE : AbstractGroup {

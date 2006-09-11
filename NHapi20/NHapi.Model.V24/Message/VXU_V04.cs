@@ -12,14 +12,16 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a VXU_V04 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: PID (Patient identification) 
-/// * 2: PD1 (patient additional demographic) optional 
-/// * 3: NK1 (Next of kin / associated parties) optional repeating
-/// * 4: VXU_V04_PATIENT (a Group object) optional 
-/// * 5: GT1 (Guarantor) optional repeating
-/// * 6: VXU_V04_INSURANCE (a Group object) optional repeating
-/// * 7: VXU_V04_ORDER (a Group object) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: PID (Patient identification) </li>
+///<li>2: PD1 (patient additional demographic) optional </li>
+///<li>3: NK1 (Next of kin / associated parties) optional repeating</li>
+///<li>4: VXU_V04_PATIENT (a Group object) optional </li>
+///<li>5: GT1 (Guarantor) optional repeating</li>
+///<li>6: VXU_V04_INSURANCE (a Group object) optional repeating</li>
+///<li>7: VXU_V04_ORDER (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VXU_V04 : AbstractMessage  {
@@ -107,7 +109,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (Next of kin / associated parties) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -124,14 +126,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -164,7 +166,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of GT1 (Guarantor) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -181,14 +183,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -205,7 +207,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VXU_V04_INSURANCE (a Group object) - creates it if necessary
 	///</summary>
-	public VXU_V04_INSURANCE getINSURANCE() {
+	public VXU_V04_INSURANCE GetINSURANCE() {
 	   VXU_V04_INSURANCE ret = null;
 	   try {
 	      ret = (VXU_V04_INSURANCE)this.GetStructure("INSURANCE");
@@ -222,14 +224,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VXU_V04_INSURANCE getINSURANCE(int rep) { 
+	public VXU_V04_INSURANCE GetINSURANCE(int rep) { 
 	   return (VXU_V04_INSURANCE)this.GetStructure("INSURANCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VXU_V04_INSURANCE 
 	 */ 
-	public int INSURANCEReps { 
+	public int INSURANCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -246,7 +248,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VXU_V04_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public VXU_V04_ORDER getORDER() {
+	public VXU_V04_ORDER GetORDER() {
 	   VXU_V04_ORDER ret = null;
 	   try {
 	      ret = (VXU_V04_ORDER)this.GetStructure("ORDER");
@@ -263,14 +265,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VXU_V04_ORDER getORDER(int rep) { 
+	public VXU_V04_ORDER GetORDER(int rep) { 
 	   return (VXU_V04_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VXU_V04_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

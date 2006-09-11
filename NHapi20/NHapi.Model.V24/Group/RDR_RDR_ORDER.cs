@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the RDR_RDR_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RDR_RDR_ENCODING (a Group object) optional 
-/// * 2: RDR_RDR_DISPENSE (a Group object) repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RDR_RDR_ENCODING (a Group object) optional </li>
+///<li>2: RDR_RDR_DISPENSE (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RDR_RDR_ORDER : AbstractGroup {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RDR_RDR_DISPENSE (a Group object) - creates it if necessary
 	///</summary>
-	public RDR_RDR_DISPENSE getDISPENSE() {
+	public RDR_RDR_DISPENSE GetDISPENSE() {
 	   RDR_RDR_DISPENSE ret = null;
 	   try {
 	      ret = (RDR_RDR_DISPENSE)this.GetStructure("DISPENSE");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RDR_RDR_DISPENSE getDISPENSE(int rep) { 
+	public RDR_RDR_DISPENSE GetDISPENSE(int rep) { 
 	   return (RDR_RDR_DISPENSE)this.GetStructure("DISPENSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RDR_RDR_DISPENSE 
 	 */ 
-	public int DISPENSEReps { 
+	public int DISPENSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

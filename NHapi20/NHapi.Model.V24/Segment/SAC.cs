@@ -9,51 +9,52 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 SAC message segment. 
-/// This segment has the following fields:
-/// * SAC-1: External Accession Identifier (EI)
-/// * SAC-2: Accession Identifier (EI)
-/// * SAC-3: Container Identifier (EI)
-/// * SAC-4: Primary (parent) Container Identifier (EI)
-/// * SAC-5: Equipment Container Identifier (EI)
-/// * SAC-6: Specimen Source (SPS)
-/// * SAC-7: Registration Date/Time (TS)
-/// * SAC-8: Container Status (CE)
-/// * SAC-9: Carrier Type (CE)
-/// * SAC-10: Carrier Identifier (EI)
-/// * SAC-11: Position in Carrier (NA)
-/// * SAC-12: Tray Type - SAC (CE)
-/// * SAC-13: Tray Identifier (EI)
-/// * SAC-14: Position in Tray (NA)
-/// * SAC-15: Location (CE)
-/// * SAC-16: Container Height (NM)
-/// * SAC-17: Container Diameter (NM)
-/// * SAC-18: Barrier Delta (NM)
-/// * SAC-19: Bottom Delta (NM)
-/// * SAC-20: Container Height/Diameter/Delta Units (CE)
-/// * SAC-21: Container Volume (NM)
-/// * SAC-22: Available Volume (NM)
-/// * SAC-23: Initial Specimen Volume (NM)
-/// * SAC-24: Volume  Units (CE)
-/// * SAC-25: Separator Type (CE)
-/// * SAC-26: Cap Type (CE)
-/// * SAC-27: Additive (CE)
-/// * SAC-28: Specimen Component (CE)
-/// * SAC-29: Dilution Factor (SN)
-/// * SAC-30: Treatment (CE)
-/// * SAC-31: Temperature (SN)
-/// * SAC-32: Hemolysis Index (NM)
-/// * SAC-33: Hemolysis Index Units (CE)
-/// * SAC-34: Lipemia Index (NM)
-/// * SAC-35: Lipemia Index Units (CE)
-/// * SAC-36: Icterus Index (NM)
-/// * SAC-37: Icterus Index Units (CE)
-/// * SAC-38: Fibrin Index (NM)
-/// * SAC-39: Fibrin Index Units (CE)
-/// * SAC-40: System Induced Contaminants (CE)
-/// * SAC-41: Drug Interference (CE)
-/// * SAC-42: Artificial Blood (CE)
-/// * SAC-43: Special Handling Considerations (CE)
-/// * SAC-44: Other Environmental Factors (CE)
+/// This segment has the following fields:<ol>
+///<li>SAC-1: External Accession Identifier (EI)</li>
+///<li>SAC-2: Accession Identifier (EI)</li>
+///<li>SAC-3: Container Identifier (EI)</li>
+///<li>SAC-4: Primary (parent) Container Identifier (EI)</li>
+///<li>SAC-5: Equipment Container Identifier (EI)</li>
+///<li>SAC-6: Specimen Source (SPS)</li>
+///<li>SAC-7: Registration Date/Time (TS)</li>
+///<li>SAC-8: Container Status (CE)</li>
+///<li>SAC-9: Carrier Type (CE)</li>
+///<li>SAC-10: Carrier Identifier (EI)</li>
+///<li>SAC-11: Position in Carrier (NA)</li>
+///<li>SAC-12: Tray Type - SAC (CE)</li>
+///<li>SAC-13: Tray Identifier (EI)</li>
+///<li>SAC-14: Position in Tray (NA)</li>
+///<li>SAC-15: Location (CE)</li>
+///<li>SAC-16: Container Height (NM)</li>
+///<li>SAC-17: Container Diameter (NM)</li>
+///<li>SAC-18: Barrier Delta (NM)</li>
+///<li>SAC-19: Bottom Delta (NM)</li>
+///<li>SAC-20: Container Height/Diameter/Delta Units (CE)</li>
+///<li>SAC-21: Container Volume (NM)</li>
+///<li>SAC-22: Available Volume (NM)</li>
+///<li>SAC-23: Initial Specimen Volume (NM)</li>
+///<li>SAC-24: Volume  Units (CE)</li>
+///<li>SAC-25: Separator Type (CE)</li>
+///<li>SAC-26: Cap Type (CE)</li>
+///<li>SAC-27: Additive (CE)</li>
+///<li>SAC-28: Specimen Component (CE)</li>
+///<li>SAC-29: Dilution Factor (SN)</li>
+///<li>SAC-30: Treatment (CE)</li>
+///<li>SAC-31: Temperature (SN)</li>
+///<li>SAC-32: Hemolysis Index (NM)</li>
+///<li>SAC-33: Hemolysis Index Units (CE)</li>
+///<li>SAC-34: Lipemia Index (NM)</li>
+///<li>SAC-35: Lipemia Index Units (CE)</li>
+///<li>SAC-36: Icterus Index (NM)</li>
+///<li>SAC-37: Icterus Index Units (CE)</li>
+///<li>SAC-38: Fibrin Index (NM)</li>
+///<li>SAC-39: Fibrin Index Units (CE)</li>
+///<li>SAC-40: System Induced Contaminants (CE)</li>
+///<li>SAC-41: Drug Interference (CE)</li>
+///<li>SAC-42: Artificial Blood (CE)</li>
+///<li>SAC-43: Special Handling Considerations (CE)</li>
+///<li>SAC-44: Other Environmental Factors (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -446,7 +447,7 @@ public class SAC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getLocation(int rep)
+	public CE GetLocation(int rep)
 	{
 			CE ret = null;
 			try
@@ -463,7 +464,7 @@ public class SAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Location (SAC-15).
    ///</summary>
-  public CE[] getLocation() {
+  public CE[] GetLocation() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -481,6 +482,24 @@ public class SAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Location (SAC-15).
+   ///</summary>
+  public int LocationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Container Height(SAC-16).
 	///</summary>
@@ -739,7 +758,7 @@ public class SAC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getAdditive(int rep)
+	public CE GetAdditive(int rep)
 	{
 			CE ret = null;
 			try
@@ -756,7 +775,7 @@ public class SAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Additive (SAC-27).
    ///</summary>
-  public CE[] getAdditive() {
+  public CE[] GetAdditive() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(27);  
@@ -774,6 +793,24 @@ public class SAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Additive (SAC-27).
+   ///</summary>
+  public int AdditiveRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(27);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Component(SAC-28).
 	///</summary>
@@ -1055,7 +1092,7 @@ public class SAC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSystemInducedContaminants(int rep)
+	public CE GetSystemInducedContaminants(int rep)
 	{
 			CE ret = null;
 			try
@@ -1072,7 +1109,7 @@ public class SAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of System Induced Contaminants (SAC-40).
    ///</summary>
-  public CE[] getSystemInducedContaminants() {
+  public CE[] GetSystemInducedContaminants() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(40);  
@@ -1090,12 +1127,30 @@ public class SAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of System Induced Contaminants (SAC-40).
+   ///</summary>
+  public int SystemInducedContaminantsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(40);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Drug Interference(SAC-41).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getDrugInterference(int rep)
+	public CE GetDrugInterference(int rep)
 	{
 			CE ret = null;
 			try
@@ -1112,7 +1167,7 @@ public class SAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Drug Interference (SAC-41).
    ///</summary>
-  public CE[] getDrugInterference() {
+  public CE[] GetDrugInterference() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(41);  
@@ -1130,6 +1185,24 @@ public class SAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Drug Interference (SAC-41).
+   ///</summary>
+  public int DrugInterferenceRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(41);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Artificial Blood(SAC-42).
 	///</summary>
@@ -1158,7 +1231,7 @@ public class SAC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSpecialHandlingConsiderations(int rep)
+	public CE GetSpecialHandlingConsiderations(int rep)
 	{
 			CE ret = null;
 			try
@@ -1175,7 +1248,7 @@ public class SAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Special Handling Considerations (SAC-43).
    ///</summary>
-  public CE[] getSpecialHandlingConsiderations() {
+  public CE[] GetSpecialHandlingConsiderations() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(43);  
@@ -1193,12 +1266,30 @@ public class SAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Special Handling Considerations (SAC-43).
+   ///</summary>
+  public int SpecialHandlingConsiderationsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(43);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Other Environmental Factors(SAC-44).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getOtherEnvironmentalFactors(int rep)
+	public CE GetOtherEnvironmentalFactors(int rep)
 	{
 			CE ret = null;
 			try
@@ -1215,7 +1306,7 @@ public class SAC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Other Environmental Factors (SAC-44).
    ///</summary>
-  public CE[] getOtherEnvironmentalFactors() {
+  public CE[] GetOtherEnvironmentalFactors() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(44);  
@@ -1233,5 +1324,23 @@ public class SAC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Other Environmental Factors (SAC-44).
+   ///</summary>
+  public int OtherEnvironmentalFactorsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(44);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a MFK_M01 message structure (see chapter 8). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: MFI (Master File Identification) 
-/// * 4: MFA (Master File Acknowledgment) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: MFI (Master File Identification) </li>
+///<li>4: MFA (Master File Acknowledgment) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFK_M01 : AbstractMessage  {
@@ -117,7 +119,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFA (Master File Acknowledgment) - creates it if necessary
 	///</summary>
-	public MFA getMFA() {
+	public MFA GetMFA() {
 	   MFA ret = null;
 	   try {
 	      ret = (MFA)this.GetStructure("MFA");
@@ -134,14 +136,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFA getMFA(int rep) { 
+	public MFA GetMFA(int rep) { 
 	   return (MFA)this.GetStructure("MFA", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFA 
 	 */ 
-	public int MFAReps { 
+	public int MFARepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

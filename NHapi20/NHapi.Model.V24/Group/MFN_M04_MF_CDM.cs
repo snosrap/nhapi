@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the MFN_M04_MF_CDM Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: CDM (Charge Description Master) 
-/// * 2: PRC (Pricing) optional repeating
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: CDM (Charge Description Master) </li>
+///<li>2: PRC (Pricing) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M04_MF_CDM : AbstractGroup {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PRC (Pricing) - creates it if necessary
 	///</summary>
-	public PRC getPRC() {
+	public PRC GetPRC() {
 	   PRC ret = null;
 	   try {
 	      ret = (PRC)this.GetStructure("PRC");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PRC getPRC(int rep) { 
+	public PRC GetPRC(int rep) { 
 	   return (PRC)this.GetStructure("PRC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PRC 
 	 */ 
-	public int PRCReps { 
+	public int PRCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

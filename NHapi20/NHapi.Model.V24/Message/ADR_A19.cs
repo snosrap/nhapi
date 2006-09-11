@@ -12,14 +12,16 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a ADR_A19 message structure (see chapter 3). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: QAK (Query Acknowledgment) optional 
-/// * 4: QRD (Original-Style Query Definition) 
-/// * 5: QRF (Original Style Query Filter) optional 
-/// * 6: ADR_A19_QUERY_RESPONSE (a Group object) repeating
-/// * 7: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: QAK (Query Acknowledgment) optional </li>
+///<li>4: QRD (Original-Style Query Definition) </li>
+///<li>5: QRF (Original Style Query Filter) optional </li>
+///<li>6: ADR_A19_QUERY_RESPONSE (a Group object) repeating</li>
+///<li>7: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADR_A19 : AbstractMessage  {
@@ -155,7 +157,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ADR_A19_QUERY_RESPONSE (a Group object) - creates it if necessary
 	///</summary>
-	public ADR_A19_QUERY_RESPONSE getQUERY_RESPONSE() {
+	public ADR_A19_QUERY_RESPONSE GetQUERY_RESPONSE() {
 	   ADR_A19_QUERY_RESPONSE ret = null;
 	   try {
 	      ret = (ADR_A19_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE");
@@ -172,14 +174,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ADR_A19_QUERY_RESPONSE getQUERY_RESPONSE(int rep) { 
+	public ADR_A19_QUERY_RESPONSE GetQUERY_RESPONSE(int rep) { 
 	   return (ADR_A19_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ADR_A19_QUERY_RESPONSE 
 	 */ 
-	public int QUERY_RESPONSEReps { 
+	public int QUERY_RESPONSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

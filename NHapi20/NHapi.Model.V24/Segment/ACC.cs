@@ -9,17 +9,18 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 ACC message segment. 
-/// This segment has the following fields:
-/// * ACC-1: Accident Date/Time (TS)
-/// * ACC-2: Accident Code (CE)
-/// * ACC-3: Accident Location (ST)
-/// * ACC-4: Auto Accident State (CE)
-/// * ACC-5: Accident Job Related Indicator (ID)
-/// * ACC-6: Accident Death Indicator (ID)
-/// * ACC-7: Entered By (XCN)
-/// * ACC-8: Accident Description (ST)
-/// * ACC-9: Brought In By (ST)
-/// * ACC-10: Police Notified Indicator (ID)
+/// This segment has the following fields:<ol>
+///<li>ACC-1: Accident Date/Time (TS)</li>
+///<li>ACC-2: Accident Code (CE)</li>
+///<li>ACC-3: Accident Location (ST)</li>
+///<li>ACC-4: Auto Accident State (CE)</li>
+///<li>ACC-5: Accident Job Related Indicator (ID)</li>
+///<li>ACC-6: Accident Death Indicator (ID)</li>
+///<li>ACC-7: Entered By (XCN)</li>
+///<li>ACC-8: Accident Description (ST)</li>
+///<li>ACC-9: Brought In By (ST)</li>
+///<li>ACC-10: Police Notified Indicator (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

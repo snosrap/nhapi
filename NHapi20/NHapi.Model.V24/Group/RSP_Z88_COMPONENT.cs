@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the RSP_Z88_COMPONENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RXC (Pharmacy/Treatment Component Order) repeating
-/// * 1: NTE (Notes and Comments) optional repeating
+///<ol>
+///<li>0: RXC (Pharmacy/Treatment Component Order) repeating</li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Z88_COMPONENT : AbstractGroup {
@@ -33,7 +35,7 @@ public class RSP_Z88_COMPONENT : AbstractGroup {
 	///<summary>
 	/// Returns  first repetition of RXC (Pharmacy/Treatment Component Order) - creates it if necessary
 	///</summary>
-	public RXC getRXC() {
+	public RXC GetRXC() {
 	   RXC ret = null;
 	   try {
 	      ret = (RXC)this.GetStructure("RXC");
@@ -50,14 +52,14 @@ public class RSP_Z88_COMPONENT : AbstractGroup {
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXC getRXC(int rep) { 
+	public RXC GetRXC(int rep) { 
 	   return (RXC)this.GetStructure("RXC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXC 
 	 */ 
-	public int RXCReps { 
+	public int RXCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -74,7 +76,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -91,14 +93,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

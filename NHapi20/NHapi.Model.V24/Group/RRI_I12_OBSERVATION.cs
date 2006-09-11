@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the RRI_I12_OBSERVATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBR (Observation Request) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: RRI_I12_RESULTS_NOTES (a Group object) optional repeating
+///<ol>
+///<li>0: OBR (Observation Request) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: RRI_I12_RESULTS_NOTES (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRI_I12_OBSERVATION : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRI_I12_RESULTS_NOTES (a Group object) - creates it if necessary
 	///</summary>
-	public RRI_I12_RESULTS_NOTES getRESULTS_NOTES() {
+	public RRI_I12_RESULTS_NOTES GetRESULTS_NOTES() {
 	   RRI_I12_RESULTS_NOTES ret = null;
 	   try {
 	      ret = (RRI_I12_RESULTS_NOTES)this.GetStructure("RESULTS_NOTES");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRI_I12_RESULTS_NOTES getRESULTS_NOTES(int rep) { 
+	public RRI_I12_RESULTS_NOTES GetRESULTS_NOTES(int rep) { 
 	   return (RRI_I12_RESULTS_NOTES)this.GetStructure("RESULTS_NOTES", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRI_I12_RESULTS_NOTES 
 	 */ 
-	public int RESULTS_NOTESReps { 
+	public int RESULTS_NOTESRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

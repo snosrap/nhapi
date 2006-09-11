@@ -12,15 +12,17 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a MFR_M01 message structure (see chapter 8). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: QAK (Query Acknowledgment) optional 
-/// * 4: QRD (Original-Style Query Definition) 
-/// * 5: QRF (Original Style Query Filter) optional 
-/// * 6: MFI (Master File Identification) 
-/// * 7: MFR_M01_MF_QUERY (a Group object) repeating
-/// * 8: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: QAK (Query Acknowledgment) optional </li>
+///<li>4: QRD (Original-Style Query Definition) </li>
+///<li>5: QRF (Original Style Query Filter) optional </li>
+///<li>6: MFI (Master File Identification) </li>
+///<li>7: MFR_M01_MF_QUERY (a Group object) repeating</li>
+///<li>8: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFR_M01 : AbstractMessage  {
@@ -173,7 +175,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFR_M01_MF_QUERY (a Group object) - creates it if necessary
 	///</summary>
-	public MFR_M01_MF_QUERY getMF_QUERY() {
+	public MFR_M01_MF_QUERY GetMF_QUERY() {
 	   MFR_M01_MF_QUERY ret = null;
 	   try {
 	      ret = (MFR_M01_MF_QUERY)this.GetStructure("MF_QUERY");
@@ -190,14 +192,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFR_M01_MF_QUERY getMF_QUERY(int rep) { 
+	public MFR_M01_MF_QUERY GetMF_QUERY(int rep) { 
 	   return (MFR_M01_MF_QUERY)this.GetStructure("MF_QUERY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFR_M01_MF_QUERY 
 	 */ 
-	public int MF_QUERYReps { 
+	public int MF_QUERYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

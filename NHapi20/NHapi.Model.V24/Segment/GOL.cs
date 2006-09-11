@@ -9,28 +9,29 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 GOL message segment. 
-/// This segment has the following fields:
-/// * GOL-1: Action Code (ID)
-/// * GOL-2: Action Date/Time (TS)
-/// * GOL-3: Goal ID (CE)
-/// * GOL-4: Goal Instance ID (EI)
-/// * GOL-5: Episode of Care ID (EI)
-/// * GOL-6: Goal List Priority (NM)
-/// * GOL-7: Goal Established Date/Time (TS)
-/// * GOL-8: Expected Goal Achieve Date/Time (TS)
-/// * GOL-9: Goal Classification (CE)
-/// * GOL-10: Goal Management Discipline (CE)
-/// * GOL-11: Current Goal Review Status (CE)
-/// * GOL-12: Current Goal Review Date/Time (TS)
-/// * GOL-13: Next Goal Review Date/Time (TS)
-/// * GOL-14: Previous Goal Review Date/Time (TS)
-/// * GOL-15: Goal Review Interval (TQ)
-/// * GOL-16: Goal Evaluation (CE)
-/// * GOL-17: Goal Evaluation Comment (ST)
-/// * GOL-18: Goal Life Cycle Status (CE)
-/// * GOL-19: Goal Life Cycle Status Date/Time (TS)
-/// * GOL-20: Goal Target Type (CE)
-/// * GOL-21: Goal Target Name (XPN)
+/// This segment has the following fields:<ol>
+///<li>GOL-1: Action Code (ID)</li>
+///<li>GOL-2: Action Date/Time (TS)</li>
+///<li>GOL-3: Goal ID (CE)</li>
+///<li>GOL-4: Goal Instance ID (EI)</li>
+///<li>GOL-5: Episode of Care ID (EI)</li>
+///<li>GOL-6: Goal List Priority (NM)</li>
+///<li>GOL-7: Goal Established Date/Time (TS)</li>
+///<li>GOL-8: Expected Goal Achieve Date/Time (TS)</li>
+///<li>GOL-9: Goal Classification (CE)</li>
+///<li>GOL-10: Goal Management Discipline (CE)</li>
+///<li>GOL-11: Current Goal Review Status (CE)</li>
+///<li>GOL-12: Current Goal Review Date/Time (TS)</li>
+///<li>GOL-13: Next Goal Review Date/Time (TS)</li>
+///<li>GOL-14: Previous Goal Review Date/Time (TS)</li>
+///<li>GOL-15: Goal Review Interval (TQ)</li>
+///<li>GOL-16: Goal Evaluation (CE)</li>
+///<li>GOL-17: Goal Evaluation Comment (ST)</li>
+///<li>GOL-18: Goal Life Cycle Status (CE)</li>
+///<li>GOL-19: Goal Life Cycle Status Date/Time (TS)</li>
+///<li>GOL-20: Goal Target Type (CE)</li>
+///<li>GOL-21: Goal Target Name (XPN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -446,7 +447,7 @@ public class GOL : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getGoalEvaluationComment(int rep)
+	public ST GetGoalEvaluationComment(int rep)
 	{
 			ST ret = null;
 			try
@@ -463,7 +464,7 @@ public class GOL : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Goal Evaluation Comment (GOL-17).
    ///</summary>
-  public ST[] getGoalEvaluationComment() {
+  public ST[] GetGoalEvaluationComment() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -481,6 +482,24 @@ public class GOL : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Goal Evaluation Comment (GOL-17).
+   ///</summary>
+  public int GoalEvaluationCommentRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Goal Life Cycle Status(GOL-18).
 	///</summary>
@@ -532,7 +551,7 @@ public class GOL : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getGoalTargetType(int rep)
+	public CE GetGoalTargetType(int rep)
 	{
 			CE ret = null;
 			try
@@ -549,7 +568,7 @@ public class GOL : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Goal Target Type (GOL-20).
    ///</summary>
-  public CE[] getGoalTargetType() {
+  public CE[] GetGoalTargetType() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -567,12 +586,30 @@ public class GOL : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Goal Target Type (GOL-20).
+   ///</summary>
+  public int GoalTargetTypeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Goal Target Name(GOL-21).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getGoalTargetName(int rep)
+	public XPN GetGoalTargetName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -589,7 +626,7 @@ public class GOL : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Goal Target Name (GOL-21).
    ///</summary>
-  public XPN[] getGoalTargetName() {
+  public XPN[] GetGoalTargetName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -607,5 +644,23 @@ public class GOL : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Goal Target Name (GOL-21).
+   ///</summary>
+  public int GoalTargetNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

@@ -9,21 +9,22 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 TCC message segment. 
-/// This segment has the following fields:
-/// * TCC-1: Universal Service Identifier (CE)
-/// * TCC-2: Test Application Identifier (EI)
-/// * TCC-3: Specimen Source (SPS)
-/// * TCC-4: Auto-Dilution Factor Default (SN)
-/// * TCC-5: Rerun Dilution Factor Default (SN)
-/// * TCC-6: Pre-Dilution Factor Default (SN)
-/// * TCC-7: Endogenous Content of Pre-Dilution Diluent (SN)
-/// * TCC-8: Inventory Limits Warning Level (NM)
-/// * TCC-9: Automatic Rerun Allowed (ID)
-/// * TCC-10: Automatic Repeat Allowed (ID)
-/// * TCC-11: Automatic Reflex Allowed (ID)
-/// * TCC-12: Equipment Dynamic Range (SN)
-/// * TCC-13: Units (CE)
-/// * TCC-14: Processing Type (CE)
+/// This segment has the following fields:<ol>
+///<li>TCC-1: Universal Service Identifier (CE)</li>
+///<li>TCC-2: Test Application Identifier (EI)</li>
+///<li>TCC-3: Specimen Source (SPS)</li>
+///<li>TCC-4: Auto-Dilution Factor Default (SN)</li>
+///<li>TCC-5: Rerun Dilution Factor Default (SN)</li>
+///<li>TCC-6: Pre-Dilution Factor Default (SN)</li>
+///<li>TCC-7: Endogenous Content of Pre-Dilution Diluent (SN)</li>
+///<li>TCC-8: Inventory Limits Warning Level (NM)</li>
+///<li>TCC-9: Automatic Rerun Allowed (ID)</li>
+///<li>TCC-10: Automatic Repeat Allowed (ID)</li>
+///<li>TCC-11: Automatic Reflex Allowed (ID)</li>
+///<li>TCC-12: Equipment Dynamic Range (SN)</li>
+///<li>TCC-13: Units (CE)</li>
+///<li>TCC-14: Processing Type (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

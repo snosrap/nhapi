@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the SQM_S25_LOCATION_RESOURCE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: AIL (Appointment Information - Location Resource) 
-/// * 1: APR (Appointment Preferences) optional 
+///<ol>
+///<li>0: AIL (Appointment Information - Location Resource) </li>
+///<li>1: APR (Appointment Preferences) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SQM_S25_LOCATION_RESOURCE : AbstractGroup {

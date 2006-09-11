@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the ORD_O04_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORD_O04_PATIENT (a Group object) optional 
-/// * 1: ORD_O04_ORDER_DIET (a Group object) repeating
-/// * 2: ORD_O04_ORDER_TRAY (a Group object) optional repeating
+///<ol>
+///<li>0: ORD_O04_PATIENT (a Group object) optional </li>
+///<li>1: ORD_O04_ORDER_DIET (a Group object) repeating</li>
+///<li>2: ORD_O04_ORDER_TRAY (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORD_O04_RESPONSE : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORD_O04_ORDER_DIET (a Group object) - creates it if necessary
 	///</summary>
-	public ORD_O04_ORDER_DIET getORDER_DIET() {
+	public ORD_O04_ORDER_DIET GetORDER_DIET() {
 	   ORD_O04_ORDER_DIET ret = null;
 	   try {
 	      ret = (ORD_O04_ORDER_DIET)this.GetStructure("ORDER_DIET");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORD_O04_ORDER_DIET getORDER_DIET(int rep) { 
+	public ORD_O04_ORDER_DIET GetORDER_DIET(int rep) { 
 	   return (ORD_O04_ORDER_DIET)this.GetStructure("ORDER_DIET", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORD_O04_ORDER_DIET 
 	 */ 
-	public int ORDER_DIETReps { 
+	public int ORDER_DIETRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORD_O04_ORDER_TRAY (a Group object) - creates it if necessary
 	///</summary>
-	public ORD_O04_ORDER_TRAY getORDER_TRAY() {
+	public ORD_O04_ORDER_TRAY GetORDER_TRAY() {
 	   ORD_O04_ORDER_TRAY ret = null;
 	   try {
 	      ret = (ORD_O04_ORDER_TRAY)this.GetStructure("ORDER_TRAY");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORD_O04_ORDER_TRAY getORDER_TRAY(int rep) { 
+	public ORD_O04_ORDER_TRAY GetORDER_TRAY(int rep) { 
 	   return (ORD_O04_ORDER_TRAY)this.GetStructure("ORDER_TRAY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORD_O04_ORDER_TRAY 
 	 */ 
-	public int ORDER_TRAYReps { 
+	public int ORDER_TRAYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

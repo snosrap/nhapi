@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the RPA_I08_OBSERVATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBR (Observation Request) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: RPA_I08_RESULTS (a Group object) optional repeating
+///<ol>
+///<li>0: OBR (Observation Request) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: RPA_I08_RESULTS (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RPA_I08_OBSERVATION : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RPA_I08_RESULTS (a Group object) - creates it if necessary
 	///</summary>
-	public RPA_I08_RESULTS getRESULTS() {
+	public RPA_I08_RESULTS GetRESULTS() {
 	   RPA_I08_RESULTS ret = null;
 	   try {
 	      ret = (RPA_I08_RESULTS)this.GetStructure("RESULTS");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RPA_I08_RESULTS getRESULTS(int rep) { 
+	public RPA_I08_RESULTS GetRESULTS(int rep) { 
 	   return (RPA_I08_RESULTS)this.GetStructure("RESULTS", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RPA_I08_RESULTS 
 	 */ 
-	public int RESULTSReps { 
+	public int RESULTSRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

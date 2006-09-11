@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Group
 ///Represents the RSP_Z90_COMMON_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: OBR (Observation Request) 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: CTD (Contact Data) optional 
-/// * 4: RSP_Z90_OBSERVATION (a Group object) repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: OBR (Observation Request) </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: CTD (Contact Data) optional </li>
+///<li>4: RSP_Z90_OBSERVATION (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Z90_COMMON_ORDER : AbstractGroup {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RSP_Z90_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_Z90_OBSERVATION getOBSERVATION() {
+	public RSP_Z90_OBSERVATION GetOBSERVATION() {
 	   RSP_Z90_OBSERVATION ret = null;
 	   try {
 	      ret = (RSP_Z90_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RSP_Z90_OBSERVATION getOBSERVATION(int rep) { 
+	public RSP_Z90_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (RSP_Z90_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RSP_Z90_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

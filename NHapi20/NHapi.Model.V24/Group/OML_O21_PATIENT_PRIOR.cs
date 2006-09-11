@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the OML_O21_PATIENT_PRIOR Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient identification) 
-/// * 1: PD1 (patient additional demographic) optional 
+///<ol>
+///<li>0: PID (Patient identification) </li>
+///<li>1: PD1 (patient additional demographic) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O21_PATIENT_PRIOR : AbstractGroup {

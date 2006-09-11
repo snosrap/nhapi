@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the RRD_O14_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RRD_O14_PATIENT (a Group object) optional 
-/// * 1: RRD_O14_ORDER (a Group object) repeating
+///<ol>
+///<li>0: RRD_O14_PATIENT (a Group object) optional </li>
+///<li>1: RRD_O14_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RRD_O14_RESPONSE : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RRD_O14_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public RRD_O14_ORDER getORDER() {
+	public RRD_O14_ORDER GetORDER() {
 	   RRD_O14_ORDER ret = null;
 	   try {
 	      ret = (RRD_O14_ORDER)this.GetStructure("ORDER");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RRD_O14_ORDER getORDER(int rep) { 
+	public RRD_O14_ORDER GetORDER(int rep) { 
 	   return (RRD_O14_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RRD_O14_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

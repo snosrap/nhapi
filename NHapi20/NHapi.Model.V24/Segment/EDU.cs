@@ -9,15 +9,16 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 EDU message segment. 
-/// This segment has the following fields:
-/// * EDU-1: Set ID - EDU (SI)
-/// * EDU-2: Academic Degree (IS)
-/// * EDU-3: Academic Degree Program Date Range (DR)
-/// * EDU-4: Academic Degree Program Participation Date Range (DR)
-/// * EDU-5: Academic Degree Granted Date (DT)
-/// * EDU-6: School (XON)
-/// * EDU-7: School Type Code (CE)
-/// * EDU-8: School Address (XAD)
+/// This segment has the following fields:<ol>
+///<li>EDU-1: Set ID - EDU (SI)</li>
+///<li>EDU-2: Academic Degree (IS)</li>
+///<li>EDU-3: Academic Degree Program Date Range (DR)</li>
+///<li>EDU-4: Academic Degree Program Participation Date Range (DR)</li>
+///<li>EDU-5: Academic Degree Granted Date (DT)</li>
+///<li>EDU-6: School (XON)</li>
+///<li>EDU-7: School Type Code (CE)</li>
+///<li>EDU-8: School Address (XAD)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

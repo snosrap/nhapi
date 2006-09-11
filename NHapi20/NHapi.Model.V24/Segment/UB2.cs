@@ -9,24 +9,25 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 UB2 message segment. 
-/// This segment has the following fields:
-/// * UB2-1: Set ID - UB2 (SI)
-/// * UB2-2: Co-Insurance Days (9) (ST)
-/// * UB2-3: Condition Code (24-30) (IS)
-/// * UB2-4: Covered Days (7) (ST)
-/// * UB2-5: Non-Covered Days (8) (ST)
-/// * UB2-6: Value Amount and Code (UVC)
-/// * UB2-7: Occurrence Code and Date (32-35) (OCD)
-/// * UB2-8: Occurrence Span Code/Dates (36) (OSP)
-/// * UB2-9: UB92 Locator 2 (State) (ST)
-/// * UB2-10: UB92 Locator 11 (State) (ST)
-/// * UB2-11: UB92 Locator 31 (National) (ST)
-/// * UB2-12: Document Control Number (ST)
-/// * UB2-13: UB92 Locator 49 (National) (ST)
-/// * UB2-14: UB92 Locator 56 (State) (ST)
-/// * UB2-15: UB92 Locator 57 (National) (ST)
-/// * UB2-16: UB92 Locator 78 (State) (ST)
-/// * UB2-17: Special Visit Count (NM)
+/// This segment has the following fields:<ol>
+///<li>UB2-1: Set ID - UB2 (SI)</li>
+///<li>UB2-2: Co-Insurance Days (9) (ST)</li>
+///<li>UB2-3: Condition Code (24-30) (IS)</li>
+///<li>UB2-4: Covered Days (7) (ST)</li>
+///<li>UB2-5: Non-Covered Days (8) (ST)</li>
+///<li>UB2-6: Value Amount and Code (UVC)</li>
+///<li>UB2-7: Occurrence Code and Date (32-35) (OCD)</li>
+///<li>UB2-8: Occurrence Span Code/Dates (36) (OSP)</li>
+///<li>UB2-9: UB92 Locator 2 (State) (ST)</li>
+///<li>UB2-10: UB92 Locator 11 (State) (ST)</li>
+///<li>UB2-11: UB92 Locator 31 (National) (ST)</li>
+///<li>UB2-12: Document Control Number (ST)</li>
+///<li>UB2-13: UB92 Locator 49 (National) (ST)</li>
+///<li>UB2-14: UB92 Locator 56 (State) (ST)</li>
+///<li>UB2-15: UB92 Locator 57 (National) (ST)</li>
+///<li>UB2-16: UB92 Locator 78 (State) (ST)</li>
+///<li>UB2-17: Special Visit Count (NM)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -116,7 +117,7 @@ public class UB2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getConditionCode2430(int rep)
+	public IS GetConditionCode2430(int rep)
 	{
 			IS ret = null;
 			try
@@ -133,7 +134,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Condition Code (24-30) (UB2-3).
    ///</summary>
-  public IS[] getConditionCode2430() {
+  public IS[] GetConditionCode2430() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -151,6 +152,24 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Condition Code (24-30) (UB2-3).
+   ///</summary>
+  public int ConditionCode2430RepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Covered Days (7)(UB2-4).
 	///</summary>
@@ -202,7 +221,7 @@ public class UB2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public UVC getValueAmountCode(int rep)
+	public UVC GetValueAmountCode(int rep)
 	{
 			UVC ret = null;
 			try
@@ -219,7 +238,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Value Amount and Code (UB2-6).
    ///</summary>
-  public UVC[] getValueAmountCode() {
+  public UVC[] GetValueAmountCode() {
      UVC[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -237,12 +256,30 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Value Amount and Code (UB2-6).
+   ///</summary>
+  public int ValueAmountCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Occurrence Code and Date (32-35)(UB2-7).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public OCD getOccurrenceCodeDate3235(int rep)
+	public OCD GetOccurrenceCodeDate3235(int rep)
 	{
 			OCD ret = null;
 			try
@@ -259,7 +296,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Occurrence Code and Date (32-35) (UB2-7).
    ///</summary>
-  public OCD[] getOccurrenceCodeDate3235() {
+  public OCD[] GetOccurrenceCodeDate3235() {
      OCD[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -277,12 +314,30 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Occurrence Code and Date (32-35) (UB2-7).
+   ///</summary>
+  public int OccurrenceCodeDate3235RepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Occurrence Span Code/Dates (36)(UB2-8).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public OSP getOccurrenceSpanCodeDates(int rep)
+	public OSP GetOccurrenceSpanCodeDates(int rep)
 	{
 			OSP ret = null;
 			try
@@ -299,7 +354,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Occurrence Span Code/Dates (36) (UB2-8).
    ///</summary>
-  public OSP[] getOccurrenceSpanCodeDates() {
+  public OSP[] GetOccurrenceSpanCodeDates() {
      OSP[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -317,12 +372,30 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Occurrence Span Code/Dates (36) (UB2-8).
+   ///</summary>
+  public int OccurrenceSpanCodeDatesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of UB92 Locator 2 (State)(UB2-9).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getUB92Locator2State(int rep)
+	public ST GetUB92Locator2State(int rep)
 	{
 			ST ret = null;
 			try
@@ -339,7 +412,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of UB92 Locator 2 (State) (UB2-9).
    ///</summary>
-  public ST[] getUB92Locator2State() {
+  public ST[] GetUB92Locator2State() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -357,12 +430,30 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of UB92 Locator 2 (State) (UB2-9).
+   ///</summary>
+  public int UB92Locator2StateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of UB92 Locator 11 (State)(UB2-10).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getUB92Locator11State(int rep)
+	public ST GetUB92Locator11State(int rep)
 	{
 			ST ret = null;
 			try
@@ -379,7 +470,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of UB92 Locator 11 (State) (UB2-10).
    ///</summary>
-  public ST[] getUB92Locator11State() {
+  public ST[] GetUB92Locator11State() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -397,6 +488,24 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of UB92 Locator 11 (State) (UB2-10).
+   ///</summary>
+  public int UB92Locator11StateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns UB92 Locator 31 (National)(UB2-11).
 	///</summary>
@@ -425,7 +534,7 @@ public class UB2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getDocumentControlNumber(int rep)
+	public ST GetDocumentControlNumber(int rep)
 	{
 			ST ret = null;
 			try
@@ -442,7 +551,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Document Control Number (UB2-12).
    ///</summary>
-  public ST[] getDocumentControlNumber() {
+  public ST[] GetDocumentControlNumber() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -460,12 +569,30 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Document Control Number (UB2-12).
+   ///</summary>
+  public int DocumentControlNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of UB92 Locator 49 (National)(UB2-13).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getUB92Locator49National(int rep)
+	public ST GetUB92Locator49National(int rep)
 	{
 			ST ret = null;
 			try
@@ -482,7 +609,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of UB92 Locator 49 (National) (UB2-13).
    ///</summary>
-  public ST[] getUB92Locator49National() {
+  public ST[] GetUB92Locator49National() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -500,12 +627,30 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of UB92 Locator 49 (National) (UB2-13).
+   ///</summary>
+  public int UB92Locator49NationalRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of UB92 Locator 56 (State)(UB2-14).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getUB92Locator56State(int rep)
+	public ST GetUB92Locator56State(int rep)
 	{
 			ST ret = null;
 			try
@@ -522,7 +667,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of UB92 Locator 56 (State) (UB2-14).
    ///</summary>
-  public ST[] getUB92Locator56State() {
+  public ST[] GetUB92Locator56State() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -540,6 +685,24 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of UB92 Locator 56 (State) (UB2-14).
+   ///</summary>
+  public int UB92Locator56StateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns UB92 Locator 57 (National)(UB2-15).
 	///</summary>
@@ -568,7 +731,7 @@ public class UB2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getUB92Locator78State(int rep)
+	public ST GetUB92Locator78State(int rep)
 	{
 			ST ret = null;
 			try
@@ -585,7 +748,7 @@ public class UB2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of UB92 Locator 78 (State) (UB2-16).
    ///</summary>
-  public ST[] getUB92Locator78State() {
+  public ST[] GetUB92Locator78State() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -603,6 +766,24 @@ public class UB2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of UB92 Locator 78 (State) (UB2-16).
+   ///</summary>
+  public int UB92Locator78StateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Special Visit Count(UB2-17).
 	///</summary>

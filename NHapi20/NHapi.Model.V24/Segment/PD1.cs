@@ -9,28 +9,29 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 PD1 message segment. 
-/// This segment has the following fields:
-/// * PD1-1: Living Dependency (IS)
-/// * PD1-2: Living Arrangement (IS)
-/// * PD1-3: Patient Primary Facility (XON)
-/// * PD1-4: Patient Primary Care Provider Name and ID No. (XCN)
-/// * PD1-5: Student Indicator (IS)
-/// * PD1-6: Handicap (IS)
-/// * PD1-7: Living Will Code (IS)
-/// * PD1-8: Organ Donor Code (IS)
-/// * PD1-9: Separate Bill (ID)
-/// * PD1-10: Duplicate Patient (CX)
-/// * PD1-11: Publicity Code (CE)
-/// * PD1-12: Protection Indicator (ID)
-/// * PD1-13: Protection Indicator Effective Date (DT)
-/// * PD1-14: Place of Worship (XON)
-/// * PD1-15: Advance Directive Code (CE)
-/// * PD1-16: Immunization Registry Status (IS)
-/// * PD1-17: Immunization Registry Status Effective Date (DT)
-/// * PD1-18: Publicity Code Effective Date (DT)
-/// * PD1-19: Military Branch (IS)
-/// * PD1-20: Military Rank/Grade (IS)
-/// * PD1-21: Military Status (IS)
+/// This segment has the following fields:<ol>
+///<li>PD1-1: Living Dependency (IS)</li>
+///<li>PD1-2: Living Arrangement (IS)</li>
+///<li>PD1-3: Patient Primary Facility (XON)</li>
+///<li>PD1-4: Patient Primary Care Provider Name and ID No. (XCN)</li>
+///<li>PD1-5: Student Indicator (IS)</li>
+///<li>PD1-6: Handicap (IS)</li>
+///<li>PD1-7: Living Will Code (IS)</li>
+///<li>PD1-8: Organ Donor Code (IS)</li>
+///<li>PD1-9: Separate Bill (ID)</li>
+///<li>PD1-10: Duplicate Patient (CX)</li>
+///<li>PD1-11: Publicity Code (CE)</li>
+///<li>PD1-12: Protection Indicator (ID)</li>
+///<li>PD1-13: Protection Indicator Effective Date (DT)</li>
+///<li>PD1-14: Place of Worship (XON)</li>
+///<li>PD1-15: Advance Directive Code (CE)</li>
+///<li>PD1-16: Immunization Registry Status (IS)</li>
+///<li>PD1-17: Immunization Registry Status Effective Date (DT)</li>
+///<li>PD1-18: Publicity Code Effective Date (DT)</li>
+///<li>PD1-19: Military Branch (IS)</li>
+///<li>PD1-20: Military Rank/Grade (IS)</li>
+///<li>PD1-21: Military Status (IS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -78,7 +79,7 @@ public class PD1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getLivingDependency(int rep)
+	public IS GetLivingDependency(int rep)
 	{
 			IS ret = null;
 			try
@@ -95,7 +96,7 @@ public class PD1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Living Dependency (PD1-1).
    ///</summary>
-  public IS[] getLivingDependency() {
+  public IS[] GetLivingDependency() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -113,6 +114,24 @@ public class PD1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Living Dependency (PD1-1).
+   ///</summary>
+  public int LivingDependencyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Living Arrangement(PD1-2).
 	///</summary>
@@ -141,7 +160,7 @@ public class PD1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getPatientPrimaryFacility(int rep)
+	public XON GetPatientPrimaryFacility(int rep)
 	{
 			XON ret = null;
 			try
@@ -158,7 +177,7 @@ public class PD1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Patient Primary Facility (PD1-3).
    ///</summary>
-  public XON[] getPatientPrimaryFacility() {
+  public XON[] GetPatientPrimaryFacility() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -176,12 +195,30 @@ public class PD1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Patient Primary Facility (PD1-3).
+   ///</summary>
+  public int PatientPrimaryFacilityRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Patient Primary Care Provider Name and ID No.(PD1-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPatientPrimaryCareProviderNameIDNo(int rep)
+	public XCN GetPatientPrimaryCareProviderNameIDNo(int rep)
 	{
 			XCN ret = null;
 			try
@@ -198,7 +235,7 @@ public class PD1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Patient Primary Care Provider Name and ID No. (PD1-4).
    ///</summary>
-  public XCN[] getPatientPrimaryCareProviderNameIDNo() {
+  public XCN[] GetPatientPrimaryCareProviderNameIDNo() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -216,6 +253,24 @@ public class PD1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Patient Primary Care Provider Name and ID No. (PD1-4).
+   ///</summary>
+  public int PatientPrimaryCareProviderNameIDNoRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Student Indicator(PD1-5).
 	///</summary>
@@ -336,7 +391,7 @@ public class PD1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getDuplicatePatient(int rep)
+	public CX GetDuplicatePatient(int rep)
 	{
 			CX ret = null;
 			try
@@ -353,7 +408,7 @@ public class PD1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Duplicate Patient (PD1-10).
    ///</summary>
-  public CX[] getDuplicatePatient() {
+  public CX[] GetDuplicatePatient() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -371,6 +426,24 @@ public class PD1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Duplicate Patient (PD1-10).
+   ///</summary>
+  public int DuplicatePatientRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Publicity Code(PD1-11).
 	///</summary>
@@ -445,7 +518,7 @@ public class PD1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getPlaceOfWorship(int rep)
+	public XON GetPlaceOfWorship(int rep)
 	{
 			XON ret = null;
 			try
@@ -462,7 +535,7 @@ public class PD1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Place of Worship (PD1-14).
    ///</summary>
-  public XON[] getPlaceOfWorship() {
+  public XON[] GetPlaceOfWorship() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -480,12 +553,30 @@ public class PD1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Place of Worship (PD1-14).
+   ///</summary>
+  public int PlaceOfWorshipRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Advance Directive Code(PD1-15).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getAdvanceDirectiveCode(int rep)
+	public CE GetAdvanceDirectiveCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -502,7 +593,7 @@ public class PD1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Advance Directive Code (PD1-15).
    ///</summary>
-  public CE[] getAdvanceDirectiveCode() {
+  public CE[] GetAdvanceDirectiveCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -520,6 +611,24 @@ public class PD1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Advance Directive Code (PD1-15).
+   ///</summary>
+  public int AdvanceDirectiveCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Immunization Registry Status(PD1-16).
 	///</summary>

@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the RGV_O15_ORDER_DETAIL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RXO (Pharmacy/Treatment Order) 
-/// * 1: RGV_O15_ORDER_DETAIL_SUPPLEMENT (a Group object) optional 
+///<ol>
+///<li>0: RXO (Pharmacy/Treatment Order) </li>
+///<li>1: RGV_O15_ORDER_DETAIL_SUPPLEMENT (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RGV_O15_ORDER_DETAIL : AbstractGroup {

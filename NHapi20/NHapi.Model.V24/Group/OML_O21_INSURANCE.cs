@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the OML_O21_INSURANCE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: IN1 (Insurance) 
-/// * 1: IN2 (Insurance Additional Information) optional 
-/// * 2: IN3 (Insurance Additional Information, Certification) optional 
+///<ol>
+///<li>0: IN1 (Insurance) </li>
+///<li>1: IN2 (Insurance Additional Information) optional </li>
+///<li>2: IN3 (Insurance Additional Information, Certification) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OML_O21_INSURANCE : AbstractGroup {

@@ -9,15 +9,16 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 TCD message segment. 
-/// This segment has the following fields:
-/// * TCD-1: Universal Service Identifier (CE)
-/// * TCD-2: Auto-Dilution Factor (SN)
-/// * TCD-3: Rerun Dilution Factor (SN)
-/// * TCD-4: Pre-Dilution Factor (SN)
-/// * TCD-5: Endogenous Content of Pre-Dilution Diluent (SN)
-/// * TCD-6: Automatic Repeat Allowed (ID)
-/// * TCD-7: Reflex Allowed (ID)
-/// * TCD-8: Analyte Repeat Status (CE)
+/// This segment has the following fields:<ol>
+///<li>TCD-1: Universal Service Identifier (CE)</li>
+///<li>TCD-2: Auto-Dilution Factor (SN)</li>
+///<li>TCD-3: Rerun Dilution Factor (SN)</li>
+///<li>TCD-4: Pre-Dilution Factor (SN)</li>
+///<li>TCD-5: Endogenous Content of Pre-Dilution Diluent (SN)</li>
+///<li>TCD-6: Automatic Repeat Allowed (ID)</li>
+///<li>TCD-7: Reflex Allowed (ID)</li>
+///<li>TCD-8: Analyte Repeat Status (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a EAN_U09 message structure (see chapter 13). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EQU (Equipment Detail) 
-/// * 2: EAN_U09_NOTIFICATION (a Group object) repeating
-/// * 3: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EQU (Equipment Detail) </li>
+///<li>2: EAN_U09_NOTIFICATION (a Group object) repeating</li>
+///<li>3: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EAN_U09 : AbstractMessage  {
@@ -83,7 +85,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of EAN_U09_NOTIFICATION (a Group object) - creates it if necessary
 	///</summary>
-	public EAN_U09_NOTIFICATION getNOTIFICATION() {
+	public EAN_U09_NOTIFICATION GetNOTIFICATION() {
 	   EAN_U09_NOTIFICATION ret = null;
 	   try {
 	      ret = (EAN_U09_NOTIFICATION)this.GetStructure("NOTIFICATION");
@@ -100,14 +102,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public EAN_U09_NOTIFICATION getNOTIFICATION(int rep) { 
+	public EAN_U09_NOTIFICATION GetNOTIFICATION(int rep) { 
 	   return (EAN_U09_NOTIFICATION)this.GetStructure("NOTIFICATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of EAN_U09_NOTIFICATION 
 	 */ 
-	public int NOTIFICATIONReps { 
+	public int NOTIFICATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

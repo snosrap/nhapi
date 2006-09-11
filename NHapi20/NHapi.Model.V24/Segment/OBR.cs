@@ -9,54 +9,55 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 OBR message segment. 
-/// This segment has the following fields:
-/// * OBR-1: Set ID - OBR (SI)
-/// * OBR-2: Placer Order Number (EI)
-/// * OBR-3: Filler Order Number (EI)
-/// * OBR-4: Universal Service Identifier (CE)
-/// * OBR-5: Priority (ID)
-/// * OBR-6: Requested Date/Time (TS)
-/// * OBR-7: Observation Date/Time # (TS)
-/// * OBR-8: Observation End Date/Time # (TS)
-/// * OBR-9: Collection Volume * (CQ)
-/// * OBR-10: Collector Identifier * (XCN)
-/// * OBR-11: Specimen Action Code * (ID)
-/// * OBR-12: Danger Code (CE)
-/// * OBR-13: Relevant Clinical Info. (ST)
-/// * OBR-14: Specimen Received Date/Time * (TS)
-/// * OBR-15: Specimen Source (SPS)
-/// * OBR-16: Ordering Provider (XCN)
-/// * OBR-17: Order Callback Phone Number (XTN)
-/// * OBR-18: Placer Field 1 (ST)
-/// * OBR-19: Placer Field 2 (ST)
-/// * OBR-20: Filler Field 1 + (ST)
-/// * OBR-21: Filler Field 2 + (ST)
-/// * OBR-22: Results Rpt/Status Chng - Date/Time + (TS)
-/// * OBR-23: Charge to Practice + (MOC)
-/// * OBR-24: Diagnostic Serv Sect ID (ID)
-/// * OBR-25: Result Status + (ID)
-/// * OBR-26: Parent Result + (PRL)
-/// * OBR-27: Quantity/Timing (TQ)
-/// * OBR-28: Result Copies To (XCN)
-/// * OBR-29: Parent (EIP)
-/// * OBR-30: Transportation Mode (ID)
-/// * OBR-31: Reason for Study (CE)
-/// * OBR-32: Principal Result Interpreter + (NDL)
-/// * OBR-33: Assistant Result Interpreter + (NDL)
-/// * OBR-34: Technician + (NDL)
-/// * OBR-35: Transcriptionist + (NDL)
-/// * OBR-36: Scheduled Date/Time + (TS)
-/// * OBR-37: Number of Sample Containers * (NM)
-/// * OBR-38: Transport Logistics of Collected Sample * (CE)
-/// * OBR-39: Collector's Comment * (CE)
-/// * OBR-40: Transport Arrangement Responsibility (CE)
-/// * OBR-41: Transport Arranged (ID)
-/// * OBR-42: Escort Required (ID)
-/// * OBR-43: Planned Patient Transport Comment (CE)
-/// * OBR-44: Procedure Code (CE)
-/// * OBR-45: Procedure Code Modifier (CE)
-/// * OBR-46: Placer Supplemental Service Information (CE)
-/// * OBR-47: Filler Supplemental Service Information (CE)
+/// This segment has the following fields:<ol>
+///<li>OBR-1: Set ID - OBR (SI)</li>
+///<li>OBR-2: Placer Order Number (EI)</li>
+///<li>OBR-3: Filler Order Number (EI)</li>
+///<li>OBR-4: Universal Service Identifier (CE)</li>
+///<li>OBR-5: Priority (ID)</li>
+///<li>OBR-6: Requested Date/Time (TS)</li>
+///<li>OBR-7: Observation Date/Time # (TS)</li>
+///<li>OBR-8: Observation End Date/Time # (TS)</li>
+///<li>OBR-9: Collection Volume * (CQ)</li>
+///<li>OBR-10: Collector Identifier * (XCN)</li>
+///<li>OBR-11: Specimen Action Code * (ID)</li>
+///<li>OBR-12: Danger Code (CE)</li>
+///<li>OBR-13: Relevant Clinical Info. (ST)</li>
+///<li>OBR-14: Specimen Received Date/Time * (TS)</li>
+///<li>OBR-15: Specimen Source (SPS)</li>
+///<li>OBR-16: Ordering Provider (XCN)</li>
+///<li>OBR-17: Order Callback Phone Number (XTN)</li>
+///<li>OBR-18: Placer Field 1 (ST)</li>
+///<li>OBR-19: Placer Field 2 (ST)</li>
+///<li>OBR-20: Filler Field 1 + (ST)</li>
+///<li>OBR-21: Filler Field 2 + (ST)</li>
+///<li>OBR-22: Results Rpt/Status Chng - Date/Time + (TS)</li>
+///<li>OBR-23: Charge to Practice + (MOC)</li>
+///<li>OBR-24: Diagnostic Serv Sect ID (ID)</li>
+///<li>OBR-25: Result Status + (ID)</li>
+///<li>OBR-26: Parent Result + (PRL)</li>
+///<li>OBR-27: Quantity/Timing (TQ)</li>
+///<li>OBR-28: Result Copies To (XCN)</li>
+///<li>OBR-29: Parent (EIP)</li>
+///<li>OBR-30: Transportation Mode (ID)</li>
+///<li>OBR-31: Reason for Study (CE)</li>
+///<li>OBR-32: Principal Result Interpreter + (NDL)</li>
+///<li>OBR-33: Assistant Result Interpreter + (NDL)</li>
+///<li>OBR-34: Technician + (NDL)</li>
+///<li>OBR-35: Transcriptionist + (NDL)</li>
+///<li>OBR-36: Scheduled Date/Time + (TS)</li>
+///<li>OBR-37: Number of Sample Containers * (NM)</li>
+///<li>OBR-38: Transport Logistics of Collected Sample * (CE)</li>
+///<li>OBR-39: Collector's Comment * (CE)</li>
+///<li>OBR-40: Transport Arrangement Responsibility (CE)</li>
+///<li>OBR-41: Transport Arranged (ID)</li>
+///<li>OBR-42: Escort Required (ID)</li>
+///<li>OBR-43: Planned Patient Transport Comment (CE)</li>
+///<li>OBR-44: Procedure Code (CE)</li>
+///<li>OBR-45: Procedure Code Modifier (CE)</li>
+///<li>OBR-46: Placer Supplemental Service Information (CE)</li>
+///<li>OBR-47: Filler Supplemental Service Information (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -337,7 +338,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getCollectorIdentifier(int rep)
+	public XCN GetCollectorIdentifier(int rep)
 	{
 			XCN ret = null;
 			try
@@ -354,7 +355,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Collector Identifier * (OBR-10).
    ///</summary>
-  public XCN[] getCollectorIdentifier() {
+  public XCN[] GetCollectorIdentifier() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(10);  
@@ -372,6 +373,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Collector Identifier * (OBR-10).
+   ///</summary>
+  public int CollectorIdentifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(10);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Action Code *(OBR-11).
 	///</summary>
@@ -492,7 +511,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getOrderingProvider(int rep)
+	public XCN GetOrderingProvider(int rep)
 	{
 			XCN ret = null;
 			try
@@ -509,7 +528,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Ordering Provider (OBR-16).
    ///</summary>
-  public XCN[] getOrderingProvider() {
+  public XCN[] GetOrderingProvider() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -527,12 +546,30 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Ordering Provider (OBR-16).
+   ///</summary>
+  public int OrderingProviderRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Order Callback Phone Number(OBR-17).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getOrderCallbackPhoneNumber(int rep)
+	public XTN GetOrderCallbackPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -549,7 +586,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Order Callback Phone Number (OBR-17).
    ///</summary>
-  public XTN[] getOrderCallbackPhoneNumber() {
+  public XTN[] GetOrderCallbackPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -567,6 +604,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Order Callback Phone Number (OBR-17).
+   ///</summary>
+  public int OrderCallbackPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Placer Field 1(OBR-18).
 	///</summary>
@@ -779,7 +834,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TQ getQuantityTiming(int rep)
+	public TQ GetQuantityTiming(int rep)
 	{
 			TQ ret = null;
 			try
@@ -796,7 +851,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Quantity/Timing (OBR-27).
    ///</summary>
-  public TQ[] getQuantityTiming() {
+  public TQ[] GetQuantityTiming() {
      TQ[] ret = null;
     try {
         IType[] t = this.GetField(27);  
@@ -814,12 +869,30 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Quantity/Timing (OBR-27).
+   ///</summary>
+  public int QuantityTimingRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(27);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Result Copies To(OBR-28).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getResultCopiesTo(int rep)
+	public XCN GetResultCopiesTo(int rep)
 	{
 			XCN ret = null;
 			try
@@ -836,7 +909,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Result Copies To (OBR-28).
    ///</summary>
-  public XCN[] getResultCopiesTo() {
+  public XCN[] GetResultCopiesTo() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(28);  
@@ -854,6 +927,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Result Copies To (OBR-28).
+   ///</summary>
+  public int ResultCopiesToRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(28);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Parent(OBR-29).
 	///</summary>
@@ -905,7 +996,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getReasonForStudy(int rep)
+	public CE GetReasonForStudy(int rep)
 	{
 			CE ret = null;
 			try
@@ -922,7 +1013,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Reason for Study (OBR-31).
    ///</summary>
-  public CE[] getReasonForStudy() {
+  public CE[] GetReasonForStudy() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(31);  
@@ -940,6 +1031,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Reason for Study (OBR-31).
+   ///</summary>
+  public int ReasonForStudyRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(31);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Principal Result Interpreter +(OBR-32).
 	///</summary>
@@ -968,7 +1077,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public NDL getAssistantResultInterpreter(int rep)
+	public NDL GetAssistantResultInterpreter(int rep)
 	{
 			NDL ret = null;
 			try
@@ -985,7 +1094,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Assistant Result Interpreter + (OBR-33).
    ///</summary>
-  public NDL[] getAssistantResultInterpreter() {
+  public NDL[] GetAssistantResultInterpreter() {
      NDL[] ret = null;
     try {
         IType[] t = this.GetField(33);  
@@ -1003,12 +1112,30 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Assistant Result Interpreter + (OBR-33).
+   ///</summary>
+  public int AssistantResultInterpreterRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(33);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Technician +(OBR-34).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public NDL getTechnician(int rep)
+	public NDL GetTechnician(int rep)
 	{
 			NDL ret = null;
 			try
@@ -1025,7 +1152,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Technician + (OBR-34).
    ///</summary>
-  public NDL[] getTechnician() {
+  public NDL[] GetTechnician() {
      NDL[] ret = null;
     try {
         IType[] t = this.GetField(34);  
@@ -1043,12 +1170,30 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Technician + (OBR-34).
+   ///</summary>
+  public int TechnicianRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(34);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Transcriptionist +(OBR-35).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public NDL getTranscriptionist(int rep)
+	public NDL GetTranscriptionist(int rep)
 	{
 			NDL ret = null;
 			try
@@ -1065,7 +1210,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Transcriptionist + (OBR-35).
    ///</summary>
-  public NDL[] getTranscriptionist() {
+  public NDL[] GetTranscriptionist() {
      NDL[] ret = null;
     try {
         IType[] t = this.GetField(35);  
@@ -1083,6 +1228,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Transcriptionist + (OBR-35).
+   ///</summary>
+  public int TranscriptionistRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(35);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Scheduled Date/Time +(OBR-36).
 	///</summary>
@@ -1134,7 +1297,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getTransportLogisticsOfCollectedSample(int rep)
+	public CE GetTransportLogisticsOfCollectedSample(int rep)
 	{
 			CE ret = null;
 			try
@@ -1151,7 +1314,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Transport Logistics of Collected Sample * (OBR-38).
    ///</summary>
-  public CE[] getTransportLogisticsOfCollectedSample() {
+  public CE[] GetTransportLogisticsOfCollectedSample() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(38);  
@@ -1169,12 +1332,30 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Transport Logistics of Collected Sample * (OBR-38).
+   ///</summary>
+  public int TransportLogisticsOfCollectedSampleRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(38);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Collector's Comment *(OBR-39).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getCollectorSComment(int rep)
+	public CE GetCollectorSComment(int rep)
 	{
 			CE ret = null;
 			try
@@ -1191,7 +1372,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Collector's Comment * (OBR-39).
    ///</summary>
-  public CE[] getCollectorSComment() {
+  public CE[] GetCollectorSComment() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(39);  
@@ -1209,6 +1390,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Collector's Comment * (OBR-39).
+   ///</summary>
+  public int CollectorSCommentRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(39);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Transport Arrangement Responsibility(OBR-40).
 	///</summary>
@@ -1283,7 +1482,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getPlannedPatientTransportComment(int rep)
+	public CE GetPlannedPatientTransportComment(int rep)
 	{
 			CE ret = null;
 			try
@@ -1300,7 +1499,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Planned Patient Transport Comment (OBR-43).
    ///</summary>
-  public CE[] getPlannedPatientTransportComment() {
+  public CE[] GetPlannedPatientTransportComment() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(43);  
@@ -1318,6 +1517,24 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Planned Patient Transport Comment (OBR-43).
+   ///</summary>
+  public int PlannedPatientTransportCommentRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(43);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Procedure Code(OBR-44).
 	///</summary>
@@ -1346,7 +1563,7 @@ public class OBR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProcedureCodeModifier(int rep)
+	public CE GetProcedureCodeModifier(int rep)
 	{
 			CE ret = null;
 			try
@@ -1363,7 +1580,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Procedure Code Modifier (OBR-45).
    ///</summary>
-  public CE[] getProcedureCodeModifier() {
+  public CE[] GetProcedureCodeModifier() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(45);  
@@ -1381,12 +1598,30 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Procedure Code Modifier (OBR-45).
+   ///</summary>
+  public int ProcedureCodeModifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(45);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Placer Supplemental Service Information(OBR-46).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getPlacerSupplementalServiceInformation(int rep)
+	public CE GetPlacerSupplementalServiceInformation(int rep)
 	{
 			CE ret = null;
 			try
@@ -1403,7 +1638,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Supplemental Service Information (OBR-46).
    ///</summary>
-  public CE[] getPlacerSupplementalServiceInformation() {
+  public CE[] GetPlacerSupplementalServiceInformation() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(46);  
@@ -1421,12 +1656,30 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Supplemental Service Information (OBR-46).
+   ///</summary>
+  public int PlacerSupplementalServiceInformationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(46);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Filler Supplemental Service Information(OBR-47).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getFillerSupplementalServiceInformation(int rep)
+	public CE GetFillerSupplementalServiceInformation(int rep)
 	{
 			CE ret = null;
 			try
@@ -1443,7 +1696,7 @@ public class OBR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Filler Supplemental Service Information (OBR-47).
    ///</summary>
-  public CE[] getFillerSupplementalServiceInformation() {
+  public CE[] GetFillerSupplementalServiceInformation() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(47);  
@@ -1461,5 +1714,23 @@ public class OBR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Filler Supplemental Service Information (OBR-47).
+   ///</summary>
+  public int FillerSupplementalServiceInformationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(47);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

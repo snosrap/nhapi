@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Group
 ///Represents the BAR_P02_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient identification) 
-/// * 1: PD1 (patient additional demographic) optional 
-/// * 2: PV1 (Patient visit) optional 
-/// * 3: DB1 (Disability) optional repeating
+///<ol>
+///<li>0: PID (Patient identification) </li>
+///<li>1: PD1 (patient additional demographic) optional </li>
+///<li>2: PV1 (Patient visit) optional </li>
+///<li>3: DB1 (Disability) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BAR_P02_PATIENT : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DB1 (Disability) - creates it if necessary
 	///</summary>
-	public DB1 getDB1() {
+	public DB1 GetDB1() {
 	   DB1 ret = null;
 	   try {
 	      ret = (DB1)this.GetStructure("DB1");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DB1 getDB1(int rep) { 
+	public DB1 GetDB1(int rep) { 
 	   return (DB1)this.GetStructure("DB1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DB1 
 	 */ 
-	public int DB1Reps { 
+	public int DB1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

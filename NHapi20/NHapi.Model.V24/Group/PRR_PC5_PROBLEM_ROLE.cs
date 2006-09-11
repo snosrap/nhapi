@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the PRR_PC5_PROBLEM_ROLE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ROL (Role) 
-/// * 1: VAR (Variance) optional repeating
+///<ol>
+///<li>0: ROL (Role) </li>
+///<li>1: VAR (Variance) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PRR_PC5_PROBLEM_ROLE : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VAR (Variance) - creates it if necessary
 	///</summary>
-	public VAR getVAR() {
+	public VAR GetVAR() {
 	   VAR ret = null;
 	   try {
 	      ret = (VAR)this.GetStructure("VAR");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VAR getVAR(int rep) { 
+	public VAR GetVAR(int rep) { 
 	   return (VAR)this.GetStructure("VAR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VAR 
 	 */ 
-	public int VARReps { 
+	public int VARRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

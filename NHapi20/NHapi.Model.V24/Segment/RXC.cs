@@ -9,14 +9,15 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 RXC message segment. 
-/// This segment has the following fields:
-/// * RXC-1: RX Component Type (ID)
-/// * RXC-2: Component Code (CE)
-/// * RXC-3: Component Amount (NM)
-/// * RXC-4: Component Units (CE)
-/// * RXC-5: Component Strength (NM)
-/// * RXC-6: Component Strength Units (CE)
-/// * RXC-7: Supplementary Code (CE)
+/// This segment has the following fields:<ol>
+///<li>RXC-1: RX Component Type (ID)</li>
+///<li>RXC-2: Component Code (CE)</li>
+///<li>RXC-3: Component Amount (NM)</li>
+///<li>RXC-4: Component Units (CE)</li>
+///<li>RXC-5: Component Strength (NM)</li>
+///<li>RXC-6: Component Strength Units (CE)</li>
+///<li>RXC-7: Supplementary Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -188,7 +189,7 @@ public class RXC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSupplementaryCode(int rep)
+	public CE GetSupplementaryCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -205,7 +206,7 @@ public class RXC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Supplementary Code (RXC-7).
    ///</summary>
-  public CE[] getSupplementaryCode() {
+  public CE[] GetSupplementaryCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -223,5 +224,23 @@ public class RXC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Supplementary Code (RXC-7).
+   ///</summary>
+  public int SupplementaryCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

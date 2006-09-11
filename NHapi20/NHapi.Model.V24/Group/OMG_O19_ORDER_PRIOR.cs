@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Group
 ///Represents the OMG_O19_ORDER_PRIOR Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) optional 
-/// * 1: OBR (Observation Request) 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: CTD (Contact Data) optional 
-/// * 4: OMG_O19_OBSERVATION_PRIOR (a Group object) repeating
+///<ol>
+///<li>0: ORC (Common Order) optional </li>
+///<li>1: OBR (Observation Request) </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: CTD (Contact Data) optional </li>
+///<li>4: OMG_O19_OBSERVATION_PRIOR (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMG_O19_ORDER_PRIOR : AbstractGroup {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OMG_O19_OBSERVATION_PRIOR (a Group object) - creates it if necessary
 	///</summary>
-	public OMG_O19_OBSERVATION_PRIOR getOBSERVATION_PRIOR() {
+	public OMG_O19_OBSERVATION_PRIOR GetOBSERVATION_PRIOR() {
 	   OMG_O19_OBSERVATION_PRIOR ret = null;
 	   try {
 	      ret = (OMG_O19_OBSERVATION_PRIOR)this.GetStructure("OBSERVATION_PRIOR");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OMG_O19_OBSERVATION_PRIOR getOBSERVATION_PRIOR(int rep) { 
+	public OMG_O19_OBSERVATION_PRIOR GetOBSERVATION_PRIOR(int rep) { 
 	   return (OMG_O19_OBSERVATION_PRIOR)this.GetStructure("OBSERVATION_PRIOR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OMG_O19_OBSERVATION_PRIOR 
 	 */ 
-	public int OBSERVATION_PRIORReps { 
+	public int OBSERVATION_PRIORRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

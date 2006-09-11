@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the DFT_P03_FINANCIAL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: FT1 (Financial Transaction) 
-/// * 1: DFT_P03_FINANCIAL_PROCEDURE (a Group object) optional repeating
-/// * 2: DFT_P03_FINANCIAL_COMMON_ORDER (a Group object) optional repeating
+///<ol>
+///<li>0: FT1 (Financial Transaction) </li>
+///<li>1: DFT_P03_FINANCIAL_PROCEDURE (a Group object) optional repeating</li>
+///<li>2: DFT_P03_FINANCIAL_COMMON_ORDER (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DFT_P03_FINANCIAL : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DFT_P03_FINANCIAL_PROCEDURE (a Group object) - creates it if necessary
 	///</summary>
-	public DFT_P03_FINANCIAL_PROCEDURE getFINANCIAL_PROCEDURE() {
+	public DFT_P03_FINANCIAL_PROCEDURE GetFINANCIAL_PROCEDURE() {
 	   DFT_P03_FINANCIAL_PROCEDURE ret = null;
 	   try {
 	      ret = (DFT_P03_FINANCIAL_PROCEDURE)this.GetStructure("FINANCIAL_PROCEDURE");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DFT_P03_FINANCIAL_PROCEDURE getFINANCIAL_PROCEDURE(int rep) { 
+	public DFT_P03_FINANCIAL_PROCEDURE GetFINANCIAL_PROCEDURE(int rep) { 
 	   return (DFT_P03_FINANCIAL_PROCEDURE)this.GetStructure("FINANCIAL_PROCEDURE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DFT_P03_FINANCIAL_PROCEDURE 
 	 */ 
-	public int FINANCIAL_PROCEDUREReps { 
+	public int FINANCIAL_PROCEDURERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DFT_P03_FINANCIAL_COMMON_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public DFT_P03_FINANCIAL_COMMON_ORDER getFINANCIAL_COMMON_ORDER() {
+	public DFT_P03_FINANCIAL_COMMON_ORDER GetFINANCIAL_COMMON_ORDER() {
 	   DFT_P03_FINANCIAL_COMMON_ORDER ret = null;
 	   try {
 	      ret = (DFT_P03_FINANCIAL_COMMON_ORDER)this.GetStructure("FINANCIAL_COMMON_ORDER");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DFT_P03_FINANCIAL_COMMON_ORDER getFINANCIAL_COMMON_ORDER(int rep) { 
+	public DFT_P03_FINANCIAL_COMMON_ORDER GetFINANCIAL_COMMON_ORDER(int rep) { 
 	   return (DFT_P03_FINANCIAL_COMMON_ORDER)this.GetStructure("FINANCIAL_COMMON_ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DFT_P03_FINANCIAL_COMMON_ORDER 
 	 */ 
-	public int FINANCIAL_COMMON_ORDERReps { 
+	public int FINANCIAL_COMMON_ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

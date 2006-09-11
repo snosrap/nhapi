@@ -12,14 +12,16 @@ namespace NHapi.Model.V24.Group
 ///Represents the PGL_PC6_GOAL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: GOL (Goal Detail) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: VAR (Variance) optional repeating
-/// * 3: PGL_PC6_GOAL_ROLE (a Group object) optional repeating
-/// * 4: PGL_PC6_PATHWAY (a Group object) optional repeating
-/// * 5: PGL_PC6_OBSERVATION (a Group object) optional repeating
-/// * 6: PGL_PC6_PROBLEM (a Group object) optional repeating
-/// * 7: PGL_PC6_ORDER (a Group object) optional repeating
+///<ol>
+///<li>0: GOL (Goal Detail) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: VAR (Variance) optional repeating</li>
+///<li>3: PGL_PC6_GOAL_ROLE (a Group object) optional repeating</li>
+///<li>4: PGL_PC6_PATHWAY (a Group object) optional repeating</li>
+///<li>5: PGL_PC6_OBSERVATION (a Group object) optional repeating</li>
+///<li>6: PGL_PC6_PROBLEM (a Group object) optional repeating</li>
+///<li>7: PGL_PC6_ORDER (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PGL_PC6_GOAL : AbstractGroup {
@@ -61,7 +63,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -78,14 +80,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -102,7 +104,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VAR (Variance) - creates it if necessary
 	///</summary>
-	public VAR getVAR() {
+	public VAR GetVAR() {
 	   VAR ret = null;
 	   try {
 	      ret = (VAR)this.GetStructure("VAR");
@@ -119,14 +121,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VAR getVAR(int rep) { 
+	public VAR GetVAR(int rep) { 
 	   return (VAR)this.GetStructure("VAR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VAR 
 	 */ 
-	public int VARReps { 
+	public int VARRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -143,7 +145,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PGL_PC6_GOAL_ROLE (a Group object) - creates it if necessary
 	///</summary>
-	public PGL_PC6_GOAL_ROLE getGOAL_ROLE() {
+	public PGL_PC6_GOAL_ROLE GetGOAL_ROLE() {
 	   PGL_PC6_GOAL_ROLE ret = null;
 	   try {
 	      ret = (PGL_PC6_GOAL_ROLE)this.GetStructure("GOAL_ROLE");
@@ -160,14 +162,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PGL_PC6_GOAL_ROLE getGOAL_ROLE(int rep) { 
+	public PGL_PC6_GOAL_ROLE GetGOAL_ROLE(int rep) { 
 	   return (PGL_PC6_GOAL_ROLE)this.GetStructure("GOAL_ROLE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PGL_PC6_GOAL_ROLE 
 	 */ 
-	public int GOAL_ROLEReps { 
+	public int GOAL_ROLERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -184,7 +186,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PGL_PC6_PATHWAY (a Group object) - creates it if necessary
 	///</summary>
-	public PGL_PC6_PATHWAY getPATHWAY() {
+	public PGL_PC6_PATHWAY GetPATHWAY() {
 	   PGL_PC6_PATHWAY ret = null;
 	   try {
 	      ret = (PGL_PC6_PATHWAY)this.GetStructure("PATHWAY");
@@ -201,14 +203,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PGL_PC6_PATHWAY getPATHWAY(int rep) { 
+	public PGL_PC6_PATHWAY GetPATHWAY(int rep) { 
 	   return (PGL_PC6_PATHWAY)this.GetStructure("PATHWAY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PGL_PC6_PATHWAY 
 	 */ 
-	public int PATHWAYReps { 
+	public int PATHWAYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -225,7 +227,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PGL_PC6_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public PGL_PC6_OBSERVATION getOBSERVATION() {
+	public PGL_PC6_OBSERVATION GetOBSERVATION() {
 	   PGL_PC6_OBSERVATION ret = null;
 	   try {
 	      ret = (PGL_PC6_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -242,14 +244,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PGL_PC6_OBSERVATION getOBSERVATION(int rep) { 
+	public PGL_PC6_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (PGL_PC6_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PGL_PC6_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -266,7 +268,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PGL_PC6_PROBLEM (a Group object) - creates it if necessary
 	///</summary>
-	public PGL_PC6_PROBLEM getPROBLEM() {
+	public PGL_PC6_PROBLEM GetPROBLEM() {
 	   PGL_PC6_PROBLEM ret = null;
 	   try {
 	      ret = (PGL_PC6_PROBLEM)this.GetStructure("PROBLEM");
@@ -283,14 +285,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PGL_PC6_PROBLEM getPROBLEM(int rep) { 
+	public PGL_PC6_PROBLEM GetPROBLEM(int rep) { 
 	   return (PGL_PC6_PROBLEM)this.GetStructure("PROBLEM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PGL_PC6_PROBLEM 
 	 */ 
-	public int PROBLEMReps { 
+	public int PROBLEMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -307,7 +309,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PGL_PC6_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public PGL_PC6_ORDER getORDER() {
+	public PGL_PC6_ORDER GetORDER() {
 	   PGL_PC6_ORDER ret = null;
 	   try {
 	      ret = (PGL_PC6_ORDER)this.GetStructure("ORDER");
@@ -324,14 +326,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PGL_PC6_ORDER getORDER(int rep) { 
+	public PGL_PC6_ORDER GetORDER(int rep) { 
 	   return (PGL_PC6_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PGL_PC6_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

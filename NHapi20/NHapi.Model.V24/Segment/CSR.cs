@@ -9,23 +9,24 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 CSR message segment. 
-/// This segment has the following fields:
-/// * CSR-1: Sponsor Study ID (EI)
-/// * CSR-2: Alternate Study ID (EI)
-/// * CSR-3: Institution Registering the Patient (CE)
-/// * CSR-4: Sponsor Patient ID (CX)
-/// * CSR-5: Alternate Patient ID - CSR (CX)
-/// * CSR-6: Date/Time Of Patient Study Registration (TS)
-/// * CSR-7: Person Performing Study Registration (XCN)
-/// * CSR-8: Study Authorizing Provider (XCN)
-/// * CSR-9: Date/time Patient Study Consent Signed (TS)
-/// * CSR-10: Patient Study Eligibility Status (CE)
-/// * CSR-11: Study Randomization Date/time (TS)
-/// * CSR-12: Randomized Study Arm (CE)
-/// * CSR-13: Stratum for Study Randomization (CE)
-/// * CSR-14: Patient Evaluability Status (CE)
-/// * CSR-15: Date/time Ended Study (TS)
-/// * CSR-16: Reason Ended Study (CE)
+/// This segment has the following fields:<ol>
+///<li>CSR-1: Sponsor Study ID (EI)</li>
+///<li>CSR-2: Alternate Study ID (EI)</li>
+///<li>CSR-3: Institution Registering the Patient (CE)</li>
+///<li>CSR-4: Sponsor Patient ID (CX)</li>
+///<li>CSR-5: Alternate Patient ID - CSR (CX)</li>
+///<li>CSR-6: Date/Time Of Patient Study Registration (TS)</li>
+///<li>CSR-7: Person Performing Study Registration (XCN)</li>
+///<li>CSR-8: Study Authorizing Provider (XCN)</li>
+///<li>CSR-9: Date/time Patient Study Consent Signed (TS)</li>
+///<li>CSR-10: Patient Study Eligibility Status (CE)</li>
+///<li>CSR-11: Study Randomization Date/time (TS)</li>
+///<li>CSR-12: Randomized Study Arm (CE)</li>
+///<li>CSR-13: Stratum for Study Randomization (CE)</li>
+///<li>CSR-14: Patient Evaluability Status (CE)</li>
+///<li>CSR-15: Date/time Ended Study (TS)</li>
+///<li>CSR-16: Reason Ended Study (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -206,7 +207,7 @@ public class CSR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPersonPerformingStudyRegistration(int rep)
+	public XCN GetPersonPerformingStudyRegistration(int rep)
 	{
 			XCN ret = null;
 			try
@@ -223,7 +224,7 @@ public class CSR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Person Performing Study Registration (CSR-7).
    ///</summary>
-  public XCN[] getPersonPerformingStudyRegistration() {
+  public XCN[] GetPersonPerformingStudyRegistration() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -241,12 +242,30 @@ public class CSR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Person Performing Study Registration (CSR-7).
+   ///</summary>
+  public int PersonPerformingStudyRegistrationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Study Authorizing Provider(CSR-8).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getStudyAuthorizingProvider(int rep)
+	public XCN GetStudyAuthorizingProvider(int rep)
 	{
 			XCN ret = null;
 			try
@@ -263,7 +282,7 @@ public class CSR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Study Authorizing Provider (CSR-8).
    ///</summary>
-  public XCN[] getStudyAuthorizingProvider() {
+  public XCN[] GetStudyAuthorizingProvider() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -281,6 +300,24 @@ public class CSR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Study Authorizing Provider (CSR-8).
+   ///</summary>
+  public int StudyAuthorizingProviderRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Date/time Patient Study Consent Signed(CSR-9).
 	///</summary>
@@ -332,7 +369,7 @@ public class CSR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TS getStudyRandomizationDateTime(int rep)
+	public TS GetStudyRandomizationDateTime(int rep)
 	{
 			TS ret = null;
 			try
@@ -349,7 +386,7 @@ public class CSR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Study Randomization Date/time (CSR-11).
    ///</summary>
-  public TS[] getStudyRandomizationDateTime() {
+  public TS[] GetStudyRandomizationDateTime() {
      TS[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -367,12 +404,30 @@ public class CSR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Study Randomization Date/time (CSR-11).
+   ///</summary>
+  public int StudyRandomizationDateTimeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Randomized Study Arm(CSR-12).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getRandomizedStudyArm(int rep)
+	public CE GetRandomizedStudyArm(int rep)
 	{
 			CE ret = null;
 			try
@@ -389,7 +444,7 @@ public class CSR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Randomized Study Arm (CSR-12).
    ///</summary>
-  public CE[] getRandomizedStudyArm() {
+  public CE[] GetRandomizedStudyArm() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -407,12 +462,30 @@ public class CSR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Randomized Study Arm (CSR-12).
+   ///</summary>
+  public int RandomizedStudyArmRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Stratum for Study Randomization(CSR-13).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getStratumForStudyRandomization(int rep)
+	public CE GetStratumForStudyRandomization(int rep)
 	{
 			CE ret = null;
 			try
@@ -429,7 +502,7 @@ public class CSR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Stratum for Study Randomization (CSR-13).
    ///</summary>
-  public CE[] getStratumForStudyRandomization() {
+  public CE[] GetStratumForStudyRandomization() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -447,6 +520,24 @@ public class CSR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Stratum for Study Randomization (CSR-13).
+   ///</summary>
+  public int StratumForStudyRandomizationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Patient Evaluability Status(CSR-14).
 	///</summary>

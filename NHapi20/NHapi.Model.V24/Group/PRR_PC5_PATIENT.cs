@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the PRR_PC5_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient identification) 
-/// * 1: PRR_PC5_PATIENT_VISIT (a Group object) optional 
-/// * 2: PRR_PC5_PROBLEM (a Group object) repeating
+///<ol>
+///<li>0: PID (Patient identification) </li>
+///<li>1: PRR_PC5_PATIENT_VISIT (a Group object) optional </li>
+///<li>2: PRR_PC5_PROBLEM (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PRR_PC5_PATIENT : AbstractGroup {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PRR_PC5_PROBLEM (a Group object) - creates it if necessary
 	///</summary>
-	public PRR_PC5_PROBLEM getPROBLEM() {
+	public PRR_PC5_PROBLEM GetPROBLEM() {
 	   PRR_PC5_PROBLEM ret = null;
 	   try {
 	      ret = (PRR_PC5_PROBLEM)this.GetStructure("PROBLEM");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PRR_PC5_PROBLEM getPROBLEM(int rep) { 
+	public PRR_PC5_PROBLEM GetPROBLEM(int rep) { 
 	   return (PRR_PC5_PROBLEM)this.GetStructure("PROBLEM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PRR_PC5_PROBLEM 
 	 */ 
-	public int PROBLEMReps { 
+	public int PROBLEMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

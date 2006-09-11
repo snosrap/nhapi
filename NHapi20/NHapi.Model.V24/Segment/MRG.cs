@@ -9,14 +9,15 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 MRG message segment. 
-/// This segment has the following fields:
-/// * MRG-1: Prior Patient Identifier List (CX)
-/// * MRG-2: Prior Alternate Patient ID (CX)
-/// * MRG-3: Prior Patient Account Number (CX)
-/// * MRG-4: Prior Patient ID (CX)
-/// * MRG-5: Prior Visit Number (CX)
-/// * MRG-6: Prior Alternate Visit ID (CX)
-/// * MRG-7: Prior Patient Name (XPN)
+/// This segment has the following fields:<ol>
+///<li>MRG-1: Prior Patient Identifier List (CX)</li>
+///<li>MRG-2: Prior Alternate Patient ID (CX)</li>
+///<li>MRG-3: Prior Patient Account Number (CX)</li>
+///<li>MRG-4: Prior Patient ID (CX)</li>
+///<li>MRG-5: Prior Visit Number (CX)</li>
+///<li>MRG-6: Prior Alternate Visit ID (CX)</li>
+///<li>MRG-7: Prior Patient Name (XPN)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -50,7 +51,7 @@ public class MRG : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getPriorPatientIdentifierList(int rep)
+	public CX GetPriorPatientIdentifierList(int rep)
 	{
 			CX ret = null;
 			try
@@ -67,7 +68,7 @@ public class MRG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Prior Patient Identifier List (MRG-1).
    ///</summary>
-  public CX[] getPriorPatientIdentifierList() {
+  public CX[] GetPriorPatientIdentifierList() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -85,12 +86,30 @@ public class MRG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Prior Patient Identifier List (MRG-1).
+   ///</summary>
+  public int PriorPatientIdentifierListRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Prior Alternate Patient ID(MRG-2).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CX getPriorAlternatePatientID(int rep)
+	public CX GetPriorAlternatePatientID(int rep)
 	{
 			CX ret = null;
 			try
@@ -107,7 +126,7 @@ public class MRG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Prior Alternate Patient ID (MRG-2).
    ///</summary>
-  public CX[] getPriorAlternatePatientID() {
+  public CX[] GetPriorAlternatePatientID() {
      CX[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -125,6 +144,24 @@ public class MRG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Prior Alternate Patient ID (MRG-2).
+   ///</summary>
+  public int PriorAlternatePatientIDRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Prior Patient Account Number(MRG-3).
 	///</summary>
@@ -222,7 +259,7 @@ public class MRG : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XPN getPriorPatientName(int rep)
+	public XPN GetPriorPatientName(int rep)
 	{
 			XPN ret = null;
 			try
@@ -239,7 +276,7 @@ public class MRG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Prior Patient Name (MRG-7).
    ///</summary>
-  public XPN[] getPriorPatientName() {
+  public XPN[] GetPriorPatientName() {
      XPN[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -257,5 +294,23 @@ public class MRG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Prior Patient Name (MRG-7).
+   ///</summary>
+  public int PriorPatientNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

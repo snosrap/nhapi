@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Group
 ///Represents the PPP_PCB_PATHWAY Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PTH (Pathway) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: VAR (Variance) optional repeating
-/// * 3: PPP_PCB_PATHWAY_ROLE (a Group object) optional repeating
-/// * 4: PPP_PCB_PROBLEM (a Group object) optional repeating
+///<ol>
+///<li>0: PTH (Pathway) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: VAR (Variance) optional repeating</li>
+///<li>3: PPP_PCB_PATHWAY_ROLE (a Group object) optional repeating</li>
+///<li>4: PPP_PCB_PROBLEM (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPP_PCB_PATHWAY : AbstractGroup {
@@ -55,7 +57,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -72,14 +74,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -96,7 +98,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VAR (Variance) - creates it if necessary
 	///</summary>
-	public VAR getVAR() {
+	public VAR GetVAR() {
 	   VAR ret = null;
 	   try {
 	      ret = (VAR)this.GetStructure("VAR");
@@ -113,14 +115,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VAR getVAR(int rep) { 
+	public VAR GetVAR(int rep) { 
 	   return (VAR)this.GetStructure("VAR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VAR 
 	 */ 
-	public int VARReps { 
+	public int VARRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -137,7 +139,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPP_PCB_PATHWAY_ROLE (a Group object) - creates it if necessary
 	///</summary>
-	public PPP_PCB_PATHWAY_ROLE getPATHWAY_ROLE() {
+	public PPP_PCB_PATHWAY_ROLE GetPATHWAY_ROLE() {
 	   PPP_PCB_PATHWAY_ROLE ret = null;
 	   try {
 	      ret = (PPP_PCB_PATHWAY_ROLE)this.GetStructure("PATHWAY_ROLE");
@@ -154,14 +156,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPP_PCB_PATHWAY_ROLE getPATHWAY_ROLE(int rep) { 
+	public PPP_PCB_PATHWAY_ROLE GetPATHWAY_ROLE(int rep) { 
 	   return (PPP_PCB_PATHWAY_ROLE)this.GetStructure("PATHWAY_ROLE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPP_PCB_PATHWAY_ROLE 
 	 */ 
-	public int PATHWAY_ROLEReps { 
+	public int PATHWAY_ROLERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -178,7 +180,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPP_PCB_PROBLEM (a Group object) - creates it if necessary
 	///</summary>
-	public PPP_PCB_PROBLEM getPROBLEM() {
+	public PPP_PCB_PROBLEM GetPROBLEM() {
 	   PPP_PCB_PROBLEM ret = null;
 	   try {
 	      ret = (PPP_PCB_PROBLEM)this.GetStructure("PROBLEM");
@@ -195,14 +197,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPP_PCB_PROBLEM getPROBLEM(int rep) { 
+	public PPP_PCB_PROBLEM GetPROBLEM(int rep) { 
 	   return (PPP_PCB_PROBLEM)this.GetStructure("PROBLEM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPP_PCB_PROBLEM 
 	 */ 
-	public int PROBLEMReps { 
+	public int PROBLEMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

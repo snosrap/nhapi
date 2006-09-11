@@ -12,12 +12,14 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a RTB_Knn message structure (see chapter 5). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: QAK (Query Acknowledgment) 
-/// * 4: QPD (Query Parameter Definition) 
-/// * 5: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: QAK (Query Acknowledgment) </li>
+///<li>4: QPD (Query Parameter Definition) </li>
+///<li>5: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RTB_Knn : AbstractMessage  {

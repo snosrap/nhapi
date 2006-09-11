@@ -9,12 +9,13 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 APR message segment. 
-/// This segment has the following fields:
-/// * APR-1: Time Selection Criteria (SCV)
-/// * APR-2: Resource Selection Criteria (SCV)
-/// * APR-3: Location Selection Criteria (SCV)
-/// * APR-4: Slot Spacing Criteria (NM)
-/// * APR-5: Filler Override Criteria (SCV)
+/// This segment has the following fields:<ol>
+///<li>APR-1: Time Selection Criteria (SCV)</li>
+///<li>APR-2: Resource Selection Criteria (SCV)</li>
+///<li>APR-3: Location Selection Criteria (SCV)</li>
+///<li>APR-4: Slot Spacing Criteria (NM)</li>
+///<li>APR-5: Filler Override Criteria (SCV)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -46,7 +47,7 @@ public class APR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public SCV getTimeSelectionCriteria(int rep)
+	public SCV GetTimeSelectionCriteria(int rep)
 	{
 			SCV ret = null;
 			try
@@ -63,7 +64,7 @@ public class APR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Time Selection Criteria (APR-1).
    ///</summary>
-  public SCV[] getTimeSelectionCriteria() {
+  public SCV[] GetTimeSelectionCriteria() {
      SCV[] ret = null;
     try {
         IType[] t = this.GetField(1);  
@@ -81,12 +82,30 @@ public class APR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Time Selection Criteria (APR-1).
+   ///</summary>
+  public int TimeSelectionCriteriaRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(1);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Resource Selection Criteria(APR-2).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public SCV getResourceSelectionCriteria(int rep)
+	public SCV GetResourceSelectionCriteria(int rep)
 	{
 			SCV ret = null;
 			try
@@ -103,7 +122,7 @@ public class APR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Resource Selection Criteria (APR-2).
    ///</summary>
-  public SCV[] getResourceSelectionCriteria() {
+  public SCV[] GetResourceSelectionCriteria() {
      SCV[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -121,12 +140,30 @@ public class APR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Resource Selection Criteria (APR-2).
+   ///</summary>
+  public int ResourceSelectionCriteriaRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Location Selection Criteria(APR-3).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public SCV getLocationSelectionCriteria(int rep)
+	public SCV GetLocationSelectionCriteria(int rep)
 	{
 			SCV ret = null;
 			try
@@ -143,7 +180,7 @@ public class APR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Location Selection Criteria (APR-3).
    ///</summary>
-  public SCV[] getLocationSelectionCriteria() {
+  public SCV[] GetLocationSelectionCriteria() {
      SCV[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -161,6 +198,24 @@ public class APR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Location Selection Criteria (APR-3).
+   ///</summary>
+  public int LocationSelectionCriteriaRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Slot Spacing Criteria(APR-4).
 	///</summary>
@@ -189,7 +244,7 @@ public class APR : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public SCV getFillerOverrideCriteria(int rep)
+	public SCV GetFillerOverrideCriteria(int rep)
 	{
 			SCV ret = null;
 			try
@@ -206,7 +261,7 @@ public class APR : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Filler Override Criteria (APR-5).
    ///</summary>
-  public SCV[] getFillerOverrideCriteria() {
+  public SCV[] GetFillerOverrideCriteria() {
      SCV[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -224,5 +279,23 @@ public class APR : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Filler Override Criteria (APR-5).
+   ///</summary>
+  public int FillerOverrideCriteriaRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

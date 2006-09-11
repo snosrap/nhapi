@@ -9,25 +9,26 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 PRC message segment. 
-/// This segment has the following fields:
-/// * PRC-1: Primary Key Value - PRC (CE)
-/// * PRC-2: Facility ID - PRC (CE)
-/// * PRC-3: Department (CE)
-/// * PRC-4: Valid Patient Classes (IS)
-/// * PRC-5: Price (CP)
-/// * PRC-6: Formula (ST)
-/// * PRC-7: Minimum Quantity (NM)
-/// * PRC-8: Maximum Quantity (NM)
-/// * PRC-9: Minimum Price (MO)
-/// * PRC-10: Maximum Price (MO)
-/// * PRC-11: Effective Start Date (TS)
-/// * PRC-12: Effective End Date (TS)
-/// * PRC-13: Price Override Flag (IS)
-/// * PRC-14: Billing Category (CE)
-/// * PRC-15: Chargeable Flag (ID)
-/// * PRC-16: Active/Inactive Flag (ID)
-/// * PRC-17: Cost (MO)
-/// * PRC-18: Charge On Indicator (IS)
+/// This segment has the following fields:<ol>
+///<li>PRC-1: Primary Key Value - PRC (CE)</li>
+///<li>PRC-2: Facility ID - PRC (CE)</li>
+///<li>PRC-3: Department (CE)</li>
+///<li>PRC-4: Valid Patient Classes (IS)</li>
+///<li>PRC-5: Price (CP)</li>
+///<li>PRC-6: Formula (ST)</li>
+///<li>PRC-7: Minimum Quantity (NM)</li>
+///<li>PRC-8: Maximum Quantity (NM)</li>
+///<li>PRC-9: Minimum Price (MO)</li>
+///<li>PRC-10: Maximum Price (MO)</li>
+///<li>PRC-11: Effective Start Date (TS)</li>
+///<li>PRC-12: Effective End Date (TS)</li>
+///<li>PRC-13: Price Override Flag (IS)</li>
+///<li>PRC-14: Billing Category (CE)</li>
+///<li>PRC-15: Chargeable Flag (ID)</li>
+///<li>PRC-16: Active/Inactive Flag (ID)</li>
+///<li>PRC-17: Cost (MO)</li>
+///<li>PRC-18: Charge On Indicator (IS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -95,7 +96,7 @@ public class PRC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getFacilityIDPRC(int rep)
+	public CE GetFacilityIDPRC(int rep)
 	{
 			CE ret = null;
 			try
@@ -112,7 +113,7 @@ public class PRC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Facility ID - PRC (PRC-2).
    ///</summary>
-  public CE[] getFacilityIDPRC() {
+  public CE[] GetFacilityIDPRC() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -130,12 +131,30 @@ public class PRC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Facility ID - PRC (PRC-2).
+   ///</summary>
+  public int FacilityIDPRCRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Department(PRC-3).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getDepartment(int rep)
+	public CE GetDepartment(int rep)
 	{
 			CE ret = null;
 			try
@@ -152,7 +171,7 @@ public class PRC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Department (PRC-3).
    ///</summary>
-  public CE[] getDepartment() {
+  public CE[] GetDepartment() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -170,12 +189,30 @@ public class PRC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Department (PRC-3).
+   ///</summary>
+  public int DepartmentRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Valid Patient Classes(PRC-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getValidPatientClasses(int rep)
+	public IS GetValidPatientClasses(int rep)
 	{
 			IS ret = null;
 			try
@@ -192,7 +229,7 @@ public class PRC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Valid Patient Classes (PRC-4).
    ///</summary>
-  public IS[] getValidPatientClasses() {
+  public IS[] GetValidPatientClasses() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -210,12 +247,30 @@ public class PRC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Valid Patient Classes (PRC-4).
+   ///</summary>
+  public int ValidPatientClassesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Price(PRC-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CP getPrice(int rep)
+	public CP GetPrice(int rep)
 	{
 			CP ret = null;
 			try
@@ -232,7 +287,7 @@ public class PRC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Price (PRC-5).
    ///</summary>
-  public CP[] getPrice() {
+  public CP[] GetPrice() {
      CP[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -250,12 +305,30 @@ public class PRC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Price (PRC-5).
+   ///</summary>
+  public int PriceRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Formula(PRC-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getFormula(int rep)
+	public ST GetFormula(int rep)
 	{
 			ST ret = null;
 			try
@@ -272,7 +345,7 @@ public class PRC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Formula (PRC-6).
    ///</summary>
-  public ST[] getFormula() {
+  public ST[] GetFormula() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -290,6 +363,24 @@ public class PRC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Formula (PRC-6).
+   ///</summary>
+  public int FormulaRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Minimum Quantity(PRC-7).
 	///</summary>
@@ -456,7 +547,7 @@ public class PRC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getBillingCategory(int rep)
+	public CE GetBillingCategory(int rep)
 	{
 			CE ret = null;
 			try
@@ -473,7 +564,7 @@ public class PRC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Billing Category (PRC-14).
    ///</summary>
-  public CE[] getBillingCategory() {
+  public CE[] GetBillingCategory() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(14);  
@@ -491,6 +582,24 @@ public class PRC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Billing Category (PRC-14).
+   ///</summary>
+  public int BillingCategoryRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(14);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Chargeable Flag(PRC-15).
 	///</summary>

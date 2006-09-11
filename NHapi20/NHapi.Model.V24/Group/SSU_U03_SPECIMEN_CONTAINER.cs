@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the SSU_U03_SPECIMEN_CONTAINER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SAC (Specimen and container detail) 
-/// * 1: OBX (Observation/Result) optional 
+///<ol>
+///<li>0: SAC (Specimen and container detail) </li>
+///<li>1: OBX (Observation/Result) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SSU_U03_SPECIMEN_CONTAINER : AbstractGroup {

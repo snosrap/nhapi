@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the ADT_A03_PROCEDURE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PR1 (Procedures) 
-/// * 1: ROL (Role) optional repeating
+///<ol>
+///<li>0: PR1 (Procedures) </li>
+///<li>1: ROL (Role) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A03_PROCEDURE : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROL (Role) - creates it if necessary
 	///</summary>
-	public ROL getROL() {
+	public ROL GetROL() {
 	   ROL ret = null;
 	   try {
 	      ret = (ROL)this.GetStructure("ROL");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROL getROL(int rep) { 
+	public ROL GetROL(int rep) { 
 	   return (ROL)this.GetStructure("ROL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROL 
 	 */ 
-	public int ROLReps { 
+	public int ROLRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

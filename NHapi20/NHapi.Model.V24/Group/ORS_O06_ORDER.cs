@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Group
 ///Represents the ORS_O06_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RQD (Requisition Detail) 
-/// * 2: RQ1 (Requisition Detail-1) optional 
-/// * 3: NTE (Notes and Comments) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RQD (Requisition Detail) </li>
+///<li>2: RQ1 (Requisition Detail-1) optional </li>
+///<li>3: NTE (Notes and Comments) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORS_O06_ORDER : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

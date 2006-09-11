@@ -9,25 +9,26 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 INV message segment. 
-/// This segment has the following fields:
-/// * INV-1: Substance Identifier (CE)
-/// * INV-2: Substance Status (CE)
-/// * INV-3: Substance Type (CE)
-/// * INV-4: Inventory Container Identifier (CE)
-/// * INV-5: Container Carrier Identifier (CE)
-/// * INV-6: Position on Carrier (CE)
-/// * INV-7: Initial Quantity (NM)
-/// * INV-8: Current Quantity (NM)
-/// * INV-9: Available Quantity (NM)
-/// * INV-10: Consumption Quantity (NM)
-/// * INV-11: Quantity Units (CE)
-/// * INV-12: Expiration Date/Time (TS)
-/// * INV-13: First Used Date/Time (TS)
-/// * INV-14: On Board Stability Duration (TQ)
-/// * INV-15: Test/Fluid Identifier(s) (CE)
-/// * INV-16: Manufacturer Lot Number (ST)
-/// * INV-17: Manufacturer Identifier (CE)
-/// * INV-18: Supplier Identifier (CE)
+/// This segment has the following fields:<ol>
+///<li>INV-1: Substance Identifier (CE)</li>
+///<li>INV-2: Substance Status (CE)</li>
+///<li>INV-3: Substance Type (CE)</li>
+///<li>INV-4: Inventory Container Identifier (CE)</li>
+///<li>INV-5: Container Carrier Identifier (CE)</li>
+///<li>INV-6: Position on Carrier (CE)</li>
+///<li>INV-7: Initial Quantity (NM)</li>
+///<li>INV-8: Current Quantity (NM)</li>
+///<li>INV-9: Available Quantity (NM)</li>
+///<li>INV-10: Consumption Quantity (NM)</li>
+///<li>INV-11: Quantity Units (CE)</li>
+///<li>INV-12: Expiration Date/Time (TS)</li>
+///<li>INV-13: First Used Date/Time (TS)</li>
+///<li>INV-14: On Board Stability Duration (TQ)</li>
+///<li>INV-15: Test/Fluid Identifier(s) (CE)</li>
+///<li>INV-16: Manufacturer Lot Number (ST)</li>
+///<li>INV-17: Manufacturer Identifier (CE)</li>
+///<li>INV-18: Supplier Identifier (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -95,7 +96,7 @@ public class INV : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSubstanceStatus(int rep)
+	public CE GetSubstanceStatus(int rep)
 	{
 			CE ret = null;
 			try
@@ -112,7 +113,7 @@ public class INV : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Status (INV-2).
    ///</summary>
-  public CE[] getSubstanceStatus() {
+  public CE[] GetSubstanceStatus() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(2);  
@@ -130,6 +131,24 @@ public class INV : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Status (INV-2).
+   ///</summary>
+  public int SubstanceStatusRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(2);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Substance Type(INV-3).
 	///</summary>
@@ -411,7 +430,7 @@ public class INV : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getTestFluidIdentifierS(int rep)
+	public CE GetTestFluidIdentifierS(int rep)
 	{
 			CE ret = null;
 			try
@@ -428,7 +447,7 @@ public class INV : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Test/Fluid Identifier(s) (INV-15).
    ///</summary>
-  public CE[] getTestFluidIdentifierS() {
+  public CE[] GetTestFluidIdentifierS() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -446,6 +465,24 @@ public class INV : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Test/Fluid Identifier(s) (INV-15).
+   ///</summary>
+  public int TestFluidIdentifierSRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Manufacturer Lot Number(INV-16).
 	///</summary>

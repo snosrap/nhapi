@@ -12,13 +12,15 @@ namespace NHapi.Model.V24.Group
 ///Represents the DFT_P11_FINANCIAL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: FT1 (Financial Transaction) 
-/// * 1: DFT_P11_FINANCIAL_PROCEDURE (a Group object) optional repeating
-/// * 2: DFT_P11_FINANCIAL_COMMON_ORDER (a Group object) optional repeating
-/// * 3: DG1 (Diagnosis) optional repeating
-/// * 4: DRG (Diagnosis Related Group) optional 
-/// * 5: GT1 (Guarantor) optional repeating
-/// * 6: DFT_P11_FINANCIAL_INSURANCE (a Group object) optional repeating
+///<ol>
+///<li>0: FT1 (Financial Transaction) </li>
+///<li>1: DFT_P11_FINANCIAL_PROCEDURE (a Group object) optional repeating</li>
+///<li>2: DFT_P11_FINANCIAL_COMMON_ORDER (a Group object) optional repeating</li>
+///<li>3: DG1 (Diagnosis) optional repeating</li>
+///<li>4: DRG (Diagnosis Related Group) optional </li>
+///<li>5: GT1 (Guarantor) optional repeating</li>
+///<li>6: DFT_P11_FINANCIAL_INSURANCE (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DFT_P11_FINANCIAL : AbstractGroup {
@@ -59,7 +61,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DFT_P11_FINANCIAL_PROCEDURE (a Group object) - creates it if necessary
 	///</summary>
-	public DFT_P11_FINANCIAL_PROCEDURE getFINANCIAL_PROCEDURE() {
+	public DFT_P11_FINANCIAL_PROCEDURE GetFINANCIAL_PROCEDURE() {
 	   DFT_P11_FINANCIAL_PROCEDURE ret = null;
 	   try {
 	      ret = (DFT_P11_FINANCIAL_PROCEDURE)this.GetStructure("FINANCIAL_PROCEDURE");
@@ -76,14 +78,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DFT_P11_FINANCIAL_PROCEDURE getFINANCIAL_PROCEDURE(int rep) { 
+	public DFT_P11_FINANCIAL_PROCEDURE GetFINANCIAL_PROCEDURE(int rep) { 
 	   return (DFT_P11_FINANCIAL_PROCEDURE)this.GetStructure("FINANCIAL_PROCEDURE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DFT_P11_FINANCIAL_PROCEDURE 
 	 */ 
-	public int FINANCIAL_PROCEDUREReps { 
+	public int FINANCIAL_PROCEDURERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -100,7 +102,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DFT_P11_FINANCIAL_COMMON_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public DFT_P11_FINANCIAL_COMMON_ORDER getFINANCIAL_COMMON_ORDER() {
+	public DFT_P11_FINANCIAL_COMMON_ORDER GetFINANCIAL_COMMON_ORDER() {
 	   DFT_P11_FINANCIAL_COMMON_ORDER ret = null;
 	   try {
 	      ret = (DFT_P11_FINANCIAL_COMMON_ORDER)this.GetStructure("FINANCIAL_COMMON_ORDER");
@@ -117,14 +119,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DFT_P11_FINANCIAL_COMMON_ORDER getFINANCIAL_COMMON_ORDER(int rep) { 
+	public DFT_P11_FINANCIAL_COMMON_ORDER GetFINANCIAL_COMMON_ORDER(int rep) { 
 	   return (DFT_P11_FINANCIAL_COMMON_ORDER)this.GetStructure("FINANCIAL_COMMON_ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DFT_P11_FINANCIAL_COMMON_ORDER 
 	 */ 
-	public int FINANCIAL_COMMON_ORDERReps { 
+	public int FINANCIAL_COMMON_ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -141,7 +143,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -158,14 +160,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -198,7 +200,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of GT1 (Guarantor) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -215,14 +217,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -239,7 +241,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DFT_P11_FINANCIAL_INSURANCE (a Group object) - creates it if necessary
 	///</summary>
-	public DFT_P11_FINANCIAL_INSURANCE getFINANCIAL_INSURANCE() {
+	public DFT_P11_FINANCIAL_INSURANCE GetFINANCIAL_INSURANCE() {
 	   DFT_P11_FINANCIAL_INSURANCE ret = null;
 	   try {
 	      ret = (DFT_P11_FINANCIAL_INSURANCE)this.GetStructure("FINANCIAL_INSURANCE");
@@ -256,14 +258,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DFT_P11_FINANCIAL_INSURANCE getFINANCIAL_INSURANCE(int rep) { 
+	public DFT_P11_FINANCIAL_INSURANCE GetFINANCIAL_INSURANCE(int rep) { 
 	   return (DFT_P11_FINANCIAL_INSURANCE)this.GetStructure("FINANCIAL_INSURANCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DFT_P11_FINANCIAL_INSURANCE 
 	 */ 
-	public int FINANCIAL_INSURANCEReps { 
+	public int FINANCIAL_INSURANCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

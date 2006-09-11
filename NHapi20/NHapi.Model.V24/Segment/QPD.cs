@@ -9,10 +9,11 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 QPD message segment. 
-/// This segment has the following fields:
-/// * QPD-1: Message Query Name (CE)
-/// * QPD-2: Query Tag (ST)
-/// * QPD-3: User Parameters (in successive fields) (varies)
+/// This segment has the following fields:<ol>
+///<li>QPD-1: Message Query Name (CE)</li>
+///<li>QPD-2: Query Tag (ST)</li>
+///<li>QPD-3: User Parameters (in successive fields) (varies)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

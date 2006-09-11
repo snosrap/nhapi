@@ -12,14 +12,16 @@ namespace NHapi.Model.V24.Group
 ///Represents the PPV_PCA_GOAL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: GOL (Goal Detail) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: VAR (Variance) optional repeating
-/// * 3: PPV_PCA_GOAL_ROLE (a Group object) optional repeating
-/// * 4: PPV_PCA_GOAL_PATHWAY (a Group object) optional repeating
-/// * 5: PPV_PCA_GOAL_OBSERVATION (a Group object) optional repeating
-/// * 6: PPV_PCA_PROBLEM (a Group object) optional repeating
-/// * 7: PPV_PCA_ORDER (a Group object) optional repeating
+///<ol>
+///<li>0: GOL (Goal Detail) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: VAR (Variance) optional repeating</li>
+///<li>3: PPV_PCA_GOAL_ROLE (a Group object) optional repeating</li>
+///<li>4: PPV_PCA_GOAL_PATHWAY (a Group object) optional repeating</li>
+///<li>5: PPV_PCA_GOAL_OBSERVATION (a Group object) optional repeating</li>
+///<li>6: PPV_PCA_PROBLEM (a Group object) optional repeating</li>
+///<li>7: PPV_PCA_ORDER (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPV_PCA_GOAL : AbstractGroup {
@@ -61,7 +63,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -78,14 +80,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -102,7 +104,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VAR (Variance) - creates it if necessary
 	///</summary>
-	public VAR getVAR() {
+	public VAR GetVAR() {
 	   VAR ret = null;
 	   try {
 	      ret = (VAR)this.GetStructure("VAR");
@@ -119,14 +121,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VAR getVAR(int rep) { 
+	public VAR GetVAR(int rep) { 
 	   return (VAR)this.GetStructure("VAR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VAR 
 	 */ 
-	public int VARReps { 
+	public int VARRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -143,7 +145,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_GOAL_ROLE (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_GOAL_ROLE getGOAL_ROLE() {
+	public PPV_PCA_GOAL_ROLE GetGOAL_ROLE() {
 	   PPV_PCA_GOAL_ROLE ret = null;
 	   try {
 	      ret = (PPV_PCA_GOAL_ROLE)this.GetStructure("GOAL_ROLE");
@@ -160,14 +162,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_GOAL_ROLE getGOAL_ROLE(int rep) { 
+	public PPV_PCA_GOAL_ROLE GetGOAL_ROLE(int rep) { 
 	   return (PPV_PCA_GOAL_ROLE)this.GetStructure("GOAL_ROLE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_GOAL_ROLE 
 	 */ 
-	public int GOAL_ROLEReps { 
+	public int GOAL_ROLERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -184,7 +186,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_GOAL_PATHWAY (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_GOAL_PATHWAY getGOAL_PATHWAY() {
+	public PPV_PCA_GOAL_PATHWAY GetGOAL_PATHWAY() {
 	   PPV_PCA_GOAL_PATHWAY ret = null;
 	   try {
 	      ret = (PPV_PCA_GOAL_PATHWAY)this.GetStructure("GOAL_PATHWAY");
@@ -201,14 +203,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_GOAL_PATHWAY getGOAL_PATHWAY(int rep) { 
+	public PPV_PCA_GOAL_PATHWAY GetGOAL_PATHWAY(int rep) { 
 	   return (PPV_PCA_GOAL_PATHWAY)this.GetStructure("GOAL_PATHWAY", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_GOAL_PATHWAY 
 	 */ 
-	public int GOAL_PATHWAYReps { 
+	public int GOAL_PATHWAYRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -225,7 +227,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_GOAL_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_GOAL_OBSERVATION getGOAL_OBSERVATION() {
+	public PPV_PCA_GOAL_OBSERVATION GetGOAL_OBSERVATION() {
 	   PPV_PCA_GOAL_OBSERVATION ret = null;
 	   try {
 	      ret = (PPV_PCA_GOAL_OBSERVATION)this.GetStructure("GOAL_OBSERVATION");
@@ -242,14 +244,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_GOAL_OBSERVATION getGOAL_OBSERVATION(int rep) { 
+	public PPV_PCA_GOAL_OBSERVATION GetGOAL_OBSERVATION(int rep) { 
 	   return (PPV_PCA_GOAL_OBSERVATION)this.GetStructure("GOAL_OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_GOAL_OBSERVATION 
 	 */ 
-	public int GOAL_OBSERVATIONReps { 
+	public int GOAL_OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -266,7 +268,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_PROBLEM (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_PROBLEM getPROBLEM() {
+	public PPV_PCA_PROBLEM GetPROBLEM() {
 	   PPV_PCA_PROBLEM ret = null;
 	   try {
 	      ret = (PPV_PCA_PROBLEM)this.GetStructure("PROBLEM");
@@ -283,14 +285,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_PROBLEM getPROBLEM(int rep) { 
+	public PPV_PCA_PROBLEM GetPROBLEM(int rep) { 
 	   return (PPV_PCA_PROBLEM)this.GetStructure("PROBLEM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_PROBLEM 
 	 */ 
-	public int PROBLEMReps { 
+	public int PROBLEMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -307,7 +309,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_ORDER getORDER() {
+	public PPV_PCA_ORDER GetORDER() {
 	   PPV_PCA_ORDER ret = null;
 	   try {
 	      ret = (PPV_PCA_ORDER)this.GetStructure("ORDER");
@@ -324,14 +326,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_ORDER getORDER(int rep) { 
+	public PPV_PCA_ORDER GetORDER(int rep) { 
 	   return (PPV_PCA_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

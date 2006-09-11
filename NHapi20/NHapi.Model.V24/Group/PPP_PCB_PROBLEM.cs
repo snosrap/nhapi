@@ -12,13 +12,15 @@ namespace NHapi.Model.V24.Group
 ///Represents the PPP_PCB_PROBLEM Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PRB (Problem Details) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: VAR (Variance) optional repeating
-/// * 3: PPP_PCB_PROBLEM_ROLE (a Group object) optional repeating
-/// * 4: PPP_PCB_PROBLEM_OBSERVATION (a Group object) optional repeating
-/// * 5: PPP_PCB_GOAL (a Group object) optional repeating
-/// * 6: PPP_PCB_ORDER (a Group object) optional repeating
+///<ol>
+///<li>0: PRB (Problem Details) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: VAR (Variance) optional repeating</li>
+///<li>3: PPP_PCB_PROBLEM_ROLE (a Group object) optional repeating</li>
+///<li>4: PPP_PCB_PROBLEM_OBSERVATION (a Group object) optional repeating</li>
+///<li>5: PPP_PCB_GOAL (a Group object) optional repeating</li>
+///<li>6: PPP_PCB_ORDER (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPP_PCB_PROBLEM : AbstractGroup {
@@ -59,7 +61,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -76,14 +78,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -100,7 +102,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VAR (Variance) - creates it if necessary
 	///</summary>
-	public VAR getVAR() {
+	public VAR GetVAR() {
 	   VAR ret = null;
 	   try {
 	      ret = (VAR)this.GetStructure("VAR");
@@ -117,14 +119,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VAR getVAR(int rep) { 
+	public VAR GetVAR(int rep) { 
 	   return (VAR)this.GetStructure("VAR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VAR 
 	 */ 
-	public int VARReps { 
+	public int VARRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -141,7 +143,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPP_PCB_PROBLEM_ROLE (a Group object) - creates it if necessary
 	///</summary>
-	public PPP_PCB_PROBLEM_ROLE getPROBLEM_ROLE() {
+	public PPP_PCB_PROBLEM_ROLE GetPROBLEM_ROLE() {
 	   PPP_PCB_PROBLEM_ROLE ret = null;
 	   try {
 	      ret = (PPP_PCB_PROBLEM_ROLE)this.GetStructure("PROBLEM_ROLE");
@@ -158,14 +160,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPP_PCB_PROBLEM_ROLE getPROBLEM_ROLE(int rep) { 
+	public PPP_PCB_PROBLEM_ROLE GetPROBLEM_ROLE(int rep) { 
 	   return (PPP_PCB_PROBLEM_ROLE)this.GetStructure("PROBLEM_ROLE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPP_PCB_PROBLEM_ROLE 
 	 */ 
-	public int PROBLEM_ROLEReps { 
+	public int PROBLEM_ROLERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -182,7 +184,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPP_PCB_PROBLEM_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public PPP_PCB_PROBLEM_OBSERVATION getPROBLEM_OBSERVATION() {
+	public PPP_PCB_PROBLEM_OBSERVATION GetPROBLEM_OBSERVATION() {
 	   PPP_PCB_PROBLEM_OBSERVATION ret = null;
 	   try {
 	      ret = (PPP_PCB_PROBLEM_OBSERVATION)this.GetStructure("PROBLEM_OBSERVATION");
@@ -199,14 +201,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPP_PCB_PROBLEM_OBSERVATION getPROBLEM_OBSERVATION(int rep) { 
+	public PPP_PCB_PROBLEM_OBSERVATION GetPROBLEM_OBSERVATION(int rep) { 
 	   return (PPP_PCB_PROBLEM_OBSERVATION)this.GetStructure("PROBLEM_OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPP_PCB_PROBLEM_OBSERVATION 
 	 */ 
-	public int PROBLEM_OBSERVATIONReps { 
+	public int PROBLEM_OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -223,7 +225,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPP_PCB_GOAL (a Group object) - creates it if necessary
 	///</summary>
-	public PPP_PCB_GOAL getGOAL() {
+	public PPP_PCB_GOAL GetGOAL() {
 	   PPP_PCB_GOAL ret = null;
 	   try {
 	      ret = (PPP_PCB_GOAL)this.GetStructure("GOAL");
@@ -240,14 +242,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPP_PCB_GOAL getGOAL(int rep) { 
+	public PPP_PCB_GOAL GetGOAL(int rep) { 
 	   return (PPP_PCB_GOAL)this.GetStructure("GOAL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPP_PCB_GOAL 
 	 */ 
-	public int GOALReps { 
+	public int GOALRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -264,7 +266,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPP_PCB_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public PPP_PCB_ORDER getORDER() {
+	public PPP_PCB_ORDER GetORDER() {
 	   PPP_PCB_ORDER ret = null;
 	   try {
 	      ret = (PPP_PCB_ORDER)this.GetStructure("ORDER");
@@ -281,14 +283,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPP_PCB_ORDER getORDER(int rep) { 
+	public PPP_PCB_ORDER GetORDER(int rep) { 
 	   return (PPP_PCB_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPP_PCB_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

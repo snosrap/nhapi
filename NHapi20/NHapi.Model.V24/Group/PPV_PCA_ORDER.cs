@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the PPV_PCA_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: PPV_PCA_ORDER_DETAIL (a Group object) optional 
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: PPV_PCA_ORDER_DETAIL (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPV_PCA_ORDER : AbstractGroup {

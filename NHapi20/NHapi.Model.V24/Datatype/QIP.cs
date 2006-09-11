@@ -10,7 +10,7 @@ namespace NHapi.Model.V24.Datatype
 ///<summary>
 /// <p>The HL7 QIP (query input parameter list) data type.  Consists of the following components: </p><ol>
 /// <li>segment field name (ST)</li>
-/// <li>value1&value2&value3 (ST)</li>
+/// <li>value1andvalue2andvalue3 (ST)</li>
 /// </ol>
 ///</summary>
 [Serializable]
@@ -78,7 +78,7 @@ get{
 
 }
 	///<summary>
-	/// Returns value1&value2&value3 (component #1).  This is a convenience method that saves you from 
+	/// Returns value1andvalue2andvalue3 (component #1).  This is a convenience method that saves you from 
 	/// casting and handling an exception.
 	///</summary>
 	public ST Value1Value2Value3 {

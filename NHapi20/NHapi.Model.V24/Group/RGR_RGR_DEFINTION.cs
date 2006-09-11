@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Group
 ///Represents the RGR_RGR_DEFINTION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: QRD (Original-Style Query Definition) 
-/// * 1: QRF (Original Style Query Filter) optional 
-/// * 2: RGR_RGR_PATIENT (a Group object) optional 
-/// * 3: RGR_RGR_ORDER (a Group object) repeating
+///<ol>
+///<li>0: QRD (Original-Style Query Definition) </li>
+///<li>1: QRF (Original Style Query Filter) optional </li>
+///<li>2: RGR_RGR_PATIENT (a Group object) optional </li>
+///<li>3: RGR_RGR_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RGR_RGR_DEFINTION : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RGR_RGR_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public RGR_RGR_ORDER getORDER() {
+	public RGR_RGR_ORDER GetORDER() {
 	   RGR_RGR_ORDER ret = null;
 	   try {
 	      ret = (RGR_RGR_ORDER)this.GetStructure("ORDER");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RGR_RGR_ORDER getORDER(int rep) { 
+	public RGR_RGR_ORDER GetORDER(int rep) { 
 	   return (RGR_RGR_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RGR_RGR_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

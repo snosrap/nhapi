@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a RDR_RDR message structure (see chapter 5). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: RDR_RDR_DEFINITION (a Group object) repeating
-/// * 4: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: RDR_RDR_DEFINITION (a Group object) repeating</li>
+///<li>4: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RDR_RDR : AbstractMessage  {
@@ -101,7 +103,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RDR_RDR_DEFINITION (a Group object) - creates it if necessary
 	///</summary>
-	public RDR_RDR_DEFINITION getDEFINITION() {
+	public RDR_RDR_DEFINITION GetDEFINITION() {
 	   RDR_RDR_DEFINITION ret = null;
 	   try {
 	      ret = (RDR_RDR_DEFINITION)this.GetStructure("DEFINITION");
@@ -118,14 +120,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RDR_RDR_DEFINITION getDEFINITION(int rep) { 
+	public RDR_RDR_DEFINITION GetDEFINITION(int rep) { 
 	   return (RDR_RDR_DEFINITION)this.GetStructure("DEFINITION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RDR_RDR_DEFINITION 
 	 */ 
-	public int DEFINITIONReps { 
+	public int DEFINITIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

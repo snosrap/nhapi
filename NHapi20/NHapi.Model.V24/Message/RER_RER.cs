@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a RER_RER message structure (see chapter 4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: RER_RER_DEFINITION (a Group object) repeating
-/// * 4: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: RER_RER_DEFINITION (a Group object) repeating</li>
+///<li>4: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RER_RER : AbstractMessage  {
@@ -101,7 +103,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RER_RER_DEFINITION (a Group object) - creates it if necessary
 	///</summary>
-	public RER_RER_DEFINITION getDEFINITION() {
+	public RER_RER_DEFINITION GetDEFINITION() {
 	   RER_RER_DEFINITION ret = null;
 	   try {
 	      ret = (RER_RER_DEFINITION)this.GetStructure("DEFINITION");
@@ -118,14 +120,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RER_RER_DEFINITION getDEFINITION(int rep) { 
+	public RER_RER_DEFINITION GetDEFINITION(int rep) { 
 	   return (RER_RER_DEFINITION)this.GetStructure("DEFINITION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RER_RER_DEFINITION 
 	 */ 
-	public int DEFINITIONReps { 
+	public int DEFINITIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

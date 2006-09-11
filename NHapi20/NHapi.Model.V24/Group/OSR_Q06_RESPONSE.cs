@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the OSR_Q06_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OSR_Q06_PATIENT (a Group object) optional 
-/// * 1: OSR_Q06_ORDER (a Group object) repeating
+///<ol>
+///<li>0: OSR_Q06_PATIENT (a Group object) optional </li>
+///<li>1: OSR_Q06_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OSR_Q06_RESPONSE : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OSR_Q06_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public OSR_Q06_ORDER getORDER() {
+	public OSR_Q06_ORDER GetORDER() {
 	   OSR_Q06_ORDER ret = null;
 	   try {
 	      ret = (OSR_Q06_ORDER)this.GetStructure("ORDER");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OSR_Q06_ORDER getORDER(int rep) { 
+	public OSR_Q06_ORDER GetORDER(int rep) { 
 	   return (OSR_Q06_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OSR_Q06_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

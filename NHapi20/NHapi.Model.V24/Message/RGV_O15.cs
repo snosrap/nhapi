@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a RGV_O15 message structure (see chapter 4). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: RGV_O15_PATIENT (a Group object) optional 
-/// * 3: RGV_O15_ORDER (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: RGV_O15_PATIENT (a Group object) optional </li>
+///<li>3: RGV_O15_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RGV_O15 : AbstractMessage  {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -124,7 +126,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RGV_O15_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public RGV_O15_ORDER getORDER() {
+	public RGV_O15_ORDER GetORDER() {
 	   RGV_O15_ORDER ret = null;
 	   try {
 	      ret = (RGV_O15_ORDER)this.GetStructure("ORDER");
@@ -141,14 +143,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RGV_O15_ORDER getORDER(int rep) { 
+	public RGV_O15_ORDER GetORDER(int rep) { 
 	   return (RGV_O15_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RGV_O15_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

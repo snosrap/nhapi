@@ -9,19 +9,20 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 ORG message segment. 
-/// This segment has the following fields:
-/// * ORG-1: Set ID - ORG (SI)
-/// * ORG-2: Organization Unit Code (CE)
-/// * ORG-3: Organization Unit Type Code - ORG (CE)
-/// * ORG-4: Primary Org Unit Indicator (ID)
-/// * ORG-5: Practitioner Org Unit Identifier (CX)
-/// * ORG-6: Health Care Provider Type Code (CE)
-/// * ORG-7: Health Care Provider Classification Code (CE)
-/// * ORG-8: Health Care Provider Area of Specialization Code (CE)
-/// * ORG-9: Effective Date Range (DR)
-/// * ORG-10: Employment Status Code (CE)
-/// * ORG-11: Board Approval Indicator (ID)
-/// * ORG-12: Primary Care Physician Indicator (ID)
+/// This segment has the following fields:<ol>
+///<li>ORG-1: Set ID - ORG (SI)</li>
+///<li>ORG-2: Organization Unit Code (CE)</li>
+///<li>ORG-3: Organization Unit Type Code - ORG (CE)</li>
+///<li>ORG-4: Primary Org Unit Indicator (ID)</li>
+///<li>ORG-5: Practitioner Org Unit Identifier (CX)</li>
+///<li>ORG-6: Health Care Provider Type Code (CE)</li>
+///<li>ORG-7: Health Care Provider Classification Code (CE)</li>
+///<li>ORG-8: Health Care Provider Area of Specialization Code (CE)</li>
+///<li>ORG-9: Effective Date Range (DR)</li>
+///<li>ORG-10: Employment Status Code (CE)</li>
+///<li>ORG-11: Board Approval Indicator (ID)</li>
+///<li>ORG-12: Primary Care Physician Indicator (ID)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

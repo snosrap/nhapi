@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Group
 ///Represents the PPV_PCA_PROBLEM Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PRB (Problem Details) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: VAR (Variance) optional repeating
-/// * 3: PPV_PCA_PROBLEM_ROLE (a Group object) optional repeating
-/// * 4: PPV_PCA_PROBLEM_OBSERVATION (a Group object) optional repeating
+///<ol>
+///<li>0: PRB (Problem Details) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: VAR (Variance) optional repeating</li>
+///<li>3: PPV_PCA_PROBLEM_ROLE (a Group object) optional repeating</li>
+///<li>4: PPV_PCA_PROBLEM_OBSERVATION (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPV_PCA_PROBLEM : AbstractGroup {
@@ -55,7 +57,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -72,14 +74,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -96,7 +98,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VAR (Variance) - creates it if necessary
 	///</summary>
-	public VAR getVAR() {
+	public VAR GetVAR() {
 	   VAR ret = null;
 	   try {
 	      ret = (VAR)this.GetStructure("VAR");
@@ -113,14 +115,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VAR getVAR(int rep) { 
+	public VAR GetVAR(int rep) { 
 	   return (VAR)this.GetStructure("VAR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VAR 
 	 */ 
-	public int VARReps { 
+	public int VARRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -137,7 +139,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_PROBLEM_ROLE (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_PROBLEM_ROLE getPROBLEM_ROLE() {
+	public PPV_PCA_PROBLEM_ROLE GetPROBLEM_ROLE() {
 	   PPV_PCA_PROBLEM_ROLE ret = null;
 	   try {
 	      ret = (PPV_PCA_PROBLEM_ROLE)this.GetStructure("PROBLEM_ROLE");
@@ -154,14 +156,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_PROBLEM_ROLE getPROBLEM_ROLE(int rep) { 
+	public PPV_PCA_PROBLEM_ROLE GetPROBLEM_ROLE(int rep) { 
 	   return (PPV_PCA_PROBLEM_ROLE)this.GetStructure("PROBLEM_ROLE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_PROBLEM_ROLE 
 	 */ 
-	public int PROBLEM_ROLEReps { 
+	public int PROBLEM_ROLERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -178,7 +180,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_PROBLEM_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_PROBLEM_OBSERVATION getPROBLEM_OBSERVATION() {
+	public PPV_PCA_PROBLEM_OBSERVATION GetPROBLEM_OBSERVATION() {
 	   PPV_PCA_PROBLEM_OBSERVATION ret = null;
 	   try {
 	      ret = (PPV_PCA_PROBLEM_OBSERVATION)this.GetStructure("PROBLEM_OBSERVATION");
@@ -195,14 +197,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_PROBLEM_OBSERVATION getPROBLEM_OBSERVATION(int rep) { 
+	public PPV_PCA_PROBLEM_OBSERVATION GetPROBLEM_OBSERVATION(int rep) { 
 	   return (PPV_PCA_PROBLEM_OBSERVATION)this.GetStructure("PROBLEM_OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_PROBLEM_OBSERVATION 
 	 */ 
-	public int PROBLEM_OBSERVATIONReps { 
+	public int PROBLEM_OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

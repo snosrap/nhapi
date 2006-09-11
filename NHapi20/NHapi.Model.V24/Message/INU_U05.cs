@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a INU_U05 message structure (see chapter 13). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EQU (Equipment Detail) 
-/// * 2: INV (Inventory Detail) repeating
-/// * 3: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EQU (Equipment Detail) </li>
+///<li>2: INV (Inventory Detail) repeating</li>
+///<li>3: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class INU_U05 : AbstractMessage  {
@@ -83,7 +85,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of INV (Inventory Detail) - creates it if necessary
 	///</summary>
-	public INV getINV() {
+	public INV GetINV() {
 	   INV ret = null;
 	   try {
 	      ret = (INV)this.GetStructure("INV");
@@ -100,14 +102,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public INV getINV(int rep) { 
+	public INV GetINV(int rep) { 
 	   return (INV)this.GetStructure("INV", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of INV 
 	 */ 
-	public int INVReps { 
+	public int INVRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

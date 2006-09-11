@@ -9,32 +9,33 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 ARQ message segment. 
-/// This segment has the following fields:
-/// * ARQ-1: Placer Appointment ID (EI)
-/// * ARQ-2: Filler Appointment ID (EI)
-/// * ARQ-3: Occurrence Number (NM)
-/// * ARQ-4: Placer Group Number (EI)
-/// * ARQ-5: Schedule ID (CE)
-/// * ARQ-6: Request Event Reason (CE)
-/// * ARQ-7: Appointment Reason (CE)
-/// * ARQ-8: Appointment Type (CE)
-/// * ARQ-9: Appointment Duration (NM)
-/// * ARQ-10: Appointment Duration Units (CE)
-/// * ARQ-11: Requested Start Date/Time Range (DR)
-/// * ARQ-12: Priority-ARQ (ST)
-/// * ARQ-13: Repeating Interval (RI)
-/// * ARQ-14: Repeating Interval Duration (ST)
-/// * ARQ-15: Placer Contact Person (XCN)
-/// * ARQ-16: Placer Contact Phone Number (XTN)
-/// * ARQ-17: Placer Contact Address (XAD)
-/// * ARQ-18: Placer Contact Location (PL)
-/// * ARQ-19: Entered By Person (XCN)
-/// * ARQ-20: Entered By Phone Number (XTN)
-/// * ARQ-21: Entered by Location (PL)
-/// * ARQ-22: Parent Placer Appointment ID (EI)
-/// * ARQ-23: Parent Filler Appointment ID (EI)
-/// * ARQ-24: Placer Order Number (EI)
-/// * ARQ-25: Filler Order Number (EI)
+/// This segment has the following fields:<ol>
+///<li>ARQ-1: Placer Appointment ID (EI)</li>
+///<li>ARQ-2: Filler Appointment ID (EI)</li>
+///<li>ARQ-3: Occurrence Number (NM)</li>
+///<li>ARQ-4: Placer Group Number (EI)</li>
+///<li>ARQ-5: Schedule ID (CE)</li>
+///<li>ARQ-6: Request Event Reason (CE)</li>
+///<li>ARQ-7: Appointment Reason (CE)</li>
+///<li>ARQ-8: Appointment Type (CE)</li>
+///<li>ARQ-9: Appointment Duration (NM)</li>
+///<li>ARQ-10: Appointment Duration Units (CE)</li>
+///<li>ARQ-11: Requested Start Date/Time Range (DR)</li>
+///<li>ARQ-12: Priority-ARQ (ST)</li>
+///<li>ARQ-13: Repeating Interval (RI)</li>
+///<li>ARQ-14: Repeating Interval Duration (ST)</li>
+///<li>ARQ-15: Placer Contact Person (XCN)</li>
+///<li>ARQ-16: Placer Contact Phone Number (XTN)</li>
+///<li>ARQ-17: Placer Contact Address (XAD)</li>
+///<li>ARQ-18: Placer Contact Location (PL)</li>
+///<li>ARQ-19: Entered By Person (XCN)</li>
+///<li>ARQ-20: Entered By Phone Number (XTN)</li>
+///<li>ARQ-21: Entered by Location (PL)</li>
+///<li>ARQ-22: Parent Placer Appointment ID (EI)</li>
+///<li>ARQ-23: Parent Filler Appointment ID (EI)</li>
+///<li>ARQ-24: Placer Order Number (EI)</li>
+///<li>ARQ-25: Filler Order Number (EI)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -316,7 +317,7 @@ public class ARQ : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public DR getRequestedStartDateTimeRange(int rep)
+	public DR GetRequestedStartDateTimeRange(int rep)
 	{
 			DR ret = null;
 			try
@@ -333,7 +334,7 @@ public class ARQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Requested Start Date/Time Range (ARQ-11).
    ///</summary>
-  public DR[] getRequestedStartDateTimeRange() {
+  public DR[] GetRequestedStartDateTimeRange() {
      DR[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -351,6 +352,24 @@ public class ARQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Requested Start Date/Time Range (ARQ-11).
+   ///</summary>
+  public int RequestedStartDateTimeRangeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Priority-ARQ(ARQ-12).
 	///</summary>
@@ -425,7 +444,7 @@ public class ARQ : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getPlacerContactPerson(int rep)
+	public XCN GetPlacerContactPerson(int rep)
 	{
 			XCN ret = null;
 			try
@@ -442,7 +461,7 @@ public class ARQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Contact Person (ARQ-15).
    ///</summary>
-  public XCN[] getPlacerContactPerson() {
+  public XCN[] GetPlacerContactPerson() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(15);  
@@ -460,12 +479,30 @@ public class ARQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Contact Person (ARQ-15).
+   ///</summary>
+  public int PlacerContactPersonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(15);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Placer Contact Phone Number(ARQ-16).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getPlacerContactPhoneNumber(int rep)
+	public XTN GetPlacerContactPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -482,7 +519,7 @@ public class ARQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Contact Phone Number (ARQ-16).
    ///</summary>
-  public XTN[] getPlacerContactPhoneNumber() {
+  public XTN[] GetPlacerContactPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -500,12 +537,30 @@ public class ARQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Contact Phone Number (ARQ-16).
+   ///</summary>
+  public int PlacerContactPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Placer Contact Address(ARQ-17).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getPlacerContactAddress(int rep)
+	public XAD GetPlacerContactAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -522,7 +577,7 @@ public class ARQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Contact Address (ARQ-17).
    ///</summary>
-  public XAD[] getPlacerContactAddress() {
+  public XAD[] GetPlacerContactAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(17);  
@@ -540,6 +595,24 @@ public class ARQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Contact Address (ARQ-17).
+   ///</summary>
+  public int PlacerContactAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(17);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Placer Contact Location(ARQ-18).
 	///</summary>
@@ -568,7 +641,7 @@ public class ARQ : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getEnteredByPerson(int rep)
+	public XCN GetEnteredByPerson(int rep)
 	{
 			XCN ret = null;
 			try
@@ -585,7 +658,7 @@ public class ARQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Entered By Person (ARQ-19).
    ///</summary>
-  public XCN[] getEnteredByPerson() {
+  public XCN[] GetEnteredByPerson() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -603,12 +676,30 @@ public class ARQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Entered By Person (ARQ-19).
+   ///</summary>
+  public int EnteredByPersonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Entered By Phone Number(ARQ-20).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getEnteredByPhoneNumber(int rep)
+	public XTN GetEnteredByPhoneNumber(int rep)
 	{
 			XTN ret = null;
 			try
@@ -625,7 +716,7 @@ public class ARQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Entered By Phone Number (ARQ-20).
    ///</summary>
-  public XTN[] getEnteredByPhoneNumber() {
+  public XTN[] GetEnteredByPhoneNumber() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -643,6 +734,24 @@ public class ARQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Entered By Phone Number (ARQ-20).
+   ///</summary>
+  public int EnteredByPhoneNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Entered by Location(ARQ-21).
 	///</summary>
@@ -717,7 +826,7 @@ public class ARQ : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getPlacerOrderNumber(int rep)
+	public EI GetPlacerOrderNumber(int rep)
 	{
 			EI ret = null;
 			try
@@ -734,7 +843,7 @@ public class ARQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Placer Order Number (ARQ-24).
    ///</summary>
-  public EI[] getPlacerOrderNumber() {
+  public EI[] GetPlacerOrderNumber() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(24);  
@@ -752,12 +861,30 @@ public class ARQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Placer Order Number (ARQ-24).
+   ///</summary>
+  public int PlacerOrderNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(24);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Filler Order Number(ARQ-25).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public EI getFillerOrderNumber(int rep)
+	public EI GetFillerOrderNumber(int rep)
 	{
 			EI ret = null;
 			try
@@ -774,7 +901,7 @@ public class ARQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Filler Order Number (ARQ-25).
    ///</summary>
-  public EI[] getFillerOrderNumber() {
+  public EI[] GetFillerOrderNumber() {
      EI[] ret = null;
     try {
         IType[] t = this.GetField(25);  
@@ -792,5 +919,23 @@ public class ARQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Filler Order Number (ARQ-25).
+   ///</summary>
+  public int FillerOrderNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(25);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

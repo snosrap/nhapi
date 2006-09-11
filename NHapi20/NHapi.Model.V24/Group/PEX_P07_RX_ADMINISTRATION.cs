@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the PEX_P07_RX_ADMINISTRATION Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: RXA (Pharmacy/Treatment Administration) 
-/// * 1: RXR (Pharmacy/Treatment Route) optional 
+///<ol>
+///<li>0: RXA (Pharmacy/Treatment Administration) </li>
+///<li>1: RXR (Pharmacy/Treatment Route) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PEX_P07_RX_ADMINISTRATION : AbstractGroup {

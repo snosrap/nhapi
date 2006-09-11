@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a NMR_N01 message structure (see chapter 14). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: QRD (Original-Style Query Definition) optional 
-/// * 4: NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: QRD (Original-Style Query Definition) optional </li>
+///<li>4: NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class NMR_N01 : AbstractMessage  {
@@ -117,7 +119,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT (a Group object) - creates it if necessary
 	///</summary>
-	public NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT getCLOCK_AND_STATS_WITH_NOTES_ALT() {
+	public NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT GetCLOCK_AND_STATS_WITH_NOTES_ALT() {
 	   NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT ret = null;
 	   try {
 	      ret = (NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT)this.GetStructure("CLOCK_AND_STATS_WITH_NOTES_ALT");
@@ -134,14 +136,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT getCLOCK_AND_STATS_WITH_NOTES_ALT(int rep) { 
+	public NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT GetCLOCK_AND_STATS_WITH_NOTES_ALT(int rep) { 
 	   return (NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT)this.GetStructure("CLOCK_AND_STATS_WITH_NOTES_ALT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NMR_N01_CLOCK_AND_STATS_WITH_NOTES_ALT 
 	 */ 
-	public int CLOCK_AND_STATS_WITH_NOTES_ALTReps { 
+	public int CLOCK_AND_STATS_WITH_NOTES_ALTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a SPQ_Q08 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: SPR (Stored Procedure Request Definition) 
-/// * 2: RDF (Table Row Definition) optional 
-/// * 3: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: SPR (Stored Procedure Request Definition) </li>
+///<li>2: RDF (Table Row Definition) optional </li>
+///<li>3: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SPQ_Q08 : AbstractMessage  {

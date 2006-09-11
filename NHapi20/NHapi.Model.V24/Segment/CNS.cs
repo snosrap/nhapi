@@ -9,13 +9,14 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 CNS message segment. 
-/// This segment has the following fields:
-/// * CNS-1: Starting Notification Reference Number (NM)
-/// * CNS-2: Ending Notification Reference Number (NM)
-/// * CNS-3: Starting Notification Date/Time (TS)
-/// * CNS-4: Ending Notification Date/Time (TS)
-/// * CNS-5: Starting Notification Code (CE)
-/// * CNS-6: Ending Notification Code (CE)
+/// This segment has the following fields:<ol>
+///<li>CNS-1: Starting Notification Reference Number (NM)</li>
+///<li>CNS-2: Ending Notification Reference Number (NM)</li>
+///<li>CNS-3: Starting Notification Date/Time (TS)</li>
+///<li>CNS-4: Ending Notification Date/Time (TS)</li>
+///<li>CNS-5: Starting Notification Code (CE)</li>
+///<li>CNS-6: Ending Notification Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

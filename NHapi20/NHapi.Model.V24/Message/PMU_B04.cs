@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a PMU_B04 message structure (see chapter 15). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EVN (Event Type) 
-/// * 2: STF (Staff Identification) 
-/// * 3: PRA (Practitioner Detail) optional repeating
-/// * 4: ORG (Practitioner Organization Unit) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EVN (Event Type) </li>
+///<li>2: STF (Staff Identification) </li>
+///<li>3: PRA (Practitioner Detail) optional repeating</li>
+///<li>4: ORG (Practitioner Organization Unit) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PMU_B04 : AbstractMessage  {
@@ -101,7 +103,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PRA (Practitioner Detail) - creates it if necessary
 	///</summary>
-	public PRA getPRA() {
+	public PRA GetPRA() {
 	   PRA ret = null;
 	   try {
 	      ret = (PRA)this.GetStructure("PRA");
@@ -118,14 +120,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PRA getPRA(int rep) { 
+	public PRA GetPRA(int rep) { 
 	   return (PRA)this.GetStructure("PRA", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PRA 
 	 */ 
-	public int PRAReps { 
+	public int PRARepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

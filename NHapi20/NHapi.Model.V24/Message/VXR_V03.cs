@@ -12,17 +12,19 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a VXR_V03 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: QRD (Original-Style Query Definition) 
-/// * 3: QRF (Original Style Query Filter) optional 
-/// * 4: PID (Patient identification) 
-/// * 5: PD1 (patient additional demographic) optional 
-/// * 6: NK1 (Next of kin / associated parties) optional repeating
-/// * 7: VXR_V03_PATIENT_VISIT (a Group object) optional 
-/// * 8: GT1 (Guarantor) optional repeating
-/// * 9: VXR_V03_INSURANCE (a Group object) optional repeating
-/// * 10: VXR_V03_ORDER (a Group object) optional repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: QRD (Original-Style Query Definition) </li>
+///<li>3: QRF (Original Style Query Filter) optional </li>
+///<li>4: PID (Patient identification) </li>
+///<li>5: PD1 (patient additional demographic) optional </li>
+///<li>6: NK1 (Next of kin / associated parties) optional repeating</li>
+///<li>7: VXR_V03_PATIENT_VISIT (a Group object) optional </li>
+///<li>8: GT1 (Guarantor) optional repeating</li>
+///<li>9: VXR_V03_INSURANCE (a Group object) optional repeating</li>
+///<li>10: VXR_V03_ORDER (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class VXR_V03 : AbstractMessage  {
@@ -161,7 +163,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NK1 (Next of kin / associated parties) - creates it if necessary
 	///</summary>
-	public NK1 getNK1() {
+	public NK1 GetNK1() {
 	   NK1 ret = null;
 	   try {
 	      ret = (NK1)this.GetStructure("NK1");
@@ -178,14 +180,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NK1 getNK1(int rep) { 
+	public NK1 GetNK1(int rep) { 
 	   return (NK1)this.GetStructure("NK1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NK1 
 	 */ 
-	public int NK1Reps { 
+	public int NK1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -218,7 +220,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of GT1 (Guarantor) - creates it if necessary
 	///</summary>
-	public GT1 getGT1() {
+	public GT1 GetGT1() {
 	   GT1 ret = null;
 	   try {
 	      ret = (GT1)this.GetStructure("GT1");
@@ -235,14 +237,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public GT1 getGT1(int rep) { 
+	public GT1 GetGT1(int rep) { 
 	   return (GT1)this.GetStructure("GT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of GT1 
 	 */ 
-	public int GT1Reps { 
+	public int GT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -259,7 +261,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VXR_V03_INSURANCE (a Group object) - creates it if necessary
 	///</summary>
-	public VXR_V03_INSURANCE getINSURANCE() {
+	public VXR_V03_INSURANCE GetINSURANCE() {
 	   VXR_V03_INSURANCE ret = null;
 	   try {
 	      ret = (VXR_V03_INSURANCE)this.GetStructure("INSURANCE");
@@ -276,14 +278,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VXR_V03_INSURANCE getINSURANCE(int rep) { 
+	public VXR_V03_INSURANCE GetINSURANCE(int rep) { 
 	   return (VXR_V03_INSURANCE)this.GetStructure("INSURANCE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VXR_V03_INSURANCE 
 	 */ 
-	public int INSURANCEReps { 
+	public int INSURANCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -300,7 +302,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VXR_V03_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public VXR_V03_ORDER getORDER() {
+	public VXR_V03_ORDER GetORDER() {
 	   VXR_V03_ORDER ret = null;
 	   try {
 	      ret = (VXR_V03_ORDER)this.GetStructure("ORDER");
@@ -317,14 +319,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VXR_V03_ORDER getORDER(int rep) { 
+	public VXR_V03_ORDER GetORDER(int rep) { 
 	   return (VXR_V03_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VXR_V03_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

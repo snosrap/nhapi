@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the MFN_M06_MF_CLIN_STUDY Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: MFE (Master File Entry) 
-/// * 1: CM0 (Clinical Study Master) 
-/// * 2: MFN_M06_MF_PHASE_SCHED_DETAIL (a Group object) optional repeating
+///<ol>
+///<li>0: MFE (Master File Entry) </li>
+///<li>1: CM0 (Clinical Study Master) </li>
+///<li>2: MFN_M06_MF_PHASE_SCHED_DETAIL (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M06_MF_CLIN_STUDY : AbstractGroup {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M06_MF_PHASE_SCHED_DETAIL (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M06_MF_PHASE_SCHED_DETAIL getMF_PHASE_SCHED_DETAIL() {
+	public MFN_M06_MF_PHASE_SCHED_DETAIL GetMF_PHASE_SCHED_DETAIL() {
 	   MFN_M06_MF_PHASE_SCHED_DETAIL ret = null;
 	   try {
 	      ret = (MFN_M06_MF_PHASE_SCHED_DETAIL)this.GetStructure("MF_PHASE_SCHED_DETAIL");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M06_MF_PHASE_SCHED_DETAIL getMF_PHASE_SCHED_DETAIL(int rep) { 
+	public MFN_M06_MF_PHASE_SCHED_DETAIL GetMF_PHASE_SCHED_DETAIL(int rep) { 
 	   return (MFN_M06_MF_PHASE_SCHED_DETAIL)this.GetStructure("MF_PHASE_SCHED_DETAIL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M06_MF_PHASE_SCHED_DETAIL 
 	 */ 
-	public int MF_PHASE_SCHED_DETAILReps { 
+	public int MF_PHASE_SCHED_DETAILRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

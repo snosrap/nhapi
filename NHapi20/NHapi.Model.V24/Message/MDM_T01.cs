@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a MDM_T01 message structure (see chapter 9). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EVN (Event Type) 
-/// * 2: PID (Patient identification) 
-/// * 3: PV1 (Patient visit) 
-/// * 4: TXA (Transcription Document Header) 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EVN (Event Type) </li>
+///<li>2: PID (Patient identification) </li>
+///<li>3: PV1 (Patient visit) </li>
+///<li>4: TXA (Transcription Document Header) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MDM_T01 : AbstractMessage  {

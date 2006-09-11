@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a MFN_M09 message structure (see chapter 8). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MFI (Master File Identification) 
-/// * 2: MFN_M09_MF_TEST_CATEGORICAL (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MFI (Master File Identification) </li>
+///<li>2: MFN_M09_MF_TEST_CATEGORICAL (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M09 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M09_MF_TEST_CATEGORICAL (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M09_MF_TEST_CATEGORICAL getMF_TEST_CATEGORICAL() {
+	public MFN_M09_MF_TEST_CATEGORICAL GetMF_TEST_CATEGORICAL() {
 	   MFN_M09_MF_TEST_CATEGORICAL ret = null;
 	   try {
 	      ret = (MFN_M09_MF_TEST_CATEGORICAL)this.GetStructure("MF_TEST_CATEGORICAL");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M09_MF_TEST_CATEGORICAL getMF_TEST_CATEGORICAL(int rep) { 
+	public MFN_M09_MF_TEST_CATEGORICAL GetMF_TEST_CATEGORICAL(int rep) { 
 	   return (MFN_M09_MF_TEST_CATEGORICAL)this.GetStructure("MF_TEST_CATEGORICAL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M09_MF_TEST_CATEGORICAL 
 	 */ 
-	public int MF_TEST_CATEGORICALReps { 
+	public int MF_TEST_CATEGORICALRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

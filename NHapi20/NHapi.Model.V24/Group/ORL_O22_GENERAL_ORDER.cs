@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the ORL_O22_GENERAL_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORL_O22_CONTAINER (a Group object) optional 
-/// * 1: ORL_O22_ORDER (a Group object) optional repeating
+///<ol>
+///<li>0: ORL_O22_CONTAINER (a Group object) optional </li>
+///<li>1: ORL_O22_ORDER (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORL_O22_GENERAL_ORDER : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORL_O22_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public ORL_O22_ORDER getORDER() {
+	public ORL_O22_ORDER GetORDER() {
 	   ORL_O22_ORDER ret = null;
 	   try {
 	      ret = (ORL_O22_ORDER)this.GetStructure("ORDER");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORL_O22_ORDER getORDER(int rep) { 
+	public ORL_O22_ORDER GetORDER(int rep) { 
 	   return (ORL_O22_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORL_O22_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

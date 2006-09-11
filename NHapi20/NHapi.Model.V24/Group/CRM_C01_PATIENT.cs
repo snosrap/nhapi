@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Group
 ///Represents the CRM_C01_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient identification) 
-/// * 1: PV1 (Patient visit) optional 
-/// * 2: CSR (Clinical Study Registration) 
-/// * 3: CSP (Clinical Study Phase) optional repeating
+///<ol>
+///<li>0: PID (Patient identification) </li>
+///<li>1: PV1 (Patient visit) optional </li>
+///<li>2: CSR (Clinical Study Registration) </li>
+///<li>3: CSP (Clinical Study Phase) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class CRM_C01_PATIENT : AbstractGroup {
@@ -85,7 +87,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CSP (Clinical Study Phase) - creates it if necessary
 	///</summary>
-	public CSP getCSP() {
+	public CSP GetCSP() {
 	   CSP ret = null;
 	   try {
 	      ret = (CSP)this.GetStructure("CSP");
@@ -102,14 +104,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CSP getCSP(int rep) { 
+	public CSP GetCSP(int rep) { 
 	   return (CSP)this.GetStructure("CSP", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CSP 
 	 */ 
-	public int CSPReps { 
+	public int CSPRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

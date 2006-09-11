@@ -9,21 +9,22 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 GP2 message segment. 
-/// This segment has the following fields:
-/// * GP2-1: Revenue Code (IS)
-/// * GP2-2: Number of Service Units (NM)
-/// * GP2-3: Charge (CP)
-/// * GP2-4: Reimbursement Action Code (IS)
-/// * GP2-5: Denial or Rejection Code (IS)
-/// * GP2-6: OCE Edit Code (IS)
-/// * GP2-7: Ambulatory Payment Classification Code (CE)
-/// * GP2-8: Modifier Edit Code (IS)
-/// * GP2-9: Payment Adjustment Code (IS)
-/// * GP2-10: Packaging Status Code (IS)
-/// * GP2-11: Expected HCFA Payment Amount (CP)
-/// * GP2-12: Reimbursement Type Code (IS)
-/// * GP2-13: Co-Pay Amount (CP)
-/// * GP2-14: Pay Rate per Unit (NM)
+/// This segment has the following fields:<ol>
+///<li>GP2-1: Revenue Code (IS)</li>
+///<li>GP2-2: Number of Service Units (NM)</li>
+///<li>GP2-3: Charge (CP)</li>
+///<li>GP2-4: Reimbursement Action Code (IS)</li>
+///<li>GP2-5: Denial or Rejection Code (IS)</li>
+///<li>GP2-6: OCE Edit Code (IS)</li>
+///<li>GP2-7: Ambulatory Payment Classification Code (CE)</li>
+///<li>GP2-8: Modifier Edit Code (IS)</li>
+///<li>GP2-9: Payment Adjustment Code (IS)</li>
+///<li>GP2-10: Packaging Status Code (IS)</li>
+///<li>GP2-11: Expected HCFA Payment Amount (CP)</li>
+///<li>GP2-12: Reimbursement Type Code (IS)</li>
+///<li>GP2-13: Co-Pay Amount (CP)</li>
+///<li>GP2-14: Pay Rate per Unit (NM)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -179,7 +180,7 @@ public class GP2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getOCEEditCode(int rep)
+	public IS GetOCEEditCode(int rep)
 	{
 			IS ret = null;
 			try
@@ -196,7 +197,7 @@ public class GP2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of OCE Edit Code (GP2-6).
    ///</summary>
-  public IS[] getOCEEditCode() {
+  public IS[] GetOCEEditCode() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -214,6 +215,24 @@ public class GP2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of OCE Edit Code (GP2-6).
+   ///</summary>
+  public int OCEEditCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Ambulatory Payment Classification Code(GP2-7).
 	///</summary>
@@ -242,7 +261,7 @@ public class GP2 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getModifierEditCode(int rep)
+	public IS GetModifierEditCode(int rep)
 	{
 			IS ret = null;
 			try
@@ -259,7 +278,7 @@ public class GP2 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Modifier Edit Code (GP2-8).
    ///</summary>
-  public IS[] getModifierEditCode() {
+  public IS[] GetModifierEditCode() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -277,6 +296,24 @@ public class GP2 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Modifier Edit Code (GP2-8).
+   ///</summary>
+  public int ModifierEditCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Payment Adjustment Code(GP2-9).
 	///</summary>

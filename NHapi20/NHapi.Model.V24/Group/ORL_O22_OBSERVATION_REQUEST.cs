@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the ORL_O22_OBSERVATION_REQUEST Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OBR (Observation Request) 
-/// * 1: SAC (Specimen and container detail) optional repeating
+///<ol>
+///<li>0: OBR (Observation Request) </li>
+///<li>1: SAC (Specimen and container detail) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORL_O22_OBSERVATION_REQUEST : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SAC (Specimen and container detail) - creates it if necessary
 	///</summary>
-	public SAC getSAC() {
+	public SAC GetSAC() {
 	   SAC ret = null;
 	   try {
 	      ret = (SAC)this.GetStructure("SAC");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SAC getSAC(int rep) { 
+	public SAC GetSAC(int rep) { 
 	   return (SAC)this.GetStructure("SAC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SAC 
 	 */ 
-	public int SACReps { 
+	public int SACRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

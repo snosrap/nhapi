@@ -9,21 +9,22 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 OM4 message segment. 
-/// This segment has the following fields:
-/// * OM4-1: Sequence Number - Test/ Observation Master File (NM)
-/// * OM4-2: Derived Specimen (ID)
-/// * OM4-3: Container Description (TX)
-/// * OM4-4: Container Volume (NM)
-/// * OM4-5: Container Units (CE)
-/// * OM4-6: Specimen (CE)
-/// * OM4-7: Additive (CE)
-/// * OM4-8: Preparation (TX)
-/// * OM4-9: Special Handling Requirements (TX)
-/// * OM4-10: Normal Collection Volume (CQ)
-/// * OM4-11: Minimum Collection Volume (CQ)
-/// * OM4-12: Specimen Requirements (TX)
-/// * OM4-13: Specimen Priorities (ID)
-/// * OM4-14: Specimen Retention Time (CQ)
+/// This segment has the following fields:<ol>
+///<li>OM4-1: Sequence Number - Test/ Observation Master File (NM)</li>
+///<li>OM4-2: Derived Specimen (ID)</li>
+///<li>OM4-3: Container Description (TX)</li>
+///<li>OM4-4: Container Volume (NM)</li>
+///<li>OM4-5: Container Units (CE)</li>
+///<li>OM4-6: Specimen (CE)</li>
+///<li>OM4-7: Additive (CE)</li>
+///<li>OM4-8: Preparation (TX)</li>
+///<li>OM4-9: Special Handling Requirements (TX)</li>
+///<li>OM4-10: Normal Collection Volume (CQ)</li>
+///<li>OM4-11: Minimum Collection Volume (CQ)</li>
+///<li>OM4-12: Specimen Requirements (TX)</li>
+///<li>OM4-13: Specimen Priorities (ID)</li>
+///<li>OM4-14: Specimen Retention Time (CQ)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -340,7 +341,7 @@ public class OM4 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ID getSpecimenPriorities(int rep)
+	public ID GetSpecimenPriorities(int rep)
 	{
 			ID ret = null;
 			try
@@ -357,7 +358,7 @@ public class OM4 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Specimen Priorities (OM4-13).
    ///</summary>
-  public ID[] getSpecimenPriorities() {
+  public ID[] GetSpecimenPriorities() {
      ID[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -375,6 +376,24 @@ public class OM4 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Specimen Priorities (OM4-13).
+   ///</summary>
+  public int SpecimenPrioritiesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Specimen Retention Time(OM4-14).
 	///</summary>

@@ -9,16 +9,17 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 LOC message segment. 
-/// This segment has the following fields:
-/// * LOC-1: Primary Key Value - LOC (PL)
-/// * LOC-2: Location Description (ST)
-/// * LOC-3: Location Type - LOC (IS)
-/// * LOC-4: Organization Name - LOC (XON)
-/// * LOC-5: Location Address (XAD)
-/// * LOC-6: Location Phone (XTN)
-/// * LOC-7: License Number (CE)
-/// * LOC-8: Location Equipment (IS)
-/// * LOC-9: Location Service Code (IS)
+/// This segment has the following fields:<ol>
+///<li>LOC-1: Primary Key Value - LOC (PL)</li>
+///<li>LOC-2: Location Description (ST)</li>
+///<li>LOC-3: Location Type - LOC (IS)</li>
+///<li>LOC-4: Organization Name - LOC (XON)</li>
+///<li>LOC-5: Location Address (XAD)</li>
+///<li>LOC-6: Location Phone (XTN)</li>
+///<li>LOC-7: License Number (CE)</li>
+///<li>LOC-8: Location Equipment (IS)</li>
+///<li>LOC-9: Location Service Code (IS)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -100,7 +101,7 @@ public class LOC : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getLocationTypeLOC(int rep)
+	public IS GetLocationTypeLOC(int rep)
 	{
 			IS ret = null;
 			try
@@ -117,7 +118,7 @@ public class LOC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Location Type - LOC (LOC-3).
    ///</summary>
-  public IS[] getLocationTypeLOC() {
+  public IS[] GetLocationTypeLOC() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -135,12 +136,30 @@ public class LOC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Location Type - LOC (LOC-3).
+   ///</summary>
+  public int LocationTypeLOCRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Organization Name - LOC(LOC-4).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XON getOrganizationNameLOC(int rep)
+	public XON GetOrganizationNameLOC(int rep)
 	{
 			XON ret = null;
 			try
@@ -157,7 +176,7 @@ public class LOC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Organization Name - LOC (LOC-4).
    ///</summary>
-  public XON[] getOrganizationNameLOC() {
+  public XON[] GetOrganizationNameLOC() {
      XON[] ret = null;
     try {
         IType[] t = this.GetField(4);  
@@ -175,12 +194,30 @@ public class LOC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Organization Name - LOC (LOC-4).
+   ///</summary>
+  public int OrganizationNameLOCRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(4);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Location Address(LOC-5).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XAD getLocationAddress(int rep)
+	public XAD GetLocationAddress(int rep)
 	{
 			XAD ret = null;
 			try
@@ -197,7 +234,7 @@ public class LOC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Location Address (LOC-5).
    ///</summary>
-  public XAD[] getLocationAddress() {
+  public XAD[] GetLocationAddress() {
      XAD[] ret = null;
     try {
         IType[] t = this.GetField(5);  
@@ -215,12 +252,30 @@ public class LOC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Location Address (LOC-5).
+   ///</summary>
+  public int LocationAddressRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(5);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Location Phone(LOC-6).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XTN getLocationPhone(int rep)
+	public XTN GetLocationPhone(int rep)
 	{
 			XTN ret = null;
 			try
@@ -237,7 +292,7 @@ public class LOC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Location Phone (LOC-6).
    ///</summary>
-  public XTN[] getLocationPhone() {
+  public XTN[] GetLocationPhone() {
      XTN[] ret = null;
     try {
         IType[] t = this.GetField(6);  
@@ -255,12 +310,30 @@ public class LOC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Location Phone (LOC-6).
+   ///</summary>
+  public int LocationPhoneRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of License Number(LOC-7).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getLicenseNumber(int rep)
+	public CE GetLicenseNumber(int rep)
 	{
 			CE ret = null;
 			try
@@ -277,7 +350,7 @@ public class LOC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of License Number (LOC-7).
    ///</summary>
-  public CE[] getLicenseNumber() {
+  public CE[] GetLicenseNumber() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(7);  
@@ -295,12 +368,30 @@ public class LOC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of License Number (LOC-7).
+   ///</summary>
+  public int LicenseNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(7);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Location Equipment(LOC-8).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public IS getLocationEquipment(int rep)
+	public IS GetLocationEquipment(int rep)
 	{
 			IS ret = null;
 			try
@@ -317,7 +408,7 @@ public class LOC : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Location Equipment (LOC-8).
    ///</summary>
-  public IS[] getLocationEquipment() {
+  public IS[] GetLocationEquipment() {
      IS[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -335,6 +426,24 @@ public class LOC : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Location Equipment (LOC-8).
+   ///</summary>
+  public int LocationEquipmentRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Location Service Code(LOC-9).
 	///</summary>

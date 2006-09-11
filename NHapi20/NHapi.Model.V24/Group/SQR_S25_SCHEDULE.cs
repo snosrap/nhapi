@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Group
 ///Represents the SQR_S25_SCHEDULE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: SCH (Scheduling Activity Information) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: SQR_S25_PATIENT (a Group object) optional 
-/// * 3: SQR_S25_RESOURCES (a Group object) repeating
+///<ol>
+///<li>0: SCH (Scheduling Activity Information) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: SQR_S25_PATIENT (a Group object) optional </li>
+///<li>3: SQR_S25_RESOURCES (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class SQR_S25_SCHEDULE : AbstractGroup {
@@ -53,7 +55,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -70,14 +72,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -110,7 +112,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of SQR_S25_RESOURCES (a Group object) - creates it if necessary
 	///</summary>
-	public SQR_S25_RESOURCES getRESOURCES() {
+	public SQR_S25_RESOURCES GetRESOURCES() {
 	   SQR_S25_RESOURCES ret = null;
 	   try {
 	      ret = (SQR_S25_RESOURCES)this.GetStructure("RESOURCES");
@@ -127,14 +129,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SQR_S25_RESOURCES getRESOURCES(int rep) { 
+	public SQR_S25_RESOURCES GetRESOURCES(int rep) { 
 	   return (SQR_S25_RESOURCES)this.GetStructure("RESOURCES", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of SQR_S25_RESOURCES 
 	 */ 
-	public int RESOURCESReps { 
+	public int RESOURCESRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

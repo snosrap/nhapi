@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the RAS_O17_ORDER_DETAIL_SUPPLEMENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: NTE (Notes and Comments) repeating
-/// * 1: RXR (Pharmacy/Treatment Route) repeating
-/// * 2: RAS_O17_COMPONENTS (a Group object) optional 
+///<ol>
+///<li>0: NTE (Notes and Comments) repeating</li>
+///<li>1: RXR (Pharmacy/Treatment Route) repeating</li>
+///<li>2: RAS_O17_COMPONENTS (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RAS_O17_ORDER_DETAIL_SUPPLEMENT : AbstractGroup {
@@ -35,7 +37,7 @@ public class RAS_O17_ORDER_DETAIL_SUPPLEMENT : AbstractGroup {
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -52,14 +54,14 @@ public class RAS_O17_ORDER_DETAIL_SUPPLEMENT : AbstractGroup {
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -76,7 +78,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXR (Pharmacy/Treatment Route) - creates it if necessary
 	///</summary>
-	public RXR getRXR() {
+	public RXR GetRXR() {
 	   RXR ret = null;
 	   try {
 	      ret = (RXR)this.GetStructure("RXR");
@@ -93,14 +95,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXR getRXR(int rep) { 
+	public RXR GetRXR(int rep) { 
 	   return (RXR)this.GetStructure("RXR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXR 
 	 */ 
-	public int RXRReps { 
+	public int RXRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

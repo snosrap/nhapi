@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a ADT_A43 message structure (see chapter 3). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EVN (Event Type) 
-/// * 2: ADT_A43_PATIENT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EVN (Event Type) </li>
+///<li>2: ADT_A43_PATIENT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A43 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ADT_A43_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public ADT_A43_PATIENT getPATIENT() {
+	public ADT_A43_PATIENT GetPATIENT() {
 	   ADT_A43_PATIENT ret = null;
 	   try {
 	      ret = (ADT_A43_PATIENT)this.GetStructure("PATIENT");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ADT_A43_PATIENT getPATIENT(int rep) { 
+	public ADT_A43_PATIENT GetPATIENT(int rep) { 
 	   return (ADT_A43_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ADT_A43_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

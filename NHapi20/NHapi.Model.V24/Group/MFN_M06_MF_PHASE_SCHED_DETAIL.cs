@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the MFN_M06_MF_PHASE_SCHED_DETAIL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: CM1 (Clinical Study Phase Master) 
-/// * 1: CM2 (Clinical Study Schedule Master) optional repeating
+///<ol>
+///<li>0: CM1 (Clinical Study Phase Master) </li>
+///<li>1: CM2 (Clinical Study Schedule Master) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M06_MF_PHASE_SCHED_DETAIL : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CM2 (Clinical Study Schedule Master) - creates it if necessary
 	///</summary>
-	public CM2 getCM2() {
+	public CM2 GetCM2() {
 	   CM2 ret = null;
 	   try {
 	      ret = (CM2)this.GetStructure("CM2");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CM2 getCM2(int rep) { 
+	public CM2 GetCM2(int rep) { 
 	   return (CM2)this.GetStructure("CM2", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CM2 
 	 */ 
-	public int CM2Reps { 
+	public int CM2RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

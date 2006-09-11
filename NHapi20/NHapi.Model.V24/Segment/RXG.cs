@@ -9,29 +9,30 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 RXG message segment. 
-/// This segment has the following fields:
-/// * RXG-1: Give Sub-ID Counter (NM)
-/// * RXG-2: Dispense Sub-ID Counter (NM)
-/// * RXG-3: Quantity/Timing (TQ)
-/// * RXG-4: Give Code (CE)
-/// * RXG-5: Give Amount - Minimum (NM)
-/// * RXG-6: Give Amount - Maximum (NM)
-/// * RXG-7: Give Units (CE)
-/// * RXG-8: Give Dosage Form (CE)
-/// * RXG-9: Administration Notes (CE)
-/// * RXG-10: Substitution Status (ID)
-/// * RXG-11: Dispense-To Location (LA2)
-/// * RXG-12: Needs Human Review (ID)
-/// * RXG-13: Pharmacy/Treatment Supplier's Special Administration Instructions (CE)
-/// * RXG-14: Give Per (Time Unit) (ST)
-/// * RXG-15: Give Rate Amount (ST)
-/// * RXG-16: Give Rate Units (CE)
-/// * RXG-17: Give Strength (NM)
-/// * RXG-18: Give Strength Units (CE)
-/// * RXG-19: Substance Lot Number (ST)
-/// * RXG-20: Substance Expiration Date (TS)
-/// * RXG-21: Substance Manufacturer Name (CE)
-/// * RXG-22: Indication (CE)
+/// This segment has the following fields:<ol>
+///<li>RXG-1: Give Sub-ID Counter (NM)</li>
+///<li>RXG-2: Dispense Sub-ID Counter (NM)</li>
+///<li>RXG-3: Quantity/Timing (TQ)</li>
+///<li>RXG-4: Give Code (CE)</li>
+///<li>RXG-5: Give Amount - Minimum (NM)</li>
+///<li>RXG-6: Give Amount - Maximum (NM)</li>
+///<li>RXG-7: Give Units (CE)</li>
+///<li>RXG-8: Give Dosage Form (CE)</li>
+///<li>RXG-9: Administration Notes (CE)</li>
+///<li>RXG-10: Substitution Status (ID)</li>
+///<li>RXG-11: Dispense-To Location (LA2)</li>
+///<li>RXG-12: Needs Human Review (ID)</li>
+///<li>RXG-13: Pharmacy/Treatment Supplier's Special Administration Instructions (CE)</li>
+///<li>RXG-14: Give Per (Time Unit) (ST)</li>
+///<li>RXG-15: Give Rate Amount (ST)</li>
+///<li>RXG-16: Give Rate Units (CE)</li>
+///<li>RXG-17: Give Strength (NM)</li>
+///<li>RXG-18: Give Strength Units (CE)</li>
+///<li>RXG-19: Substance Lot Number (ST)</li>
+///<li>RXG-20: Substance Expiration Date (TS)</li>
+///<li>RXG-21: Substance Manufacturer Name (CE)</li>
+///<li>RXG-22: Indication (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -264,7 +265,7 @@ public class RXG : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getAdministrationNotes(int rep)
+	public CE GetAdministrationNotes(int rep)
 	{
 			CE ret = null;
 			try
@@ -281,7 +282,7 @@ public class RXG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Administration Notes (RXG-9).
    ///</summary>
-  public CE[] getAdministrationNotes() {
+  public CE[] GetAdministrationNotes() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(9);  
@@ -299,6 +300,24 @@ public class RXG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Administration Notes (RXG-9).
+   ///</summary>
+  public int AdministrationNotesRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(9);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Substitution Status(RXG-10).
 	///</summary>
@@ -373,7 +392,7 @@ public class RXG : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getPharmacyTreatmentSupplierSSpecialAdministrationInstructions(int rep)
+	public CE GetPharmacyTreatmentSupplierSSpecialAdministrationInstructions(int rep)
 	{
 			CE ret = null;
 			try
@@ -390,7 +409,7 @@ public class RXG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Pharmacy/Treatment Supplier's Special Administration Instructions (RXG-13).
    ///</summary>
-  public CE[] getPharmacyTreatmentSupplierSSpecialAdministrationInstructions() {
+  public CE[] GetPharmacyTreatmentSupplierSSpecialAdministrationInstructions() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(13);  
@@ -408,6 +427,24 @@ public class RXG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Pharmacy/Treatment Supplier's Special Administration Instructions (RXG-13).
+   ///</summary>
+  public int PharmacyTreatmentSupplierSSpecialAdministrationInstructionsRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(13);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Give Per (Time Unit)(RXG-14).
 	///</summary>
@@ -528,7 +565,7 @@ public class RXG : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public ST getSubstanceLotNumber(int rep)
+	public ST GetSubstanceLotNumber(int rep)
 	{
 			ST ret = null;
 			try
@@ -545,7 +582,7 @@ public class RXG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Lot Number (RXG-19).
    ///</summary>
-  public ST[] getSubstanceLotNumber() {
+  public ST[] GetSubstanceLotNumber() {
      ST[] ret = null;
     try {
         IType[] t = this.GetField(19);  
@@ -563,12 +600,30 @@ public class RXG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Lot Number (RXG-19).
+   ///</summary>
+  public int SubstanceLotNumberRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(19);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Substance Expiration Date(RXG-20).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public TS getSubstanceExpirationDate(int rep)
+	public TS GetSubstanceExpirationDate(int rep)
 	{
 			TS ret = null;
 			try
@@ -585,7 +640,7 @@ public class RXG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Expiration Date (RXG-20).
    ///</summary>
-  public TS[] getSubstanceExpirationDate() {
+  public TS[] GetSubstanceExpirationDate() {
      TS[] ret = null;
     try {
         IType[] t = this.GetField(20);  
@@ -603,12 +658,30 @@ public class RXG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Expiration Date (RXG-20).
+   ///</summary>
+  public int SubstanceExpirationDateRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(20);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Substance Manufacturer Name(RXG-21).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getSubstanceManufacturerName(int rep)
+	public CE GetSubstanceManufacturerName(int rep)
 	{
 			CE ret = null;
 			try
@@ -625,7 +698,7 @@ public class RXG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Substance Manufacturer Name (RXG-21).
    ///</summary>
-  public CE[] getSubstanceManufacturerName() {
+  public CE[] GetSubstanceManufacturerName() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(21);  
@@ -643,12 +716,30 @@ public class RXG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Substance Manufacturer Name (RXG-21).
+   ///</summary>
+  public int SubstanceManufacturerNameRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(21);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Indication(RXG-22).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getIndication(int rep)
+	public CE GetIndication(int rep)
 	{
 			CE ret = null;
 			try
@@ -665,7 +756,7 @@ public class RXG : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Indication (RXG-22).
    ///</summary>
-  public CE[] getIndication() {
+  public CE[] GetIndication() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(22);  
@@ -683,5 +774,23 @@ public class RXG : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Indication (RXG-22).
+   ///</summary>
+  public int IndicationRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(22);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

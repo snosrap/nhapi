@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a QCN_J01 message structure (see chapter 5). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: QID (Query Identification) 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: QID (Query Identification) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class QCN_J01 : AbstractMessage  {

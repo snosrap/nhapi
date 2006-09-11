@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a MFN_M12 message structure (see chapter 8). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MFI (Master File Identification) 
-/// * 2: MFN_M12_MF_OBS_ATTRIBUTES (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MFI (Master File Identification) </li>
+///<li>2: MFN_M12_MF_OBS_ATTRIBUTES (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M12 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M12_MF_OBS_ATTRIBUTES (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M12_MF_OBS_ATTRIBUTES getMF_OBS_ATTRIBUTES() {
+	public MFN_M12_MF_OBS_ATTRIBUTES GetMF_OBS_ATTRIBUTES() {
 	   MFN_M12_MF_OBS_ATTRIBUTES ret = null;
 	   try {
 	      ret = (MFN_M12_MF_OBS_ATTRIBUTES)this.GetStructure("MF_OBS_ATTRIBUTES");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M12_MF_OBS_ATTRIBUTES getMF_OBS_ATTRIBUTES(int rep) { 
+	public MFN_M12_MF_OBS_ATTRIBUTES GetMF_OBS_ATTRIBUTES(int rep) { 
 	   return (MFN_M12_MF_OBS_ATTRIBUTES)this.GetStructure("MF_OBS_ATTRIBUTES", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M12_MF_OBS_ATTRIBUTES 
 	 */ 
-	public int MF_OBS_ATTRIBUTESReps { 
+	public int MF_OBS_ATTRIBUTESRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

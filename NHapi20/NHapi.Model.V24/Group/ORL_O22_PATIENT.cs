@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the ORL_O22_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient identification) 
-/// * 1: ORL_O22_GENERAL_ORDER (a Group object) repeating
+///<ol>
+///<li>0: PID (Patient identification) </li>
+///<li>1: ORL_O22_GENERAL_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORL_O22_PATIENT : AbstractGroup {
@@ -49,7 +51,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORL_O22_GENERAL_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public ORL_O22_GENERAL_ORDER getGENERAL_ORDER() {
+	public ORL_O22_GENERAL_ORDER GetGENERAL_ORDER() {
 	   ORL_O22_GENERAL_ORDER ret = null;
 	   try {
 	      ret = (ORL_O22_GENERAL_ORDER)this.GetStructure("GENERAL_ORDER");
@@ -66,14 +68,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORL_O22_GENERAL_ORDER getGENERAL_ORDER(int rep) { 
+	public ORL_O22_GENERAL_ORDER GetGENERAL_ORDER(int rep) { 
 	   return (ORL_O22_GENERAL_ORDER)this.GetStructure("GENERAL_ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORL_O22_GENERAL_ORDER 
 	 */ 
-	public int GENERAL_ORDERReps { 
+	public int GENERAL_ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

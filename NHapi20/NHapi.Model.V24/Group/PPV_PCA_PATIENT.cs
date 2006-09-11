@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the PPV_PCA_PATIENT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient identification) 
-/// * 1: PPV_PCA_PATIENT_VISIT (a Group object) optional 
-/// * 2: PPV_PCA_GOAL (a Group object) repeating
+///<ol>
+///<li>0: PID (Patient identification) </li>
+///<li>1: PPV_PCA_PATIENT_VISIT (a Group object) optional </li>
+///<li>2: PPV_PCA_GOAL (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPV_PCA_PATIENT : AbstractGroup {
@@ -67,7 +69,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPV_PCA_GOAL (a Group object) - creates it if necessary
 	///</summary>
-	public PPV_PCA_GOAL getGOAL() {
+	public PPV_PCA_GOAL GetGOAL() {
 	   PPV_PCA_GOAL ret = null;
 	   try {
 	      ret = (PPV_PCA_GOAL)this.GetStructure("GOAL");
@@ -84,14 +86,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPV_PCA_GOAL getGOAL(int rep) { 
+	public PPV_PCA_GOAL GetGOAL(int rep) { 
 	   return (PPV_PCA_GOAL)this.GetStructure("GOAL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPV_PCA_GOAL 
 	 */ 
-	public int GOALReps { 
+	public int GOALRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

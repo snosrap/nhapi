@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a MFN_M04 message structure (see chapter 8). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MFI (Master File Identification) 
-/// * 2: MFN_M04_MF_CDM (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MFI (Master File Identification) </li>
+///<li>2: MFN_M04_MF_CDM (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M04 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of MFN_M04_MF_CDM (a Group object) - creates it if necessary
 	///</summary>
-	public MFN_M04_MF_CDM getMF_CDM() {
+	public MFN_M04_MF_CDM GetMF_CDM() {
 	   MFN_M04_MF_CDM ret = null;
 	   try {
 	      ret = (MFN_M04_MF_CDM)this.GetStructure("MF_CDM");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public MFN_M04_MF_CDM getMF_CDM(int rep) { 
+	public MFN_M04_MF_CDM GetMF_CDM(int rep) { 
 	   return (MFN_M04_MF_CDM)this.GetStructure("MF_CDM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of MFN_M04_MF_CDM 
 	 */ 
-	public int MF_CDMReps { 
+	public int MF_CDMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -9,10 +9,11 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 ERQ message segment. 
-/// This segment has the following fields:
-/// * ERQ-1: Query Tag (ST)
-/// * ERQ-2: Event Identifier (CE)
-/// * ERQ-3: Input Parameter List (QIP)
+/// This segment has the following fields:<ol>
+///<li>ERQ-1: Query Tag (ST)</li>
+///<li>ERQ-2: Event Identifier (CE)</li>
+///<li>ERQ-3: Input Parameter List (QIP)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -88,7 +89,7 @@ public class ERQ : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public QIP getInputParameterList(int rep)
+	public QIP GetInputParameterList(int rep)
 	{
 			QIP ret = null;
 			try
@@ -105,7 +106,7 @@ public class ERQ : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Input Parameter List (ERQ-3).
    ///</summary>
-  public QIP[] getInputParameterList() {
+  public QIP[] GetInputParameterList() {
      QIP[] ret = null;
     try {
         IType[] t = this.GetField(3);  
@@ -123,5 +124,23 @@ public class ERQ : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Input Parameter List (ERQ-3).
+   ///</summary>
+  public int InputParameterListRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(3);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

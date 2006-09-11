@@ -12,13 +12,15 @@ namespace NHapi.Model.V24.Group
 ///Represents the PPT_PCL_GOAL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: GOL (Goal Detail) 
-/// * 1: NTE (Notes and Comments) optional repeating
-/// * 2: VAR (Variance) optional repeating
-/// * 3: PPT_PCL_GOAL_ROLE (a Group object) optional repeating
-/// * 4: PPT_PCL_GOAL_OBSERVATION (a Group object) optional repeating
-/// * 5: PPT_PCL_PROBLEM (a Group object) optional repeating
-/// * 6: PPT_PCL_ORDER (a Group object) optional repeating
+///<ol>
+///<li>0: GOL (Goal Detail) </li>
+///<li>1: NTE (Notes and Comments) optional repeating</li>
+///<li>2: VAR (Variance) optional repeating</li>
+///<li>3: PPT_PCL_GOAL_ROLE (a Group object) optional repeating</li>
+///<li>4: PPT_PCL_GOAL_OBSERVATION (a Group object) optional repeating</li>
+///<li>5: PPT_PCL_PROBLEM (a Group object) optional repeating</li>
+///<li>6: PPT_PCL_ORDER (a Group object) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class PPT_PCL_GOAL : AbstractGroup {
@@ -59,7 +61,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -76,14 +78,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -100,7 +102,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of VAR (Variance) - creates it if necessary
 	///</summary>
-	public VAR getVAR() {
+	public VAR GetVAR() {
 	   VAR ret = null;
 	   try {
 	      ret = (VAR)this.GetStructure("VAR");
@@ -117,14 +119,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public VAR getVAR(int rep) { 
+	public VAR GetVAR(int rep) { 
 	   return (VAR)this.GetStructure("VAR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of VAR 
 	 */ 
-	public int VARReps { 
+	public int VARRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -141,7 +143,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPT_PCL_GOAL_ROLE (a Group object) - creates it if necessary
 	///</summary>
-	public PPT_PCL_GOAL_ROLE getGOAL_ROLE() {
+	public PPT_PCL_GOAL_ROLE GetGOAL_ROLE() {
 	   PPT_PCL_GOAL_ROLE ret = null;
 	   try {
 	      ret = (PPT_PCL_GOAL_ROLE)this.GetStructure("GOAL_ROLE");
@@ -158,14 +160,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPT_PCL_GOAL_ROLE getGOAL_ROLE(int rep) { 
+	public PPT_PCL_GOAL_ROLE GetGOAL_ROLE(int rep) { 
 	   return (PPT_PCL_GOAL_ROLE)this.GetStructure("GOAL_ROLE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPT_PCL_GOAL_ROLE 
 	 */ 
-	public int GOAL_ROLEReps { 
+	public int GOAL_ROLERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -182,7 +184,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPT_PCL_GOAL_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public PPT_PCL_GOAL_OBSERVATION getGOAL_OBSERVATION() {
+	public PPT_PCL_GOAL_OBSERVATION GetGOAL_OBSERVATION() {
 	   PPT_PCL_GOAL_OBSERVATION ret = null;
 	   try {
 	      ret = (PPT_PCL_GOAL_OBSERVATION)this.GetStructure("GOAL_OBSERVATION");
@@ -199,14 +201,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPT_PCL_GOAL_OBSERVATION getGOAL_OBSERVATION(int rep) { 
+	public PPT_PCL_GOAL_OBSERVATION GetGOAL_OBSERVATION(int rep) { 
 	   return (PPT_PCL_GOAL_OBSERVATION)this.GetStructure("GOAL_OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPT_PCL_GOAL_OBSERVATION 
 	 */ 
-	public int GOAL_OBSERVATIONReps { 
+	public int GOAL_OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -223,7 +225,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPT_PCL_PROBLEM (a Group object) - creates it if necessary
 	///</summary>
-	public PPT_PCL_PROBLEM getPROBLEM() {
+	public PPT_PCL_PROBLEM GetPROBLEM() {
 	   PPT_PCL_PROBLEM ret = null;
 	   try {
 	      ret = (PPT_PCL_PROBLEM)this.GetStructure("PROBLEM");
@@ -240,14 +242,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPT_PCL_PROBLEM getPROBLEM(int rep) { 
+	public PPT_PCL_PROBLEM GetPROBLEM(int rep) { 
 	   return (PPT_PCL_PROBLEM)this.GetStructure("PROBLEM", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPT_PCL_PROBLEM 
 	 */ 
-	public int PROBLEMReps { 
+	public int PROBLEMRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -264,7 +266,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of PPT_PCL_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public PPT_PCL_ORDER getORDER() {
+	public PPT_PCL_ORDER GetORDER() {
 	   PPT_PCL_ORDER ret = null;
 	   try {
 	      ret = (PPT_PCL_ORDER)this.GetStructure("ORDER");
@@ -281,14 +283,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public PPT_PCL_ORDER getORDER(int rep) { 
+	public PPT_PCL_ORDER GetORDER(int rep) { 
 	   return (PPT_PCL_ORDER)this.GetStructure("ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of PPT_PCL_ORDER 
 	 */ 
-	public int ORDERReps { 
+	public int ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

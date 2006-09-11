@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the NMD_N02_CLOCK_AND_STATS_WITH_NOTES Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: NMD_N02_CLOCK (a Group object) optional 
-/// * 1: NMD_N02_APP_STATS (a Group object) optional 
-/// * 2: NMD_N02_APP_STATUS (a Group object) optional 
+///<ol>
+///<li>0: NMD_N02_CLOCK (a Group object) optional </li>
+///<li>1: NMD_N02_APP_STATS (a Group object) optional </li>
+///<li>2: NMD_N02_APP_STATUS (a Group object) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class NMD_N02_CLOCK_AND_STATS_WITH_NOTES : AbstractGroup {

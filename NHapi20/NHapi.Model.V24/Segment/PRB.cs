@@ -9,32 +9,33 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 PRB message segment. 
-/// This segment has the following fields:
-/// * PRB-1: Action Code (ID)
-/// * PRB-2: Action Date/Time (TS)
-/// * PRB-3: Problem ID (CE)
-/// * PRB-4: Problem Instance ID (EI)
-/// * PRB-5: Episode of Care ID (EI)
-/// * PRB-6: Problem List Priority (NM)
-/// * PRB-7: Problem Established Date/Time (TS)
-/// * PRB-8: Anticipated Problem Resolution Date/Time (TS)
-/// * PRB-9: Actual Problem Resolution Date/Time (TS)
-/// * PRB-10: Problem Classification (CE)
-/// * PRB-11: Problem Management Discipline (CE)
-/// * PRB-12: Problem Persistence (CE)
-/// * PRB-13: Problem Confirmation Status (CE)
-/// * PRB-14: Problem Life Cycle Status (CE)
-/// * PRB-15: Problem Life Cycle Status Date/Time (TS)
-/// * PRB-16: Problem Date of Onset (TS)
-/// * PRB-17: Problem Onset Text (ST)
-/// * PRB-18: Problem Ranking (CE)
-/// * PRB-19: Certainty of Problem (CE)
-/// * PRB-20: Probability of Problem (0-1) (NM)
-/// * PRB-21: Individual Awareness of Problem (CE)
-/// * PRB-22: Problem Prognosis (CE)
-/// * PRB-23: Individual Awareness of Prognosis (CE)
-/// * PRB-24: Family/Significant Other Awareness of Problem/Prognosis (ST)
-/// * PRB-25: Security/Sensitivity (CE)
+/// This segment has the following fields:<ol>
+///<li>PRB-1: Action Code (ID)</li>
+///<li>PRB-2: Action Date/Time (TS)</li>
+///<li>PRB-3: Problem ID (CE)</li>
+///<li>PRB-4: Problem Instance ID (EI)</li>
+///<li>PRB-5: Episode of Care ID (EI)</li>
+///<li>PRB-6: Problem List Priority (NM)</li>
+///<li>PRB-7: Problem Established Date/Time (TS)</li>
+///<li>PRB-8: Anticipated Problem Resolution Date/Time (TS)</li>
+///<li>PRB-9: Actual Problem Resolution Date/Time (TS)</li>
+///<li>PRB-10: Problem Classification (CE)</li>
+///<li>PRB-11: Problem Management Discipline (CE)</li>
+///<li>PRB-12: Problem Persistence (CE)</li>
+///<li>PRB-13: Problem Confirmation Status (CE)</li>
+///<li>PRB-14: Problem Life Cycle Status (CE)</li>
+///<li>PRB-15: Problem Life Cycle Status Date/Time (TS)</li>
+///<li>PRB-16: Problem Date of Onset (TS)</li>
+///<li>PRB-17: Problem Onset Text (ST)</li>
+///<li>PRB-18: Problem Ranking (CE)</li>
+///<li>PRB-19: Certainty of Problem (CE)</li>
+///<li>PRB-20: Probability of Problem (0-1) (NM)</li>
+///<li>PRB-21: Individual Awareness of Problem (CE)</li>
+///<li>PRB-22: Problem Prognosis (CE)</li>
+///<li>PRB-23: Individual Awareness of Prognosis (CE)</li>
+///<li>PRB-24: Family/Significant Other Awareness of Problem/Prognosis (ST)</li>
+///<li>PRB-25: Security/Sensitivity (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -316,7 +317,7 @@ public class PRB : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProblemManagementDiscipline(int rep)
+	public CE GetProblemManagementDiscipline(int rep)
 	{
 			CE ret = null;
 			try
@@ -333,7 +334,7 @@ public class PRB : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Problem Management Discipline (PRB-11).
    ///</summary>
-  public CE[] getProblemManagementDiscipline() {
+  public CE[] GetProblemManagementDiscipline() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -351,6 +352,24 @@ public class PRB : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Problem Management Discipline (PRB-11).
+   ///</summary>
+  public int ProblemManagementDisciplineRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Problem Persistence(PRB-12).
 	///</summary>

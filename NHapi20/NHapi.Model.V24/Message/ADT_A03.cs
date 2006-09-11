@@ -12,20 +12,22 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a ADT_A03 message structure (see chapter 3). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EVN (Event Type) 
-/// * 2: PID (Patient identification) 
-/// * 3: PD1 (patient additional demographic) optional 
-/// * 4: ROL (Role) optional repeating
-/// * 5: PV1 (Patient visit) 
-/// * 6: PV2 (Patient visit - additional information) optional 
-/// * 7: ROL (Role) optional repeating
-/// * 8: DB1 (Disability) optional repeating
-/// * 9: DG1 (Diagnosis) optional repeating
-/// * 10: DRG (Diagnosis Related Group) optional 
-/// * 11: ADT_A03_PROCEDURE (a Group object) optional repeating
-/// * 12: OBX (Observation/Result) optional repeating
-/// * 13: PDA (Patient death and autopsy) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EVN (Event Type) </li>
+///<li>2: PID (Patient identification) </li>
+///<li>3: PD1 (patient additional demographic) optional </li>
+///<li>4: ROL (Role) optional repeating</li>
+///<li>5: PV1 (Patient visit) </li>
+///<li>6: PV2 (Patient visit - additional information) optional </li>
+///<li>7: ROL (Role) optional repeating</li>
+///<li>8: DB1 (Disability) optional repeating</li>
+///<li>9: DG1 (Diagnosis) optional repeating</li>
+///<li>10: DRG (Diagnosis Related Group) optional </li>
+///<li>11: ADT_A03_PROCEDURE (a Group object) optional repeating</li>
+///<li>12: OBX (Observation/Result) optional repeating</li>
+///<li>13: PDA (Patient death and autopsy) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ADT_A03 : AbstractMessage  {
@@ -135,7 +137,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROL (Role) - creates it if necessary
 	///</summary>
-	public ROL getROL() {
+	public ROL GetROL() {
 	   ROL ret = null;
 	   try {
 	      ret = (ROL)this.GetStructure("ROL");
@@ -152,14 +154,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROL getROL(int rep) { 
+	public ROL GetROL(int rep) { 
 	   return (ROL)this.GetStructure("ROL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROL 
 	 */ 
-	public int ROLReps { 
+	public int ROLRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -208,7 +210,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROL2 (Role) - creates it if necessary
 	///</summary>
-	public ROL getROL2() {
+	public ROL GetROL2() {
 	   ROL ret = null;
 	   try {
 	      ret = (ROL)this.GetStructure("ROL2");
@@ -225,14 +227,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROL getROL2(int rep) { 
+	public ROL GetROL2(int rep) { 
 	   return (ROL)this.GetStructure("ROL2", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROL2 
 	 */ 
-	public int ROL2Reps { 
+	public int ROL2RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -249,7 +251,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DB1 (Disability) - creates it if necessary
 	///</summary>
-	public DB1 getDB1() {
+	public DB1 GetDB1() {
 	   DB1 ret = null;
 	   try {
 	      ret = (DB1)this.GetStructure("DB1");
@@ -266,14 +268,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DB1 getDB1(int rep) { 
+	public DB1 GetDB1(int rep) { 
 	   return (DB1)this.GetStructure("DB1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DB1 
 	 */ 
-	public int DB1Reps { 
+	public int DB1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -290,7 +292,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of DG1 (Diagnosis) - creates it if necessary
 	///</summary>
-	public DG1 getDG1() {
+	public DG1 GetDG1() {
 	   DG1 ret = null;
 	   try {
 	      ret = (DG1)this.GetStructure("DG1");
@@ -307,14 +309,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public DG1 getDG1(int rep) { 
+	public DG1 GetDG1(int rep) { 
 	   return (DG1)this.GetStructure("DG1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of DG1 
 	 */ 
-	public int DG1Reps { 
+	public int DG1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -347,7 +349,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ADT_A03_PROCEDURE (a Group object) - creates it if necessary
 	///</summary>
-	public ADT_A03_PROCEDURE getPROCEDURE() {
+	public ADT_A03_PROCEDURE GetPROCEDURE() {
 	   ADT_A03_PROCEDURE ret = null;
 	   try {
 	      ret = (ADT_A03_PROCEDURE)this.GetStructure("PROCEDURE");
@@ -364,14 +366,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ADT_A03_PROCEDURE getPROCEDURE(int rep) { 
+	public ADT_A03_PROCEDURE GetPROCEDURE(int rep) { 
 	   return (ADT_A03_PROCEDURE)this.GetStructure("PROCEDURE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ADT_A03_PROCEDURE 
 	 */ 
-	public int PROCEDUREReps { 
+	public int PROCEDURERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -388,7 +390,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -405,14 +407,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

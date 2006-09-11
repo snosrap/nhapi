@@ -9,11 +9,12 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 NDS message segment. 
-/// This segment has the following fields:
-/// * NDS-1: Notification Reference Number (NM)
-/// * NDS-2: Notification Date/Time (TS)
-/// * NDS-3: Notification Alert Severity (CE)
-/// * NDS-4: Notification Code (CE)
+/// This segment has the following fields:<ol>
+///<li>NDS-1: Notification Reference Number (NM)</li>
+///<li>NDS-2: Notification Date/Time (TS)</li>
+///<li>NDS-3: Notification Alert Severity (CE)</li>
+///<li>NDS-4: Notification Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

@@ -9,25 +9,26 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 PR1 message segment. 
-/// This segment has the following fields:
-/// * PR1-1: Set ID - PR1 (SI)
-/// * PR1-2: Procedure Coding Method (IS)
-/// * PR1-3: Procedure Code (CE)
-/// * PR1-4: Procedure Description (ST)
-/// * PR1-5: Procedure Date/Time (TS)
-/// * PR1-6: Procedure Functional Type (IS)
-/// * PR1-7: Procedure Minutes (NM)
-/// * PR1-8: Anesthesiologist (XCN)
-/// * PR1-9: Anesthesia Code (IS)
-/// * PR1-10: Anesthesia Minutes (NM)
-/// * PR1-11: Surgeon (XCN)
-/// * PR1-12: Procedure Practitioner (XCN)
-/// * PR1-13: Consent Code (CE)
-/// * PR1-14: Procedure Priority (ID)
-/// * PR1-15: Associated Diagnosis Code (CE)
-/// * PR1-16: Procedure Code Modifier (CE)
-/// * PR1-17: Procedure DRG Type (IS)
-/// * PR1-18: Tissue Type Code (CE)
+/// This segment has the following fields:<ol>
+///<li>PR1-1: Set ID - PR1 (SI)</li>
+///<li>PR1-2: Procedure Coding Method (IS)</li>
+///<li>PR1-3: Procedure Code (CE)</li>
+///<li>PR1-4: Procedure Description (ST)</li>
+///<li>PR1-5: Procedure Date/Time (TS)</li>
+///<li>PR1-6: Procedure Functional Type (IS)</li>
+///<li>PR1-7: Procedure Minutes (NM)</li>
+///<li>PR1-8: Anesthesiologist (XCN)</li>
+///<li>PR1-9: Anesthesia Code (IS)</li>
+///<li>PR1-10: Anesthesia Minutes (NM)</li>
+///<li>PR1-11: Surgeon (XCN)</li>
+///<li>PR1-12: Procedure Practitioner (XCN)</li>
+///<li>PR1-13: Consent Code (CE)</li>
+///<li>PR1-14: Procedure Priority (ID)</li>
+///<li>PR1-15: Associated Diagnosis Code (CE)</li>
+///<li>PR1-16: Procedure Code Modifier (CE)</li>
+///<li>PR1-17: Procedure DRG Type (IS)</li>
+///<li>PR1-18: Tissue Type Code (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  
@@ -233,7 +234,7 @@ public class PR1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getAnesthesiologist(int rep)
+	public XCN GetAnesthesiologist(int rep)
 	{
 			XCN ret = null;
 			try
@@ -250,7 +251,7 @@ public class PR1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Anesthesiologist (PR1-8).
    ///</summary>
-  public XCN[] getAnesthesiologist() {
+  public XCN[] GetAnesthesiologist() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(8);  
@@ -268,6 +269,24 @@ public class PR1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Anesthesiologist (PR1-8).
+   ///</summary>
+  public int AnesthesiologistRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(8);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Anesthesia Code(PR1-9).
 	///</summary>
@@ -319,7 +338,7 @@ public class PR1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getSurgeon(int rep)
+	public XCN GetSurgeon(int rep)
 	{
 			XCN ret = null;
 			try
@@ -336,7 +355,7 @@ public class PR1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Surgeon (PR1-11).
    ///</summary>
-  public XCN[] getSurgeon() {
+  public XCN[] GetSurgeon() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(11);  
@@ -354,12 +373,30 @@ public class PR1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Surgeon (PR1-11).
+   ///</summary>
+  public int SurgeonRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(11);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns a single repetition of Procedure Practitioner(PR1-12).
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public XCN getProcedurePractitioner(int rep)
+	public XCN GetProcedurePractitioner(int rep)
 	{
 			XCN ret = null;
 			try
@@ -376,7 +413,7 @@ public class PR1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Procedure Practitioner (PR1-12).
    ///</summary>
-  public XCN[] getProcedurePractitioner() {
+  public XCN[] GetProcedurePractitioner() {
      XCN[] ret = null;
     try {
         IType[] t = this.GetField(12);  
@@ -394,6 +431,24 @@ public class PR1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Procedure Practitioner (PR1-12).
+   ///</summary>
+  public int ProcedurePractitionerRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(12);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Consent Code(PR1-13).
 	///</summary>
@@ -468,7 +523,7 @@ public class PR1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getProcedureCodeModifier(int rep)
+	public CE GetProcedureCodeModifier(int rep)
 	{
 			CE ret = null;
 			try
@@ -485,7 +540,7 @@ public class PR1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Procedure Code Modifier (PR1-16).
    ///</summary>
-  public CE[] getProcedureCodeModifier() {
+  public CE[] GetProcedureCodeModifier() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(16);  
@@ -503,6 +558,24 @@ public class PR1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Procedure Code Modifier (PR1-16).
+   ///</summary>
+  public int ProcedureCodeModifierRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(16);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Procedure DRG Type(PR1-17).
 	///</summary>
@@ -531,7 +604,7 @@ public class PR1 : AbstractSegment  {
 	/// throws HL7Exception if the repetition number is invalid.
 	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CE getTissueTypeCode(int rep)
+	public CE GetTissueTypeCode(int rep)
 	{
 			CE ret = null;
 			try
@@ -548,7 +621,7 @@ public class PR1 : AbstractSegment  {
   ///<summary>
   /// Returns all repetitions of Tissue Type Code (PR1-18).
    ///</summary>
-  public CE[] getTissueTypeCode() {
+  public CE[] GetTissueTypeCode() {
      CE[] ret = null;
     try {
         IType[] t = this.GetField(18);  
@@ -566,5 +639,23 @@ public class PR1 : AbstractSegment  {
  return ret;
 }
 
+  ///<summary>
+  /// Returns the total repetitions of Tissue Type Code (PR1-18).
+   ///</summary>
+  public int TissueTypeCodeRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(18);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 
 }}

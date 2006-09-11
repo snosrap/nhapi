@@ -12,12 +12,14 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a BAR_P01 message structure (see chapter 6). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EVN (Event Type) 
-/// * 2: PID (Patient identification) 
-/// * 3: PD1 (patient additional demographic) optional 
-/// * 4: ROL (Role) optional repeating
-/// * 5: BAR_P01_VISIT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EVN (Event Type) </li>
+///<li>2: PID (Patient identification) </li>
+///<li>3: PD1 (patient additional demographic) optional </li>
+///<li>4: ROL (Role) optional repeating</li>
+///<li>5: BAR_P01_VISIT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BAR_P01 : AbstractMessage  {
@@ -119,7 +121,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ROL (Role) - creates it if necessary
 	///</summary>
-	public ROL getROL() {
+	public ROL GetROL() {
 	   ROL ret = null;
 	   try {
 	      ret = (ROL)this.GetStructure("ROL");
@@ -136,14 +138,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ROL getROL(int rep) { 
+	public ROL GetROL(int rep) { 
 	   return (ROL)this.GetStructure("ROL", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ROL 
 	 */ 
-	public int ROLReps { 
+	public int ROLRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -160,7 +162,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of BAR_P01_VISIT (a Group object) - creates it if necessary
 	///</summary>
-	public BAR_P01_VISIT getVISIT() {
+	public BAR_P01_VISIT GetVISIT() {
 	   BAR_P01_VISIT ret = null;
 	   try {
 	      ret = (BAR_P01_VISIT)this.GetStructure("VISIT");
@@ -177,14 +179,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public BAR_P01_VISIT getVISIT(int rep) { 
+	public BAR_P01_VISIT GetVISIT(int rep) { 
 	   return (BAR_P01_VISIT)this.GetStructure("VISIT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of BAR_P01_VISIT 
 	 */ 
-	public int VISITReps { 
+	public int VISITRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,10 +12,12 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a QBP_Q11 message structure (see chapter 5). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: QPD (Query Parameter Definition) 
-/// * 2: RCP (Response Control Parameter) 
-/// * 3: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: QPD (Query Parameter Definition) </li>
+///<li>2: RCP (Response Control Parameter) </li>
+///<li>3: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class QBP_Q11 : AbstractMessage  {

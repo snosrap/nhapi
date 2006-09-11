@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the MFN_M11_MF_TEST_CALC_DETAIL Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: OM6 (Observations that are Calculated from Other Observ) 
-/// * 1: OM2 (Numeric Observation) 
+///<ol>
+///<li>0: OM6 (Observations that are Calculated from Other Observ) </li>
+///<li>1: OM2 (Numeric Observation) </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class MFN_M11_MF_TEST_CALC_DETAIL : AbstractGroup {

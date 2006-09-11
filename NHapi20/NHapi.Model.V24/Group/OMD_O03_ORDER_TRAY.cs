@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Group
 ///Represents the OMD_O03_ORDER_TRAY Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: ODT (Diet Tray Instructions) repeating
-/// * 2: NTE (Notes and Comments) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: ODT (Diet Tray Instructions) repeating</li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class OMD_O03_ORDER_TRAY : AbstractGroup {
@@ -51,7 +53,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ODT (Diet Tray Instructions) - creates it if necessary
 	///</summary>
-	public ODT getODT() {
+	public ODT GetODT() {
 	   ODT ret = null;
 	   try {
 	      ret = (ODT)this.GetStructure("ODT");
@@ -68,14 +70,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ODT getODT(int rep) { 
+	public ODT GetODT(int rep) { 
 	   return (ODT)this.GetStructure("ODT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ODT 
 	 */ 
-	public int ODTReps { 
+	public int ODTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -92,7 +94,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -109,14 +111,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

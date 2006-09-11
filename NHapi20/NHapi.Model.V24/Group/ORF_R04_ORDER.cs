@@ -12,12 +12,14 @@ namespace NHapi.Model.V24.Group
 ///Represents the ORF_R04_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) optional 
-/// * 1: OBR (Observation Request) 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: CTD (Contact Data) optional 
-/// * 4: ORF_R04_OBSERVATION (a Group object) repeating
-/// * 5: CTI (Clinical Trial Identification) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) optional </li>
+///<li>1: OBR (Observation Request) </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: CTD (Contact Data) optional </li>
+///<li>4: ORF_R04_OBSERVATION (a Group object) repeating</li>
+///<li>5: CTI (Clinical Trial Identification) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class ORF_R04_ORDER : AbstractGroup {
@@ -73,7 +75,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -90,14 +92,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -130,7 +132,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ORF_R04_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public ORF_R04_OBSERVATION getOBSERVATION() {
+	public ORF_R04_OBSERVATION GetOBSERVATION() {
 	   ORF_R04_OBSERVATION ret = null;
 	   try {
 	      ret = (ORF_R04_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -147,14 +149,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ORF_R04_OBSERVATION getOBSERVATION(int rep) { 
+	public ORF_R04_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (ORF_R04_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ORF_R04_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -171,7 +173,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CTI (Clinical Trial Identification) - creates it if necessary
 	///</summary>
-	public CTI getCTI() {
+	public CTI GetCTI() {
 	   CTI ret = null;
 	   try {
 	      ret = (CTI)this.GetStructure("CTI");
@@ -188,14 +190,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CTI getCTI(int rep) { 
+	public CTI GetCTI(int rep) { 
 	   return (CTI)this.GetStructure("CTI", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CTI 
 	 */ 
-	public int CTIReps { 
+	public int CTIRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

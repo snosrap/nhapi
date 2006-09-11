@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a BAR_P06 message structure (see chapter 6). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EVN (Event Type) 
-/// * 2: BAR_P06_PATIENT (a Group object) repeating
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EVN (Event Type) </li>
+///<li>2: BAR_P06_PATIENT (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BAR_P06 : AbstractMessage  {
@@ -81,7 +83,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of BAR_P06_PATIENT (a Group object) - creates it if necessary
 	///</summary>
-	public BAR_P06_PATIENT getPATIENT() {
+	public BAR_P06_PATIENT GetPATIENT() {
 	   BAR_P06_PATIENT ret = null;
 	   try {
 	      ret = (BAR_P06_PATIENT)this.GetStructure("PATIENT");
@@ -98,14 +100,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public BAR_P06_PATIENT getPATIENT(int rep) { 
+	public BAR_P06_PATIENT GetPATIENT(int rep) { 
 	   return (BAR_P06_PATIENT)this.GetStructure("PATIENT", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of BAR_P06_PATIENT 
 	 */ 
-	public int PATIENTReps { 
+	public int PATIENTRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

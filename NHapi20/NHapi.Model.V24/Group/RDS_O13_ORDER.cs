@@ -12,14 +12,16 @@ namespace NHapi.Model.V24.Group
 ///Represents the RDS_O13_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RDS_O13_ORDER_DETAIL (a Group object) optional 
-/// * 2: RDS_O13_ENCODING (a Group object) optional 
-/// * 3: RXD (Pharmacy/Treatment Dispense) 
-/// * 4: RXR (Pharmacy/Treatment Route) repeating
-/// * 5: RXC (Pharmacy/Treatment Component Order) optional repeating
-/// * 6: RDS_O13_OBSERVATION (a Group object) optional repeating
-/// * 7: FT1 (Financial Transaction) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RDS_O13_ORDER_DETAIL (a Group object) optional </li>
+///<li>2: RDS_O13_ENCODING (a Group object) optional </li>
+///<li>3: RXD (Pharmacy/Treatment Dispense) </li>
+///<li>4: RXR (Pharmacy/Treatment Route) repeating</li>
+///<li>5: RXC (Pharmacy/Treatment Component Order) optional repeating</li>
+///<li>6: RDS_O13_OBSERVATION (a Group object) optional repeating</li>
+///<li>7: FT1 (Financial Transaction) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RDS_O13_ORDER : AbstractGroup {
@@ -109,7 +111,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXR (Pharmacy/Treatment Route) - creates it if necessary
 	///</summary>
-	public RXR getRXR() {
+	public RXR GetRXR() {
 	   RXR ret = null;
 	   try {
 	      ret = (RXR)this.GetStructure("RXR");
@@ -126,14 +128,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXR getRXR(int rep) { 
+	public RXR GetRXR(int rep) { 
 	   return (RXR)this.GetStructure("RXR", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXR 
 	 */ 
-	public int RXRReps { 
+	public int RXRRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -150,7 +152,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXC (Pharmacy/Treatment Component Order) - creates it if necessary
 	///</summary>
-	public RXC getRXC() {
+	public RXC GetRXC() {
 	   RXC ret = null;
 	   try {
 	      ret = (RXC)this.GetStructure("RXC");
@@ -167,14 +169,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXC getRXC(int rep) { 
+	public RXC GetRXC(int rep) { 
 	   return (RXC)this.GetStructure("RXC", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXC 
 	 */ 
-	public int RXCReps { 
+	public int RXCRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -191,7 +193,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RDS_O13_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public RDS_O13_OBSERVATION getOBSERVATION() {
+	public RDS_O13_OBSERVATION GetOBSERVATION() {
 	   RDS_O13_OBSERVATION ret = null;
 	   try {
 	      ret = (RDS_O13_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -208,14 +210,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RDS_O13_OBSERVATION getOBSERVATION(int rep) { 
+	public RDS_O13_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (RDS_O13_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RDS_O13_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -232,7 +234,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of FT1 (Financial Transaction) - creates it if necessary
 	///</summary>
-	public FT1 getFT1() {
+	public FT1 GetFT1() {
 	   FT1 ret = null;
 	   try {
 	      ret = (FT1)this.GetStructure("FT1");
@@ -249,14 +251,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public FT1 getFT1(int rep) { 
+	public FT1 GetFT1(int rep) { 
 	   return (FT1)this.GetStructure("FT1", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of FT1 
 	 */ 
-	public int FT1Reps { 
+	public int FT1RepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

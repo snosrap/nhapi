@@ -12,12 +12,14 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a EAC_U07 message structure (see chapter 13). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: EQU (Equipment Detail) 
-/// * 2: ECD (Equipment Command) repeating
-/// * 3: SAC (Specimen and container detail) optional 
-/// * 4: CNS (Clear Notification) optional 
-/// * 5: ROL (Role) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: EQU (Equipment Detail) </li>
+///<li>2: ECD (Equipment Command) repeating</li>
+///<li>3: SAC (Specimen and container detail) optional </li>
+///<li>4: CNS (Clear Notification) optional </li>
+///<li>5: ROL (Role) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class EAC_U07 : AbstractMessage  {
@@ -87,7 +89,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of ECD (Equipment Command) - creates it if necessary
 	///</summary>
-	public ECD getECD() {
+	public ECD GetECD() {
 	   ECD ret = null;
 	   try {
 	      ret = (ECD)this.GetStructure("ECD");
@@ -104,14 +106,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public ECD getECD(int rep) { 
+	public ECD GetECD(int rep) { 
 	   return (ECD)this.GetStructure("ECD", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of ECD 
 	 */ 
-	public int ECDReps { 
+	public int ECDRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

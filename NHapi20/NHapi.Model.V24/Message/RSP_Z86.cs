@@ -12,13 +12,15 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a RSP_Z86 message structure (see chapter 5). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: MSA (Message Acknowledgment) 
-/// * 2: ERR (Error) optional 
-/// * 3: QAK (Query Acknowledgment) 
-/// * 4: QPD (Query Parameter Definition) 
-/// * 5: RSP_Z86_QUERY_RESPONSE (a Group object) optional repeating
-/// * 6: DSC (Continuation Pointer) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: MSA (Message Acknowledgment) </li>
+///<li>2: ERR (Error) optional </li>
+///<li>3: QAK (Query Acknowledgment) </li>
+///<li>4: QPD (Query Parameter Definition) </li>
+///<li>5: RSP_Z86_QUERY_RESPONSE (a Group object) optional repeating</li>
+///<li>6: DSC (Continuation Pointer) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Z86 : AbstractMessage  {
@@ -137,7 +139,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RSP_Z86_QUERY_RESPONSE (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_Z86_QUERY_RESPONSE getQUERY_RESPONSE() {
+	public RSP_Z86_QUERY_RESPONSE GetQUERY_RESPONSE() {
 	   RSP_Z86_QUERY_RESPONSE ret = null;
 	   try {
 	      ret = (RSP_Z86_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE");
@@ -154,14 +156,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RSP_Z86_QUERY_RESPONSE getQUERY_RESPONSE(int rep) { 
+	public RSP_Z86_QUERY_RESPONSE GetQUERY_RESPONSE(int rep) { 
 	   return (RSP_Z86_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RSP_Z86_QUERY_RESPONSE 
 	 */ 
-	public int QUERY_RESPONSEReps { 
+	public int QUERY_RESPONSERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

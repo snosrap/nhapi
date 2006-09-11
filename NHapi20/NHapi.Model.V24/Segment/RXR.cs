@@ -9,12 +9,13 @@ namespace NHapi.Model.V24.Segment{
 
 ///<summary>
 /// Represents an HL7 RXR message segment. 
-/// This segment has the following fields:
-/// * RXR-1: Route (CE)
-/// * RXR-2: Administration Site (CE)
-/// * RXR-3: Administration Device (CE)
-/// * RXR-4: Administration Method (CE)
-/// * RXR-5: Routing Instruction (CE)
+/// This segment has the following fields:<ol>
+///<li>RXR-1: Route (CE)</li>
+///<li>RXR-2: Administration Site (CE)</li>
+///<li>RXR-3: Administration Device (CE)</li>
+///<li>RXR-4: Administration Method (CE)</li>
+///<li>RXR-5: Routing Instruction (CE)</li>
+///</ol>
 /// The get...() methods return data from individual fields.  These methods 
 /// do not throw exceptions and may therefore have to handle exceptions internally.  
 /// If an exception is handled internally, it is logged and null is returned.  

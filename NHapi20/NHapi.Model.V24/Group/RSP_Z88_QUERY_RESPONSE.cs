@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Group
 ///Represents the RSP_Z88_QUERY_RESPONSE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PID (Patient identification) 
-/// * 1: PD1 (patient additional demographic) optional 
-/// * 2: NTE (Notes and Comments) optional repeating
-/// * 3: RSP_Z88_ALLERGY (a Group object) optional 
-/// * 4: RSP_Z88_COMMON_ORDER (a Group object) repeating
+///<ol>
+///<li>0: PID (Patient identification) </li>
+///<li>1: PD1 (patient additional demographic) optional </li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: RSP_Z88_ALLERGY (a Group object) optional </li>
+///<li>4: RSP_Z88_COMMON_ORDER (a Group object) repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RSP_Z88_QUERY_RESPONSE : AbstractGroup {
@@ -71,7 +73,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
 	///</summary>
-	public NTE getNTE() {
+	public NTE GetNTE() {
 	   NTE ret = null;
 	   try {
 	      ret = (NTE)this.GetStructure("NTE");
@@ -88,14 +90,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public NTE getNTE(int rep) { 
+	public NTE GetNTE(int rep) { 
 	   return (NTE)this.GetStructure("NTE", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of NTE 
 	 */ 
-	public int NTEReps { 
+	public int NTERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -128,7 +130,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RSP_Z88_COMMON_ORDER (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_Z88_COMMON_ORDER getCOMMON_ORDER() {
+	public RSP_Z88_COMMON_ORDER GetCOMMON_ORDER() {
 	   RSP_Z88_COMMON_ORDER ret = null;
 	   try {
 	      ret = (RSP_Z88_COMMON_ORDER)this.GetStructure("COMMON_ORDER");
@@ -145,14 +147,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RSP_Z88_COMMON_ORDER getCOMMON_ORDER(int rep) { 
+	public RSP_Z88_COMMON_ORDER GetCOMMON_ORDER(int rep) { 
 	   return (RSP_Z88_COMMON_ORDER)this.GetStructure("COMMON_ORDER", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RSP_Z88_COMMON_ORDER 
 	 */ 
-	public int COMMON_ORDERReps { 
+	public int COMMON_ORDERRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

@@ -12,13 +12,15 @@ namespace NHapi.Model.V24.Group
 ///Represents the RAS_O17_ORDER Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: ORC (Common Order) 
-/// * 1: RAS_O17_ORDER_DETAIL (a Group object) optional 
-/// * 2: RAS_O17_ENCODING (a Group object) optional 
-/// * 3: RXA (Pharmacy/Treatment Administration) repeating
-/// * 4: RXR (Pharmacy/Treatment Route) 
-/// * 5: RAS_O17_OBSERVATION (a Group object) optional repeating
-/// * 6: CTI (Clinical Trial Identification) optional repeating
+///<ol>
+///<li>0: ORC (Common Order) </li>
+///<li>1: RAS_O17_ORDER_DETAIL (a Group object) optional </li>
+///<li>2: RAS_O17_ENCODING (a Group object) optional </li>
+///<li>3: RXA (Pharmacy/Treatment Administration) repeating</li>
+///<li>4: RXR (Pharmacy/Treatment Route) </li>
+///<li>5: RAS_O17_OBSERVATION (a Group object) optional repeating</li>
+///<li>6: CTI (Clinical Trial Identification) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class RAS_O17_ORDER : AbstractGroup {
@@ -91,7 +93,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RXA (Pharmacy/Treatment Administration) - creates it if necessary
 	///</summary>
-	public RXA getRXA() {
+	public RXA GetRXA() {
 	   RXA ret = null;
 	   try {
 	      ret = (RXA)this.GetStructure("RXA");
@@ -108,14 +110,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RXA getRXA(int rep) { 
+	public RXA GetRXA(int rep) { 
 	   return (RXA)this.GetStructure("RXA", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RXA 
 	 */ 
-	public int RXAReps { 
+	public int RXARepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -148,7 +150,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of RAS_O17_OBSERVATION (a Group object) - creates it if necessary
 	///</summary>
-	public RAS_O17_OBSERVATION getOBSERVATION() {
+	public RAS_O17_OBSERVATION GetOBSERVATION() {
 	   RAS_O17_OBSERVATION ret = null;
 	   try {
 	      ret = (RAS_O17_OBSERVATION)this.GetStructure("OBSERVATION");
@@ -165,14 +167,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public RAS_O17_OBSERVATION getOBSERVATION(int rep) { 
+	public RAS_O17_OBSERVATION GetOBSERVATION(int rep) { 
 	   return (RAS_O17_OBSERVATION)this.GetStructure("OBSERVATION", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of RAS_O17_OBSERVATION 
 	 */ 
-	public int OBSERVATIONReps { 
+	public int OBSERVATIONRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
@@ -189,7 +191,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of CTI (Clinical Trial Identification) - creates it if necessary
 	///</summary>
-	public CTI getCTI() {
+	public CTI GetCTI() {
 	   CTI ret = null;
 	   try {
 	      ret = (CTI)this.GetStructure("CTI");
@@ -206,14 +208,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public CTI getCTI(int rep) { 
+	public CTI GetCTI(int rep) { 
 	   return (CTI)this.GetStructure("CTI", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of CTI 
 	 */ 
-	public int CTIReps { 
+	public int CTIRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

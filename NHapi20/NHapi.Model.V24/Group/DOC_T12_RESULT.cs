@@ -12,11 +12,13 @@ namespace NHapi.Model.V24.Group
 ///Represents the DOC_T12_RESULT Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: EVN (Event Type) optional 
-/// * 1: PID (Patient identification) 
-/// * 2: PV1 (Patient visit) 
-/// * 3: TXA (Transcription Document Header) 
-/// * 4: OBX (Observation/Result) optional repeating
+///<ol>
+///<li>0: EVN (Event Type) optional </li>
+///<li>1: PID (Patient identification) </li>
+///<li>2: PV1 (Patient visit) </li>
+///<li>3: TXA (Transcription Document Header) </li>
+///<li>4: OBX (Observation/Result) optional repeating</li>
+///</ol>
 ///</summary>
 [Serializable]
 public class DOC_T12_RESULT : AbstractGroup {
@@ -103,7 +105,7 @@ get{
 	///<summary>
 	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
 	///</summary>
-	public OBX getOBX() {
+	public OBX GetOBX() {
 	   OBX ret = null;
 	   try {
 	      ret = (OBX)this.GetStructure("OBX");
@@ -120,14 +122,14 @@ get{
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public OBX getOBX(int rep) { 
+	public OBX GetOBX(int rep) { 
 	   return (OBX)this.GetStructure("OBX", rep);
 	}
 
 	/** 
 	 * Returns the number of existing repetitions of OBX 
 	 */ 
-	public int OBXReps { 
+	public int OBXRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 

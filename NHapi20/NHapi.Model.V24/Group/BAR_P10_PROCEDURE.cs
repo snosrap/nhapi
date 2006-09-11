@@ -12,8 +12,10 @@ namespace NHapi.Model.V24.Group
 ///Represents the BAR_P10_PROCEDURE Group.  A Group is an ordered collection of message 
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
-/// * 0: PR1 (Procedures) 
-/// * 1: GP2 (Grouping/Reimbursement - Procedure Line Item) optional 
+///<ol>
+///<li>0: PR1 (Procedures) </li>
+///<li>1: GP2 (Grouping/Reimbursement - Procedure Line Item) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class BAR_P10_PROCEDURE : AbstractGroup {

@@ -12,9 +12,11 @@ namespace NHapi.Model.V24.Message
 ///<summary>
 /// Represents a QRY_T12 message structure (see chapter [AAA]). This structure contains the 
 /// following elements:
-/// * 0: MSH (Message Header) 
-/// * 1: QRD (Original-Style Query Definition) 
-/// * 2: QRF (Original Style Query Filter) optional 
+///<ol>
+///<li>0: MSH (Message Header) </li>
+///<li>1: QRD (Original-Style Query Definition) </li>
+///<li>2: QRF (Original Style Query Filter) optional </li>
+///</ol>
 ///</summary>
 [Serializable]
 public class QRY_T12 : AbstractMessage  {
