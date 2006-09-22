@@ -341,6 +341,102 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 			Assert.IsFalse(recoveredMessage.IndexOf("NTE")>-1, "Returned Message added ORC segment.");
 		}
 
+        [Test]
+        public void ParseORFR04FromDHTest()
+        {
+            string Message = @"MSH|^~\&|Clinical Data Provider|DHHA|COHIECentral|COHIE|200609221408||ORF^R04||P|2.3.1
+MSA|AA|
+PID|2019877||2019877^^^DH^MR||LOPEZ1^JAMES^TRISTAN||19740804|M
+OBR||00677^001|M428|CBC^CBC|||200511071505||||||||CBC^CBC|045716^STEELE||||||||DAH
+OBX|1|NM|WBC||1.1|k/uL|5.0-16.0|L|||C
+OBX|1|TX|WBC|1|(Ref Range: 5 k/uL)|k/uL|5.0-16.0||||C
+OBX|1|TX|WBC||Result(s) called to and verification read-back received from:  NURSE NAN M~||||||C
+OBX|1|TX|WBC||ICU 13:39 11  19  05||||||C
+OBX|1|TX|WBC||Corrected on 11/29 AT 1337: Previously reported as: 1.1||||||C
+OBX|2|NM|RBC||3.99|M/uL|3.80-5.40||||Z
+OBX|2|TX|RBC|1|(Ref Range: 3 M/uL)|M/uL|3.80-5.40||||Z
+OBX|3|NM|HGB||13.0|g/dL|14.0-24.0|L|||Z
+OBX|3|TX|HGB|1|(Ref Range: 1 g/dL)|g/dL|14.0-24.0||||Z
+OBX|4|NM|HCT||40.0|%|31.0-43.0||||Z
+OBX|4|TX|HCT|1|(Ref Range: 3 %)|%|31.0-43.0||||Z
+OBX|5|NM|MCV||80.0|fl|70.0-90.0||||Z
+OBX|5|TX|MCV|1|(Ref Range: 7 fl)|fl|70.0-90.0||||Z
+OBX|6|NM|MCH||32.0|pg|27.0-31.0|H|||Z
+OBX|6|TX|MCH|1|(Ref Range: 2 pg)|pg|27.0-31.0||||Z
+OBX|7|NM|MCHC||32.0|g/dL|32.0-36.0||||Z
+OBX|7|TX|MCHC|1|(Ref Range: 3 g/dL)|g/dL|32.0-36.0||||Z
+OBX|8|NM|RDW||17.0|%|11.5-14.5|H|||Z
+OBX|8|TX|RDW|1|(Ref Range: 1 %)|%|11.5-14.5||||Z
+OBX|9|NM|PLTC||2|k/uL|150-400|PL^Y|||Z
+OBX|9|TX|PLTC|1|(Ref Range: 1 k/uL)|k/uL|150-400||||Z
+OBX|10|NM|MPV||10.0|fL|6.2-10.0||||Z
+OBX|10|TX|MPV|1|(Ref Range: 6 fL)|fL|6.2-10.0||||Z
+OBR||00677^001|M428|CBC^CBC|||200511071505||||||||CBC^CBC|045716^STEELE||||||||DAH
+OBX|1|NM|WBC||1.1|k/uL|5.0-16.0|L|||C
+OBX|1|TX|WBC|1|(Ref Range: 5 k/uL)|k/uL|5.0-16.0||||C
+OBX|1|TX|WBC||Result(s) called to and verification read-back received from:  NURSE NAN M~||||||C
+OBX|1|TX|WBC||ICU 13:39 11  19  05||||||C
+OBX|1|TX|WBC||Corrected on 11/29 AT 1337: Previously reported as: 1.1||||||C
+OBX|2|NM|RBC||3.99|M/uL|3.80-5.40||||Z
+OBX|2|TX|RBC|1|(Ref Range: 3 M/uL)|M/uL|3.80-5.40||||Z
+OBX|3|NM|HGB||13.0|g/dL|14.0-24.0|L|||Z
+OBX|3|TX|HGB|1|(Ref Range: 1 g/dL)|g/dL|14.0-24.0||||Z
+OBX|4|NM|HCT||40.0|%|31.0-43.0||||Z
+OBX|4|TX|HCT|1|(Ref Range: 3 %)|%|31.0-43.0||||Z
+OBX|5|NM|MCV||80.0|fl|70.0-90.0||||Z
+OBX|5|TX|MCV|1|(Ref Range: 7 fl)|fl|70.0-90.0||||Z
+OBX|6|NM|MCH||32.0|pg|27.0-31.0|H|||Z
+OBX|6|TX|MCH|1|(Ref Range: 2 pg)|pg|27.0-31.0||||Z
+OBX|7|NM|MCHC||32.0|g/dL|32.0-36.0||||Z
+OBX|7|TX|MCHC|1|(Ref Range: 3 g/dL)|g/dL|32.0-36.0||||Z
+OBX|8|NM|RDW||17.0|%|11.5-14.5|H|||Z
+OBX|8|TX|RDW|1|(Ref Range: 1 %)|%|11.5-14.5||||Z
+OBX|9|NM|PLTC||2|k/uL|150-400|PL^Y|||Z
+OBX|9|TX|PLTC|1|(Ref Range: 1 k/uL)|k/uL|150-400||||Z
+OBX|10|NM|MPV||10.0|fL|6.2-10.0||||Z
+OBX|10|TX|MPV|1|(Ref Range: 6 fL)|fL|6.2-10.0||||Z
+OBR||00677^001|M428|CBC^CBC|||200511071505||||||||CBC^CBC|045716^STEELE||||||||DAH
+OBX|1|NM|WBC||1.1|k/uL|5.0-16.0|L|||C
+OBX|1|TX|WBC|1|(Ref Range: 5 k/uL)|k/uL|5.0-16.0||||C
+OBX|1|TX|WBC||Result(s) called to and verification read-back received from:  NURSE NAN M~||||||C
+OBX|1|TX|WBC||ICU 13:39 11  19  05||||||C
+OBX|1|TX|WBC||Corrected on 11/29 AT 1337: Previously reported as: 1.1||||||C
+OBX|2|NM|RBC||3.99|M/uL|3.80-5.40||||Z
+OBX|2|TX|RBC|1|(Ref Range: 3 M/uL)|M/uL|3.80-5.40||||Z
+OBX|3|NM|HGB||13.0|g/dL|14.0-24.0|L|||Z
+OBX|3|TX|HGB|1|(Ref Range: 1 g/dL)|g/dL|14.0-24.0||||Z
+OBX|4|NM|HCT||40.0|%|31.0-43.0||||Z
+OBX|4|TX|HCT|1|(Ref Range: 3 %)|%|31.0-43.0||||Z
+OBX|5|NM|MCV||80.0|fl|70.0-90.0||||Z
+OBX|5|TX|MCV|1|(Ref Range: 7 fl)|fl|70.0-90.0||||Z
+OBX|6|NM|MCH||32.0|pg|27.0-31.0|H|||Z
+OBX|6|TX|MCH|1|(Ref Range: 2 pg)|pg|27.0-31.0||||Z
+OBX|7|NM|MCHC||32.0|g/dL|32.0-36.0||||Z
+OBX|7|TX|MCHC|1|(Ref Range: 3 g/dL)|g/dL|32.0-36.0||||Z
+OBX|8|NM|RDW||17.0|%|11.5-14.5|H|||Z
+OBX|8|TX|RDW|1|(Ref Range: 1 %)|%|11.5-14.5||||Z
+OBX|9|NM|PLTC||2|k/uL|150-400|PL^Y|||Z
+OBX|9|TX|PLTC|1|(Ref Range: 1 k/uL)|k/uL|150-400||||Z
+OBX|10|NM|MPV||10.0|fL|6.2-10.0||||Z
+OBX|10|TX|MPV|1|(Ref Range: 6 fL)|fL|6.2-10.0||||Z";
+
+            NHapi.Base.Parser.PipeParser Parser = new NHapi.Base.Parser.PipeParser();
+
+            NHapi.Base.Model.IMessage m = Parser.parse(Message);
+
+            NHapi.Model.V231.Message.ORF_R04 orfR04 = m as NHapi.Model.V231.Message.ORF_R04;
+
+            Assert.IsNotNull(orfR04);
+
+            NHapi.Base.Parser.XMLParser xmlParser = new NHapi.Base.Parser.DefaultXMLParser();
+
+            string recoveredMessage = xmlParser.encode(orfR04);
+
+            Assert.IsNotNull(recoveredMessage);
+            Assert.IsFalse(recoveredMessage.IndexOf("NTE") > -1, "Returned Message added ORC segment.");
+        }
+
+
 		private static string GetQRYR02XML() 
 		{
 			return @"<QRY_R02 xmlns=""urn:hl7-org:v2xml"">
