@@ -32,37 +32,42 @@ namespace ca.uhn.hl7v2.parser
 	/// </author>
 	public class Escape
 	{
-		
-		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
+		private static string[] SPECIAL_ENCODING_VALUES = new string[]{@"\.br\"};
 		private static System.Collections.Hashtable variousEncChars = new System.Collections.Hashtable(5);
 		
 		/// <summary>Creates a new instance of Escape </summary>
 		public Escape()
 		{
 		}
+
+		private static string EncodeSpecialCharacters(string characters)
+		{
+			return "{[++{" + characters + "}++]}";
+		}
 		
 		public static System.String escape(System.String text, EncodingCharacters encChars)
 		{
+			//First, take all special characters and replace them with something that is garbled
+			for(int i=0;i<SPECIAL_ENCODING_VALUES.Length;i++)
+			{
+				string specialValues = SPECIAL_ENCODING_VALUES[i];
+				text = text.Replace(specialValues, EncodeSpecialCharacters(i.ToString()));
+			}			
+			//Encode each escape character
+						System.Collections.Hashtable esc = getEscapeSequences(encChars);
 			System.Text.StringBuilder result = new System.Text.StringBuilder();
-			int textLength = text.Length;
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
-			System.Collections.Hashtable esc = getEscapeSequences(encChars);
-			//UPGRADE_TODO: Method 'java.util.HashMap.keySet' was converted to 'SupportClass.HashSetSupport' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapkeySet'"
 			SupportClass.SetSupport keys = new SupportClass.HashSetSupport(esc.Keys);
 			System.String escChar = System.Convert.ToString(encChars.EscapeCharacter);
 			int position = 0;
-			while (position < textLength)
+			while (position < text.Length)
 			{
 				System.Collections.IEnumerator it = keys.GetEnumerator();
 				bool isReplaced = false;
-				//UPGRADE_TODO: Method 'java.util.Iterator.hasNext' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratorhasNext'"
 				while (it.MoveNext() && !isReplaced)
 				{
-					//UPGRADE_TODO: Method 'java.util.Iterator.next' was converted to 'System.Collections.IEnumerator.Current' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratornext'"
 					System.String seq = (System.String) it.Current;
-					//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 					System.String val = (System.String) esc[seq];
-					if (text.Substring(position, (position + 1) - (position)).Equals(val))
+					if (text.Substring(position, 1).Equals(val))
 					{
 						result.Append(seq);
 						isReplaced = true;
@@ -70,9 +75,16 @@ namespace ca.uhn.hl7v2.parser
 				}
 				if (!isReplaced)
 				{
-					result.Append(text.Substring(position, ((position + 1)) - (position)));
+					result.Append(text.Substring(position, 1));
 				}
 				position++;
+			}
+
+			//Replace each garbled entry with the correct special value
+			for(int i=0;i<SPECIAL_ENCODING_VALUES.Length;i++)
+			{
+				string specialValues = SPECIAL_ENCODING_VALUES[i];
+				result.Replace(EncodeSpecialCharacters(i.ToString()), specialValues);
 			}
 			return result.ToString();
 		}
@@ -81,9 +93,7 @@ namespace ca.uhn.hl7v2.parser
 		{
 			System.Text.StringBuilder result = new System.Text.StringBuilder();
 			int textLength = text.Length;
-			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			System.Collections.Hashtable esc = getEscapeSequences(encChars);
-			//UPGRADE_TODO: Method 'java.util.HashMap.keySet' was converted to 'SupportClass.HashSetSupport' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapkeySet'"
 			SupportClass.SetSupport keys = new SupportClass.HashSetSupport(esc.Keys);
 			System.String escChar = System.Convert.ToString(encChars.EscapeCharacter);
 			int position = 0;
@@ -91,12 +101,9 @@ namespace ca.uhn.hl7v2.parser
 			{
 				System.Collections.IEnumerator it = keys.GetEnumerator();
 				bool isReplaced = false;
-				//UPGRADE_TODO: Method 'java.util.Iterator.hasNext' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratorhasNext'"
 				while (it.MoveNext() && !isReplaced)
 				{
-					//UPGRADE_TODO: Method 'java.util.Iterator.next' was converted to 'System.Collections.IEnumerator.Current' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilIteratornext'"
 					System.String seq = (System.String) it.Current;
-					//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
 					System.String val = (System.String) esc[seq];
 					int seqLength = seq.Length;
 					if (position + seqLength <= textLength)
