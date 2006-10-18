@@ -306,12 +306,16 @@ namespace ca.uhn.hl7v2.sourcegen
 			source.Append("\"\r\n");
 			source.Append("\t///</summary>\r\n");
 			source.Append("\tpublic string getVersion() {\r\n");
-			source.Append("\t    return \"");
+			source.Append("\t    return ");
 			if(version.IndexOf("UCH")>-1)
-				source.Append("2.3");
+				source.Append("Constants.VERSION_UCH_2_3");
 			else
+			{
+				source.Append("\"");
 				source.Append(version);
-			source.Append("\";\r\n");
+				source.Append("\"");
+			}
+			source.Append(";\r\n");
 			source.Append("}\r\n");
 			source.Append("}\r\n");
 			

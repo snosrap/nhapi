@@ -30,6 +30,8 @@ using HapiLog = ca.uhn.log.HapiLog;
 using HapiLogFactory = ca.uhn.log.HapiLogFactory;
 using System.Data.OleDb;
 using System.Data;
+using System.Text;
+
 namespace ca.uhn.hl7v2.sourcegen
 {
 	
@@ -143,7 +145,7 @@ namespace ca.uhn.hl7v2.sourcegen
 					{
 						out_Renamed.Write(GroupGenerator.makeAccessor(group, i));
 					}
-				
+					out_Renamed.Write(makeVersion(version));
 					//add implementation of model.control interface, if any
 					//out.write(Control.getImplementation(Control.getInterfaceImplementedBy(message), version));            
 					out_Renamed.Write("}\r\n");	//End class
@@ -158,6 +160,21 @@ namespace ca.uhn.hl7v2.sourcegen
 				//UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1043'"
 				log.warn("Warning: could not write source code for message structure " + message + " - " + e.GetType().FullName + ": " + e.Message);
 			}
+		}
+
+		private static string makeVersion(string version)
+		{
+			StringBuilder sb = new StringBuilder();
+			if(version.Equals(Constants.VERSION_UCH_2_3))
+			{
+				sb.Append("public override System.String Version\n");
+				sb.Append("{\n");
+				sb.Append("get{\n");
+				sb.Append("return Constants.VERSION_UCH_2_3;\n");
+				sb.Append("}\n");
+				sb.Append("}\n");
+			}
+			return sb.ToString();
 		}
 		
 		/// <summary> Queries the normative database for a list of segments comprising
