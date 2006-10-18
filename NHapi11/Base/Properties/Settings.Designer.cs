@@ -28,33 +28,9 @@ namespace ca.uhn.Properties
 
 		public string ConnectionString
 		{
-			get{ return ConfigurationSettings.AppSettings["Hl7ConnString"].ToString();}
+			get{ return ConfigurationSettings.AppSettings["ConnectionString"].ToString();}
 		}
 
-		public string database 
-		{
-			get 
-			{
-				return ((string)(ConfigurationSettings.AppSettings["database"]));
-			}
-		}
-        
-		public string user 
-		{
-			get 
-			{
-				return ((string)(ConfigurationSettings.AppSettings["user"]));
-			}
-		}
-        
-		public string password 
-		{
-			get 
-			{
-				return ((string)(ConfigurationSettings.AppSettings["password"]));
-			}
-		}
-        
 		public bool useFactory 
 		{
 			get 

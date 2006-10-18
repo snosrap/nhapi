@@ -57,7 +57,7 @@ namespace ca.uhn.hl7v2.sourcegen
 			{
 				baseDirectory = baseDirectory + "/";
 			}
-			System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "segment");
+			System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackageDirectory(version) + "segment");
 			
 			//get list of data types
 			//UPGRADE_NOTE: There are other database providers or managers under System.Data namespace which can be used optionally to better fit the application requirements. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1208'"

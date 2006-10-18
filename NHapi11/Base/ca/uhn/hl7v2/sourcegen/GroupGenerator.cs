@@ -76,7 +76,7 @@ namespace ca.uhn.hl7v2.sourcegen
 			{
 				baseDirectory = baseDirectory + "/";
 			}
-			System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackagePath(version) + "group");
+			System.IO.FileInfo targetDir = SourceGenerator.makeDirectory(baseDirectory + SourceGenerator.getVersionPackageDirectory(version) + "group");
 			
 			GroupDef group = getGroupDef(structures, groupName, baseDirectory, version, message);
 			//UPGRADE_WARNING: At least one expression was used more than once in the target code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1181'"

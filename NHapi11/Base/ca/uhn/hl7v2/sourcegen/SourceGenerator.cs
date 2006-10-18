@@ -50,19 +50,11 @@ namespace ca.uhn.hl7v2.sourcegen
 		/// </param>
 		public static void  makeAll(System.String baseDirectory, System.String version)
 		{
-			//load driver and set DB URL
-			/*if (System.getProperty("ca.on.uhn.hl7.database.url") == null) {
-			System.setProperty("ca.on.uhn.hl7.database.url", "jdbc:odbc:hl7");
-			}*/
-			
 			try
 			{
-				//UPGRADE_TODO: The differences in the format  of parameters for method 'java.lang.Class.forName'  may cause compilation errors.  "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1092'"
-				System.Type.GetType("sun.jdbc.odbc.JdbcOdbcDriver");
 				DataTypeGenerator.makeAll(baseDirectory, version);
 				SegmentGenerator.makeAll(baseDirectory, version);
 				MessageGenerator.makeAll(baseDirectory, version);
-				// group and message not implemented
 			}
 			catch (System.Exception e)
 			{
@@ -286,7 +278,6 @@ namespace ca.uhn.hl7v2.sourcegen
 		/// <summary> Creates the given directory if it does not exist.</summary>
 		public static FileInfo makeDirectory(System.String directory)
 		{
-			Tokenizer tok = new Tokenizer(directory, "\\/", false);
 			if(!Directory.Exists(directory))
 				return new FileInfo(Directory.CreateDirectory(directory).FullName);
 			else
@@ -337,7 +328,30 @@ namespace ca.uhn.hl7v2.sourcegen
 			{
 				throw new HL7Exception("The HL7 version " + ver + " is not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
 			}
-			System.Text.StringBuilder path = new System.Text.StringBuilder("ca/uhn/hl7v2/model/v");
+			System.Text.StringBuilder path = new System.Text.StringBuilder("ca.uhn.model.v");
+			char[] versionChars = new char[ver.Length];
+			SupportClass.GetCharsFromString(ver, 0, ver.Length, versionChars, 0);
+			for (int i = 0; i < versionChars.Length; i++)
+			{
+				if (versionChars[i] != '.')
+					path.Append(versionChars[i]);
+			}
+			path.Append('/');
+			return path.ToString();
+		}
+
+		/// <summary> Returns the path to the base package for model elements of the given version
+		/// - e.g. "ca/uhn/hl7v2/model/v24/".
+		/// This package should have the packages datatype, segment, group, and message
+		/// under it. The path ends in with a slash.
+		/// </summary>
+		public static System.String getVersionPackageDirectory(System.String ver)
+		{
+			if (Parser.validVersion(ver) == false)
+			{
+				throw new HL7Exception("The HL7 version " + ver + " is not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
+			}
+			System.Text.StringBuilder path = new System.Text.StringBuilder("v");
 			char[] versionChars = new char[ver.Length];
 			SupportClass.GetCharsFromString(ver, 0, ver.Length, versionChars, 0);
 			for (int i = 0; i < versionChars.Length; i++)
