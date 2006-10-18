@@ -328,7 +328,7 @@ namespace ca.uhn.hl7v2.sourcegen
 			{
 				throw new HL7Exception("The HL7 version " + ver + " is not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
 			}
-			System.Text.StringBuilder path = new System.Text.StringBuilder("ca.uhn.model.v");
+			System.Text.StringBuilder path = new System.Text.StringBuilder("ca.uhn.hl7v2.model.v");
 			char[] versionChars = new char[ver.Length];
 			SupportClass.GetCharsFromString(ver, 0, ver.Length, versionChars, 0);
 			for (int i = 0; i < versionChars.Length; i++)

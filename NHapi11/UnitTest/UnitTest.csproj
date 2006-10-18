@@ -95,21 +95,6 @@
                     Project = "{0D387E1E-937A-4138-A149-3ADB9A6ED17B}"
                     Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
                 />
-                <Reference
-                    Name = "ca.uhn.v23"
-                    Project = "{667D6F0E-29F1-4BF0-A3CE-B04B637E5ABE}"
-                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
-                />
-                <Reference
-                    Name = "ca.uhn.v231"
-                    Project = "{D8ED47B4-73E3-447D-A2FD-C5C7D031D665}"
-                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
-                />
-                <Reference
-                    Name = "ca.uhn.v24"
-                    Project = "{86B96D8C-774D-41F8-BC63-E95AEAB92334}"
-                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
-                />
             </References>
         </Build>
         <Files>
