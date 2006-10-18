@@ -173,6 +173,7 @@ namespace ca.uhn
 						if(p.Value!=null && p.Value.Trim().Length>0)
 						{
 							val = p.Value;
+							val = val.Replace(@"\.br\","<BR>");
 						}
 						td = new TableCell();
 						td.Text = val;
@@ -189,7 +190,10 @@ namespace ca.uhn
 				string val = "&nbsp;";
 				
 				if(p.Value!=null && p.Value.Trim().Length>0)
+				{
 					val = p.Value;
+					val = val.Replace(@"\.br\","<BR>");
+				}
 				return new LiteralControl(val);
 			}
 		}
