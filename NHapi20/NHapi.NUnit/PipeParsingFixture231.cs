@@ -1,8 +1,12 @@
 using System;
 using System.Collections;
 using System.Text;
-
+using NHapi.Base.Model;
+using NHapi.Base.Parser;
 using NHapi.Base;
+using NHapi.Model.V231;
+using NHapi.Model.V231.Message;
+using NHapi.Model.V231.Segment;
 using NUnit.Framework;
 
 namespace NHAPI.NUnit
@@ -525,6 +529,26 @@ OBX|10|TX|MPV|1|(Ref Range: 6 fL)|fL|6.2-10.0||||Z";
   </QRF>
 </QRY_R02>
 ";
+        }
+
+        [Test]
+        public void TestOBXDataTypes()
+        {
+            string message = @"MSH|^~\&|EPIC|AIDI|||20070921152053|ITFCOHIEIN|ORF^R04^ORF_R04|297|P|2.3.1|||MSA|CA|1QRD|20060725141358|R|||||10^RD|1130851^^^^MRN|RES|||QRF|||||||||OBR|1|5149916^EPC|20050118113415533318^|E8600^ECG^^^ECG|||200501181134||||||Age: 17  yrs ~Criteria: C-HP708 ~|||||1||Zztesttwocorhoi|Results||||F||^^^^^Routine|||||||||200501181134|||||||||OBX|1|ST|:8601-7^ECG IMPRESSION|2|Normal sinus rhythm, rate  77     Normal P axis, PR, rate & rhythm ||||||F||1|200501181134||OBX|2|ST|:8625-6^PR INTERVAL|3|141||||||F||1|200501181134||OBX|3|ST|:8633-0^QRS DURATION|4|83||||||F||1|200501181134||OBX|4|ST|:8634-8^QT INTERVAL|5|358||||||F||1|200501181134||OBX|5|ST|:8636-3^QT INTERVAL CORRECTED|6|405||||||F||1|200501181134||OBX|6|ST|:8626-4^FRONTAL AXIS P|7|-1||||||F||1|200501181134||OBX|7|ST|:99003^FRONTAL AXIS INITIAL 40 MS|8|41||||||F||1|200501181134||OBX|8|ST|:8632-2^FRONTAL AXIS MEAN QRS|9|66||||||F||1|200501181134||OBX|9|ST|:99004^FRONTAL AXIS TERMINAL 40 MS|10|80||||||F||1|200501181134||OBX|10|ST|:99005^FRONTAL AXIS ST|11|36||||||F||1|200501181134||OBX|11|ST|:8638-9^FRONTAL AXIS T|12|40||||||F||1|200501181134||OBX|12|ST|:99006^ECG SEVERITY T|13|- NORMAL ECG - ||||||F||1|200501181134||OBX|13|DT|5315037^Start Date^Start Collection Dat^ABC||18APR06||||||F|||20060419125100|PPKMG|PPJW^SMITH, Fred QAK||OK||1|1|0
+";
+
+            PipeParser parser = new PipeParser();
+
+            IMessage m = parser.parse(message);
+
+            ORF_R04 orfR04 = m as ORF_R04;
+
+            Assert.IsNotNull(orfR04);
+
+            XMLParser xmlParser = new DefaultXMLParser();
+
+            string recoveredMessage = xmlParser.encode(orfR04);
+
         }
 
         private static string GetDHPatient1111111()

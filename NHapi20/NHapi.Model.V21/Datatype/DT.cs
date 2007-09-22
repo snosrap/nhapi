@@ -1,7 +1,7 @@
 using System;
 
 using NHapi.Base.Model;
-namespace NHapi.Model.V21
+namespace NHapi.Model.V21.Datatype
 {
 /// <summary>/// Summary description for DT.
 /// </summary>
@@ -35,4 +35,5 @@ public class DT: NHapi.Base.Model.Primitive.DT
                 ///</summary>
 		        public DT(IMessage message, string description) : base(message,description)
     	        {}
-                }}
+                }
+}

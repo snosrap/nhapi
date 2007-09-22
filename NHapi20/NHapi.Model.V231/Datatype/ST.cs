@@ -1,7 +1,7 @@
 using System;
 
 using NHapi.Base.Model;
-namespace NHapi.Model.V231
+namespace NHapi.Model.V231.Datatype
 {
 /// <summary>/// Summary description for ST.
 /// </summary>

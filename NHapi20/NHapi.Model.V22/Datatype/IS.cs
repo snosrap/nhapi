@@ -1,7 +1,7 @@
 using System;
 
 using NHapi.Base.Model;
-namespace NHapi.Model.V22
+namespace NHapi.Model.V22.Datatype
 {
 /// <summary>/// Summary description for IS.
 /// </summary>

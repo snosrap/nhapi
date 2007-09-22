@@ -10,7 +10,7 @@ namespace NHapi.Model.V22.Datatype
 ///<summary>
 /// <p>The HL7 CN_PHYSICIAN (CN für Ärzte) data type.  Consists of the following components: </p><ol>
 /// <li>physician ID (ID)</li>
-/// <li>family name (ST)</li>
+/// <li>familiy name (ST)</li>
 /// <li>given name (ST)</li>
 /// <li>middle initial or name (ST)</li>
 /// <li>suffix (e.g. JR or III) (ST)</li>
@@ -42,7 +42,7 @@ public class CN_PHYSICIAN : AbstractType, IComposite{
 	public CN_PHYSICIAN(IMessage message, string description) : base(message, description){
 		data = new IType[13];
 		data[0] = new ID(message, 0,"Physician ID");
-		data[1] = new ST(message,"Family name");
+		data[1] = new ST(message,"Familiy name");
 		data[2] = new ST(message,"Given name");
 		data[3] = new ST(message,"Middle initial or name");
 		data[4] = new ST(message,"Suffix (e.g. JR or III)");
@@ -100,10 +100,10 @@ get{
 
 }
 	///<summary>
-	/// Returns family name (component #1).  This is a convenience method that saves you from 
+	/// Returns familiy name (component #1).  This is a convenience method that saves you from 
 	/// casting and handling an exception.
 	///</summary>
-	public ST FamilyName {
+	public ST FamiliyName {
 get{
 	   ST ret = null;
 	   try {

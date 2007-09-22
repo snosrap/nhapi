@@ -1,7 +1,7 @@
 using System;
 
 using NHapi.Base.Model;
-namespace NHapi.Model.V23
+namespace NHapi.Model.V23.Datatype
 {
 /// <summary>/// Summary description for DT.
 /// </summary>

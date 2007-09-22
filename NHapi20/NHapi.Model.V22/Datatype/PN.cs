@@ -9,7 +9,7 @@ namespace NHapi.Model.V22.Datatype
 
 ///<summary>
 /// <p>The HL7 PN (person name) data type.  Consists of the following components: </p><ol>
-/// <li>family name (ST)</li>
+/// <li>familiy name (ST)</li>
 /// <li>given name (ST)</li>
 /// <li>middle initial or name (ST)</li>
 /// <li>suffix (e.g. JR or III) (ST)</li>
@@ -34,7 +34,7 @@ public class PN : AbstractType, IComposite{
 	///</summary>
 	public PN(IMessage message, string description) : base(message, description){
 		data = new IType[6];
-		data[0] = new ST(message,"Family name");
+		data[0] = new ST(message,"Familiy name");
 		data[1] = new ST(message,"Given name");
 		data[2] = new ST(message,"Middle initial or name");
 		data[3] = new ST(message,"Suffix (e.g. JR or III)");
@@ -69,10 +69,10 @@ get{
 	} 
 	} 
 	///<summary>
-	/// Returns family name (component #0).  This is a convenience method that saves you from 
+	/// Returns familiy name (component #0).  This is a convenience method that saves you from 
 	/// casting and handling an exception.
 	///</summary>
-	public ST FamilyName {
+	public ST FamiliyName {
 get{
 	   ST ret = null;
 	   try {
