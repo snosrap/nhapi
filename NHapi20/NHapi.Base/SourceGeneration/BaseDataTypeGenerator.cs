@@ -46,7 +46,7 @@ namespace NHapi.Base.SourceGeneration
             sb.Append("using System;\n\n");
             sb.Append("using NHapi.Base.Model;\n");
 
-            sb.Append("namespace " + namespaceName + "\n");
+            sb.Append("namespace " + namespaceName + ".Datatype\n");
             sb.Append("{\n");
             sb.Append("/// <summary>");
             sb.Append("/// Summary description for " + dataType + ".\n");
