@@ -54,7 +54,7 @@ public class MFR_M01 : AbstractMessage  {
 	      this.add(typeof(MFR_M01_MF), true, true);
 	      this.add(typeof(DSC), false, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating MFR_M01 - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating MFR_M01 - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -67,7 +67,7 @@ get{
 	   try {
 	      ret = (MSH)this.GetStructure("MSH");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -83,7 +83,7 @@ get{
 	   try {
 	      ret = (MSA)this.GetStructure("MSA");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -99,7 +99,7 @@ get{
 	   try {
 	      ret = (ERR)this.GetStructure("ERR");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -115,7 +115,7 @@ get{
 	   try {
 	      ret = (QRD)this.GetStructure("QRD");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -131,7 +131,7 @@ get{
 	   try {
 	      ret = (QRF)this.GetStructure("QRF");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -147,7 +147,7 @@ get{
 	   try {
 	      ret = (MFI)this.GetStructure("MFI");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -162,7 +162,7 @@ get{
 	   try {
 	      ret = (MFR_M01_MF)this.GetStructure("MF");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -188,7 +188,7 @@ get{
 	        reps = this.GetAll("MF").Length; 
 	    } catch (HL7Exception e) { 
 	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
-	        HapiLogFactory.getHapiLog(GetType()).error(message, e); 
+	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
 	        throw new System.Exception(message);
 	    } 
 	    return reps; 
@@ -204,7 +204,7 @@ get{
 	   try {
 	      ret = (DSC)this.GetStructure("DSC");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

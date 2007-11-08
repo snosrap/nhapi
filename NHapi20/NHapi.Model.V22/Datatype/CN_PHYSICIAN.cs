@@ -10,7 +10,7 @@ namespace NHapi.Model.V22.Datatype
 ///<summary>
 /// <p>The HL7 CN_PHYSICIAN (CN für Ärzte) data type.  Consists of the following components: </p><ol>
 /// <li>physician ID (ID)</li>
-/// <li>familiy name (ST)</li>
+/// <li>family name (ST)</li>
 /// <li>given name (ST)</li>
 /// <li>middle initial or name (ST)</li>
 /// <li>suffix (e.g. JR or III) (ST)</li>
@@ -42,7 +42,7 @@ public class CN_PHYSICIAN : AbstractType, IComposite{
 	public CN_PHYSICIAN(IMessage message, string description) : base(message, description){
 		data = new IType[13];
 		data[0] = new ID(message, 0,"Physician ID");
-		data[1] = new ST(message,"Familiy name");
+		data[1] = new ST(message,"Family name");
 		data[2] = new ST(message,"Given name");
 		data[3] = new ST(message,"Middle initial or name");
 		data[4] = new ST(message,"Suffix (e.g. JR or III)");
@@ -92,7 +92,7 @@ get{
 	   try {
 	      ret = (ID)this[0];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -100,16 +100,16 @@ get{
 
 }
 	///<summary>
-	/// Returns familiy name (component #1).  This is a convenience method that saves you from 
+	/// Returns family name (component #1).  This is a convenience method that saves you from 
 	/// casting and handling an exception.
 	///</summary>
-	public ST FamiliyName {
+	public ST FamilyName {
 get{
 	   ST ret = null;
 	   try {
 	      ret = (ST)this[1];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -126,7 +126,7 @@ get{
 	   try {
 	      ret = (ST)this[2];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -143,7 +143,7 @@ get{
 	   try {
 	      ret = (ST)this[3];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -160,7 +160,7 @@ get{
 	   try {
 	      ret = (ST)this[4];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -177,7 +177,7 @@ get{
 	   try {
 	      ret = (ST)this[5];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -194,7 +194,7 @@ get{
 	   try {
 	      ret = (ST)this[6];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -211,7 +211,7 @@ get{
 	   try {
 	      ret = (ID)this[7];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -228,7 +228,7 @@ get{
 	   try {
 	      ret = (AD)this[8];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -245,7 +245,7 @@ get{
 	   try {
 	      ret = (TN)this[9];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -262,7 +262,7 @@ get{
 	   try {
 	      ret = (TN)this[10];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -279,7 +279,7 @@ get{
 	   try {
 	      ret = (TN)this[11];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -296,7 +296,7 @@ get{
 	   try {
 	      ret = (ST)this[12];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

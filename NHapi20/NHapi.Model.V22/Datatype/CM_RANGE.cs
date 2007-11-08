@@ -70,7 +70,7 @@ get{
 	   try {
 	      ret = (CE)this[0];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -87,7 +87,7 @@ get{
 	   try {
 	      ret = (CE)this[1];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
