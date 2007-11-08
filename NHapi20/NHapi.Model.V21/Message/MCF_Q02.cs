@@ -42,7 +42,7 @@ public class MCF_Q02 : AbstractMessage  {
 	      this.add(typeof(MSH), true, false);
 	      this.add(typeof(MSA), true, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating MCF_Q02 - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating MCF_Q02 - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -55,7 +55,7 @@ get{
 	   try {
 	      ret = (MSH)this.GetStructure("MSH");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -71,7 +71,7 @@ get{
 	   try {
 	      ret = (MSA)this.GetStructure("MSA");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

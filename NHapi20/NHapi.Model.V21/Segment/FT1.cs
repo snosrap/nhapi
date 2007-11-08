@@ -72,7 +72,7 @@ public class FT1 : AbstractSegment  {
        this.add(typeof(CN), false, 1, 60, new System.Object[]{message}, "ORDERED BY CODE");
        this.add(typeof(NM), false, 1, 12, new System.Object[]{message}, "UNIT COST");
     } catch (HL7Exception he) {
-        HapiLogFactory.getHapiLog(GetType()).error("Can't instantiate " + GetType().Name, he);
+        HapiLogFactory.GetHapiLog(GetType()).Error("Can't instantiate " + GetType().Name, he);
     }
   }
 
@@ -89,10 +89,10 @@ public class FT1 : AbstractSegment  {
 				ret = (SI)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -112,10 +112,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ST)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -135,10 +135,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ST)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -158,10 +158,10 @@ public class FT1 : AbstractSegment  {
 				ret = (DT)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -181,10 +181,10 @@ public class FT1 : AbstractSegment  {
 				ret = (DT)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -204,10 +204,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ID)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -227,10 +227,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ID)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -250,10 +250,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ST)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -273,10 +273,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ST)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -296,10 +296,10 @@ public class FT1 : AbstractSegment  {
 				ret = (NM)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -319,10 +319,10 @@ public class FT1 : AbstractSegment  {
 				ret = (NM)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -342,10 +342,10 @@ public class FT1 : AbstractSegment  {
 				ret = (NM)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -365,10 +365,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ST)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -388,10 +388,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ID)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -411,10 +411,10 @@ public class FT1 : AbstractSegment  {
 				ret = (NM)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -434,10 +434,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ST)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -457,10 +457,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ID)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -480,10 +480,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ID)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -503,10 +503,10 @@ public class FT1 : AbstractSegment  {
 				ret = (ID)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -526,10 +526,10 @@ public class FT1 : AbstractSegment  {
 				ret = (CN)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -549,10 +549,10 @@ public class FT1 : AbstractSegment  {
 				ret = (CN)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
@@ -572,10 +572,10 @@ public class FT1 : AbstractSegment  {
 				ret = (NM)t;
 			}
 			 catch (HL7Exception he) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
-			HapiLogFactory.getHapiLog(GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
