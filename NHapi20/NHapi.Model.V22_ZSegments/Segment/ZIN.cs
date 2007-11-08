@@ -51,7 +51,7 @@ namespace NHapi.Model.V22_ZSegments.Segment
 			}
 			catch (HL7Exception he)
 			{
-				HapiLogFactory.getHapiLog(this.GetType()).error("Can't instantiate " + this.GetType().Name, he);
+				HapiLogFactory.GetHapiLog(this.GetType()).Error("Can't instantiate " + this.GetType().Name, he);
 			}
 		}
 
@@ -74,12 +74,12 @@ namespace NHapi.Model.V22_ZSegments.Segment
 				}
 				catch (HL7Exception he)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 					throw new System.Exception("An unexpected error ocurred", he);
 				}
 				catch (Exception ex)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 					throw new System.Exception("An unexpected error ocurred", ex);
 				}
 				return ret;
@@ -101,12 +101,12 @@ namespace NHapi.Model.V22_ZSegments.Segment
 				}
 				catch (HL7Exception he)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 					throw new System.Exception("An unexpected error ocurred", he);
 				}
 				catch (Exception ex)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 					throw new System.Exception("An unexpected error ocurred", ex);
 				}
 				return ret;
@@ -132,12 +132,12 @@ namespace NHapi.Model.V22_ZSegments.Segment
 				}
 				catch (HL7Exception he)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 					throw new System.Exception("An unexpected error ocurred", he);
 				}
 				catch (Exception ex)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 					throw new System.Exception("An unexpected error ocurred", ex);
 				}
 				return ret;
@@ -161,12 +161,12 @@ namespace NHapi.Model.V22_ZSegments.Segment
 				}
 				catch (HL7Exception he)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 					throw new System.Exception("An unexpected error ocurred", he);
 				}
 				catch (Exception ex)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 					throw new System.Exception("An unexpected error ocurred", ex);
 				}
 				return ret;
@@ -188,12 +188,12 @@ namespace NHapi.Model.V22_ZSegments.Segment
 				}
 				catch (HL7Exception he)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 					throw new System.Exception("An unexpected error ocurred", he);
 				}
 				catch (Exception ex)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 					throw new System.Exception("An unexpected error ocurred", ex);
 				}
 				return ret;
@@ -215,12 +215,12 @@ namespace NHapi.Model.V22_ZSegments.Segment
 				}
 				catch (HL7Exception he)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", he);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
 					throw new System.Exception("An unexpected error ocurred", he);
 				}
 				catch (Exception ex)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem obtaining field value.  This is a bug.", ex);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 					throw new System.Exception("An unexpected error ocurred", ex);
 				}
 				return ret;

@@ -37,7 +37,7 @@ namespace NHapi.Model.V22_ZSegments.Message
 		   } 
 		   catch(HL7Exception e)
 		   {
-		      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating ADT_A08 - this is probably a bug in the source code generator.", e);
+		      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating ADT_A08 - this is probably a bug in the source code generator.", e);
 		   }
 		}				
 		
@@ -59,7 +59,7 @@ namespace NHapi.Model.V22_ZSegments.Message
 				}
 				catch (HL7Exception e)
 				{
-					HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+					HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 					throw new System.Exception("An unexpected error ocurred",e);
 				}
 				return ret;
