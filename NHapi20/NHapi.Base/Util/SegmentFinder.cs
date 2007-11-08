@@ -86,7 +86,7 @@ namespace NHapi.Base.Util
             while (s == null)
             {
                 iterate(false, false);
-                System.String currentName = getCurrentStructure(0).getStructureName();
+                System.String currentName = getCurrentStructure(0).GetStructureName();
                 if (matches(namePattern, currentName))
                 {
                     s = getCurrentStructure(rep);
@@ -112,7 +112,7 @@ namespace NHapi.Base.Util
             IStructure s = GetStructure(namePattern, rep);
             if (!typeof(ISegment).IsAssignableFrom(s.GetType()))
             {
-                throw new HL7Exception(s.getStructureName() + " is not a segment", HL7Exception.APPLICATION_INTERNAL_ERROR);
+                throw new HL7Exception(s.GetStructureName() + " is not a segment", HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
             return (ISegment)s;
         }
@@ -123,7 +123,7 @@ namespace NHapi.Base.Util
             IStructure s = GetStructure(namePattern, rep);
             if (!typeof(IGroup).IsAssignableFrom(s.GetType()))
             {
-                throw new HL7Exception(s.getStructureName() + " is not a group", HL7Exception.APPLICATION_INTERNAL_ERROR);
+                throw new HL7Exception(s.GetStructureName() + " is not a group", HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
             return (IGroup)s;
         }

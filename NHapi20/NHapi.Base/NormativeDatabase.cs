@@ -146,16 +146,16 @@ namespace NHapi.Base
             }
             catch (System.Data.OleDb.OleDbException e)
             {
-                log.error("test msg!!", e);
+                log.Error("test msg!!", e);
             }
             catch (System.Exception e)
             {
-                log.error("test msg!!", e);
+                log.Error("test msg!!", e);
             }
         }
         static NormativeDatabase()
         {
-            log = HapiLogFactory.getHapiLog(typeof(NormativeDatabase));
+            log = HapiLogFactory.GetHapiLog(typeof(NormativeDatabase));
         }
     }
 }

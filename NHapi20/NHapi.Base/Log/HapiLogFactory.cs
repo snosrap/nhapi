@@ -35,11 +35,11 @@ namespace NHapi.Base.Log
         /// <exception cref="LogConfigurationException">if a suitable <code>Log</code>
         /// instance cannot be returned
         /// </exception>
-        public static IHapiLog getHapiLog(System.Type clazz)
+        public static IHapiLog GetHapiLog(System.Type clazz)
         {
             IHapiLog retVal = null;
 
-            ILog log = LogFactory.getLog(clazz);
+            ILog log = LogFactory.GetLog(clazz);
             retVal = new HapiLogImpl(log);
 
             return retVal;
@@ -57,11 +57,11 @@ namespace NHapi.Base.Log
         /// <exception cref="LogConfigurationException">if a suitable <code>Log</code>
         /// instance cannot be returned
         /// </exception>
-        public static IHapiLog getHapiLog(System.String name)
+        public static IHapiLog GetHapiLog(System.String name)
         {
             IHapiLog retVal = null;
 
-            ILog log = LogFactory.getLog(name);
+            ILog log = LogFactory.GetLog(name);
             retVal = new HapiLogImpl(log);
 
             return retVal;

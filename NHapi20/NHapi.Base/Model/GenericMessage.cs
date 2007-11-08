@@ -29,7 +29,7 @@ namespace NHapi.Base.Model
             catch (HL7Exception e)
             {
                 System.String message = "Unexpected error adding GenericSegment to GenericMessage.";
-                HapiLogFactory.getHapiLog(this.GetType()).error(message, e);
+                HapiLogFactory.GetHapiLog(this.GetType()).Error(message, e);
                 throw new System.ApplicationException(message);
             }
         }
@@ -40,7 +40,7 @@ namespace NHapi.Base.Model
         /// </summary>
         public static System.Type getGenericMessageClass(System.String version)
         {
-            if (!ParserBase.validVersion(version))
+            if (!ParserBase.ValidVersion(version))
                 throw new System.ArgumentException("The version " + version + " is not recognized");
 
             System.Type c = null;

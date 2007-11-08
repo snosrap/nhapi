@@ -299,7 +299,7 @@ namespace NHapi.Base.SourceGeneration
                 }
             }
             source.Append("\t   } catch(HL7Exception e) {\r\n");
-            source.Append("\t      HapiLogFactory.getHapiLog(GetType()).error(\"Unexpected error creating ");
+            source.Append("\t      HapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected error creating ");
             source.Append(group.Name);
             source.Append(" - this is probably a bug in the source code generator.\", e);\r\n");
             source.Append("\t   }\r\n");
@@ -386,7 +386,7 @@ namespace NHapi.Base.SourceGeneration
             source.Append(getterName);
             source.Append("\");\r\n");
             source.Append("\t   } catch(HL7Exception e) {\r\n");
-            source.Append("\t      HapiLogFactory.getHapiLog(GetType()).error(\"Unexpected error accessing data - this is probably a bug in the source code generator.\", e);\r\n");
+            source.Append("\t      HapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected error accessing data - this is probably a bug in the source code generator.\", e);\r\n");
             source.Append("\t      throw new System.Exception(\"An unexpected error ocurred\",e);\r\n");
             source.Append("\t   }\r\n");
             source.Append("\t   return ret;\r\n");
@@ -436,7 +436,7 @@ namespace NHapi.Base.SourceGeneration
                 source.Append("\").Length; \r\n");
                 source.Append("\t    } catch (HL7Exception e) { \r\n");
                 source.Append("\t        string message = \"Unexpected error accessing data - this is probably a bug in the source code generator.\"; \r\n");
-                source.Append("\t        HapiLogFactory.getHapiLog(GetType()).error(message, e); \r\n");
+                source.Append("\t        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); \r\n");
                 source.Append("\t        throw new System.Exception(message);\r\n");
                 source.Append("\t    } \r\n");
                 source.Append("\t    return reps; \r\n");
@@ -479,10 +479,10 @@ namespace NHapi.Base.SourceGeneration
                 }
                 else
                 {
-                    log.error("Problem starting at " + groupStart);
+                    log.Error("Problem starting at " + groupStart);
                     for (int i = 0; i < structures.Length; i++)
                     {
-                        log.error("Structure " + i + ": " + structures[i].Name);
+                        log.Error("Structure " + i + ": " + structures[i].Name);
                     }
                     throw new System.ArgumentException("The segment " + startMarker + " does not begin a group - must be [ or {");
                 }
@@ -522,7 +522,7 @@ namespace NHapi.Base.SourceGeneration
         }
         static GroupGenerator()
         {
-            log = HapiLogFactory.getHapiLog(typeof(GroupGenerator));
+            log = HapiLogFactory.GetHapiLog(typeof(GroupGenerator));
         }
     }
 }

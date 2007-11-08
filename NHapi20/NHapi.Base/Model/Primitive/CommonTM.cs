@@ -645,7 +645,7 @@ namespace NHapi.Base.Model.Primitive
         }
         static CommonTM()
         {
-            log = HapiLogFactory.getHapiLog(typeof(CommonTM));
+            log = HapiLogFactory.GetHapiLog(typeof(CommonTM));
         }
     } //end class
 }

@@ -69,7 +69,7 @@ namespace NHapi.Base.validation
                 for (int j = 0; j < ex.Length; j++)
                 {
                     result = false;
-                    ourLog.error("Invalid message", ex[j]);
+                    ourLog.Error("Invalid message", ex[j]);
                     if (failOnError && toThrow == null)
                     {
                         toThrow = ex[j];
@@ -105,7 +105,7 @@ namespace NHapi.Base.validation
                 for (int j = 0; j < ex.Length; j++)
                 {
                     result = false;
-                    ourLog.error("Invalid message", ex[j]);
+                    ourLog.Error("Invalid message", ex[j]);
                     if (failOnError && toThrow == null)
                     {
                         toThrow = ex[j];
@@ -122,7 +122,7 @@ namespace NHapi.Base.validation
         }
         static MessageValidator()
         {
-            ourLog = HapiLogFactory.getHapiLog(typeof(MessageValidator));
+            ourLog = HapiLogFactory.GetHapiLog(typeof(MessageValidator));
         }
     }
 }

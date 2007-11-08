@@ -201,7 +201,7 @@ namespace NHapi.Base
 
         static DBTableRepository()
         {
-            log = HapiLogFactory.getHapiLog(typeof(DBTableRepository));
+            log = HapiLogFactory.GetHapiLog(typeof(DBTableRepository));
         }
     }
 }

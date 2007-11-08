@@ -18,18 +18,18 @@ namespace NHapi.Base.Log
         bool WarnEnabled { get;}
 
 
-        void debug(System.Object message);
-        void debug(System.Object message, System.Exception t);
-        void error(System.Object message);
-        void error(System.Object message, System.Exception t);
-        void fatal(System.Object message);
-        void fatal(System.Object message, System.Exception t);
-        void info(System.Object message);
-        void info(System.Object message, System.Exception t);
-        void trace(System.Object message);
-        void trace(System.Object message, System.Exception t);
-        void warn(System.Object message);
-        void warn(System.Object message, System.Exception t);
+        void Debug(System.Object message);
+        void Debug(System.Object message, System.Exception t);
+        void Error(System.Object message);
+        void Error(System.Object message, System.Exception t);
+        void Fatal(System.Object message);
+        void Fatal(System.Object message, System.Exception t);
+        void Info(System.Object message);
+        void Info(System.Object message, System.Exception t);
+        void Trace(System.Object message);
+        void Trace(System.Object message, System.Exception t);
+        void Warn(System.Object message);
+        void Warn(System.Object message, System.Exception t);
 
     }
 
@@ -91,7 +91,7 @@ namespace NHapi.Base.Log
         /// Write debug message
         /// </summary>
         /// <param name="message"></param>
-        public void debug(object message)
+        public void Debug(object message)
         {
             // No implementation
         }
@@ -101,7 +101,7 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public void debug(object message, Exception t)
+        public void Debug(object message, Exception t)
         {
             // No implementation
         }
@@ -110,7 +110,7 @@ namespace NHapi.Base.Log
         /// Write error
         /// </summary>
         /// <param name="message"></param>
-        public void error(object message)
+        public void Error(object message)
         {
             // No implementation
         }
@@ -120,7 +120,7 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public void error(object message, Exception t)
+        public void Error(object message, Exception t)
         {
             // No implementation
         }
@@ -129,7 +129,7 @@ namespace NHapi.Base.Log
         /// Write fatal
         /// </summary>
         /// <param name="message"></param>
-        public void fatal(object message)
+        public void Fatal(object message)
         {
             // No implementation
         }
@@ -139,7 +139,7 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public void fatal(object message, Exception t)
+        public void Fatal(object message, Exception t)
         {
             // No implementation
         }
@@ -148,7 +148,7 @@ namespace NHapi.Base.Log
         /// Write info
         /// </summary>
         /// <param name="message"></param>
-        public void info(object message)
+        public void Info(object message)
         {
             // No implementation
         }
@@ -158,7 +158,7 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public void info(object message, Exception t)
+        public void Info(object message, Exception t)
         {
             // No implementation
         }
@@ -167,7 +167,7 @@ namespace NHapi.Base.Log
         /// Write trace
         /// </summary>
         /// <param name="message"></param>
-        public void trace(object message)
+        public void Trace(object message)
         {
             // No implementation
         }
@@ -177,7 +177,7 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public void trace(object message, Exception t)
+        public void Trace(object message, Exception t)
         {
             // No implementation
         }
@@ -186,7 +186,7 @@ namespace NHapi.Base.Log
         /// Write warn
         /// </summary>
         /// <param name="message"></param>
-        public void warn(object message)
+        public void Warn(object message)
         {
             // No implementation
         }
@@ -196,7 +196,7 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public void warn(object message, Exception t)
+        public void Warn(object message, Exception t)
         {
             // No implementation
         }

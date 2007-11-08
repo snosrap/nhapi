@@ -154,7 +154,7 @@ namespace NHapi.Base.Util
 
                     try
                     {
-                        if (parent.IsRepeating(i.name) && currentStructure.getStructureName().Equals(direction))
+                        if (parent.IsRepeating(i.name) && currentStructure.GetStructureName().Equals(direction))
                         {
                             nextRep(currentPosition);
                         }
@@ -169,7 +169,7 @@ namespace NHapi.Base.Util
                     }
                 }
             }
-            log.debug("MessageIterator.hasNext() in direction " + this.direction + "? " + has);
+            log.Debug("MessageIterator.hasNext() in direction " + this.direction + "? " + has);
             return has;
         }
 
@@ -300,7 +300,7 @@ namespace NHapi.Base.Util
                 Position parentPos = new Position(grandparent, getIndex(grandparent, pos.parent));
                 matchExists = matchExistsAfterPosition(parentPos, name, firstDescendentsOnly, upToFirstRequired);
             }
-            log.debug("Match exists after position " + pos + " for " + name + "? " + matchExists);
+            log.Debug("Match exists after position " + pos + " for " + name + "? " + matchExists);
             return matchExists;
         }
 
@@ -309,7 +309,7 @@ namespace NHapi.Base.Util
         /// </summary>
         private void newSegment(IGroup parent, System.String name)
         {
-            log.info("MessageIterator creating new segment: " + name);
+            log.Info("MessageIterator creating new segment: " + name);
             parent.addNonstandardSegment(name);
             next_Renamed_Field = new Position(parent, parent.Names[parent.Names.Length - 1], 0);
         }
@@ -336,7 +336,7 @@ namespace NHapi.Base.Util
             bool contains = false;
             if (typeof(ISegment).IsAssignableFrom(s.GetType()))
             {
-                if (s.getStructureName().Equals(name))
+                if (s.GetStructureName().Equals(name))
                     contains = true;
             }
             else
@@ -406,7 +406,7 @@ namespace NHapi.Base.Util
             System.String[] names = parent.Names;
             for (int i = 0; i < names.Length; i++)
             {
-                if (names[i].StartsWith(child.getStructureName()))
+                if (names[i].StartsWith(child.GetStructureName()))
                 {
                     try
                     {
@@ -422,7 +422,7 @@ namespace NHapi.Base.Util
                     }
                     catch (HL7Exception e)
                     {
-                        log.error("", e);
+                        log.Error("", e);
                         throw new System.ApplicationException("Internal HL7Exception finding structure index: " + e.Message);
                     }
                 }
@@ -557,7 +557,7 @@ namespace NHapi.Base.Util
             /// <returns></returns>
             public override System.String ToString()
             {
-                System.Text.StringBuilder ret = new System.Text.StringBuilder(parent.getStructureName());
+                System.Text.StringBuilder ret = new System.Text.StringBuilder(parent.GetStructureName());
                 ret.Append(":");
                 ret.Append(index.name);
                 ret.Append("(");
@@ -574,7 +574,7 @@ namespace NHapi.Base.Util
         }
         static MessageIterator()
         {
-            log = HapiLogFactory.getHapiLog(typeof(MessageIterator));
+            log = HapiLogFactory.GetHapiLog(typeof(MessageIterator));
         }
     }
 }

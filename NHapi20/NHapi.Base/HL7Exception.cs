@@ -248,7 +248,7 @@ namespace NHapi.Base
         public virtual void populate(ISegment errorSegment)
         {
             //make sure it's an ERR
-            if (!errorSegment.getStructureName().Equals("ERR"))
+            if (!errorSegment.GetStructureName().Equals("ERR"))
                 throw new HL7Exception("Can only populate an ERR segment with an exception -- got: " + errorSegment.GetType().FullName);
 
             int rep = errorSegment.GetField(1).Length; //append after existing reps
@@ -274,12 +274,12 @@ namespace NHapi.Base
             }
             catch (LookupException e)
             {
-                ourLog.debug("Warning: LookupException getting error condition text (are we connected to a TableRepository?)", e);
+                ourLog.Debug("Warning: LookupException getting error condition text (are we connected to a TableRepository?)", e);
             }
         }
         static HL7Exception()
         {
-            ourLog = HapiLogFactory.getHapiLog(typeof(HL7Exception));
+            ourLog = HapiLogFactory.GetHapiLog(typeof(HL7Exception));
         }
     }
 }

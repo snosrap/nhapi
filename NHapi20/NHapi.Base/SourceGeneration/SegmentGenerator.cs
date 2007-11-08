@@ -76,7 +76,7 @@ namespace NHapi.Base.SourceGeneration
 
             if (segments.Count == 0)
             {
-                log.warn("No version " + version + " segments found in database " + conn.Database);
+                log.Warn("No version " + version + " segments found in database " + conn.Database);
             }
 
             for (int i = 0; i < segments.Count; i++)
@@ -310,7 +310,7 @@ namespace NHapi.Base.SourceGeneration
                         source.Append(");\r\n");
                     }
                     source.Append("    } catch (HL7Exception he) {\r\n");
-                    source.Append("        HapiLogFactory.getHapiLog(GetType()).error(\"Can't instantiate \" + GetType().Name, he);\r\n");
+                    source.Append("        HapiLogFactory.GetHapiLog(GetType()).Error(\"Can't instantiate \" + GetType().Name, he);\r\n");
                     source.Append("    }\r\n");
                 }
                 source.Append("  }\r\n\r\n");
@@ -370,11 +370,11 @@ namespace NHapi.Base.SourceGeneration
                         if (se.repetitions == 1)
                         {
                             source.Append("\t\t\t}\n\t\t\t catch (HL7Exception he) {\r\n");
-                            source.Append("\t\t\tHapiLogFactory.getHapiLog(GetType()).error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
+                            source.Append("\t\t\tHapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
                             source.Append("\t\t\t\tthrow new System.Exception(\"An unexpected error ocurred\", he);\r\n");
                         }
                         source.Append("\t\t} catch (System.Exception ex) {\r\n");
-                        source.Append("\t\t\tHapiLogFactory.getHapiLog(GetType()).error(\"Unexpected problem obtaining field value.  This is a bug.\", ex);\r\n");
+                        source.Append("\t\t\tHapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", ex);\r\n");
                         source.Append("\t\t\t\tthrow new System.Exception(\"An unexpected error ocurred\", ex);\r\n");
                         source.Append("    }\r\n");
                         source.Append("\t\t\treturn ret;\r\n");
@@ -416,10 +416,10 @@ namespace NHapi.Base.SourceGeneration
                             source.Append(")t[i];\r\n");
                             source.Append("        }\r\n");
                             source.Append("    } catch (HL7Exception he) {\r\n");
-                            source.Append("        HapiLogFactory.getHapiLog(this.GetType()).error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
+                            source.Append("        HapiLogFactory.GetHapiLog(this.GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
                             source.Append("        throw new System.Exception(\"An unexpected error ocurred\", he);\r\n");
                             source.Append("    } catch (System.Exception cce) {\r\n");
-                            source.Append("        HapiLogFactory.getHapiLog(GetType()).error(\"Unexpected problem obtaining field value.  This is a bug.\", cce);\r\n");
+                            source.Append("        HapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", cce);\r\n");
                             source.Append("        throw new System.Exception(\"An unexpected error ocurred\", cce);\r\n");
                             source.Append("  }\r\n");
                             source.Append(" return ret;\r\n");
@@ -444,10 +444,10 @@ namespace NHapi.Base.SourceGeneration
                             source.Append("\treturn GetTotalFieldRepetitionsUsed(" + se.field + ");\r\n");
                             source.Append("    }\r\n");
                             source.Append("catch (HL7Exception he) {\r\n");
-                            source.Append("        HapiLogFactory.getHapiLog(this.GetType()).error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
+                            source.Append("        HapiLogFactory.GetHapiLog(this.GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", he);\r\n");
                             source.Append("        throw new System.Exception(\"An unexpected error ocurred\", he);\r\n");
                             source.Append("} catch (System.Exception cce) {\r\n");
-                            source.Append("        HapiLogFactory.getHapiLog(GetType()).error(\"Unexpected problem obtaining field value.  This is a bug.\", cce);\r\n");
+                            source.Append("        HapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected problem obtaining field value.  This is a bug.\", cce);\r\n");
                             source.Append("        throw new System.Exception(\"An unexpected error ocurred\", cce);\r\n");
                             source.Append("}\r\n");
                             source.Append("}\r\n");
@@ -504,7 +504,7 @@ namespace NHapi.Base.SourceGeneration
         }
         static SegmentGenerator()
         {
-            log = HapiLogFactory.getHapiLog(typeof(SegmentGenerator));
+            log = HapiLogFactory.GetHapiLog(typeof(SegmentGenerator));
         }
     }
 }

@@ -339,7 +339,7 @@ namespace NHapi.Base.Model.Primitive
         }
         static CommonDT()
         {
-            log = HapiLogFactory.getHapiLog(typeof(CommonDT));
+            log = HapiLogFactory.GetHapiLog(typeof(CommonDT));
         }
     } //end class
 }

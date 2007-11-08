@@ -45,7 +45,7 @@ namespace NHapi.Base.Model
 
         static AbstractGroup()
         {
-            log = HapiLogFactory.getHapiLog(typeof(AbstractGroup));
+            log = HapiLogFactory.GetHapiLog(typeof(AbstractGroup));
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace NHapi.Base.Model
             System.String version = this.Message.Version;
             if (version == null)
                 throw new HL7Exception("Need message version to add segment by name; message.getVersion() returns null");
-            System.Type c = myFactory.getSegmentClass(name, version);
+            System.Type c = myFactory.GetSegmentClass(name, version);
             if (c == null)
                 c = typeof(GenericSegment);
 
@@ -380,7 +380,7 @@ namespace NHapi.Base.Model
         }
 
         /// <summary> Returns the class name (excluding package). </summary>
-        public virtual System.String getStructureName()
+        public virtual System.String GetStructureName()
         {
             return getStructureName(this.GetType());
         }
@@ -400,7 +400,7 @@ namespace NHapi.Base.Model
             //remove message name prefix from group names for compatibility with getters ...
             if (typeof(IGroup).IsAssignableFrom(c) && !typeof(IMessage).IsAssignableFrom(c))
             {
-                System.String messageName = Message.getStructureName();
+                System.String messageName = Message.GetStructureName();
                 if (name.StartsWith(messageName) && name.Length > messageName.Length)
                 {
                     name = name.Substring(messageName.Length + 1);

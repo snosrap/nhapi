@@ -35,7 +35,7 @@ namespace NHapi.Base.Model
         /// <summary> Returns the name specified at construction time. </summary>
         /// <seealso cref="Structure.getName()">
         /// </seealso>
-        public override System.String getStructureName()
+        public override System.String GetStructureName()
         {
             return this.name;
         }

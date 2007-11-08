@@ -89,43 +89,43 @@ namespace NHapi.Base.Log
 
         /// <param name="message">
         /// </param>
-        public virtual void debug(System.Object message)
+        public virtual void Debug(System.Object message)
         {
-            innerLog.debug(message);
+            innerLog.Debug(message);
         }
 
         /// <param name="message">
         /// </param>
         /// <param name="t">
         /// </param>
-        public virtual void debug(System.Object message, System.Exception t)
+        public virtual void Debug(System.Object message, System.Exception t)
         {
-            innerLog.debug(message, t);
+            innerLog.Debug(message, t);
         }
 
         /// <param name="message">
         /// </param>
-        public virtual void error(System.Object message)
+        public virtual void Error(System.Object message)
         {
-            innerLog.error(message);
+            innerLog.Error(message);
         }
 
         /// <param name="message">
         /// </param>
         /// <param name="t">
         /// </param>
-        public virtual void error(System.Object message, System.Exception t)
+        public virtual void Error(System.Object message, System.Exception t)
         {
-            innerLog.error(message, t);
+            innerLog.Error(message, t);
         }
 
         /// <summary>
         /// fatal
         /// </summary>
         /// <param name="message"></param>
-        public virtual void fatal(System.Object message)
+        public virtual void Fatal(System.Object message)
         {
-            innerLog.fatal(message);
+            innerLog.Fatal(message);
         }
 
         /// <summary>
@@ -133,18 +133,18 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public virtual void fatal(System.Object message, System.Exception t)
+        public virtual void Fatal(System.Object message, System.Exception t)
         {
-            innerLog.fatal(message, t);
+            innerLog.Fatal(message, t);
         }
 
         /// <summary>
         /// info
         /// </summary>
         /// <param name="message"></param>
-        public virtual void info(System.Object message)
+        public virtual void Info(System.Object message)
         {
-            innerLog.info(message);
+            innerLog.Info(message);
         }
 
         /// <summary>
@@ -152,9 +152,9 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public virtual void info(System.Object message, System.Exception t)
+        public virtual void Info(System.Object message, System.Exception t)
         {
-            innerLog.info(message, t);
+            innerLog.Info(message, t);
         }
 
         /// <summary>
@@ -168,9 +168,9 @@ namespace NHapi.Base.Log
 
         /// <param name="message">
         /// </param>
-        public virtual void trace(System.Object message)
+        public virtual void Trace(System.Object message)
         {
-            innerLog.trace(message);
+            innerLog.Trace(message);
         }
 
         /// <summary>
@@ -178,18 +178,18 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public virtual void trace(System.Object message, System.Exception t)
+        public virtual void Trace(System.Object message, System.Exception t)
         {
-            innerLog.trace(message, t);
+            innerLog.Trace(message, t);
         }
 
         /// <summary>
         /// Warn
         /// </summary>
         /// <param name="message"></param>
-        public virtual void warn(System.Object message)
+        public virtual void Warn(System.Object message)
         {
-            innerLog.warn(message);
+            innerLog.Warn(message);
         }
 
         /// <summary>
@@ -197,9 +197,9 @@ namespace NHapi.Base.Log
         /// </summary>
         /// <param name="message"></param>
         /// <param name="t"></param>
-        public virtual void warn(System.Object message, System.Exception t)
+        public virtual void Warn(System.Object message, System.Exception t)
         {
-            innerLog.warn(message, t);
+            innerLog.Warn(message, t);
         }
 
 
@@ -209,10 +209,10 @@ namespace NHapi.Base.Log
         /// <param name="msgPattern"></param>
         /// <param name="values"></param>
         /// <param name="t"></param>
-        public virtual void debug(System.String msgPattern, System.Object[] values, System.Exception t)
+        public virtual void Debug(System.String msgPattern, System.Object[] values, System.Exception t)
         {
             System.String message = System.String.Format(msgPattern, values);
-            innerLog.debug(message, t);
+            innerLog.Debug(message, t);
         }
     }
 }

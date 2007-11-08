@@ -80,7 +80,7 @@ namespace NHapi.Base.SourceGeneration
 
                 if (messages.Count == 0)
                 {
-                    log.warn("No version " + version + " messages found in database " + conn.Database);
+                    log.Warn("No version " + version + " messages found in database " + conn.Database);
                 }
 
                 for (int i = 0; i < messages.Count; i++)
@@ -139,9 +139,9 @@ namespace NHapi.Base.SourceGeneration
             }
             catch (System.Exception e)
             {
-                log.error("Error while creating source code", e);
+                log.Error("Error while creating source code", e);
 
-                log.warn("Warning: could not write source code for message structure " + message + " - " + e.GetType().FullName + ": " + e.Message);
+                log.Warn("Warning: could not write source code for message structure " + message + " - " + e.GetType().FullName + ": " + e.Message);
             }
         }
 
@@ -314,7 +314,7 @@ namespace NHapi.Base.SourceGeneration
                 source.Append(");\r\n");
             }
             source.Append("\t   } catch(HL7Exception e) {\r\n");
-            source.Append("\t      HapiLogFactory.getHapiLog(GetType()).error(\"Unexpected error creating ");
+            source.Append("\t      HapiLogFactory.GetHapiLog(GetType()).Error(\"Unexpected error creating ");
             source.Append(messageName);
             source.Append(" - this is probably a bug in the source code generator.\", e);\r\n");
             source.Append("\t   }\r\n");
@@ -346,7 +346,7 @@ namespace NHapi.Base.SourceGeneration
         }
         static MessageGenerator()
         {
-            log = HapiLogFactory.getHapiLog(typeof(MessageGenerator));
+            log = HapiLogFactory.GetHapiLog(typeof(MessageGenerator));
         }
     }
 }

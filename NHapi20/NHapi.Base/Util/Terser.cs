@@ -184,7 +184,7 @@ namespace NHapi.Base.Util
                 catch (DataTypeException de)
                 {
                     System.String message = "Unexpected exception copying data to generic composite: " + de.Message;
-                    log.error(message, de);
+                    log.Error(message, de);
                     throw new System.ApplicationException(message);
                 }
 
@@ -380,7 +380,7 @@ namespace NHapi.Base.Util
             int[] ind = getIndices(spec);
             if (log.DebugEnabled)
             {
-                log.debug("Setting " + spec + " seg: " + segment.getStructureName() + " ind: " + ind[0] + " " + ind[1] + " " + ind[2] + " " + ind[3]);
+                log.Debug("Setting " + spec + " seg: " + segment.GetStructureName() + " ind: " + ind[0] + " " + ind[1] + " " + ind[2] + " " + ind[3]);
             }
             Set(segment, ind[0], ind[1], ind[2], ind[3], value_Renamed);
         }
@@ -492,7 +492,7 @@ namespace NHapi.Base.Util
         }
         static Terser()
         {
-            log = HapiLogFactory.getHapiLog(typeof(Terser));
+            log = HapiLogFactory.GetHapiLog(typeof(Terser));
         }
     }
 }

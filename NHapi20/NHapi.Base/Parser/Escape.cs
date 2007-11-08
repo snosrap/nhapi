@@ -20,6 +20,8 @@
 /// this file under either the MPL or the GPL. 
 /// </summary>
 using System;
+using System.Collections.Specialized;
+using System.Collections;
 namespace NHapi.Base.Parser
 {
 
@@ -32,14 +34,37 @@ namespace NHapi.Base.Parser
     /// </author>
     public class Escape
     {
-
+		//This items are are to not be escaped when building the message
+		private static string[] NON_ESCAPE_CHARACTERS = new string[] { @"\.", @"\X", @"\Z", @"\C", @"\M", @"\H", @"\N", @"\S" };
+		private static Hashtable _nonEscapeCharacterMapping = new Hashtable();
         private static System.Collections.Hashtable variousEncChars = new System.Collections.Hashtable(5);
 
+		static Escape()
+		{
+			foreach (string element in NON_ESCAPE_CHARACTERS)
+			{
+				_nonEscapeCharacterMapping.Add(element, element);
+			}
+		}
         /// <summary>Creates a new instance of Escape </summary>
         public Escape()
         {
+			
         }
 
+		private static Hashtable InvertHash(Hashtable htIn)
+		{
+			Hashtable ht = new Hashtable(htIn.Count);
+			foreach (string key in htIn.Keys)
+			{
+				char[] newKey = htIn[key].ToString().ToCharArray();
+				ht[newKey[0]] = key;
+			}
+			return ht;
+		}
+
+		
+		
         /// <summary>
         /// Escape string
         /// </summary>
@@ -48,33 +73,56 @@ namespace NHapi.Base.Parser
         /// <returns></returns>
         public static System.String escape(System.String text, EncodingCharacters encChars)
         {
-            System.Text.StringBuilder result = new System.Text.StringBuilder();
-            int textLength = text.Length;
-            System.Collections.Hashtable esc = getEscapeSequences(encChars);
-            SupportClass.ISetSupport keys = new SupportClass.HashSetSupport(esc.Keys);
-            System.String escChar = System.Convert.ToString(encChars.EscapeCharacter);
-            int position = 0;
-            while (position < textLength)
-            {
-                System.Collections.IEnumerator it = keys.GetEnumerator();
-                bool isReplaced = false;
-                while (it.MoveNext() && !isReplaced)
-                {
-                    System.String seq = (System.String)it.Current;
-                    System.String val = (System.String)esc[seq];
-                    if (text.Substring(position, (position + 1) - (position)).Equals(val))
-                    {
-                        result.Append(seq);
-                        isReplaced = true;
-                    }
-                }
-                if (!isReplaced)
-                {
-                    result.Append(text.Substring(position, ((position + 1)) - (position)));
-                }
-                position++;
-            }
-            return result.ToString();
+			//Note: Special character sequences are like \.br\.  Items like this should not
+			//be escaped using the \E\ method for the \'s.  Instead, just tell the encoding to
+			//skip these items.
+			char[] textAsChar = text.ToCharArray();
+			
+            System.Text.StringBuilder result = new System.Text.StringBuilder(text.Length);
+			Hashtable specialCharacters = InvertHash(getEscapeSequences(encChars));
+			bool isEncodingSpecialCharacterSequence = false;
+			bool encodeCharacter = false;
+			for (int i = 0; i < textAsChar.Length; i++)
+			{
+				encodeCharacter = false;
+				if (isEncodingSpecialCharacterSequence)
+				{
+					encodeCharacter = false;
+					if(textAsChar[i].Equals(encChars.EscapeCharacter))
+						isEncodingSpecialCharacterSequence = false;
+				}
+				else
+				{
+					if (specialCharacters[textAsChar[i]] != null)
+					{
+						//Special character
+						encodeCharacter = true;
+						if (textAsChar[i].Equals(encChars.EscapeCharacter))
+						{
+							//Check for special escaping
+							if (i < textAsChar.Length - 1)
+							{
+								//The data is specially escaped, treat it that way by not encoding the escape character
+								if (_nonEscapeCharacterMapping[textAsChar[i].ToString() + textAsChar[i + 1].ToString()] != null)
+								{
+									//Start buffering this
+									isEncodingSpecialCharacterSequence = true;
+									encodeCharacter = false;
+								}
+							}
+						}	
+					}
+				}
+
+				if (encodeCharacter)
+					result.Append(specialCharacters[textAsChar[i]]);
+				else
+					result.Append(textAsChar[i]);
+			}		
+			if (result.Length > 0)
+				return result.ToString().Trim();
+			else
+				return "";
         }
 
         /// <summary>
@@ -119,91 +167,7 @@ namespace NHapi.Base.Parser
             return result.ToString();
         }
 
-        /// <summary> Applies escape sequences so that the given text can be safely transmitted 
-        /// in a delimited message.  A double escape character (e.g. \\) in the given 
-        /// text is not itself escaped (e.g. \E\\E\) but is instead translated into a 
-        /// single escape character for transmission (e.g. \).  This allows you to 
-        /// add escape sequences not handled by this method (e.g. to send \.br\ across
-        /// the wire you would set the text of a field to \\.br\\). 
-        /// </summary>
-
-        /*
-        public static String escape_old(String text, EncodingCharacters encChars) {
-        String result = text;
-        HashMap esc = getEscapeSequences(encChars);
-        Set keys = esc.keySet();
-        Iterator it = keys.iterator();
-		
-        //need to do the escape for the escape character first, and skip it in the loop
-        result = escapeEscapeCharacters(result, encChars);
-        String escChar = String.valueOf(encChars.getEscapeCharacter());
-        while (it.hasNext()) {
-        String seq = (String)it.next();
-        String val = (String)esc.get(seq);
-        if (!val.equals(escChar)) result = replace(result, val, seq); //don't escape the escape character here
-        }
-        return result;
-        }
-        */
-
-        /// <summary> Removes escape sequences, replacing them with the text they represent.  </summary>
-        /*
-        public static String unescape_old(String text, EncodingCharacters encChars) {
-        String result = text;
-        HashMap esc = getEscapeSequences(encChars);
-        Set keys = esc.keySet();
-        Iterator it = keys.iterator();
-        while (it.hasNext()) {
-        String seq = (String)it.next();
-        String val = (String)esc.get(seq);
-        result = replace(result, seq, val);
-        }
-        return result;
-        }
-        */
-
-        /// <summary> Replaces single escape characters with the escape sequence, and double escape characters 
-        /// with single escape characters. 
-        /// </summary>
-        /*
-        private static String escapeEscapeCharacters(String text, EncodingCharacters encChars) {
-        String result = text;
-        StringBuffer escCharSeq = new StringBuffer();
-        escCharSeq.append(encChars.getEscapeCharacter());
-        escCharSeq.append('E');
-        escCharSeq.append(encChars.getEscapeCharacter());
-        String escChar = String.valueOf(encChars.getEscapeCharacter());
-        result = replace(result, escChar, escCharSeq.toString());
-        result = replace(result, escCharSeq.toString() + escCharSeq.toString(), escChar);
-        return result;        
-        }
-        */
-
-        /// <summary> Replaces all occurences of the string "replace" with the string "with", in 
-        /// the string "originalText". 
-        /// </summary>
-        /*
-        private static String replace(String originalText, String replace, String with) {
-        StringBuffer result = new StringBuffer();
-        int replaceLength = replace.length();
-        boolean done = false;
-        int cursor = 0; 
-        while (!done) {
-        int nextPosition = originalText.indexOf(replace, cursor);
-        if (nextPosition < 0) {
-        done = true;
-        result.append(originalText.substring(cursor));
-        break;
-        }
-        result.append(originalText.substring(cursor, nextPosition));
-        result.append(with);
-        cursor = nextPosition + replaceLength;
-        }
-        return result.toString();
-        }
-        */
-
-        /// <summary> Returns a HashTable with escape sequences as keys, and corresponding 
+           /// <summary> Returns a HashTable with escape sequences as keys, and corresponding 
         /// Strings as values.  
         /// </summary>
         private static System.Collections.Hashtable getEscapeSequences(EncodingCharacters encChars)

@@ -147,7 +147,7 @@ namespace NHapi.Base.Model
                 else
                 {
                     //set class
-                    System.Type c = factory.getTypeClass(obx2.Value, segment.Message.Version);
+                    System.Type c = factory.GetTypeClass(obx2.Value, segment.Message.Version);
                     //                Class c = NHapi.Base.Parser.ParserBase.findClass(obx2.getValue(), 
                     //                                                segment.getMessage().getVersion(), 
                     //                                                "datatype");
@@ -165,7 +165,7 @@ namespace NHapi.Base.Model
         }
         static Varies()
         {
-            log = HapiLogFactory.getHapiLog(typeof(Varies));
+            log = HapiLogFactory.GetHapiLog(typeof(Varies));
         }
     }
 }

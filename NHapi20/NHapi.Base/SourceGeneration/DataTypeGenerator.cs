@@ -83,7 +83,7 @@ namespace NHapi.Base.SourceGeneration
             System.Console.Out.WriteLine("Generating " + types.Count + " datatypes for version " + version);
             if (types.Count == 0)
             {
-                log.warn("No version " + version + " data types found in database " + conn.Database);
+                log.Warn("No version " + version + " data types found in database " + conn.Database);
             }
 
             for (int i = 0; i < types.Count; i++)
@@ -427,7 +427,7 @@ namespace NHapi.Base.SourceGeneration
                 source.Append(i);
                 source.Append("];\r\n");
                 source.Append("\t   } catch (DataTypeException e) {\r\n");
-                source.Append("\t      HapiLogFactory.getHapiLog(this.GetType()).error(\"Unexpected problem accessing known data type component - this is a bug.\", e);\r\n");
+                source.Append("\t      HapiLogFactory.GetHapiLog(this.GetType()).Error(\"Unexpected problem accessing known data type component - this is a bug.\", e);\r\n");
                 source.Append("\t      throw new System.Exception(\"An unexpected error ocurred\",e);\r\n");
                 source.Append("\t   }\r\n");
                 source.Append("\t   return ret;\r\n");
@@ -470,7 +470,7 @@ namespace NHapi.Base.SourceGeneration
         }
         static DataTypeGenerator()
         {
-            log = HapiLogFactory.getHapiLog(typeof(DataTypeGenerator));
+            log = HapiLogFactory.GetHapiLog(typeof(DataTypeGenerator));
         }
     }
 }

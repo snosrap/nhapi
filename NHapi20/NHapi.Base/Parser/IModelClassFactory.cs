@@ -29,7 +29,7 @@ namespace NHapi.Base.Parser
         /// <returns> a class that implements the specified message
         /// </returns>
         /// <throws>  HL7Exception if the version if not recognized or an appropriate class can not be found </throws>
-        System.Type getMessageClass(System.String theName, System.String theVersion, bool isExplicit);
+        System.Type GetMessageClass(System.String theName, System.String theVersion, bool isExplicit);
 
         /// <param name="theName">name of group 
         /// </param>
@@ -38,7 +38,7 @@ namespace NHapi.Base.Parser
         /// <returns> a class that implements the specified group
         /// </returns>
         /// <throws>  HL7Exception if the version if not recognized or an appropriate class can not be found </throws>
-        System.Type getGroupClass(System.String theName, System.String theVersion);
+        System.Type GetGroupClass(System.String theName, System.String theVersion);
 
         /// <param name="theName">name of segment 
         /// </param>
@@ -47,7 +47,7 @@ namespace NHapi.Base.Parser
         /// <returns> a class that implements the specified segment
         /// </returns>
         /// <throws>  HL7Exception if the version if not recognized or an appropriate class can not be found </throws>
-        System.Type getSegmentClass(System.String theName, System.String theVersion);
+        System.Type GetSegmentClass(System.String theName, System.String theVersion);
 
         /// <param name="theName">name of type
         /// </param>
@@ -56,6 +56,6 @@ namespace NHapi.Base.Parser
         /// <returns> a class that implements the specified type
         /// </returns>
         /// <throws>  HL7Exception if the version if not recognized or an appropriate class can not be found </throws>
-        System.Type getTypeClass(System.String theName, System.String theVersion);
+        System.Type GetTypeClass(System.String theName, System.String theVersion);
     }
 }

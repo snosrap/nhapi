@@ -53,12 +53,12 @@ namespace NHapi.Base.Parser
         /// </param>
         /// <returns> corresponding message subclass if found; GenericMessage otherwise
         /// </returns>
-        public virtual System.Type getMessageClass(System.String theName, System.String theVersion, bool isExplicit)
+        public virtual System.Type GetMessageClass(System.String theName, System.String theVersion, bool isExplicit)
         {
             System.Type mc = null;
             if (!isExplicit)
             {
-                theName = ParserBase.getMessageStructureForEvent(theName, theVersion);
+                theName = ParserBase.GetMessageStructureForEvent(theName, theVersion);
             }
             mc = findClass(theName, theVersion, ClassType.Message);
             if (mc == null)
@@ -72,7 +72,7 @@ namespace NHapi.Base.Parser
         /// <param name="theName"></param>
         /// <param name="theVersion"></param>
         /// <returns></returns>
-        public virtual System.Type getGroupClass(System.String theName, System.String theVersion)
+        public virtual System.Type GetGroupClass(System.String theName, System.String theVersion)
         {
             return findClass(theName, theVersion, ClassType.Group);
         }
@@ -83,7 +83,7 @@ namespace NHapi.Base.Parser
         /// <param name="theName"></param>
         /// <param name="theVersion"></param>
         /// <returns></returns>
-        public virtual System.Type getSegmentClass(System.String theName, System.String theVersion)
+        public virtual System.Type GetSegmentClass(System.String theName, System.String theVersion)
         {
             return findClass(theName, theVersion, ClassType.Segment);
         }
@@ -94,7 +94,7 @@ namespace NHapi.Base.Parser
         /// <param name="theName"></param>
         /// <param name="theVersion"></param>
         /// <returns></returns>
-        public virtual System.Type getTypeClass(System.String theName, System.String theVersion)
+        public virtual System.Type GetTypeClass(System.String theName, System.String theVersion)
         {
             return findClass(theName, theVersion, ClassType.Datatype);
         }
@@ -162,7 +162,7 @@ namespace NHapi.Base.Parser
         /// </param>
         private static System.Type findClass(System.String name, System.String version, ClassType type)
         {
-            if (ParserBase.validVersion(version) == false)
+            if (ParserBase.ValidVersion(version) == false)
             {
                 throw new HL7Exception("The HL7 version " + version + " is not recognized", HL7Exception.UNSUPPORTED_VERSION_ID);
             }
@@ -189,12 +189,12 @@ namespace NHapi.Base.Parser
                     classNameToTry = AddAssemblyName(p, classNameToTry);
                     if (log.DebugEnabled)
                     {
-                        log.debug("Trying to load: " + classNameToTry);
+                        log.Debug("Trying to load: " + classNameToTry);
                     }
                     compClass = System.Type.GetType(classNameToTry);
                     if (log.DebugEnabled)
                     {
-                        log.debug("Loaded: " + classNameToTry + " class: " + compClass);
+                        log.Debug("Loaded: " + classNameToTry + " class: " + compClass);
                     }
                 }
                 catch (System.Exception)
@@ -226,7 +226,7 @@ namespace NHapi.Base.Parser
 
         static DefaultModelClassFactory()
         {
-            log = HapiLogFactory.getHapiLog(typeof(DefaultModelClassFactory));
+            log = HapiLogFactory.GetHapiLog(typeof(DefaultModelClassFactory));
         }
     }
 }

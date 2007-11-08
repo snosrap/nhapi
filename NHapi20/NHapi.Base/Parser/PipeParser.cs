@@ -95,8 +95,8 @@ namespace NHapi.Base.Parser
             public virtual bool evaluate(System.Object obj)
             {
                 IStructure s = (IStructure)obj;
-                NHapi.Base.Parser.PipeParser.log.debug("PipeParser iterating message in direction " + name + " at " + s.getStructureName());
-                if (System.Text.RegularExpressions.Regex.IsMatch(s.getStructureName(), name + "\\d*"))
+                NHapi.Base.Parser.PipeParser.log.Debug("PipeParser iterating message in direction " + name + " at " + s.GetStructureName());
+                if (System.Text.RegularExpressions.Regex.IsMatch(s.GetStructureName(), name + "\\d*"))
                 {
                     return true;
                 }
@@ -132,6 +132,8 @@ namespace NHapi.Base.Parser
         {
         }
 
+
+
         /// <summary> Returns a String representing the encoding of the given message, if
         /// the encoding is recognized.  For example if the given message appears
         /// to be encoded using HL7 2.x XML rules then "XML" would be returned.
@@ -140,7 +142,7 @@ namespace NHapi.Base.Parser
         /// message is correctly encoded (e.g. well formed XML) - just that
         /// it is not encoded using any other encoding than the one returned.
         /// </summary>
-        public override System.String getEncoding(System.String message)
+        public override System.String GetEncoding(System.String message)
         {
             System.String encoding = null;
 
@@ -152,7 +154,7 @@ namespace NHapi.Base.Parser
             bool ok = true;
 
             //string should start with "MSH"
-            if (!message.StartsWith("MSH"))
+			if (!message.StartsWith("MSH"))
                 return null;
 
             //4th character of each segment should be field delimiter
@@ -188,7 +190,7 @@ namespace NHapi.Base.Parser
         /// <summary> Returns true if and only if the given encoding is supported
         /// by this Parser.
         /// </summary>
-        public override bool supportsEncoding(System.String encoding)
+        public override bool SupportsEncoding(System.String encoding)
         {
             bool supports = false;
             if (encoding != null && encoding.Equals("VB"))
@@ -219,9 +221,8 @@ namespace NHapi.Base.Parser
             System.String wholeFieldNine;
             try
             {
-                System.String[] fields = split(message.Substring(0, (System.Math.Max(message.IndexOf(segDelim), message.Length)) - (0)), System.Convert.ToString(ec.FieldSeparator));
-                wholeFieldNine = fields[8];
-
+				System.String[] fields = split(message.Substring(0, (System.Math.Max(message.IndexOf(segDelim), message.Length)) - (0)), System.Convert.ToString(ec.FieldSeparator));
+				wholeFieldNine = fields[8];
                 //message structure is component 3 but we'll accept a composite of 1 and 2 if there is no component 3 ...
                 //      if component 1 is ACK, then the structure is ACK regardless of component 2
                 System.String[] comps = split(wholeFieldNine, System.Convert.ToString(ec.ComponentSeparator));
@@ -278,12 +279,12 @@ namespace NHapi.Base.Parser
         /// <throws>  EncodingNotSupportedException if the message encoded </throws>
         /// <summary>      is not supported by this parser.
         /// </summary>
-        protected internal override IMessage doParse(System.String message, System.String version)
+        protected internal override IMessage DoParse(System.String message, System.String version)
         {
 
             //try to instantiate a message object of the right class
             MessageStructure structure = GetStructure(message);
-            IMessage m = instantiateMessage(structure.messageStructure, version, structure.explicitlyDefined);
+            IMessage m = InstantiateMessage(structure.messageStructure, version, structure.explicitlyDefined);
 
             //MessagePointer ptr = new MessagePointer(this, m, getEncodingChars(message));
             MessageIterator messageIter = new MessageIterator(m, "MSH", true);
@@ -303,7 +304,7 @@ namespace NHapi.Base.Parser
                 if (segments[i] != null && segments[i].Length >= 3)
                 {
                     System.String name = segments[i].Substring(0, (3) - (0));
-                    log.debug("Parsing segment " + name);
+					log.Debug("Parsing segment " + name);
 
                     messageIter.Direction = name;
                     FilterIterator.IPredicate byDirection = new AnonymousClassPredicate1(name, this);
@@ -327,7 +328,7 @@ namespace NHapi.Base.Parser
         public virtual void parse(ISegment destination, System.String segment, EncodingCharacters encodingChars)
         {
             int fieldOffset = 0;
-            if (isDelimDefSegment(destination.getStructureName()))
+            if (isDelimDefSegment(destination.GetStructureName()))
             {
                 fieldOffset = 1;
                 //set field 1 to fourth character of string
@@ -341,11 +342,11 @@ namespace NHapi.Base.Parser
                 System.String[] reps = split(fields[i], System.Convert.ToString(encodingChars.RepetitionSeparator));
                 if (log.DebugEnabled)
                 {
-                    log.debug(reps.Length + "reps delimited by: " + encodingChars.RepetitionSeparator);
+                    log.Debug(reps.Length + "reps delimited by: " + encodingChars.RepetitionSeparator);
                 }
 
                 //MSH-2 will get split incorrectly so we have to fudge it ...
-                bool isMSH2 = isDelimDefSegment(destination.getStructureName()) && i + fieldOffset == 2;
+                bool isMSH2 = isDelimDefSegment(destination.GetStructureName()) && i + fieldOffset == 2;
                 if (isMSH2)
                 {
                     reps = new System.String[1];
@@ -360,7 +361,7 @@ namespace NHapi.Base.Parser
                         statusMessage.Append(i + fieldOffset);
                         statusMessage.Append(" repetition ");
                         statusMessage.Append(j);
-                        log.debug(statusMessage.ToString());
+                        log.Debug(statusMessage.ToString());
                         //parse(destination.GetField(i + fieldOffset, j), reps[j], encodingChars, false);
 
                         IType field = destination.GetField(i + fieldOffset, j);
@@ -378,7 +379,7 @@ namespace NHapi.Base.Parser
                         //set the field location and throw again ...
                         e.FieldPosition = i;
                         e.SegmentRepetition = MessageIterator.getIndex(destination.ParentStructure, destination).rep;
-                        e.SegmentName = destination.getStructureName();
+                        e.SegmentName = destination.GetStructureName();
                         throw e;
                     }
                 }
@@ -554,12 +555,12 @@ namespace NHapi.Base.Parser
         /// <throws>  EncodingNotSupportedException if the requested encoding is not </throws>
         /// <summary>      supported by this parser.
         /// </summary>
-        protected internal override System.String doEncode(IMessage source, System.String encoding)
+        protected internal override System.String DoEncode(IMessage source, System.String encoding)
         {
-            if (!this.supportsEncoding(encoding))
+            if (!this.SupportsEncoding(encoding))
                 throw new EncodingNotSupportedException("This parser does not support the " + encoding + " encoding");
 
-            return encode(source);
+            return Encode(source);
         }
 
         /// <summary> Formats a Message object into an HL7 message string using this parser's
@@ -568,7 +569,7 @@ namespace NHapi.Base.Parser
         /// <throws>  HL7Exception if the data fields in the message do not permit encoding </throws>
         /// <summary>      (e.g. required fields are null)
         /// </summary>
-        protected internal override System.String doEncode(IMessage source)
+        protected internal override System.String DoEncode(IMessage source)
         {
             //get encoding characters ...
             ISegment msh = (ISegment)source.GetStructure("MSH");
@@ -602,11 +603,11 @@ namespace NHapi.Base.Parser
                 Terser.Set(msh, 12, 0, 1, 1, source.Version);
             }
 
-            string msgStructure = Terser.Get(msh, 3, 0, 1, 1);
+            string msgStructure = Terser.Get(msh, 9, 0, 1, 1);
             if (msgStructure == null)
             {
                 //Create the MsgType and Trigger Event if not there
-                string messageTypeFullname = source.getStructureName();
+                string messageTypeFullname = source.GetStructureName();
                 int i=messageTypeFullname.IndexOf("_");
                 if (i > 0)
                 {
@@ -664,12 +665,12 @@ namespace NHapi.Base.Parser
         public static System.String encode(ISegment source, EncodingCharacters encodingChars)
         {
             System.Text.StringBuilder result = new System.Text.StringBuilder();
-            result.Append(source.getStructureName());
+            result.Append(source.GetStructureName());
             result.Append(encodingChars.FieldSeparator);
 
             //start at field 2 for MSH segment because field 1 is the field delimiter
             int startAt = 1;
-            if (isDelimDefSegment(source.getStructureName()))
+            if (isDelimDefSegment(source.GetStructureName()))
                 startAt = 2;
 
             //loop through fields; for every field delimit any repetitions and add field delimiter after ...
@@ -683,7 +684,7 @@ namespace NHapi.Base.Parser
                     {
                         System.String fieldText = encode(reps[j], encodingChars);
                         //if this is MSH-2, then it shouldn't be escaped, so unescape it again
-                        if (isDelimDefSegment(source.getStructureName()) && i == 2)
+                        if (isDelimDefSegment(source.GetStructureName()) && i == 2)
                             fieldText = Escape.unescape(fieldText, encodingChars);
                         result.Append(fieldText);
                         if (j < reps.Length - 1)
@@ -692,7 +693,7 @@ namespace NHapi.Base.Parser
                 }
                 catch (HL7Exception e)
                 {
-                    log.error("Error while encoding segment: ", e);
+                    log.Error("Error while encoding segment: ", e);
                 }
                 result.Append(encodingChars.FieldSeparator);
             }
@@ -738,7 +739,7 @@ namespace NHapi.Base.Parser
         /// avoiding the condition that caused the original error.  The other
         /// fields in the returned MSH segment are empty.</p>
         /// </summary>
-        public override ISegment getCriticalResponseData(System.String message)
+        public override ISegment GetCriticalResponseData(System.String message)
         {
             //try to get MSH segment
             int locStartMSH = message.IndexOf("MSH");
@@ -768,14 +769,14 @@ namespace NHapi.Base.Parser
                 System.String version = "2.4"; //default
                 try
                 {
-                    version = this.getVersion(message);
+                    version = this.GetVersion(message);
                 }
                 catch (System.Exception)
                 {
                     /* use the default */
                 }
 
-                msh = ParserBase.makeControlMSH(version, Factory);
+                msh = ParserBase.MakeControlMSH(version, Factory);
                 Terser.Set(msh, 1, 0, 1, 1, System.Convert.ToString(fieldSep));
                 Terser.Set(msh, 2, 0, 1, 1, encChars);
                 Terser.Set(msh, 10, 0, 1, 1, messControlID);
@@ -798,7 +799,7 @@ namespace NHapi.Base.Parser
         /// Returns null if MSA-2 can not be found (e.g. if the message is not a
         /// response message).
         /// </summary>
-        public override System.String getAckID(System.String message)
+        public override System.String GetAckID(System.String message)
         {
             System.String ackID = null;
             int startMSA = message.IndexOf("\rMSA");
@@ -829,7 +830,7 @@ namespace NHapi.Base.Parser
                     ackID = message.Substring(start, (end) - (start));
                 }
             }
-            log.debug("ACK ID: " + ackID);
+            log.Debug("ACK ID: " + ackID);
             return ackID;
         }
 
@@ -838,7 +839,7 @@ namespace NHapi.Base.Parser
         /// into which the text of the message should be parsed.
         /// </summary>
         /// <throws>  HL7Exception if the version field can not be found. </throws>
-        public override System.String getVersion(System.String message)
+        public override System.String GetVersion(System.String message)
         {
             int startMSH = message.IndexOf("MSH");
             int endMSH = message.IndexOf(PipeParser.segDelim, startMSH);
@@ -895,7 +896,7 @@ namespace NHapi.Base.Parser
         }
         static PipeParser()
         {
-            log = HapiLogFactory.getHapiLog(typeof(PipeParser));
+            log = HapiLogFactory.GetHapiLog(typeof(PipeParser));
         }
     }
 }

@@ -9,12 +9,12 @@ namespace NHapi.Base.Log
     /// </summary>
     class LogFactory
     {
-        public static ILog getLog(System.Type classType)
+        public static ILog GetLog(System.Type classType)
         {
             return new EntLibLogger();
         }
 
-        public static ILog getLog(System.String name)
+        public static ILog GetLog(System.String name)
         {
             return new EntLibLogger();
         }

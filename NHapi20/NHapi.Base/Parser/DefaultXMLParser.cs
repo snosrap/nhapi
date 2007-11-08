@@ -32,6 +32,11 @@ namespace NHapi.Base.Parser
         {
         }
 
+		/// <summary>Creates a new instance of DefaultXMLParser </summary>
+		public DefaultXMLParser(IModelClassFactory modelClassFactory) : base(modelClassFactory)
+		{
+		}
+
         /// <summary> <p>Creates an XML Document that corresponds to the given Message object. </p>
         /// <p>If you are implementing this method, you should create an XML Document, and insert XML Elements
         /// into it that correspond to the groups and segments that belong to the message type that your subclass
@@ -64,7 +69,7 @@ namespace NHapi.Base.Parser
         private void encode(IGroup groupObject, System.Xml.XmlElement groupElement)
         {
             System.String[] childNames = groupObject.Names;
-            System.String messageName = groupObject.Message.getStructureName();
+            System.String messageName = groupObject.Message.GetStructureName();
 
             try
             {
@@ -117,7 +122,7 @@ namespace NHapi.Base.Parser
         public override IMessage parseDocument(System.Xml.XmlDocument XMLMessage, System.String version)
         {
             System.String messageName = ((System.Xml.XmlElement)XMLMessage.DocumentElement).Name;
-            IMessage message = instantiateMessage(messageName, version, true);
+            IMessage message = InstantiateMessage(messageName, version, true);
             parse(message, (System.Xml.XmlElement)XMLMessage.DocumentElement);
             return message;
         }
@@ -128,7 +133,7 @@ namespace NHapi.Base.Parser
         private void parse(IGroup groupObject, System.Xml.XmlElement groupElement)
         {
             System.String[] childNames = groupObject.Names;
-            System.String messageName = groupObject.Message.getStructureName();
+            System.String messageName = groupObject.Message.GetStructureName();
 
             System.Xml.XmlNodeList allChildNodes = groupElement.ChildNodes;
             System.Collections.ArrayList unparsedElementList = new System.Collections.ArrayList();
@@ -162,7 +167,7 @@ namespace NHapi.Base.Parser
         {
 
             System.Collections.IList reps = getChildElementsByTagName(groupElement, makeGroupElementName(messageName, childName));
-            log.debug("# of elements matching " + makeGroupElementName(messageName, childName) + ": " + reps.Count);
+            log.Debug("# of elements matching " + makeGroupElementName(messageName, childName) + ": " + reps.Count);
 
             if (groupObject.IsRepeating(childIndexName))
             {
@@ -199,7 +204,7 @@ namespace NHapi.Base.Parser
             {
                 parse((ISegment)theObj, theElem);
             }
-            log.debug("Parsed element: " + theElem.Name);
+            log.Debug("Parsed element: " + theElem.Name);
         }
 
         //includes direct children only
@@ -285,22 +290,22 @@ namespace NHapi.Base.Parser
                 ParserBase outParser = null;
                 PipeParser pp = new PipeParser();
                 NHapi.Base.Parser.XMLParser xp = new DefaultXMLParser();
-                System.Console.Out.WriteLine("Encoding: " + pp.getEncoding(messString));
-                if (pp.getEncoding(messString) != null)
+                System.Console.Out.WriteLine("Encoding: " + pp.GetEncoding(messString));
+                if (pp.GetEncoding(messString) != null)
                 {
                     inParser = pp;
                     outParser = xp;
                 }
-                else if (xp.getEncoding(messString) != null)
+                else if (xp.GetEncoding(messString) != null)
                 {
                     inParser = xp;
                     outParser = pp;
                 }
 
-                IMessage mess = inParser.parse(messString);
+                IMessage mess = inParser.Parse(messString);
                 System.Console.Out.WriteLine("Got message of type " + mess.GetType().FullName);
 
-                System.String otherEncoding = outParser.encode(mess);
+                System.String otherEncoding = outParser.Encode(mess);
                 System.Console.Out.WriteLine(otherEncoding);
             }
             catch (System.Exception e)
@@ -310,7 +315,7 @@ namespace NHapi.Base.Parser
         }
         static DefaultXMLParser()
         {
-            log = HapiLogFactory.getHapiLog(typeof(DefaultXMLParser));
+            log = HapiLogFactory.GetHapiLog(typeof(DefaultXMLParser));
         }
     }
 }

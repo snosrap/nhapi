@@ -11,6 +11,7 @@ namespace NHapi.Base.Log
     class EntLibLogger : ILog
     {
         private const string DefaultDebugCategory = "Debug";
+		private static TraceSwitch _traceSwitch = new TraceSwitch("nHapi", "nHapi Trace Switch");
         #region Log Members
 
         /// <summary>
@@ -55,12 +56,12 @@ namespace NHapi.Base.Log
             }
         }
 
-        public void debug(object message)
+        public void Debug(object message)
         {
-            debug(message, null);
+            Debug(message, null);
         }
 
-        public void debug(object message, Exception t)
+        public void Debug(object message, Exception t)
         {
             // Instead of setting a category, we use the Verbose severity to indicate
             // the need for debugging.  This avoids the need to have a consumer of 
@@ -68,52 +69,52 @@ namespace NHapi.Base.Log
             WriteLog(message, t, System.Diagnostics.TraceLevel.Verbose);
         }
 
-        public void error(object message)
+        public void Error(object message)
         {
-            error(message, null);
+            Error(message, null);
         }
 
-        public void error(object message, Exception t)
-        {
-            WriteLog(message, t, System.Diagnostics.TraceLevel.Error);
-        }
-
-        public void fatal(object message)
-        {
-            fatal(message, null);
-        }
-
-        public void fatal(object message, Exception t)
+        public void Error(object message, Exception t)
         {
             WriteLog(message, t, System.Diagnostics.TraceLevel.Error);
         }
 
-        public void info(object message)
+        public void Fatal(object message)
         {
-            info(message, null);
+            Fatal(message, null);
         }
 
-        public void info(object message, Exception t)
+        public void Fatal(object message, Exception t)
+        {
+            WriteLog(message, t, System.Diagnostics.TraceLevel.Error);
+        }
+
+        public void Info(object message)
+        {
+            Info(message, null);
+        }
+
+        public void Info(object message, Exception t)
         {
             WriteLog(message, t, System.Diagnostics.TraceLevel.Info);
         }
 
-        public void trace(object message)
+        public void Trace(object message)
         {
-            trace(message, null);
+            Trace(message, null);
         }
 
-        public void trace(object message, Exception t)
+        public void Trace(object message, Exception t)
         {
             WriteLog(message, t, System.Diagnostics.TraceLevel.Info);
         }
 
-        public void warn(object message)
+        public void Warn(object message)
         {
-            warn(message, null);
+            Warn(message, null);
         }
 
-        public void warn(object message, Exception t)
+        public void Warn(object message, Exception t)
         {
             WriteLog(message, t, System.Diagnostics.TraceLevel.Warning);
         }
@@ -128,10 +129,10 @@ namespace NHapi.Base.Log
 
         private static void WriteLog(object message, Exception t, System.Diagnostics.TraceLevel severity, string category)
         {
-            TraceSwitch ts = new TraceSwitch("nHapi", "nHapi Trace Switch");
+           
 
             bool writeTrace = false;
-            if (ts.Level >= severity)
+			if (_traceSwitch.Level >= severity)
                 writeTrace = true;
 
             if (writeTrace)
@@ -143,16 +144,16 @@ namespace NHapi.Base.Log
                     ex = new Exception(message.ToString(), t);
 
 
-                WriteTrace(ts, ex, category);
+				WriteTrace(_traceSwitch, ex, category);
             }
         }
 
         private static void WriteTrace(TraceSwitch ts, Exception ex, string category)
         {
             if (category == null)
-                Trace.WriteLine(ex);
+				System.Diagnostics.Trace.WriteLine(ex);
             else
-                Trace.WriteLine(ex, category);
+                System.Diagnostics.Trace.WriteLine(ex, category);
         }
 
     }

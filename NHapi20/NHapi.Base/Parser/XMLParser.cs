@@ -54,7 +54,7 @@ namespace NHapi.Base.Parser
             {
                 return null;
             }
-            public override System.String getVersion(System.String message)
+            public override System.String GetVersion(System.String message)
             {
                 return null;
             }
@@ -140,7 +140,7 @@ namespace NHapi.Base.Parser
         /// it is not encoded using any other encoding than the one returned.
         /// Returns null if the encoding is not recognized.
         /// </summary>
-        public override System.String getEncoding(System.String message)
+        public override System.String GetEncoding(System.String message)
         {
             System.String encoding = null;
 
@@ -161,7 +161,7 @@ namespace NHapi.Base.Parser
         /// <summary> Returns true if and only if the given encoding is supported
         /// by this Parser.
         /// </summary>
-        public override bool supportsEncoding(System.String encoding)
+        public override bool SupportsEncoding(System.String encoding)
         {
             if (encoding.Equals("XML"))
             {
@@ -195,7 +195,7 @@ namespace NHapi.Base.Parser
         /// XML Document object (using Xerces) from the given String, and calls the abstract
         /// method <code>parse(Document XMLMessage)</code></p>
         /// </summary>
-        protected internal override IMessage doParse(System.String message, System.String version)
+        protected internal override IMessage DoParse(System.String message, System.String version)
         {
             IMessage m = null;
 
@@ -235,11 +235,11 @@ namespace NHapi.Base.Parser
         /// <throws>  EncodingNotSupportedException if the requested encoding is not </throws>
         /// <summary>      supported by this parser.
         /// </summary>
-        protected internal override System.String doEncode(IMessage source, System.String encoding)
+        protected internal override System.String DoEncode(IMessage source, System.String encoding)
         {
             if (!encoding.Equals("XML"))
                 throw new EncodingNotSupportedException("XMLParser supports only XML encoding");
-            return encode(source);
+            return Encode(source);
         }
 
         /// <summary> Formats a Message object into an HL7 message string using this parser's
@@ -250,7 +250,7 @@ namespace NHapi.Base.Parser
         /// <throws>  HL7Exception if the data fields in the message do not permit encoding </throws>
         /// <summary>      (e.g. required fields are null)
         /// </summary>
-        protected internal override System.String doEncode(IMessage source)
+        protected internal override System.String DoEncode(IMessage source)
         {
             if (source is GenericMessage)
             {
@@ -307,7 +307,7 @@ namespace NHapi.Base.Parser
                     }
                     else
                     {
-                        log.debug("Child of segment " + segmentObject.getStructureName() + " doesn't look like a field: " + elementName);
+                        log.Debug("Child of segment " + segmentObject.GetStructureName() + " doesn't look like a field: " + elementName);
                     }
                 }
             }
@@ -444,7 +444,7 @@ namespace NHapi.Base.Parser
                     }
                     catch (System.Exception e)
                     {
-                        log.error("Error parsing primitive value from TEXT_NODE", e);
+                        log.Error("Error parsing primitive value from TEXT_NODE", e);
                     }
                     full = true;
                 }
@@ -545,7 +545,7 @@ namespace NHapi.Base.Parser
         /// <summary>Returns the expected XML element name for the given child of the given Segment </summary>
         private System.String makeElementName(ISegment s, int child)
         {
-            return s.getStructureName() + "." + child;
+            return s.GetStructureName() + "." + child;
         }
 
         /// <summary>Returns the expected XML element name for the given child of the given Composite </summary>
@@ -658,10 +658,10 @@ namespace NHapi.Base.Parser
         /// message.  This method parses only that required information, hopefully
         /// avoiding the condition that caused the original error.</p>
         /// </summary>
-        public override ISegment getCriticalResponseData(System.String message)
+        public override ISegment GetCriticalResponseData(System.String message)
         {
-            System.String version = getVersion(message);
-            ISegment criticalData = ParserBase.makeControlMSH(version, Factory);
+            System.String version = GetVersion(message);
+            ISegment criticalData = ParserBase.MakeControlMSH(version, Factory);
 
             Terser.Set(criticalData, 1, 0, 1, 1, parseLeaf(message, "MSH.1", 0));
             Terser.Set(criticalData, 2, 0, 1, 1, parseLeaf(message, "MSH.2", 0));
@@ -686,7 +686,7 @@ namespace NHapi.Base.Parser
         /// Returns null if MSA-2 can not be found (e.g. if the message is not a
         /// response message).  Trims whitespace from around the MSA-2 field.  
         /// </summary>
-        public override System.String getAckID(System.String message)
+        public override System.String GetAckID(System.String message)
         {
             System.String ackID = null;
             try
@@ -700,7 +700,7 @@ namespace NHapi.Base.Parser
             return ackID;
         }
 
-        public override System.String getVersion(System.String message)
+        public override System.String GetVersion(System.String message)
         {
             System.String version = parseLeaf(message, "MSH.12", 0);
             if (version == null || version.Trim().Length == 0)
@@ -769,7 +769,7 @@ namespace NHapi.Base.Parser
                 System.Console.Out.WriteLine("Reading message file ... " + r.Read((System.Char[])cbuf, 0, cbuf.Length) + " of " + fileLength + " chars");
                 r.Close();
                 System.String messString = System.Convert.ToString(cbuf);
-                IMessage mess = parser.parse(messString);
+                IMessage mess = parser.Parse(messString);
                 System.Console.Out.WriteLine("Got message of type " + mess.GetType().FullName);
 
                 NHapi.Base.Parser.XMLParser xp = new AnonymousClassXMLParser();
@@ -822,7 +822,7 @@ namespace NHapi.Base.Parser
         }
         static XMLParser()
         {
-            log = HapiLogFactory.getHapiLog(typeof(XMLParser));
+            log = HapiLogFactory.GetHapiLog(typeof(XMLParser));
         }
     }
 }

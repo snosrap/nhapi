@@ -66,7 +66,7 @@ namespace NHapi.Base.Model
         /// <summary> Sets the segment name.  This would normally be called by a Parser. </summary>
         static AbstractSegment()
         {
-            log = HapiLogFactory.getHapiLog(typeof(AbstractSegment));
+            log = HapiLogFactory.GetHapiLog(typeof(AbstractSegment));
         }
         #endregion
 
@@ -370,7 +370,7 @@ namespace NHapi.Base.Model
             }
             catch (HL7Exception e)
             {
-                log.error("Can't create additional generic fields to handle request for field " + fieldRequested, e);
+                log.Error("Can't create additional generic fields to handle request for field " + fieldRequested, e);
             }
         }
 
@@ -383,7 +383,7 @@ namespace NHapi.Base.Model
         }
 
         /// <summary> Returns the class name (excluding package). </summary>
-        public virtual System.String getStructureName()
+        public virtual System.String GetStructureName()
         {
             System.String fullName = this.GetType().FullName;
             return fullName.Substring(fullName.LastIndexOf('.') + 1, (fullName.Length) - (fullName.LastIndexOf('.') + 1));
