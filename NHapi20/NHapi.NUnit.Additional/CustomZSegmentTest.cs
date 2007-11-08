@@ -31,7 +31,7 @@ ZIN|0164652011399|0164652011399|101|101|45789^Broken bone";
              * 	***********************************************************/
             NHapi.Base.Parser.PipeParser parser = new NHapi.Base.Parser.PipeParser();
 
-            NHapi.Base.Model.IMessage m = parser.parse(message, NHapi.Model.V22_ZSegments.Constants.VERSION);
+            NHapi.Base.Model.IMessage m = parser.Parse(message, NHapi.Model.V22_ZSegments.Constants.VERSION);
 
             Assert.IsNotNull(m);
 

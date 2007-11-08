@@ -41,10 +41,13 @@
     <Compile Include="DateTypeTest23.cs" />
     <Compile Include="DateTypeTest231.cs" />
     <Compile Include="DateTypeTest24.cs" />
+    <Compile Include="ParserTest.cs" />
+    <Compile Include="Parsing25.cs" />
     <Compile Include="PipeParsingFixture23.cs" />
     <Compile Include="PipeParsingFixture231.cs" />
     <Compile Include="PipeParsingFixture24.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestMSH3.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +74,10 @@
     <ProjectReference Include="..\NHapi.Model.V24\NHapi.Model.V24.csproj">
       <Project>{C5DE87CB-F026-4EB3-9CE8-5017BF3FB5CC}</Project>
       <Name>NHapi.Model.V24</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NHapi.Model.V25\NHapi.Model.V25.csproj">
+      <Project>{BE6CDFAD-560E-44CC-B23B-87252DD4392C}</Project>
+      <Name>NHapi.Model.V25</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

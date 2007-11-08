@@ -5,7 +5,7 @@ using NHapi.Model.V23.Message;
 using NHapi.Base.Parser;
 using NUnit.Framework;
 
-namespace NHAPI.NUnit
+namespace NHapi.NUnit
 {
 	/// <summary>
 	/// Summary description for DateTypeTest.

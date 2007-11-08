@@ -9,7 +9,7 @@ using NHapi.Model.V23.Message;
 using NHapi.Model.V23.Segment;
 using NUnit.Framework;
 
-namespace NHAPI.NUnit
+namespace NHapi.NUnit
 {
 
 	[TestFixture]
@@ -23,7 +23,7 @@ QRD|20060228155525|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||";
 
 			PipeParser parser = new PipeParser();
 
-			IMessage m = parser.parse(message);
+			IMessage m = parser.Parse(message);
 
 			QRY_R02 qryR02 = m as QRY_R02;
 
@@ -45,11 +45,11 @@ QRD|20060228155525|R|I||||10^RD&Records&0126|38923^^^^^^^^&TCH|||";
 
             PipeParser parser = new PipeParser();
 
-            string pipeMessage = parser.encode(a01);
+            string pipeMessage = parser.Encode(a01);
 
             Assert.IsNotNull(pipeMessage);
 
-            IMessage test = parser.parse(pipeMessage);
+            IMessage test = parser.Parse(pipeMessage);
             ADT_A01 a01Test = test as ADT_A01;
             Assert.IsNotNull(a01Test);
 
@@ -78,7 +78,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			PipeParser parser = new PipeParser();
 
-			IMessage m = parser.parse(message);
+			IMessage m = parser.Parse(message);
 
 			ORF_R04 orfR04 = m as ORF_R04;
 			Assert.IsNotNull(orfR04);
@@ -100,7 +100,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			PipeParser parser = new PipeParser();
 
-			IMessage m = parser.parse(message);
+			IMessage m = parser.Parse(message);
 
 			ORF_R04 orfR04 = m as ORF_R04;
 
@@ -108,7 +108,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			XMLParser xmlParser = new DefaultXMLParser();
 
-			string recoveredMessage = xmlParser.encode(orfR04);
+			string recoveredMessage = xmlParser.Encode(orfR04);
 
 			Assert.IsNotNull(recoveredMessage);
 			Assert.IsFalse(string.Empty.Equals(recoveredMessage));            
@@ -120,7 +120,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 			string message = GetQRYR02XML();
 
             XMLParser xmlParser = new DefaultXMLParser();
-			IMessage m = xmlParser.parse(message);
+			IMessage m = xmlParser.Parse(message);
 
 			QRY_R02 qryR02 = m as QRY_R02;
 
@@ -128,7 +128,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			PipeParser pipeParser = new PipeParser();
 
-			string pipeOutput = pipeParser.encode(qryR02);
+			string pipeOutput = pipeParser.Encode(qryR02);
 
 			Assert.IsNotNull(pipeOutput);
             Assert.IsFalse(string.Empty.Equals(pipeOutput));
@@ -148,7 +148,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			PipeParser parser = new PipeParser();
 
-			IMessage m = parser.parse(message);
+			IMessage m = parser.Parse(message);
 
 			ORF_R04 orfR04 = m as ORF_R04;
 
@@ -156,7 +156,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			XMLParser xmlParser = new DefaultXMLParser();
 
-			string recoveredMessage = xmlParser.encode(orfR04);
+			string recoveredMessage = xmlParser.Encode(orfR04);
 
 			Assert.IsNotNull(recoveredMessage);
 			Assert.IsFalse(recoveredMessage.IndexOf("ORC")>-1, "Returned message added ORC segment.");
@@ -165,12 +165,30 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
         [Test]
         public void TestOBXDataTypes()
         {
-            string message = @"MSH|^~\&|EPIC|AIDI|||20070921152053|ITFCOHIEIN|ORF^R04|297|P|2.3|||MSA|CA|1QRD|20060725141358|R|||||10^RD|1130851^^^^MRN|RES|||QRF|||||||||OBR|1|5149916^EPC|20050118113415533318^|E8600^ECG^^^ECG|||200501181134||||||Age: 17  yrs ~Criteria: C-HP708 ~|||||1||Zztesttwocorhoi|Results||||F||^^^^^Routine|||||||||200501181134|||||||||OBX|1|ST|:8601-7^ECG IMPRESSION|2|Normal sinus rhythm, rate  77     Normal P axis, PR, rate & rhythm ||||||F||1|200501181134||OBX|2|ST|:8625-6^PR INTERVAL|3|141||||||F||1|200501181134||OBX|3|ST|:8633-0^QRS DURATION|4|83||||||F||1|200501181134||OBX|4|ST|:8634-8^QT INTERVAL|5|358||||||F||1|200501181134||OBX|5|ST|:8636-3^QT INTERVAL CORRECTED|6|405||||||F||1|200501181134||OBX|6|ST|:8626-4^FRONTAL AXIS P|7|-1||||||F||1|200501181134||OBX|7|ST|:99003^FRONTAL AXIS INITIAL 40 MS|8|41||||||F||1|200501181134||OBX|8|ST|:8632-2^FRONTAL AXIS MEAN QRS|9|66||||||F||1|200501181134||OBX|9|ST|:99004^FRONTAL AXIS TERMINAL 40 MS|10|80||||||F||1|200501181134||OBX|10|ST|:99005^FRONTAL AXIS ST|11|36||||||F||1|200501181134||OBX|11|ST|:8638-9^FRONTAL AXIS T|12|40||||||F||1|200501181134||OBX|12|ST|:99006^ECG SEVERITY T|13|- NORMAL ECG - ||||||F||1|200501181134||OBX|13|DT|5315037^Start Date^Start Collection Dat^ABC||18APR06||||||F|||20060419125100|PPKMG|PPJW^SMITH, Fred QAK||OK||1|1|0
+            string message = @"MSH|^~\&|EPIC|AIDI|||20070921152053|ITFCOHIEIN|ORF^R04|297|P|2.3|||
+MSA|CA|1
+QRD|20060725141358|R|||||10^RD|1130851^^^^MRN|RES|||
+QRF|||||||||
+OBR|1|5149916^EPC|20050118113415533318^|E8600^ECG^^^ECG|||200501181134||||||Age: 17  yrs ~Criteria: C-HP708 ~|||||1||Zztesttwocorhoi|Results||||F||^^^^^Routine|||||||||200501181134|||||||||
+OBX|1|ST|:8601-7^ECG IMPRESSION|2|Normal sinus rhythm, rate  77     Normal P axis, PR, rate & rhythm ||||||F||1|200501181134||
+OBX|2|ST|:8625-6^PR INTERVAL|3|141||||||F||1|200501181134||
+OBX|3|ST|:8633-0^QRS DURATION|4|83||||||F||1|200501181134||
+OBX|4|ST|:8634-8^QT INTERVAL|5|358||||||F||1|200501181134||
+OBX|5|ST|:8636-3^QT INTERVAL CORRECTED|6|405||||||F||1|200501181134||
+OBX|6|ST|:8626-4^FRONTAL AXIS P|7|-1||||||F||1|200501181134||
+OBX|7|ST|:99003^FRONTAL AXIS INITIAL 40 MS|8|41||||||F||1|200501181134||
+OBX|8|ST|:8632-2^FRONTAL AXIS MEAN QRS|9|66||||||F||1|200501181134||
+OBX|9|ST|:99004^FRONTAL AXIS TERMINAL 40 MS|10|80||||||F||1|200501181134||
+OBX|10|ST|:99005^FRONTAL AXIS ST|11|36||||||F||1|200501181134||
+OBX|11|ST|:8638-9^FRONTAL AXIS T|12|40||||||F||1|200501181134||
+OBX|12|ST|:99006^ECG SEVERITY T|13|- NORMAL ECG - ||||||F||1|200501181134||
+OBX|13|DT|5315037^Start Date^Start Collection Dat^ABC||18APR06||||||F|||20060419125100|PPKMG|PPJW^SMITH, Fred 
+QAK||OK||1|1|0
 ";
 
             PipeParser parser = new PipeParser();
 
-            IMessage m = parser.parse(message);
+            IMessage m = parser.Parse(message);
 
             ORF_R04 orfR04 = m as ORF_R04;
 
@@ -178,7 +196,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
             XMLParser xmlParser = new DefaultXMLParser();
 
-            string recoveredMessage = xmlParser.encode(orfR04);
+            string recoveredMessage = xmlParser.Encode(orfR04);
 
         }
 
@@ -195,7 +213,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			PipeParser parser = new PipeParser();
 
-			IMessage m = parser.parse(message);
+			IMessage m = parser.Parse(message);
 
 			ORF_R04 orfR04 = m as ORF_R04;
 
@@ -203,7 +221,7 @@ OBX|1|NM|50026400^HEMOGLOBIN A1C^^50026400^HEMOGLOBIN A1C||12|^% TOTAL HGB|4.0 -
 
 			XMLParser xmlParser = new DefaultXMLParser();
 
-			string recoveredMessage = xmlParser.encode(orfR04);
+			string recoveredMessage = xmlParser.Encode(orfR04);
 
 			Assert.IsNotNull(recoveredMessage);
 			Assert.IsFalse(recoveredMessage.IndexOf("NTE")>-1, "Returned message added ORC segment.");
