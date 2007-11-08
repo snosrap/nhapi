@@ -26,7 +26,7 @@ public class QBP_Q13_QBP : AbstractGroup {
 	   try {
 	      this.add(typeof(Zxx), false, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating QBP_Q13_QBP - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating QBP_Q13_QBP - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -39,7 +39,7 @@ get{
 	   try {
 	      ret = (Zxx)this.GetStructure("Zxx");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

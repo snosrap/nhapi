@@ -9,6 +9,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NHapi.Model.V23</RootNamespace>
     <AssemblyName>NHapi.Model.V23</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Properties\NHapi23.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1293,6 +1295,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="EventMapping\EventMap.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\NHapi23.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

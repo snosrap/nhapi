@@ -35,5 +35,4 @@ public class DT: NHapi.Base.Model.Primitive.DT
                 ///</summary>
 		        public DT(IMessage message, string description) : base(message,description)
     	        {}
-                }
-}
+                }}

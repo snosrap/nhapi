@@ -26,7 +26,7 @@ public class MFK_M01_MF : AbstractGroup {
 	   try {
 	      this.add(typeof(MFA), false, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating MFK_M01_MF - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating MFK_M01_MF - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -39,7 +39,7 @@ get{
 	   try {
 	      ret = (MFA)this.GetStructure("MFA");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
