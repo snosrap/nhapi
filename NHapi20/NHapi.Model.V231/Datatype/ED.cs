@@ -11,9 +11,9 @@ namespace NHapi.Model.V231.Datatype
 /// <p>The HL7 ED (encapsulated data) data type.  Consists of the following components: </p><ol>
 /// <li>source application (HD)</li>
 /// <li>type of data (ID)</li>
-/// <li>data (ID)</li>
+/// <li>data subtype (ID)</li>
 /// <li>encoding (ID)</li>
-/// <li>data2 (ST)</li>
+/// <li>data (ST)</li>
 /// </ol>
 ///</summary>
 [Serializable]
@@ -35,9 +35,9 @@ public class ED : AbstractType, IComposite{
 		data = new IType[5];
 		data[0] = new HD(message,"Source application");
 		data[1] = new ID(message, 191,"Type of data");
-		data[2] = new ID(message, 291,"Data");
+		data[2] = new ID(message, 291,"Data subtype");
 		data[3] = new ID(message, 299,"Encoding");
-		data[4] = new ST(message,"Data2");
+		data[4] = new ST(message,"Data");
 	}
 
 	///<summary>
@@ -76,7 +76,7 @@ get{
 	   try {
 	      ret = (HD)this[0];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -93,7 +93,7 @@ get{
 	   try {
 	      ret = (ID)this[1];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -101,16 +101,16 @@ get{
 
 }
 	///<summary>
-	/// Returns data (component #2).  This is a convenience method that saves you from 
+	/// Returns data subtype (component #2).  This is a convenience method that saves you from 
 	/// casting and handling an exception.
 	///</summary>
-	public ID Data {
+	public ID DataSubtype {
 get{
 	   ID ret = null;
 	   try {
 	      ret = (ID)this[2];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -127,7 +127,7 @@ get{
 	   try {
 	      ret = (ID)this[3];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -135,16 +135,16 @@ get{
 
 }
 	///<summary>
-	/// Returns data2 (component #4).  This is a convenience method that saves you from 
+	/// Returns data (component #4).  This is a convenience method that saves you from 
 	/// casting and handling an exception.
 	///</summary>
-	public ST Data2 {
+	public ST Data {
 get{
 	   ST ret = null;
 	   try {
 	      ret = (ST)this[4];
 	   } catch (DataTypeException e) {
-	      HapiLogFactory.getHapiLog(this.GetType()).error("Unexpected problem accessing known data type component - this is a bug.", e);
+	      HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem accessing known data type component - this is a bug.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
