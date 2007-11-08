@@ -30,7 +30,7 @@ public class ADT_A43_PATIENT : AbstractGroup {
 	      this.add(typeof(PD1), false, false);
 	      this.add(typeof(MRG), true, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating ADT_A43_PATIENT - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating ADT_A43_PATIENT - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -43,7 +43,7 @@ get{
 	   try {
 	      ret = (PID)this.GetStructure("PID");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -59,7 +59,7 @@ get{
 	   try {
 	      ret = (PD1)this.GetStructure("PD1");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -75,7 +75,7 @@ get{
 	   try {
 	      ret = (MRG)this.GetStructure("MRG");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

@@ -30,7 +30,7 @@ public class ORD_O04_RESPONSE : AbstractGroup {
 	      this.add(typeof(ORD_O04_ORDER_DIET), true, true);
 	      this.add(typeof(ORD_O04_ORDER_TRAY), true, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating ORD_O04_RESPONSE - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating ORD_O04_RESPONSE - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -43,7 +43,7 @@ get{
 	   try {
 	      ret = (ORD_O04_PATIENT)this.GetStructure("PATIENT");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -58,7 +58,7 @@ get{
 	   try {
 	      ret = (ORD_O04_ORDER_DIET)this.GetStructure("ORDER_DIET");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -84,7 +84,7 @@ get{
 	        reps = this.GetAll("ORDER_DIET").Length; 
 	    } catch (HL7Exception e) { 
 	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
-	        HapiLogFactory.getHapiLog(GetType()).error(message, e); 
+	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
 	        throw new System.Exception(message);
 	    } 
 	    return reps; 
@@ -100,7 +100,7 @@ get{
 	   try {
 	      ret = (ORD_O04_ORDER_TRAY)this.GetStructure("ORDER_TRAY");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

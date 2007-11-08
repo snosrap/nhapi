@@ -30,7 +30,7 @@ public class NMQ_N01_CLOCK_AND_STATISTICS : AbstractGroup {
 	      this.add(typeof(NST), false, false);
 	      this.add(typeof(NSC), false, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating NMQ_N01_CLOCK_AND_STATISTICS - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating NMQ_N01_CLOCK_AND_STATISTICS - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -43,7 +43,7 @@ get{
 	   try {
 	      ret = (NCK)this.GetStructure("NCK");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -59,7 +59,7 @@ get{
 	   try {
 	      ret = (NST)this.GetStructure("NST");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -75,7 +75,7 @@ get{
 	   try {
 	      ret = (NSC)this.GetStructure("NSC");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

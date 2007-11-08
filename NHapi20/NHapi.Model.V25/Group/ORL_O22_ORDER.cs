@@ -30,7 +30,7 @@ public class ORL_O22_ORDER : AbstractGroup {
 	      this.add(typeof(ORL_O22_TIMING), true, false);
 	      this.add(typeof(ORL_O22_OBSERVATION_REQUEST), false, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating ORL_O22_ORDER - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating ORL_O22_ORDER - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -43,7 +43,7 @@ get{
 	   try {
 	      ret = (ORC)this.GetStructure("ORC");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -59,7 +59,7 @@ get{
 	   try {
 	      ret = (ORL_O22_TIMING)this.GetStructure("TIMING");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -75,7 +75,7 @@ get{
 	   try {
 	      ret = (ORL_O22_OBSERVATION_REQUEST)this.GetStructure("OBSERVATION_REQUEST");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

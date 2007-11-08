@@ -28,7 +28,7 @@ public class MFN_M15_MF_INV_ITEM : AbstractGroup {
 	      this.add(typeof(MFE), true, false);
 	      this.add(typeof(IIM), true, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating MFN_M15_MF_INV_ITEM - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating MFN_M15_MF_INV_ITEM - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -41,7 +41,7 @@ get{
 	   try {
 	      ret = (MFE)this.GetStructure("MFE");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -57,7 +57,7 @@ get{
 	   try {
 	      ret = (IIM)this.GetStructure("IIM");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

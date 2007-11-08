@@ -26,7 +26,7 @@ public class BRP_O30_RESPONSE : AbstractGroup {
 	   try {
 	      this.add(typeof(BRP_O30_PATIENT), false, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating BRP_O30_RESPONSE - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating BRP_O30_RESPONSE - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -39,7 +39,7 @@ get{
 	   try {
 	      ret = (BRP_O30_PATIENT)this.GetStructure("PATIENT");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

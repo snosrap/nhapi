@@ -30,7 +30,7 @@ public class NMD_N02_CLOCK_AND_STATS_WITH_NOTES : AbstractGroup {
 	      this.add(typeof(NMD_N02_APP_STATS), false, false);
 	      this.add(typeof(NMD_N02_APP_STATUS), false, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating NMD_N02_CLOCK_AND_STATS_WITH_NOTES - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating NMD_N02_CLOCK_AND_STATS_WITH_NOTES - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -43,7 +43,7 @@ get{
 	   try {
 	      ret = (NMD_N02_CLOCK)this.GetStructure("CLOCK");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -59,7 +59,7 @@ get{
 	   try {
 	      ret = (NMD_N02_APP_STATS)this.GetStructure("APP_STATS");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -75,7 +75,7 @@ get{
 	   try {
 	      ret = (NMD_N02_APP_STATUS)this.GetStructure("APP_STATUS");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

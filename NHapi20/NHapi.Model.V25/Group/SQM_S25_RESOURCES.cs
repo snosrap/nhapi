@@ -34,7 +34,7 @@ public class SQM_S25_RESOURCES : AbstractGroup {
 	      this.add(typeof(SQM_S25_PERSONNEL_RESOURCE), true, false);
 	      this.add(typeof(SQM_S25_LOCATION_RESOURCE), true, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating SQM_S25_RESOURCES - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating SQM_S25_RESOURCES - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -47,7 +47,7 @@ get{
 	   try {
 	      ret = (RGS)this.GetStructure("RGS");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -63,7 +63,7 @@ get{
 	   try {
 	      ret = (SQM_S25_SERVICE)this.GetStructure("SERVICE");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -79,7 +79,7 @@ get{
 	   try {
 	      ret = (SQM_S25_GENERAL_RESOURCE)this.GetStructure("GENERAL_RESOURCE");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -95,7 +95,7 @@ get{
 	   try {
 	      ret = (SQM_S25_PERSONNEL_RESOURCE)this.GetStructure("PERSONNEL_RESOURCE");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -111,7 +111,7 @@ get{
 	   try {
 	      ret = (SQM_S25_LOCATION_RESOURCE)this.GetStructure("LOCATION_RESOURCE");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

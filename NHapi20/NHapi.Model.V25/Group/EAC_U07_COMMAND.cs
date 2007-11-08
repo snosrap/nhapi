@@ -32,7 +32,7 @@ public class EAC_U07_COMMAND : AbstractGroup {
 	      this.add(typeof(EAC_U07_SPECIMEN_CONTAINER), false, false);
 	      this.add(typeof(CNS), false, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating EAC_U07_COMMAND - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating EAC_U07_COMMAND - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -45,7 +45,7 @@ get{
 	   try {
 	      ret = (ECD)this.GetStructure("ECD");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -61,7 +61,7 @@ get{
 	   try {
 	      ret = (TQ1)this.GetStructure("TQ1");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -77,7 +77,7 @@ get{
 	   try {
 	      ret = (EAC_U07_SPECIMEN_CONTAINER)this.GetStructure("SPECIMEN_CONTAINER");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -93,7 +93,7 @@ get{
 	   try {
 	      ret = (CNS)this.GetStructure("CNS");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;

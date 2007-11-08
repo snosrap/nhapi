@@ -28,7 +28,7 @@ public class SQM_S25_SERVICE : AbstractGroup {
 	      this.add(typeof(AIS), true, false);
 	      this.add(typeof(APR), false, false);
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error creating SQM_S25_SERVICE - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating SQM_S25_SERVICE - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
@@ -41,7 +41,7 @@ get{
 	   try {
 	      ret = (AIS)this.GetStructure("AIS");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
@@ -57,7 +57,7 @@ get{
 	   try {
 	      ret = (APR)this.GetStructure("APR");
 	   } catch(HL7Exception e) {
-	      HapiLogFactory.getHapiLog(GetType()).error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
 	   }
 	   return ret;
