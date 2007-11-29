@@ -44,7 +44,7 @@ namespace NHapi.Base.Parser
         /// <code>encode(Segment segmentObject, Element segmentElement)</code> using the Element for
         /// that segment and the corresponding Segment object from the given Message.</p>
         /// </summary>
-        public override System.Xml.XmlDocument encodeDocument(IMessage source)
+        public override System.Xml.XmlDocument EncodeDocument(IMessage source)
         {
             System.String messageClassName = source.GetType().FullName;
             System.String messageName = messageClassName.Substring(messageClassName.LastIndexOf('.') + 1);
@@ -59,14 +59,14 @@ namespace NHapi.Base.Parser
             {
                 throw new HL7Exception("Can't create XML document - " + e.GetType().FullName, HL7Exception.APPLICATION_INTERNAL_ERROR, e);
             }
-            encode(source, (System.Xml.XmlElement)doc.DocumentElement);
+            Encode(source, (System.Xml.XmlElement)doc.DocumentElement);
             return doc;
         }
 
         /// <summary> Copies data from a group object into the corresponding group element, creating any 
         /// necessary child nodes.  
         /// </summary>
-        private void encode(IGroup groupObject, System.Xml.XmlElement groupElement)
+        private void Encode(IGroup groupObject, System.Xml.XmlElement groupElement)
         {
             System.String[] childNames = groupObject.Names;
             System.String messageName = groupObject.Message.GetStructureName();
@@ -78,17 +78,17 @@ namespace NHapi.Base.Parser
                     IStructure[] reps = groupObject.GetAll(childNames[i]);
                     for (int j = 0; j < reps.Length; j++)
                     {
-                        System.Xml.XmlElement childElement = groupElement.OwnerDocument.CreateElement(makeGroupElementName(messageName, childNames[i]));
+                        System.Xml.XmlElement childElement = groupElement.OwnerDocument.CreateElement(MakeGroupElementName(messageName, childNames[i]));
                         bool hasValue = false;
 
                         if (reps[j] is IGroup)
                         {
                             hasValue = true;
-                            encode((IGroup)reps[j], childElement);
+                            Encode((IGroup)reps[j], childElement);
                         }
                         else if (reps[j] is ISegment)
                         {
-                            hasValue = encode((ISegment)reps[j], childElement);
+                            hasValue = Encode((ISegment)reps[j], childElement);
                         }
 
                         if (hasValue)
@@ -119,18 +119,18 @@ namespace NHapi.Base.Parser
         /// <throws>  EncodingNotSupportedException if the message encoded </throws>
         /// <summary>     is not supported by this parser.
         /// </summary>
-        public override IMessage parseDocument(System.Xml.XmlDocument XMLMessage, System.String version)
+        public override IMessage ParseDocument(System.Xml.XmlDocument XMLMessage, System.String version)
         {
             System.String messageName = ((System.Xml.XmlElement)XMLMessage.DocumentElement).Name;
             IMessage message = InstantiateMessage(messageName, version, true);
-            parse(message, (System.Xml.XmlElement)XMLMessage.DocumentElement);
+            Parse(message, (System.Xml.XmlElement)XMLMessage.DocumentElement);
             return message;
         }
 
         /// <summary> Populates the given group object with data from the given group element, ignoring 
         /// any unrecognized nodes.  
         /// </summary>
-        private void parse(IGroup groupObject, System.Xml.XmlElement groupElement)
+        private void Parse(IGroup groupObject, System.Xml.XmlElement groupElement)
         {
             System.String[] childNames = groupObject.Names;
             System.String messageName = groupObject.Message.GetStructureName();
@@ -151,36 +151,36 @@ namespace NHapi.Base.Parser
             for (int i = 0; i < childNames.Length; i++)
             {
                 SupportClass.ICollectionSupport.Remove(unparsedElementList, childNames[i]);
-                parseReps(groupElement, groupObject, messageName, childNames[i], childNames[i]);
+                ParseReps(groupElement, groupObject, messageName, childNames[i], childNames[i]);
             }
 
             for (int i = 0; i < unparsedElementList.Count; i++)
             {
                 System.String segName = (System.String)unparsedElementList[i];
                 System.String segIndexName = groupObject.addNonstandardSegment(segName);
-                parseReps(groupElement, groupObject, messageName, segName, segIndexName);
+                ParseReps(groupElement, groupObject, messageName, segName, segIndexName);
             }
         }
 
         //param childIndexName may have an integer on the end if >1 sibling with same name (e.g. NTE2) 
-        private void parseReps(System.Xml.XmlElement groupElement, IGroup groupObject, System.String messageName, System.String childName, System.String childIndexName)
+        private void ParseReps(System.Xml.XmlElement groupElement, IGroup groupObject, System.String messageName, System.String childName, System.String childIndexName)
         {
 
-            System.Collections.IList reps = getChildElementsByTagName(groupElement, makeGroupElementName(messageName, childName));
-            log.Debug("# of elements matching " + makeGroupElementName(messageName, childName) + ": " + reps.Count);
-
+            System.Collections.IList reps = GetChildElementsByTagName(groupElement, MakeGroupElementName(messageName, childName));
+            log.Debug("# of elements matching " + MakeGroupElementName(messageName, childName) + ": " + reps.Count);
+			
             if (groupObject.IsRepeating(childIndexName))
             {
                 for (int i = 0; i < reps.Count; i++)
                 {
-                    parseRep((System.Xml.XmlElement)reps[i], groupObject.GetStructure(childIndexName, i));
+                    ParseRep((System.Xml.XmlElement)reps[i], groupObject.GetStructure(childIndexName, i));
                 }
             }
             else
             {
                 if (reps.Count > 0)
                 {
-                    parseRep((System.Xml.XmlElement)reps[0], groupObject.GetStructure(childIndexName, 0));
+                    ParseRep((System.Xml.XmlElement)reps[0], groupObject.GetStructure(childIndexName, 0));
                 }
 
                 if (reps.Count > 1)
@@ -188,27 +188,27 @@ namespace NHapi.Base.Parser
                     System.String newIndexName = groupObject.addNonstandardSegment(childName);
                     for (int i = 1; i < reps.Count; i++)
                     {
-                        parseRep((System.Xml.XmlElement)reps[i], groupObject.GetStructure(newIndexName, i - 1));
+                        ParseRep((System.Xml.XmlElement)reps[i], groupObject.GetStructure(newIndexName, i - 1));
                     }
                 }
             }
         }
 
-        private void parseRep(System.Xml.XmlElement theElem, IStructure theObj)
+        private void ParseRep(System.Xml.XmlElement theElem, IStructure theObj)
         {
             if (theObj is IGroup)
             {
-                parse((IGroup)theObj, theElem);
+                Parse((IGroup)theObj, theElem);
             }
             else if (theObj is ISegment)
             {
-                parse((ISegment)theObj, theElem);
+                Parse((ISegment)theObj, theElem);
             }
             log.Debug("Parsed element: " + theElem.Name);
         }
 
         //includes direct children only
-        private System.Collections.IList getChildElementsByTagName(System.Xml.XmlElement theElement, System.String theName)
+        private System.Collections.IList GetChildElementsByTagName(System.Xml.XmlElement theElement, System.String theName)
         {
             System.Collections.IList result = new System.Collections.ArrayList(10);
             System.Xml.XmlNodeList children = theElement.ChildNodes;
@@ -241,7 +241,7 @@ namespace NHapi.Base.Parser
         /// 
         /// If it looks like a segment name (i.e. has 3 characters), no change is made. 
         /// </summary>
-        protected internal static System.String makeGroupElementName(System.String messageName, System.String className)
+        protected internal static System.String MakeGroupElementName(System.String messageName, System.String className)
         {
             System.String ret = null;
 
