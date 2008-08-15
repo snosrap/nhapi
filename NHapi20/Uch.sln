@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Base", "NHapi.Base\NHapi.Base.csproj", "{5A080123-0597-46C3-AE78-2007EFB0DD68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Model.V23UCH", "NHapi.Model.V23UCH\NHapi.Model.V23UCH.csproj", "{3D4C4B94-D168-4D0E-A03C-90A19510606B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A080123-0597-46C3-AE78-2007EFB0DD68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A080123-0597-46C3-AE78-2007EFB0DD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A080123-0597-46C3-AE78-2007EFB0DD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A080123-0597-46C3-AE78-2007EFB0DD68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4C4B94-D168-4D0E-A03C-90A19510606B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4C4B94-D168-4D0E-A03C-90A19510606B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4C4B94-D168-4D0E-A03C-90A19510606B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4C4B94-D168-4D0E-A03C-90A19510606B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
