@@ -15,9 +15,16 @@ namespace NHapi.Model.V23UCH.Message
 ///<ol>
 ///<li>0: MSH (Message header segment) </li>
 ///<li>1: SCH (Schedule Activity Information) </li>
-///<li>2: NTE (Notes and comments segment) optional repeating</li>
-///<li>3: SIU_S26_PATIENT (a Group object) optional repeating</li>
-///<li>4: SIU_S26_RESOURCES (a Group object) repeating</li>
+///<li>2: PID (Patient Identification) </li>
+///<li>3: SIU_S26_VISIT (a Group object) optional </li>
+///<li>4: AIS (Appointment Information - Service) </li>
+///<li>5: AIG (Appointment Information - General Resource) </li>
+///<li>6: AIL (Appointment Information - Location Resource) </li>
+///<li>7: AIP (Appointment Information - Personnel Resource) </li>
+///<li>8: SIU_S26_REG_INSURANCE (a Group object) repeating</li>
+///<li>9: SIU_S26_VISIT_INSURANCE (a Group object) repeating</li>
+///<li>10: ZS1 (Scheduling Custom Segment) </li>
+///<li>11: ZEG (Visit Custom Segment) </li>
 ///</ol>
 ///</summary>
 [Serializable]
@@ -44,9 +51,16 @@ public class SIU_S26 : AbstractMessage  {
 	   try {
 	      this.add(typeof(MSH), true, false);
 	      this.add(typeof(SCH), true, false);
-	      this.add(typeof(NTE), false, true);
-	      this.add(typeof(SIU_S26_PATIENT), false, true);
-	      this.add(typeof(SIU_S26_RESOURCES), true, true);
+	      this.add(typeof(PID), true, false);
+	      this.add(typeof(SIU_S26_VISIT), false, false);
+	      this.add(typeof(AIS), true, false);
+	      this.add(typeof(AIG), true, false);
+	      this.add(typeof(AIL), true, false);
+	      this.add(typeof(AIP), true, false);
+	      this.add(typeof(SIU_S26_REG_INSURANCE), true, true);
+	      this.add(typeof(SIU_S26_VISIT_INSURANCE), true, true);
+	      this.add(typeof(ZS1), true, false);
+	      this.add(typeof(ZEG), true, false);
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating SIU_S26 - this is probably a bug in the source code generator.", e);
 	   }
@@ -85,53 +99,108 @@ get{
 	}
 
 	///<summary>
-	/// Returns  first repetition of NTE (Notes and comments segment) - creates it if necessary
+	/// Returns PID (Patient Identification) - creates it if necessary
 	///</summary>
-	public NTE GetNTE() {
-	   NTE ret = null;
-	   try {
-	      ret = (NTE)this.GetStructure("NTE");
-	   } catch(HL7Exception e) {
-	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
-	   }
-	   return ret;
-	}
-
-	///<summary>
-	///Returns a specific repetition of NTE
-	/// * (Notes and comments segment) - creates it if necessary
-	/// throws HL7Exception if the repetition requested is more than one 
-	///     greater than the number of existing repetitions.
-	///</summary>
-	public NTE GetNTE(int rep) { 
-	   return (NTE)this.GetStructure("NTE", rep);
-	}
-
-	/** 
-	 * Returns the number of existing repetitions of NTE 
-	 */ 
-	public int NTERepetitionsUsed { 
+	public PID PID { 
 get{
-	    int reps = -1; 
-	    try { 
-	        reps = this.GetAll("NTE").Length; 
-	    } catch (HL7Exception e) { 
-	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
-	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
-	        throw new System.Exception(message);
-	    } 
-	    return reps; 
+	   PID ret = null;
+	   try {
+	      ret = (PID)this.GetStructure("PID");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
 	}
-	} 
+	}
 
 	///<summary>
-	/// Returns  first repetition of SIU_S26_PATIENT (a Group object) - creates it if necessary
+	/// Returns SIU_S26_VISIT (a Group object) - creates it if necessary
 	///</summary>
-	public SIU_S26_PATIENT GetPATIENT() {
-	   SIU_S26_PATIENT ret = null;
+	public SIU_S26_VISIT VISIT { 
+get{
+	   SIU_S26_VISIT ret = null;
 	   try {
-	      ret = (SIU_S26_PATIENT)this.GetStructure("PATIENT");
+	      ret = (SIU_S26_VISIT)this.GetStructure("VISIT");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	///<summary>
+	/// Returns AIS (Appointment Information - Service) - creates it if necessary
+	///</summary>
+	public AIS AIS { 
+get{
+	   AIS ret = null;
+	   try {
+	      ret = (AIS)this.GetStructure("AIS");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	///<summary>
+	/// Returns AIG (Appointment Information - General Resource) - creates it if necessary
+	///</summary>
+	public AIG AIG { 
+get{
+	   AIG ret = null;
+	   try {
+	      ret = (AIG)this.GetStructure("AIG");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	///<summary>
+	/// Returns AIL (Appointment Information - Location Resource) - creates it if necessary
+	///</summary>
+	public AIL AIL { 
+get{
+	   AIL ret = null;
+	   try {
+	      ret = (AIL)this.GetStructure("AIL");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	///<summary>
+	/// Returns AIP (Appointment Information - Personnel Resource) - creates it if necessary
+	///</summary>
+	public AIP AIP { 
+get{
+	   AIP ret = null;
+	   try {
+	      ret = (AIP)this.GetStructure("AIP");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	///<summary>
+	/// Returns  first repetition of SIU_S26_REG_INSURANCE (a Group object) - creates it if necessary
+	///</summary>
+	public SIU_S26_REG_INSURANCE GetREG_INSURANCE() {
+	   SIU_S26_REG_INSURANCE ret = null;
+	   try {
+	      ret = (SIU_S26_REG_INSURANCE)this.GetStructure("REG_INSURANCE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -140,23 +209,23 @@ get{
 	}
 
 	///<summary>
-	///Returns a specific repetition of SIU_S26_PATIENT
+	///Returns a specific repetition of SIU_S26_REG_INSURANCE
 	/// * (a Group object) - creates it if necessary
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S26_PATIENT GetPATIENT(int rep) { 
-	   return (SIU_S26_PATIENT)this.GetStructure("PATIENT", rep);
+	public SIU_S26_REG_INSURANCE GetREG_INSURANCE(int rep) { 
+	   return (SIU_S26_REG_INSURANCE)this.GetStructure("REG_INSURANCE", rep);
 	}
 
 	/** 
-	 * Returns the number of existing repetitions of SIU_S26_PATIENT 
+	 * Returns the number of existing repetitions of SIU_S26_REG_INSURANCE 
 	 */ 
-	public int PATIENTRepetitionsUsed { 
+	public int REG_INSURANCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
-	        reps = this.GetAll("PATIENT").Length; 
+	        reps = this.GetAll("REG_INSURANCE").Length; 
 	    } catch (HL7Exception e) { 
 	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
 	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
@@ -167,12 +236,12 @@ get{
 	} 
 
 	///<summary>
-	/// Returns  first repetition of SIU_S26_RESOURCES (a Group object) - creates it if necessary
+	/// Returns  first repetition of SIU_S26_VISIT_INSURANCE (a Group object) - creates it if necessary
 	///</summary>
-	public SIU_S26_RESOURCES GetRESOURCES() {
-	   SIU_S26_RESOURCES ret = null;
+	public SIU_S26_VISIT_INSURANCE GetVISIT_INSURANCE() {
+	   SIU_S26_VISIT_INSURANCE ret = null;
 	   try {
-	      ret = (SIU_S26_RESOURCES)this.GetStructure("RESOURCES");
+	      ret = (SIU_S26_VISIT_INSURANCE)this.GetStructure("VISIT_INSURANCE");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -181,23 +250,23 @@ get{
 	}
 
 	///<summary>
-	///Returns a specific repetition of SIU_S26_RESOURCES
+	///Returns a specific repetition of SIU_S26_VISIT_INSURANCE
 	/// * (a Group object) - creates it if necessary
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S26_RESOURCES GetRESOURCES(int rep) { 
-	   return (SIU_S26_RESOURCES)this.GetStructure("RESOURCES", rep);
+	public SIU_S26_VISIT_INSURANCE GetVISIT_INSURANCE(int rep) { 
+	   return (SIU_S26_VISIT_INSURANCE)this.GetStructure("VISIT_INSURANCE", rep);
 	}
 
 	/** 
-	 * Returns the number of existing repetitions of SIU_S26_RESOURCES 
+	 * Returns the number of existing repetitions of SIU_S26_VISIT_INSURANCE 
 	 */ 
-	public int RESOURCESRepetitionsUsed { 
+	public int VISIT_INSURANCERepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
-	        reps = this.GetAll("RESOURCES").Length; 
+	        reps = this.GetAll("VISIT_INSURANCE").Length; 
 	    } catch (HL7Exception e) { 
 	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
 	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
@@ -206,6 +275,38 @@ get{
 	    return reps; 
 	}
 	} 
+
+	///<summary>
+	/// Returns ZS1 (Scheduling Custom Segment) - creates it if necessary
+	///</summary>
+	public ZS1 ZS1 { 
+get{
+	   ZS1 ret = null;
+	   try {
+	      ret = (ZS1)this.GetStructure("ZS1");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	///<summary>
+	/// Returns ZEG (Visit Custom Segment) - creates it if necessary
+	///</summary>
+	public ZEG ZEG { 
+get{
+	   ZEG ret = null;
+	   try {
+	      ret = (ZEG)this.GetStructure("ZEG");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
 
 }
 }

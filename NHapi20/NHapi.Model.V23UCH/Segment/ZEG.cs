@@ -192,28 +192,63 @@ public class ZEG : AbstractSegment  {
   }
 
 	///<summary>
-	/// Returns FSC Reporting Category(ZEG-6).
+	/// Returns a single repetition of FSC Reporting Category(ZEG-6).
+	/// throws HL7Exception if the repetition number is invalid.
+	/// <param name="rep">The repetition number (this is a repeating field)</param>
 	///</summary>
-	public CM_FSC FSCReportingCategory
+	public CM_FSC GetFSCReportingCategory(int rep)
 	{
-		get{
 			CM_FSC ret = null;
 			try
 			{
-			IType t = this.GetField(6, 0);
+			IType t = this.GetField(6, rep);
 				ret = (CM_FSC)t;
-			}
-			 catch (HL7Exception he) {
-			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
-				throw new System.Exception("An unexpected error ocurred", he);
 		} catch (System.Exception ex) {
 			HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", ex);
 				throw new System.Exception("An unexpected error ocurred", ex);
     }
 			return ret;
-	}
   }
 
+  ///<summary>
+  /// Returns all repetitions of FSC Reporting Category (ZEG-6).
+   ///</summary>
+  public CM_FSC[] GetFSCReportingCategory() {
+     CM_FSC[] ret = null;
+    try {
+        IType[] t = this.GetField(6);  
+        ret = new CM_FSC[t.Length];
+        for (int i = 0; i < ret.Length; i++) {
+            ret[i] = (CM_FSC)t[i];
+        }
+    } catch (HL7Exception he) {
+        HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+    } catch (System.Exception cce) {
+        HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+  }
+ return ret;
+}
+
+  ///<summary>
+  /// Returns the total repetitions of FSC Reporting Category (ZEG-6).
+   ///</summary>
+  public int FSCReportingCategoryRepetitionsUsed
+{
+get{
+    try {
+	return GetTotalFieldRepetitionsUsed(6);
+    }
+catch (HL7Exception he) {
+        HapiLogFactory.GetHapiLog(this.GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", he);
+        throw new System.Exception("An unexpected error ocurred", he);
+} catch (System.Exception cce) {
+        HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected problem obtaining field value.  This is a bug.", cce);
+        throw new System.Exception("An unexpected error ocurred", cce);
+}
+}
+}
 	///<summary>
 	/// Returns Mode of Arrival(ZEG-7).
 	///</summary>

@@ -13,9 +13,9 @@ namespace NHapi.Model.V23UCH.Group
 /// segments that can repeat together or be optionally in/excluded together.
 /// This Group contains the following elements: 
 ///<ol>
-///<li>0: ZN1 (Registration Insurance Info) </li>
-///<li>1: ZN2 (Registration Insurance Info) optional </li>
-///<li>2: ZN3 (Registration Insurance Info) optional </li>
+///<li>0: IN1 (Insurance) </li>
+///<li>1: IN2 (Insurance additional info) </li>
+///<li>2: IN3 (Insurance additional info - certification) </li>
 ///</ol>
 ///</summary>
 [Serializable]
@@ -26,22 +26,22 @@ public class SIU_S17_REG_INSURANCE : AbstractGroup {
 	///</summary>
 	public SIU_S17_REG_INSURANCE(IGroup parent, IModelClassFactory factory) : base(parent, factory){
 	   try {
-	      this.add(typeof(ZN1), true, false);
-	      this.add(typeof(ZN2), false, false);
-	      this.add(typeof(ZN3), false, false);
+	      this.add(typeof(IN1), true, false);
+	      this.add(typeof(IN2), true, false);
+	      this.add(typeof(IN3), true, false);
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating SIU_S17_REG_INSURANCE - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
 	///<summary>
-	/// Returns ZN1 (Registration Insurance Info) - creates it if necessary
+	/// Returns IN1 (Insurance) - creates it if necessary
 	///</summary>
-	public ZN1 ZN1 { 
+	public IN1 IN1 { 
 get{
-	   ZN1 ret = null;
+	   IN1 ret = null;
 	   try {
-	      ret = (ZN1)this.GetStructure("ZN1");
+	      ret = (IN1)this.GetStructure("IN1");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -51,13 +51,13 @@ get{
 	}
 
 	///<summary>
-	/// Returns ZN2 (Registration Insurance Info) - creates it if necessary
+	/// Returns IN2 (Insurance additional info) - creates it if necessary
 	///</summary>
-	public ZN2 ZN2 { 
+	public IN2 IN2 { 
 get{
-	   ZN2 ret = null;
+	   IN2 ret = null;
 	   try {
-	      ret = (ZN2)this.GetStructure("ZN2");
+	      ret = (IN2)this.GetStructure("IN2");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -67,13 +67,13 @@ get{
 	}
 
 	///<summary>
-	/// Returns ZN3 (Registration Insurance Info) - creates it if necessary
+	/// Returns IN3 (Insurance additional info - certification) - creates it if necessary
 	///</summary>
-	public ZN3 ZN3 { 
+	public IN3 IN3 { 
 get{
-	   ZN3 ret = null;
+	   IN3 ret = null;
 	   try {
-	      ret = (ZN3)this.GetStructure("ZN3");
+	      ret = (IN3)this.GetStructure("IN3");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);

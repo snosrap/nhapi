@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\NHapi.Model.V23UCH.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -699,34 +700,18 @@
     <Compile Include="Group\RRO_O02_ORDER_DETAIL.cs" />
     <Compile Include="Group\RRO_O02_PATIENT.cs" />
     <Compile Include="Group\RRO_O02_RESPONSE.cs" />
-    <Compile Include="Group\SIU_S12_GENERAL_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S12_LOCATION_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S12_PATIENT.cs" />
-    <Compile Include="Group\SIU_S12_PERSONNEL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S12_REG_INSURANCE.cs" />
-    <Compile Include="Group\SIU_S12_RESOURCES.cs" />
-    <Compile Include="Group\SIU_S12_SERVICE.cs" />
-    <Compile Include="Group\SIU_S13_GENERAL_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S13_LOCATION_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S13_PATIENT.cs" />
-    <Compile Include="Group\SIU_S13_PERSONNEL_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S12_VISIT.cs" />
+    <Compile Include="Group\SIU_S12_VISIT_INSURANCE.cs" />
     <Compile Include="Group\SIU_S13_REG_INSURANCE.cs" />
-    <Compile Include="Group\SIU_S13_RESOURCES.cs" />
-    <Compile Include="Group\SIU_S13_SERVICE.cs" />
-    <Compile Include="Group\SIU_S14_GENERAL_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S14_LOCATION_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S14_PATIENT.cs" />
-    <Compile Include="Group\SIU_S14_PERSONNEL_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S13_VISIT.cs" />
+    <Compile Include="Group\SIU_S13_VISIT_INSURANCE.cs" />
     <Compile Include="Group\SIU_S14_REG_INSURANCE.cs" />
-    <Compile Include="Group\SIU_S14_RESOURCES.cs" />
-    <Compile Include="Group\SIU_S14_SERVICE.cs" />
-    <Compile Include="Group\SIU_S15_GENERAL_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S15_LOCATION_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S15_PATIENT.cs" />
-    <Compile Include="Group\SIU_S15_PERSONNEL_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S14_VISIT.cs" />
+    <Compile Include="Group\SIU_S14_VISIT_INSURANCE.cs" />
     <Compile Include="Group\SIU_S15_REG_INSURANCE.cs" />
-    <Compile Include="Group\SIU_S15_RESOURCES.cs" />
-    <Compile Include="Group\SIU_S15_SERVICE.cs" />
+    <Compile Include="Group\SIU_S15_VISIT.cs" />
+    <Compile Include="Group\SIU_S15_VISIT_INSURANCE.cs" />
     <Compile Include="Group\SIU_S16_GENERAL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S16_LOCATIONL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S16_PATIENT.cs" />
@@ -734,13 +719,9 @@
     <Compile Include="Group\SIU_S16_REG_INSURANCE.cs" />
     <Compile Include="Group\SIU_S16_RESOURCES.cs" />
     <Compile Include="Group\SIU_S16_SERVICE.cs" />
-    <Compile Include="Group\SIU_S17_GENERAL_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S17_LOCATION_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S17_PATIENT.cs" />
-    <Compile Include="Group\SIU_S17_PERSONNEL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S17_REG_INSURANCE.cs" />
-    <Compile Include="Group\SIU_S17_RESOURCES.cs" />
-    <Compile Include="Group\SIU_S17_SERVICE.cs" />
+    <Compile Include="Group\SIU_S17_VISIT.cs" />
+    <Compile Include="Group\SIU_S17_VISIT_INSURANCE.cs" />
     <Compile Include="Group\SIU_S18_GENERAL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S18_LOCATION_RESOURCE.cs" />
     <Compile Include="Group\SIU_S18_PATIENT.cs" />
@@ -790,12 +771,9 @@
     <Compile Include="Group\SIU_S24_REG_INSURANCE.cs" />
     <Compile Include="Group\SIU_S24_RESOURCES.cs" />
     <Compile Include="Group\SIU_S24_SERVICE.cs" />
-    <Compile Include="Group\SIU_S26_GENERAL_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S26_LOCATION_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S26_PATIENT.cs" />
-    <Compile Include="Group\SIU_S26_PERSONNEL_RESOURCE.cs" />
-    <Compile Include="Group\SIU_S26_RESOURCES.cs" />
-    <Compile Include="Group\SIU_S26_SERVICE.cs" />
+    <Compile Include="Group\SIU_S26_REG_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S26_VISIT.cs" />
+    <Compile Include="Group\SIU_S26_VISIT_INSURANCE.cs" />
     <Compile Include="Group\SQM_S25_GENERAL_RESOURCE.cs" />
     <Compile Include="Group\SQM_S25_LOCATION_RESOURCE.cs" />
     <Compile Include="Group\SQM_S25_PERSONNEL_RESOURCE.cs" />
