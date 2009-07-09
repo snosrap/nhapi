@@ -20,7 +20,7 @@ namespace NHapi.Base.Parser
     /// </version>
     public class DefaultModelClassFactory : IModelClassFactory
     {
-
+        private static readonly object _lockObject = new object();
         private static readonly IHapiLog log;
         private const System.String CUSTOM_PACKAGES_RESOURCE_NAME_TEMPLATE = "custom_packages/{0}";
         private static System.Collections.Hashtable packages = null;
@@ -137,17 +137,26 @@ namespace NHapi.Base.Parser
         public static System.String[] packageList(System.String version)
         {
             //load package lists if necessary ... 
+
             if (packages == null)
             {
-                System.Collections.Generic.IList<Hl7Package> packageList = PackageManager.Instance.GetAllPackages();
-                packages = new System.Collections.Hashtable(packageList.Count);
-                foreach(Hl7Package package in packageList)
+                lock (_lockObject)
                 {
-                    packages[package.Version] = new string[] { package.PackageName };
+                    if (packages == null)
+                    {
+                        System.Collections.Generic.IList<Hl7Package> packageList = PackageManager.Instance.GetAllPackages();
+
+                        packages = new System.Collections.Hashtable(packageList.Count);
+                        foreach (Hl7Package package in packageList)
+                        {
+                            packages[package.Version] = new string[] { package.PackageName };
+                        }
+                    }
                 }
             }
-
-            ////get package list for this version 
+            if (packages[version] == null)
+                throw new Exception(string.Format("Package '{0}' could not be found", version));
+            
             return (System.String[])packages[version];
         }
 
