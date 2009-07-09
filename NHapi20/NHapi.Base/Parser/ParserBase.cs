@@ -43,7 +43,8 @@ namespace NHapi.Base.Parser
 
         #region Constructors
         /// <summary> Uses DefaultModelClassFactory for model class lookup. </summary>
-        public ParserBase()  : this(new DefaultModelClassFactory())
+        public ParserBase()
+            : this(new DefaultModelClassFactory())
         { }
 
         /// <param name="theFactory">custom factory to use for model class lookup 
@@ -94,7 +95,7 @@ namespace NHapi.Base.Parser
 
         /// <returns> the preferred encoding of this Parser
         /// </returns>
-        public abstract System.String DefaultEncoding { get;}
+        public abstract System.String DefaultEncoding { get; }
 
         /// <summary> Returns event->structure maps.  </summary>
         private static System.Collections.IDictionary MessageStructures
@@ -402,25 +403,15 @@ namespace NHapi.Base.Parser
         protected internal virtual IMessage InstantiateMessage(System.String theName, System.String theVersion, bool isExplicit)
         {
             IMessage result = null;
-
-            try
+            System.Type messageClass = _modelClassFactory.GetMessageClass(theName, theVersion, isExplicit);
+            if (messageClass == null)
             {
-                System.Type messageClass = _modelClassFactory.GetMessageClass(theName, theVersion, isExplicit);
-                if (messageClass == null)
-                {
-                    throw new System.Exception("Can't find message class in current package list: " + theName);
-                }
-                _log.Info("Instantiating msg of class " + messageClass.FullName);
-                System.Reflection.ConstructorInfo constructor = messageClass.GetConstructor(new System.Type[] { typeof(IModelClassFactory) });
-                result = (IMessage)constructor.Invoke(new System.Object[] { _modelClassFactory });
+                throw new System.Exception("Can't find message class in current package list: " + theName);
             }
-            catch (System.Exception e)
-            {
-                throw new HL7Exception("Couldn't create Message object of type " + theName, HL7Exception.UNSUPPORTED_MESSAGE_TYPE, e);
-            }
-
+            _log.Info("Instantiating msg of class " + messageClass.FullName);
+            System.Reflection.ConstructorInfo constructor = messageClass.GetConstructor(new System.Type[] { typeof(IModelClassFactory) });
+            result = (IMessage)constructor.Invoke(new System.Object[] { _modelClassFactory });
             result.ValidationContext = _validationContext;
-
             return result;
         }
 

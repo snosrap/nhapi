@@ -281,7 +281,7 @@ namespace NHapi.Base.Parser
         /// </summary>
         protected internal override IMessage DoParse(System.String message, System.String version)
         {
-
+            
             //try to instantiate a message object of the right class
             MessageStructure structure = GetStructure(message);
             IMessage m = InstantiateMessage(structure.messageStructure, version, structure.explicitlyDefined);
