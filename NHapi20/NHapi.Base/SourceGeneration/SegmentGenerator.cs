@@ -85,7 +85,7 @@ namespace NHapi.Base.SourceGeneration
                 {
                     System.String seg = (System.String)segments[i];
                     System.String source = makeSegment(seg, version);
-                    using (System.IO.StreamWriter w = new System.IO.StreamWriter(targetDir.ToString() + "/" + seg + ".cs"))
+                    using (System.IO.StreamWriter w = new System.IO.StreamWriter(targetDir.ToString() + @"\" + GetSpecialFilename(seg) + ".cs"))
                     {
                         w.Write(source);
                         w.Write("}");
@@ -98,6 +98,18 @@ namespace NHapi.Base.SourceGeneration
                 }
             }
 
+        }
+
+        /// <summary>
+        /// There are certain filenames that are reserved in windows.  CON is one of them.
+        /// </summary>
+        /// <param name="seg"></param>
+        /// <returns></returns>
+        private static string GetSpecialFilename(string seg)
+        {
+            if (seg.Equals("CON"))
+                return "CON1";
+            return seg;
         }
 
         /// <summary> <p>Returns an alternate segment name to replace the given segment name.  Substitutions

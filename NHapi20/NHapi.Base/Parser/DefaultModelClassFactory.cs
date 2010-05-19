@@ -2,6 +2,8 @@
 * Created on 21-Apr-2005
 */
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using NHapi.Base;
 using NHapi.Base.Model;
 using NHapi.Base.SourceGeneration;
@@ -11,7 +13,7 @@ using NHapi.Base.Model.Configuration;
 namespace NHapi.Base.Parser
 {
 
-    /// <summary> Default implementation of ModelClassFactory.  See packageList() for configuration instructions. 
+    /// <summary> Default implementation of ModelClassFactory.  See PackageList() for configuration instructions. 
     /// 
     /// </summary>
     /// <author>  <a href="mailto:bryan.tripp@uhn.on.ca">Bryan Tripp</a>
@@ -26,11 +28,11 @@ namespace NHapi.Base.Parser
         private static System.Collections.Hashtable packages = null;
 
         /// <summary> <p>Attempts to return the message class corresponding to the given name, by 
-        /// searching through default and user-defined (as per packageList()) packages. 
+        /// searching through default and user-defined (as per PackageList()) packages. 
         /// Returns GenericMessage if the class is not found.</p>
         /// <p>It is important to note that there can only be one implementation of a particular message 
         /// structure (i.e. one class with the message structure name, regardless of its package) among 
-        /// the packages defined as per the <code>packageList()</code> method.  If there are duplicates 
+        /// the packages defined as per the <code>PackageList()</code> method.  If there are duplicates 
         /// (e.g. two ADT_A01 classes) the first one in the search order will always be used.  However, 
         /// this restriction only applies to message classes, not (normally) segment classes, etc.  This is because 
         /// classes representing parts of a message are referenced explicitly in the code for the message 
@@ -128,13 +130,13 @@ namespace NHapi.Base.Parser
         /// will be found first and used.  </p>
         /// <p>It is important to note that there can only be one implementation of a particular message 
         /// structure (i.e. one class with the message structure name, regardless of its package) among 
-        /// the packages defined as per the <code>packageList()</code> method.  If there are duplicates 
+        /// the packages defined as per the <code>PackageList()</code> method.  If there are duplicates 
         /// (e.g. two ADT_A01 classes) the first one in the search order will always be used.  However, 
         /// this restriction only applies to message classes, not segment classes, etc.  This is because 
         /// classes representing parts of a message are referenced explicitly in the code for the message 
         /// class, rather than being looked up (using findMessageClass() ) based on the String value of MSH-9.<p>  
         /// </summary>
-        public static System.String[] packageList(System.String version)
+        public static List<string> PackageList(System.String version)
         {
             //load package lists if necessary ... 
 
@@ -144,12 +146,13 @@ namespace NHapi.Base.Parser
                 {
                     if (packages == null)
                     {
-                        System.Collections.Generic.IList<Hl7Package> packageList = PackageManager.Instance.GetAllPackages();
+                        IList<Hl7Package> packageList = PackageManager.Instance.GetAllPackages();
 
-                        packages = new System.Collections.Hashtable(packageList.Count);
+                        packages = new Hashtable(packageList.Count);
                         foreach (Hl7Package package in packageList)
                         {
-                            packages[package.Version] = new string[] { package.PackageName };
+                            AddPackage(packages, package);
+                            
                         }
                     }
                 }
@@ -157,9 +160,16 @@ namespace NHapi.Base.Parser
             if (packages[version] == null)
                 throw new Exception(string.Format("Package '{0}' could not be found", version));
             
-            return (System.String[])packages[version];
+            return (List<string>)packages[version];
         }
 
+        private static void AddPackage(Hashtable packages, Hl7Package package)
+        {
+            if(packages[package.Version]==null)
+                packages[package.Version] = new List<string>();
+            List<string> versions = (List<string>)packages[package.Version];
+            versions.Add(package.PackageName);
+        }
 
 
         /// <summary> Finds a message or segment class by name and version.</summary>
@@ -177,7 +187,7 @@ namespace NHapi.Base.Parser
             }
 
             //get list of packages to search for the corresponding message class 
-            System.String[] packages = packageList(version);
+            List<string> packages = PackageList(version);
 
             //get subpackage for component type
             string typeString = type.ToString();
@@ -186,7 +196,7 @@ namespace NHapi.Base.Parser
             //try to load class from each package
             System.Type compClass = null;
             int c = 0;
-            while (compClass == null && c < packages.Length)
+            while (compClass == null && c < packages.Count)
             {
                 try
                 {

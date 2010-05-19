@@ -25,20 +25,36 @@ namespace ModelGenerator
 
             }
 
+            string param = "ALL";
             if (args.Length == 3)
             {
-                string conn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + args[2];
-                NHapi.Base.NormativeDatabase.Instance.OpenNewConnection(conn);
+                param = args[2];    
             }
 
             Console.WriteLine("Using Database{0}", NHapi.Base.NormativeDatabase.Instance.Connection.ConnectionString);
-            SourceGenerator.makeAll(args[0], args[1]);
+            switch(param.ToUpper().Trim())
+            {
+                case "ALL":
+                    SourceGenerator.makeAll(args[0], args[1]);
+                    break;
+                case "EVENTMAPPING":
+                    SourceGenerator.MakeEventMapping(args[0], args[1]);
+                    break;
+                case "SEGMENT":
+                    SegmentGenerator.makeAll(args[0], args[1]);
+                    break;
+                case "MESSAGE":
+                    MessageGenerator.makeAll(args[0], args[1]);
+                    break;
+            }
 
+            
         }
 
         private static void PrintUsage()
         {
-            System.Console.WriteLine("usage: ModelGenerator <basedir> <version>.  Will create a folder named NHapi.Model.VXXX at the baseDir.");
+            System.Console.WriteLine(@"usage: ModelGenerator <basedir> <version> <PARAM>.  
+            Will create a folder named NHapi.Model.VXXX at the baseDir.  PARAM is optinal and can be SEGMENT, MESSAGE, DATATYPE, EVENTMAPPING");
         }
     }
 }

@@ -125,6 +125,7 @@
     </Compile>
     <Compile Include="SourceGeneration\BaseDataTypeGenerator.cs" />
     <Compile Include="SourceGeneration\DataTypeGenerator.cs" />
+    <Compile Include="SourceGeneration\EventMappingGenerator.cs" />
     <Compile Include="SourceGeneration\GroupDef.cs" />
     <Compile Include="SourceGeneration\GroupGenerator.cs" />
     <Compile Include="SourceGeneration\MessageGenerator.cs" />

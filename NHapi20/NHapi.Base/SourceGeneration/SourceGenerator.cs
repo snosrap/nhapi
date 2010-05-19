@@ -47,6 +47,11 @@ namespace NHapi.Base.SourceGeneration
         {
         }
 
+        public static void MakeEventMapping(System.String baseDirectory, System.String version)
+        {
+            EventMappingGenerator.makeAll(baseDirectory, version);
+        }
+
         /// <summary> Generates source code for all data types, segments, groups, and messages.</summary>
         /// <param name="baseDirectory">the directory where source should be written
         /// </param>

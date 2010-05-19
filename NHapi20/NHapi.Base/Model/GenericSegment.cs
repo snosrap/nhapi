@@ -8,7 +8,7 @@ namespace NHapi.Base.Model
     /// parsing will be handled with this class.  This includes segments that do 
     /// not start with Z but nevertheless do not appear in the stated version 
     /// of HL7.  Also, this class is not used to handle Z segments that have been 
-    /// explicitly defined and declared (see Parser.packageList() ).  
+    /// explicitly defined and declared (see Parser.PackageList() ).  
     /// </summary>
     /// <author>  Bryan Tripp
     /// </author>
