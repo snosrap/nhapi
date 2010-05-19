@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,10 +10,30 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NHapi.Model.V23UCH</RootNamespace>
     <AssemblyName>NHapi.Model.V23UCH</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Properties\Nhapi23Uch.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,6 +44,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\NHapi.Model.V23UCH.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +53,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -700,16 +722,40 @@
     <Compile Include="Group\RRO_O02_ORDER_DETAIL.cs" />
     <Compile Include="Group\RRO_O02_PATIENT.cs" />
     <Compile Include="Group\RRO_O02_RESPONSE.cs" />
+    <Compile Include="Group\SIU_S12_GENERAL_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S12_LOCATION_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S12_PATIENT.cs" />
+    <Compile Include="Group\SIU_S12_PERSONNEL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S12_REG_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S12_RESOURCES.cs" />
+    <Compile Include="Group\SIU_S12_SERVICE.cs" />
     <Compile Include="Group\SIU_S12_VISIT.cs" />
     <Compile Include="Group\SIU_S12_VISIT_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S13_GENERAL_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S13_LOCATION_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S13_PATIENT.cs" />
+    <Compile Include="Group\SIU_S13_PERSONNEL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S13_REG_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S13_RESOURCES.cs" />
+    <Compile Include="Group\SIU_S13_SERVICE.cs" />
     <Compile Include="Group\SIU_S13_VISIT.cs" />
     <Compile Include="Group\SIU_S13_VISIT_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S14_GENERAL_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S14_LOCATION_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S14_PATIENT.cs" />
+    <Compile Include="Group\SIU_S14_PERSONNEL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S14_REG_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S14_RESOURCES.cs" />
+    <Compile Include="Group\SIU_S14_SERVICE.cs" />
     <Compile Include="Group\SIU_S14_VISIT.cs" />
     <Compile Include="Group\SIU_S14_VISIT_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S15_GENERAL_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S15_LOCATION_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S15_PATIENT.cs" />
+    <Compile Include="Group\SIU_S15_PERSONNEL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S15_REG_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S15_RESOURCES.cs" />
+    <Compile Include="Group\SIU_S15_SERVICE.cs" />
     <Compile Include="Group\SIU_S15_VISIT.cs" />
     <Compile Include="Group\SIU_S15_VISIT_INSURANCE.cs" />
     <Compile Include="Group\SIU_S16_GENERAL_RESOURCE.cs" />
@@ -719,7 +765,13 @@
     <Compile Include="Group\SIU_S16_REG_INSURANCE.cs" />
     <Compile Include="Group\SIU_S16_RESOURCES.cs" />
     <Compile Include="Group\SIU_S16_SERVICE.cs" />
+    <Compile Include="Group\SIU_S17_GENERAL_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S17_LOCATION_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S17_PATIENT.cs" />
+    <Compile Include="Group\SIU_S17_PERSONNEL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S17_REG_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S17_RESOURCES.cs" />
+    <Compile Include="Group\SIU_S17_SERVICE.cs" />
     <Compile Include="Group\SIU_S17_VISIT.cs" />
     <Compile Include="Group\SIU_S17_VISIT_INSURANCE.cs" />
     <Compile Include="Group\SIU_S18_GENERAL_RESOURCE.cs" />
@@ -771,7 +823,13 @@
     <Compile Include="Group\SIU_S24_REG_INSURANCE.cs" />
     <Compile Include="Group\SIU_S24_RESOURCES.cs" />
     <Compile Include="Group\SIU_S24_SERVICE.cs" />
+    <Compile Include="Group\SIU_S26_GENERAL_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S26_LOCATION_RESOURCE.cs" />
+    <Compile Include="Group\SIU_S26_PATIENT.cs" />
+    <Compile Include="Group\SIU_S26_PERSONNEL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S26_REG_INSURANCE.cs" />
+    <Compile Include="Group\SIU_S26_RESOURCES.cs" />
+    <Compile Include="Group\SIU_S26_SERVICE.cs" />
     <Compile Include="Group\SIU_S26_VISIT.cs" />
     <Compile Include="Group\SIU_S26_VISIT_INSURANCE.cs" />
     <Compile Include="Group\SQM_S25_GENERAL_RESOURCE.cs" />
@@ -1305,6 +1363,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Nhapi23Uch.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
