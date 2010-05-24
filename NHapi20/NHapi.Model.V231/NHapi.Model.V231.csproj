@@ -11,7 +11,7 @@
     <RootNamespace>NHapi.Model.V231</RootNamespace>
     <AssemblyName>NHapi.Model.V231</AssemblyName>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Properties\NHapi231.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Properties\NHapi.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -61,6 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Datatype\AD.cs" />
     <Compile Include="Datatype\AUI.cs" />
     <Compile Include="Datatype\CCD.cs" />
@@ -855,9 +858,6 @@
     <EmbeddedResource Include="EventMapping\EventMap.properties" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\NHapi231.snk" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -873,6 +873,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\NHapi.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

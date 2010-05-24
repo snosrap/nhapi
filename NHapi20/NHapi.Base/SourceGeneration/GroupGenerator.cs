@@ -168,7 +168,10 @@ namespace NHapi.Base.SourceGeneration
                 throw new HL7Exception("Problem creating nested group: " + e.GetType().FullName + ": " + e.Message, HL7Exception.APPLICATION_INTERNAL_ERROR);
             }
 
-            ret = new GroupDef(message, groupName, required, repeating, "a Group object");
+            if(rep_opt)
+                ret = new GroupDef(message, groupName, false, true, "a Group object");
+            else
+                ret = new GroupDef(message, groupName, required, repeating, "a Group object");
             IStructureDef[] finalList = new IStructureDef[currShortListPos]; //note: incremented after last assignment
             Array.Copy(shortList, 0, finalList, 0, currShortListPos);
             for (int i = 0; i < finalList.Length; i++)
