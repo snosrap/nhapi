@@ -20,7 +20,7 @@ namespace NHapi.Model.V25UCH.Message
 ///<li>4: PV1 (Patient Visit) </li>
 ///<li>5: DG1 (Diagnosis) optional repeating</li>
 ///<li>6: DRG (Diagnosis Related Group) optional </li>
-///<li>7: BAR_P12_PROCEDURE (a Group object) </li>
+///<li>7: BAR_P12_PROCEDURE (a Group object) optional repeating</li>
 ///</ol>
 ///</summary>
 [Serializable]
@@ -52,7 +52,7 @@ public class BAR_P12 : AbstractMessage  {
 	      this.add(typeof(PV1), true, false);
 	      this.add(typeof(DG1), false, true);
 	      this.add(typeof(DRG), false, false);
-	      this.add(typeof(BAR_P12_PROCEDURE), true, false);
+	      this.add(typeof(BAR_P12_PROCEDURE), false, true);
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating BAR_P12 - this is probably a bug in the source code generator.", e);
 	   }
@@ -221,10 +221,9 @@ get{
 	}
 
 	///<summary>
-	/// Returns BAR_P12_PROCEDURE (a Group object) - creates it if necessary
+	/// Returns  first repetition of BAR_P12_PROCEDURE (a Group object) - creates it if necessary
 	///</summary>
-	public BAR_P12_PROCEDURE PROCEDURE { 
-get{
+	public BAR_P12_PROCEDURE GetPROCEDURE() {
 	   BAR_P12_PROCEDURE ret = null;
 	   try {
 	      ret = (BAR_P12_PROCEDURE)this.GetStructure("PROCEDURE");
@@ -234,7 +233,33 @@ get{
 	   }
 	   return ret;
 	}
+
+	///<summary>
+	///Returns a specific repetition of BAR_P12_PROCEDURE
+	/// * (a Group object) - creates it if necessary
+	/// throws HL7Exception if the repetition requested is more than one 
+	///     greater than the number of existing repetitions.
+	///</summary>
+	public BAR_P12_PROCEDURE GetPROCEDURE(int rep) { 
+	   return (BAR_P12_PROCEDURE)this.GetStructure("PROCEDURE", rep);
 	}
+
+	/** 
+	 * Returns the number of existing repetitions of BAR_P12_PROCEDURE 
+	 */ 
+	public int PROCEDURERepetitionsUsed { 
+get{
+	    int reps = -1; 
+	    try { 
+	        reps = this.GetAll("PROCEDURE").Length; 
+	    } catch (HL7Exception e) { 
+	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
+	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
+	        throw new System.Exception(message);
+	    } 
+	    return reps; 
+	}
+	} 
 
 }
 }

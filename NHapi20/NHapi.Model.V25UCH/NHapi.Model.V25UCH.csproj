@@ -34,7 +34,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Properties\UCH.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Properties\NHapi.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="Datatype\AD.cs" />
     <Compile Include="Datatype\AUI.cs" />
@@ -1144,7 +1147,7 @@
     <EmbeddedResource Include="EventMapping\EventMap.properties" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\UCH.snk" />
+    <None Include="Properties\NHapi.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

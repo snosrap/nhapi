@@ -25,7 +25,7 @@ namespace NHapi.Model.V25UCH.Message
 ///<li>9: PV2 (Patient Visit - Additional Information) optional </li>
 ///<li>10: ROL (Role) optional repeating</li>
 ///<li>11: GT1 (Guarantor) optional </li>
-///<li>12: ADT_A28_INSURANCE (a Group object) </li>
+///<li>12: ADT_A28_INSURANCE (a Group object) optional repeating</li>
 ///<li>13: ACC (Accident) optional </li>
 ///<li>14: UB2 (UB92 Data) optional </li>
 ///</ol>
@@ -64,7 +64,7 @@ public class ADT_A28 : AbstractMessage  {
 	      this.add(typeof(PV2), false, false);
 	      this.add(typeof(ROL), false, true);
 	      this.add(typeof(GT1), false, false);
-	      this.add(typeof(ADT_A28_INSURANCE), true, false);
+	      this.add(typeof(ADT_A28_INSURANCE), false, true);
 	      this.add(typeof(ACC), false, false);
 	      this.add(typeof(UB2), false, false);
 	   } catch(HL7Exception e) {
@@ -390,10 +390,9 @@ get{
 	}
 
 	///<summary>
-	/// Returns ADT_A28_INSURANCE (a Group object) - creates it if necessary
+	/// Returns  first repetition of ADT_A28_INSURANCE (a Group object) - creates it if necessary
 	///</summary>
-	public ADT_A28_INSURANCE INSURANCE { 
-get{
+	public ADT_A28_INSURANCE GetINSURANCE() {
 	   ADT_A28_INSURANCE ret = null;
 	   try {
 	      ret = (ADT_A28_INSURANCE)this.GetStructure("INSURANCE");
@@ -403,7 +402,33 @@ get{
 	   }
 	   return ret;
 	}
+
+	///<summary>
+	///Returns a specific repetition of ADT_A28_INSURANCE
+	/// * (a Group object) - creates it if necessary
+	/// throws HL7Exception if the repetition requested is more than one 
+	///     greater than the number of existing repetitions.
+	///</summary>
+	public ADT_A28_INSURANCE GetINSURANCE(int rep) { 
+	   return (ADT_A28_INSURANCE)this.GetStructure("INSURANCE", rep);
 	}
+
+	/** 
+	 * Returns the number of existing repetitions of ADT_A28_INSURANCE 
+	 */ 
+	public int INSURANCERepetitionsUsed { 
+get{
+	    int reps = -1; 
+	    try { 
+	        reps = this.GetAll("INSURANCE").Length; 
+	    } catch (HL7Exception e) { 
+	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
+	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
+	        throw new System.Exception(message);
+	    } 
+	    return reps; 
+	}
+	} 
 
 	///<summary>
 	/// Returns ACC (Accident) - creates it if necessary

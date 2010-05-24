@@ -14,7 +14,7 @@ namespace NHapi.Model.V25UCH.Group
 /// This Group contains the following elements: 
 ///<ol>
 ///<li>0: ORC (Common Order) </li>
-///<li>1: OML_O21_TIIMING (a Group object) </li>
+///<li>1: OML_O21_TIIMING (a Group object) optional repeating</li>
 ///<li>2: OML_O21_OBSERVATION_REQUEST (a Group object) optional </li>
 ///<li>3: FT1 (Financial Transaction) optional repeating</li>
 ///<li>4: CTI (Clinical Trial Identification) optional repeating</li>
@@ -30,7 +30,7 @@ public class OML_O21_ORDER : AbstractGroup {
 	public OML_O21_ORDER(IGroup parent, IModelClassFactory factory) : base(parent, factory){
 	   try {
 	      this.add(typeof(ORC), true, false);
-	      this.add(typeof(OML_O21_TIIMING), true, false);
+	      this.add(typeof(OML_O21_TIIMING), false, true);
 	      this.add(typeof(OML_O21_OBSERVATION_REQUEST), false, false);
 	      this.add(typeof(FT1), false, true);
 	      this.add(typeof(CTI), false, true);
@@ -57,10 +57,9 @@ get{
 	}
 
 	///<summary>
-	/// Returns OML_O21_TIIMING (a Group object) - creates it if necessary
+	/// Returns  first repetition of OML_O21_TIIMING (a Group object) - creates it if necessary
 	///</summary>
-	public OML_O21_TIIMING TIIMING { 
-get{
+	public OML_O21_TIIMING GetTIIMING() {
 	   OML_O21_TIIMING ret = null;
 	   try {
 	      ret = (OML_O21_TIIMING)this.GetStructure("TIIMING");
@@ -70,7 +69,33 @@ get{
 	   }
 	   return ret;
 	}
+
+	///<summary>
+	///Returns a specific repetition of OML_O21_TIIMING
+	/// * (a Group object) - creates it if necessary
+	/// throws HL7Exception if the repetition requested is more than one 
+	///     greater than the number of existing repetitions.
+	///</summary>
+	public OML_O21_TIIMING GetTIIMING(int rep) { 
+	   return (OML_O21_TIIMING)this.GetStructure("TIIMING", rep);
 	}
+
+	/** 
+	 * Returns the number of existing repetitions of OML_O21_TIIMING 
+	 */ 
+	public int TIIMINGRepetitionsUsed { 
+get{
+	    int reps = -1; 
+	    try { 
+	        reps = this.GetAll("TIIMING").Length; 
+	    } catch (HL7Exception e) { 
+	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
+	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
+	        throw new System.Exception(message);
+	    } 
+	    return reps; 
+	}
+	} 
 
 	///<summary>
 	/// Returns OML_O21_OBSERVATION_REQUEST (a Group object) - creates it if necessary
