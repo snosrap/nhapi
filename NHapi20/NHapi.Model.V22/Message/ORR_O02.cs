@@ -50,6 +50,13 @@ public class ORR_O02 : AbstractMessage  {
 	   }
 	}
 
+
+	public override string Version
+		{
+			get{
+			return Constants.VERSION;
+			}
+		}
 	///<summary>
 	/// Returns MSH (MESSAGE HEADER) - creates it if necessary
 	///</summary>

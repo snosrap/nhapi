@@ -15,10 +15,13 @@ namespace NHapi.Model.V25UCH.Message
 ///<ol>
 ///<li>0: MSH (Message Header) </li>
 ///<li>1: SCH (Scheduling Activity Information) </li>
-///<li>2: TQ1 (Timing/Quantity) optional repeating</li>
-///<li>3: NTE (Notes and Comments) optional repeating</li>
-///<li>4: SIU_S12_PATIENT (a Group object) optional repeating</li>
-///<li>5: SIU_S12_RESOURCES (a Group object) repeating</li>
+///<li>2: NTE (Notes and Comments) optional repeating</li>
+///<li>3: PID (Patient Identification) </li>
+///<li>4: ROL (Role) optional repeating</li>
+///<li>5: PV1 (Patient Visit) </li>
+///<li>6: PV2 (Patient Visit - Additional Information) optional </li>
+///<li>7: OBX (Observation/Result) optional repeating</li>
+///<li>8: SIU_S12_RESOURCES (a Group object) repeating</li>
 ///</ol>
 ///</summary>
 [Serializable]
@@ -45,15 +48,25 @@ public class SIU_S12 : AbstractMessage  {
 	   try {
 	      this.add(typeof(MSH), true, false);
 	      this.add(typeof(SCH), true, false);
-	      this.add(typeof(TQ1), false, true);
 	      this.add(typeof(NTE), false, true);
-	      this.add(typeof(SIU_S12_PATIENT), false, true);
+	      this.add(typeof(PID), true, false);
+	      this.add(typeof(ROL), false, true);
+	      this.add(typeof(PV1), true, false);
+	      this.add(typeof(PV2), false, false);
+	      this.add(typeof(OBX), false, true);
 	      this.add(typeof(SIU_S12_RESOURCES), true, true);
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating SIU_S12 - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
+
+	public override string Version
+		{
+			get{
+			return Constants.VERSION;
+			}
+		}
 	///<summary>
 	/// Returns MSH (Message Header) - creates it if necessary
 	///</summary>
@@ -85,47 +98,6 @@ get{
 	   return ret;
 	}
 	}
-
-	///<summary>
-	/// Returns  first repetition of TQ1 (Timing/Quantity) - creates it if necessary
-	///</summary>
-	public TQ1 GetTQ1() {
-	   TQ1 ret = null;
-	   try {
-	      ret = (TQ1)this.GetStructure("TQ1");
-	   } catch(HL7Exception e) {
-	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
-	      throw new System.Exception("An unexpected error ocurred",e);
-	   }
-	   return ret;
-	}
-
-	///<summary>
-	///Returns a specific repetition of TQ1
-	/// * (Timing/Quantity) - creates it if necessary
-	/// throws HL7Exception if the repetition requested is more than one 
-	///     greater than the number of existing repetitions.
-	///</summary>
-	public TQ1 GetTQ1(int rep) { 
-	   return (TQ1)this.GetStructure("TQ1", rep);
-	}
-
-	/** 
-	 * Returns the number of existing repetitions of TQ1 
-	 */ 
-	public int TQ1RepetitionsUsed { 
-get{
-	    int reps = -1; 
-	    try { 
-	        reps = this.GetAll("TQ1").Length; 
-	    } catch (HL7Exception e) { 
-	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
-	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
-	        throw new System.Exception(message);
-	    } 
-	    return reps; 
-	}
-	} 
 
 	///<summary>
 	/// Returns  first repetition of NTE (Notes and Comments) - creates it if necessary
@@ -169,12 +141,28 @@ get{
 	} 
 
 	///<summary>
-	/// Returns  first repetition of SIU_S12_PATIENT (a Group object) - creates it if necessary
+	/// Returns PID (Patient Identification) - creates it if necessary
 	///</summary>
-	public SIU_S12_PATIENT GetPATIENT() {
-	   SIU_S12_PATIENT ret = null;
+	public PID PID { 
+get{
+	   PID ret = null;
 	   try {
-	      ret = (SIU_S12_PATIENT)this.GetStructure("PATIENT");
+	      ret = (PID)this.GetStructure("PID");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	///<summary>
+	/// Returns  first repetition of ROL (Role) - creates it if necessary
+	///</summary>
+	public ROL GetROL() {
+	   ROL ret = null;
+	   try {
+	      ret = (ROL)this.GetStructure("ROL");
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
 	      throw new System.Exception("An unexpected error ocurred",e);
@@ -183,23 +171,96 @@ get{
 	}
 
 	///<summary>
-	///Returns a specific repetition of SIU_S12_PATIENT
-	/// * (a Group object) - creates it if necessary
+	///Returns a specific repetition of ROL
+	/// * (Role) - creates it if necessary
 	/// throws HL7Exception if the repetition requested is more than one 
 	///     greater than the number of existing repetitions.
 	///</summary>
-	public SIU_S12_PATIENT GetPATIENT(int rep) { 
-	   return (SIU_S12_PATIENT)this.GetStructure("PATIENT", rep);
+	public ROL GetROL(int rep) { 
+	   return (ROL)this.GetStructure("ROL", rep);
 	}
 
 	/** 
-	 * Returns the number of existing repetitions of SIU_S12_PATIENT 
+	 * Returns the number of existing repetitions of ROL 
 	 */ 
-	public int PATIENTRepetitionsUsed { 
+	public int ROLRepetitionsUsed { 
 get{
 	    int reps = -1; 
 	    try { 
-	        reps = this.GetAll("PATIENT").Length; 
+	        reps = this.GetAll("ROL").Length; 
+	    } catch (HL7Exception e) { 
+	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
+	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
+	        throw new System.Exception(message);
+	    } 
+	    return reps; 
+	}
+	} 
+
+	///<summary>
+	/// Returns PV1 (Patient Visit) - creates it if necessary
+	///</summary>
+	public PV1 PV1 { 
+get{
+	   PV1 ret = null;
+	   try {
+	      ret = (PV1)this.GetStructure("PV1");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	///<summary>
+	/// Returns PV2 (Patient Visit - Additional Information) - creates it if necessary
+	///</summary>
+	public PV2 PV2 { 
+get{
+	   PV2 ret = null;
+	   try {
+	      ret = (PV2)this.GetStructure("PV2");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+	}
+
+	///<summary>
+	/// Returns  first repetition of OBX (Observation/Result) - creates it if necessary
+	///</summary>
+	public OBX GetOBX() {
+	   OBX ret = null;
+	   try {
+	      ret = (OBX)this.GetStructure("OBX");
+	   } catch(HL7Exception e) {
+	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error accessing data - this is probably a bug in the source code generator.", e);
+	      throw new System.Exception("An unexpected error ocurred",e);
+	   }
+	   return ret;
+	}
+
+	///<summary>
+	///Returns a specific repetition of OBX
+	/// * (Observation/Result) - creates it if necessary
+	/// throws HL7Exception if the repetition requested is more than one 
+	///     greater than the number of existing repetitions.
+	///</summary>
+	public OBX GetOBX(int rep) { 
+	   return (OBX)this.GetStructure("OBX", rep);
+	}
+
+	/** 
+	 * Returns the number of existing repetitions of OBX 
+	 */ 
+	public int OBXRepetitionsUsed { 
+get{
+	    int reps = -1; 
+	    try { 
+	        reps = this.GetAll("OBX").Length; 
 	    } catch (HL7Exception e) { 
 	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
 	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 

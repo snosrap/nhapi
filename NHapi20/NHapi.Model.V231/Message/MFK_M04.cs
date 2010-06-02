@@ -50,6 +50,13 @@ public class MFK_M04 : AbstractMessage  {
 	   }
 	}
 
+
+	public override string Version
+		{
+			get{
+			return Constants.VERSION;
+			}
+		}
 	///<summary>
 	/// Returns MSH (MSH - message header segment) - creates it if necessary
 	///</summary>

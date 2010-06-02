@@ -54,6 +54,13 @@ public class ERP_Q01 : AbstractMessage  {
 	   }
 	}
 
+
+	public override string Version
+		{
+			get{
+			return Constants.VERSION;
+			}
+		}
 	///<summary>
 	/// Returns MSH (Message header segment) - creates it if necessary
 	///</summary>

@@ -64,6 +64,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="Datatype\AD.cs" />
     <Compile Include="Datatype\CD.cs" />
     <Compile Include="Datatype\CE.cs" />

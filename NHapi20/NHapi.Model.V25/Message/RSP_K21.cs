@@ -19,7 +19,7 @@ namespace NHapi.Model.V25.Message
 ///<li>3: ERR (Error) optional </li>
 ///<li>4: QAK (Query Acknowledgment) </li>
 ///<li>5: QPD (Query Parameter Definition) </li>
-///<li>6: RSP_K21_QUERY_RESPONSE (a Group object) </li>
+///<li>6: RSP_K21_QUERY_RESPONSE (a Group object) optional repeating</li>
 ///<li>7: DSC (Continuation Pointer) optional </li>
 ///</ol>
 ///</summary>
@@ -51,13 +51,20 @@ public class RSP_K21 : AbstractMessage  {
 	      this.add(typeof(ERR), false, false);
 	      this.add(typeof(QAK), true, false);
 	      this.add(typeof(QPD), true, false);
-	      this.add(typeof(RSP_K21_QUERY_RESPONSE), true, false);
+	      this.add(typeof(RSP_K21_QUERY_RESPONSE), false, true);
 	      this.add(typeof(DSC), false, false);
 	   } catch(HL7Exception e) {
 	      HapiLogFactory.GetHapiLog(GetType()).Error("Unexpected error creating RSP_K21 - this is probably a bug in the source code generator.", e);
 	   }
 	}
 
+
+	public override string Version
+		{
+			get{
+			return Constants.VERSION;
+			}
+		}
 	///<summary>
 	/// Returns MSH (Message Header) - creates it if necessary
 	///</summary>
@@ -180,10 +187,9 @@ get{
 	}
 
 	///<summary>
-	/// Returns RSP_K21_QUERY_RESPONSE (a Group object) - creates it if necessary
+	/// Returns  first repetition of RSP_K21_QUERY_RESPONSE (a Group object) - creates it if necessary
 	///</summary>
-	public RSP_K21_QUERY_RESPONSE QUERY_RESPONSE { 
-get{
+	public RSP_K21_QUERY_RESPONSE GetQUERY_RESPONSE() {
 	   RSP_K21_QUERY_RESPONSE ret = null;
 	   try {
 	      ret = (RSP_K21_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE");
@@ -193,7 +199,33 @@ get{
 	   }
 	   return ret;
 	}
+
+	///<summary>
+	///Returns a specific repetition of RSP_K21_QUERY_RESPONSE
+	/// * (a Group object) - creates it if necessary
+	/// throws HL7Exception if the repetition requested is more than one 
+	///     greater than the number of existing repetitions.
+	///</summary>
+	public RSP_K21_QUERY_RESPONSE GetQUERY_RESPONSE(int rep) { 
+	   return (RSP_K21_QUERY_RESPONSE)this.GetStructure("QUERY_RESPONSE", rep);
 	}
+
+	/** 
+	 * Returns the number of existing repetitions of RSP_K21_QUERY_RESPONSE 
+	 */ 
+	public int QUERY_RESPONSERepetitionsUsed { 
+get{
+	    int reps = -1; 
+	    try { 
+	        reps = this.GetAll("QUERY_RESPONSE").Length; 
+	    } catch (HL7Exception e) { 
+	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
+	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
+	        throw new System.Exception(message);
+	    } 
+	    return reps; 
+	}
+	} 
 
 	///<summary>
 	/// Returns DSC (Continuation Pointer) - creates it if necessary

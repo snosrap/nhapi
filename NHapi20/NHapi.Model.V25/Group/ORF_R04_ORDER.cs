@@ -16,7 +16,7 @@ namespace NHapi.Model.V25.Group
 ///<li>0: ORC (Common Order) optional </li>
 ///<li>1: OBR (Observation Request) </li>
 ///<li>2: NTE (Notes and Comments) optional repeating</li>
-///<li>3: ORF_R04_TIMING_QTY (a Group object) </li>
+///<li>3: ORF_R04_TIMING_QTY (a Group object) optional repeating</li>
 ///<li>4: CTD (Contact Data) optional </li>
 ///<li>5: ORF_R04_OBSERVATION (a Group object) repeating</li>
 ///<li>6: CTI (Clinical Trial Identification) optional repeating</li>
@@ -33,7 +33,7 @@ public class ORF_R04_ORDER : AbstractGroup {
 	      this.add(typeof(ORC), false, false);
 	      this.add(typeof(OBR), true, false);
 	      this.add(typeof(NTE), false, true);
-	      this.add(typeof(ORF_R04_TIMING_QTY), true, false);
+	      this.add(typeof(ORF_R04_TIMING_QTY), false, true);
 	      this.add(typeof(CTD), false, false);
 	      this.add(typeof(ORF_R04_OBSERVATION), true, true);
 	      this.add(typeof(CTI), false, true);
@@ -116,10 +116,9 @@ get{
 	} 
 
 	///<summary>
-	/// Returns ORF_R04_TIMING_QTY (a Group object) - creates it if necessary
+	/// Returns  first repetition of ORF_R04_TIMING_QTY (a Group object) - creates it if necessary
 	///</summary>
-	public ORF_R04_TIMING_QTY TIMING_QTY { 
-get{
+	public ORF_R04_TIMING_QTY GetTIMING_QTY() {
 	   ORF_R04_TIMING_QTY ret = null;
 	   try {
 	      ret = (ORF_R04_TIMING_QTY)this.GetStructure("TIMING_QTY");
@@ -129,7 +128,33 @@ get{
 	   }
 	   return ret;
 	}
+
+	///<summary>
+	///Returns a specific repetition of ORF_R04_TIMING_QTY
+	/// * (a Group object) - creates it if necessary
+	/// throws HL7Exception if the repetition requested is more than one 
+	///     greater than the number of existing repetitions.
+	///</summary>
+	public ORF_R04_TIMING_QTY GetTIMING_QTY(int rep) { 
+	   return (ORF_R04_TIMING_QTY)this.GetStructure("TIMING_QTY", rep);
 	}
+
+	/** 
+	 * Returns the number of existing repetitions of ORF_R04_TIMING_QTY 
+	 */ 
+	public int TIMING_QTYRepetitionsUsed { 
+get{
+	    int reps = -1; 
+	    try { 
+	        reps = this.GetAll("TIMING_QTY").Length; 
+	    } catch (HL7Exception e) { 
+	        string message = "Unexpected error accessing data - this is probably a bug in the source code generator."; 
+	        HapiLogFactory.GetHapiLog(GetType()).Error(message, e); 
+	        throw new System.Exception(message);
+	    } 
+	    return reps; 
+	}
+	} 
 
 	///<summary>
 	/// Returns CTD (Contact Data) - creates it if necessary

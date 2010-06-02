@@ -319,6 +319,13 @@ namespace NHapi.Base.SourceGeneration
             source.Append(" - this is probably a bug in the source code generator.\", e);\r\n");
             source.Append("\t   }\r\n");
             source.Append("\t}\r\n\r\n");
+            source.Append(System.Environment.NewLine);
+            source.Append("\tpublic override string Version\r\n");
+            source.Append("\t\t{\r\n");
+            source.Append("\t\t\tget{\r\n");
+            source.Append("\t\t\treturn Constants.VERSION;\r\n");
+            source.Append("\t\t\t}\r\n");
+            source.Append("\t\t}\r\n");
             return source.ToString();
         }
 

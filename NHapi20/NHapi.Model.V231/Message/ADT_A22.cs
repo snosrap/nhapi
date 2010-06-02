@@ -58,6 +58,13 @@ public class ADT_A22 : AbstractMessage  {
 	   }
 	}
 
+
+	public override string Version
+		{
+			get{
+			return Constants.VERSION;
+			}
+		}
 	///<summary>
 	/// Returns MSH (MSH - message header segment) - creates it if necessary
 	///</summary>

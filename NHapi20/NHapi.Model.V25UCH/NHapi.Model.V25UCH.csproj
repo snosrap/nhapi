@@ -745,6 +745,7 @@
     <Compile Include="Group\RSP_Z90_VISIT.cs" />
     <Compile Include="Group\RTB_K13_ROW_DEFINITION.cs" />
     <Compile Include="Group\RTB_Z74_ROW_DEFINITION.cs" />
+    <Compile Include="Group\SIU_S12_APPOINTMENT_RESOURCE.cs" />
     <Compile Include="Group\SIU_S12_GENERAL_RESOURCE.cs" />
     <Compile Include="Group\SIU_S12_LOCATION_RESOURCE.cs" />
     <Compile Include="Group\SIU_S12_PATIENT.cs" />

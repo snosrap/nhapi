@@ -54,6 +54,13 @@ public class EDR_R07 : AbstractMessage  {
 	   }
 	}
 
+
+	public override string Version
+		{
+			get{
+			return Constants.VERSION;
+			}
+		}
 	///<summary>
 	/// Returns MSH (MSH - message header segment) - creates it if necessary
 	///</summary>

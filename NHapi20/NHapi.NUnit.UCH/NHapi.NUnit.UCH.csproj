@@ -43,13 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestParsingWithMessageStructure.cs" />
+    <Compile Include="V25Tests\ParseA08MessageWithObx.cs" />
+    <Compile Include="V25Tests\ParseA04Message.cs" />
+    <Compile Include="V25Tests\TestParsingWithMessageStructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NHapi.Base\NHapi.Base.csproj">
       <Project>{5A080123-0597-46C3-AE78-2007EFB0DD68}</Project>
       <Name>NHapi.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NHapi.Model.V23UCH\NHapi.Model.V23UCH.csproj">
+      <Project>{3D4C4B94-D168-4D0E-A03C-90A19510606B}</Project>
+      <Name>NHapi.Model.V23UCH</Name>
     </ProjectReference>
     <ProjectReference Include="..\NHapi.Model.V25UCH\NHapi.Model.V25UCH.csproj">
       <Project>{E78A3789-D8E5-4260-8F29-DF3CCC509161}</Project>

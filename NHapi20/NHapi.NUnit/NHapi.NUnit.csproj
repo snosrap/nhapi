@@ -71,6 +71,7 @@
     <Compile Include="PipeParsingFixture231.cs" />
     <Compile Include="PipeParsingFixture24.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test23Orc.cs" />
     <Compile Include="TestMSH3.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
