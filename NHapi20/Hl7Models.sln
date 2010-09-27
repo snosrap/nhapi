@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Model.V25", "NHapi.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelGenerator", "ModelGenerator\ModelGenerator.csproj", "{EBB8E9C9-7FF2-49C4-96EF-C5B87E4C2617}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHapi.Model.V22_ZSegments", "NHapi.Model.V22_ZSegments\NHapi.Model.V22_ZSegments.csproj", "{FFECB4DE-C192-4F95-9DC7-9D0A815D250A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{EBB8E9C9-7FF2-49C4-96EF-C5B87E4C2617}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB8E9C9-7FF2-49C4-96EF-C5B87E4C2617}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB8E9C9-7FF2-49C4-96EF-C5B87E4C2617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFECB4DE-C192-4F95-9DC7-9D0A815D250A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFECB4DE-C192-4F95-9DC7-9D0A815D250A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFECB4DE-C192-4F95-9DC7-9D0A815D250A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFECB4DE-C192-4F95-9DC7-9D0A815D250A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
